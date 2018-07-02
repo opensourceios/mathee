@@ -126,23 +126,29 @@ class DTDTViewController: UIViewController {
         
         guard let text = myTextField.text else {
             print("nil")
+            myTextField.isHidden = true
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
-            myToolbar.setItems([retryButton], animated: true)
+            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            myToolbar.setItems([space, retryButton], animated: true)
             return
         }
         
         guard !text.isEmpty else {
+            myTextField.isHidden = true
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
-            myToolbar.setItems([retryButton], animated: true)
+            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            myToolbar.setItems([space, retryButton], animated: true)
             return
         }
         
         guard let number = Int(text) else {
+            myTextField.isHidden = true
             messageLabel.text = "Please enter numbers only. No text."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
-            myToolbar.setItems([retryButton], animated: true)
+            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            myToolbar.setItems([space, retryButton], animated: true)
             return
         }
         
@@ -190,7 +196,9 @@ class DTDTViewController: UIViewController {
     // MARK: Keyboard
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if view.frame.origin.y == 0 {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
