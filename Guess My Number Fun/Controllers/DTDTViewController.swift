@@ -39,6 +39,7 @@ class DTDTViewController: UIViewController {
         doneButton.isHidden = true
         
         myTextField.isHidden = true
+        myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
         
         resultLabel.isHidden = true
@@ -120,6 +121,7 @@ class DTDTViewController: UIViewController {
 
         messageLabel.text = "What is your current result?"
         myTextField.isHidden = false
+        myTextField.becomeFirstResponder()
     }
     
     @objc func checkResult() {

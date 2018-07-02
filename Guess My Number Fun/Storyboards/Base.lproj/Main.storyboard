@@ -329,27 +329,20 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="137.5" y="350.5" width="100" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter result" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
+                                <rect key="frame" x="133" y="427" width="109" height="40"/>
+                                <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="MD4-Nu-QlR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="MD4-Nu-QlR"/>
+                                    <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
                                 <rect key="frame" x="0.0" y="176" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-q2-c5f">
-                                <rect key="frame" x="0.0" y="265.5" width="375" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="6DU-4h-UhG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -361,9 +354,19 @@
                                     <action selector="doneButtonPressed:" destination="eiL-1S-xct" eventType="touchUpInside" id="6hw-s1-88v"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-q2-c5f">
+                                <rect key="frame" x="0.0" y="265" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6DU-4h-UhG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="200" id="5UY-dm-1nd"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="ATk-Fx-J3i"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="7V7-KD-CsU" secondAttribute="bottom" constant="150" id="EmL-q9-JB5"/>
@@ -376,7 +379,6 @@
                             <constraint firstItem="7V7-KD-CsU" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="mbQ-Nm-MWL"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="112" id="r22-b4-UL5"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="rW8-HE-ydU"/>
-                            <constraint firstItem="ClG-HF-1oA" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="zfH-Ve-rKl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                     </view>
