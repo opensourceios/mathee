@@ -17,6 +17,7 @@ class DTDTViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
     
     // MARK: Properties
     
@@ -35,21 +36,18 @@ class DTDTViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        doneButton.isHidden = true
+        
         myTextField.isHidden = true
         myTextField.keyboardType = .numberPad
-        let resignToolbar = UIToolbar()
-        
-        let okButtonKeyboard = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(okButtonKeyboardPressed))
-        resignToolbar.items = [okButtonKeyboard]
-        resignToolbar.sizeToFit()
-        myTextField.inputAccessoryView = resignToolbar
-
         
         resultLabel.isHidden = true
         messageLabel.numberOfLines = 0
+        messageLabel.lineBreakMode = .byWordWrapping
         messageLabel.text = "Think of a number"
         let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(timesThree))
-        myToolbar.setItems([okButton], animated: true)
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,7 +60,8 @@ class DTDTViewController: UIViewController {
         // tell user to multiply by 3
         messageLabel.text = "Multiply it by 3"
         let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(oddOrEven))
-        myToolbar.setItems([okButton], animated: true)
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
     }
     
     @objc func oddOrEven() {
@@ -78,7 +77,8 @@ class DTDTViewController: UIViewController {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
         let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(divideByTwo))
-        myToolbar.setItems([okButton], animated: true)
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
         
         if isFirstEvenQuestion {
             total += 1
@@ -91,6 +91,7 @@ class DTDTViewController: UIViewController {
         // tell user to divide by two
         messageLabel.text = "Divide the result by 2"
         var okButton = UIBarButtonItem()
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
         if isFirstEvenQuestion {
             okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(timesThree))
@@ -99,26 +100,29 @@ class DTDTViewController: UIViewController {
             okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(divideByNine))
         }
         
-        myToolbar.setItems([okButton], animated: true)
+        myToolbar.setItems([space, okButton], animated: true)
     }
     
     @objc func divideByNine() {
-        // tell uesr to divide by nine
+        // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, leaving out any remainder"
         let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(askResult))
-        myToolbar.setItems([okButton], animated: true)
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
     }
     
     @objc func askResult() {
         // ask current result to user
+        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(okButtonKeyboardPressed))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
+
         messageLabel.text = "What is your current result?"
         myTextField.isHidden = false
-        let submitButton = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(checkResult))
-        myToolbar.setItems([submitButton], animated: true)
     }
     
     @objc func checkResult() {
-        myTextField.isHidden = true
+        
         guard let text = myTextField.text else {
             print("nil")
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
@@ -149,14 +153,23 @@ class DTDTViewController: UIViewController {
     
     @objc func showResult() {
         // show final result to user
-        resultLabel.isHidden = false
+        myToolbar.setItems([], animated: true)
+        myTextField.isHidden = true
         messageLabel.text = "You thought:"
+        resultLabel.isHidden = false
         resultLabel.text = "\(total)"
+        doneButton.isHidden = false
         
     }
     
     @objc func okButtonKeyboardPressed() {
         myTextField.resignFirstResponder()
+        checkResult()
+    }
+    
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: Subscription

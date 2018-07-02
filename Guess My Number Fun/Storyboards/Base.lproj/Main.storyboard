@@ -287,16 +287,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V7-KD-CsU">
+                                <rect key="frame" x="170" y="469" width="34" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="👍"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="eiL-1S-xct" eventType="touchUpInside" id="6hw-s1-88v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="ATk-Fx-J3i"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="7V7-KD-CsU" secondAttribute="bottom" constant="150" id="EmL-q9-JB5"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" id="bz7-H9-hqi"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="g0X-lK-EFe"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="lrU-Og-3u9"/>
+                            <constraint firstItem="7V7-KD-CsU" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="mbQ-Nm-MWL"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="112" id="r22-b4-UL5"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="rW8-HE-ydU"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="zfH-Ve-rKl"/>
@@ -305,6 +315,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Do This Do That" id="xXz-XO-Cxl"/>
                     <connections>
+                        <outlet property="doneButton" destination="7V7-KD-CsU" id="5en-ho-L7v"/>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
                         <outlet property="myToolbar" destination="FgR-50-WSp" id="ept-bZ-lKX"/>
