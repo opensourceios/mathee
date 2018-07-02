@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="i4p-Zt-AVs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-wI-MOK">
+                                <rect key="frame" x="106" y="350.5" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W5e-wI-MOK" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="Rgd-tr-TxL"/>
+                            <constraint firstItem="W5e-wI-MOK" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="Ye1-1i-GdU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Higher Lower" id="oXZ-fp-eKa"/>
@@ -33,7 +45,19 @@
                     <view key="view" contentMode="scaleToFill" id="e8v-i1-Ly5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-Li-i8Q">
+                                <rect key="frame" x="106" y="350.5" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qN1-Li-i8Q" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="nLY-cG-Olb"/>
+                            <constraint firstItem="qN1-Li-i8Q" firstAttribute="centerX" secondItem="zMY-pK-AUQ" secondAttribute="centerX" id="yQM-cP-ndY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Magic" id="Ot7-WL-NJJ"/>
@@ -49,7 +73,19 @@
                     <view key="view" contentMode="scaleToFill" id="Nm4-Yr-CgH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-Q6-Rap">
+                                <rect key="frame" x="106" y="350.5" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Gr-Q6-Rap" firstAttribute="centerX" secondItem="dYW-fQ-cww" secondAttribute="centerX" id="A1C-BZ-7RT"/>
+                            <constraint firstItem="4Gr-Q6-Rap" firstAttribute="centerY" secondItem="dYW-fQ-cww" secondAttribute="centerY" id="x2j-sP-Mgm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dYW-fQ-cww"/>
                     </view>
                     <navigationItem key="navigationItem" title="Human" id="afS-Q9-XrG"/>
@@ -65,7 +101,19 @@
                     <view key="view" contentMode="scaleToFill" id="ohQ-E1-Hmc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-jA-k7A">
+                                <rect key="frame" x="106" y="350.5" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0wx-jA-k7A" firstAttribute="centerY" secondItem="qD1-1l-KoG" secondAttribute="centerY" id="9SO-OO-uVv"/>
+                            <constraint firstItem="0wx-jA-k7A" firstAttribute="centerX" secondItem="qD1-1l-KoG" secondAttribute="centerX" id="ndc-xf-qu3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qD1-1l-KoG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mastermind" id="3Lr-Am-Fj0"/>
@@ -81,7 +129,20 @@
                     <view key="view" contentMode="scaleToFill" id="orM-1u-bwu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xp-oV-h15">
+                                <rect key="frame" x="0.0" y="351" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9xp-oV-h15" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="6P4-Me-BIT"/>
+                            <constraint firstItem="9xp-oV-h15" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="YDO-8b-8g1"/>
+                            <constraint firstItem="9xp-oV-h15" firstAttribute="width" secondItem="iIp-2I-Ojt" secondAttribute="width" id="yM4-uW-phb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cards" id="4hU-hj-MvD"/>
@@ -117,6 +178,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.85474565797104629" blue="0.68910456633772188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="dmH-4p-fuU" kind="show" id="5si-5w-r6F"/>
                                         </connections>
@@ -157,6 +219,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.85474565797104629" blue="0.68910456633772188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="ZqM-0Y-De7" kind="show" id="EUT-ua-nOd"/>
                                         </connections>
@@ -177,6 +240,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.85474565797104629" blue="0.68910456633772188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="zfM-fA-7ak" kind="show" id="EcZ-xl-x7x"/>
                                         </connections>
@@ -188,7 +252,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="posti/quantita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zV2-gO-EIJ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mastermind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zV2-gO-EIJ">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -197,6 +261,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.85474565797104629" blue="0.68910456633772188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="2r2-3n-GME" kind="show" id="NzZ-jP-ZnF"/>
                                         </connections>
@@ -208,7 +273,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="human" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBv-L1-XiQ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Human" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBv-L1-XiQ">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -217,6 +282,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.85474565797104629" blue="0.68910456633772188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="7ts-SQ-Z6G" kind="show" id="Td5-sZ-MYP"/>
                                         </connections>
