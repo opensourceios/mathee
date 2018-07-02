@@ -272,8 +272,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="118" y="176" width="139" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
+                                <rect key="frame" x="0.0" y="176" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -303,6 +303,7 @@
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="7V7-KD-CsU" secondAttribute="bottom" constant="150" id="EmL-q9-JB5"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" id="bz7-H9-hqi"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" id="ekE-YA-MsX"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="g0X-lK-EFe"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="lrU-Og-3u9"/>
