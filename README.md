@@ -1,6 +1,6 @@
 # Guess My Number Fun (iOS)
 ‘Guess My Number Fun’ lets you:
-- ...under construction
+- iOS app. Under construction. Become a Beta Tester! Contact me via my website.
 - Found a bug? Want a feature? Check [TODO.md](TODO.md) to see if it's already in the queue. If it is not, let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 # How To Run
