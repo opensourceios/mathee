@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GMNF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gy-yP-bcV">
-                                <rect key="frame" x="163" y="333" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="7IS-Ea-NTj">
+                                <rect key="frame" x="137" y="-168.5" width="100" height="1024"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="JDp-ib-M8Y"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9gy-yP-bcV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gsp-pl-fyr"/>
-                            <constraint firstItem="9gy-yP-bcV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lSC-HJ-kGA"/>
+                            <constraint firstItem="7IS-Ea-NTj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bCS-Ul-Oq2"/>
+                            <constraint firstItem="7IS-Ea-NTj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uj6-jM-hgC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch" width="1024" height="1024"/>
+    </resources>
 </document>

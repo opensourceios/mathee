@@ -10,7 +10,6 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 
 # Developer notes:
 - Make available to iOS 11.x
-- Launchscreen
 - [?] move buttons from toolbar to view
 - Design
 - [?] Make games list win10 style
