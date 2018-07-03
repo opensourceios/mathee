@@ -1,12 +1,10 @@
 # Guess My Number Fun (iOS)
-‘Guess My Number Fun’ lets you:
-- iOS app. Under construction. Become a Beta Tester! Contact me via my website.
+- Under construction. Become a Beta Tester! Contact me via my website.
 - Found a bug? Want a feature? Check [TODO.md](TODO.md) to see if it's already in the queue. If it is not, let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 # How To Run
 - You need Xcode installed on your Computer (Xcode is available for Mac only).
 - Open `Guess My Number Fun.xcodeproj` in Xcode, click on the "play" button.
-
 
 # Dependencies
 - You will need Xcode (a program available as a free download. Only available on Macbook) to run this program.
@@ -20,6 +18,3 @@ Want to help? You can:
 
 # License
 Copyright © 2018 Dani Springer. All rights reserved.
-
-###### App Store Description
-...under construction

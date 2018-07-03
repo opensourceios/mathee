@@ -9,7 +9,7 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 ---------------------------------------------------------------------------------------------------------------
 
 # Developer notes:
+- Make available to iOS 11.x
 
 
-
-App store link:
+App store link: not live yet.
