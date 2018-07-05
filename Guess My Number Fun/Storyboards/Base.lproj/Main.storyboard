@@ -184,7 +184,7 @@ I will guess it in 12 tries or less.</string>
                         <sections>
                             <tableViewSection id="usd-TH-Pdn">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8z3-dY-n8n" style="IBUITableViewCellStyleDefault" id="SXA-1H-fxz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8z3-dY-n8n" style="IBUITableViewCellStyleDefault" id="SXA-1H-fxz">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SXA-1H-fxz" id="IST-Ju-QMW">
@@ -204,7 +204,7 @@ I will guess it in 12 tries or less.</string>
                                             <segue destination="dmH-4p-fuU" kind="show" id="5si-5w-r6F"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="970-dd-r89" style="IBUITableViewCellStyleDefault" id="ODg-7q-7nm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="970-dd-r89" style="IBUITableViewCellStyleDefault" id="ODg-7q-7nm">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ODg-7q-7nm" id="8jD-5a-h9s">
@@ -224,7 +224,7 @@ I will guess it in 12 tries or less.</string>
                                             <segue destination="eiL-1S-xct" kind="show" id="Exv-4A-7PG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="88v-xB-8Pd" style="IBUITableViewCellStyleDefault" id="N4o-IC-YDt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="88v-xB-8Pd" style="IBUITableViewCellStyleDefault" id="N4o-IC-YDt">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4o-IC-YDt" id="X0W-2x-8V3">
@@ -244,7 +244,7 @@ I will guess it in 12 tries or less.</string>
                                             <segue destination="ZqM-0Y-De7" kind="show" id="EUT-ua-nOd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="rb8-Fu-BzL" style="IBUITableViewCellStyleDefault" id="lpm-Ly-3tS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="rb8-Fu-BzL" style="IBUITableViewCellStyleDefault" id="lpm-Ly-3tS">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lpm-Ly-3tS" id="bxN-H2-Vcq">
