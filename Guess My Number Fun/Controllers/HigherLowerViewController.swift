@@ -34,6 +34,17 @@ class HigherLowerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .normal)
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
         guessLabel.isHidden = true
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextGuess))

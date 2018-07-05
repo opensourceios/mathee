@@ -90,6 +90,17 @@ class PagesViewController: UIViewController {
         
         resultLabel.isHidden = true
         
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .normal)
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                        forToolbarPosition: .any,
+                                        barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
         for page in pagesArrayOfDicts {
             arrayOfPages.append(Page(key: page.key, value: page.value))
         }
@@ -105,7 +116,7 @@ class PagesViewController: UIViewController {
         pageNumberLabel.text = "Think of a number 1-63"
         pageContentLabel.text = ""
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(showNextPage))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextPage))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
         

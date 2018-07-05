@@ -35,6 +35,16 @@ class DTDTViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .normal)
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
         myTextField.isHidden = true
         myTextField.borderStyle = .roundedRect
@@ -43,6 +53,7 @@ class DTDTViewController: UIViewController {
         resultLabel.isHidden = true
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
+        messageLabel.sizeToFit()
         messageLabel.text = "Think of a number"
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
@@ -117,7 +128,7 @@ class DTDTViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        messageLabel.text = "What is your current result?"
+        messageLabel.text = "" // empty so user doesn't see disappearing text
         myTextField.isHidden = false
         myTextField.becomeFirstResponder()
     }

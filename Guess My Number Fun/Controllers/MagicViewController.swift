@@ -28,6 +28,17 @@ class MagicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .normal)
+        
+        myToolbar.setBackgroundImage(UIImage(),
+                                     forToolbarPosition: .any,
+                                     barMetrics: .default)
+        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(play))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)

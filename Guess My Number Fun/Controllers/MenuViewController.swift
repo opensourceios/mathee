@@ -41,6 +41,10 @@ class MenuViewController: UITableViewController {
         
         tableView.separatorColor = UIColor.clear
         
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

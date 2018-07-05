@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Higher Lower-->
+        <!--👆👇-->
         <scene sceneID="dsc-iX-nMI">
             <objects>
                 <viewController id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,27 +18,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-JF-uXf">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="W2q-Lg-Ax6"/>
+                                </constraints>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-o1-6LC">
-                                <rect key="frame" x="16" y="138" width="288" height="101.5"/>
+                                <rect key="frame" x="16" y="138" width="288" height="239"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="CbC-HV-pQd"/>
                                 </constraints>
                                 <string key="text">Think of a number that is 👆 than 0, and 👇 than 2000.
 After each try, tell me whether to go 👆 or 👇, or if I 🎉!
 I will guess it in 12 tries or less.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it N?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="306.5" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="301.5" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="KKX-dq-gz5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,7 +58,7 @@ I will guess it in 12 tries or less.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Higher Lower" id="oXZ-fp-eKa"/>
+                    <navigationItem key="navigationItem" title="👆👇" id="oXZ-fp-eKa"/>
                     <connections>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
                         <outlet property="headerLabel" destination="aWT-o1-6LC" id="X0k-1r-7FY"/>
@@ -75,15 +78,18 @@ I will guess it in 12 tries or less.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-WR-wMI">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LFD-oJ-wux"/>
+                                </constraints>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="306" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="301" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="zda-dB-03F"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -117,30 +123,30 @@ I will guess it in 12 tries or less.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-oO-AVP">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NrV-2e-HZP"/>
+                                </constraints>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="16" y="166" width="288" height="300"/>
+                                <rect key="frame" x="16" y="216" width="288" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="8Yb-fc-frz"/>
+                                    <constraint firstAttribute="height" constant="200" id="8Yb-fc-frz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="114.5" width="288" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20.5" id="fQX-g2-cy2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
+                                <rect key="frame" x="127" y="301" width="67.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="119.5" y="298" width="81" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in card number whatever?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
+                                <rect key="frame" x="0.0" y="87" width="320" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -148,14 +154,14 @@ I will guess it in 12 tries or less.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7lz-1e-Sfr" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" constant="-32" id="0iF-CC-fE3"/>
-                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="bottom" constant="31" id="1M1-a8-mHP"/>
-                            <constraint firstItem="7y7-oO-AVP" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="1oe-q8-PsK"/>
                             <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="4pA-Ch-WpV"/>
-                            <constraint firstItem="GrR-lf-ak1" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" constant="-32" id="LJ4-tZ-yjZ"/>
+                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="top" constant="-23" id="5w7-AS-YvM"/>
+                            <constraint firstItem="7y7-oO-AVP" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="BFC-bt-0QG"/>
+                            <constraint firstItem="GrR-lf-ak1" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" id="LJ4-tZ-yjZ"/>
+                            <constraint firstItem="7y7-oO-AVP" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" id="M4Q-bD-6uk"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="7y7-oO-AVP" secondAttribute="bottom" id="PSU-6c-NZK"/>
                             <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="SWC-ZT-bww"/>
                             <constraint firstItem="7lz-1e-Sfr" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="hhw-Ne-Srt"/>
-                            <constraint firstItem="7y7-oO-AVP" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" id="iqU-KN-HKH"/>
                             <constraint firstItem="GrR-lf-ak1" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="u6G-VD-SE2"/>
                             <constraint firstItem="7lz-1e-Sfr" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="z3u-Gr-vHK"/>
                         </constraints>
@@ -173,7 +179,7 @@ I will guess it in 12 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="977" y="-218"/>
         </scene>
-        <!--Games-->
+        <!--🏠-->
         <scene sceneID="eaI-7J-Bfj">
             <objects>
                 <tableViewController id="uHF-ZG-JPS" customClass="MenuViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,7 +197,7 @@ I will guess it in 12 tries or less.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="📗" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8z3-dY-n8n" userLabel="Pages">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="📗" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8z3-dY-n8n" userLabel="Pages">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -211,7 +217,7 @@ I will guess it in 12 tries or less.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="✖️➗➕➖" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="970-dd-r89">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="✖️➗➕➖" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="970-dd-r89">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -231,7 +237,7 @@ I will guess it in 12 tries or less.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="👆👇" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="88v-xB-8Pd">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="👆👇" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="88v-xB-8Pd">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -251,7 +257,7 @@ I will guess it in 12 tries or less.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="🕘" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rb8-Fu-BzL">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="🕘" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rb8-Fu-BzL">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -272,7 +278,7 @@ I will guess it in 12 tries or less.</string>
                             <outlet property="delegate" destination="uHF-ZG-JPS" id="9Mw-4I-cUW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Games" id="HBH-cb-yrq"/>
+                    <navigationItem key="navigationItem" title="🏠" id="HBH-cb-yrq"/>
                     <connections>
                         <outlet property="myTableView" destination="dDI-T7-da8" id="rXo-Wb-qxO"/>
                     </connections>
@@ -306,23 +312,26 @@ I will guess it in 12 tries or less.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-50-WSp">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AHC-P3-HKa"/>
+                                </constraints>
                                 <items/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter result" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="105.5" y="328" width="109" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your current result" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
+                                <rect key="frame" x="46.5" y="328" width="228" height="40"/>
                                 <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="MD4-Nu-QlR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="MD4-Nu-QlR"/>
                                     <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="0.0" y="176" width="320" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="176" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -331,7 +340,7 @@ I will guess it in 12 tries or less.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="6DU-4h-UhG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -343,7 +352,7 @@ I will guess it in 12 tries or less.</string>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="ATk-Fx-J3i"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" id="bz7-H9-hqi"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" id="ekE-YA-MsX"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="ekE-YA-MsX"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="g0X-lK-EFe"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="lrU-Og-3u9"/>
@@ -362,7 +371,7 @@ I will guess it in 12 tries or less.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="682"/>
+            <point key="canvasLocation" x="976.875" y="681.33802816901414"/>
         </scene>
     </scenes>
 </document>
