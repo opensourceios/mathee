@@ -224,7 +224,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.85474565797104629" blue="0.68910456633772188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="dmH-4p-fuU" kind="show" id="5si-5w-r6F"/>
                                         </connections>
