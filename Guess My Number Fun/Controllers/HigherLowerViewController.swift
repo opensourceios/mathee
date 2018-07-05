@@ -15,7 +15,6 @@ class HigherLowerViewController: UIViewController {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var guessLabel: UILabel!
-    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
@@ -27,6 +26,7 @@ class HigherLowerViewController: UIViewController {
     var guess = 0
     var diff = 0
     var half_diff = 0
+    var tries = 0
     
     
     // MARK: Life Cycle
@@ -34,10 +34,9 @@ class HigherLowerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton.isHidden = true
         guessLabel.isHidden = true
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(showNextGuess))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextGuess))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -58,31 +57,48 @@ class HigherLowerViewController: UIViewController {
         
         let lowerButton = UIBarButtonItem(title: "👇", style: .plain, target: self, action: #selector(lower))
         let higherButton = UIBarButtonItem(title: "👆", style: .plain, target: self, action: #selector(higher))
-        let yesButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(correct))
+        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(correct))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
     }
     
     @objc func lower() {
+        tries += 1
         high = guess
         showNextGuess()
     }
     
     @objc func higher() {
+        tries += 1
         low = guess
         showNextGuess()
     }
     
     @objc func correct() {
-        print("Correct!")
-        myToolbar.isHidden = true
-        guessLabel.text = "\(guess)... Nice choice!"
-        doneButton.isHidden = false
+
+        if tries == 0 {
+            guessLabel.text = "\(guess)... Easy peasy lemon squeezy. It took me no tries at all!"
+
+        } else if tries == 1 {
+            guessLabel.text = "\(guess)... That was easy. It took me just one try!"
+        } else if tries < 4 {
+            guessLabel.text = "\(guess)... Not too hard. It only took me \(tries) tries!"
+        } else if tries < 9 {
+            guessLabel.text = "\(guess)... Pretty, pretty, pretty good! That took me no less than \(tries) tries!"
+        } else if tries < 12 {
+            guessLabel.text = "\(guess)... Phew, that was close! \(tries) tries no less!"
+        } else {
+            guessLabel.text = "\(guess)... \(tries) tries! You won. You're a champion! (Please let the developer know with what number you got here! 🏆)"
+        }
+        
+        let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, doneButton, space], animated: true)
     }
     
     // MARK: Action
     
-    @IBAction func doneButtonPressed(_ sender: Any) {
+    @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
     }
     

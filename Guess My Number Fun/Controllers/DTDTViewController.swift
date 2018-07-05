@@ -17,7 +17,6 @@ class DTDTViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
-    @IBOutlet weak var doneButton: UIButton!
     
     // MARK: Properties
     
@@ -36,7 +35,6 @@ class DTDTViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton.isHidden = true
         
         myTextField.isHidden = true
         myTextField.borderStyle = .roundedRect
@@ -47,7 +45,7 @@ class DTDTViewController: UIViewController {
         messageLabel.lineBreakMode = .byWordWrapping
         messageLabel.text = "Think of a number"
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(timesThree))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -61,7 +59,7 @@ class DTDTViewController: UIViewController {
     @objc func timesThree() {
         // tell user to multiply by 3
         messageLabel.text = "Multiply it by 3"
-        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(oddOrEven))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(oddOrEven))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -78,7 +76,7 @@ class DTDTViewController: UIViewController {
     @objc func addOne() {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
-        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(divideByTwo))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(divideByTwo))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
         
@@ -96,10 +94,10 @@ class DTDTViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
         if isFirstEvenQuestion {
-            okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(timesThree))
+            okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
             isFirstEvenQuestion = false
         } else {
-            okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(divideByNine))
+            okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(divideByNine))
         }
         
         myToolbar.setItems([space, okButton], animated: true)
@@ -108,14 +106,14 @@ class DTDTViewController: UIViewController {
     @objc func divideByNine() {
         // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, leaving out any remainder"
-        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(askResult))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(askResult))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
     
     @objc func askResult() {
         // ask current result to user
-        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(okButtonKeyboardPressed))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(okButtonKeyboardPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
@@ -167,8 +165,10 @@ class DTDTViewController: UIViewController {
         messageLabel.text = "You thought:"
         resultLabel.isHidden = false
         resultLabel.text = "\(total)"
-        doneButton.isHidden = false
         
+        let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, doneButton, space], animated: true)
     }
     
     @objc func okButtonKeyboardPressed() {
@@ -177,7 +177,7 @@ class DTDTViewController: UIViewController {
     }
     
     
-    @IBAction func doneButtonPressed(_ sender: Any) {
+    @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
     }
     

@@ -16,7 +16,6 @@ class PagesViewController: UIViewController {
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageContentLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
@@ -90,7 +89,6 @@ class PagesViewController: UIViewController {
         super.viewDidLoad()
         
         resultLabel.isHidden = true
-        doneButton.isHidden = true
         
         for page in pagesArrayOfDicts {
             arrayOfPages.append(Page(key: page.key, value: page.value))
@@ -125,8 +123,8 @@ class PagesViewController: UIViewController {
         pageNumberLabel.text = "Is your number in page #\(currentPageFake)?"
         pageContentLabel.text = "\(shuffledPagesByOrder[currentPageReal].value)"
         
-        let yesButton = UIBarButtonItem(title: "Yes", style: .plain, target: self, action: #selector(addValue))
-        let noButton = UIBarButtonItem(title: "No", style: .plain, target: self, action: #selector(dontAddValue))
+        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(addValue))
+        let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(dontAddValue))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([yesButton, space, noButton], animated: true)
         
@@ -149,16 +147,18 @@ class PagesViewController: UIViewController {
     @objc func showResult() {
         
         pageContentLabel.text = ""
-        myToolbar.isHidden = true
         pageNumberLabel.text = "You thought:"
         resultLabel.text = "\(userNumber)"
         resultLabel.isHidden = false
-        doneButton.isHidden = false
+        
+        let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, doneButton, space], animated: true)
     }
     
     // MARK: Actions
     
-    @IBAction func doneButtonPressed(_ sender: Any) {
+    @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
     }
     

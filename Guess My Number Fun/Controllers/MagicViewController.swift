@@ -28,7 +28,7 @@ class MagicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(play))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(play))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -39,7 +39,7 @@ class MagicViewController: UIViewController {
     @objc func play() {
         headerLabel.text = "Add 10"
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(combineInitial))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(combineInitial))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -48,7 +48,7 @@ class MagicViewController: UIViewController {
     @objc func combineInitial() {
         headerLabel.text = "Combine the result's digits. For example, if your number is now 214, do 2 + 1 + 4, and you have a new result of 7."
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(subtract))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(subtract))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -57,7 +57,7 @@ class MagicViewController: UIViewController {
     @objc func subtract() {
         headerLabel.text = "Subtract the new result from the old one. For example, if you had 214 and got 7, do 214 - 7, and you have a new result of 207."
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(check))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(check))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -65,8 +65,8 @@ class MagicViewController: UIViewController {
     
     @objc func check() {
         headerLabel.text = "Is the result a single digit?"
-        let yesButton = UIBarButtonItem(title: "Yes", style: .plain, target: self, action: #selector(showResult))
-        let noButton = UIBarButtonItem(title: "No", style: .plain, target: self, action: #selector(combineRepeated))
+        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResult))
+        let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineRepeated))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([yesButton, space, noButton], animated: true)
     }
@@ -75,7 +75,7 @@ class MagicViewController: UIViewController {
     @objc func combineRepeated() {
         headerLabel.text = "Combine the result's digits. For example, if your number is now 214, do 2 + 1 + 4, and you have a new result of 7."
         
-        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(check))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(check))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
