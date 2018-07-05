@@ -1,5 +1,5 @@
 //
-//  CardsViewController.swift
+//  PagesViewController.swift
 //  Guess My Number Fun
 //
 //  Created by Dani Springer on 04/07/2018.
@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class CardsViewController: UIViewController {
+class PagesViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var cardNumberLabel: UILabel!
-    @IBOutlet weak var cardContentLabel: UILabel!
+    @IBOutlet weak var pageNumberLabel: UILabel!
+    @IBOutlet weak var pageContentLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var myToolbar: UIToolbar!
@@ -22,12 +22,12 @@ class CardsViewController: UIViewController {
     
     // MARK: Properties
     
-    struct Card {
+    struct Page {
         let key: Int
         let value: [Int]
     }
     
-    let cardsArrayOfDicts = [
+    let pagesArrayOfDicts = [
         1: [1, 3, 5, 7, 9, 11,
          13, 15, 17, 19, 21, 23,
          25, 27, 29, 31, 33, 35,
@@ -65,11 +65,11 @@ class CardsViewController: UIViewController {
          56, 57, 58, 59, 60, 61,
          62, 63]]
     
-    var arrayOfCards = [Card]()
+    var arrayOfPages = [Page]()
     
-    var shuffledCardsByContent = [Card]()
+    var shuffledPagesByContent = [Page]()
     
-    var shuffledCardsByOrder = [Card]()
+    var shuffledPagesByOrder = [Page]()
     
     var userNumber = 0
     
@@ -81,8 +81,8 @@ class CardsViewController: UIViewController {
     
     var userSelection = "nil"
     
-    var currentCardFake = 1
-    var currentCardReal = 0
+    var currentPageFake = 1
+    var currentPageReal = 0
     
     // MARK: Life Cycle
     
@@ -92,23 +92,22 @@ class CardsViewController: UIViewController {
         resultLabel.isHidden = true
         doneButton.isHidden = true
         
-        for card in cardsArrayOfDicts {
-            arrayOfCards.append(Card(key: card.key, value: card.value))
+        for page in pagesArrayOfDicts {
+            arrayOfPages.append(Page(key: page.key, value: page.value))
         }
         
-        for card in arrayOfCards {
-            let shuffledCardContent = card.value.shuffled()
-            shuffledCardsByContent.append(Card(key: card.key, value: shuffledCardContent))
+        for page in arrayOfPages {
+            let shuffledPageContent = page.value.shuffled()
+            shuffledPagesByContent.append(Page(key: page.key, value: shuffledPageContent))
         }
         
-        shuffledCardsByOrder = shuffledCardsByContent.shuffled()
+        shuffledPagesByOrder = shuffledPagesByContent.shuffled()
         
         
-        cardNumberLabel.text = "Think of a number 1-63"
-        cardContentLabel.text = ""
+        pageNumberLabel.text = "Think of a number 1-63"
+        pageContentLabel.text = ""
         
-        // TODO OK
-        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(showNextCard))
+        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(showNextPage))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
         
@@ -118,13 +117,13 @@ class CardsViewController: UIViewController {
     // Helpers
     
     
-    @objc func showNextCard() {
-        if currentCardFake > shuffledCardsByOrder.count {
+    @objc func showNextPage() {
+        if currentPageFake > shuffledPagesByOrder.count {
             showResult()
             return
         }
-        cardNumberLabel.text = "Is your number in card #\(currentCardFake)?"
-        cardContentLabel.text = "\(shuffledCardsByOrder[currentCardReal].value)"
+        pageNumberLabel.text = "Is your number in page #\(currentPageFake)?"
+        pageContentLabel.text = "\(shuffledPagesByOrder[currentPageReal].value)"
         
         let yesButton = UIBarButtonItem(title: "Yes", style: .plain, target: self, action: #selector(addValue))
         let noButton = UIBarButtonItem(title: "No", style: .plain, target: self, action: #selector(dontAddValue))
@@ -135,23 +134,23 @@ class CardsViewController: UIViewController {
     
     @objc func addValue() {
         // add value
-        userNumber += shuffledCardsByOrder[currentCardReal].key
-        currentCardFake += 1
-        currentCardReal += 1
-        showNextCard()
+        userNumber += shuffledPagesByOrder[currentPageReal].key
+        currentPageFake += 1
+        currentPageReal += 1
+        showNextPage()
     }
     
     @objc func dontAddValue() {
-        currentCardFake += 1
-        currentCardReal += 1
-        showNextCard()
+        currentPageFake += 1
+        currentPageReal += 1
+        showNextPage()
     }
     
     @objc func showResult() {
         
-        cardContentLabel.text = ""
+        pageContentLabel.text = ""
         myToolbar.isHidden = true
-        cardNumberLabel.text = "You thought:"
+        pageNumberLabel.text = "You thought:"
         resultLabel.text = "\(userNumber)"
         resultLabel.isHidden = false
         doneButton.isHidden = false
@@ -165,17 +164,4 @@ class CardsViewController: UIViewController {
     
 }
 
-//            // show alert
-//
-//            let myAlert = UIAlertController(title: "Is your number in card #\(currentCard)?", message: "\(card)", preferredStyle: .alert)
-//            let yesOption = UIAlertAction(title: "Yes", style: .default, handler: {action in
-//                self.addValue()
-//            })
-//            let noOption = UIAlertAction(title: "No", style: .default, handler: nil)
-//            myAlert.addAction(yesOption)
-//            myAlert.addAction(noOption)
-//
-//            DispatchQueue.main.async {
-//                self.present(myAlert, animated: true)
-//
-//            }
+

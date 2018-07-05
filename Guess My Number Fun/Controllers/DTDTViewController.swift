@@ -47,7 +47,7 @@ class DTDTViewController: UIViewController {
         messageLabel.lineBreakMode = .byWordWrapping
         messageLabel.text = "Think of a number"
         
-        let okButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(timesThree))
+        let okButton = UIBarButtonItem(title: "👌", style: .plain, target: self, action: #selector(timesThree))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
