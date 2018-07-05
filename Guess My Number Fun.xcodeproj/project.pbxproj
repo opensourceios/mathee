@@ -13,6 +13,8 @@
 		3319089520E87731007C679C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3319089420E87731007C679C /* Assets.xcassets */; };
 		3319089820E87731007C679C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3319089620E87731007C679C /* LaunchScreen.storyboard */; };
 		3340755A20E8CA2500EFDAA9 /* DTDTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */; };
+		3354BA0520EC999600EF1ED4 /* ShuffledExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3354BA0420EC999600EF1ED4 /* ShuffledExtenstion.swift */; };
+		33568B7720EC96B300690825 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33568B7620EC96B300690825 /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3319089720E87731007C679C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3319089920E87731007C679C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTDTViewController.swift; sourceTree = "<group>"; };
+		3354BA0420EC999600EF1ED4 /* ShuffledExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffledExtenstion.swift; sourceTree = "<group>"; };
+		33568B7620EC96B300690825 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				3319088F20E8772E007C679C /* MenuViewController.swift */,
 				3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */,
+				33568B7620EC96B300690825 /* CardsViewController.swift */,
+				3354BA0420EC999600EF1ED4 /* ShuffledExtenstion.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33568B7720EC96B300690825 /* CardsViewController.swift in Sources */,
 				3319089020E8772E007C679C /* MenuViewController.swift in Sources */,
+				3354BA0520EC999600EF1ED4 /* ShuffledExtenstion.swift in Sources */,
 				3319088E20E8772E007C679C /* AppDelegate.swift in Sources */,
 				3340755A20E8CA2500EFDAA9 /* DTDTViewController.swift in Sources */,
 			);
