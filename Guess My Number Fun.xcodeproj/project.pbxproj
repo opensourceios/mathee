@@ -16,6 +16,7 @@
 		33568B7720EC96B300690825 /* PagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33568B7620EC96B300690825 /* PagesViewController.swift */; };
 		33B727FB20EDC68800AF338A /* HigherLowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */; };
 		33B9FDC720EDDA8200131038 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9FDC620EDDA8200131038 /* MenuViewController.swift */; };
+		33B9FDC920EDFC1500131038 /* MagicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9FDC820EDFC1500131038 /* MagicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		33568B7620EC96B300690825 /* PagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewController.swift; sourceTree = "<group>"; };
 		33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HigherLowerViewController.swift; sourceTree = "<group>"; };
 		33B9FDC620EDDA8200131038 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		33B9FDC820EDFC1500131038 /* MagicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,9 @@
 				33B9FDC620EDDA8200131038 /* MenuViewController.swift */,
 				33568B7620EC96B300690825 /* PagesViewController.swift */,
 				3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */,
-				3354BA0420EC999600EF1ED4 /* ShuffledExtenstion.swift */,
 				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
+				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
+				3354BA0420EC999600EF1ED4 /* ShuffledExtenstion.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			files = (
 				33568B7720EC96B300690825 /* PagesViewController.swift in Sources */,
 				33B9FDC720EDDA8200131038 /* MenuViewController.swift in Sources */,
+				33B9FDC920EDFC1500131038 /* MagicViewController.swift in Sources */,
 				33B727FB20EDC68800AF338A /* HigherLowerViewController.swift in Sources */,
 				3354BA0520EC999600EF1ED4 /* ShuffledExtenstion.swift in Sources */,
 				3319088E20E8772E007C679C /* AppDelegate.swift in Sources */,

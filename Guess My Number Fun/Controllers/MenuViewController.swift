@@ -27,9 +27,7 @@ class MenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,12 +39,14 @@ class MenuViewController: UITableViewController {
         
         height = view.frame.height - navHeight! - statusBarHeight
         
+        tableView.separatorColor = UIColor.clear
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        myTableView.reloadData()
+        
     }
     
     // Helpers
@@ -54,5 +54,6 @@ class MenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return height / rowCount
     }
+    
     
 }
