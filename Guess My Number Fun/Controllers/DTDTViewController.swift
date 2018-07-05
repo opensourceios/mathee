@@ -46,6 +46,8 @@ class DTDTViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
+        
+        
         myTextField.isHidden = true
         myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
@@ -79,6 +81,17 @@ class DTDTViewController: UIViewController {
         messageLabel.text = "Is the result odd or even?"
         let oddButton = UIBarButtonItem(title: "Odd", style: .plain, target: self, action: #selector(addOne))
         let evenButton = UIBarButtonItem(title: "Even", style: .plain, target: self, action: #selector(divideByTwo))
+        
+        oddButton.setTitleTextAttributes([
+            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedStringKey.foregroundColor: view.tintColor],
+                                          for: .normal)
+        evenButton.setTitleTextAttributes([
+            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedStringKey.foregroundColor: view.tintColor],
+                                         for: .normal)
+
+        
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([oddButton, space, evenButton], animated: true)
     }
