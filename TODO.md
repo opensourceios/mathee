@@ -9,12 +9,10 @@ Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.
 ---------------------------------------------------------------------------------------------------------------
 
 # Developer notes:
-- BG Colors?
-- Nice font
 - "Pages" design:
   - make single digits take up 2 spaces
-  - Add "page-like" (pergamena?) background
   - [?] Remove "[" and "]"
+  - Add "page-like" (pergamena?) background
 
 
 App store link: not live yet.
