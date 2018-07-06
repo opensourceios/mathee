@@ -74,16 +74,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.textLabel?.text = cellsContent[(indexPath as NSIndexPath).row]
         
-        var fontSize = CGFloat(0)
-        if (self.view.frame.size.width > self.view.frame.size.height) {
-            print("Hello Landscape")
-            fontSize = 30
-        } else {
-            print("Hello Portrait")
-            fontSize = 50
-        }
-        
-        cell.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 60)
         
         return cell
     }
@@ -100,16 +91,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         print("heightForRowAt called")
 
-        var fontSize = CGFloat(0)
-        if (self.view.frame.size.width > self.view.frame.size.height) {
-            print("Hello Landscape")
-            fontSize = 30
-        } else {
-            print("Hello Portrait")
-            fontSize = 50
-        }
-        
-        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        updateRowHeight(indexPath: indexPath)
         
         //myTableView.visibleCells[(indexPath as NSIndexPath).row].textLabel?.font = UIFont.systemFont(ofSize: fontSize)
         
@@ -118,6 +100,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         height = view.frame.height - navHeight! - statusBarHeight
         return height / rowCount
+    }
+    
+    func updateRowHeight(indexPath: IndexPath) {
+        
+        var fontSize = CGFloat(0)
+        if (self.view.frame.size.width > self.view.frame.size.height) {
+            print("Hello Landscape")
+            fontSize = 30
+        } else {
+            print("Hello Portrait")
+            fontSize = 60
+        }
+        
+        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
     }
     
     
