@@ -25,13 +25,13 @@
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it N?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="300" width="288" height="32"/>
+                                <rect key="frame" x="16" y="278" width="288" height="32"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-o1-6LC">
-                                <rect key="frame" x="16" y="91" width="288" height="253"/>
+                                <rect key="frame" x="16" y="47" width="288" height="253"/>
                                 <string key="text">Think of a number that is 👆 than 0, and 👇 than 2000.
 After each try, tell me whether to go 👆 or 👇, or if I 🎉!
 I will guess it in 12 tries or less.</string>
@@ -81,7 +81,7 @@ I will guess it in 12 tries or less.</string>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="278.5" width="288" height="76"/>
+                                <rect key="frame" x="16" y="256" width="288" height="76"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@ I will guess it in 12 tries or less.</string>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="20" y="216" width="280.5" height="200"/>
+                                <rect key="frame" x="20" y="194" width="280.5" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="8Yb-fc-frz"/>
                                 </constraints>
@@ -133,13 +133,13 @@ I will guess it in 12 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="108" y="297" width="104" height="38"/>
+                                <rect key="frame" x="108" y="275" width="104" height="38"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in card number whatever?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="87" width="288" height="114"/>
+                                <rect key="frame" x="16" y="43" width="288" height="114"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -173,114 +173,6 @@ I will guess it in 12 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="976.875" y="-218.66197183098592"/>
         </scene>
-        <!--🏠-->
-        <scene sceneID="eaI-7J-Bfj">
-            <objects>
-                <tableViewController id="uHF-ZG-JPS" customClass="MenuViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dDI-T7-da8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="usd-TH-Pdn">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8z3-dY-n8n" style="IBUITableViewCellStyleDefault" id="SXA-1H-fxz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SXA-1H-fxz" id="IST-Ju-QMW">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="📗" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8z3-dY-n8n" userLabel="Pages">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="dmH-4p-fuU" kind="show" id="5si-5w-r6F"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="970-dd-r89" style="IBUITableViewCellStyleDefault" id="ODg-7q-7nm">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ODg-7q-7nm" id="8jD-5a-h9s">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="✖️➗➕➖" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="970-dd-r89">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="eiL-1S-xct" kind="show" id="Exv-4A-7PG"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="88v-xB-8Pd" style="IBUITableViewCellStyleDefault" id="N4o-IC-YDt">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4o-IC-YDt" id="X0W-2x-8V3">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="👆👇" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="88v-xB-8Pd">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="ZqM-0Y-De7" kind="show" id="EUT-ua-nOd"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="rb8-Fu-BzL" style="IBUITableViewCellStyleDefault" id="lpm-Ly-3tS">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lpm-Ly-3tS" id="bxN-H2-Vcq">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="🕘" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rb8-Fu-BzL">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zfM-fA-7ak" kind="show" id="EcZ-xl-x7x"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="uHF-ZG-JPS" id="KIm-cp-Qzg"/>
-                            <outlet property="delegate" destination="uHF-ZG-JPS" id="9Mw-4I-cUW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="🏠" id="HBH-cb-yrq"/>
-                    <connections>
-                        <outlet property="myTableView" destination="dDI-T7-da8" id="rXo-Wb-qxO"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FO5-9Z-Lxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-101" y="683"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zER-nb-Vkj">
             <objects>
@@ -290,12 +182,66 @@ I will guess it in 12 tries or less.</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="uHF-ZG-JPS" kind="relationship" relationship="rootViewController" id="xMn-Yc-8WD"/>
+                        <segue destination="OWD-6W-keU" kind="relationship" relationship="rootViewController" id="MQD-u9-U9J"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kov-HE-T4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1090" y="682"/>
+        </scene>
+        <!--🏠-->
+        <scene sceneID="YHt-e1-nQZ">
+            <objects>
+                <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c72-1O-ChN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="MTh-De-CvF" style="IBUITableViewCellStyleDefault" id="9Tx-0d-iVw">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTh-De-CvF">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OWD-6W-keU" id="C7m-r2-jKE"/>
+                                    <outlet property="delegate" destination="OWD-6W-keU" id="Qhc-4g-lHx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="leading" secondItem="27d-DW-fze" secondAttribute="leading" id="4xo-Re-BU1"/>
+                            <constraint firstItem="27d-DW-fze" firstAttribute="trailing" secondItem="bSL-S2-mJ9" secondAttribute="trailing" id="HZu-cS-BU5"/>
+                            <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" id="jI2-iQ-jMB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="🏠" id="bIQ-V8-dG6"/>
+                    <connections>
+                        <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-fe-gN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="681"/>
         </scene>
         <!--✖️➗➕➖-->
         <scene sceneID="6hM-0P-CsD">
@@ -323,13 +269,13 @@ I will guess it in 12 tries or less.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="176" width="288" height="76"/>
+                                <rect key="frame" x="16" y="154" width="288" height="76"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-q2-c5f">
-                                <rect key="frame" x="16" y="216" width="288" height="200"/>
+                                <rect key="frame" x="16" y="194" width="288" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="6DU-4h-UhG"/>
                                 </constraints>
