@@ -79,13 +79,27 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let info = memeList[(indexPath as NSIndexPath).row]
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let detailVC = storyboard.instantiateViewController(withIdentifier: "MemeDetail") as! MemeDetailViewController
-//        detailVC.preLoadImage = info.alteredImage
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        switch indexPath.row {
+        case 0:
+            let controller = storyboard.instantiateViewController(withIdentifier: "PagesViewController") as! PagesViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        case 1:
+            let controller = storyboard.instantiateViewController(withIdentifier: "DTDTViewController") as! DTDTViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        case 2:
+            let controller = storyboard.instantiateViewController(withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        case 3:
+            let controller = storyboard.instantiateViewController(withIdentifier: "MagicViewController") as! MagicViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        default:
+            print("An error has occured!")
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
