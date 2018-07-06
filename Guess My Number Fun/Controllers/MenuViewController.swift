@@ -23,6 +23,7 @@ class MenuViewController: UITableViewController {
     let rowCount = CGFloat(4)
     var height = CGFloat(0)
     
+    
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -33,6 +34,11 @@ class MenuViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        NotificationCenter.default.addObserver(self.myTableView,
+                                               selector: #selector(myTableView.reloadData),
+                                               name: .UIContentSizeCategoryDidChange,
+                                               object: nil)
+
         
         let navHeight = navigationController?.navigationBar.frame.height
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -47,17 +53,22 @@ class MenuViewController: UITableViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        
+        NotificationCenter.default.removeObserver(self.tableView, name: .UIContentSizeCategoryDidChange, object: nil)
     }
     
     // Helpers
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let navHeight = navigationController?.navigationBar.frame.height
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
+        height = view.frame.height - navHeight! - statusBarHeight
         return height / rowCount
     }
-    
     
 }
