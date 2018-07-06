@@ -51,6 +51,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        if let selectedRow = myTableView.indexPathForSelectedRow {
+        myTableView.deselectRow(at: selectedRow, animated: true)
+        }
+        
     }
     
     
@@ -69,7 +73,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cellForRowAt called")
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell")!
         
         cell.textLabel?.text = cellsContent[(indexPath as NSIndexPath).row]
@@ -103,7 +107,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("heightForRowAt called")
 
         updateRowHeight(indexPath: indexPath)
         
@@ -120,10 +123,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         var fontSize = CGFloat(0)
         if (self.view.frame.size.width > self.view.frame.size.height) {
-            print("Hello Landscape")
-            fontSize = 30
+            fontSize = 40
         } else {
-            print("Hello Portrait")
             fontSize = 60
         }
         
