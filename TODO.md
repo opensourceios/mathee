@@ -9,8 +9,6 @@
 ###### Developer notes:
 - [?] s.png
 - "Pages" design:
-  - make single digits take up 2 spaces
-  - [?] Remove "[" and "]"
   - [?] Add "page-like" (pergamena?) background
 
 
