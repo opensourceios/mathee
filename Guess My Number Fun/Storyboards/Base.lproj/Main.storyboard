@@ -162,7 +162,7 @@ Have a question?</string>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jzY-JN-zAu"/>
-                                    <barButtonItem title="Version 0.2" id="auH-SH-sFT">
+                                    <barButtonItem title="Version 1.0" id="auH-SH-sFT">
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IVh-Fb-DrU"/>
