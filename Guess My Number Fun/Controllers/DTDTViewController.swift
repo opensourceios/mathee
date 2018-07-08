@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 class DTDTViewController: UIViewController {
     
@@ -201,6 +202,9 @@ class DTDTViewController: UIViewController {
     
     
     @objc func doneButtonPressed() {
+        
+        SKStoreReviewController.requestReview()
+        
         navigationController?.popToRootViewController(animated: true)
     }
     

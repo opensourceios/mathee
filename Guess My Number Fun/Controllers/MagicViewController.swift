@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 class MagicViewController: UIViewController {
     
@@ -100,6 +101,9 @@ class MagicViewController: UIViewController {
     }
     
     @objc func done() {
+        
+        SKStoreReviewController.requestReview()
+        
         navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MessageUI
 
 class AboutViewController: UIViewController {
     
@@ -78,9 +79,6 @@ class AboutViewController: UIViewController {
     }
 }
 
-import UIKit
-import MessageUI
-
 extension AboutViewController: MFMailComposeViewControllerDelegate {
     
     @IBAction func launchEmail(sender: AnyObject) {
@@ -113,5 +111,19 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
             }
             self.present(alert, animated: true)
         })
+    }
+}
+
+extension AboutViewController {
+    
+    @IBAction func requestReviewManually() {
+        // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
+        //       You can find the App Store ID in your app's product URL
+        guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1406084758?action=write-review")
+            else {
+                fatalError("Expected a valid URL")
+                
+        }
+        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
     }
 }

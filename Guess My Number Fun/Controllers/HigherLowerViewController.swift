@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 class HigherLowerViewController: UIViewController {
     
@@ -110,6 +111,9 @@ class HigherLowerViewController: UIViewController {
     // MARK: Action
     
     @objc func doneButtonPressed() {
+        
+        SKStoreReviewController.requestReview()
+        
         navigationController?.popToRootViewController(animated: true)
     }
     

@@ -130,6 +130,9 @@ Prepare to be amazed</string>
                                 <rect key="frame" x="16" y="208" width="288" height="34"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <state key="normal" title="Leave us a review"/>
+                                <connections>
+                                    <action selector="requestReviewManually" destination="gyj-Nt-DdM" eventType="touchUpInside" id="g6K-S9-QRd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa1-Jr-mjr">
                                 <rect key="frame" x="16" y="301.5" width="288" height="51"/>

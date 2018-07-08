@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 class PagesViewController: UIViewController {
     
@@ -186,6 +187,9 @@ class PagesViewController: UIViewController {
     // MARK: Actions
     
     @objc func doneButtonPressed() {
+        
+        SKStoreReviewController.requestReview()
+        
         navigationController?.popToRootViewController(animated: true)
     }
     
