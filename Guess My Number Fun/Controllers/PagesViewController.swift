@@ -132,7 +132,7 @@ class PagesViewController: UIViewController {
             return
         }
         pageNumberLabel.text = "Is your number in page #\(currentPageFake)?"
-        pageContentLabel.text = "\(shuffledPagesByOrder[currentPageReal].value)"
+        pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
         
         let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(addValue))
         let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(dontAddValue))
@@ -167,6 +167,22 @@ class PagesViewController: UIViewController {
         myToolbar.setItems([space, doneButton, space], animated: true)
     }
     
+    
+    func prettifyPage(page: [Int]) -> String {
+        var newPage = ""
+        
+        for number in page {
+            var tempNumber = "\(number)"
+            if tempNumber.count == 1 {
+                tempNumber = " \(tempNumber)"
+            }
+            newPage.append("\(tempNumber) ")
+        }
+        
+        return newPage
+    }
+    
+    
     // MARK: Actions
     
     @objc func doneButtonPressed() {
@@ -174,5 +190,14 @@ class PagesViewController: UIViewController {
     }
     
 }
+
+
+
+
+
+
+
+
+
 
 
