@@ -55,7 +55,7 @@ class DTDTViewController: UIViewController {
         resultLabel.isHidden = true
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
-        messageLabel.text = "Think of a number"
+        messageLabel.text = "Think of a number.\nI will find it.\nLet me ask you a few questions..."
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)

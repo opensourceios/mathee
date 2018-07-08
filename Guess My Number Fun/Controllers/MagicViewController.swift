@@ -48,7 +48,7 @@ class MagicViewController: UIViewController {
     // MARK: Helpers
     
     @objc func play() {
-        headerLabel.text = "Add 10"
+        headerLabel.text = "Add 10 to your number"
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(combineInitial))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)

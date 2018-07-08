@@ -113,7 +113,7 @@ class PagesViewController: UIViewController {
         shuffledPagesByOrder = shuffledPagesByContent.shuffled()
         
         
-        pageNumberLabel.text = "Think of a number 1-63"
+        pageNumberLabel.text = "Think of a number 1-63.\nGreat. Storytime! My book has 6 pages. But all of them have just... numbers!"
         pageContentLabel.text = ""
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextPage))

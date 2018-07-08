@@ -80,9 +80,13 @@ I will guess it in 12 tries or less.</string>
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="256" width="288" height="76"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
+                                <rect key="frame" x="16" y="199.5" width="288" height="189.5"/>
+                                <string key="text">Think of a number.
+I shall guess it with some...
+MatheMagic!
+Prepare to be amazed</string>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -139,8 +143,8 @@ I will guess it in 12 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page number whatever?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="43" width="288" height="114"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <rect key="frame" x="16" y="43" width="288" height="95"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -268,17 +272,20 @@ I will guess it in 12 tries or less.</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think of a number" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="154" width="288" height="76"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-q2-c5f">
                                 <rect key="frame" x="16" y="194" width="288" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="6DU-4h-UhG"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
+                                <rect key="frame" x="16" y="36" width="304" height="126.5"/>
+                                <string key="text">Think of a number.
+I will find it.
+Let me ask you a few questions...</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -289,12 +296,12 @@ I will guess it in 12 tries or less.</string>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="80" id="5UY-dm-1nd"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="8YQ-0d-rvx"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
-                            <constraint firstItem="284-q2-c5f" firstAttribute="top" secondItem="Bjj-IK-Hsa" secondAttribute="bottom" constant="-36" id="ELe-hy-ujU"/>
+                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="GQT-Rq-cuq"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="40" id="K80-LJ-w1Y"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="leading" secondItem="Bjj-IK-Hsa" secondAttribute="leading" constant="-16" id="VHz-TP-vfs"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" constant="16" id="bz7-H9-hqi"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="ekE-YA-MsX"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" id="ekE-YA-MsX"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="lrU-Og-3u9"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="40" id="uzU-m3-xRu"/>
