@@ -16,6 +16,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Outlets
     
     @IBOutlet var myTableView: UITableView!
+    @IBOutlet weak var aboutButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
     
@@ -29,6 +31,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: Life Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
+            for button in [aboutButton, shareButton] {
+                button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .normal)
+            }
+        }
+        
+    }
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +62,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+
         
         if let selectedRow = myTableView.indexPathForSelectedRow {
         myTableView.deselectRow(at: selectedRow, animated: true)
@@ -130,6 +143,30 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
     }
+    
+    @IBAction func rightBarButtonPressed() {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+        present(controller, animated: true, completion: nil)
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let message = "Check out 'Guess My Number Fun': It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
+        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
+        activityController.completionWithItemsHandler = {
+            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            guard error == nil else {
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                self.present(alert, animated: true)
+                return
+            }
+        }
+        present(activityController, animated: true)
+    }
+    
+    
     
     
 }
