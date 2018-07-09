@@ -8,5 +8,7 @@
 
 ###### Developer notes:
 - iPhone X screenshots
+- [means no split on iPad] Fullscreen?
+- Hide status bar? (if yes, recalculate view height)
 
 App store link: not live yet.
