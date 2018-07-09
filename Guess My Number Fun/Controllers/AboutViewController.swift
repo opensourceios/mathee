@@ -32,7 +32,10 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let myFont = UIFont(name: "Chalkduster", size: 20.0) {
+        let bigSize: CGFloat = 20
+        let smallSize: CGFloat = 14
+        
+        if let myFont = UIFont(name: "Chalkduster", size: bigSize) {
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
                     NSAttributedStringKey.font : myFont,
@@ -40,13 +43,15 @@ class AboutViewController: UIViewController {
                     ], for: .normal)
             versionButtonLabel.setTitleTextAttributes(
                 [
-                    NSAttributedStringKey.font: myFont,
+                    NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: smallSize) ?? myFont,
                     NSAttributedStringKey.foregroundColor: UIColor.darkText], for: .disabled)
             versionButtonLabel.isEnabled = false
 
         }
         
-        
+        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
+            versionButtonLabel.title = "Version \(version)"
+        }
         
         
         myToolbar.setBackgroundImage(UIImage(),
@@ -83,7 +88,10 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     
     @IBAction func launchEmail(sender: AnyObject) {
         
-        let emailTitle = "Feedback for Guess My Number Fun"
+        var emailTitle = "Guess My Number Fun"
+        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
+            emailTitle += " \(version)"
+        }
         let messageBody = "Hi. I have a feature request/bug report/question..."
         let toRecipents = ["***REMOVED***"]
         let mc: MFMailComposeViewController = MFMailComposeViewController()
