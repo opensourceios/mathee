@@ -9,5 +9,7 @@
 ###### Developer notes:
 - add version num to email subject
 - add version to about page programmatically
+- iPhone X screenshots
+- remove review SDK from first game
 
 App store link: not live yet.
