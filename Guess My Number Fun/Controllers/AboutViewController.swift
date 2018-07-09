@@ -83,7 +83,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     
     @IBAction func launchEmail(sender: AnyObject) {
         
-        let emailTitle = "[02 Feedback]"
+        let emailTitle = "Feedback for Guess My Number Fun"
         let messageBody = "Hi. I have a feature request/bug report/question..."
         let toRecipents = ["musicbyds@icloud.com"]
         let mc: MFMailComposeViewController = MFMailComposeViewController()
