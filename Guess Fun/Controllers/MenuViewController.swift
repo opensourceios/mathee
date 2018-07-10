@@ -37,6 +37,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
             for button in [aboutButton, shareButton] {
                 button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .normal)
+                button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .selected)
+                button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .highlighted)
             }
         }
         
@@ -53,9 +55,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         
         let navHeight = navigationController?.navigationBar.frame.height
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        //let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        height = view.frame.height - navHeight! - statusBarHeight
+        height = view.frame.height - navHeight! //- statusBarHeight
         
         myTableView.separatorColor = UIColor.clear
         

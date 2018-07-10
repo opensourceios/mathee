@@ -18,7 +18,6 @@ class MagicViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     
     
-    
     // MARK: Properties
     
     
@@ -34,6 +33,16 @@ class MagicViewController: UIViewController {
                 NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
                 NSAttributedStringKey.foregroundColor : view.tintColor,
                 ], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .selected)
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .highlighted)
         
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,

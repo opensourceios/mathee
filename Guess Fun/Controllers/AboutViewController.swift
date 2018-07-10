@@ -41,6 +41,18 @@ class AboutViewController: UIViewController {
                     NSAttributedStringKey.font : myFont,
                     NSAttributedStringKey.foregroundColor : view.tintColor,
                     ], for: .normal)
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedStringKey.font : myFont,
+                    NSAttributedStringKey.foregroundColor : view.tintColor,
+                    ], for: .selected)
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedStringKey.font : myFont,
+                    NSAttributedStringKey.foregroundColor : view.tintColor,
+                    ], for: .highlighted)
+
+            
             versionButtonLabel.setTitleTextAttributes(
                 [
                     NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: smallSize) ?? myFont,
