@@ -1,6 +1,6 @@
-# Guess My Number Fun (iOS)
+# Guess Fun (iOS)
 - 4 'guess my number' games in 1!
-- Get it here: https://itunes.apple.com/us/app/guess-my-numbers-fun/id1406084758?mt=8
+- Get it here: https://itunes.apple.com/app/id1406084758
 - Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 # Contributing

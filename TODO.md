@@ -13,4 +13,4 @@
 - Hide status bar? (if yes, recalculate view height)
 - Add screenshots to README
 
-App store link: https://itunes.apple.com/us/app/guess-my-numbers-fun/id1406084758?mt=8
+App store link: https://itunes.apple.com/app/id1406084758
