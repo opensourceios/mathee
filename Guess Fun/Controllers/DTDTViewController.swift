@@ -41,6 +41,16 @@ class DTDTViewController: UIViewController {
                 NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
                 NSAttributedStringKey.foregroundColor : view.tintColor,
                 ], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .selected)
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedStringKey.foregroundColor : view.tintColor,
+                ], for: .highlighted)
         
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -87,10 +97,26 @@ class DTDTViewController: UIViewController {
             NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
             NSAttributedStringKey.foregroundColor: view.tintColor],
                                           for: .normal)
+        oddButton.setTitleTextAttributes([
+            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedStringKey.foregroundColor: view.tintColor],
+                                         for: .selected)
+        oddButton.setTitleTextAttributes([
+            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedStringKey.foregroundColor: view.tintColor],
+                                         for: .highlighted)
         evenButton.setTitleTextAttributes([
             NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
             NSAttributedStringKey.foregroundColor: view.tintColor],
                                          for: .normal)
+        evenButton.setTitleTextAttributes([
+            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedStringKey.foregroundColor: view.tintColor],
+                                          for: .selected)
+        evenButton.setTitleTextAttributes([
+            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedStringKey.foregroundColor: view.tintColor],
+                                          for: .highlighted)
 
         
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -157,6 +183,14 @@ class DTDTViewController: UIViewController {
                 NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
                 NSAttributedStringKey.foregroundColor: view.tintColor],
                                               for: .normal)
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .selected)
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .highlighted)
             
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -171,6 +205,14 @@ class DTDTViewController: UIViewController {
                 NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
                 NSAttributedStringKey.foregroundColor: view.tintColor],
                                               for: .normal)
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .selected)
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .highlighted)
             
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -185,6 +227,14 @@ class DTDTViewController: UIViewController {
                 NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
                 NSAttributedStringKey.foregroundColor: view.tintColor],
                                                for: .normal)
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .selected)
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .highlighted)
 
             
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
