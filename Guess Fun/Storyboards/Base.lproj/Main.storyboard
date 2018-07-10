@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--👆👇-->
+        <scene sceneID="dsc-iX-nMI">
+            <objects>
+                <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i4p-Zt-AVs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-JF-uXf">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="W2q-Lg-Ax6"/>
+                                </constraints>
+                                <items/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it N?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
+                                <rect key="frame" x="16" y="291" width="568" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-o1-6LC">
+                                <rect key="frame" x="16" y="47" width="568" height="227.5"/>
+                                <string key="text">Think of a number that is 👆 than 0, and 👇 than 2000.
+After each try, tell me whether to go 👆 or 👇, or if I 🎉!
+I will guess it in 12 tries or less.</string>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nAW-HL-3cW" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="8pq-Eb-w1b"/>
+                            <constraint firstItem="e8i-JF-uXf" firstAttribute="width" secondItem="i4p-Zt-AVs" secondAttribute="width" id="AYY-1Q-nFF"/>
+                            <constraint firstItem="aWT-o1-6LC" firstAttribute="trailing" secondItem="kO9-Xj-yVp" secondAttribute="trailing" constant="-16" id="KDU-BY-lBF"/>
+                            <constraint firstItem="aWT-o1-6LC" firstAttribute="top" secondItem="kO9-Xj-yVp" secondAttribute="top" constant="27" id="MxT-UT-DGG"/>
+                            <constraint firstItem="nAW-HL-3cW" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="d3W-Q0-KUk"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="nAW-HL-3cW" secondAttribute="trailing" constant="16" id="exC-tg-SVV"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="leading" secondItem="aWT-o1-6LC" secondAttribute="leading" constant="-16" id="jSm-5H-cyf"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="e8i-JF-uXf" secondAttribute="bottom" id="q6d-4J-nf2"/>
+                            <constraint firstItem="e8i-JF-uXf" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="rCz-sT-nKu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="👆👇" id="oXZ-fp-eKa"/>
+                    <connections>
+                        <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
+                        <outlet property="headerLabel" destination="aWT-o1-6LC" id="X0k-1r-7FY"/>
+                        <outlet property="myToolbar" destination="e8i-JF-uXf" id="J7w-vb-6kZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuR-w4-yWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101.25" y="1635.2112676056338"/>
+        </scene>
+        <!--🕘-->
+        <scene sceneID="fe5-31-sHI">
+            <objects>
+                <viewController storyboardIdentifier="MagicViewController" id="zfM-fA-7ak" customClass="MagicViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e8v-i1-Ly5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-WR-wMI">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LFD-oJ-wux"/>
+                                </constraints>
+                                <items/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
+                                <rect key="frame" x="16" y="234" width="568" height="152"/>
+                                <string key="text">Think of a number.
+I shall guess it with some...
+MatheMagic!
+Prepare to be amazed</string>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="pVQ-WR-wMI" secondAttribute="bottom" id="Kgd-5W-rRy"/>
+                            <constraint firstItem="pVQ-WR-wMI" firstAttribute="centerX" secondItem="zMY-pK-AUQ" secondAttribute="centerX" id="SAI-A9-7jo"/>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="leading" secondItem="U8K-8M-K0A" secondAttribute="leading" constant="-16" id="bR1-Qc-gBb"/>
+                            <constraint firstItem="U8K-8M-K0A" firstAttribute="trailing" secondItem="zMY-pK-AUQ" secondAttribute="trailing" constant="-16" id="mPF-eC-2M8"/>
+                            <constraint firstItem="pVQ-WR-wMI" firstAttribute="width" secondItem="e8v-i1-Ly5" secondAttribute="width" id="pnO-IW-yNB"/>
+                            <constraint firstItem="U8K-8M-K0A" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="t24-MT-1Ai"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="🕘" id="Ot7-WL-NJJ"/>
+                    <connections>
+                        <outlet property="headerLabel" destination="U8K-8M-K0A" id="zBS-1o-0b3"/>
+                        <outlet property="myToolbar" destination="pVQ-WR-wMI" id="tqF-Cg-WHF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbk-Jx-1AA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1091" y="1636"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="5AC-qX-46h">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" id="gyj-Nt-DdM" customClass="AboutViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V62-h4-koR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoying 'Guess Fun'? Please consider leaving us a review in the App Store!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qq-aM-94u">
+                                <rect key="frame" x="16" y="36" width="568" height="63.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mW-Dv-hvX">
+                                <rect key="frame" x="16" y="120" width="568" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <state key="normal" title="Leave us a review"/>
+                                <connections>
+                                    <action selector="requestReviewManually" destination="gyj-Nt-DdM" eventType="touchUpInside" id="g6K-S9-QRd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa1-Jr-mjr">
+                                <rect key="frame" x="16" y="190" width="568" height="63.5"/>
+                                <string key="text">Found a bug?
+Have a question?</string>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EB-1K-Tkf">
+                                <rect key="frame" x="16" y="269" width="568" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <state key="normal" title="Send us an email"/>
+                                <connections>
+                                    <action selector="launchEmailWithSender:" destination="gyj-Nt-DdM" eventType="touchUpInside" id="daR-l0-gY1"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZx-Ch-yBL">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ZtI-Df-wOm"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Share" id="gPR-ak-7gF">
+                                        <connections>
+                                            <action selector="shareButtonPressed" destination="gyj-Nt-DdM" id="r3k-eI-4ah"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jzY-JN-zAu"/>
+                                    <barButtonItem title="Error showing version." id="auH-SH-sFT">
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IVh-Fb-DrU"/>
+                                    <barButtonItem title="Close" id="D39-aw-ZSe">
+                                        <connections>
+                                            <action selector="doneButtonPressed" destination="gyj-Nt-DdM" id="vB0-Vo-D3z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xa1-Jr-mjr" firstAttribute="top" secondItem="8mW-Dv-hvX" secondAttribute="bottom" constant="32" id="2ed-eV-Uyx"/>
+                            <constraint firstItem="A74-jW-A06" firstAttribute="bottom" secondItem="cZx-Ch-yBL" secondAttribute="bottom" id="2r0-4Q-U9c"/>
+                            <constraint firstItem="8mW-Dv-hvX" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="4up-K6-lba"/>
+                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="6EB-1K-Tkf" secondAttribute="trailing" constant="16" id="B05-nn-o5T"/>
+                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="8mW-Dv-hvX" secondAttribute="trailing" constant="16" id="D2u-nc-I5A"/>
+                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="3Qq-aM-94u" secondAttribute="trailing" constant="16" id="H8p-hR-BbY"/>
+                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="cZx-Ch-yBL" secondAttribute="trailing" id="JYG-dg-ehE"/>
+                            <constraint firstItem="cZx-Ch-yBL" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" id="LBa-0i-tPp"/>
+                            <constraint firstItem="3Qq-aM-94u" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="U3e-K7-Uw1"/>
+                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="xa1-Jr-mjr" secondAttribute="trailing" constant="16" id="Ufc-BB-bNp"/>
+                            <constraint firstItem="3Qq-aM-94u" firstAttribute="top" secondItem="A74-jW-A06" secondAttribute="top" constant="16" id="am2-6Z-ixk"/>
+                            <constraint firstItem="6EB-1K-Tkf" firstAttribute="top" secondItem="xa1-Jr-mjr" secondAttribute="bottom" constant="16" id="cO5-44-RVy"/>
+                            <constraint firstItem="xa1-Jr-mjr" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="egc-kx-FQ9"/>
+                            <constraint firstItem="8mW-Dv-hvX" firstAttribute="top" secondItem="3Qq-aM-94u" secondAttribute="bottom" constant="20" id="tsj-Lh-4Dg"/>
+                            <constraint firstItem="6EB-1K-Tkf" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="x3G-by-oMe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A74-jW-A06"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="D39-aw-ZSe" id="GgJ-Cq-hzz"/>
+                        <outlet property="emailButton" destination="6EB-1K-Tkf" id="aMg-xW-k6E"/>
+                        <outlet property="myToolbar" destination="cZx-Ch-yBL" id="zjR-LM-nFJ"/>
+                        <outlet property="reviewButton" destination="8mW-Dv-hvX" id="KV3-jL-8Rh"/>
+                        <outlet property="shareButton" destination="gPR-ak-7gF" id="jce-iS-kQm"/>
+                        <outlet property="versionButtonLabel" destination="auH-SH-sFT" id="gzI-9m-ndD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLu-dd-TLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101.25" y="-219.71830985915494"/>
+        </scene>
+        <!--📗-->
+        <scene sceneID="N7b-KI-OfH">
+            <objects>
+                <viewController storyboardIdentifier="PagesViewController" id="dmH-4p-fuU" customClass="PagesViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="orM-1u-bwu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-oO-AVP">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NrV-2e-HZP"/>
+                                </constraints>
+                                <items/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
+                                <rect key="frame" x="20" y="146" width="560.5" height="358"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="358" id="8Yb-fc-frz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
+                                <rect key="frame" x="248" y="291" width="104" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
+                                <rect key="frame" x="16" y="43" width="568" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="7lz-1e-Sfr" secondAttribute="trailing" constant="19.5" id="1u9-LD-GQs"/>
+                            <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="4pA-Ch-WpV"/>
+                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="top" constant="-23" id="5w7-AS-YvM"/>
+                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="20" id="8Jc-3i-DAu"/>
+                            <constraint firstItem="GrR-lf-ak1" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="DPy-gr-1Ro"/>
+                            <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="LAR-Wd-nYZ"/>
+                            <constraint firstItem="7y7-oO-AVP" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" id="M4Q-bD-6uk"/>
+                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="7y7-oO-AVP" secondAttribute="bottom" id="PSU-6c-NZK"/>
+                            <constraint firstItem="7y7-oO-AVP" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="hWg-zc-4dE"/>
+                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" constant="15" id="hhw-Ne-Srt"/>
+                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="GrR-lf-ak1" secondAttribute="trailing" constant="16" id="kPx-j8-uAB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="📗" id="4hU-hj-MvD"/>
+                    <connections>
+                        <outlet property="myToolbar" destination="7y7-oO-AVP" id="Ycw-6s-VF8"/>
+                        <outlet property="pageContentLabel" destination="7lz-1e-Sfr" id="clv-nt-ydx"/>
+                        <outlet property="pageNumberLabel" destination="GrR-lf-ak1" id="bX6-c4-ciD"/>
+                        <outlet property="resultLabel" destination="vPg-bR-HVJ" id="2Ub-IO-bhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xa3-oY-X1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.875" y="-218.66197183098592"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zER-nb-Vkj">
+            <objects>
+                <navigationController id="8u8-uX-CMh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gg4-Me-5w3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OWD-6W-keU" kind="relationship" relationship="rootViewController" id="MQD-u9-U9J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kov-HE-T4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1090" y="682"/>
+        </scene>
+        <!--🏠-->
+        <scene sceneID="YHt-e1-nQZ">
+            <objects>
+                <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c72-1O-ChN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="MTh-De-CvF" style="IBUITableViewCellStyleDefault" id="9Tx-0d-iVw">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTh-De-CvF">
+                                                    <rect key="frame" x="20" y="0.0" width="560" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OWD-6W-keU" id="C7m-r2-jKE"/>
+                                    <outlet property="delegate" destination="OWD-6W-keU" id="Qhc-4g-lHx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="leading" secondItem="27d-DW-fze" secondAttribute="leading" id="4xo-Re-BU1"/>
+                            <constraint firstItem="27d-DW-fze" firstAttribute="trailing" secondItem="bSL-S2-mJ9" secondAttribute="trailing" id="HZu-cS-BU5"/>
+                            <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" id="jI2-iQ-jMB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="🏠" id="bIQ-V8-dG6">
+                        <barButtonItem key="leftBarButtonItem" title="Share" id="AFu-Lr-wuY">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="OWD-6W-keU" id="AoF-ZI-8ym"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" id="en9-jY-Ktc">
+                            <connections>
+                                <action selector="rightBarButtonPressed" destination="OWD-6W-keU" id="aPO-Gg-kWq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aboutButton" destination="en9-jY-Ktc" id="iDl-ve-Dhh"/>
+                        <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
+                        <outlet property="shareButton" destination="AFu-Lr-wuY" id="afb-wi-bnk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-fe-gN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="681"/>
+        </scene>
+        <!--✖️➗➕➖-->
+        <scene sceneID="6hM-0P-CsD">
+            <objects>
+                <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess_My_Number_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R3d-PE-QWE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-50-WSp">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AHC-P3-HKa"/>
+                                </constraints>
+                                <items/>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type current result" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
+                                <rect key="frame" x="40" y="480" width="520" height="40"/>
+                                <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-q2-c5f">
+                                <rect key="frame" x="16" y="210" width="568" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6DU-4h-UhG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
+                                <rect key="frame" x="16" y="36" width="568" height="152"/>
+                                <string key="text">Think of a number.
+I will find it.
+Let me ask you a few questions...</string>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="80" id="5UY-dm-1nd"/>
+                            <constraint firstItem="284-q2-c5f" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="8YQ-0d-rvx"/>
+                            <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
+                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="GQT-Rq-cuq"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="40" id="K80-LJ-w1Y"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="leading" secondItem="Bjj-IK-Hsa" secondAttribute="leading" constant="-16" id="VHz-TP-vfs"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" constant="16" id="bz7-H9-hqi"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="ekE-YA-MsX"/>
+                            <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
+                            <constraint firstItem="284-q2-c5f" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="lrU-Og-3u9"/>
+                            <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="40" id="uzU-m3-xRu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="✖️➗➕➖" id="xXz-XO-Cxl"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
+                        <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
+                        <outlet property="myToolbar" destination="FgR-50-WSp" id="ept-bZ-lKX"/>
+                        <outlet property="resultLabel" destination="284-q2-c5f" id="21h-wx-U1d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.875" y="681.33802816901414"/>
+        </scene>
+    </scenes>
+</document>
