@@ -8,6 +8,7 @@
 
 ###### Developer notes:
 - iPhone X screenshots
+- Remove support for iPad till is uses size classes
 - [means no split on iPad] Fullscreen?
 - Hide status bar? (if yes, recalculate view height)
 

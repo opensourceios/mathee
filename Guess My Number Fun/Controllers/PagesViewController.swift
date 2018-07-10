@@ -175,7 +175,7 @@ class PagesViewController: UIViewController {
         for number in page {
             var tempNumber = "\(number)"
             if tempNumber.count == 1 {
-                tempNumber = " \(tempNumber)"
+                tempNumber = "0\(tempNumber)"
             }
             newPage.append("\(tempNumber) ")
         }
