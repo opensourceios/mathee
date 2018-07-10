@@ -7,6 +7,6 @@
 - No requested features. Is there a feature you'd like? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 ###### Developer notes:
-- Remove support for iPad till is uses size classes
+- No notes
 
 App store link: https://itunes.apple.com/app/id1406084758
