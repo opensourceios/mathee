@@ -1,5 +1,5 @@
 # Guess Fun (iOS)
-- 4 'guess my number' games in 1!
+- 4 number guessing games.
 - Get it here: https://itunes.apple.com/app/id1406084758
 - Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
