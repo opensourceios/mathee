@@ -1,13 +1,7 @@
 # Guess My Number Fun (iOS)
 - 4 'guess my number' games in 1!
-- Found a bug? Want a feature? Check [TODO.md](TODO.md) to see if it's already in the queue. If it is not, let me know: [https://danispringer.github.io](https://danispringer.github.io)
-
-# How To Run
-- You need Xcode installed on your Computer (Xcode is available for Mac only).
-- Open `Guess My Number Fun.xcodeproj` in Xcode, click on the "play" button.
-
-# Dependencies
-- You will need Xcode (a program available as a free download. Only available on Macbook) to run this program.
+- Get it here: https://itunes.apple.com/us/app/guess-my-numbers-fun/id1406084758?mt=8
+- Found a bug? Want a feature? Let me know: [https://danispringer.github.io](https://danispringer.github.io)
 
 # Contributing
 Want to help? You can:
