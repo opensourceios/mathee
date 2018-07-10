@@ -25,17 +25,17 @@
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is it N?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="278" width="288" height="32"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <rect key="frame" x="16" y="275.5" width="288" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-o1-6LC">
-                                <rect key="frame" x="16" y="47" width="288" height="253"/>
+                                <rect key="frame" x="16" y="47" width="288" height="417"/>
                                 <string key="text">Think of a number that is 👆 than 0, and 👇 than 2000.
 After each try, tell me whether to go 👆 or 👇, or if I 🎉!
 I will guess it in 12 tries or less.</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -81,12 +81,12 @@ I will guess it in 12 tries or less.</string>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="199.5" width="288" height="189.5"/>
+                                <rect key="frame" x="16" y="162" width="288" height="265.5"/>
                                 <string key="text">Think of a number.
 I shall guess it with some...
 MatheMagic!
 Prepare to be amazed</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -121,30 +121,30 @@ Prepare to be amazed</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoying 'Guess My Number Fun'? Please consider leaving us a review in the App Store!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qq-aM-94u">
-                                <rect key="frame" x="16" y="86" width="288" height="101.5"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <rect key="frame" x="16" y="36" width="288" height="158"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mW-Dv-hvX">
-                                <rect key="frame" x="16" y="208" width="288" height="34"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <rect key="frame" x="16" y="214.5" width="288" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                 <state key="normal" title="Leave us a review"/>
                                 <connections>
                                     <action selector="requestReviewManually" destination="gyj-Nt-DdM" eventType="touchUpInside" id="g6K-S9-QRd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa1-Jr-mjr">
-                                <rect key="frame" x="16" y="301.5" width="288" height="51"/>
+                                <rect key="frame" x="16" y="284.5" width="288" height="63.5"/>
                                 <string key="text">Found a bug?
 Have a question?</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EB-1K-Tkf">
-                                <rect key="frame" x="16" y="373" width="288" height="34"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <rect key="frame" x="16" y="364" width="288" height="38"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                 <state key="normal" title="Send us an email"/>
                                 <connections>
                                     <action selector="launchEmailWithSender:" destination="gyj-Nt-DdM" eventType="touchUpInside" id="daR-l0-gY1"/>
@@ -176,7 +176,7 @@ Have a question?</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xa1-Jr-mjr" firstAttribute="top" secondItem="8mW-Dv-hvX" secondAttribute="bottom" constant="60" id="2ed-eV-Uyx"/>
+                            <constraint firstItem="xa1-Jr-mjr" firstAttribute="top" secondItem="8mW-Dv-hvX" secondAttribute="bottom" constant="32" id="2ed-eV-Uyx"/>
                             <constraint firstItem="A74-jW-A06" firstAttribute="bottom" secondItem="cZx-Ch-yBL" secondAttribute="bottom" id="2r0-4Q-U9c"/>
                             <constraint firstItem="8mW-Dv-hvX" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="4up-K6-lba"/>
                             <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="6EB-1K-Tkf" secondAttribute="trailing" constant="16" id="B05-nn-o5T"/>
@@ -186,8 +186,8 @@ Have a question?</string>
                             <constraint firstItem="cZx-Ch-yBL" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" id="LBa-0i-tPp"/>
                             <constraint firstItem="3Qq-aM-94u" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="U3e-K7-Uw1"/>
                             <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="xa1-Jr-mjr" secondAttribute="trailing" constant="16" id="Ufc-BB-bNp"/>
-                            <constraint firstItem="3Qq-aM-94u" firstAttribute="top" secondItem="A74-jW-A06" secondAttribute="top" constant="66" id="am2-6Z-ixk"/>
-                            <constraint firstItem="6EB-1K-Tkf" firstAttribute="top" secondItem="xa1-Jr-mjr" secondAttribute="bottom" constant="20" id="cO5-44-RVy"/>
+                            <constraint firstItem="3Qq-aM-94u" firstAttribute="top" secondItem="A74-jW-A06" secondAttribute="top" constant="16" id="am2-6Z-ixk"/>
+                            <constraint firstItem="6EB-1K-Tkf" firstAttribute="top" secondItem="xa1-Jr-mjr" secondAttribute="bottom" constant="16" id="cO5-44-RVy"/>
                             <constraint firstItem="xa1-Jr-mjr" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="egc-kx-FQ9"/>
                             <constraint firstItem="8mW-Dv-hvX" firstAttribute="top" secondItem="3Qq-aM-94u" secondAttribute="bottom" constant="20" id="tsj-Lh-4Dg"/>
                             <constraint firstItem="6EB-1K-Tkf" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="x3G-by-oMe"/>
@@ -223,11 +223,11 @@ Have a question?</string>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="20" y="194" width="280.5" height="200"/>
+                                <rect key="frame" x="20" y="130" width="281" height="358"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="8Yb-fc-frz"/>
+                                    <constraint firstAttribute="height" constant="358" id="8Yb-fc-frz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -237,9 +237,9 @@ Have a question?</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page number whatever?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="43" width="288" height="95"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
+                                <rect key="frame" x="16" y="43" width="288" height="76"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -255,7 +255,7 @@ Have a question?</string>
                             <constraint firstItem="7y7-oO-AVP" firstAttribute="width" secondItem="orM-1u-bwu" secondAttribute="width" id="M4Q-bD-6uk"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="7y7-oO-AVP" secondAttribute="bottom" id="PSU-6c-NZK"/>
                             <constraint firstItem="7y7-oO-AVP" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="hWg-zc-4dE"/>
-                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="hhw-Ne-Srt"/>
+                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" constant="15" id="hhw-Ne-Srt"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="GrR-lf-ak1" secondAttribute="trailing" constant="16" id="kPx-j8-uAB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
@@ -390,11 +390,11 @@ Have a question?</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="36" width="304" height="126.5"/>
+                                <rect key="frame" x="16" y="36" width="288" height="227.5"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -409,7 +409,7 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="leading" secondItem="Bjj-IK-Hsa" secondAttribute="leading" constant="-16" id="VHz-TP-vfs"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" constant="16" id="bz7-H9-hqi"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" id="ekE-YA-MsX"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="ekE-YA-MsX"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="284-q2-c5f" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="lrU-Og-3u9"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="40" id="uzU-m3-xRu"/>

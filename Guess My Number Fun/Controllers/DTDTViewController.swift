@@ -153,6 +153,11 @@ class DTDTViewController: UIViewController {
             myTextField.isHidden = true
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                              for: .normal)
+            
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
             return
@@ -162,6 +167,11 @@ class DTDTViewController: UIViewController {
             myTextField.isHidden = true
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                              for: .normal)
+            
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
             return
@@ -171,6 +181,12 @@ class DTDTViewController: UIViewController {
             myTextField.isHidden = true
             messageLabel.text = "Please enter numbers only. No text."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
+            retryButton.setTitleTextAttributes([
+                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedStringKey.foregroundColor: view.tintColor],
+                                               for: .normal)
+
+            
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
             return
