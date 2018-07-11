@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
 import UIKit
+import SystemConfiguration
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -55,9 +55,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         
         let navHeight = navigationController?.navigationBar.frame.height
-        //let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        height = view.frame.height - navHeight! //- statusBarHeight
+        height = view.frame.height - navHeight! - statusBarHeight
         
         myTableView.separatorColor = UIColor.clear
         
@@ -71,6 +71,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if UIScreen.main.bounds.size.height == 812 || UIScreen.main.bounds.size.width == 812 {
+            // is iphone x
+            print(myTableView.visibleCells[0].frame.height)
+            myTableView.contentOffset.y = myTableView.visibleCells[0].frame.height / 4 //50
+        }
+    }
+
     
     
     
