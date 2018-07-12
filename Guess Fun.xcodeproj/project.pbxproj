@@ -52,7 +52,6 @@
 		3319088120E8772E007C679C = {
 			isa = PBXGroup;
 			children = (
-				3319088D20E8772E007C679C /* AppDelegate.swift */,
 				3319088C20E8772E007C679C /* Guess Fun */,
 				3319088B20E8772E007C679C /* Products */,
 			);
@@ -69,6 +68,7 @@
 		3319088C20E8772E007C679C /* Guess Fun */ = {
 			isa = PBXGroup;
 			children = (
+				3319088D20E8772E007C679C /* AppDelegate.swift */,
 				3350E55B20F1DDEA0093FC96 /* Model */,
 				3340755820E8C33500EFDAA9 /* Controllers */,
 				3340755720E8BD6200EFDAA9 /* Storyboards */,
