@@ -165,7 +165,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Actions
     
     @IBAction func shareButtonPressed(_ sender: Any) {
-        let message = "Check out 'Guess Fun': It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
+        let message = "Check out Guess Fun: It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {

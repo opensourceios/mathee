@@ -81,7 +81,7 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func shareButtonPressed() {
-        let message = "Check out 'Guess Fun': It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
+        let message = "Check out Guess Fun: It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
@@ -104,7 +104,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
             emailTitle += " \(version)"
         }
-        let messageBody = "Hi. I have a feature request/bug report/question..."
+        let messageBody = "Hi. I have a question..."
         let toRecipents = ["***REMOVED***"]
         let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
@@ -126,10 +126,13 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
                 alert = self.createAlert(alertReasonParam: alertReason.messageSaved.rawValue)
             case MFMailComposeResult.sent:
                 alert = self.createAlert(alertReasonParam: alertReason.messageSent.rawValue)
-            case MFMailComposeResult.cancelled:
-                alert = self.createAlert(alertReasonParam: alertReason.messageCanceled.rawValue)
+            default:
+                break
             }
-            self.present(alert, animated: true)
+            
+            if let _ = alert.title {
+                self.present(alert, animated: true)
+            }
         })
     }
 }
