@@ -69,8 +69,15 @@ class HigherLowerViewController: UIViewController {
     @objc func showNextGuess() {
         
         diff = high - low
-        half_diff = diff / 2
+        
+        if diff == 3 {
+            half_diff = 2
+        } else {
+            half_diff = diff / 2
+        }
+        
         guess = low + half_diff
+        print(diff, high, low, half_diff, guess)
         
         headerLabel.isHidden = true
         
@@ -81,7 +88,14 @@ class HigherLowerViewController: UIViewController {
         let higherButton = UIBarButtonItem(title: "👆", style: .plain, target: self, action: #selector(higher))
         let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(correct))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
+        
+        if half_diff == 1 {
+            guessLabel.text = "You thought: \(guess)"
+            myToolbar.setItems([space, yesButton, space], animated: true)
+        } else {
+            myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
+        }
+        
     }
     
     @objc func lower() {
@@ -103,12 +117,10 @@ class HigherLowerViewController: UIViewController {
 
         } else if tries == 1 {
             guessLabel.text = "\(guess)... That was easy. It took me just one try!"
-        } else if tries < 4 {
+        } else if tries < 6 {
             guessLabel.text = "\(guess)... Not too hard. It only took me \(tries) tries!"
-        } else if tries < 9 {
+        } else if tries < 11 {
             guessLabel.text = "\(guess)... Pretty, pretty, pretty good! That took me no less than \(tries) tries!"
-        } else if tries < 12 {
-            guessLabel.text = "\(guess)... Phew, that was close! \(tries) tries no less!"
         } else {
             guessLabel.text = "\(guess)... \(tries) tries! You won. You're a champion! (Please let the developer know with what number you got here! 🏆)"
         }
