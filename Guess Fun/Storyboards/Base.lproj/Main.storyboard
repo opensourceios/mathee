@@ -34,7 +34,7 @@
                                 <rect key="frame" x="16" y="47" width="343" height="303.5"/>
                                 <string key="text">Think of a number that is 👆 than 0, and 👇 than 2000.
 After each try, tell me whether to go 👆 or 👇, or if I 🎉!
-I will guess it in 12 tries or less.</string>
+I will guess it in 10 tries or less.</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
