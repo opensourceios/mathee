@@ -77,7 +77,6 @@ class HigherLowerViewController: UIViewController {
         }
         
         guess = low + half_diff
-        print(diff, high, low, half_diff, guess)
         
         headerLabel.isHidden = true
         
@@ -111,15 +110,13 @@ class HigherLowerViewController: UIViewController {
     }
     
     @objc func correct() {
+        tries += 1
 
-        if tries == 0 {
-            guessLabel.text = "\(guess)... Easy peasy lemon squeezy. It took me no tries at all!"
-
-        } else if tries == 1 {
+        if tries == 1 {
             guessLabel.text = "\(guess)... That was easy. It took me just one try!"
         } else if tries < 6 {
             guessLabel.text = "\(guess)... Not too hard. It only took me \(tries) tries!"
-        } else if tries < 11 {
+        } else if tries <= 10 {
             guessLabel.text = "\(guess)... Pretty, pretty, pretty good! That took me no less than \(tries) tries!"
         } else {
             guessLabel.text = "\(guess)... \(tries) tries! You won. You're a champion! (Please let the developer know with what number you got here! 🏆)"
