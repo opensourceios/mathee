@@ -23,7 +23,7 @@ class HigherLowerViewController: UIViewController {
     // MARK: Properties
     
     var high = 2000
-    var low = 1
+    var low = 0
     var guess = 0
     var diff = 0
     var half_diff = 0
@@ -90,6 +90,7 @@ class HigherLowerViewController: UIViewController {
         
         if half_diff == 1 {
             guessLabel.text = "You thought: \(guess)"
+            tries -= 1 // so adding a guess in correct() doesn't incorrect it
             myToolbar.setItems([space, yesButton, space], animated: true)
         } else {
             myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
