@@ -77,7 +77,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if UIScreen.main.bounds.size.height == 812 || UIScreen.main.bounds.size.width == 812 {
             // is iphone x
-            print(myTableView.visibleCells[0].frame.height)
             myTableView.contentOffset.y = myTableView.visibleCells[0].frame.height / 4 //50
         }
     }
@@ -128,6 +127,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.navigationController?.pushViewController(controller, animated: true)
         default:
             print("An error has occured!")
+            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            present(alert, animated: true)
         }
     }
     
@@ -165,7 +166,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Actions
     
     @IBAction func shareButtonPressed(_ sender: Any) {
-        let message = "Check out Guess Fun: It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
+        let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
