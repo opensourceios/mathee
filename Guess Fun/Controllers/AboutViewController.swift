@@ -51,6 +51,11 @@ class AboutViewController: UIViewController {
                     NSAttributedStringKey.font : myFont,
                     NSAttributedStringKey.foregroundColor : view.tintColor,
                     ], for: .highlighted)
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedStringKey.font : myFont,
+                    NSAttributedStringKey.foregroundColor : UIColor.gray,
+                    ], for: .disabled)
 
             
             versionButtonLabel.setTitleTextAttributes(
@@ -81,7 +86,7 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func shareButtonPressed() {
-        let message = "Check out Guess Fun: It's an app with 4 games in 1 place! https://itunes.apple.com/us/developer/daniel-springer/id1402417666?mt=8"
+        let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
         activityController.completionWithItemsHandler = {
