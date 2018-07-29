@@ -8,7 +8,6 @@
 
 
 ###### Developer notes
-- Add persistence
-- optimize enableUI etc
+- Add persistence: dark mode?
 
 App store link: https://itunes.apple.com/app/id1406084758
