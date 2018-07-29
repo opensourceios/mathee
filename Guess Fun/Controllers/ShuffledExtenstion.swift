@@ -6,6 +6,8 @@
 //  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
+
+// TODO: with Swift 4.2 this might be replaceable by a native property
 import Foundation
 
 extension MutableCollection {
