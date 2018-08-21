@@ -38,30 +38,30 @@ class AboutViewController: UIViewController {
         if let myFont = UIFont(name: "Chalkduster", size: bigSize) {
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
-                    NSAttributedStringKey.font : myFont,
-                    NSAttributedStringKey.foregroundColor : view.tintColor,
+                    NSAttributedString.Key.font : myFont,
+                    NSAttributedString.Key.foregroundColor : view.tintColor,
                     ], for: .normal)
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
-                    NSAttributedStringKey.font : myFont,
-                    NSAttributedStringKey.foregroundColor : view.tintColor,
+                    NSAttributedString.Key.font : myFont,
+                    NSAttributedString.Key.foregroundColor : view.tintColor,
                     ], for: .selected)
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
-                    NSAttributedStringKey.font : myFont,
-                    NSAttributedStringKey.foregroundColor : view.tintColor,
+                    NSAttributedString.Key.font : myFont,
+                    NSAttributedString.Key.foregroundColor : view.tintColor,
                     ], for: .highlighted)
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
-                    NSAttributedStringKey.font : myFont,
-                    NSAttributedStringKey.foregroundColor : UIColor.gray,
+                    NSAttributedString.Key.font : myFont,
+                    NSAttributedString.Key.foregroundColor : UIColor.gray,
                     ], for: .disabled)
 
             
             versionButtonLabel.setTitleTextAttributes(
                 [
-                    NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: smallSize) ?? myFont,
-                    NSAttributedStringKey.foregroundColor: UIColor.darkText], for: .disabled)
+                    NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: smallSize) ?? myFont,
+                    NSAttributedString.Key.foregroundColor: UIColor.darkText], for: .disabled)
             versionButtonLabel.isEnabled = false
 
         }
@@ -152,6 +152,11 @@ extension AboutViewController {
                 fatalError("Expected a valid URL")
                 
         }
-        UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(writeReviewURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

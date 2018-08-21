@@ -37,18 +37,18 @@ class HigherLowerViewController: UIViewController {
         
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedStringKey.foregroundColor : view.tintColor,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedStringKey.foregroundColor : view.tintColor,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .selected)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedStringKey.foregroundColor : view.tintColor,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .highlighted)
         
         myToolbar.setBackgroundImage(UIImage(),
