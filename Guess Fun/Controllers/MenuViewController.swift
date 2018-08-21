@@ -36,9 +36,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
             for button in [aboutButton, shareButton] {
-                button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .normal)
-                button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .selected)
-                button?.setTitleTextAttributes([NSAttributedStringKey.font: myFont], for: .highlighted)
+                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
+                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .selected)
+                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
             }
         }
         
@@ -50,7 +50,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         NotificationCenter.default.addObserver(self.myTableView,
                                                selector: #selector(myTableView.reloadData),
-                                               name: .UIContentSizeCategoryDidChange,
+                                               name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
 
         
@@ -87,7 +87,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NotificationCenter.default.removeObserver(self.myTableView, name: .UIContentSizeCategoryDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self.myTableView, name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     // Helpers

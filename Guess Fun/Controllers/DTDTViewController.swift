@@ -38,18 +38,18 @@ class DTDTViewController: UIViewController {
         
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedStringKey.foregroundColor : view.tintColor,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedStringKey.foregroundColor : view.tintColor,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .selected)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedStringKey.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedStringKey.foregroundColor : view.tintColor,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .highlighted)
         
         myToolbar.setBackgroundImage(UIImage(),
@@ -94,28 +94,28 @@ class DTDTViewController: UIViewController {
         let evenButton = UIBarButtonItem(title: "Even", style: .plain, target: self, action: #selector(divideByTwo))
         
         oddButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-            NSAttributedStringKey.foregroundColor: view.tintColor],
+            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.foregroundColor: view.tintColor],
                                           for: .normal)
         oddButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-            NSAttributedStringKey.foregroundColor: view.tintColor],
+            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.foregroundColor: view.tintColor],
                                          for: .selected)
         oddButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-            NSAttributedStringKey.foregroundColor: view.tintColor],
+            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.foregroundColor: view.tintColor],
                                          for: .highlighted)
         evenButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-            NSAttributedStringKey.foregroundColor: view.tintColor],
+            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.foregroundColor: view.tintColor],
                                          for: .normal)
         evenButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-            NSAttributedStringKey.foregroundColor: view.tintColor],
+            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.foregroundColor: view.tintColor],
                                           for: .selected)
         evenButton.setTitleTextAttributes([
-            NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-            NSAttributedStringKey.foregroundColor: view.tintColor],
+            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.foregroundColor: view.tintColor],
                                           for: .highlighted)
 
         
@@ -180,16 +180,16 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                               for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .selected)
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .highlighted)
             
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -202,16 +202,16 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                               for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .selected)
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .highlighted)
             
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -224,16 +224,16 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "Please enter numbers only. No text."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .selected)
             retryButton.setTitleTextAttributes([
-                NSAttributedStringKey.font: UIFont(name: "Chalkduster", size: 40.0)!,
-                NSAttributedStringKey.foregroundColor: view.tintColor],
+                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .highlighted)
 
             
@@ -278,14 +278,14 @@ class DTDTViewController: UIViewController {
     
     func subscribeToKeyboardNotifications() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
         
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: Keyboard
@@ -303,7 +303,7 @@ class DTDTViewController: UIViewController {
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue.height
     }
     
