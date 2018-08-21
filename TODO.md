@@ -8,7 +8,7 @@
 
 
 ###### Developer notes
-- Add persistence: dark mode?
+- Add persistence: dark mode
 
 App store link: https://itunes.apple.com/app/id1406084758
 
