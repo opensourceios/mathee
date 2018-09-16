@@ -11,29 +11,29 @@ import UIKit
 
 extension UIViewController {
     
-    enum alertReason: String {
-        case messageSaved = "messageSaved"
-        case messageCanceled = "messageCanceled"
-        case messageFailed = "messageFailed"
-        case messageSent = "messageSent"
-        case unknown = "unknown"
+    enum alertReason {
+        case messageSaved
+        case messageCanceled
+        case messageFailed
+        case messageSent
+        case unknown
     }
     
-    func createAlert(alertReasonParam: String) -> UIAlertController {
+    func createAlert(alertReasonParam: alertReason) -> UIAlertController {
         
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-        case alertReason.messageSaved.rawValue:
+        case .messageSaved:
             alertTitle = "Message saved"
             alertMessage = "Your message has been saved to drafts."
-        case alertReason.messageCanceled.rawValue:
+        case .messageCanceled:
             alertTitle = "Action cancelled"
             alertMessage = "Your message has not been sent."
-        case alertReason.messageFailed.rawValue:
+        case .messageFailed:
             alertTitle = "Action failed"
             alertMessage = "Your message has not been sent. Please try again later, or contact us by visiting DaniSpringer.GitHub.io"
-        case alertReason.messageSent.rawValue:
+        case .messageSent:
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
         default:
