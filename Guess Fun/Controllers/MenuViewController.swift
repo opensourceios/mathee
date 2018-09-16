@@ -52,12 +52,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                                selector: #selector(myTableView.reloadData),
                                                name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
-
-        
-        let navHeight = navigationController?.navigationBar.frame.height
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        height = view.frame.height - navHeight! - statusBarHeight
         
         myTableView.separatorColor = UIColor.clear
         
@@ -75,10 +69,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if UIScreen.main.bounds.size.height == 812 || UIScreen.main.bounds.size.width == 812 {
-            // is iphone x
-            myTableView.contentOffset.y = myTableView.visibleCells[0].frame.height / 4 //50
-        }
+        let navHeight = navigationController?.navigationBar.frame.height
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
+        height = view.frame.height - navHeight! - statusBarHeight
+        
+//        if UIScreen.main.bounds.size.height == 812 || UIScreen.main.bounds.size.width == 812 {
+//            // is iphone x
+//            myTableView.contentOffset.y = myTableView.visibleCells[0].frame.height / 4 //50
+//        }
     }
 
     
@@ -103,7 +102,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.textLabel?.text = cellsContent[(indexPath as NSIndexPath).row]
         
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 60)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 60) // TODO: update with relative measure
         
         return cell
     }
@@ -127,7 +126,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.navigationController?.pushViewController(controller, animated: true)
         default:
             print("An error has occured!")
-            let alert = createAlert(alertReasonParam: alertReason.unknown.rawValue)
+            let alert = createAlert(alertReasonParam: alertReason.unknown)
             present(alert, animated: true)
         }
     }
@@ -172,7 +171,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown.rawValue)
+                let alert = self.createAlert(alertReasonParam: alertReason.unknown)
                 self.present(alert, animated: true)
                 return
             }
