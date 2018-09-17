@@ -12,9 +12,13 @@
 
 App store link: https://itunes.apple.com/app/id1406084758
 
-###### Update
+###### Description
 
-• Lorem
+Guess Fun is a collection of math games, including:
+• The numbers book
+• MatheMagic
+• And more!
 
-Found a bug? Want a feature added? Let us know by opening the app and tapping on 'About' > 'Send us an email', or by visiting DaniSpringer.GitHub.io
-Love the app? Leave us a review!
+• Is there a feature you'd like to see? A bug you'd like to go away? Let us know: www.DaniSpringer.GitHub.io
+
+• Love the app? Please consider leaving a 5-star review!
