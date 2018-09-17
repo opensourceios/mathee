@@ -23,9 +23,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: Properties
     
-    let rowCount = CGFloat(4)
-    var height = CGFloat(0)
-    
+    var fullHeight: CGFloat!
+    let fontSetter: CGFloat = 10
     let cellsContent = ["📗", "✖️➗➕➖", "👆👇" , "🕘"]
     
     
@@ -66,28 +65,19 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let navHeight = navigationController?.navigationBar.frame.height
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        height = view.frame.height - navHeight! - statusBarHeight
-        
-//        if UIScreen.main.bounds.size.height == 812 || UIScreen.main.bounds.size.width == 812 {
-//            // is iphone x
-//            myTableView.contentOffset.y = myTableView.visibleCells[0].frame.height / 4 //50
-//        }
     }
 
-    
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self.myTableView, name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
+    
     
     // Helpers
     
@@ -102,10 +92,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.textLabel?.text = cellsContent[(indexPath as NSIndexPath).row]
         
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 60) // TODO: update with relative measure
+        cell.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
+        
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
@@ -138,29 +130,21 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //myTableView.visibleCells[(indexPath as NSIndexPath).row].textLabel?.font = UIFont.systemFont(ofSize: fontSize)
         
-        let navHeight = navigationController?.navigationBar.frame.height
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        height = view.frame.height - navHeight! - statusBarHeight
-        return height / rowCount
+        return myTableView.frame.height / CGFloat(cellsContent.count)
     }
+    
     
     func updateRowHeight(indexPath: IndexPath) {
         
-        var fontSize = CGFloat(0)
-        if (self.view.frame.size.width > self.view.frame.size.height) {
-            fontSize = 40
-        } else {
-            fontSize = 60
-        }
-        
-        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
     }
+    
     
     @IBAction func rightBarButtonPressed() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
         present(controller, animated: true, completion: nil)
     }
+    
     
     // MARK: Actions
     
