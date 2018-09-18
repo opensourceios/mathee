@@ -6,7 +6,6 @@
 //  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MessageUI
 
@@ -46,11 +45,6 @@ class AboutViewController: UIViewController {
                     NSAttributedString.Key.font : myFont,
                     NSAttributedString.Key.foregroundColor : view.tintColor,
                     ], for: .selected)
-            UIBarButtonItem.appearance().setTitleTextAttributes(
-                [
-                    NSAttributedString.Key.font : myFont,
-                    NSAttributedString.Key.foregroundColor : view.tintColor,
-                    ], for: .highlighted)
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
                     NSAttributedString.Key.font : myFont,

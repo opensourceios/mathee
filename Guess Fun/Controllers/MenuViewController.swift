@@ -6,7 +6,6 @@
 //  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import SystemConfiguration
 
@@ -38,7 +37,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             for button in [aboutButton, shareButton] {
                 button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
                 button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .selected)
-                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
             }
         }
         
