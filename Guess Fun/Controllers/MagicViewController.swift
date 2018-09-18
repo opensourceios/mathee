@@ -6,7 +6,6 @@
 //  Copyright © 2018 Dani Springer. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import StoreKit
 
@@ -38,11 +37,6 @@ class MagicViewController: UIViewController {
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
                 NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .selected)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
-                NSAttributedString.Key.foregroundColor : view.tintColor,
-                ], for: .highlighted)
         
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
