@@ -44,7 +44,7 @@ class AboutViewController: UIViewController {
                 [
                     NSAttributedString.Key.font : myFont,
                     NSAttributedString.Key.foregroundColor : view.tintColor,
-                    ], for: .selected)
+                    ], for: .highlighted)
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
                     NSAttributedString.Key.font : myFont,
@@ -87,6 +87,7 @@ class AboutViewController: UIViewController {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 return
             }
@@ -130,6 +131,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
             }
             
             if let _ = alert.title {
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
         })

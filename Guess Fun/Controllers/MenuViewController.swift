@@ -36,7 +36,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
             for button in [aboutButton, shareButton] {
                 button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
-                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .selected)
+                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
             }
         }
         
@@ -118,6 +118,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             print("An error has occured!")
             let alert = createAlert(alertReasonParam: alertReason.unknown)
+            alert.view.layoutIfNeeded()
             present(alert, animated: true)
         }
     }
@@ -155,6 +156,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown)
+                alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 return
             }
