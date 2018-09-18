@@ -122,7 +122,6 @@ class PagesViewController: UIViewController {
     
     // Helpers
     
-    
     @objc func showNextPage() {
         if currentPageFake > shuffledPagesByOrder.count {
             showResult()
