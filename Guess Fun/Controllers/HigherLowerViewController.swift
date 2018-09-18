@@ -43,7 +43,7 @@ class HigherLowerViewController: UIViewController {
             [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
                 NSAttributedString.Key.foregroundColor : view.tintColor,
-                ], for: .selected)
+                ], for: .highlighted)
                 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
