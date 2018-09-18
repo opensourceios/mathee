@@ -33,6 +33,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
             for button in [aboutButton, shareButton] {
                 button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
