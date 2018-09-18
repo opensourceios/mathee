@@ -9,6 +9,7 @@
 
 ###### Developer notes
 - Add persistence: dark mode
+- refactor so you can delete extension
 
 App store link: https://itunes.apple.com/app/id1406084758
 
