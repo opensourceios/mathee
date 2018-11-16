@@ -10,8 +10,9 @@
 ###### Developer notes
 - Add persistence: dark mode
 - [?] refactor so you can delete extension
-- Improve apps for starting from iPhone 8: GF
-- Add screenshots for newest devices: GF
+- Improve apps for starting from iPhone 8
+- Add screenshots for newest devices
+- improve for ipad
 
 App store link: https://itunes.apple.com/app/id1406084758
 
