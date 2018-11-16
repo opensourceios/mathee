@@ -13,6 +13,7 @@
 - Improve apps for starting from iPhone 8
 - Add screenshots for newest devices
 - improve for ipad
+- Add back screenshots in READMEs.
 
 App store link: https://itunes.apple.com/app/id1406084758
 
