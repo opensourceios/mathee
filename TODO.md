@@ -1,21 +1,11 @@
-# Known Bugs:
-[no known bugs. Found a bug? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]]
-
-
-# Requested Features:
-
-[no requested features. Is there a feature you'd like? Let me know: [https://danispringer.github.io](https://danispringer.github.io)]
-
-
-###### Developer notes
+- use actionsheet for version/contact/review
 - Add persistence: dark mode
 - [?] refactor so you can delete extension
-- Improve apps for starting from iPhone 8
-- Add screenshots for newest devices
+- Improve apps starting from iPhone 8
 - improve for ipad
+- Add screenshots for newest devices
 - Add back screenshots in READMEs.
-
-App store link: https://itunes.apple.com/app/id1406084758
+- improve app description
 
 ###### Description
 
