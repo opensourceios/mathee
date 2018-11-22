@@ -1,8 +1,6 @@
-- use actionsheet for version/contact/review
-- Add persistence: dark mode
-- [?] refactor so you can delete extension
 - Improve apps starting from iPhone 8
 - improve for ipad
+- Add persistence: dark mode
 - Add screenshots for newest devices
 - Add back screenshots in READMEs.
 - improve app description
