@@ -18,6 +18,7 @@ extension UIViewController {
         case unknown
     }
     
+    
     func createAlert(alertReasonParam: alertReason) -> UIAlertController {
         
         var alertTitle = ""
@@ -46,4 +47,5 @@ extension UIViewController {
         
         return alert
     }
+    
 }
