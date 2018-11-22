@@ -11,15 +11,11 @@ import StoreKit
 
 class MagicViewController: UIViewController {
     
+    
     // MARK: Outlets
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
-    
-    
-    // MARK: Properties
-    
-    
     
     
     // MARK: Life Cicle
@@ -103,10 +99,11 @@ class MagicViewController: UIViewController {
         myToolbar.setItems([space, okButton, space], animated: true)
     }
     
+    
     @objc func done() {
         
         SKStoreReviewController.requestReview()
-        
         navigationController?.popToRootViewController(animated: true)
     }
+    
 }
