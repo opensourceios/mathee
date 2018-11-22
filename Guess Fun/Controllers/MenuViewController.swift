@@ -172,8 +172,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         if let presenter = infoAlert.popoverPresentationController {
-            presenter.sourceView = self.view
-            presenter.sourceRect = self.view.bounds
+            presenter.barButtonItem = aboutButton
+            //presenter.sourceView = self.view
+            //presenter.sourceRect = self.view.bounds
         }
         
         present(infoAlert, animated: true)
@@ -184,7 +185,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func shareApp() {
         let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
+        activityController.popoverPresentationController?.barButtonItem = aboutButton // for iPads not to crash
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
