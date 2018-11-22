@@ -19,7 +19,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
-    
     // MARK: Properties
     
     var fullHeight: CGFloat!
@@ -63,12 +62,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
 
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,7 +71,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    // Helpers
+    // TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellsContent.count
@@ -140,13 +133,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    // MARK: Actions
+   
     @IBAction func rightBarButtonPressed() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
         present(controller, animated: true, completion: nil)
     }
     
-    
-    // MARK: Actions
     
     @IBAction func shareButtonPressed(_ sender: Any) {
         let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
@@ -163,8 +156,5 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         present(activityController, animated: true)
     }
-    
-    
-    
-    
+
 }
