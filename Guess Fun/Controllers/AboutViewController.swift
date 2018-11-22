@@ -20,12 +20,7 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var versionButtonLabel: UIBarButtonItem!
     
-    
-    
-    // MARK: Properties
-    
-    
-    
+
     // MARK: Life Cycle
     
     override func viewDidLoad() {
@@ -70,14 +65,15 @@ class AboutViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
-        
     }
+    
     
     // MARK: Helpers
     
     @IBAction func doneButtonPressed() {
         dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func shareButtonPressed() {
         let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
@@ -94,7 +90,9 @@ class AboutViewController: UIViewController {
         }
         present(activityController, animated: true)
     }
+    
 }
+
 
 extension AboutViewController: MFMailComposeViewControllerDelegate {
     
@@ -114,6 +112,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         
         self.present(mc, animated: true, completion: nil)
     }
+    
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         var alert = UIAlertController()
@@ -136,7 +135,9 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
             }
         })
     }
+    
 }
+
 
 extension AboutViewController {
     
@@ -151,6 +152,7 @@ extension AboutViewController {
         UIApplication.shared.open(writeReviewURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 }
+
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
