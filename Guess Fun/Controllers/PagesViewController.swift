@@ -26,6 +26,7 @@ class PagesViewController: UIViewController {
         let value: [Int]
     }
     
+    
     let pagesArrayOfDicts = [
         1: [1, 3, 5, 7, 9, 11,
          13, 15, 17, 19, 21, 23,
@@ -65,15 +66,12 @@ class PagesViewController: UIViewController {
          62, 63]]
     
     var arrayOfPages = [Page]()
-    
     var shuffledPagesByContent = [Page]()
-    
     var shuffledPagesByOrder = [Page]()
-    
     var userNumber = 0
-    
     var currentPageFake = 1
     var currentPageReal = 0
+    
     
     // MARK: Life Cycle
     
@@ -137,6 +135,7 @@ class PagesViewController: UIViewController {
         
     }
     
+    
     @objc func addValue() {
         // add value
         userNumber += shuffledPagesByOrder[currentPageReal].key
@@ -145,11 +144,13 @@ class PagesViewController: UIViewController {
         showNextPage()
     }
     
+    
     @objc func dontAddValue() {
         currentPageFake += 1
         currentPageReal += 1
         showNextPage()
     }
+    
     
     @objc func showResult() {
         
