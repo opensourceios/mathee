@@ -18,19 +18,15 @@ class DTDTViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
     
+    
     // MARK: Properties
     
     var total = 0
     var isFirstEvenQuestion = true
     let storyboardID = "DTDTViewController"
     
-    // MARK: Life Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        subscribeToKeyboardNotifications()
-    }
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +63,18 @@ class DTDTViewController: UIViewController {
         myToolbar.setItems([space, okButton], animated: true)
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        subscribeToKeyboardNotifications()
+    }
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         unsubscribeFromKeyboardNotifications()
     }
+    
     
     // Helpers
     
@@ -80,6 +85,7 @@ class DTDTViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
+    
     
     @objc func oddOrEven() {
         // ask user if odd or even
@@ -108,6 +114,7 @@ class DTDTViewController: UIViewController {
         myToolbar.setItems([oddButton, space, evenButton], animated: true)
     }
     
+    
     @objc func addOne() {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
@@ -121,6 +128,7 @@ class DTDTViewController: UIViewController {
             total += 2
         }
     }
+    
     
     @objc func divideByTwo() {
         // tell user to divide by two
@@ -138,6 +146,7 @@ class DTDTViewController: UIViewController {
         myToolbar.setItems([space, okButton], animated: true)
     }
     
+    
     @objc func divideByNine() {
         // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, leaving out any remainder"
@@ -145,6 +154,7 @@ class DTDTViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
+    
     
     @objc func askResult() {
         // ask current result to user
@@ -156,6 +166,7 @@ class DTDTViewController: UIViewController {
         myTextField.isHidden = false
         myTextField.becomeFirstResponder()
     }
+    
     
     @objc func checkResult() {
         
@@ -220,6 +231,7 @@ class DTDTViewController: UIViewController {
         
     }
     
+    
     @objc func showResult() {
         // show final result to user
         myToolbar.setItems([], animated: true)
@@ -232,6 +244,7 @@ class DTDTViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, doneButton, space], animated: true)
     }
+    
     
     @objc func okButtonKeyboardPressed() {
         myTextField.resignFirstResponder()
@@ -246,6 +259,7 @@ class DTDTViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    
     // MARK: Subscription
     
     func subscribeToKeyboardNotifications() {
@@ -254,11 +268,13 @@ class DTDTViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    
     func unsubscribeFromKeyboardNotifications() {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     
     // MARK: Keyboard
     
@@ -268,9 +284,11 @@ class DTDTViewController: UIViewController {
         }
     }
     
+    
     @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
     }
+    
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         
