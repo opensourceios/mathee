@@ -1,3 +1,4 @@
+- bug: guessing 1125 takes "4" tries
 - Improve apps starting from iPhone 8
 - improve for ipad
 - Add persistence: dark mode
