@@ -8,6 +8,8 @@
 
 import UIKit
 import SystemConfiguration
+import MessageUI
+import StoreKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,7 +18,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
     // MARK: Properties
@@ -31,12 +32,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
-            for button in [aboutButton, shareButton] {
-                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
-                button?.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
-            }
+            aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
+            aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
         }
         
     }
@@ -136,12 +134,54 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Actions
    
     @IBAction func rightBarButtonPressed() {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
-        present(controller, animated: true, completion: nil)
+        #warning("present actionsheet with review, contact, version, and share")
+        
+        let version: String? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+        let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if let version = version {
+            infoAlert.message = "Version \(version)"
+            infoAlert.title = "Guess Fun"
+        }
+        
+        infoAlert.modalPresentationStyle = .popover
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            _ in
+            self.dismiss(animated: true, completion: {
+                SKStoreReviewController.requestReview()
+            })
+        }
+        
+        let shareAppAction = UIAlertAction(title: "Share App with friends", style: .default) {
+            _ in
+            self.shareApp()
+        }
+        
+        let mailAction = UIAlertAction(title: "Send feedback or question", style: .default) {
+            _ in
+            self.launchEmail()
+        }
+        
+        let reviewAction = UIAlertAction(title: "Leave a review", style: .default) {
+            _ in
+            self.requestReviewManually()
+        }
+        
+        for action in [mailAction, reviewAction, shareAppAction, cancelAction] {
+            infoAlert.addAction(action)
+        }
+        
+        if let presenter = infoAlert.popoverPresentationController {
+            presenter.sourceView = self.view
+            presenter.sourceRect = self.view.bounds
+        }
+        
+        present(infoAlert, animated: true)
+
     }
     
     
-    @IBAction func shareButtonPressed(_ sender: Any) {
+    func shareApp() {
         let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.sourceView = self.view // for iPads not to crash
@@ -157,4 +197,72 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         present(activityController, animated: true)
     }
 
+}
+
+
+extension MenuViewController: MFMailComposeViewControllerDelegate {
+    
+    
+    func launchEmail() {
+        
+        var emailTitle = "Guess Fun"
+        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
+            emailTitle += " \(version)"
+        }
+        let messageBody = "Hi. I have a question..."
+        let toRecipents = ["musicbyds@icloud.com"]
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setMessageBody(messageBody, isHTML: false)
+        mc.setToRecipients(toRecipents)
+        
+        self.present(mc, animated: true, completion: nil)
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        var alert = UIAlertController()
+        
+        dismiss(animated: true, completion: {
+            switch result {
+            case MFMailComposeResult.failed:
+                alert = self.createAlert(alertReasonParam: alertReason.messageFailed)
+            case MFMailComposeResult.saved:
+                alert = self.createAlert(alertReasonParam: alertReason.messageSaved)
+            case MFMailComposeResult.sent:
+                alert = self.createAlert(alertReasonParam: alertReason.messageSent)
+            default:
+                break
+            }
+            
+            if let _ = alert.title {
+                alert.view.layoutIfNeeded()
+                self.present(alert, animated: true)
+            }
+        })
+    }
+    
+}
+
+
+extension MenuViewController {
+    
+    
+    func requestReviewManually() {
+        // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
+        //       You can find the App Store ID in your app's product URL
+        guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1406084758?action=write-review")
+            else {
+                fatalError("Expected a valid URL")
+                
+        }
+        UIApplication.shared.open(writeReviewURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+    }
+}
+
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

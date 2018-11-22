@@ -111,101 +111,6 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="1372" y="2239"/>
         </scene>
-        <!--About View Controller-->
-        <scene sceneID="5AC-qX-46h">
-            <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="gyj-Nt-DdM" customClass="AboutViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V62-h4-koR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enjoying Guess Fun? Please consider leaving us a review in the App Store!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qq-aM-94u">
-                                <rect key="frame" x="16" y="60" width="382" height="95"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mW-Dv-hvX">
-                                <rect key="frame" x="16" y="175" width="382" height="38"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                <state key="normal" title="Leave us a review"/>
-                                <connections>
-                                    <action selector="requestReviewManually" destination="gyj-Nt-DdM" eventType="touchUpInside" id="g6K-S9-QRd"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa1-Jr-mjr">
-                                <rect key="frame" x="16" y="245.00000000000003" width="382" height="63.333333333333343"/>
-                                <string key="text">Found a bug?
-Have a question?</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6EB-1K-Tkf">
-                                <rect key="frame" x="16" y="324.33333333333331" width="382" height="38"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                <state key="normal" title="Send us an email"/>
-                                <connections>
-                                    <action selector="launchEmailWithSender:" destination="gyj-Nt-DdM" eventType="touchUpInside" id="daR-l0-gY1"/>
-                                </connections>
-                            </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZx-Ch-yBL">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="ZtI-Df-wOm"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Share" id="gPR-ak-7gF">
-                                        <connections>
-                                            <action selector="shareButtonPressed" destination="gyj-Nt-DdM" id="r3k-eI-4ah"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jzY-JN-zAu"/>
-                                    <barButtonItem title="Error showing version." id="auH-SH-sFT">
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IVh-Fb-DrU"/>
-                                    <barButtonItem title="Close" id="D39-aw-ZSe">
-                                        <connections>
-                                            <action selector="doneButtonPressed" destination="gyj-Nt-DdM" id="vB0-Vo-D3z"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="xa1-Jr-mjr" firstAttribute="top" secondItem="8mW-Dv-hvX" secondAttribute="bottom" constant="32" id="2ed-eV-Uyx"/>
-                            <constraint firstItem="A74-jW-A06" firstAttribute="bottom" secondItem="cZx-Ch-yBL" secondAttribute="bottom" id="2r0-4Q-U9c"/>
-                            <constraint firstItem="8mW-Dv-hvX" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="4up-K6-lba"/>
-                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="6EB-1K-Tkf" secondAttribute="trailing" constant="16" id="B05-nn-o5T"/>
-                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="8mW-Dv-hvX" secondAttribute="trailing" constant="16" id="D2u-nc-I5A"/>
-                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="3Qq-aM-94u" secondAttribute="trailing" constant="16" id="H8p-hR-BbY"/>
-                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="cZx-Ch-yBL" secondAttribute="trailing" id="JYG-dg-ehE"/>
-                            <constraint firstItem="cZx-Ch-yBL" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" id="LBa-0i-tPp"/>
-                            <constraint firstItem="3Qq-aM-94u" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="U3e-K7-Uw1"/>
-                            <constraint firstItem="A74-jW-A06" firstAttribute="trailing" secondItem="xa1-Jr-mjr" secondAttribute="trailing" constant="16" id="Ufc-BB-bNp"/>
-                            <constraint firstItem="3Qq-aM-94u" firstAttribute="top" secondItem="A74-jW-A06" secondAttribute="top" constant="16" id="am2-6Z-ixk"/>
-                            <constraint firstItem="6EB-1K-Tkf" firstAttribute="top" secondItem="xa1-Jr-mjr" secondAttribute="bottom" constant="16" id="cO5-44-RVy"/>
-                            <constraint firstItem="xa1-Jr-mjr" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="egc-kx-FQ9"/>
-                            <constraint firstItem="8mW-Dv-hvX" firstAttribute="top" secondItem="3Qq-aM-94u" secondAttribute="bottom" constant="20" id="tsj-Lh-4Dg"/>
-                            <constraint firstItem="6EB-1K-Tkf" firstAttribute="leading" secondItem="A74-jW-A06" secondAttribute="leading" constant="16" id="x3G-by-oMe"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="A74-jW-A06"/>
-                    </view>
-                    <connections>
-                        <outlet property="closeButton" destination="D39-aw-ZSe" id="GgJ-Cq-hzz"/>
-                        <outlet property="emailButton" destination="6EB-1K-Tkf" id="aMg-xW-k6E"/>
-                        <outlet property="myToolbar" destination="cZx-Ch-yBL" id="zjR-LM-nFJ"/>
-                        <outlet property="reviewButton" destination="8mW-Dv-hvX" id="KV3-jL-8Rh"/>
-                        <outlet property="shareButton" destination="gPR-ak-7gF" id="jce-iS-kQm"/>
-                        <outlet property="versionButtonLabel" destination="auH-SH-sFT" id="gzI-9m-ndD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PLu-dd-TLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-101.25" y="-219.71830985915494"/>
-        </scene>
         <!--📗-->
         <scene sceneID="N7b-KI-OfH">
             <objects>
@@ -331,11 +236,6 @@ Have a question?</string>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
                     <navigationItem key="navigationItem" title="🏠" id="bIQ-V8-dG6">
-                        <barButtonItem key="leftBarButtonItem" title="Share" id="AFu-Lr-wuY">
-                            <connections>
-                                <action selector="shareButtonPressed:" destination="OWD-6W-keU" id="AoF-ZI-8ym"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="About" id="en9-jY-Ktc">
                             <connections>
                                 <action selector="rightBarButtonPressed" destination="OWD-6W-keU" id="aPO-Gg-kWq"/>
@@ -345,7 +245,6 @@ Have a question?</string>
                     <connections>
                         <outlet property="aboutButton" destination="en9-jY-Ktc" id="iDl-ve-Dhh"/>
                         <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
-                        <outlet property="shareButton" destination="AFu-Lr-wuY" id="afb-wi-bnk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-fe-gN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
