@@ -1,3 +1,4 @@
+- DTDT 'thought number' is very low on screen, especially ipad
 - Improve apps starting from iPhone 8
 - improve for ipad
 - Add persistence: dark mode
