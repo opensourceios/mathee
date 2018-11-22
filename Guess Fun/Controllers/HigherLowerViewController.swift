@@ -11,12 +11,12 @@ import StoreKit
 
 class HigherLowerViewController: UIViewController {
     
+    
     // MARK: Outlets
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var guessLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
-    
     
     
     // MARK: Properties
@@ -92,17 +92,20 @@ class HigherLowerViewController: UIViewController {
         
     }
     
+    
     @objc func lower() {
         tries += 1
         high = guess
         showNextGuess()
     }
     
+    
     @objc func higher() {
         tries += 1
         low = guess
         showNextGuess()
     }
+    
     
     @objc func correct() {
         tries += 1
@@ -122,6 +125,7 @@ class HigherLowerViewController: UIViewController {
         myToolbar.setItems([space, doneButton, space], animated: true)
     }
     
+    
     // MARK: Action
     
     @objc func doneButtonPressed() {
@@ -130,8 +134,6 @@ class HigherLowerViewController: UIViewController {
         
         navigationController?.popToRootViewController(animated: true)
     }
-    
-    
     
 }
 
