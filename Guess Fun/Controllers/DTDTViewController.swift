@@ -11,6 +11,7 @@ import StoreKit
 
 class DTDTViewController: UIViewController {
     
+    
     // MARK: Outlets
     
     @IBOutlet weak var messageLabel: UILabel!
@@ -23,7 +24,6 @@ class DTDTViewController: UIViewController {
     
     var total = 0
     var isFirstEvenQuestion = true
-    let storyboardID = "DTDTViewController"
     
     
     // MARK: Life Cycle
@@ -94,19 +94,19 @@ class DTDTViewController: UIViewController {
         let evenButton = UIBarButtonItem(title: "Even", style: .plain, target: self, action: #selector(divideByTwo))
         
         oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
             NSAttributedString.Key.foregroundColor: view.tintColor],
                                           for: .normal)
         oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
             NSAttributedString.Key.foregroundColor: view.tintColor],
                                          for: .highlighted)
         evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
             NSAttributedString.Key.foregroundColor: view.tintColor],
                                          for: .normal)
         evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
             NSAttributedString.Key.foregroundColor: view.tintColor],
                                           for: .highlighted)
         
@@ -176,11 +176,11 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor],
                                               for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .highlighted)
             
@@ -194,11 +194,11 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor],
                                               for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .highlighted)
             
@@ -212,11 +212,11 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "Please enter numbers only. No text. Max number: 2^63 - 1."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor],
                                                for: .highlighted)
             
