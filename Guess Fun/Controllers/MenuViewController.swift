@@ -134,7 +134,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Actions
    
     @IBAction func rightBarButtonPressed() {
-        #warning("present actionsheet with review, contact, version, and share")
         
         let version: String? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
