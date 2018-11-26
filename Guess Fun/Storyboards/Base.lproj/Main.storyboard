@@ -276,14 +276,8 @@ Prepare to be amazed.</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="284-q2-c5f">
-                                <rect key="frame" x="16" y="738.33333333333337" width="382" height="31.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="60" width="382" height="646.33333333333337"/>
+                                <rect key="frame" x="16" y="377.33333333333331" width="382" height="151.66666666666669"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -295,17 +289,13 @@ Let me ask you a few questions...</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="80" id="5UY-dm-1nd"/>
-                            <constraint firstItem="284-q2-c5f" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="8YQ-0d-rvx"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
-                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="GQT-Rq-cuq"/>
+                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Iy0-d1-2bt"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="16" id="K80-LJ-w1Y"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="leading" secondItem="Bjj-IK-Hsa" secondAttribute="leading" constant="-16" id="WlA-nk-OtO"/>
-                            <constraint firstItem="FgR-50-WSp" firstAttribute="top" secondItem="284-q2-c5f" secondAttribute="bottom" constant="32" id="YzV-KI-rk3"/>
+                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="trailing" secondItem="cqg-Uf-L5S" secondAttribute="trailing" constant="-16" id="SP2-ZN-3vu"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="284-q2-c5f" secondAttribute="trailing" constant="16" id="bz7-H9-hqi"/>
-                            <constraint firstItem="284-q2-c5f" firstAttribute="top" secondItem="Bjj-IK-Hsa" secondAttribute="bottom" constant="32" id="dzZ-RV-mZb"/>
+                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="fA8-WQ-9HU"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
-                            <constraint firstItem="Bjj-IK-Hsa" firstAttribute="trailing" secondItem="cqg-Uf-L5S" secondAttribute="trailing" constant="-16" id="mQE-4t-aie"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
@@ -315,7 +305,6 @@ Let me ask you a few questions...</string>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
                         <outlet property="myToolbar" destination="FgR-50-WSp" id="ept-bZ-lKX"/>
-                        <outlet property="resultLabel" destination="284-q2-c5f" id="21h-wx-U1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
