@@ -25,6 +25,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var fullHeight: CGFloat!
     let fontSetter: CGFloat = 10
     let cellsContent = ["📗", "✖️➗➕➖", "👆👇" , "🕘"]
+    let menuCell = "MenuCell"
     
     
     // MARK: Life Cycle
@@ -32,7 +33,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let myFont = UIFont(name: "Chalkduster", size: 14.0) {
+        if let myFont = UIFont(name: Constants.misc.fontChalkduster, size: 14.0) {
             aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
             aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
         }
@@ -78,7 +79,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
         
         cell.textLabel?.text = cellsContent[(indexPath as NSIndexPath).row]
         
@@ -91,20 +92,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         
         switch indexPath.row {
         case 0:
-            let controller = storyboard.instantiateViewController(withIdentifier: "PagesViewController") as! PagesViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.pagesVC) as! PagesViewController
             self.navigationController?.pushViewController(controller, animated: true)
         case 1:
-            let controller = storyboard.instantiateViewController(withIdentifier: "DTDTViewController") as! DTDTViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.dtdtVC) as! DTDTViewController
             self.navigationController?.pushViewController(controller, animated: true)
         case 2:
-            let controller = storyboard.instantiateViewController(withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.higherVC) as! HigherLowerViewController
             self.navigationController?.pushViewController(controller, animated: true)
         case 3:
-            let controller = storyboard.instantiateViewController(withIdentifier: "MagicViewController") as! MagicViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.magicVC) as! MagicViewController
             self.navigationController?.pushViewController(controller, animated: true)
         default:
             print("An error has occured!")
@@ -118,8 +119,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         updateRowHeight(indexPath: indexPath)
-        
-        //myTableView.visibleCells[(indexPath as NSIndexPath).row].textLabel?.font = UIFont.systemFont(ofSize: fontSize)
         
         return myTableView.frame.height / CGFloat(cellsContent.count)
     }
@@ -135,33 +134,33 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
    
     @IBAction func rightBarButtonPressed() {
         
-        let version: String? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+        let version: String? = Bundle.main.infoDictionary![Constants.misc.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
-            infoAlert.message = "Version \(version)"
-            infoAlert.title = "Guess Fun"
+            infoAlert.message = "\(Constants.misc.version) \(version)"
+            infoAlert.title = Constants.misc.appName
         }
         
         infoAlert.modalPresentationStyle = .popover
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+        let cancelAction = UIAlertAction(title: Constants.misc.cancel, style: .cancel) {
             _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
         }
         
-        let shareAppAction = UIAlertAction(title: "Share App with friends", style: .default) {
+        let shareAppAction = UIAlertAction(title: Constants.misc.shareApp, style: .default) {
             _ in
             self.shareApp()
         }
         
-        let mailAction = UIAlertAction(title: "Send feedback or question", style: .default) {
+        let mailAction = UIAlertAction(title: Constants.misc.sendFeedback, style: .default) {
             _ in
             self.launchEmail()
         }
         
-        let reviewAction = UIAlertAction(title: "Leave a review", style: .default) {
+        let reviewAction = UIAlertAction(title: Constants.misc.leaveReview, style: .default) {
             _ in
             self.requestReviewManually()
         }
@@ -172,8 +171,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if let presenter = infoAlert.popoverPresentationController {
             presenter.barButtonItem = aboutButton
-            //presenter.sourceView = self.view
-            //presenter.sourceRect = self.view.bounds
         }
         
         present(infoAlert, animated: true)
@@ -205,12 +202,12 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
     
     func launchEmail() {
         
-        var emailTitle = "Guess Fun"
-        if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] {
+        var emailTitle = Constants.misc.appName
+        if let version = Bundle.main.infoDictionary![Constants.misc.appVersion] {
             emailTitle += " \(version)"
         }
-        let messageBody = "Hi. I have a question..."
-        let toRecipents = ["***REMOVED***"]
+        let messageBody = Constants.misc.emailSample
+        let toRecipents = [Constants.misc.emailAddress]
         let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setSubject(emailTitle)
@@ -252,7 +249,7 @@ extension MenuViewController {
     func requestReviewManually() {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
-        guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1406084758?action=write-review")
+        guard let writeReviewURL = URL(string: Constants.misc.reviewLink)
             else {
                 fatalError("Expected a valid URL")
                 

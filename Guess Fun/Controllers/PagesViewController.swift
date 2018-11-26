@@ -188,13 +188,3 @@ class PagesViewController: UIViewController {
     
 }
 
-
-
-
-
-
-
-
-
-
-
