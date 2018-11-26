@@ -93,7 +93,7 @@ class MagicViewController: UIViewController {
     
     
     @objc func showResult() {
-        headerLabel.text = "9"
+        headerLabel.text = "You thought: 9"
         let okButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(done))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton, space], animated: true)

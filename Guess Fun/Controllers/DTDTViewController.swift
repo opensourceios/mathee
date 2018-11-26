@@ -15,7 +15,6 @@ class DTDTViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
     
@@ -53,7 +52,6 @@ class DTDTViewController: UIViewController {
         myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
         
-        resultLabel.isHidden = true
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
         messageLabel.text = "Think of a number.\nI will find it.\nLet me ask you a few questions..."
@@ -236,9 +234,7 @@ class DTDTViewController: UIViewController {
         // show final result to user
         myToolbar.setItems([], animated: true)
         myTextField.isHidden = true
-        messageLabel.text = "You thought:"
-        resultLabel.isHidden = false
-        resultLabel.text = "\(total)"
+        messageLabel.text = "You thought: \(total)"
         
         let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)

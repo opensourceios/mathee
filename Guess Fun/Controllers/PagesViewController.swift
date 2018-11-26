@@ -155,8 +155,8 @@ class PagesViewController: UIViewController {
     @objc func showResult() {
         
         pageContentLabel.text = ""
-        pageNumberLabel.text = "You thought:"
-        resultLabel.text = "\(userNumber)"
+        pageNumberLabel.text = ""
+        resultLabel.text = "You thought: \(userNumber)"
         resultLabel.isHidden = false
         
         let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
