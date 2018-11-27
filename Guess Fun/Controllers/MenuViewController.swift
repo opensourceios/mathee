@@ -24,7 +24,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var fullHeight: CGFloat!
     let fontSetter: CGFloat = 10
-    let cellsContent = ["📗", "✖️➗➕➖", "👆👇" , "🕘"]
+    //let cellsContent = ["📗", "👸", "✖️➗➕➖", "👆👇" , "🕘"]
+    
+    enum cellsEnum: String, CaseIterable {
+        case pages = "📗"
+        case queens = "👸"
+        case dtdt = "✖️➗➕➖"
+        case higher = "👆👇"
+        case magic = "🕘"
+    }
+    
     let menuCell = "MenuCell"
     
     
@@ -73,7 +82,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellsContent.count
+        return cellsEnum.allCases.count
     }
     
     
@@ -81,7 +90,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
         
-        cell.textLabel?.text = cellsContent[(indexPath as NSIndexPath).row]
+        cell.textLabel?.text = cellsEnum.allCases[(indexPath as NSIndexPath).row].rawValue
         
         cell.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
         
@@ -94,18 +103,23 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         
-        switch indexPath.row {
-        case 0:
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        switch cell?.textLabel?.text {
+        case cellsEnum.pages.rawValue:
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.pagesVC) as! PagesViewController
             self.navigationController?.pushViewController(controller, animated: true)
-        case 1:
+        case cellsEnum.dtdt.rawValue:
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.dtdtVC) as! DTDTViewController
             self.navigationController?.pushViewController(controller, animated: true)
-        case 2:
+        case cellsEnum.higher.rawValue:
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.higherVC) as! HigherLowerViewController
             self.navigationController?.pushViewController(controller, animated: true)
-        case 3:
+        case cellsEnum.magic.rawValue:
             let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.magicVC) as! MagicViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        case cellsEnum.queens.rawValue:
+            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.queensVC) as! QueensViewController
             self.navigationController?.pushViewController(controller, animated: true)
         default:
             print("An error has occured!")
@@ -120,7 +134,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         updateRowHeight(indexPath: indexPath)
         
-        return myTableView.frame.height / CGFloat(cellsContent.count)
+        return myTableView.frame.height / CGFloat(cellsEnum.allCases.count)
     }
     
     
