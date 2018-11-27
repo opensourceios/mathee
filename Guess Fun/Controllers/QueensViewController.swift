@@ -67,10 +67,11 @@ class QueensViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        myTextView.flashScrollIndicators()
+        
         
         if !didscrollOnce {
             myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
+            myTextView.flashScrollIndicators()
         }
         
         didscrollOnce = true
