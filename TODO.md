@@ -4,6 +4,7 @@
 - Add back screenshots in READMEs.
 - improve app description
 - add persistence: splash screen
+- queens: improve design with background images (stack views? other?)
 
 ###### Description
 
