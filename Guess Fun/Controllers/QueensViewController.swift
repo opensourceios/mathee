@@ -20,6 +20,8 @@ class QueensViewController: UIViewController {
     
     // MARK: Properties
     
+    var boardString = ""
+    var didscrollOnce = false
     
     
     // MARK: Life Cycle
@@ -37,6 +39,11 @@ class QueensViewController: UIViewController {
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
                 NSAttributedString.Key.foregroundColor : view.tintColor,
                 ], for: .highlighted)
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.foregroundColor : UIColor.gray,
+                ], for: .disabled)
         
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -48,19 +55,32 @@ class QueensViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([shareButton, space, refreshButton], animated: true)
         
-        makeBoard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        makeBoard()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         myTextView.flashScrollIndicators()
+        
+        if !didscrollOnce {
+            myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
+        }
+        
+        didscrollOnce = true
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        myTextView.scrollRangeToVisible(NSRange(location:0, length:0))
         myTextView.flashScrollIndicators()
     }
     
@@ -277,6 +297,7 @@ class QueensViewController: UIViewController {
     
     
     @objc func makeBoard() {
+        
         var current = 0
         let limit = 1
         while current < limit {
@@ -300,7 +321,6 @@ class QueensViewController: UIViewController {
                                   ["", "", "", "", "", "", "", ""],
                                   ["", "", "", "", "", "", "", ""],]
             
-            var boardString = ""
             
             for i in 0...7 {
                 board[i][positions[index]] = 1
@@ -318,8 +338,7 @@ class QueensViewController: UIViewController {
             }
             
             
-            
-            if hasAllValidDiagonals(board: board) {
+            if self.hasAllValidDiagonals(board: board) {
                 
                 for (indexOfRow, row) in board.enumerated() {
                     for (indexOfCol, col) in row.enumerated() {
@@ -329,20 +348,26 @@ class QueensViewController: UIViewController {
                     }
                 }
                 
+                self.boardString = ""
+                
                 for (index, row) in boardOfStrings.enumerated() {
                     if index == boardOfStrings.count {
-                        boardString.append("\(row.joined())")
+                        self.boardString.append("\(row.joined())")
                     } else {
-                        boardString.append("\(row.joined())\n")
+                        self.boardString.append("\(row.joined())\n")
                     }
                 }
                 
-                solutionLabel.text = boardString
                 current += 1
             }
             
         }
+
+
+        self.solutionLabel.text = boardString
+        
     }
+    
     
     #warning("test on ipad")
     @objc func shareSolution() {
@@ -354,12 +379,19 @@ class QueensViewController: UIViewController {
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: alertReason.unknown)
                 alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                }
+                
                 return
             }
         }
-        present(activityController, animated: true)
+        DispatchQueue.main.async {
+            self.present(activityController, animated: true)
+        }
+        
     }
+    
 }
 
 /*
