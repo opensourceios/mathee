@@ -16,6 +16,7 @@ struct Constants {
         static let dtdtVC = "DTDTViewController"
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
+        static let queensVC = "QueensViewController"
     }
     
     struct misc {
