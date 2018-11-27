@@ -1,10 +1,11 @@
 - Improve design starting from iPhone 8
 - improve design for ipad
-- Add screenshots for newest devices
+- Update screenshots
 - Add back screenshots in READMEs.
-- improve app description
+- update app description
 - add persistence: splash screen
 - queens: improve design with background images (stack views? other?)
+- sudoku checker
 
 ###### Description
 
