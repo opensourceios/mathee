@@ -6,6 +6,7 @@
 - add persistence: splash screen
 - queens: improve design with background images (stack views? other?)
 - sudoku checker
+- queens: scroll to top on status bar tapped
 
 ###### Description
 
