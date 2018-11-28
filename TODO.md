@@ -1,13 +1,15 @@
-- Improve design starting from iPhone 8
-- improve design for ipad
+earlier
+- Improve design from iPhone 8
 - Update screenshots
-- Add back screenshots in READMEs.
+- Add screenshots to README
 - update app description
+
+
+later
 - add persistence: splash screen
+- improve design for ipad
 - queens: improve design with background images (stack views? other?)
 - sudoku checker
-- queens: scroll to top on status bar tapped
-- delete python queens repo
 
 ###### Description
 
