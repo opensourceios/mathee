@@ -24,7 +24,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var fullHeight: CGFloat!
     let fontSetter: CGFloat = 10
-    //let cellsContent = ["📗", "👸", "✖️➗➕➖", "👆👇" , "🕘"]
     
     enum cellsEnum: String, CaseIterable {
         case pages = "📗"
