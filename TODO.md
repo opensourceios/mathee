@@ -1,3 +1,4 @@
+FIX: board on smaller screens, and bigger screens in landscape
 earlier
 - Improve design from iPhone 8
 - Update screenshots
