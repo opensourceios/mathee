@@ -58,17 +58,16 @@ class QueensViewController: UIViewController {
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         makeBoard()
-        
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        
         
         if !didscrollOnce {
             myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
@@ -87,8 +86,14 @@ class QueensViewController: UIViewController {
     }
     
     
-    // MARK: Helpers
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        
+    }
     
+    
+    // MARK: Helpers
     
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
         
