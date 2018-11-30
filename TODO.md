@@ -4,6 +4,7 @@ earlier
 - Update screenshots
 - Add screenshots to README
 - update app description
+- add sounds to buttons
 
 
 later
