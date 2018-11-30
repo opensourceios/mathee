@@ -134,10 +134,8 @@ class HigherLowerViewController: UIViewController {
     // MARK: Action
     
     @objc func doneButtonPressed() {
-        
-        SKStoreReviewController.requestReview()
-        
         navigationController?.popToRootViewController(animated: true)
+        SKStoreReviewController.requestReview()
     }
     
 }

@@ -207,7 +207,7 @@ class DTDTViewController: UIViewController {
         
         guard let number = Int(text) else {
             myTextField.isHidden = true
-            messageLabel.text = "Please enter numbers only. No text. Max number: 2^63 - 1."
+            messageLabel.text = "Please enter numbers only.\nNo text.\nMax number: 2^63 - 1."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
                 NSAttributedString.Key.font: UIFont(name: Constants.misc.fontChalkduster, size: 40.0)!,
@@ -249,10 +249,8 @@ class DTDTViewController: UIViewController {
     
     
     @objc func doneButtonPressed() {
-        
-        SKStoreReviewController.requestReview()
-        
         navigationController?.popToRootViewController(animated: true)
+        SKStoreReviewController.requestReview()
     }
     
     
