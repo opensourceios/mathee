@@ -1,17 +1,15 @@
-FIX: board on smaller screens, and bigger screens in landscape
 earlier
 - Improve design from iPhone 8
 - Update screenshots
-- Add screenshots to README
 - update app description
 - add sounds to buttons
-
+- FIXME: board on smaller screens, and bigger screens in landscape
 
 later
 - add persistence: splash screen
 - improve design for ipad
-- queens: improve design with background images (stack views? other?)
 - sudoku checker
+- Add screenshots to README
 
 ###### Description
 
