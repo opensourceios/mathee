@@ -1,9 +1,10 @@
 earlier
-- show "rotate device" on landscape in queens on iphone
 - Update screenshots
 - update app description
 - add sounds to buttons
 - dispatch all ui
+- SE: landscape pages cuts off content
+- [?] hide warninglabel on ipad
 
 later
 - add persistence: splash screen
