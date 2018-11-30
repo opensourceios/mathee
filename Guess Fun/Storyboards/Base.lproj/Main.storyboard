@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,24 +15,18 @@
             <objects>
                 <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i4p-Zt-AVs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-JF-uXf">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="W2q-Lg-Ax6"/>
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops! It took me more than 10 tries. Please let the developer know this happened." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="249" width="343" height="189.5"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-o1-6LC">
-                                <rect key="frame" x="16" y="36" width="343" height="265.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
+                                <rect key="frame" x="16" y="16" width="635" height="152"/>
                                 <string key="text">Think of a number 1-1000.
 After each try, tell me whether to go 👆 or 👇, or if I 🎉!
 I will guess it in 10 tries or less.</string>
@@ -41,7 +35,7 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzF-Up-j1l" userLabel="Trophy Label">
-                                <rect key="frame" x="16" y="470.5" width="343" height="84"/>
+                                <rect key="frame" x="16" y="200" width="635" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,11 +47,8 @@ I will guess it in 10 tries or less.</string>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="yzF-Up-j1l" secondAttribute="trailing" constant="16" id="6Zd-Vj-F15"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="8pq-Eb-w1b"/>
                             <constraint firstItem="e8i-JF-uXf" firstAttribute="width" secondItem="i4p-Zt-AVs" secondAttribute="width" id="AYY-1Q-nFF"/>
-                            <constraint firstItem="aWT-o1-6LC" firstAttribute="trailing" secondItem="kO9-Xj-yVp" secondAttribute="trailing" constant="-16" id="KDU-BY-lBF"/>
-                            <constraint firstItem="aWT-o1-6LC" firstAttribute="top" secondItem="kO9-Xj-yVp" secondAttribute="top" constant="16" id="MxT-UT-DGG"/>
-                            <constraint firstItem="nAW-HL-3cW" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="d3W-Q0-KUk"/>
+                            <constraint firstItem="nAW-HL-3cW" firstAttribute="top" secondItem="kO9-Xj-yVp" secondAttribute="top" constant="16" id="WLg-4c-E8r"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="nAW-HL-3cW" secondAttribute="trailing" constant="16" id="exC-tg-SVV"/>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="leading" secondItem="aWT-o1-6LC" secondAttribute="leading" constant="-16" id="jSm-5H-cyf"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="e8i-JF-uXf" secondAttribute="bottom" id="q6d-4J-nf2"/>
                             <constraint firstItem="yzF-Up-j1l" firstAttribute="top" secondItem="nAW-HL-3cW" secondAttribute="bottom" constant="32" id="qbI-by-GUq"/>
                             <constraint firstItem="e8i-JF-uXf" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="rCz-sT-nKu"/>
@@ -67,7 +58,6 @@ I will guess it in 10 tries or less.</string>
                     <navigationItem key="navigationItem" title="👆" id="oXZ-fp-eKa"/>
                     <connections>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
-                        <outlet property="headerLabel" destination="aWT-o1-6LC" id="X0k-1r-7FY"/>
                         <outlet property="myToolbar" destination="e8i-JF-uXf" id="J7w-vb-6kZ"/>
                         <outlet property="trophyLabel" destination="yzF-Up-j1l" id="ACJ-PC-yNY"/>
                     </connections>
@@ -81,11 +71,11 @@ I will guess it in 10 tries or less.</string>
             <objects>
                 <viewController storyboardIdentifier="QueensViewController" id="CGs-A7-iCg" customClass="QueensViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ax9-N7-RrR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXi-RC-tpW" userLabel="Solution Label">
-                                <rect key="frame" x="16" y="36" width="343" height="555"/>
+                                <rect key="frame" x="16" y="16" width="635" height="295"/>
                                 <string key="text">⬜️⬛️⬜️⬛️⬜️⬛️⬜️⬛️
 ⬛️⬜️⬛️⬜️⬛️⬜️⬛️⬜️
 ⬜️⬛️⬜️⬛️⬜️⬛️⬜️⬛️
@@ -99,11 +89,11 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvW-pj-5lr">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="343" width="667" height="32"/>
                                 <items/>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttl-pA-p0Q">
-                                <rect key="frame" x="16" y="607" width="343" height="0.0"/>
+                                <rect key="frame" x="16" y="327" width="635" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Welcome to 8 Queens Puzzle Solution Generator">
@@ -328,18 +318,18 @@ Cg
             <objects>
                 <viewController storyboardIdentifier="MagicViewController" id="zfM-fA-7ak" customClass="MagicViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8v-i1-Ly5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-WR-wMI">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="LFD-oJ-wux"/>
                                 </constraints>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="286.5" width="343" height="114"/>
+                                <rect key="frame" x="16" y="149.5" width="635" height="76"/>
                                 <string key="text">Think of a number.
 Prepare to be amazed.</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
@@ -373,30 +363,30 @@ Prepare to be amazed.</string>
             <objects>
                 <viewController storyboardIdentifier="PagesViewController" id="dmH-4p-fuU" customClass="PagesViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="orM-1u-bwu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-oO-AVP">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NrV-2e-HZP"/>
                                 </constraints>
                                 <items/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="16" y="144" width="343" height="447"/>
+                                <rect key="frame" x="16" y="86" width="635" height="213"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="135.5" y="324.5" width="104" height="38"/>
+                                <rect key="frame" x="281.5" y="168.5" width="104" height="38"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="36" width="343" height="76"/>
+                                <rect key="frame" x="16" y="16" width="635" height="38"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -436,7 +426,7 @@ Prepare to be amazed.</string>
             <objects>
                 <navigationController id="8u8-uX-CMh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gg4-Me-5w3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -452,22 +442,22 @@ Prepare to be amazed.</string>
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c72-1O-ChN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="32" width="667" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="MTh-De-CvF" style="IBUITableViewCellStyleDefault" id="9Tx-0d-iVw">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTh-De-CvF">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="637" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                     <nil key="textColor"/>
@@ -513,18 +503,18 @@ Prepare to be amazed.</string>
             <objects>
                 <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R3d-PE-QWE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-50-WSp">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="315" width="667" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AHC-P3-HKa"/>
                                 </constraints>
                                 <items/>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type current result" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="16" y="547" width="343" height="40"/>
+                                <rect key="frame" x="16" y="255" width="635" height="40"/>
                                 <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
@@ -534,7 +524,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="267.5" width="343" height="152"/>
+                                <rect key="frame" x="16" y="130.5" width="635" height="114"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>

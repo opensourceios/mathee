@@ -14,7 +14,6 @@ class HigherLowerViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var guessLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var trophyLabel: UILabel!
@@ -50,8 +49,6 @@ class HigherLowerViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-        
-        guessLabel.isHidden = true
         trophyLabel.isHidden = true
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextGuess))
@@ -75,8 +72,6 @@ class HigherLowerViewController: UIViewController {
         }
         
         guess = low + half_diff
-        
-        headerLabel.isHidden = true
         
         guessLabel.isHidden = false
         guessLabel.text = "Is it \(guess)?"
