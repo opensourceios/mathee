@@ -77,7 +77,7 @@ class MagicViewController: UIViewController {
     @objc func checkFirst() {
         
         headerLabel.text = "Let's call the result of B - C, \"D\".\nIs D a single digit?"
-        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResult))
+        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResultFirst))
         let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineSecond))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([yesButton, space, noButton], animated: true)
@@ -96,7 +96,7 @@ class MagicViewController: UIViewController {
     @objc func checkForever() {
         headerLabel.text = "Is the new result a single digit?"
         
-        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResult))
+        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResultForever))
         let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineForever))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([yesButton, space, noButton], animated: true)
@@ -113,8 +113,16 @@ class MagicViewController: UIViewController {
     }
     
     
-    @objc func showResult() {
-        headerLabel.text = "Your result is 9"
+    @objc func showResultFirst() {
+        headerLabel.text = "D is 9"
+        let okButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(done))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton, space], animated: true)
+    }
+    
+    
+    @objc func showResultForever() {
+        headerLabel.text = "It's 9"
         let okButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(done))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton, space], animated: true)
