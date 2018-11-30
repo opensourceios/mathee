@@ -63,7 +63,6 @@ class QueensViewController: UIViewController {
     }
     
     
-    #warning("Fix me: board on smaller screens, and bigger screens in landscape")
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
