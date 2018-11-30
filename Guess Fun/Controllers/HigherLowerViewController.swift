@@ -17,11 +17,12 @@ class HigherLowerViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var guessLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var trophyLabel: UILabel!
     
     
     // MARK: Properties
     
-    var high = 2000
+    var high = 1001
     var low = 0
     var guess = 0
     var diff = 0
@@ -51,6 +52,7 @@ class HigherLowerViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         
         guessLabel.isHidden = true
+        trophyLabel.isHidden = true
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextGuess))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -61,6 +63,8 @@ class HigherLowerViewController: UIViewController {
     // MARK: Helpers
     
     @objc func showNextGuess() {
+
+        tries += 1
         
         diff = high - low
         
@@ -84,7 +88,6 @@ class HigherLowerViewController: UIViewController {
         
         if half_diff == 1 {
             guessLabel.text = "You thought: \(guess)"
-            tries -= 1 // so adding a guess in correct() doesn't incorrect it
             myToolbar.setItems([space, yesButton, space], animated: true)
         } else {
             myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
@@ -94,30 +97,38 @@ class HigherLowerViewController: UIViewController {
     
     
     @objc func lower() {
-        tries += 1
+
         high = guess
         showNextGuess()
     }
     
     
     @objc func higher() {
-        tries += 1
         low = guess
         showNextGuess()
     }
     
     
     @objc func correct() {
-        tries += 1
-
-        if tries == 1 {
-            guessLabel.text = "\(guess)... That was easy. It took me just one try!"
-        } else if tries < 6 {
-            guessLabel.text = "\(guess)... Not too hard. It only took me \(tries) tries!"
-        } else if tries <= 10 {
-            guessLabel.text = "\(guess)... Pretty, pretty, pretty good! That took me no less than \(tries) tries!"
-        } else {
-            guessLabel.text = "\(guess)... \(tries) tries! You won. You're a champion! (Please let the developer know with what number you got here! 🏆)"
+        #warning("jumbo emoji")
+        
+        let trophies = ["⭐️", "⭐️⭐️", "⭐️⭐️⭐️", "🎖", "🎖🎖", "🎖🎖🎖", "🥉", "🥈", "🥇"]
+        trophyLabel.text = ""
+        trophyLabel.isHidden = false
+        
+        switch tries {
+        case 1:
+            guessLabel.text = "You thought: \(guess)\nThat took me 1 try."
+            trophyLabel.text = "🏅"
+        case 2, 3, 4, 5, 6, 7, 8, 9:
+            guessLabel.text = "You thought: \(guess)\nThat took me \(tries) tries!"
+            trophyLabel.text = trophies[tries - 2]
+        case 10:
+            guessLabel.text = "You thought: \(guess)\nThat took me 10 tries!"
+            trophyLabel.text = "🥇"
+        default:
+            guessLabel.text = "Oops! It took me more than 10 tries. Please let the developer know this happened."
+            trophyLabel.text = "🏆"
         }
         
         let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
