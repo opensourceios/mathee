@@ -48,16 +48,16 @@ class MagicViewController: UIViewController {
     // MARK: Helpers
     
     @objc func play() {
-        headerLabel.text = "Add 10 to your number"
+        headerLabel.text = "Let's call the number you thought \"A\".\nAdd 10 to A."
         
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(combineInitial))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(combineFirst))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
     
     
-    @objc func combineInitial() {
-        headerLabel.text = "Combine the result's digits. For example, if your number is now 214, do 2 + 1 + 4, and you have a new result of 7."
+    @objc func combineFirst() {
+        headerLabel.text = "Let's call the result of A + 10, \"B\".\nCombine the digits of B.\nFor example, if B is 214, do 2 + 1 + 4, and you get 7."
         
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(subtract))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -66,34 +66,55 @@ class MagicViewController: UIViewController {
     
     
     @objc func subtract() {
-        headerLabel.text = "Subtract the new result from the old one. For example, if you had 214 and got 7, do 214 - 7, and you have a new result of 207."
+        headerLabel.text = "Let's call the result of B's combined digits \"C\".\nDo B - C.\nFor example, if you had 214 and got 7, do 214 - 7, and you get 207."
         
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(check))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(checkFirst))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
     
     
-    @objc func check() {
-        headerLabel.text = "Is the result a single digit?"
+    @objc func checkFirst() {
+        
+        headerLabel.text = "Let's call the result of B - C, \"D\".\nIs D a single digit?"
         let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResult))
-        let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineRepeated))
+        let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineSecond))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([yesButton, space, noButton], animated: true)
     }
     
     
-    @objc func combineRepeated() {
-        headerLabel.text = "Combine the result's digits. For example, if your number is now 214, do 2 + 1 + 4, and you have a new result of 7."
+    @objc func combineSecond() {
+        headerLabel.text = "Combine the digits of D. For example, if D is 214, do 2 + 1 + 4, and you get 7."
         
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(check))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(checkForever))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
+    }
+    
+    
+    @objc func checkForever() {
+        headerLabel.text = "Is the new result a single digit?"
+        
+        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResult))
+        let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineForever))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([yesButton, space, noButton], animated: true)
+
+    }
+    
+    
+    @objc func combineForever() {
+        headerLabel.text = "Combine the result's digits. For example, if your result is 214, do 2 + 1 + 4, and get 7."
+        
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(checkForever))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
     
     
     @objc func showResult() {
-        headerLabel.text = "You thought: 9"
+        headerLabel.text = "Your result is 9"
         let okButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(done))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton, space], animated: true)
