@@ -2,9 +2,7 @@ earlier
 - Update screenshots
 - update app description
 - add sounds to buttons
-- dispatch all ui
-- SE: landscape pages cuts off content
-- [?] hide warninglabel on ipad
+- [?] dispatch all ui: **test right after implementing.**
 
 later
 - add persistence: splash screen
