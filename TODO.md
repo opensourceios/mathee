@@ -1,9 +1,9 @@
 earlier
+- show "rotate device" on landscape in queens on iphone
 - Update screenshots
 - update app description
 - add sounds to buttons
-- FIXME: fix board: as small as iPhone 8
-- show "rotate device" on landscape in queens on iphone
+- dispatch all ui
 
 later
 - add persistence: splash screen
