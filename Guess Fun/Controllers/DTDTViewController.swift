@@ -234,7 +234,7 @@ class DTDTViewController: UIViewController {
         // show final result to user
         myToolbar.setItems([], animated: true)
         myTextField.isHidden = true
-        messageLabel.text = "You thought: \(total)"
+        messageLabel.text = "You thought:\n\(total)"
         
         let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
