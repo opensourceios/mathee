@@ -290,14 +290,23 @@ Cg
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold your device in portrait to use this page of the app" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-Xi-xkF">
+                                <rect key="frame" x="16" y="248.5" width="288" height="91"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dIR-Xi-xkF" firstAttribute="centerY" secondItem="MZd-eA-oly" secondAttribute="centerY" id="72Z-Ke-ivQ"/>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" id="DB2-Pp-t58"/>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="top" secondItem="MZd-eA-oly" secondAttribute="top" constant="16" id="H2R-Wf-GLN"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="lvW-pj-5lr" secondAttribute="trailing" id="MKE-Lm-l7y"/>
                             <constraint firstItem="Ttl-pA-p0Q" firstAttribute="top" secondItem="jXi-RC-tpW" secondAttribute="bottom" constant="32" id="Qjl-3G-Aha"/>
+                            <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="dIR-Xi-xkF" secondAttribute="trailing" constant="16" id="ZHQ-r4-8zf"/>
                             <constraint firstItem="Ttl-pA-p0Q" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="16" id="bSX-gN-OMD"/>
+                            <constraint firstItem="dIR-Xi-xkF" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="16" id="bYg-Im-xMY"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="bottom" secondItem="lvW-pj-5lr" secondAttribute="bottom" id="jiy-QN-oai"/>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="top" secondItem="Ttl-pA-p0Q" secondAttribute="bottom" constant="16" id="oC6-xk-6TL"/>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="centerX" secondItem="MZd-eA-oly" secondAttribute="centerX" id="rvE-4Q-YcM"/>
@@ -310,11 +319,12 @@ Cg
                         <outlet property="myTextView" destination="Ttl-pA-p0Q" id="iyb-Ge-s5J"/>
                         <outlet property="myToolbar" destination="lvW-pj-5lr" id="FVB-jA-2Kf"/>
                         <outlet property="solutionLabel" destination="jXi-RC-tpW" id="ksV-wW-s3f"/>
+                        <outlet property="warningLabel" destination="dIR-Xi-xkF" id="kpz-5k-raC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJc-Ie-44L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368.8" y="527.58620689655174"/>
+            <point key="canvasLocation" x="1368.75" y="527.11267605633805"/>
         </scene>
         <!--🕘-->
         <scene sceneID="fe5-31-sHI">

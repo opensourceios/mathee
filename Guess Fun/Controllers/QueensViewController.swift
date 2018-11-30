@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class QueensViewController: UIViewController {
     
     
@@ -16,6 +17,7 @@ class QueensViewController: UIViewController {
     @IBOutlet weak var solutionLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextView: UITextView!
+    @IBOutlet weak var warningLabel: UILabel!
     
     
     // MARK: Properties
@@ -29,7 +31,9 @@ class QueensViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        warningLabel.isHidden = true
+       
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 40),
@@ -63,7 +67,11 @@ class QueensViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
+        
         makeBoard()
+        deviceOrientationDidChange()
     }
     
     
@@ -94,7 +102,30 @@ class QueensViewController: UIViewController {
     }
     
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
     // MARK: Helpers
+    
+    @objc func deviceOrientationDidChange() {
+        
+        // if landscape, hide board, unhide label
+        // if portrait, reverse
+        
+        switch UIDevice.current.orientation.rawValue {
+        case 1:
+            solutionLabel.isHidden = false
+            myTextView.isHidden = false
+            warningLabel.isHidden = true
+        default:
+            solutionLabel.isHidden = true
+            myTextView.isHidden = true
+            warningLabel.isHidden = false
+        }
+    }
+    
     
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
         
