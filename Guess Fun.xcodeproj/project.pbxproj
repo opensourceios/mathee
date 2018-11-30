@@ -91,9 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				33B9FDC620EDDA8200131038 /* MenuViewController.swift */,
+				3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */,
 				33568B7620EC96B300690825 /* PagesViewController.swift */,
 				33350E5121ADB9A500CBC64C /* QueensViewController.swift */,
-				3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */,
 				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
 				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
 			);
