@@ -82,47 +82,13 @@ I will guess it in 10 tries or less.</string>
                                 <rect key="frame" x="16" y="368" width="288" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Welcome to 8 Queens Puzzle Solution Generator">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="36" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
                                     <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
+                                        <string key="content">Have you heard of the 8 Queens Puzzle?
+
 </string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="What's this?">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="36" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="24" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="18" name="Chalkduster"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
@@ -187,10 +153,7 @@ Cg
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment>
-                                        <string key="content"> queens share the same row, column, or diagonal.
-
-Tap </string>
+                                    <fragment content=" queens share the same row, column, or diagonal.">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -198,18 +161,42 @@ Tap </string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Go ahead, get a chessboard, and try solving this puzzle yourself!
+
+When you choose to, you can come here for a solution.
+
+You can tap </string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
                                     <fragment content="😍">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="AppleColorEmoji"/>
-                                            <font key="NSOriginalFont" size="24" name="Chalkduster"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment>
-                                        <string key="content"> to see a new solution!
-
-Tap </string>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Monaco"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="to see a new solution, and you can t">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="ap ">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -225,7 +212,7 @@ Tap </string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" to share the solution with your friends!">
+                                    <fragment content=" to share ">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -233,39 +220,40 @@ Tap </string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="18" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
+                                    <fragment content="your favorite">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Find out more about this puzzle here: ">
+                                    <fragment content=" solution">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="18" name="Chalkduster"/>
-                                            <font key="NSOriginalFont" size="18" name="Chalkduster"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <font key="NSOriginalFont" size="24" name="Chalkduster"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="wikipedia.org/wiki/Eight_queens_puzzle">
+                                    <fragment content="s">
                                         <attributes>
-                                            <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="Chalkduster"/>
-                                            <font key="NSOriginalFont" size="18" name="Chalkduster"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" with your friends">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <font key="NSOriginalFont" size="24" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
@@ -290,10 +278,12 @@ Cg
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold your device in portrait to use this page of the app" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-Xi-xkF">
-                                <rect key="frame" x="16" y="248.5" width="288" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-Xi-xkF">
+                                <rect key="frame" x="64" y="203" width="192" height="182"/>
+                                <string key="text">ℹ️
+Hold your device in portrait to use this page of the app.</string>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -304,9 +294,9 @@ Cg
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="top" secondItem="MZd-eA-oly" secondAttribute="top" constant="16" id="H2R-Wf-GLN"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="lvW-pj-5lr" secondAttribute="trailing" id="MKE-Lm-l7y"/>
                             <constraint firstItem="Ttl-pA-p0Q" firstAttribute="top" secondItem="jXi-RC-tpW" secondAttribute="bottom" constant="32" id="Qjl-3G-Aha"/>
-                            <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="dIR-Xi-xkF" secondAttribute="trailing" constant="16" id="ZHQ-r4-8zf"/>
+                            <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="dIR-Xi-xkF" secondAttribute="trailing" constant="64" id="ZHQ-r4-8zf"/>
                             <constraint firstItem="Ttl-pA-p0Q" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="16" id="bSX-gN-OMD"/>
-                            <constraint firstItem="dIR-Xi-xkF" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="16" id="bYg-Im-xMY"/>
+                            <constraint firstItem="dIR-Xi-xkF" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="64" id="bYg-Im-xMY"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="bottom" secondItem="lvW-pj-5lr" secondAttribute="bottom" id="jiy-QN-oai"/>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="top" secondItem="Ttl-pA-p0Q" secondAttribute="bottom" constant="16" id="oC6-xk-6TL"/>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="centerX" secondItem="MZd-eA-oly" secondAttribute="centerX" id="rvE-4Q-YcM"/>
@@ -511,7 +501,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-102" y="680"/>
         </scene>
-        <!--✖️-->
+        <!--➗-->
         <scene sceneID="6hM-0P-CsD">
             <objects>
                 <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
@@ -560,7 +550,7 @@ Let me ask you a few questions...</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                     </view>
-                    <navigationItem key="navigationItem" title="✖️" id="xXz-XO-Cxl"/>
+                    <navigationItem key="navigationItem" title="➗" id="xXz-XO-Cxl"/>
                     <connections>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
