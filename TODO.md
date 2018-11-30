@@ -1,9 +1,8 @@
 earlier
-- Improve design from iPhone 8
 - Update screenshots
 - update app description
 - add sounds to buttons
-- FIXME: board on smaller screens, and bigger screens in landscape
+- FIXME: fix board: as small as iPhone 8
 
 later
 - add persistence: splash screen
