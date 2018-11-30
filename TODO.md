@@ -3,10 +3,11 @@ earlier
 - update app description
 - add sounds to buttons
 - FIXME: fix board: as small as iPhone 8
+- show "rotate device" on landscape in queens on iphone
 
 later
 - add persistence: splash screen
-- improve design for ipad
+- improve design for ipad (font, queens)
 - sudoku checker
 - Add screenshots to README
 
