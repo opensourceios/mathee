@@ -26,7 +26,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let fontSetter: CGFloat = 10
     
     enum cellsEnum: String, CaseIterable {
-        case dtdt = "✖️"
+        case dtdt = "➗"
         case pages = "📗"
         case queens = "👸"
         case higher = "👆"
