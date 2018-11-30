@@ -168,7 +168,7 @@ Go ahead, get a chessboard, and try solving this puzzle yourself!
 
 When you choose to, you can come here for a solution.
 
-You can tap </string>
+Tap </string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -189,7 +189,10 @@ You can tap </string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="to see a new solution, and you can t">
+                                    <fragment>
+                                        <string key="content">to see a new solution.
+
+T</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -242,7 +245,7 @@ You can tap </string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" with your friends">
+                                    <fragment content=" with">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -250,7 +253,22 @@ You can tap </string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=".">
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="friends">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name="Chalkduster"/>
+                                            <font key="NSOriginalFont" size="24" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" and family.">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="Chalkduster"/>
@@ -278,25 +296,14 @@ You can tap </string>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIR-Xi-xkF">
-                                <rect key="frame" x="64" y="203" width="192" height="182"/>
-                                <string key="text">ℹ️
-Hold your device in portrait to use this page of the app.</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dIR-Xi-xkF" firstAttribute="centerY" secondItem="MZd-eA-oly" secondAttribute="centerY" id="72Z-Ke-ivQ"/>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" id="DB2-Pp-t58"/>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="top" secondItem="MZd-eA-oly" secondAttribute="top" constant="16" id="H2R-Wf-GLN"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="lvW-pj-5lr" secondAttribute="trailing" id="MKE-Lm-l7y"/>
                             <constraint firstItem="Ttl-pA-p0Q" firstAttribute="top" secondItem="jXi-RC-tpW" secondAttribute="bottom" constant="32" id="Qjl-3G-Aha"/>
-                            <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="dIR-Xi-xkF" secondAttribute="trailing" constant="64" id="ZHQ-r4-8zf"/>
                             <constraint firstItem="Ttl-pA-p0Q" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="16" id="bSX-gN-OMD"/>
-                            <constraint firstItem="dIR-Xi-xkF" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="64" id="bYg-Im-xMY"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="bottom" secondItem="lvW-pj-5lr" secondAttribute="bottom" id="jiy-QN-oai"/>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="top" secondItem="Ttl-pA-p0Q" secondAttribute="bottom" constant="16" id="oC6-xk-6TL"/>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="centerX" secondItem="MZd-eA-oly" secondAttribute="centerX" id="rvE-4Q-YcM"/>
@@ -309,7 +316,6 @@ Hold your device in portrait to use this page of the app.</string>
                         <outlet property="myTextView" destination="Ttl-pA-p0Q" id="iyb-Ge-s5J"/>
                         <outlet property="myToolbar" destination="lvW-pj-5lr" id="FVB-jA-2Kf"/>
                         <outlet property="solutionLabel" destination="jXi-RC-tpW" id="ksV-wW-s3f"/>
-                        <outlet property="warningLabel" destination="dIR-Xi-xkF" id="kpz-5k-raC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJc-Ie-44L" userLabel="First Responder" sceneMemberID="firstResponder"/>
