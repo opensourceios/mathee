@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--👆👇-->
+        <!--👆-->
         <scene sceneID="dsc-iX-nMI">
             <objects>
                 <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@ I will guess it in 10 tries or less.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="👆👇" id="oXZ-fp-eKa"/>
+                    <navigationItem key="navigationItem" title="👆" id="oXZ-fp-eKa"/>
                     <connections>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
                         <outlet property="headerLabel" destination="aWT-o1-6LC" id="X0k-1r-7FY"/>
@@ -508,7 +508,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-102" y="680"/>
         </scene>
-        <!--✖️➗➕➖-->
+        <!--✖️-->
         <scene sceneID="6hM-0P-CsD">
             <objects>
                 <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
@@ -557,7 +557,7 @@ Let me ask you a few questions...</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                     </view>
-                    <navigationItem key="navigationItem" title="✖️➗➕➖" id="xXz-XO-Cxl"/>
+                    <navigationItem key="navigationItem" title="✖️" id="xXz-XO-Cxl"/>
                     <connections>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>

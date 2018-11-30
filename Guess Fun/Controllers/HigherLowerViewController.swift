@@ -110,7 +110,6 @@ class HigherLowerViewController: UIViewController {
     
     
     @objc func correct() {
-        #warning("jumbo emoji")
         
         let trophies = ["⭐️", "⭐️⭐️", "⭐️⭐️⭐️", "🎖", "🎖🎖", "🎖🎖🎖", "🥉", "🥈", "🥇"]
         trophyLabel.text = ""
