@@ -65,7 +65,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         
         if let selectedRow = myTableView.indexPathForSelectedRow {
-        myTableView.deselectRow(at: selectedRow, animated: true)
+            myTableView.deselectRow(at: selectedRow, animated: true)
         }
         
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 
 class QueensViewController: UIViewController {
@@ -17,7 +18,6 @@ class QueensViewController: UIViewController {
     @IBOutlet weak var solutionLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextView: UITextView!
-    @IBOutlet weak var warningLabel: UILabel!
     
     
     // MARK: Properties
@@ -31,8 +31,6 @@ class QueensViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        warningLabel.isHidden = true
        
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
@@ -57,20 +55,17 @@ class QueensViewController: UIViewController {
         
         let refreshButton = UIBarButtonItem(title: "😍", style: .plain, target: self, action: #selector(makeBoard))
         shareButton = UIBarButtonItem(title: "🥰", style: .plain, target: self, action: #selector(shareSolution))
+        let homeButton = UIBarButtonItem(title: "🏠", style: .plain, target: self, action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([shareButton, space, refreshButton], animated: true)
+        myToolbar.setItems([shareButton, space, homeButton, space, refreshButton], animated: true)
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
-        
+
         makeBoard()
-        deviceOrientationDidChange()
     }
     
     
@@ -94,38 +89,7 @@ class QueensViewController: UIViewController {
     }
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        
-    }
-    
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    
     // MARK: Helpers
-    
-    @objc func deviceOrientationDidChange() {
-        
-        // if landscape, hide board, unhide label
-        // if portrait, reverse
-        
-        switch UIDevice.current.orientation.rawValue {
-        case 1:
-            solutionLabel.isHidden = false
-            myTextView.isHidden = false
-            warningLabel.isHidden = true
-            myTextView.scrollRangeToVisible(NSRange(location:0, length:0))
-            myTextView.flashScrollIndicators()
-        default:
-            solutionLabel.isHidden = true
-            myTextView.isHidden = true
-            warningLabel.isHidden = false
-        }
-    }
     
     
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
@@ -429,6 +393,13 @@ class QueensViewController: UIViewController {
         }
         
     }
+    
+    
+    @objc func donePressed() {
+        navigationController?.popToRootViewController(animated: true)
+        SKStoreReviewController.requestReview()
+    }
+    
     
 }
 
