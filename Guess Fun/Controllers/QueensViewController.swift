@@ -119,6 +119,8 @@ class QueensViewController: UIViewController {
             solutionLabel.isHidden = false
             myTextView.isHidden = false
             warningLabel.isHidden = true
+            myTextView.scrollRangeToVisible(NSRange(location:0, length:0))
+            myTextView.flashScrollIndicators()
         default:
             solutionLabel.isHidden = true
             myTextView.isHidden = true
