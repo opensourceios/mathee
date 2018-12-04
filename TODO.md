@@ -8,7 +8,11 @@ later
 - add persistence: splash screen
 - improve design for ipad (font, queens)
 - sudoku checker
+- Days Between dates
+- No longer fit all games on screen. Scroll for more.
 - Add screenshots to README
+- Add Multiple options for languages in apps.
+- CYOQ
 
 ###### Description
 
