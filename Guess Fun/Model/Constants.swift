@@ -9,7 +9,7 @@
 import Foundation
 
 struct Constants {
-    
+
     struct StoryboardID {
         static let main = "Main"
         static let pagesVC = "PagesViewController"
@@ -18,8 +18,8 @@ struct Constants {
         static let magicVC = "MagicViewController"
         static let queensVC = "QueensViewController"
     }
-    
-    struct misc {
+
+    struct Misc {
         static let fontChalkduster = "Chalkduster"
         static let appVersion = "CFBundleShortVersionString"
         static let version = "Version"

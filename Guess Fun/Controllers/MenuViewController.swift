@@ -12,193 +12,209 @@ import MessageUI
 import StoreKit
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
+
+
     // MARK: Outlets
-    
+
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    
-    
+
+
     // MARK: Properties
-    
+
     var fullHeight: CGFloat!
     let fontSetter: CGFloat = 10
-    
-    enum cellsEnum: String, CaseIterable {
+
+    enum CellsDataEnum: String, CaseIterable {
         case dtdt = "➗"
         case pages = "📗"
         case queens = "👸"
         case higher = "👆"
         case magic = "🕘"
     }
-    
+
     let menuCell = "MenuCell"
-    
-    
+
+
     // MARK: Life Cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let myFont = UIFont(name: Constants.misc.fontChalkduster, size: 14.0) {
+
+        if let myFont = UIFont(name: Constants.Misc.fontChalkduster, size: 14.0) {
             aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
             aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
         }
-        
+
     }
 
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         NotificationCenter.default.addObserver(self.myTableView,
                                                selector: #selector(myTableView.reloadData),
                                                name: UIContentSizeCategory.didChangeNotification,
                                                object: nil)
-        
+
         myTableView.separatorColor = UIColor.clear
-        
+
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
 
-        
+
         if let selectedRow = myTableView.indexPathForSelectedRow {
             myTableView.deselectRow(at: selectedRow, animated: true)
         }
-        
+
     }
 
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self.myTableView, name: UIContentSizeCategory.didChangeNotification, object: nil)
+
+        NotificationCenter.default.removeObserver(self.myTableView,
+                                                  name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
-    
-    
+
+
     // TableView
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellsEnum.allCases.count
+        return CellsDataEnum.allCases.count
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
-        
-        cell.textLabel?.text = cellsEnum.allCases[(indexPath as NSIndexPath).row].rawValue
-        
+
+        cell.textLabel?.text = CellsDataEnum.allCases[(indexPath as NSIndexPath).row].rawValue
+
         cell.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
-        
-        
+
+
         return cell
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        
+
         let cell = tableView.cellForRow(at: indexPath)
-        
+
         switch cell?.textLabel?.text {
-        case cellsEnum.pages.rawValue:
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.pagesVC) as! PagesViewController
-            self.navigationController?.pushViewController(controller, animated: true)
-        case cellsEnum.dtdt.rawValue:
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.dtdtVC) as! DTDTViewController
-            self.navigationController?.pushViewController(controller, animated: true)
-        case cellsEnum.higher.rawValue:
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.higherVC) as! HigherLowerViewController
-            self.navigationController?.pushViewController(controller, animated: true)
-        case cellsEnum.magic.rawValue:
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.magicVC) as! MagicViewController
-            self.navigationController?.pushViewController(controller, animated: true)
-        case cellsEnum.queens.rawValue:
-            let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.queensVC) as! QueensViewController
-            self.navigationController?.pushViewController(controller, animated: true)
+        case CellsDataEnum.pages.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.pagesVC) as? PagesViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case CellsDataEnum.dtdt.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.dtdtVC) as? DTDTViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case CellsDataEnum.higher.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case CellsDataEnum.magic.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case CellsDataEnum.queens.rawValue:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
         default:
             print("An error has occured!")
-            let alert = createAlert(alertReasonParam: alertReason.unknown)
+            let alert = createAlert(alertReasonParam: AlertReason.unknown)
             alert.view.layoutIfNeeded()
             present(alert, animated: true)
         }
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         updateRowHeight(indexPath: indexPath)
-        
-        return myTableView.frame.height / CGFloat(cellsEnum.allCases.count)
+
+        return myTableView.frame.height / CGFloat(CellsDataEnum.allCases.count)
     }
-    
-    
+
+
     func updateRowHeight(indexPath: IndexPath) {
-        
-        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
+
+        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(
+            ofSize: myTableView.frame.height / fontSetter)
     }
-    
-    
+
+
     // MARK: Actions
-   
+
     @IBAction func rightBarButtonPressed() {
-        
-        let version: String? = Bundle.main.infoDictionary![Constants.misc.appVersion] as? String
+
+        let version: String? = Bundle.main.infoDictionary![Constants.Misc.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if let version = version {
-            infoAlert.message = "\(Constants.misc.version) \(version)"
-            infoAlert.title = Constants.misc.appName
+            infoAlert.message = "\(Constants.Misc.version) \(version)"
+            infoAlert.title = Constants.Misc.appName
         }
-        
+
         infoAlert.modalPresentationStyle = .popover
-        
-        let cancelAction = UIAlertAction(title: Constants.misc.cancel, style: .cancel) {
-            _ in
+
+        let cancelAction = UIAlertAction(title: Constants.Misc.cancel, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
                 SKStoreReviewController.requestReview()
             })
         }
-        
-        let shareAppAction = UIAlertAction(title: Constants.misc.shareApp, style: .default) {
-            _ in
+
+        let shareAppAction = UIAlertAction(title: Constants.Misc.shareApp, style: .default) { _ in
             self.shareApp()
         }
-        
-        let mailAction = UIAlertAction(title: Constants.misc.sendFeedback, style: .default) {
-            _ in
+
+        let mailAction = UIAlertAction(title: Constants.Misc.sendFeedback, style: .default) { _ in
             self.launchEmail()
         }
-        
-        let reviewAction = UIAlertAction(title: Constants.misc.leaveReview, style: .default) {
-            _ in
+
+        let reviewAction = UIAlertAction(title: Constants.Misc.leaveReview, style: .default) { _ in
             self.requestReviewManually()
         }
-        
+
         for action in [mailAction, reviewAction, shareAppAction, cancelAction] {
             infoAlert.addAction(action)
         }
-        
+
         if let presenter = infoAlert.popoverPresentationController {
             presenter.barButtonItem = aboutButton
         }
-        
+
         present(infoAlert, animated: true)
 
     }
-    
-    
+
+
     func shareApp() {
-        let message = "Check out Guess Fun: It's an app with 4 number guessing games. https://itunes.apple.com/app/id1406084758 - it's really cool!"
+        let message = """
+        Check out Guess Fun: It's an app with 5 guessing games. \
+        https://itunes.apple.com/app/id1406084758 - it's really cool!
+        """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton // for iPads not to crash
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: alertReason.unknown)
+                let alert = self.createAlert(alertReasonParam: AlertReason.unknown)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 return
@@ -211,68 +227,73 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
 extension MenuViewController: MFMailComposeViewControllerDelegate {
-    
-    
+
+
     func launchEmail() {
-        
-        var emailTitle = Constants.misc.appName
-        if let version = Bundle.main.infoDictionary![Constants.misc.appVersion] {
+
+        var emailTitle = Constants.Misc.appName
+        if let version = Bundle.main.infoDictionary![Constants.Misc.appVersion] {
             emailTitle += " \(version)"
         }
-        let messageBody = Constants.misc.emailSample
-        let toRecipents = [Constants.misc.emailAddress]
-        let mc: MFMailComposeViewController = MFMailComposeViewController()
-        mc.mailComposeDelegate = self
-        mc.setSubject(emailTitle)
-        mc.setMessageBody(messageBody, isHTML: false)
-        mc.setToRecipients(toRecipents)
-        
-        self.present(mc, animated: true, completion: nil)
+        let messageBody = Constants.Misc.emailSample
+        let toRecipents = [Constants.Misc.emailAddress]
+        let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
+        mailComposer.mailComposeDelegate = self
+        mailComposer.setSubject(emailTitle)
+        mailComposer.setMessageBody(messageBody, isHTML: false)
+        mailComposer.setToRecipients(toRecipents)
+
+        self.present(mailComposer, animated: true, completion: nil)
     }
-    
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+
+
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
         var alert = UIAlertController()
-        
+
         dismiss(animated: true, completion: {
             switch result {
             case MFMailComposeResult.failed:
-                alert = self.createAlert(alertReasonParam: alertReason.messageFailed)
+                alert = self.createAlert(alertReasonParam: AlertReason.messageFailed)
             case MFMailComposeResult.saved:
-                alert = self.createAlert(alertReasonParam: alertReason.messageSaved)
+                alert = self.createAlert(alertReasonParam: AlertReason.messageSaved)
             case MFMailComposeResult.sent:
-                alert = self.createAlert(alertReasonParam: alertReason.messageSent)
+                alert = self.createAlert(alertReasonParam: AlertReason.messageSent)
             default:
                 break
             }
-            
-            if let _ = alert.title {
+
+            if alert.title != nil {
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
             }
         })
     }
-    
+
 }
 
 
 extension MenuViewController {
-    
-    
+
+
     func requestReviewManually() {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
-        guard let writeReviewURL = URL(string: Constants.misc.reviewLink)
+        guard let writeReviewURL = URL(string: Constants.Misc.reviewLink)
             else {
                 fatalError("Expected a valid URL")
-                
+
         }
-        UIApplication.shared.open(writeReviewURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        UIApplication.shared.open(writeReviewURL,
+                                  options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
+                                  completionHandler: nil)
     }
 }
 
 
 // Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
+    _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in
+        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
