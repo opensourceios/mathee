@@ -2,8 +2,8 @@
 //  Constants.swift
 //  Guess Fun
 //
-//  Created by Dani Springer on 11/26/18.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 11/26/18.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import Foundation
