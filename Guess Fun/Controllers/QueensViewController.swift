@@ -2,8 +2,8 @@
 //  QueensViewController.swift
 //  Guess Fun
 //
-//  Created by Dani Springer on 11/27/18.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 11/27/18.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -90,7 +90,6 @@ class QueensViewController: UIViewController {
 
 
     // MARK: Helpers
-
 
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
 
@@ -324,7 +323,6 @@ class QueensViewController: UIViewController {
                                   ["", "", "", "", "", "", "", ""],
                                   ["", "", "", "", "", "", "", ""],
                                   ["", "", "", "", "", "", "", ""]]
-
 
             for row in 0...7 {
                 board[row][positions[index]] = 1

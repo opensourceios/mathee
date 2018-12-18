@@ -2,8 +2,8 @@
 //  DTDTViewController.swift
 //  Guess Fun
 //
-//  Created by Dani Springer on 01/07/2018.
-//  Copyright © 2018 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 01/07/2018.
+//  Copyright © 2018 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -45,7 +45,6 @@ class DTDTViewController: UIViewController {
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
 
 
         myTextField.isHidden = true
@@ -170,7 +169,6 @@ class DTDTViewController: UIViewController {
     @objc func checkResult() {
 
         guard let text = myTextField.text else {
-            print("nil")
             myTextField.isHidden = true
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
