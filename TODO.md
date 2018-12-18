@@ -18,7 +18,8 @@ later
 
 Guess Fun is a collection of math games, including:
 • The numbers book
-• MatheMagic
+• The 8 queens puzzle
+• Mathemagic
 • And more!
 
 • Is there a feature you'd like to see? A bug you'd like to go away? Let us know by opening the app, tapping on 'About', then tapping on 'Send feedback or question'.
