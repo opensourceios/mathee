@@ -204,8 +204,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func shareApp() {
         let message = """
-        Check out Guess Fun: It's an app with 5 guessing games. \
-        https://itunes.apple.com/app/id1406084758 - it's really cool!
+        This app has 5 fun math games. It's called Guess Fun. \
+        Check it out: https://itunes.apple.com/app/id1406084758
         """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton // for iPads not to crash
