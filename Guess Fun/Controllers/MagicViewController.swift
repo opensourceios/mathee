@@ -59,7 +59,7 @@ class MagicViewController: UIViewController {
     @objc func combineFirst() {
         headerLabel.text = """
         Let's call the result of A + 10, "B".\nCombine the digits of B.\nFor example, \
-        if B is 214, do 2 + 1 + 4, and you get 7.
+        if B is 24, do 2 + 4, and you get 6.
         """
 
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(subtract))
@@ -71,7 +71,7 @@ class MagicViewController: UIViewController {
     @objc func subtract() {
         headerLabel.text = """
         Let's call the result of B's combined digits "C".\nDo B - C.\nFor example, \
-        if you had 214 and got 7, do 214 - 7, and you get 207.
+        if you had 24 and got 6, do 24 - 6, and you get 18.
         """
 
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(checkFirst))
@@ -91,7 +91,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineSecond() {
-        headerLabel.text = "Combine the digits of D. For example, if D is 214, do 2 + 1 + 4, and you get 7."
+        headerLabel.text = "Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6."
 
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(checkForever))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -111,7 +111,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineForever() {
-        headerLabel.text = "Combine the result's digits. For example, if your result is 214, do 2 + 1 + 4, and get 7."
+        headerLabel.text = "Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6."
 
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(checkForever))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
