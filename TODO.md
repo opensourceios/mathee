@@ -6,6 +6,7 @@ earlier
 
 later
 - add persistence: splash screen
+- Siri shortcuts: queens?
 - improve design for ipad (font, queens)
 - sudoku checker
 - Days Between dates
