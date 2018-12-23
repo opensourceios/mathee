@@ -191,5 +191,5 @@ class PagesViewController: UIViewController {
         SKStoreReviewController.requestReview()
     }
 
-    
+
 }
