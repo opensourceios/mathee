@@ -140,4 +140,5 @@ class MagicViewController: UIViewController {
         SKStoreReviewController.requestReview()
     }
 
+    
 }

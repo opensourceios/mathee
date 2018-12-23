@@ -9,7 +9,9 @@
 import UIKit
 import StoreKit
 
+
 class PagesViewController: UIViewController {
+
 
     // MARK: Outlets
 
@@ -25,7 +27,6 @@ class PagesViewController: UIViewController {
         let key: Int
         let value: [Int]
     }
-
 
     let pagesArrayOfDicts = [
         1: [1, 3, 5, 7, 9, 11,
@@ -190,4 +191,5 @@ class PagesViewController: UIViewController {
         SKStoreReviewController.requestReview()
     }
 
+    
 }

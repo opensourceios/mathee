@@ -8,16 +8,23 @@
 
 import UIKit
 
+
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+    // MARK: Properties
 
     var window: UIWindow?
 
 
+    // MARK: Life Cycle
+
     private func application(application: UIApplication,
                              didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
         return true
     }
 
+    
 }
