@@ -53,7 +53,7 @@ class QueensViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        let refreshButton = UIBarButtonItem(title: "😍", style: .plain, target: self, action: #selector(makeBoard))
+        let refreshButton = UIBarButtonItem(title: "💡", style: .plain, target: self, action: #selector(makeBoard))
         shareButton = UIBarButtonItem(title: "🥰", style: .plain, target: self, action: #selector(shareSolution))
         let homeButton = UIBarButtonItem(title: "🏠", style: .plain, target: self, action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -400,5 +400,5 @@ class QueensViewController: UIViewController {
         SKStoreReviewController.requestReview()
     }
 
-    
+
 }

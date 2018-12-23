@@ -139,5 +139,5 @@ class HigherLowerViewController: UIViewController {
         SKStoreReviewController.requestReview()
     }
 
-    
+
 }

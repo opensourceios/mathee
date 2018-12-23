@@ -36,5 +36,5 @@ struct Constants {
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
     }
 
-    
+
 }
