@@ -12,7 +12,10 @@ import MessageUI
 import StoreKit
 
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenuViewController: UIViewController,
+    UITableViewDataSource,
+    UITableViewDelegate,
+SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -77,6 +80,24 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         NotificationCenter.default.removeObserver(self.myTableView,
                                                   name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+
+
+    // MARK: Show Apps
+
+    func showapps() {
+
+        let controller = SKStoreProductViewController()
+        controller.delegate = self
+        controller.loadProduct(
+            withParameters: [SKStoreProductParameterITunesItemIdentifier: Constants.Misc.devID],
+            completionBlock: nil)
+        present(controller, animated: true)
+    }
+
+
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        dismiss(animated: true, completion: nil)
     }
 
 
@@ -191,7 +212,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.requestReviewManually()
         }
 
-        for action in [mailAction, reviewAction, shareAppAction, cancelAction] {
+        let showAppsAction = UIAlertAction(title: Constants.Misc.showAppsButtonTitle, style: .default) { _ in
+            self.showapps()
+        }
+
+        for action in [mailAction, reviewAction, shareAppAction, showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
 

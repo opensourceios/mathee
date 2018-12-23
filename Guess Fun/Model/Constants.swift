@@ -34,6 +34,8 @@ struct Constants {
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "***REMOVED***"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
+        static let showAppsButtonTitle = "More by Daniel Springer"
+        static let devID = "1402417666"
     }
 
 
