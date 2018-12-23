@@ -11,7 +11,9 @@ import SystemConfiguration
 import MessageUI
 import StoreKit
 
+
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
 
     // MARK: Outlets
 
@@ -221,11 +223,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         present(activityController, animated: true)
     }
 
+
 }
 
 
 extension MenuViewController: MFMailComposeViewControllerDelegate {
 
+
+    // MARK: Helpers
 
     func launchEmail() {
 
@@ -268,6 +273,7 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
         })
     }
 
+
 }
 
 
@@ -290,6 +296,7 @@ extension MenuViewController {
 
 
 // Helper function inserted by Swift 4.2 migrator.
+
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in

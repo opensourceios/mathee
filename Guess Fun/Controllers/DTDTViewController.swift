@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 
+
 class DTDTViewController: UIViewController {
 
 
@@ -295,5 +296,6 @@ class DTDTViewController: UIViewController {
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue // of CGRect
         return keyboardSize?.cgRectValue.height ?? CGFloat(0)
     }
+    
 
 }

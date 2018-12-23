@@ -8,7 +8,9 @@
 
 import Foundation
 
+
 struct Constants {
+
 
     struct StoryboardID {
         static let main = "Main"
@@ -18,6 +20,7 @@ struct Constants {
         static let magicVC = "MagicViewController"
         static let queensVC = "QueensViewController"
     }
+
 
     struct Misc {
         static let fontChalkduster = "Chalkduster"
@@ -32,4 +35,6 @@ struct Constants {
         static let emailAddress = "***REMOVED***"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
     }
+
+    
 }
