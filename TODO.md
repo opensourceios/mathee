@@ -2,6 +2,7 @@ earlier
 - Update screenshots
 - update app description
 - add sounds to buttons
+- add sound to trophies
 - [?] dispatch all ui: **test right after implementing.**
 
 later
