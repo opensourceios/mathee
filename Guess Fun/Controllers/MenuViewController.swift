@@ -13,9 +13,9 @@ import StoreKit
 
 
 class MenuViewController: UIViewController,
-    UITableViewDataSource,
-    UITableViewDelegate,
-SKStoreProductViewControllerDelegate {
+                          UITableViewDataSource,
+                          UITableViewDelegate,
+                          SKStoreProductViewControllerDelegate {
 
 
     // MARK: Outlets
@@ -85,7 +85,7 @@ SKStoreProductViewControllerDelegate {
 
     // MARK: Show Apps
 
-    func showapps() {
+    func showApps() {
 
         let controller = SKStoreProductViewController()
         controller.delegate = self
@@ -213,7 +213,7 @@ SKStoreProductViewControllerDelegate {
         }
 
         let showAppsAction = UIAlertAction(title: Constants.Misc.showAppsButtonTitle, style: .default) { _ in
-            self.showapps()
+            self.showApps()
         }
 
         for action in [mailAction, reviewAction, shareAppAction, showAppsAction, cancelAction] {
