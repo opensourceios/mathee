@@ -15,6 +15,7 @@ later
 - Add screenshots to README
 - Add Multiple options for languages in apps.
 - CYOQ
+- Weak/unowned self in apps: CP, PF, GF, ST.
 
 ###### Description
 
