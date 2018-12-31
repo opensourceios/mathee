@@ -328,8 +328,8 @@ Prepare to be amazed.</string>
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type current result" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="16" y="448" width="288" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type here" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
+                                <rect key="frame" x="16" y="144" width="288" height="40"/>
                                 <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
@@ -347,23 +347,44 @@ Let me ask you a few questions...</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your current result" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-TZ-19w">
+                                <rect key="frame" x="16" y="36" width="288" height="76"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
+                                <rect key="frame" x="145" y="216" width="30" height="50"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <state key="normal" title="👍"/>
+                                <connections>
+                                    <action selector="okButtonKeyboardPressed" destination="eiL-1S-xct" eventType="touchUpInside" id="MwA-k2-ML0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="80" id="5UY-dm-1nd"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
+                            <constraint firstItem="eb2-Y7-egc" firstAttribute="centerX" secondItem="ClG-HF-1oA" secondAttribute="centerX" id="BtQ-dK-ITJ"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Iy0-d1-2bt"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="16" id="K80-LJ-w1Y"/>
+                            <constraint firstItem="eb2-Y7-egc" firstAttribute="top" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="32" id="KzR-xE-pn8"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="trailing" secondItem="cqg-Uf-L5S" secondAttribute="trailing" constant="-16" id="SP2-ZN-3vu"/>
+                            <constraint firstItem="hv4-TZ-19w" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="WXp-LA-hB9"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="centerY" secondItem="cqg-Uf-L5S" secondAttribute="centerY" id="fA8-WQ-9HU"/>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="hv4-TZ-19w" secondAttribute="trailing" constant="16" id="v3r-Vr-jhi"/>
+                            <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="hv4-TZ-19w" secondAttribute="bottom" constant="32" id="yF0-SS-11h"/>
+                            <constraint firstItem="hv4-TZ-19w" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="yvd-vp-3DB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                     </view>
                     <navigationItem key="navigationItem" title="➗" id="xXz-XO-Cxl"/>
                     <connections>
+                        <outlet property="helperButton" destination="eb2-Y7-egc" id="7TR-4o-XbN"/>
+                        <outlet property="helperLabel" destination="hv4-TZ-19w" id="rRd-9G-LDl"/>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
                         <outlet property="myToolbar" destination="FgR-50-WSp" id="ept-bZ-lKX"/>
@@ -371,7 +392,7 @@ Let me ask you a few questions...</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="1264"/>
+            <point key="canvasLocation" x="1370.625" y="1263.3802816901409"/>
         </scene>
     </scenes>
 </document>

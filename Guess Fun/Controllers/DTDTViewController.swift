@@ -18,6 +18,8 @@ class DTDTViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var helperLabel: UILabel!
+    @IBOutlet weak var helperButton: UIButton!
 
 
     // MARK: Properties
@@ -47,8 +49,6 @@ class DTDTViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-
-        myTextField.isHidden = true
         myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
 
@@ -59,22 +59,19 @@ class DTDTViewController: UIViewController {
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
-    }
 
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        subscribeToKeyboardNotifications()
-    }
-
-
-    override func viewWillDisappear(_ animated: Bool) {
-        unsubscribeFromKeyboardNotifications()
+        helpersShould(hide: true)
     }
 
 
     // Helpers
+
+    func helpersShould(hide: Bool) {
+        myTextField.isHidden = hide
+        helperLabel.isHidden = hide
+        helperButton.isHidden = hide
+    }
+
 
     @objc func timesThree() {
         // tell user to multiply by 3
@@ -156,13 +153,10 @@ class DTDTViewController: UIViewController {
 
     @objc func askResult() {
         // ask current result to user
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self,
-                                       action: #selector(okButtonKeyboardPressed))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        myToolbar.setItems([], animated: true)
 
         messageLabel.text = "" // empty so user doesn't see disappearing text
-        myTextField.isHidden = false
+        helpersShould(hide: false)
         myTextField.becomeFirstResponder()
     }
 
@@ -170,7 +164,8 @@ class DTDTViewController: UIViewController {
     @objc func checkResult() {
 
         guard let text = myTextField.text else {
-            myTextField.isHidden = true
+            helpersShould(hide: true)
+
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
@@ -188,7 +183,7 @@ class DTDTViewController: UIViewController {
         }
 
         guard !text.isEmpty else {
-            myTextField.isHidden = true
+            helpersShould(hide: true)
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
@@ -206,7 +201,7 @@ class DTDTViewController: UIViewController {
         }
 
         guard let number = Int(text) else {
-            myTextField.isHidden = true
+            helpersShould(hide: true)
             messageLabel.text = "Please enter numbers only.\nNo text.\nMax number: 2^63 - 1."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
@@ -231,9 +226,8 @@ class DTDTViewController: UIViewController {
 
 
     @objc func showResult() {
-        // show final result to user
         myToolbar.setItems([], animated: true)
-        myTextField.isHidden = true
+        helpersShould(hide: true)
         messageLabel.text = "You thought:\n\(total)"
 
         let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
@@ -242,7 +236,7 @@ class DTDTViewController: UIViewController {
     }
 
 
-    @objc func okButtonKeyboardPressed() {
+    @IBAction func okButtonKeyboardPressed() {
         myTextField.resignFirstResponder()
         checkResult()
     }
@@ -251,50 +245,6 @@ class DTDTViewController: UIViewController {
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
         SKStoreReviewController.requestReview()
-    }
-
-
-    // MARK: Subscription
-
-    func subscribeToKeyboardNotifications() {
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(_:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(_:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-    }
-
-
-    func unsubscribeFromKeyboardNotifications() {
-
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-
-    // MARK: Keyboard
-
-    @objc func keyboardWillShow(_ notification: Notification) {
-        if view.frame.origin.y == 0 {
-            view.frame.origin.y -= getKeyboardHeight(notification)
-        }
-    }
-
-
-    @objc func keyboardWillHide(_ notification: Notification) {
-        view.frame.origin.y = 0
-    }
-
-
-    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
-
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue // of CGRect
-        return keyboardSize?.cgRectValue.height ?? CGFloat(0)
     }
 
 
