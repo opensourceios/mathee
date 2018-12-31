@@ -7,6 +7,7 @@ earlier
 
 later
 - add persistence: splash screen
+- double tap on queens for new solution, long press to share
 - add apostrophe every 3 digits in results
 - improve instructions app wide
 - Siri shortcuts: queens?
