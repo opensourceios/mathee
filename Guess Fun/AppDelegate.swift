@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func application(application: UIApplication,
                              didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+        UserDefaults.standard.register(defaults: [Constants.Misc.didScrollOnceDown: false])
         return true
     }
 

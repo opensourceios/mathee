@@ -22,9 +22,40 @@ class QueensViewController: UIViewController {
 
     // MARK: Properties
 
+    var hasSolutionToShare = false
     var boardString = ""
-    var didscrollOnce = false
     var shareButton = UIBarButtonItem()
+    let myAttributes: [NSAttributedString.Key: UIFont] = [
+        NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 24)!
+    ]
+    let initialString = """
+        Have you heard of the 8 Queens Puzzle?
+
+        The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
+        no two queens threaten each other. Thus, a solution requires that no two queens share the \
+        same row, column, or diagonal.
+
+        Go ahead, get a chessboard, and try solving this puzzle yourself!
+
+        When you choose to, you can come here for a solution.
+
+        Tap 💡 to generate a solution.
+        """
+    let updatedString = """
+        Have you heard of the 8 Queens Puzzle?
+
+        The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
+        no two queens threaten each other. Thus, a solution requires that no two queens share the \
+        same row, column, or diagonal.
+
+        Go ahead, get a chessboard, and try solving this puzzle yourself!
+
+        When you choose to, you can come here for a solution.
+
+        Tap 💌 to share your favorite solutions with friends and family.
+
+        Tap 💡 to generate a new solution.
+        """
 
 
     // MARK: Life Cycle
@@ -54,30 +85,27 @@ class QueensViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         let refreshButton = UIBarButtonItem(title: "💡", style: .plain, target: self, action: #selector(makeBoard))
-        shareButton = UIBarButtonItem(title: "🥰", style: .plain, target: self, action: #selector(shareSolution))
+        shareButton = UIBarButtonItem(title: "💌", style: .plain, target: self, action: #selector(shareSolution))
         let homeButton = UIBarButtonItem(title: "🏠", style: .plain, target: self, action: #selector(donePressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([shareButton, space, homeButton, space, refreshButton], animated: true)
 
-    }
+        myTextView.attributedText = NSAttributedString(string: initialString, attributes: myAttributes)
 
+        shareButton.isEnabled = false
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        makeBoard()
     }
 
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        if !didscrollOnce {
+        if !UserDefaults.standard.bool(forKey: Constants.Misc.didScrollOnceDown) {
             myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
             myTextView.flashScrollIndicators()
+            UserDefaults.standard.set(true, forKey: Constants.Misc.didScrollOnceDown)
         }
 
-        didscrollOnce = true
     }
 
 
@@ -86,6 +114,7 @@ class QueensViewController: UIViewController {
 
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         myTextView.flashScrollIndicators()
+
     }
 
 
@@ -362,6 +391,13 @@ class QueensViewController: UIViewController {
         }
 
         self.solutionLabel.text = boardString
+
+        if !hasSolutionToShare {
+            shareButton.isEnabled = true
+            myTextView.attributedText = NSAttributedString(
+                string: updatedString, attributes: myAttributes)
+            hasSolutionToShare = true
+        }
 
     }
 
