@@ -7,6 +7,7 @@ earlier
 
 later
 - add persistence: splash screen
+- improve instructions app wide
 - Siri shortcuts: queens?
 - improve design for ipad (font, queens)
 - sudoku checker
