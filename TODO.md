@@ -7,6 +7,7 @@ earlier
 
 later
 - add persistence: splash screen
+- add apostrophe every 3 digits in results
 - improve instructions app wide
 - Siri shortcuts: queens?
 - improve design for ipad (font, queens)
