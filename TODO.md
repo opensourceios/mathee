@@ -6,7 +6,6 @@ earlier
 - [?] dispatch all ui: **test right after implementing.**
 
 later
-- add persistence: splash screen
 - double tap on queens for new solution, long press to share
 - add apostrophe every 3 digits in results
 - improve instructions app wide
@@ -20,7 +19,6 @@ later
 - CYOQ
 - Weak/unowned self in apps: CP, PF, GF, ST.
 - aaaa + bbbb + cccc = aaaaa
-- [?] CYOQ
 
 ###### Description
 
