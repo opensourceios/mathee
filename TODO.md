@@ -1,4 +1,5 @@
 earlier
+- replace sound urls with local files from sounds-extract repo
 - Update screenshots
 - update app description
 - add sounds to buttons
