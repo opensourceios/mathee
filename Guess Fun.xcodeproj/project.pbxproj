@@ -54,6 +54,7 @@
 		3319088120E8772E007C679C = {
 			isa = PBXGroup;
 			children = (
+				3319088D20E8772E007C679C /* AppDelegate.swift */,
 				3319088C20E8772E007C679C /* Guess Fun */,
 				3319088B20E8772E007C679C /* Products */,
 			);
@@ -70,14 +71,21 @@
 		3319088C20E8772E007C679C /* Guess Fun */ = {
 			isa = PBXGroup;
 			children = (
-				3319088D20E8772E007C679C /* AppDelegate.swift */,
 				3350E55B20F1DDEA0093FC96 /* Model */,
 				3340755820E8C33500EFDAA9 /* Controllers */,
 				3340755720E8BD6200EFDAA9 /* Storyboards */,
-				3319089420E87731007C679C /* Assets.xcassets */,
+				3326B5FF21DEBD240093C02C /* Assets */,
 				3319089920E87731007C679C /* Info.plist */,
 			);
 			path = "Guess Fun";
+			sourceTree = "<group>";
+		};
+		3326B5FF21DEBD240093C02C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3319089420E87731007C679C /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		3340755720E8BD6200EFDAA9 /* Storyboards */ = {
