@@ -10,6 +10,7 @@ import UIKit
 import SystemConfiguration
 import MessageUI
 import StoreKit
+import AVKit
 
 
 class MenuViewController: UIViewController,
@@ -216,7 +217,15 @@ class MenuViewController: UIViewController,
             self.showApps()
         }
 
-        for action in [mailAction, reviewAction, shareAppAction, showAppsAction, cancelAction] {
+        let soundIsOn = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
+        let toggleMessage = soundIsOn ? "Turn sound off" : "Turn sound on"
+
+        let toggleSoundAction = UIAlertAction(title: toggleMessage, style: .default) { _ in
+            self.soundToggled()
+        }
+
+        for action in [toggleSoundAction, mailAction, reviewAction, shareAppAction,
+                       showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
 
@@ -226,6 +235,13 @@ class MenuViewController: UIViewController,
 
         present(infoAlert, animated: true)
 
+    }
+
+
+    func soundToggled() {
+        let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
+        UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.soundEnabled)
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
     }
 
 

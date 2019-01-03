@@ -40,4 +40,16 @@ struct Constants {
     }
 
 
+    struct Sound {
+        static let high = "/System/Library/Audio/UISounds/acknowledgment_received.caf"
+        static let low = "/System/Library/Audio/UISounds/acknowledgment_sent.caf"
+        static let chime = "/System/Library/Audio/UISounds/nano/Alert_Calendar_Haptic.caf"
+    }
+
+
+    struct UserDef {
+        static let soundEnabled = "soundEnabled"
+    }
+
+
 }

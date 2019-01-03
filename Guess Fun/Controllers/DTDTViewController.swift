@@ -229,6 +229,7 @@ class DTDTViewController: UIViewController {
         myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
         messageLabel.text = "You thought:\n\(total)"
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
 
         let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
