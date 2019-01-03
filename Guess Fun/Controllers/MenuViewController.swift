@@ -23,6 +23,7 @@ class MenuViewController: UIViewController,
 
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
+    @IBOutlet weak var soundBarButtonItem: UIBarButtonItem!
 
 
     // MARK: Properties
@@ -67,6 +68,7 @@ class MenuViewController: UIViewController,
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80.0)
 
 
         if let selectedRow = myTableView.indexPathForSelectedRow {
@@ -184,7 +186,7 @@ class MenuViewController: UIViewController,
 
     // MARK: Actions
 
-    @IBAction func rightBarButtonPressed() {
+    @IBAction func aboutButtonPressed() {
 
         let version: String? = Bundle.main.infoDictionary![Constants.Misc.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -217,14 +219,7 @@ class MenuViewController: UIViewController,
             self.showApps()
         }
 
-        let soundIsOn = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
-        let toggleMessage = soundIsOn ? "Turn sound off" : "Turn sound on"
-
-        let toggleSoundAction = UIAlertAction(title: toggleMessage, style: .default) { _ in
-            self.soundToggled()
-        }
-
-        for action in [toggleSoundAction, mailAction, reviewAction, shareAppAction,
+        for action in [mailAction, reviewAction, shareAppAction,
                        showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
@@ -238,10 +233,16 @@ class MenuViewController: UIViewController,
     }
 
 
+    @IBAction func soundButtonPressed(_ sender: Any) {
+        soundToggled()
+    }
+
+
     func soundToggled() {
         let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
         UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.soundEnabled)
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
+        soundBarButtonItem.title = !oldValue ? "🔈" : "🔇"
     }
 
 
