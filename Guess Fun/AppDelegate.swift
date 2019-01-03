@@ -21,10 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Life Cycle
 
-    private func application(application: UIApplication,
-                             didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [
+        UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        UserDefaults.standard.register(defaults:
+            [Constants.Misc.didScrollOnceDown: false,
+             Constants.UserDef.soundEnabled: true])
 
-        UserDefaults.standard.register(defaults: [Constants.Misc.didScrollOnceDown: false])
         return true
     }
 
