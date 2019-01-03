@@ -63,8 +63,6 @@ class MenuViewController: UIViewController,
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 80.0)
-
 
         if let selectedRow = myTableView.indexPathForSelectedRow {
             myTableView.deselectRow(at: selectedRow, animated: true)
