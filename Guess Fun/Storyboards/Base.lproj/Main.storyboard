@@ -245,7 +245,7 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="OWD-6W-keU" kind="relationship" relationship="rootViewController" id="MQD-u9-U9J"/>
+                        <segue destination="OWD-6W-keU" kind="relationship" relationship="rootViewController" id="n6A-Ao-SyD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kov-HE-T4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,20 +298,26 @@ Prepare to be amazed.</string>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
                     <navigationItem key="navigationItem" title="🏠" id="bIQ-V8-dG6">
-                        <barButtonItem key="rightBarButtonItem" title="About" id="en9-jY-Ktc">
+                        <barButtonItem key="leftBarButtonItem" title="🔈" id="old-Et-4Qe">
                             <connections>
-                                <action selector="rightBarButtonPressed" destination="OWD-6W-keU" id="aPO-Gg-kWq"/>
+                                <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="b8v-hF-rk6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="📜" id="en9-jY-Ktc">
+                            <connections>
+                                <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="aPO-Gg-kWq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="aboutButton" destination="en9-jY-Ktc" id="iDl-ve-Dhh"/>
                         <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
+                        <outlet property="soundBarButtonItem" destination="old-Et-4Qe" id="e3h-Jo-BCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-fe-gN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-102" y="680"/>
+            <point key="canvasLocation" x="-129" y="679"/>
         </scene>
         <!--➗-->
         <scene sceneID="6hM-0P-CsD">
