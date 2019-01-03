@@ -354,8 +354,8 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="145" y="216" width="30" height="50"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <rect key="frame" x="140" y="216" width="40" height="63"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
                                 <state key="normal" title="👍"/>
                                 <connections>
                                     <action selector="okButtonKeyboardPressed" destination="eiL-1S-xct" eventType="touchUpInside" id="MwA-k2-ML0"/>
@@ -365,7 +365,6 @@ Let me ask you a few questions...</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
-                            <constraint firstItem="eb2-Y7-egc" firstAttribute="centerX" secondItem="ClG-HF-1oA" secondAttribute="centerX" id="BtQ-dK-ITJ"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Iy0-d1-2bt"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="16" id="K80-LJ-w1Y"/>
                             <constraint firstItem="eb2-Y7-egc" firstAttribute="top" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="32" id="KzR-xE-pn8"/>
@@ -376,6 +375,7 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="hv4-TZ-19w" secondAttribute="trailing" constant="16" id="v3r-Vr-jhi"/>
+                            <constraint firstItem="eb2-Y7-egc" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="xyZ-x7-u7O"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="hv4-TZ-19w" secondAttribute="bottom" constant="32" id="yF0-SS-11h"/>
                             <constraint firstItem="hv4-TZ-19w" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="yvd-vp-3DB"/>
                         </constraints>
