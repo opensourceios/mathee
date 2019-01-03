@@ -58,11 +58,6 @@ class MenuViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        NotificationCenter.default.addObserver(self.myTableView,
-                                               selector: #selector(myTableView.reloadData),
-                                               name: UIContentSizeCategory.didChangeNotification,
-                                               object: nil)
-
         myTableView.separatorColor = UIColor.clear
 
         navigationController?.navigationBar.isTranslucent = true
@@ -77,13 +72,6 @@ class MenuViewController: UIViewController,
 
     }
 
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        NotificationCenter.default.removeObserver(self.myTableView,
-                                                  name: UIContentSizeCategory.didChangeNotification, object: nil)
-    }
 
 
     // MARK: Show Apps
