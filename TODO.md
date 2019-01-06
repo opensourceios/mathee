@@ -1,27 +1,16 @@
-earlier
-- Update screenshots
-- update app description
-- add sounds to buttons
-- add sound to trophies
-- [?] dispatch all ui: **test right after implementing.**
-
-later
-- play sounds async
-- phone sounds higher lower: iterate over array, or randomize (probaly iter is better)
-- bg music?
-- double tap on queens for new solution, long press to share
+- play sounds async?  bg music?
+- double tap on queens for new solution, long press to share (alert if hasNoSolution)
 - add apostrophe every 3 digits in results
 - improve instructions app wide
-- Siri shortcuts: queens?
 - improve design for ipad (font, queens)
-- sudoku checker
-- Days Between dates
-- No longer fit all games on screen. Scroll for more.
+- NEW: sudoku checker
+- NEW: Days Between dates
+- No longer fit all games on screen. Scroll for more. Make each cell big.
 - Add screenshots to README
 - Add Multiple options for languages in apps.
-- CYOQ
+- NEW: CYOQ
 - Weak/unowned self in apps: CP, PF, GF, ST.
-- aaaa + bbbb + cccc = aaaaa
+- NEW: aaaa + bbbb + cccc = aaaaa
 
 ###### Description
 
