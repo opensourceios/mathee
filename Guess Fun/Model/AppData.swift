@@ -29,11 +29,6 @@ class AppData: UIViewController, AVAudioPlayerDelegate {
 
         do {
             player = try AVAudioPlayer(contentsOf: url)
-            if !player.isPlaying {
-                player.play()
-            } else {
-                print("playing")
-            }
             player.play()
         } catch {
             print("couldn't load file: \(soundURL)")
