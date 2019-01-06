@@ -51,6 +51,8 @@ class MenuViewController: UIViewController,
             aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
             aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
         }
+        let soundEnabled = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
+        soundBarButtonItem.title = soundEnabled ? "🔈" : "🔇"
 
     }
 

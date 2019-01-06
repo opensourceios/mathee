@@ -89,7 +89,7 @@ class MagicViewController: UIViewController {
         let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResultFirst))
         let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineSecond))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([yesButton, space, noButton], animated: true)
+        myToolbar.setItems([noButton, space, yesButton], animated: true)
     }
 
 
@@ -108,7 +108,7 @@ class MagicViewController: UIViewController {
         let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showResultFinally))
         let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(combineForever))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([yesButton, space, noButton], animated: true)
+        myToolbar.setItems([noButton, space, yesButton], animated: true)
 
     }
 
