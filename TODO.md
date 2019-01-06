@@ -1,5 +1,4 @@
 earlier
-- replace sound urls with local files from sounds-extract repo
 - Update screenshots
 - update app description
 - add sounds to buttons
@@ -7,6 +6,9 @@ earlier
 - [?] dispatch all ui: **test right after implementing.**
 
 later
+- play sounds async
+- phone sounds higher lower: iterate over array, or randomize (probaly iter is better)
+- bg music?
 - double tap on queens for new solution, long press to share
 - add apostrophe every 3 digits in results
 - improve instructions app wide
