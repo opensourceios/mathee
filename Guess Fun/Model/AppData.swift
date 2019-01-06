@@ -6,10 +6,13 @@
 //  Copyright © 2019 Dani Springer. All rights reserved.
 //
 
-import Foundation
-import AVKit
+import UIKit
+import AVFoundation
 
 class AppData: UIViewController {
+
+    static var player = AVAudioPlayer()
+
 
     static func getSoundEnabledSettings(sound: String) {
         let soundEnabled = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
@@ -20,9 +23,15 @@ class AppData: UIViewController {
 
 
     static func playSound(soundURL: String) {
-        var soundID: SystemSoundID = 0
-        let url = URL(fileURLWithPath: soundURL)
-        AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
-        AudioServicesPlaySystemSound(soundID)
+
+        let path = Bundle.main.path(forResource: soundURL, ofType: nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.play()
+        } catch {
+            print("couldn't load file: \(soundURL)")
+        }
     }
 }
