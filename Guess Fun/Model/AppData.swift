@@ -6,10 +6,10 @@
 //  Copyright © 2019 Dani Springer. All rights reserved.
 //
 
-import UIKit
-import AVFoundation
+import AVKit
 
-class AppData: UIViewController {
+
+class AppData: UIViewController, AVAudioPlayerDelegate {
 
     static var player = AVAudioPlayer()
 
@@ -29,6 +29,11 @@ class AppData: UIViewController {
 
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            if !player.isPlaying {
+                player.play()
+            } else {
+                print("playing")
+            }
             player.play()
         } catch {
             print("couldn't load file: \(soundURL)")

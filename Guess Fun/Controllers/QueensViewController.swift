@@ -85,14 +85,15 @@ class QueensViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         let refreshButton = UIBarButtonItem(title: "💡", style: .plain, target: self, action: #selector(makeBoard))
-        shareButton = UIBarButtonItem(title: "💌", style: .plain, target: self, action: #selector(shareSolution))
         let homeButton = UIBarButtonItem(title: "🏠", style: .plain, target: self, action: #selector(donePressed))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([shareButton, space, homeButton, space, refreshButton], animated: true)
+        let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([homeButton, spaceFlexible, refreshButton], animated: true)
 
         myTextView.attributedText = NSAttributedString(string: initialString, attributes: myAttributes)
 
-        shareButton.isEnabled = false
+        shareButton = UIBarButtonItem(title: "💌", style: .plain, target: self, action: #selector(shareSolution))
+        //navigationController?.navigationItem.rightBarButtonItem = shareButton
+        navigationItem.rightBarButtonItem = shareButton
 
     }
 
@@ -329,6 +330,7 @@ class QueensViewController: UIViewController {
 
 
     @objc func makeBoard() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
 
         var current = 0
         let limit = 1
@@ -393,7 +395,6 @@ class QueensViewController: UIViewController {
         self.solutionLabel.text = boardString
 
         if !hasSolutionToShare {
-            shareButton.isEnabled = true
             myTextView.attributedText = NSAttributedString(
                 string: updatedString, attributes: myAttributes)
             hasSolutionToShare = true
@@ -403,6 +404,14 @@ class QueensViewController: UIViewController {
 
 
     @objc func shareSolution() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
+
+        guard hasSolutionToShare else {
+            let alert = createAlert(alertReasonParam: .hasNoSolution)
+            present(alert, animated: true)
+            return
+        }
+
         let message = """
         Here's my solution to the '8 Queens Puzzle':\n\n\(solutionLabel.text!)\n\n(What's this?)\n\n \
         The '8 Queens Puzzle' is the problem of placing eight chess queens on an 8×8 chessboard so \
@@ -433,6 +442,7 @@ class QueensViewController: UIViewController {
 
     @objc func donePressed() {
         navigationController?.popToRootViewController(animated: true)
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 

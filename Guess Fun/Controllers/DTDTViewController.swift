@@ -74,7 +74,7 @@ class DTDTViewController: UIViewController {
 
 
     @objc func timesThree() {
-        // tell user to multiply by 3
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Multiply it by 3"
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(oddOrEven))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -83,7 +83,7 @@ class DTDTViewController: UIViewController {
 
 
     @objc func oddOrEven() {
-        // ask user if odd or even
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Is the result odd or even?"
         let oddButton = UIBarButtonItem(title: "Odd", style: .plain, target: self, action: #selector(addOne))
         let evenButton = UIBarButtonItem(title: "Even", style: .plain, target: self, action: #selector(divideByTwo))
@@ -111,6 +111,7 @@ class DTDTViewController: UIViewController {
 
 
     @objc func addOne() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(divideByTwo))
@@ -126,7 +127,7 @@ class DTDTViewController: UIViewController {
 
 
     @objc func divideByTwo() {
-        // tell user to divide by two
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Divide the result by 2"
         var okButton = UIBarButtonItem()
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -143,6 +144,7 @@ class DTDTViewController: UIViewController {
 
 
     @objc func divideByNine() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, leaving out any remainder"
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(askResult))
@@ -152,6 +154,7 @@ class DTDTViewController: UIViewController {
 
 
     @objc func askResult() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         // ask current result to user
         myToolbar.setItems([], animated: true)
 
@@ -245,6 +248,7 @@ class DTDTViewController: UIViewController {
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 
