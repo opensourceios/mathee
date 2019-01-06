@@ -142,7 +142,7 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
         let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(addValue))
         let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(dontAddValue))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([yesButton, space, noButton], animated: true)
+        myToolbar.setItems([noButton, space, yesButton], animated: true)
 
     }
 
