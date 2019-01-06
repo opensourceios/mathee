@@ -17,6 +17,7 @@ extension UIViewController {
         case messageCanceled
         case messageFailed
         case messageSent
+        case hasNoSolution
         case unknown
     }
 
@@ -40,6 +41,13 @@ extension UIViewController {
         case .messageSent:
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
+        case .hasNoSolution:
+            alertTitle = "Oops"
+            alertMessage = """
+            You have no solution to share yet.
+            Tap 💡 to create a solution now!
+            Then tap me again to share your solution with your friends!
+            """
         default:
             alertTitle = "Unknown error"
             alertMessage = """

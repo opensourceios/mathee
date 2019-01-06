@@ -103,6 +103,8 @@ class MenuViewController: UIViewController,
 
         cell.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
 
+        cell.selectionStyle = .none
+
         return cell
     }
 
@@ -119,30 +121,35 @@ class MenuViewController: UIViewController,
                 withIdentifier: Constants.StoryboardID.pagesVC) as? PagesViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.dtdt.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.dtdtVC) as? DTDTViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.higher.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.magic.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.queens.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
+                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         default:
             print("An error has occured!")
@@ -171,6 +178,7 @@ class MenuViewController: UIViewController,
     // MARK: Actions
 
     @IBAction func aboutButtonPressed() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
 
         let version: String? = Bundle.main.infoDictionary![Constants.Misc.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -183,7 +191,6 @@ class MenuViewController: UIViewController,
 
         let cancelAction = UIAlertAction(title: Constants.Misc.cancel, style: .cancel) { _ in
             self.dismiss(animated: true, completion: {
-                SKStoreReviewController.requestReview()
             })
         }
 

@@ -52,7 +52,7 @@ class HigherLowerViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         trophyLabel.isHidden = true
 
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextGuess))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -60,8 +60,12 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Helpers
 
-    @objc func showNextGuess() {
+    @objc func start() {
+        showNextGuess(sound: Constants.Sound.high)
+    }
 
+    @objc func showNextGuess(sound: String) {
+        AppData.getSoundEnabledSettings(sound: sound)
         tries += 1
 
         diff = high - low
@@ -95,17 +99,18 @@ class HigherLowerViewController: UIViewController {
     @objc func lower() {
 
         high = guess
-        showNextGuess()
+        showNextGuess(sound: Constants.Sound.low)
     }
 
 
     @objc func higher() {
         low = guess
-        showNextGuess()
+        showNextGuess(sound: Constants.Sound.high)
     }
 
 
     @objc func correct() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
 
         let trophies = ["👏💩👏", "🥉", "🥉🥉", "🥉🥉🥉", "🥈🥉🥉",
                         "🥈🥈🥉", "🥈🥈🥈", "🥇🥈🥈", "🥇🥇🥈", "🥇🥇🥇"]
@@ -137,6 +142,7 @@ class HigherLowerViewController: UIViewController {
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 

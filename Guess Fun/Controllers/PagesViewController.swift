@@ -8,9 +8,10 @@
 
 import UIKit
 import StoreKit
+import AVKit
 
 
-class PagesViewController: UIViewController {
+class PagesViewController: UIViewController, AVAudioPlayerDelegate {
 
 
     // MARK: Outlets
@@ -115,7 +116,7 @@ class PagesViewController: UIViewController {
         """
         pageContentLabel.text = ""
 
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(showNextPage))
+        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
@@ -124,11 +125,17 @@ class PagesViewController: UIViewController {
 
     // Helpers
 
-    @objc func showNextPage() {
+    @objc func start() {
+        showNextPage(sound: Constants.Sound.high)
+    }
+
+    func showNextPage(sound: String) {
+        AppData.getSoundEnabledSettings(sound: sound)
         if currentPageFake > shuffledPagesByOrder.count {
             showResult()
             return
         }
+
         pageNumberLabel.text = "Is your number in page #\(currentPageFake)?"
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
@@ -141,23 +148,25 @@ class PagesViewController: UIViewController {
 
 
     @objc func addValue() {
-        // add value
+
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         userNumber += shuffledPagesByOrder[currentPageReal].key
         currentPageFake += 1
         currentPageReal += 1
-        showNextPage()
+        showNextPage(sound: Constants.Sound.high)
     }
 
 
     @objc func dontAddValue() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         currentPageFake += 1
         currentPageReal += 1
-        showNextPage()
+        showNextPage(sound: Constants.Sound.low)
     }
 
 
     @objc func showResult() {
-
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
         pageContentLabel.text = ""
         pageNumberLabel.text = ""
         resultLabel.text = "You thought: \(userNumber)"
@@ -188,6 +197,7 @@ class PagesViewController: UIViewController {
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 
