@@ -6,7 +6,6 @@
 PUT SCREENSHOTS HERE
 
 
-
 # Contributing
 Want to help? You can:
 - Suggest changes by creating an Issue.
