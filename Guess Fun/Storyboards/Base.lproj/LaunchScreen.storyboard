@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage" translatesAutoresizingMaskIntoConstraints="NO" id="HPK-Fm-EaN">
-                                <rect key="frame" x="36.666666666666657" y="282.66666666666669" width="341" height="341.00000000000006"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HPK-Fm-EaN" secondAttribute="height" multiplier="1:1" id="Atj-dJ-0lt"/>
                                 </constraints>
@@ -27,7 +27,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HPK-Fm-EaN" firstAttribute="centerY" secondItem="qar-du-a9t" secondAttribute="centerY" id="q4N-jo-xq8"/>
+                            <constraint firstItem="HPK-Fm-EaN" firstAttribute="centerY" secondItem="qar-du-a9t" secondAttribute="centerY" id="4y3-dm-22e"/>
+                            <constraint firstItem="qar-du-a9t" firstAttribute="trailing" secondItem="HPK-Fm-EaN" secondAttribute="trailing" id="7zI-EX-PdU"/>
+                            <constraint firstItem="HPK-Fm-EaN" firstAttribute="leading" secondItem="qar-du-a9t" secondAttribute="leading" id="PDB-rS-EEM"/>
                             <constraint firstItem="HPK-Fm-EaN" firstAttribute="centerX" secondItem="qar-du-a9t" secondAttribute="centerX" id="tQt-MF-XlI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qar-du-a9t"/>
@@ -35,10 +37,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1i-2F-sMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="346"/>
+            <point key="canvasLocation" x="-213.04347826086959" y="345.53571428571428"/>
         </scene>
     </scenes>
     <resources>
-        <image name="launchImage" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="launchImage" width="1536" height="1536"/>
     </resources>
 </document>
