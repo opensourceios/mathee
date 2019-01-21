@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3319088A20E8772E007C679C /* Guess Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guess Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3319088A20E8772E007C679C /* Guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3319088D20E8772E007C679C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3319089220E8772E007C679C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3319089420E87731007C679C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				3319088D20E8772E007C679C /* AppDelegate.swift */,
-				3319088C20E8772E007C679C /* Guess Fun */,
+				3319088C20E8772E007C679C /* Guess */,
 				3319088B20E8772E007C679C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,12 +69,12 @@
 		3319088B20E8772E007C679C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3319088A20E8772E007C679C /* Guess Fun.app */,
+				3319088A20E8772E007C679C /* Guess.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3319088C20E8772E007C679C /* Guess Fun */ = {
+		3319088C20E8772E007C679C /* Guess */ = {
 			isa = PBXGroup;
 			children = (
 				3350E55B20F1DDEA0093FC96 /* Model */,
@@ -84,7 +84,7 @@
 				33B1DF8021E17FBD006E6060 /* Resources */,
 				3319089920E87731007C679C /* Info.plist */,
 			);
-			path = "Guess Fun";
+			path = Guess;
 			sourceTree = "<group>";
 		};
 		3326B5FF21DEBD240093C02C /* Assets */ = {
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3319088920E8772E007C679C /* Guess Fun */ = {
+		3319088920E8772E007C679C /* Guess */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3319089C20E87731007C679C /* Build configuration list for PBXNativeTarget "Guess Fun" */;
+			buildConfigurationList = 3319089C20E87731007C679C /* Build configuration list for PBXNativeTarget "Guess" */;
 			buildPhases = (
 				3319088620E8772E007C679C /* Sources */,
 				3319088720E8772E007C679C /* Frameworks */,
@@ -153,9 +153,9 @@
 			);
 			dependencies = (
 			);
-			name = "Guess Fun";
+			name = Guess;
 			productName = "Guess My Number Fun";
-			productReference = 3319088A20E8772E007C679C /* Guess Fun.app */;
+			productReference = 3319088A20E8772E007C679C /* Guess.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3319088520E8772E007C679C /* Build configuration list for PBXProject "Guess Fun" */;
+			buildConfigurationList = 3319088520E8772E007C679C /* Build configuration list for PBXProject "Guess" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3319088920E8772E007C679C /* Guess Fun */,
+				3319088920E8772E007C679C /* Guess */,
 			);
 		};
 /* End PBXProject section */
@@ -388,7 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = "Guess Fun/Info.plist";
+				INFOPLIST_FILE = Guess/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -407,7 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JMVGHP3288;
-				INFOPLIST_FILE = "Guess Fun/Info.plist";
+				INFOPLIST_FILE = Guess/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,7 +423,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3319088520E8772E007C679C /* Build configuration list for PBXProject "Guess Fun" */ = {
+		3319088520E8772E007C679C /* Build configuration list for PBXProject "Guess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3319089A20E87731007C679C /* Debug */,
@@ -432,7 +432,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3319089C20E87731007C679C /* Build configuration list for PBXNativeTarget "Guess Fun" */ = {
+		3319089C20E87731007C679C /* Build configuration list for PBXNativeTarget "Guess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3319089D20E87731007C679C /* Debug */,
