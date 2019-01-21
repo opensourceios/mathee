@@ -1,15 +1,10 @@
-- play sounds async?  bg music?
-- double tap on queens for new solution, long press to share (alert if hasNoSolution)
-- add apostrophe every 3 digits in results
-- improve instructions app wide
-- improve design for ipad (font, queens)
+add screenshots to README
+
+dopo:
 - NEW: sudoku checker
 - NEW: Days Between dates
 - No longer fit all games on screen. Scroll for more. Make each cell big.
-- Add screenshots to README
-- Add Multiple options for languages in apps.
 - NEW: CYOQ
-- Weak/unowned self in apps: CP, PF, GF, ST.
 - NEW: aaaa + bbbb + cccc = aaaaa
 
 ###### Description
