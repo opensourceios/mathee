@@ -1,6 +1,6 @@
 //
 //  MenuViewController.swift
-//  Guess Fun
+//  Guess
 //
 //  Created by Daniel Springer on 05/07/2018.
 //  Copyright © 2019 Daniel Springer. All rights reserved.
@@ -241,7 +241,7 @@ class MenuViewController: UIViewController,
 
     func shareApp() {
         let message = """
-        This app has 5 fun math games. It's called Guess Fun. \
+        This app has 5 fun math games. \
         Check it out: https://itunes.apple.com/app/id1406084758
         """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)

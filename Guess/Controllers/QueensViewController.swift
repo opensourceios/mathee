@@ -1,6 +1,6 @@
 //
 //  QueensViewController.swift
-//  Guess Fun
+//  Guess
 //
 //  Created by Daniel Springer on 11/27/18.
 //  Copyright © 2019 Daniel Springer. All rights reserved.

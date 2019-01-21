@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  Guess Fun
+//  Guess
 //
 //  Created by Daniel Springer on 11/26/18.
 //  Copyright © 2019 Daniel Springer. All rights reserved.
@@ -26,7 +26,7 @@ struct Constants {
         static let fontChalkduster = "Chalkduster"
         static let appVersion = "CFBundleShortVersionString"
         static let version = "Version"
-        static let appName = "Guess Fun"
+        static let appName = "Guess"
         static let cancel = "Cancel"
         static let shareApp = "Tell a Friend"
         static let sendFeedback = "Contact Us"

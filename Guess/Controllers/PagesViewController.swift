@@ -1,6 +1,6 @@
 //
 //  PagesViewController.swift
-//  Guess Fun
+//  Guess
 //
 //  Created by Daniel Springer on 04/07/2018.
 //  Copyright © 2019 Daniel Springer. All rights reserved.
