@@ -1,6 +1,6 @@
 //
 //  AppData.swift
-//  Guess Fun
+//  Guess
 //
 //  Created by Daniel Springer on 1/3/19.
 //  Copyright © 2019 Dani Springer. All rights reserved.
