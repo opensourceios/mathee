@@ -3,8 +3,7 @@
 - Get it here: https://itunes.apple.com/app/id1406084758
 - Found a bug? Want a feature? Let us know!
 
-PUT SCREENSHOTS HERE
-
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess-fun/master/s/s1.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess-fun/master/s/s2.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess-fun/master/s/s3.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess-fun/master/s/s4.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess-fun/master/s/s5.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess-fun/master/s/s6.png)
 
 # Contributing
 Want to help? You can:
