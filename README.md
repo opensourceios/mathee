@@ -1,4 +1,4 @@
-# Guess Fun (iOS)
+# Guess: Math Games (iOS)
 - 5 games.
 - Get it here: https://itunes.apple.com/app/id1406084758
 - Found a bug? Want a feature? Let us know!
