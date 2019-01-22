@@ -1,8 +1,4 @@
-- NEW: sudoku checker
-- NEW: Days Between dates
-- No longer fit all games on screen. Scroll for more. Make each cell big.
-- NEW: CYOQ
-- NEW: aaaa + bbbb + cccc = aaaaa
+Create mockup screenshots
 
 ###### Description
 
