@@ -1,7 +1,4 @@
-Create mockup screenshots
-
-###### Description
-
+###### App Store Description
 Guess is a collection of math games, including:
 • The numbers book
 • The 8 queens puzzle
