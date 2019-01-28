@@ -1,9 +1,0 @@
-###### App Store Description
-Guess is a collection of math games, including:
-• The numbers book
-• The 8 queens puzzle
-• MatheMagic
-• And more!
-
-• Is there a feature you'd like to see? A bug you'd like to go away? Let us know by opening the app, tapping on 'About', then tapping on 'Contact Us'.
-• Love the app? Please consider leaving a 5-star review!
