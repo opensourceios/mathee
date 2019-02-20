@@ -10,7 +10,7 @@
 
 # Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s1.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s2.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s3.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s4.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s5.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s6.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s7.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s8.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s9.png) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s10.png)
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s7.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s8.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s9.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s10.jpg)
 
 # Contributing
 Want to help? You can:
