@@ -13,7 +13,7 @@
         <!--👆-->
         <scene sceneID="dsc-iX-nMI">
             <objects>
-                <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i4p-Zt-AVs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@ I will guess it in 10 tries or less.</string>
         <!--👸-->
         <scene sceneID="6yn-6N-03r">
             <objects>
-                <viewController storyboardIdentifier="QueensViewController" id="CGs-A7-iCg" customClass="QueensViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QueensViewController" id="CGs-A7-iCg" customClass="QueensViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ax9-N7-RrR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +131,7 @@ I will guess it in 10 tries or less.</string>
         <!--🕘-->
         <scene sceneID="fe5-31-sHI">
             <objects>
-                <viewController storyboardIdentifier="MagicViewController" id="zfM-fA-7ak" customClass="MagicViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagicViewController" id="zfM-fA-7ak" customClass="MagicViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e8v-i1-Ly5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@ Prepare to be amazed.</string>
         <!--📗-->
         <scene sceneID="N7b-KI-OfH">
             <objects>
-                <viewController storyboardIdentifier="PagesViewController" id="dmH-4p-fuU" customClass="PagesViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PagesViewController" id="dmH-4p-fuU" customClass="PagesViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="orM-1u-bwu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,7 +255,7 @@ Prepare to be amazed.</string>
         <!--🏠-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
-                <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c72-1O-ChN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -298,11 +298,18 @@ Prepare to be amazed.</string>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
                     <navigationItem key="navigationItem" title="🏠" id="bIQ-V8-dG6">
-                        <barButtonItem key="leftBarButtonItem" title="🔈" id="old-Et-4Qe">
-                            <connections>
-                                <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="b8v-hF-rk6"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="🔈" id="old-Et-4Qe">
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="b8v-hF-rk6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="🌙" id="h1c-hf-3d8">
+                                <connections>
+                                    <action selector="darkModeButtonPressed:" destination="OWD-6W-keU" id="Had-N8-Jsp"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="📜" id="en9-jY-Ktc">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="aPO-Gg-kWq"/>
@@ -311,6 +318,7 @@ Prepare to be amazed.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="aboutButton" destination="en9-jY-Ktc" id="iDl-ve-Dhh"/>
+                        <outlet property="darkModeButtonItem" destination="h1c-hf-3d8" id="tlV-bd-ogB"/>
                         <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
                         <outlet property="soundBarButtonItem" destination="old-Et-4Qe" id="e3h-Jo-BCb"/>
                     </connections>
@@ -322,7 +330,7 @@ Prepare to be amazed.</string>
         <!--➗-->
         <scene sceneID="6hM-0P-CsD">
             <objects>
-                <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess_Fun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R3d-PE-QWE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

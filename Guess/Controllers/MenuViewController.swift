@@ -24,6 +24,7 @@ class MenuViewController: UIViewController,
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
     @IBOutlet weak var soundBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var darkModeButtonItem: UIBarButtonItem!
 
 
     // MARK: Properties
@@ -237,6 +238,19 @@ class MenuViewController: UIViewController,
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         soundBarButtonItem.title = !oldValue ? "🔈" : "🔇"
     }
+
+
+    @IBAction func darkModeButtonPressed(_ sender: Any) {
+        darkModeToggled()
+    }
+
+
+    func darkModeToggled() {
+        let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.darkModeEnabled)
+        // TODO: Update theme for this VC
+    }
+
 
 
     func shareApp() {
