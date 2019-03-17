@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UserDefaults.standard.register(defaults:
             [Constants.Misc.didScrollOnceDown: false,
-             Constants.UserDef.soundEnabled: true])
+             Constants.UserDef.soundEnabled: true,
+             Constants.UserDef.darkModeEnabled: true])
 
         return true
     }

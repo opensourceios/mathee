@@ -49,6 +49,7 @@ struct Constants {
 
     struct UserDef {
         static let soundEnabled = "soundEnabled"
+        static let darkModeEnabled = "darkModeEnabled"
     }
 
 
