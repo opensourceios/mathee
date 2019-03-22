@@ -248,18 +248,23 @@ class MenuViewController: UIViewController,
     func darkModeToggled() {
         let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
         UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.darkModeEnabled)
-        // TODO: Update theme for this VC
+        updateTheme()
     }
 
+
+    func updateTheme() {
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        // TODO: fill up
+    }
 
 
     func shareApp() {
         let message = """
-        This app has 5 fun math games. \
+        This app has 5 fun games. \
         Check it out: https://itunes.apple.com/app/id1406084758
         """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-        activityController.popoverPresentationController?.barButtonItem = aboutButton // for iPads not to crash
+        activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
             (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
             guard error == nil else {
