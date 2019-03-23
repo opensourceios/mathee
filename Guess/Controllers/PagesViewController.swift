@@ -120,6 +120,13 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        view.backgroundColor = darkMode ? .black : .white
+        pageNumberLabel.textColor = darkMode ? .white : .black
+        pageContentLabel.textColor = darkMode ? .white : .black
+        resultLabel.textColor = darkMode ? .white : .black
+
     }
 
 
