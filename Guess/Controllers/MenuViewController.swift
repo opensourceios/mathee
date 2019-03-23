@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SystemConfiguration
 import MessageUI
 import StoreKit
 import AVKit
