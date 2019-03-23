@@ -22,8 +22,8 @@ class MenuViewController: UIViewController,
 
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    @IBOutlet weak var soundBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var darkModeButtonItem: UIBarButtonItem!
+    @IBOutlet weak var soundButton: UIBarButtonItem!
+    @IBOutlet weak var themeButton: UIBarButtonItem!
 
 
     // MARK: Properties
@@ -44,21 +44,12 @@ class MenuViewController: UIViewController,
 
     // MARK: Life Cycle
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let myFont = UIFont(name: Constants.Misc.fontChalkduster, size: 14.0) {
-            aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .normal)
-            aboutButton.setTitleTextAttributes([NSAttributedString.Key.font: myFont], for: .highlighted)
-        }
         let soundEnabled = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
-        soundBarButtonItem.title = soundEnabled ? "🔈" : "🔇"
-
-    }
-
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        soundButton.title = soundEnabled ? "🔈" : "🔇"
 
         myTableView.separatorColor = UIColor.clear
 
@@ -70,6 +61,7 @@ class MenuViewController: UIViewController,
             myTableView.deselectRow(at: selectedRow, animated: true)
         }
 
+        updateTheme()
     }
 
 
@@ -106,6 +98,10 @@ class MenuViewController: UIViewController,
         cell.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
 
         cell.selectionStyle = .none
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        cell.backgroundColor = darkMode ? .black : .white
 
         return cell
     }
@@ -163,15 +159,12 @@ class MenuViewController: UIViewController,
 
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
         updateRowHeight(indexPath: indexPath)
-
         return myTableView.frame.height / CGFloat(CellsDataEnum.allCases.count)
     }
 
 
     func updateRowHeight(indexPath: IndexPath) {
-
         myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(
             ofSize: myTableView.frame.height / fontSetter)
     }
@@ -235,7 +228,7 @@ class MenuViewController: UIViewController,
         let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
         UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.soundEnabled)
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
-        soundBarButtonItem.title = !oldValue ? "🔈" : "🔇"
+        soundButton.title = !oldValue ? "🔈" : "🔇"
     }
 
 
@@ -254,6 +247,12 @@ class MenuViewController: UIViewController,
     func updateTheme() {
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
         // TODO: fill up
+        view.backgroundColor = darkMode ? .black : .white
+        myTableView.backgroundColor = darkMode ? .black : .white
+        myTableView.tintColor = .red
+        themeButton.title = darkMode ? "☀️" : "🌙"
+        myTableView.reloadData()
+
     }
 
 
