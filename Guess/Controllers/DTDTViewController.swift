@@ -61,6 +61,20 @@ class DTDTViewController: UIViewController {
         myToolbar.setItems([space, okButton], animated: true)
 
         helpersShould(hide: true)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        view.backgroundColor = darkMode ? .black : .white
+        messageLabel.textColor = darkMode ? .white : .black
+        myTextField.backgroundColor = darkMode ? .black : .white
+        myTextField.textColor = darkMode ? .white : .black
+        myTextField.tintColor = darkMode ? .white : .black
+        let placeholderColor: UIColor = darkMode ? .white : .black
+        myTextField.attributedPlaceholder = NSAttributedString(
+            string: "Type here",
+            attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        helperLabel.textColor = darkMode ? .white : .black
+
     }
 
 
