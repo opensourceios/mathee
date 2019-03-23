@@ -292,40 +292,40 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="bSL-S2-mJ9" firstAttribute="leading" secondItem="27d-DW-fze" secondAttribute="leading" id="4xo-Re-BU1"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="trailing" secondItem="bSL-S2-mJ9" secondAttribute="trailing" id="HZu-cS-BU5"/>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" id="ZKl-Bd-ZkH"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
-                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" id="jI2-iQ-jMB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
-                    <navigationItem key="navigationItem" title="🏠" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="🏠" largeTitleDisplayMode="always" id="bIQ-V8-dG6">
                         <leftBarButtonItems>
-                            <barButtonItem title="🔈" id="old-Et-4Qe">
+                            <barButtonItem title="🔈" id="dcu-6N-Ke2">
                                 <connections>
-                                    <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="b8v-hF-rk6"/>
+                                    <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="tbX-f7-LSc"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="🌙" id="h1c-hf-3d8">
+                            <barButtonItem title="🌙" id="IIe-Cg-dHm">
                                 <connections>
-                                    <action selector="darkModeButtonPressed:" destination="OWD-6W-keU" id="Had-N8-Jsp"/>
+                                    <action selector="darkModeButtonPressed:" destination="OWD-6W-keU" id="1sy-Gp-cWq"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="📜" id="en9-jY-Ktc">
+                        <barButtonItem key="rightBarButtonItem" title="📜" id="iSG-Wt-4L5">
                             <connections>
-                                <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="aPO-Gg-kWq"/>
+                                <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="aboutButton" destination="en9-jY-Ktc" id="iDl-ve-Dhh"/>
-                        <outlet property="darkModeButtonItem" destination="h1c-hf-3d8" id="tlV-bd-ogB"/>
+                        <outlet property="aboutButton" destination="iSG-Wt-4L5" id="PIY-Lc-BEr"/>
                         <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
-                        <outlet property="soundBarButtonItem" destination="old-Et-4Qe" id="e3h-Jo-BCb"/>
+                        <outlet property="soundButton" destination="dcu-6N-Ke2" id="qlm-KO-yuk"/>
+                        <outlet property="themeButton" destination="IIe-Cg-dHm" id="pPG-5B-D6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-fe-gN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-176" y="679"/>
+            <point key="canvasLocation" x="-176.25" y="678.16901408450701"/>
         </scene>
         <!--➗-->
         <scene sceneID="6hM-0P-CsD">
