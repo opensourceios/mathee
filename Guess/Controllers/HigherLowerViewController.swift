@@ -55,6 +55,12 @@ class HigherLowerViewController: UIViewController {
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        view.backgroundColor = darkMode ? .black : .white
+        guessLabel.textColor = darkMode ? .white : .black
+        trophyLabel.textColor = darkMode ? .white : .black
+
     }
 
 
