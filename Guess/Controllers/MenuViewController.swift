@@ -246,7 +246,6 @@ class MenuViewController: UIViewController,
 
     func updateTheme() {
         let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-        // TODO: fill up
         view.backgroundColor = darkMode ? .black : .white
         myTableView.backgroundColor = darkMode ? .black : .white
         myTableView.tintColor = .red
