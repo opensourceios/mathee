@@ -238,6 +238,7 @@ class MenuViewController: UIViewController,
 
 
     func darkModeToggled() {
+        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
         UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.darkModeEnabled)
         updateTheme()
