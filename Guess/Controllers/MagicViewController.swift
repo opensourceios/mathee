@@ -42,6 +42,11 @@ class MagicViewController: UIViewController {
         let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(play))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        view.backgroundColor = darkMode ? .black : .white
+        headerLabel.textColor = darkMode ? .white : .black
     }
 
 
