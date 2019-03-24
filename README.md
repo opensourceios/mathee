@@ -1,16 +1,12 @@
 # Guess: Math Games (iOS)
-- Guess is a collection of math games, including:
-  - The numbers book
-  - The 8 queens puzzle
-  - MatheMagic
-  - And more!
+- Amaze your friends when you guess any number they think of, by secretly using this app!
 - Is there a feature you'd like to see? A bug you'd like to go away? Let us know by opening the app, tapping on 'About', then tapping on 'Contact Us'.
 - Love the app? Please consider leaving a 5-star review!
 - Get it here: https://apple.co/2TdZqiM
 
 # Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s4.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s5.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s6.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s7.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s8.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s9.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s10.jpg)
+![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s1.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s2.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s3.jpg) ![Screenshot](https://raw.githubusercontent.com/DaniSpringer/guess/master/s/s4.jpg)
 
 # Contributing
 Want to help? You can:
