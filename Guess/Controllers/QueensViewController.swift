@@ -25,9 +25,6 @@ class QueensViewController: UIViewController {
     var hasSolutionToShare = false
     var boardString = ""
     var shareButton = UIBarButtonItem()
-    let myAttributes: [NSAttributedString.Key: UIFont] = [
-        NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 24)!
-    ]
     let initialString = """
         Have you heard of the 8 Queens Puzzle?
 
@@ -89,11 +86,23 @@ class QueensViewController: UIViewController {
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([homeButton, spaceFlexible, refreshButton], animated: true)
 
+        let textColor: UIColor = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled) ? .white : .black
+        let myAttributes = [
+            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 24)!,
+            NSAttributedString.Key.foregroundColor: textColor
+        ]
         myTextView.attributedText = NSAttributedString(string: initialString, attributes: myAttributes)
 
         shareButton = UIBarButtonItem(title: "💌", style: .plain, target: self, action: #selector(shareSolution))
         //navigationController?.navigationItem.rightBarButtonItem = shareButton
         navigationItem.rightBarButtonItem = shareButton
+
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+
+        view.backgroundColor = darkMode ? .black : .white
+        solutionLabel.textColor = darkMode ? .white : .black
+        myTextView.textColor = darkMode ? .white : .black
+        myTextView.backgroundColor = darkMode ? .black : .white
 
     }
 
@@ -103,6 +112,8 @@ class QueensViewController: UIViewController {
 
         if !UserDefaults.standard.bool(forKey: Constants.Misc.didScrollOnceDown) {
             myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
+            let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+            myTextView.indicatorStyle = darkMode ? .white : .black
             myTextView.flashScrollIndicators()
             UserDefaults.standard.set(true, forKey: Constants.Misc.didScrollOnceDown)
         }
@@ -114,6 +125,8 @@ class QueensViewController: UIViewController {
         super.viewDidAppear(animated)
 
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
+        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        myTextView.indicatorStyle = darkMode ? .white : .black
         myTextView.flashScrollIndicators()
 
     }
@@ -395,6 +408,12 @@ class QueensViewController: UIViewController {
         self.solutionLabel.text = boardString
 
         if !hasSolutionToShare {
+            let textColor: UIColor = UserDefaults.standard.bool(
+                forKey: Constants.UserDef.darkModeEnabled) ? .white : .black
+            let myAttributes = [
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 24)!,
+                NSAttributedString.Key.foregroundColor: textColor
+            ]
             myTextView.attributedText = NSAttributedString(
                 string: updatedString, attributes: myAttributes)
             hasSolutionToShare = true
