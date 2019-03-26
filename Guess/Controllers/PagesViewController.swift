@@ -85,12 +85,12 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40),
-                NSAttributedString.Key.foregroundColor: view.tintColor
+                NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40),
-                NSAttributedString.Key.foregroundColor: view.tintColor
+                NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
 
         myToolbar.setBackgroundImage(UIImage(),
