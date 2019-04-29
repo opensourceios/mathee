@@ -37,6 +37,7 @@ struct Constants {
         static let showAppsButtonTitle = "More by Daniel Springer"
         static let devID = "1402417666"
         static let didScrollOnceDown = "didScrollOnceDown"
+        static let appsLink = "https://itunes.apple.com/developer/id1402417666"
     }
 
 
