@@ -6,7 +6,7 @@
 //  Copyright © 2019 Daniel Springer. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 struct Constants {
@@ -24,6 +24,7 @@ struct Constants {
 
     struct Misc {
         static let fontChalkduster = "Chalkduster"
+        static let fontSize: CGFloat = 40
         static let appVersion = "CFBundleShortVersionString"
         static let version = "Version"
         static let appName = "Guess"

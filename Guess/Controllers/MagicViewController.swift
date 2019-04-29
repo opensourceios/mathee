@@ -25,12 +25,12 @@ class MagicViewController: UIViewController {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
 
