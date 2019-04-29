@@ -62,6 +62,15 @@ class MenuViewController: UIViewController,
         }
 
         updateTheme()
+
+
+        for state: UIControl.State in [.disabled, .focused, .highlighted, .normal] {
+            for button: UIBarButtonItem in [soundButton, themeButton, aboutButton] {
+                button.setTitleTextAttributes(
+                    [NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize)],
+                                              for: state)
+            }
+        }
     }
 
 

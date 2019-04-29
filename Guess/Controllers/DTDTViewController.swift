@@ -35,12 +35,12 @@ class DTDTViewController: UIViewController {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
 
@@ -103,19 +103,19 @@ class DTDTViewController: UIViewController {
         let evenButton = UIBarButtonItem(title: "Even", style: .plain, target: self, action: #selector(divideByTwo))
 
         oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                          for: .normal)
         oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                          for: .highlighted)
         evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                           for: .normal)
         evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                           for: .highlighted)
 
@@ -186,11 +186,13 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
+                                                    size: Constants.Misc.fontSize)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
+                                                    size: Constants.Misc.fontSize)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .highlighted)
 
@@ -204,11 +206,13 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
+                                                    size: Constants.Misc.fontSize)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
+                                                    size: Constants.Misc.fontSize)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .highlighted)
 
@@ -222,11 +226,13 @@ class DTDTViewController: UIViewController {
             messageLabel.text = "Please enter numbers only.\nNo text.\nMax number: 2^63 - 1."
             let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
+                                                    size: Constants.Misc.fontSize)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 40.0)!,
+                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
+                                                    size: Constants.Misc.fontSize)!,
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .highlighted)
 
