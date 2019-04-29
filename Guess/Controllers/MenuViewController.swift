@@ -71,6 +71,11 @@ class MenuViewController: UIViewController,
                                               for: state)
             }
         }
+
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 1)
+        ]
+
     }
 
 
