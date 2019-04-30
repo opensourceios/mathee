@@ -276,7 +276,7 @@ class MenuViewController: UIViewController,
 
     func shareApp() {
         let message = """
-        This app has 5 fun games. \
+        Amaze your friends when you guess any number they think of, by secretly using this app! \
         Check it out: https://itunes.apple.com/app/id1406084758
         """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
