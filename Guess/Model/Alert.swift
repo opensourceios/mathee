@@ -40,7 +40,7 @@ extension UIViewController {
             """
         case .messageSent:
             alertTitle = "Success!"
-            alertMessage = "Your message has been sent. You should hear from us within 24 working hours."
+            alertMessage = "Your message has been sent. You should hear from us within 24 hours."
         case .hasNoSolution:
             alertTitle = "Oops"
             alertMessage = """
@@ -51,7 +51,7 @@ extension UIViewController {
         default:
             alertTitle = "Unknown error"
             alertMessage = """
-            An unknown error occurred. Please try again later, or contact us by leaving a review
+            An unknown error occurred. Please try again later, or contact us by leaving a review.
             """
         }
 
