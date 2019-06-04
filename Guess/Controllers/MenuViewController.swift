@@ -222,7 +222,7 @@ class MenuViewController: UIViewController,
         let showAppsAction = UIAlertAction(title: Constants.Misc.showAppsButtonTitle, style: .default) { _ in
             self.showApps()
         }
-    
+
 
         let changeAppIconAction = UIAlertAction(title: Constants.Misc.customAppIconTitle, style: .default) { _ in
             self.changeIconPressed()
@@ -279,7 +279,6 @@ class MenuViewController: UIViewController,
     }
 
     func changeIconPressed() {
-        // TODO: present settings VC
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settingsVC)
         self.present(controller, animated: true)
