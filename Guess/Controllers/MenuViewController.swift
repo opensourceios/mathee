@@ -222,8 +222,13 @@ class MenuViewController: UIViewController,
         let showAppsAction = UIAlertAction(title: Constants.Misc.showAppsButtonTitle, style: .default) { _ in
             self.showApps()
         }
+    
 
-        for action in [mailAction, reviewAction, shareAppAction,
+        let changeAppIconAction = UIAlertAction(title: Constants.Misc.customAppIconTitle, style: .default) { _ in
+            self.changeIconPressed()
+        }
+
+        for action in [mailAction, reviewAction, shareAppAction, changeAppIconAction,
                        showAppsAction, cancelAction] {
             infoAlert.addAction(action)
         }
@@ -271,6 +276,13 @@ class MenuViewController: UIViewController,
         themeButton.title = darkMode ? "☀️" : "🌙"
         myTableView.reloadData()
 
+    }
+
+    func changeIconPressed() {
+        // TODO: present settings VC
+        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settingsVC)
+        self.present(controller, animated: true)
     }
 
 
