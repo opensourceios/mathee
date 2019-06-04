@@ -19,6 +19,7 @@ struct Constants {
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
         static let queensVC = "QueensViewController"
+        static let settingsVC = "SettingsViewController"
     }
 
 
@@ -36,6 +37,7 @@ struct Constants {
         static let emailAddress = "***REMOVED***"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
         static let showAppsButtonTitle = "More by Daniel Springer"
+        static let customAppIconTitle = "Change app icon"
         static let devID = "1402417666"
         static let didScrollOnceDown = "didScrollOnceDown"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
@@ -52,6 +54,9 @@ struct Constants {
     struct UserDef {
         static let soundEnabled = "soundEnabled"
         static let darkModeEnabled = "darkModeEnabled"
+        static let iconIsDark = "iconIsDark"
+        static let light = "light"
+        static let dark = "dark"
     }
 
 
