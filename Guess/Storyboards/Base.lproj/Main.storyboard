@@ -408,5 +408,62 @@ Let me ask you a few questions...</string>
             </objects>
             <point key="canvasLocation" x="1370.625" y="1263.3802816901409"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="s0E-F8-uGP">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="eTf-QF-CPb" customClass="SettingsViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vtn-0w-TdA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-2I-aZK">
+                                <rect key="frame" x="349" y="82.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="mySwitchToggled:" destination="eTf-QF-CPb" eventType="valueChanged" id="Jci-wj-UMe"/>
+                                </connections>
+                            </switch>
+                            <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E8-6w-5wZ">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="kpY-Lh-Bmd"/>
+                                    <barButtonItem title="👍" id="ebq-Zh-VW4">
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="eTf-QF-CPb" id="Zj8-Qk-Mnm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Znd-LD-niH"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="App Icon (Light/Dark)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
+                                <rect key="frame" x="16" y="60" width="208" height="76"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xVi-Mc-85E" firstAttribute="bottom" secondItem="9E8-6w-5wZ" secondAttribute="bottom" id="1DU-Ei-ron"/>
+                            <constraint firstItem="FxH-2I-aZK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AUa-te-ju6" secondAttribute="trailing" constant="16" id="6zs-WP-Arz"/>
+                            <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="9E8-6w-5wZ" secondAttribute="trailing" id="8UY-OA-WE6"/>
+                            <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="FxH-2I-aZK" secondAttribute="trailing" constant="16" id="ACr-pU-Crr"/>
+                            <constraint firstItem="AUa-te-ju6" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" constant="16" id="Dnj-CQ-RdD"/>
+                            <constraint firstItem="FxH-2I-aZK" firstAttribute="centerY" secondItem="AUa-te-ju6" secondAttribute="centerY" id="tlp-LD-21w"/>
+                            <constraint firstItem="AUa-te-ju6" firstAttribute="top" secondItem="xVi-Mc-85E" secondAttribute="top" constant="16" id="vEf-li-9Yt"/>
+                            <constraint firstItem="9E8-6w-5wZ" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" id="z3G-cE-gUq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xVi-Mc-85E"/>
+                    </view>
+                    <connections>
+                        <outlet property="myLabel" destination="AUa-te-ju6" id="aWo-Uv-CZg"/>
+                        <outlet property="mySwitch" destination="FxH-2I-aZK" id="Q3d-QF-EHf"/>
+                        <outlet property="myToolbar" destination="9E8-6w-5wZ" id="W0u-Y2-nAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ySr-9t-qV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="-220"/>
+        </scene>
     </scenes>
 </document>
