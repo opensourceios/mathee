@@ -1,1 +1,0 @@
-reduce dark mode code repetitions
