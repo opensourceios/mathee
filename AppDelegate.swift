@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.register(defaults:
             [Constants.Misc.didScrollOnceDown: false,
              Constants.UserDef.soundEnabled: true,
-             Constants.UserDef.darkModeEnabled: false,
              Constants.UserDef.iconIsDark: false])
 
         return true
