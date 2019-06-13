@@ -23,20 +23,18 @@ class MenuViewController: UIViewController,
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
     @IBOutlet weak var soundButton: UIBarButtonItem!
-    @IBOutlet weak var themeButton: UIBarButtonItem!
 
 
     // MARK: Properties
 
     var fullHeight: CGFloat!
-    let fontSetter: CGFloat = 10
 
     enum CellsDataEnum: String, CaseIterable {
-        case dtdt = "➗"
-        case pages = "📗"
-        case queens = "👸"
-        case higher = "👆"
-        case magic = "🕘"
+        case dtdt = "Do This, Do That"
+        case pages = "The Magic Numbers Book"
+        case queens = "The Hard Queens Puzzle"
+        case higher = "Higher Lower"
+        case magic = "MatheMagic"
     }
 
     let menuCell = "MenuCell"
@@ -49,9 +47,8 @@ class MenuViewController: UIViewController,
         super.viewDidLoad()
 
         let soundEnabled = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
-        soundButton.title = soundEnabled ? "🔈" : "🔇"
-
-        myTableView.separatorColor = UIColor.clear
+        soundButton.title = soundEnabled ?
+            Constants.Misc.soundOnMessage : Constants.Misc.soundOffMessage
 
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -65,9 +62,9 @@ class MenuViewController: UIViewController,
 
 
         for state: UIControl.State in [.disabled, .focused, .highlighted, .normal] {
-            for button: UIBarButtonItem in [soundButton, themeButton, aboutButton] {
+            for button: UIBarButtonItem in [soundButton, aboutButton] {
                 button.setTitleTextAttributes(
-                    [NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize)],
+                    [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)],
                                               for: state)
             }
         }
@@ -109,15 +106,13 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
 
         cell.textLabel?.text = CellsDataEnum.allCases[(indexPath as NSIndexPath).row].rawValue
 
-        cell.textLabel?.font = UIFont.systemFont(ofSize: myTableView.frame.height / fontSetter)
-
         cell.selectionStyle = .none
-
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
 
         cell.backgroundColor = darkMode ? .black : .white
 
@@ -168,23 +163,10 @@ class MenuViewController: UIViewController,
                 AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         default:
-            print("An error has occured!")
             let alert = createAlert(alertReasonParam: AlertReason.unknown)
             alert.view.layoutIfNeeded()
             present(alert, animated: true)
         }
-    }
-
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        updateRowHeight(indexPath: indexPath)
-        return myTableView.frame.height / CGFloat(CellsDataEnum.allCases.count)
-    }
-
-
-    func updateRowHeight(indexPath: IndexPath) {
-        myTableView.cellForRow(at: indexPath)?.textLabel?.font = UIFont.systemFont(
-            ofSize: myTableView.frame.height / fontSetter)
     }
 
 
@@ -207,7 +189,7 @@ class MenuViewController: UIViewController,
             })
         }
 
-        let shareAppAction = UIAlertAction(title: Constants.Misc.shareApp, style: .default) { _ in
+        let shareAppAction = UIAlertAction(title: Constants.Misc.shareTitleMessage, style: .default) { _ in
             self.shareApp()
         }
 
@@ -251,32 +233,28 @@ class MenuViewController: UIViewController,
         let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
         UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.soundEnabled)
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
-        soundButton.title = !oldValue ? "🔈" : "🔇"
-    }
-
-
-    @IBAction func darkModeButtonPressed(_ sender: Any) {
-        darkModeToggled()
-    }
-
-
-    func darkModeToggled() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
-        let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-        UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.darkModeEnabled)
-        updateTheme()
+        soundButton.title = !oldValue ?
+            Constants.Misc.soundOnMessage : Constants.Misc.soundOffMessage
     }
 
 
     func updateTheme() {
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        let darkMode = traitCollection.userInterfaceStyle == .dark
         view.backgroundColor = darkMode ? .black : .white
         myTableView.backgroundColor = darkMode ? .black : .white
         myTableView.tintColor = .red
-        themeButton.title = darkMode ? "☀️" : "🌙"
+        myTableView.separatorColor = darkMode ? .darkGray : .lightGray
         myTableView.reloadData()
 
     }
+
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        updateTheme()
+    }
+
 
     func changeIconPressed() {
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
@@ -286,10 +264,7 @@ class MenuViewController: UIViewController,
 
 
     func shareApp() {
-        let message = """
-        Amaze your friends when you guess any number they think of, by secretly using this app! \
-        Check it out: https://itunes.apple.com/app/id1406084758
-        """
+        let message = Constants.Misc.shareBodyMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = {
@@ -366,7 +341,7 @@ extension MenuViewController {
         //       You can find the App Store ID in your app's product URL
         guard let writeReviewURL = URL(string: Constants.Misc.reviewLink)
             else {
-                fatalError("Expected a valid URL")
+                fatalError("expected valid URL")
 
         }
         UIApplication.shared.open(writeReviewURL,

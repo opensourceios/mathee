@@ -35,12 +35,12 @@ class DTDTViewController: UIViewController {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
 
@@ -56,13 +56,25 @@ class DTDTViewController: UIViewController {
         messageLabel.lineBreakMode = .byWordWrapping
         messageLabel.text = "Think of a number.\nI will find it.\nLet me ask you a few questions..."
 
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
+        let okButton = UIBarButtonItem(
+            title: Constants.Misc.okMessage,
+            style: .plain,
+            target: self,
+            action: #selector(timesThree))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
         helpersShould(hide: true)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
+        updateTheme()
+
+    }
+
+
+    // Helpers
+
+    func updateTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
 
         view.backgroundColor = darkMode ? .black : .white
         messageLabel.textColor = darkMode ? .white : .black
@@ -74,11 +86,7 @@ class DTDTViewController: UIViewController {
             string: "Type here",
             attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
         helperLabel.textColor = darkMode ? .white : .black
-
     }
-
-
-    // Helpers
 
     func helpersShould(hide: Bool) {
         myTextField.isHidden = hide
@@ -90,7 +98,11 @@ class DTDTViewController: UIViewController {
     @objc func timesThree() {
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Multiply it by 3"
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(oddOrEven))
+        let okButton = UIBarButtonItem(
+            title: Constants.Misc.okMessage,
+            style: .plain,
+            target: self,
+            action: #selector(oddOrEven))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -99,23 +111,31 @@ class DTDTViewController: UIViewController {
     @objc func oddOrEven() {
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Is the result odd or even?"
-        let oddButton = UIBarButtonItem(title: "Odd", style: .plain, target: self, action: #selector(addOne))
-        let evenButton = UIBarButtonItem(title: "Even", style: .plain, target: self, action: #selector(divideByTwo))
+        let oddButton = UIBarButtonItem(
+            title: Constants.Misc.oddMessage,
+            style: .plain,
+            target: self,
+            action: #selector(addOne))
+        let evenButton = UIBarButtonItem(
+            title: Constants.Misc.evenMessage,
+            style: .plain,
+            target: self,
+            action: #selector(divideByTwo))
 
         oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                          for: .normal)
         oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                          for: .highlighted)
         evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                           for: .normal)
         evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: Constants.Misc.fontSize)!,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                           for: .highlighted)
 
@@ -128,7 +148,11 @@ class DTDTViewController: UIViewController {
         AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(divideByTwo))
+        let okButton = UIBarButtonItem(
+            title: Constants.Misc.okMessage,
+            style: .plain,
+            target: self,
+            action: #selector(divideByTwo))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
@@ -147,10 +171,18 @@ class DTDTViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
         if isFirstEvenQuestion {
-            okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(timesThree))
+            okButton = UIBarButtonItem(
+                title: Constants.Misc.okMessage,
+                style: .plain,
+                target: self,
+                action: #selector(timesThree))
             isFirstEvenQuestion = false
         } else {
-            okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(divideByNine))
+            okButton = UIBarButtonItem(
+                title: Constants.Misc.okMessage,
+                style: .plain,
+                target: self,
+                action: #selector(divideByNine))
         }
 
         myToolbar.setItems([space, okButton], animated: true)
@@ -161,7 +193,11 @@ class DTDTViewController: UIViewController {
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, leaving out any remainder"
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(askResult))
+        let okButton = UIBarButtonItem(
+            title: Constants.Misc.okMessage,
+            style: .plain,
+            target: self,
+            action: #selector(askResult))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
     }
@@ -184,15 +220,17 @@ class DTDTViewController: UIViewController {
             helpersShould(hide: true)
 
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
-            let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
+            let retryButton = UIBarButtonItem(
+                title: Constants.Misc.retryMessage,
+                style: .plain,
+                target: self,
+                action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
-                                                    size: Constants.Misc.fontSize)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
-                                                    size: Constants.Misc.fontSize)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .highlighted)
 
@@ -204,15 +242,17 @@ class DTDTViewController: UIViewController {
         guard !text.isEmpty else {
             helpersShould(hide: true)
             messageLabel.text = "TextField emtpy. Please enter your current result and try again."
-            let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
+            let retryButton = UIBarButtonItem(
+                title: Constants.Misc.retryMessage,
+                style: .plain,
+                target: self,
+                action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
-                                                    size: Constants.Misc.fontSize)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
-                                                    size: Constants.Misc.fontSize)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .highlighted)
 
@@ -224,15 +264,17 @@ class DTDTViewController: UIViewController {
         guard let number = Int(text) else {
             helpersShould(hide: true)
             messageLabel.text = "Please enter numbers only.\nNo text.\nMax number: 2^63 - 1."
-            let retryButton = UIBarButtonItem(title: "Retry", style: .plain, target: self, action: #selector(askResult))
+            let retryButton = UIBarButtonItem(
+                title: Constants.Misc.retryMessage,
+                style: .plain,
+                target: self,
+                action: #selector(askResult))
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
-                                                    size: Constants.Misc.fontSize)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .normal)
             retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster,
-                                                    size: Constants.Misc.fontSize)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any],
                                                for: .highlighted)
 
@@ -254,7 +296,11 @@ class DTDTViewController: UIViewController {
         messageLabel.text = "You thought:\n\(total)"
         AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
 
-        let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
+        let doneButton = UIBarButtonItem(
+            title: Constants.Misc.endMessage,
+            style: .plain,
+            target: self,
+            action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, doneButton, space], animated: true)
     }

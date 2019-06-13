@@ -36,7 +36,7 @@ class QueensViewController: UIViewController {
 
         When you choose to, you can come here for a solution.
 
-        Tap 💡 to generate a solution.
+        Tap \(Constants.Misc.newSolutionMessage) to generate a solution.
         """
     let updatedString = """
         Have you heard of the 8 Queens Puzzle?
@@ -49,10 +49,12 @@ class QueensViewController: UIViewController {
 
         When you choose to, you can come here for a solution.
 
-        Tap 💌 to share your favorite solutions with friends and family.
+        Tap \(Constants.Misc.shareTitleMessage) to share your favorite solutions with friends and family.
 
-        Tap 💡 to generate a new solution.
+        Tap \(Constants.Misc.newSolutionMessage) to generate a new solution.
         """
+
+    var textColor: UIColor! = UIColor.black
 
 
     // MARK: Life Cycle
@@ -62,17 +64,17 @@ class QueensViewController: UIViewController {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: UIColor.gray
                 ], for: .disabled)
 
@@ -81,28 +83,36 @@ class QueensViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        let refreshButton = UIBarButtonItem(title: "💡", style: .plain, target: self, action: #selector(makeBoard))
-        let homeButton = UIBarButtonItem(title: "🏠", style: .plain, target: self, action: #selector(donePressed))
+        let refreshButton = UIBarButtonItem(
+            title: Constants.Misc.newSolutionMessage,
+            style: .plain,
+            target: self,
+            action: #selector(makeBoard))
+        let doneButton = UIBarButtonItem(
+            title: Constants.Misc.doneMessage,
+            style: .plain,
+            target: self,
+            action: #selector(donePressed))
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([homeButton, spaceFlexible, refreshButton], animated: true)
+        myToolbar.setItems([doneButton, spaceFlexible, refreshButton], animated: true)
 
-        let textColor: UIColor = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled) ? .white : .black
+        updateTheme()
+
         let myAttributes = [
-            NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 24)!,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.foregroundColor: textColor
         ]
-        myTextView.attributedText = NSAttributedString(string: initialString, attributes: myAttributes)
+        myTextView.attributedText = NSAttributedString(
+            string: initialString,
+            attributes: myAttributes as [NSAttributedString.Key: Any])
 
-        shareButton = UIBarButtonItem(title: "💌", style: .plain, target: self, action: #selector(shareSolution))
+        shareButton = UIBarButtonItem(
+            title: Constants.Misc.shareTitleMessage,
+            style: .plain,
+            target: self,
+            action: #selector(shareSolution))
         //navigationController?.navigationItem.rightBarButtonItem = shareButton
         navigationItem.rightBarButtonItem = shareButton
-
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-
-        view.backgroundColor = darkMode ? .black : .white
-        solutionLabel.textColor = darkMode ? .white : .black
-        myTextView.textColor = darkMode ? .white : .black
-        myTextView.backgroundColor = darkMode ? .black : .white
 
     }
 
@@ -112,8 +122,6 @@ class QueensViewController: UIViewController {
 
         if !UserDefaults.standard.bool(forKey: Constants.Misc.didScrollOnceDown) {
             myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
-            let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-            myTextView.indicatorStyle = darkMode ? .white : .black
             myTextView.flashScrollIndicators()
             UserDefaults.standard.set(true, forKey: Constants.Misc.didScrollOnceDown)
         }
@@ -125,14 +133,25 @@ class QueensViewController: UIViewController {
         super.viewDidAppear(animated)
 
         myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-        myTextView.indicatorStyle = darkMode ? .white : .black
         myTextView.flashScrollIndicators()
 
     }
 
 
     // MARK: Helpers
+
+    func updateTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        textColor = darkMode ? .white : .black
+        let backgroundColor: UIColor = darkMode ? .black : .white
+        view.backgroundColor = backgroundColor
+        solutionLabel.textColor = textColor
+        myTextView.textColor = textColor
+        myTextView.backgroundColor = backgroundColor
+        myTextView.indicatorStyle = darkMode ? .white : .black
+    }
+
 
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
 
@@ -408,14 +427,12 @@ class QueensViewController: UIViewController {
         self.solutionLabel.text = boardString
 
         if !hasSolutionToShare {
-            let textColor: UIColor = UserDefaults.standard.bool(
-                forKey: Constants.UserDef.darkModeEnabled) ? .white : .black
             let myAttributes = [
-                NSAttributedString.Key.font: UIFont(name: Constants.Misc.fontChalkduster, size: 24)!,
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: textColor
             ]
             myTextView.attributedText = NSAttributedString(
-                string: updatedString, attributes: myAttributes)
+                string: updatedString, attributes: myAttributes as [NSAttributedString.Key: Any])
             hasSolutionToShare = true
         }
 

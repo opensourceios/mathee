@@ -37,12 +37,12 @@ class HigherLowerViewController: UIViewController {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
 
@@ -52,19 +52,28 @@ class HigherLowerViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         trophyLabel.isHidden = true
 
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(start))
+        let okButton = UIBarButtonItem(
+            title: Constants.Misc.okMessage,
+            style: .plain, target: self,
+            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-        view.backgroundColor = darkMode ? .black : .white
-        guessLabel.textColor = darkMode ? .white : .black
-        trophyLabel.textColor = darkMode ? .white : .black
+        updateTheme()
 
     }
 
 
     // MARK: Helpers
+
+    func updateTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        view.backgroundColor = darkMode ? .black : .white
+        guessLabel.textColor = darkMode ? .white : .black
+        trophyLabel.textColor = darkMode ? .white : .black
+    }
+
 
     @objc func start() {
         showNextGuess(sound: Constants.Sound.high)
@@ -87,9 +96,21 @@ class HigherLowerViewController: UIViewController {
         guessLabel.isHidden = false
         guessLabel.text = "Is it \(guess)?"
 
-        let lowerButton = UIBarButtonItem(title: "👇", style: .plain, target: self, action: #selector(lower))
-        let higherButton = UIBarButtonItem(title: "👆", style: .plain, target: self, action: #selector(higher))
-        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(correct))
+        let lowerButton = UIBarButtonItem(
+            title: Constants.Misc.lowerMessage,
+            style: .plain,
+            target: self,
+            action: #selector(lower))
+        let higherButton = UIBarButtonItem(
+            title: Constants.Misc.higherMessage,
+            style: .plain,
+            target: self,
+            action: #selector(higher))
+        let yesButton = UIBarButtonItem(
+            title: Constants.Misc.yesMessage,
+            style: .plain,
+            target: self,
+            action: #selector(correct))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
         if halfDiff == 1 {
@@ -135,7 +156,11 @@ class HigherLowerViewController: UIViewController {
             trophyLabel.text = "🏆"
         }
 
-        let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
+        let doneButton = UIBarButtonItem(
+            title: Constants.Misc.endMessage,
+            style: .plain,
+            target: self,
+            action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, doneButton, space], animated: true)
     }
