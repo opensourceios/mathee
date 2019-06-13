@@ -24,13 +24,10 @@ struct Constants {
 
 
     struct Misc {
-        static let fontChalkduster = "Chalkduster"
-        static let fontSize: CGFloat = 40
         static let appVersion = "CFBundleShortVersionString"
         static let version = "Version"
         static let appName = "Guess"
         static let cancel = "Cancel"
-        static let shareApp = "Tell a friend"
         static let sendFeedback = "Contact us"
         static let leaveReview = "Leave a review"
         static let emailSample = "Hi. I have a question..."
@@ -41,6 +38,25 @@ struct Constants {
         static let devID = "1402417666"
         static let didScrollOnceDown = "didScrollOnceDown"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
+        static let shareBodyMessage = """
+        Amaze your friends when you guess any number they think of, by secretly using this app! \
+        Check it out: https://itunes.apple.com/app/id1406084758
+        """
+        static let shareTitleMessage = "Share"
+        static let yesMessage = "Yes"
+        static let noMessage = "No"
+        static let okMessage = "OK"
+        static let doneMessage = "Done"
+        static let retryMessage = "Retry"
+        static let endMessage = "End"
+        static let higherMessage = "Higher"
+        static let lowerMessage = "Lower"
+        static let oddMessage = "Odd"
+        static let evenMessage = "Even"
+        static let soundOnMessage = "Sound: On"
+        static let soundOffMessage = "Sound: Off"
+        static let aboutMessage = "About"
+        static let newSolutionMessage = "New Solution"
     }
 
 
@@ -53,7 +69,6 @@ struct Constants {
 
     struct UserDef {
         static let soundEnabled = "soundEnabled"
-        static let darkModeEnabled = "darkModeEnabled"
         static let iconIsDark = "iconIsDark"
         static let light = "light"
         static let dark = "dark"
