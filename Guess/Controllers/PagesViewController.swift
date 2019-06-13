@@ -84,12 +84,12 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize),
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
                 NSAttributedString.Key.foregroundColor: view.tintColor as Any
                 ], for: .highlighted)
 
@@ -116,25 +116,38 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
         """
         pageContentLabel.text = ""
 
-        let okButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(start))
+        let okButton = UIBarButtonItem(
+            title: Constants.Misc.okMessage,
+            style: .plain,
+            target: self,
+            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-
-        view.backgroundColor = darkMode ? .black : .white
-        pageNumberLabel.textColor = darkMode ? .white : .black
-        pageContentLabel.textColor = darkMode ? .white : .black
-        resultLabel.textColor = darkMode ? .white : .black
+        updateTheme()
 
     }
 
 
     // Helpers
 
+    func updateTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        let textColor: UIColor = darkMode ? .white : .black
+        let backgroundColor: UIColor = darkMode ? .black : .white
+        view.backgroundColor = backgroundColor
+
+        for label in [pageNumberLabel, pageContentLabel, resultLabel] {
+            label?.textColor = textColor
+        }
+    }
+
+
     @objc func start() {
         showNextPage(sound: Constants.Sound.high)
     }
+
 
     func showNextPage(sound: String) {
         AppData.getSoundEnabledSettings(sound: sound)
@@ -146,8 +159,16 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
         pageNumberLabel.text = "Is your number in page #\(currentPageFake)?"
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
-        let yesButton = UIBarButtonItem(title: "👍", style: .plain, target: self, action: #selector(addValue))
-        let noButton = UIBarButtonItem(title: "👎", style: .plain, target: self, action: #selector(dontAddValue))
+        let yesButton = UIBarButtonItem(
+            title: Constants.Misc.yesMessage,
+            style: .plain,
+            target: self,
+            action: #selector(addValue))
+        let noButton = UIBarButtonItem(
+            title: Constants.Misc.noMessage,
+            style: .plain,
+            target: self,
+            action: #selector(dontAddValue))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([noButton, space, yesButton], animated: true)
 
@@ -179,7 +200,11 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
         resultLabel.text = "You thought: \(userNumber)"
         resultLabel.isHidden = false
 
-        let doneButton = UIBarButtonItem(title: "🎉", style: .plain, target: self, action: #selector(doneButtonPressed))
+        let doneButton = UIBarButtonItem(
+            title: Constants.Misc.endMessage,
+            style: .plain,
+            target: self,
+            action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, doneButton, space], animated: true)
     }

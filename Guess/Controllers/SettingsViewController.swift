@@ -10,13 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+
     // MARK: Outlets
 
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var mySwitch: UISwitch!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var myBarButtonItem: UIBarButtonItem!
 
-    // MARK: Properties
 
     // MARK: Life Cycle
 
@@ -24,24 +25,34 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         mySwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
-        let darkMode = UserDefaults.standard.bool(forKey: Constants.UserDef.darkModeEnabled)
-        view.backgroundColor = darkMode ? .black : .white
-        myToolbar.barTintColor = darkMode ? .black : .white
-        myLabel.textColor = darkMode ? .white : .black
+        updateTheme()
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize)
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
             ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Misc.fontSize)
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
             ], for: .highlighted)
+
+        myBarButtonItem.title = Constants.Misc.doneMessage
 
     }
 
 
     // MARK: Helpers
+
+    func updateTheme() {
+        let darkMode = traitCollection.userInterfaceStyle == .dark
+
+        let textColor: UIColor = darkMode ? .white : .black
+        let backgroundColor: UIColor = darkMode ? .black : .white
+        view.backgroundColor = backgroundColor
+        myToolbar.barTintColor = backgroundColor
+        myLabel.textColor = textColor
+    }
+
 
     @IBAction func mySwitchToggled(_ sender: UISwitch) {
         AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
