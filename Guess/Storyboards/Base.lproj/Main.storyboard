@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--👆-->
+        <!--Higher Lower-->
         <scene sceneID="dsc-iX-nMI">
             <objects>
                 <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,18 +23,18 @@
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="60" width="382" height="265.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
+                                <rect key="frame" x="16" y="60" width="382" height="86.5"/>
                                 <string key="text">Think of a number 1-1000.
-After each try, tell me whether to go 👆 or 👇, or if I 🎉!
+After each try, tell me whether to go higher or lower, or if I won!
 I will guess it in 10 tries or less.</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzF-Up-j1l" userLabel="Trophy Label">
-                                <rect key="frame" x="16" y="357.5" width="382" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzF-Up-j1l" userLabel="Trophy Label">
+                                <rect key="frame" x="16" y="178.5" width="382" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,7 +53,7 @@ I will guess it in 10 tries or less.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="👆" id="oXZ-fp-eKa"/>
+                    <navigationItem key="navigationItem" title="Higher Lower" id="oXZ-fp-eKa"/>
                     <connections>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
                         <outlet property="myToolbar" destination="e8i-JF-uXf" id="J7w-vb-6kZ"/>
@@ -66,7 +64,7 @@ I will guess it in 10 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="1371" y="2045"/>
         </scene>
-        <!--👸-->
+        <!--The Hard Queens Puzzle-->
         <scene sceneID="6yn-6N-03r">
             <objects>
                 <viewController storyboardIdentifier="QueensViewController" id="CGs-A7-iCg" customClass="QueensViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +115,7 @@ I will guess it in 10 tries or less.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MZd-eA-oly"/>
                     </view>
-                    <navigationItem key="navigationItem" title="👸" id="z9E-Bf-ZXq"/>
+                    <navigationItem key="navigationItem" title="The Hard Queens Puzzle" id="z9E-Bf-ZXq"/>
                     <connections>
                         <outlet property="myTextView" destination="Ttl-pA-p0Q" id="iyb-Ge-s5J"/>
                         <outlet property="myToolbar" destination="lvW-pj-5lr" id="FVB-jA-2Kf"/>
@@ -128,7 +126,7 @@ I will guess it in 10 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="1368.75" y="527.11267605633805"/>
         </scene>
-        <!--🕘-->
+        <!--MatheMagic-->
         <scene sceneID="fe5-31-sHI">
             <objects>
                 <viewController storyboardIdentifier="MagicViewController" id="zfM-fA-7ak" customClass="MagicViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,11 +141,11 @@ I will guess it in 10 tries or less.</string>
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="396" width="382" height="114"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
+                                <rect key="frame" x="16" y="432" width="382" height="42.5"/>
                                 <string key="text">Think of a number.
 Prepare to be amazed.</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -163,7 +161,7 @@ Prepare to be amazed.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="🕘" id="Ot7-WL-NJJ"/>
+                    <navigationItem key="navigationItem" title="MatheMagic" id="Ot7-WL-NJJ"/>
                     <connections>
                         <outlet property="headerLabel" destination="U8K-8M-K0A" id="zBS-1o-0b3"/>
                         <outlet property="myToolbar" destination="pVQ-WR-wMI" id="tqF-Cg-WHF"/>
@@ -173,7 +171,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="1371" y="2823"/>
         </scene>
-        <!--📗-->
+        <!--The Magic Numbers Book-->
         <scene sceneID="N7b-KI-OfH">
             <objects>
                 <viewController storyboardIdentifier="PagesViewController" id="dmH-4p-fuU" customClass="PagesViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,21 +186,21 @@ Prepare to be amazed.</string>
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="16" y="168" width="382" height="618"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
+                                <rect key="frame" x="16" y="112.5" width="382" height="673.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="155" y="434" width="104" height="38"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
+                                <rect key="frame" x="183" y="443" width="48" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="60" width="382" height="76"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
+                                <rect key="frame" x="16" y="60" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -224,7 +222,7 @@ Prepare to be amazed.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
                     </view>
-                    <navigationItem key="navigationItem" title="📗" id="4hU-hj-MvD"/>
+                    <navigationItem key="navigationItem" title="The Magic Numbers Book" id="4hU-hj-MvD"/>
                     <connections>
                         <outlet property="myToolbar" destination="7y7-oO-AVP" id="Ycw-6s-VF8"/>
                         <outlet property="pageContentLabel" destination="7lz-1e-Sfr" id="clv-nt-ydx"/>
@@ -252,7 +250,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1089" y="680"/>
         </scene>
-        <!--🏠-->
+        <!--Home-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,16 +263,16 @@ Prepare to be amazed.</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="MTh-De-CvF" style="IBUITableViewCellStyleDefault" id="9Tx-0d-iVw">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTh-De-CvF">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="MTh-De-CvF">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -297,20 +295,13 @@ Prepare to be amazed.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
-                    <navigationItem key="navigationItem" title="🏠" largeTitleDisplayMode="always" id="bIQ-V8-dG6">
-                        <leftBarButtonItems>
-                            <barButtonItem title="🔈" id="dcu-6N-Ke2">
-                                <connections>
-                                    <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="tbX-f7-LSc"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="🌙" id="IIe-Cg-dHm">
-                                <connections>
-                                    <action selector="darkModeButtonPressed:" destination="OWD-6W-keU" id="1sy-Gp-cWq"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="📜" id="iSG-Wt-4L5">
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="bIQ-V8-dG6">
+                        <barButtonItem key="leftBarButtonItem" title="Sound" id="dcu-6N-Ke2">
+                            <connections>
+                                <action selector="soundButtonPressed:" destination="OWD-6W-keU" id="tbX-f7-LSc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="iSG-Wt-4L5">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
                             </connections>
@@ -320,14 +311,13 @@ Prepare to be amazed.</string>
                         <outlet property="aboutButton" destination="iSG-Wt-4L5" id="PIY-Lc-BEr"/>
                         <outlet property="myTableView" destination="bSL-S2-mJ9" id="LWa-JP-r1e"/>
                         <outlet property="soundButton" destination="dcu-6N-Ke2" id="qlm-KO-yuk"/>
-                        <outlet property="themeButton" destination="IIe-Cg-dHm" id="pPG-5B-D6Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-fe-gN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-176.81159420289856" y="677.67857142857144"/>
         </scene>
-        <!--➗-->
+        <!--Do This, Do That-->
         <scene sceneID="6hM-0P-CsD">
             <objects>
                 <viewController storyboardIdentifier="DTDTViewController" id="eiL-1S-xct" customClass="DTDTViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -342,35 +332,35 @@ Prepare to be amazed.</string>
                                 </constraints>
                                 <items/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type here" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="16" y="168" width="382" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
+                                <rect key="frame" x="16" y="112.5" width="382" height="40"/>
                                 <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="377" width="382" height="152"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
+                                <rect key="frame" x="16" y="421" width="382" height="64.5"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your current result" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-TZ-19w">
-                                <rect key="frame" x="16" y="60" width="382" height="76"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your current result" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-TZ-19w">
+                                <rect key="frame" x="16" y="60" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="187" y="240" width="40" height="63"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
-                                <state key="normal" title="👍"/>
+                                <rect key="frame" x="192" y="184.5" width="30" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="okButtonKeyboardPressed" destination="eiL-1S-xct" eventType="touchUpInside" id="MwA-k2-ML0"/>
                                 </connections>
@@ -395,7 +385,7 @@ Let me ask you a few questions...</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                     </view>
-                    <navigationItem key="navigationItem" title="➗" id="xXz-XO-Cxl"/>
+                    <navigationItem key="navigationItem" title="Do This, Do That" id="xXz-XO-Cxl"/>
                     <connections>
                         <outlet property="helperButton" destination="eb2-Y7-egc" id="7TR-4o-XbN"/>
                         <outlet property="helperLabel" destination="hv4-TZ-19w" id="rRd-9G-LDl"/>
@@ -417,7 +407,7 @@ Let me ask you a few questions...</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-2I-aZK">
-                                <rect key="frame" x="349" y="82.5" width="51" height="31"/>
+                                <rect key="frame" x="349" y="55" width="51" height="31"/>
                                 <connections>
                                     <action selector="mySwitchToggled:" destination="eTf-QF-CPb" eventType="valueChanged" id="Jci-wj-UMe"/>
                                 </connections>
@@ -427,7 +417,7 @@ Let me ask you a few questions...</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <barButtonItem systemItem="flexibleSpace" id="kpY-Lh-Bmd"/>
-                                    <barButtonItem title="👍" id="ebq-Zh-VW4">
+                                    <barButtonItem title="OK" id="ebq-Zh-VW4">
                                         <connections>
                                             <action selector="doneButtonPressed:" destination="eTf-QF-CPb" id="Zj8-Qk-Mnm"/>
                                         </connections>
@@ -435,9 +425,9 @@ Let me ask you a few questions...</string>
                                     <barButtonItem systemItem="flexibleSpace" id="Znd-LD-niH"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="App Icon (Light/Dark)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
-                                <rect key="frame" x="16" y="60" width="208" height="76"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="App Icon (Light/Dark)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
+                                <rect key="frame" x="16" y="60" width="164.5" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -456,6 +446,7 @@ Let me ask you a few questions...</string>
                         <viewLayoutGuide key="safeArea" id="xVi-Mc-85E"/>
                     </view>
                     <connections>
+                        <outlet property="myBarButtonItem" destination="ebq-Zh-VW4" id="WuZ-v0-wwg"/>
                         <outlet property="myLabel" destination="AUa-te-ju6" id="aWo-Uv-CZg"/>
                         <outlet property="mySwitch" destination="FxH-2I-aZK" id="Q3d-QF-EHf"/>
                         <outlet property="myToolbar" destination="9E8-6w-5wZ" id="W0u-Y2-nAQ"/>
