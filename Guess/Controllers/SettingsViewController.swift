@@ -55,14 +55,12 @@ class SettingsViewController: UIViewController {
 
 
     @IBAction func mySwitchToggled(_ sender: UISwitch) {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.iconIsDark)
         setIcon()
     }
 
 
     @IBAction func doneButtonPressed(_ sender: Any) {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         dismiss(animated: true, completion: nil)
     }
 

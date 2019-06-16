@@ -20,7 +20,6 @@
 		339EE48222A703CD00BC73E2 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339EE47E22A703CD00BC73E2 /* dark@3x.png */; };
 		339EE48322A703CD00BC73E2 /* light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339EE47F22A703CD00BC73E2 /* light@3x.png */; };
 		339EE48522A7041300BC73E2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339EE48422A7041300BC73E2 /* SettingsViewController.swift */; };
-		33A56B1421DD80AE005C1F59 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A56B1321DD80AE005C1F59 /* AppData.swift */; };
 		33B1DF8421E17FD4006E6060 /* high.caf in Resources */ = {isa = PBXBuildFile; fileRef = 33B1DF8121E17FD4006E6060 /* high.caf */; };
 		33B1DF8521E17FD4006E6060 /* chime.caf in Resources */ = {isa = PBXBuildFile; fileRef = 33B1DF8221E17FD4006E6060 /* chime.caf */; };
 		33B1DF8621E17FD4006E6060 /* low.caf in Resources */ = {isa = PBXBuildFile; fileRef = 33B1DF8321E17FD4006E6060 /* low.caf */; };
@@ -46,7 +45,6 @@
 		339EE47E22A703CD00BC73E2 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
 		339EE47F22A703CD00BC73E2 /* light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@3x.png"; sourceTree = "<group>"; };
 		339EE48422A7041300BC73E2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		33A56B1321DD80AE005C1F59 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		33B1DF8121E17FD4006E6060 /* high.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = high.caf; sourceTree = "<group>"; };
 		33B1DF8221E17FD4006E6060 /* chime.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = chime.caf; sourceTree = "<group>"; };
 		33B1DF8321E17FD4006E6060 /* low.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = low.caf; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			children = (
 				3350E55C20F1DDF70093FC96 /* Alert.swift */,
 				33ECBA0521AC1BAA003199CB /* Constants.swift */,
-				33A56B1321DD80AE005C1F59 /* AppData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,7 +267,6 @@
 				3340755A20E8CA2500EFDAA9 /* DTDTViewController.swift in Sources */,
 				33ECBA0621AC1BAA003199CB /* Constants.swift in Sources */,
 				3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */,
-				33A56B1421DD80AE005C1F59 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

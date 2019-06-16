@@ -76,11 +76,10 @@ class HigherLowerViewController: UIViewController {
 
 
     @objc func start() {
-        showNextGuess(sound: Constants.Sound.high)
+        showNextGuess()
     }
 
-    @objc func showNextGuess(sound: String) {
-        AppData.getSoundEnabledSettings(sound: sound)
+    @objc func showNextGuess() {
         tries += 1
 
         diff = high - low
@@ -126,18 +125,17 @@ class HigherLowerViewController: UIViewController {
     @objc func lower() {
 
         high = guess
-        showNextGuess(sound: Constants.Sound.low)
+        showNextGuess()
     }
 
 
     @objc func higher() {
         low = guess
-        showNextGuess(sound: Constants.Sound.high)
+        showNextGuess()
     }
 
 
     @objc func correct() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
 
         let trophies = ["👏💩👏", "🥉", "🥉🥉", "🥉🥉🥉", "🥈🥉🥉",
                         "🥈🥈🥉", "🥈🥈🥈", "🥇🥈🥈", "🥇🥇🥈", "🥇🥇🥇"]
@@ -170,7 +168,6 @@ class HigherLowerViewController: UIViewController {
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 

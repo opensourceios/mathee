@@ -63,7 +63,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func play() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         headerLabel.text = "Let's call the number you thought \"A\".\nAdd 10 to A."
 
         let okButton = UIBarButtonItem(
@@ -77,7 +76,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineFirst() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         headerLabel.text = """
         Let's call the result of A + 10, "B".\nCombine the digits of B.\nFor example, \
         if B is 24, do 2 + 4, and you get 6.
@@ -94,7 +92,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func subtract() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         headerLabel.text = """
         Let's call the result of B's combined digits "C".\nDo B - C.\nFor example, \
         if you had 24 and got 6, do 24 - 6, and you get 18.
@@ -111,7 +108,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func checkFirst() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         headerLabel.text = "Let's call the result of B - C, \"D\".\nIs D a single digit?"
         let yesButton = UIBarButtonItem(
             title: Constants.Misc.yesMessage,
@@ -129,7 +125,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineSecond() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         headerLabel.text = "Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6."
         let okButton = UIBarButtonItem(
             title: Constants.Misc.okMessage,
@@ -142,7 +137,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func checkForever() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         headerLabel.text = "Is the new result a single digit?"
         let yesButton = UIBarButtonItem(
             title: Constants.Misc.yesMessage,
@@ -161,7 +155,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineForever() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         headerLabel.text = "Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6."
         let okButton = UIBarButtonItem(
             title: Constants.Misc.okMessage,
@@ -174,7 +167,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFirst() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         headerLabel.text = "D is 9"
         let okButton = UIBarButtonItem(
             title: Constants.Misc.endMessage,
@@ -187,7 +179,6 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFinally() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
         headerLabel.text = "It's 9"
         let okButton = UIBarButtonItem(
             title: Constants.Misc.endMessage,
@@ -201,7 +192,6 @@ class MagicViewController: UIViewController {
 
     @objc func done() {
         navigationController?.popToRootViewController(animated: true)
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 

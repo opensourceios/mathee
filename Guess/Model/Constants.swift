@@ -53,22 +53,12 @@ struct Constants {
         static let lowerMessage = "Lower"
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
-        static let soundOnMessage = "Sound: On"
-        static let soundOffMessage = "Sound: Off"
         static let aboutMessage = "About"
         static let newSolutionMessage = "New Solution"
     }
 
 
-    struct Sound {
-        static let high = "high.caf"
-        static let low = "low.caf"
-        static let chime = "chime.caf"
-    }
-
-
     struct UserDef {
-        static let soundEnabled = "soundEnabled"
         static let iconIsDark = "iconIsDark"
         static let light = "light"
         static let dark = "dark"
