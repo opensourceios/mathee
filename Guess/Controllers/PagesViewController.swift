@@ -8,10 +8,9 @@
 
 import UIKit
 import StoreKit
-import AVKit
 
 
-class PagesViewController: UIViewController, AVAudioPlayerDelegate {
+class PagesViewController: UIViewController {
 
 
     // MARK: Outlets
