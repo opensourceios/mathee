@@ -145,12 +145,11 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
 
 
     @objc func start() {
-        showNextPage(sound: Constants.Sound.high)
+        showNextPage()
     }
 
 
-    func showNextPage(sound: String) {
-        AppData.getSoundEnabledSettings(sound: sound)
+    func showNextPage() {
         if currentPageFake > shuffledPagesByOrder.count {
             showResult()
             return
@@ -177,24 +176,21 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
 
     @objc func addValue() {
 
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         userNumber += shuffledPagesByOrder[currentPageReal].key
         currentPageFake += 1
         currentPageReal += 1
-        showNextPage(sound: Constants.Sound.high)
+        showNextPage()
     }
 
 
     @objc func dontAddValue() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         currentPageFake += 1
         currentPageReal += 1
-        showNextPage(sound: Constants.Sound.low)
+        showNextPage()
     }
 
 
     @objc func showResult() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
         pageContentLabel.text = ""
         pageNumberLabel.text = ""
         resultLabel.text = "You thought: \(userNumber)"
@@ -229,7 +225,6 @@ class PagesViewController: UIViewController, AVAudioPlayerDelegate {
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 

@@ -22,7 +22,6 @@ class MenuViewController: UIViewController,
 
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var aboutButton: UIBarButtonItem!
-    @IBOutlet weak var soundButton: UIBarButtonItem!
 
 
     // MARK: Properties
@@ -46,10 +45,6 @@ class MenuViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let soundEnabled = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
-        soundButton.title = soundEnabled ?
-            Constants.Misc.soundOnMessage : Constants.Misc.soundOffMessage
-
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -62,16 +57,16 @@ class MenuViewController: UIViewController,
 
 
         for state: UIControl.State in [.disabled, .focused, .highlighted, .normal] {
-            for button: UIBarButtonItem in [soundButton, aboutButton] {
+            for button: UIBarButtonItem in [aboutButton] {
                 button.setTitleTextAttributes(
                     [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)],
                                               for: state)
             }
         }
 
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.clear
-        ]
+//        self.navigationController?.navigationBar.titleTextAttributes = [
+//            NSAttributedString.Key.foregroundColor: UIColor.clear
+//        ]
 
     }
 
@@ -132,35 +127,30 @@ class MenuViewController: UIViewController,
                 withIdentifier: Constants.StoryboardID.pagesVC) as? PagesViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.dtdt.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.dtdtVC) as? DTDTViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.higher.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.magic.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         case CellsDataEnum.queens.rawValue:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
-                AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
             }
         default:
             let alert = createAlert(alertReasonParam: AlertReason.unknown)
@@ -173,7 +163,6 @@ class MenuViewController: UIViewController,
     // MARK: Actions
 
     @IBAction func aboutButtonPressed() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
 
         let version: String? = Bundle.main.infoDictionary![Constants.Misc.appVersion] as? String
         let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -221,20 +210,6 @@ class MenuViewController: UIViewController,
 
         present(infoAlert, animated: true)
 
-    }
-
-
-    @IBAction func soundButtonPressed(_ sender: Any) {
-        soundToggled()
-    }
-
-
-    func soundToggled() {
-        let oldValue = UserDefaults.standard.bool(forKey: Constants.UserDef.soundEnabled)
-        UserDefaults.standard.set(!oldValue, forKey: Constants.UserDef.soundEnabled)
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
-        soundButton.title = !oldValue ?
-            Constants.Misc.soundOnMessage : Constants.Misc.soundOffMessage
     }
 
 

@@ -362,7 +362,6 @@ class QueensViewController: UIViewController {
 
 
     @objc func makeBoard() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
 
         var current = 0
         let limit = 1
@@ -440,7 +439,6 @@ class QueensViewController: UIViewController {
 
 
     @objc func shareSolution() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
 
         guard hasSolutionToShare else {
             let alert = createAlert(alertReasonParam: .hasNoSolution)
@@ -478,7 +476,6 @@ class QueensViewController: UIViewController {
 
     @objc func donePressed() {
         navigationController?.popToRootViewController(animated: true)
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 

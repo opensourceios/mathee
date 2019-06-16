@@ -96,7 +96,6 @@ class DTDTViewController: UIViewController {
 
 
     @objc func timesThree() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Multiply it by 3"
         let okButton = UIBarButtonItem(
             title: Constants.Misc.okMessage,
@@ -109,7 +108,6 @@ class DTDTViewController: UIViewController {
 
 
     @objc func oddOrEven() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Is the result odd or even?"
         let oddButton = UIBarButtonItem(
             title: Constants.Misc.oddMessage,
@@ -145,7 +143,6 @@ class DTDTViewController: UIViewController {
 
 
     @objc func addOne() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.low)
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
         let okButton = UIBarButtonItem(
@@ -165,7 +162,6 @@ class DTDTViewController: UIViewController {
 
 
     @objc func divideByTwo() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         messageLabel.text = "Divide the result by 2"
         var okButton = UIBarButtonItem()
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -190,7 +186,6 @@ class DTDTViewController: UIViewController {
 
 
     @objc func divideByNine() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, leaving out any remainder"
         let okButton = UIBarButtonItem(
@@ -204,7 +199,6 @@ class DTDTViewController: UIViewController {
 
 
     @objc func askResult() {
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         // ask current result to user
         myToolbar.setItems([], animated: true)
 
@@ -294,7 +288,6 @@ class DTDTViewController: UIViewController {
         myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
         messageLabel.text = "You thought:\n\(total)"
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.chime)
 
         let doneButton = UIBarButtonItem(
             title: Constants.Misc.endMessage,
@@ -314,7 +307,6 @@ class DTDTViewController: UIViewController {
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
-        AppData.getSoundEnabledSettings(sound: Constants.Sound.high)
         SKStoreReviewController.requestReview()
     }
 
