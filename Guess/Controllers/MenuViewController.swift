@@ -9,7 +9,6 @@
 import UIKit
 import MessageUI
 import StoreKit
-import AVKit
 
 
 class MenuViewController: UIViewController,
@@ -26,21 +25,16 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    var fullHeight: CGFloat!
-
-    enum CellsDataEnum: String, CaseIterable {
-        case dtdt = "Do This, Do That"
-        case pages = "The Magic Numbers Book"
-        case queens = "The Hard Queens Puzzle"
-        case higher = "Higher Lower"
-        case magic = "MatheMagic"
-    }
+    let myDataSource = [["Do This, Do That", "Just a few... questions"],
+                    ["The Magic Numbers Book", "Just a few... pages"],
+                    ["The 8 Queens Puzzle", "Just a few... queens"],
+                    ["Higher Lower", "Just a few... ups and downs"],
+                    ["MatheMagic", "Just a few... magical questions"]]
 
     let menuCell = "MenuCell"
 
 
     // MARK: Life Cycle
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +57,6 @@ class MenuViewController: UIViewController,
                                               for: state)
             }
         }
-
-//        self.navigationController?.navigationBar.titleTextAttributes = [
-//            NSAttributedString.Key.foregroundColor: UIColor.clear
-//        ]
 
     }
 
@@ -95,7 +85,7 @@ class MenuViewController: UIViewController,
     // TableView
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CellsDataEnum.allCases.count
+        return myDataSource.count
     }
 
 
@@ -105,7 +95,8 @@ class MenuViewController: UIViewController,
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
 
-        cell.textLabel?.text = CellsDataEnum.allCases[(indexPath as NSIndexPath).row].rawValue
+        cell.textLabel?.text = myDataSource[(indexPath as NSIndexPath).row][0]
+        cell.detailTextLabel?.text = myDataSource[(indexPath as NSIndexPath).row][1]
 
         cell.selectionStyle = .none
 
@@ -122,33 +113,33 @@ class MenuViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath)
 
         switch cell?.textLabel?.text {
-        case CellsDataEnum.pages.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.pagesVC) as? PagesViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case CellsDataEnum.dtdt.rawValue:
+        case myDataSource[0][0]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.dtdtVC) as? DTDTViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-        case CellsDataEnum.higher.rawValue:
+        case myDataSource[1][0]:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.pagesVC) as? PagesViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case myDataSource[2][0]:
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
+            if let toPresent = controller {
+                self.navigationController?.pushViewController(toPresent, animated: true)
+            }
+        case myDataSource[3][0]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-        case CellsDataEnum.magic.rawValue:
+        case myDataSource[4][0]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
-            if let toPresent = controller {
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case CellsDataEnum.queens.rawValue:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
