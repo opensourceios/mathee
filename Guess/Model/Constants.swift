@@ -42,15 +42,12 @@ struct Constants {
         Amaze your friends when you guess any number they think of, by secretly using this app! \
         Check it out: https://itunes.apple.com/app/id1406084758
         """
-        static let shareTitleMessage = "Share"
         static let yesMessage = "Yes"
         static let noMessage = "No"
         static let okMessage = "OK"
         static let doneMessage = "Done"
         static let retryMessage = "Retry"
         static let endMessage = "End"
-        static let higherMessage = "Higher"
-        static let lowerMessage = "Lower"
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
