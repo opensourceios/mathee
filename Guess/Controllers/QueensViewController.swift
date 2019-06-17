@@ -36,7 +36,7 @@ class QueensViewController: UIViewController {
 
         When you choose to, you can come here for a solution.
 
-        Tap \(Constants.Misc.newSolutionMessage) to generate a solution.
+        Tap the plus button to generate a solution.
         """
     let updatedString = """
         Have you heard of the 8 Queens Puzzle?
@@ -49,9 +49,9 @@ class QueensViewController: UIViewController {
 
         When you choose to, you can come here for a solution.
 
-        Tap \(Constants.Misc.shareTitleMessage) to share your favorite solutions with friends and family.
+        Tap the share button to share your favorite solutions with friends and family.
 
-        Tap \(Constants.Misc.newSolutionMessage) to generate a new solution.
+        Tap the plus button to generate a new solution.
         """
 
     var textColor: UIColor! = UIColor.black
@@ -83,8 +83,8 @@ class QueensViewController: UIViewController {
                                      barMetrics: .default)
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        let refreshButton = UIBarButtonItem(
-            title: Constants.Misc.newSolutionMessage,
+        let newSolutionButton = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
             style: .plain,
             target: self,
             action: #selector(makeBoard))
@@ -94,7 +94,7 @@ class QueensViewController: UIViewController {
             target: self,
             action: #selector(donePressed))
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([doneButton, spaceFlexible, refreshButton], animated: true)
+        myToolbar.setItems([doneButton, spaceFlexible, newSolutionButton], animated: true)
 
         updateTheme()
 
@@ -107,7 +107,7 @@ class QueensViewController: UIViewController {
             attributes: myAttributes as [NSAttributedString.Key: Any])
 
         shareButton = UIBarButtonItem(
-            title: Constants.Misc.shareTitleMessage,
+            image: UIImage(systemName: "square.and.arrow.up"),
             style: .plain,
             target: self,
             action: #selector(shareSolution))
@@ -138,6 +138,13 @@ class QueensViewController: UIViewController {
 
 
     // MARK: Helpers
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        updateTheme()
+    }
+
 
     func updateTheme() {
         let darkMode = traitCollection.userInterfaceStyle == .dark
