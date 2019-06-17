@@ -66,6 +66,13 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Helpers
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        updateTheme()
+    }
+
+
     func updateTheme() {
         let darkMode = traitCollection.userInterfaceStyle == .dark
 
@@ -96,17 +103,17 @@ class HigherLowerViewController: UIViewController {
         guessLabel.text = "Is it \(guess)?"
 
         let lowerButton = UIBarButtonItem(
-            title: Constants.Misc.lowerMessage,
+            image: UIImage(systemName: "arrow.down.circle"),
             style: .plain,
             target: self,
             action: #selector(lower))
         let higherButton = UIBarButtonItem(
-            title: Constants.Misc.higherMessage,
+            image: UIImage(systemName: "arrow.up.circle"),
             style: .plain,
             target: self,
             action: #selector(higher))
         let yesButton = UIBarButtonItem(
-            title: Constants.Misc.yesMessage,
+            image: UIImage(systemName: "checkmark.circle"),
             style: .plain,
             target: self,
             action: #selector(correct))

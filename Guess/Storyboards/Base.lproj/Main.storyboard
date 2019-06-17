@@ -63,7 +63,7 @@ I will guess it in 10 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="1371" y="2045"/>
         </scene>
-        <!--The Hard Queens Puzzle-->
+        <!--The 8 Queens Puzzle-->
         <scene sceneID="6yn-6N-03r">
             <objects>
                 <viewController storyboardIdentifier="QueensViewController" id="CGs-A7-iCg" customClass="QueensViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,7 +114,7 @@ I will guess it in 10 tries or less.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MZd-eA-oly"/>
                     </view>
-                    <navigationItem key="navigationItem" title="The Hard Queens Puzzle" id="z9E-Bf-ZXq"/>
+                    <navigationItem key="navigationItem" title="The 8 Queens Puzzle" id="z9E-Bf-ZXq"/>
                     <connections>
                         <outlet property="myTextView" destination="Ttl-pA-p0Q" id="iyb-Ge-s5J"/>
                         <outlet property="myToolbar" destination="lvW-pj-5lr" id="FVB-jA-2Kf"/>
@@ -302,7 +302,7 @@ Prepare to be amazed.</string>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="bIQ-V8-dG6">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" image="info" catalog="system" id="iSG-Wt-4L5">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" image="info.circle" catalog="system" id="iSG-Wt-4L5">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
                             </connections>
@@ -407,7 +407,7 @@ Let me ask you a few questions...</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-2I-aZK">
-                                <rect key="frame" x="349" y="55" width="51" height="31"/>
+                                <rect key="frame" x="349" y="123" width="51" height="31"/>
                                 <connections>
                                     <action selector="mySwitchToggled:" destination="eTf-QF-CPb" eventType="valueChanged" id="Jci-wj-UMe"/>
                                 </connections>
@@ -426,8 +426,14 @@ Let me ask you a few questions...</string>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="App Icon (Light/Dark)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
-                                <rect key="frame" x="16" y="60" width="164.5" height="20.5"/>
+                                <rect key="frame" x="16" y="128" width="164.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-NF-1dW">
+                                <rect key="frame" x="16" y="60" width="382" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -435,12 +441,15 @@ Let me ask you a few questions...</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xVi-Mc-85E" firstAttribute="bottom" secondItem="9E8-6w-5wZ" secondAttribute="bottom" id="1DU-Ei-ron"/>
+                            <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="zlZ-NF-1dW" secondAttribute="trailing" constant="16" id="5d9-jo-Qmd"/>
                             <constraint firstItem="FxH-2I-aZK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AUa-te-ju6" secondAttribute="trailing" constant="16" id="6zs-WP-Arz"/>
                             <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="9E8-6w-5wZ" secondAttribute="trailing" id="8UY-OA-WE6"/>
                             <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="FxH-2I-aZK" secondAttribute="trailing" constant="16" id="ACr-pU-Crr"/>
                             <constraint firstItem="AUa-te-ju6" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" constant="16" id="Dnj-CQ-RdD"/>
+                            <constraint firstItem="zlZ-NF-1dW" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" constant="16" id="apN-Ya-x9e"/>
+                            <constraint firstItem="zlZ-NF-1dW" firstAttribute="top" secondItem="xVi-Mc-85E" secondAttribute="top" constant="16" id="jDw-Tr-dWC"/>
                             <constraint firstItem="FxH-2I-aZK" firstAttribute="centerY" secondItem="AUa-te-ju6" secondAttribute="centerY" id="tlp-LD-21w"/>
-                            <constraint firstItem="AUa-te-ju6" firstAttribute="top" secondItem="xVi-Mc-85E" secondAttribute="top" constant="16" id="vEf-li-9Yt"/>
+                            <constraint firstItem="AUa-te-ju6" firstAttribute="top" secondItem="zlZ-NF-1dW" secondAttribute="bottom" constant="32" id="vEf-li-9Yt"/>
                             <constraint firstItem="9E8-6w-5wZ" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" id="z3G-cE-gUq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xVi-Mc-85E"/>
@@ -458,6 +467,6 @@ Let me ask you a few questions...</string>
         </scene>
     </scenes>
     <resources>
-        <image name="info" catalog="system" width="44" height="64"/>
+        <image name="info.circle" catalog="system" width="64" height="62"/>
     </resources>
 </document>

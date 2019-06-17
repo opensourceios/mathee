@@ -45,7 +45,7 @@ extension UIViewController {
             alertTitle = "Oops"
             alertMessage = """
             You have no solution to share yet.
-            Tap \(Constants.Misc.newSolutionMessage) to create a solution now!
+            Tap the plus button to create a solution now!
             Then tap me again to share your solution with your friends!
             """
         default:

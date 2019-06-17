@@ -43,6 +43,13 @@ class SettingsViewController: UIViewController {
 
     // MARK: Helpers
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        updateTheme()
+    }
+
+
     func updateTheme() {
         let darkMode = traitCollection.userInterfaceStyle == .dark
 
