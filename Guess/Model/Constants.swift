@@ -51,6 +51,7 @@ struct Constants {
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
+        static let shareTitleMessage = "Share"
     }
 
 
