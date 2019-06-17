@@ -111,7 +111,6 @@ class QueensViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(shareSolution))
-        //navigationController?.navigationItem.rightBarButtonItem = shareButton
         navigationItem.rightBarButtonItem = shareButton
 
     }
