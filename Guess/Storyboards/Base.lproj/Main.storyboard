@@ -302,7 +302,7 @@ Prepare to be amazed.</string>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="bIQ-V8-dG6">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="iSG-Wt-4L5">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" image="info" catalog="system" id="iSG-Wt-4L5">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
                             </connections>
@@ -457,4 +457,7 @@ Let me ask you a few questions...</string>
             <point key="canvasLocation" x="-177" y="-220"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info" catalog="system" width="44" height="64"/>
+    </resources>
 </document>
