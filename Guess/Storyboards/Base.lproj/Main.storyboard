@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.15"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
     </dependencies>
     <scenes>
         <!--Higher Lower-->
@@ -21,6 +22,7 @@
                                     <constraint firstAttribute="height" constant="60" id="W2q-Lg-Ax6"/>
                                 </constraints>
                                 <items/>
+                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
                                 <rect key="frame" x="16" y="60" width="382" height="86.5"/>
@@ -38,7 +40,7 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yzF-Up-j1l" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="2E0-Zh-2uW"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="yzF-Up-j1l" secondAttribute="trailing" constant="16" id="6Zd-Vj-F15"/>
@@ -74,10 +76,11 @@ I will guess it in 10 tries or less.</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvW-pj-5lr">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
+                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttl-pA-p0Q">
                                 <rect key="frame" x="16" y="392" width="382" height="405"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -100,7 +103,7 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" id="DB2-Pp-t58"/>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="top" secondItem="MZd-eA-oly" secondAttribute="top" constant="16" id="H2R-Wf-GLN"/>
@@ -139,6 +142,7 @@ I will guess it in 10 tries or less.</string>
                                     <constraint firstAttribute="height" constant="60" id="LFD-oJ-wux"/>
                                 </constraints>
                                 <items/>
+                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
                                 <rect key="frame" x="16" y="432" width="382" height="42.5"/>
@@ -149,7 +153,7 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="pVQ-WR-wMI" secondAttribute="bottom" id="Kgd-5W-rRy"/>
                             <constraint firstItem="pVQ-WR-wMI" firstAttribute="centerX" secondItem="zMY-pK-AUQ" secondAttribute="centerX" id="SAI-A9-7jo"/>
@@ -184,6 +188,7 @@ Prepare to be amazed.</string>
                                     <constraint firstAttribute="height" constant="60" id="NrV-2e-HZP"/>
                                 </constraints>
                                 <items/>
+                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
                                 <rect key="frame" x="16" y="112.5" width="382" height="673.5"/>
@@ -204,7 +209,7 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="7lz-1e-Sfr" secondAttribute="trailing" constant="16" id="1u9-LD-GQs"/>
                             <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="4pA-Ch-WpV"/>
@@ -259,7 +264,7 @@ Prepare to be amazed.</string>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
                                 <rect key="frame" x="0.0" y="120" width="414" height="742"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="systemGroupedBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" textLabel="MTh-De-CvF" detailTextLabel="2lK-bK-foc" style="IBUITableViewCellStyleSubtitle" id="9Tx-0d-iVw">
                                         <rect key="frame" x="0.0" y="28" width="414" height="87.5"/>
@@ -292,7 +297,7 @@ Prepare to be amazed.</string>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bSL-S2-mJ9" firstAttribute="leading" secondItem="27d-DW-fze" secondAttribute="leading" id="4xo-Re-BU1"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="trailing" secondItem="bSL-S2-mJ9" secondAttribute="trailing" id="HZu-cS-BU5"/>
@@ -331,10 +336,11 @@ Prepare to be amazed.</string>
                                     <constraint firstAttribute="height" constant="60" id="AHC-P3-HKa"/>
                                 </constraints>
                                 <items/>
+                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
                                 <rect key="frame" x="16" y="112.5" width="382" height="40"/>
-                                <color key="backgroundColor" red="0.85458308881914558" green="0.85458308881914558" blue="0.85458308881914558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
                                 </constraints>
@@ -366,7 +372,7 @@ Let me ask you a few questions...</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Iy0-d1-2bt"/>
@@ -424,6 +430,7 @@ Let me ask you a few questions...</string>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="Znd-LD-niH"/>
                                 </items>
+                                <color key="barTintColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Light/Dark" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
                                 <rect key="frame" x="16" y="112.5" width="80" height="20.5"/>
@@ -438,7 +445,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xVi-Mc-85E" firstAttribute="bottom" secondItem="9E8-6w-5wZ" secondAttribute="bottom" id="1DU-Ei-ron"/>
                             <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="zlZ-NF-1dW" secondAttribute="trailing" constant="16" id="5d9-jo-Qmd"/>

@@ -47,26 +47,23 @@ class MagicViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        updateTheme()
+        //updateTheme()
 
     }
 
 
     // MARK: Helpers
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        updateTheme()
+//    }
 
-        updateTheme()
-    }
 
-
-    func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        view.backgroundColor = darkMode ? .black : .white
-        headerLabel.textColor = darkMode ? .white : .black
-    }
+//    func updateTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
     @objc func play() {

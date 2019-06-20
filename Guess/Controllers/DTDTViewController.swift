@@ -81,18 +81,12 @@ class DTDTViewController: UIViewController {
 
 
     func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
 
-        view.backgroundColor = darkMode ? .black : .white
-        messageLabel.textColor = darkMode ? .white : .black
-        myTextField.backgroundColor = darkMode ? .black : .white
-        myTextField.textColor = darkMode ? .white : .black
-        myTextField.tintColor = darkMode ? .white : .black
-        let placeholderColor: UIColor = darkMode ? .white : .black
+        myTextField.textColor = UIColor.label
+
         myTextField.attributedPlaceholder = NSAttributedString(
             string: "Type here",
-            attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
-        helperLabel.textColor = darkMode ? .white : .black
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderText])
     }
 
     func helpersShould(hide: Bool) {

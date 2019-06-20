@@ -37,13 +37,11 @@ class HigherLowerViewController: UIViewController {
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
                 ], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
                 ], for: .highlighted)
 
         myToolbar.setBackgroundImage(UIImage(),
@@ -59,27 +57,24 @@ class HigherLowerViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        updateTheme()
+        //updateTheme()
 
     }
 
 
     // MARK: Helpers
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        updateTheme()
+//    }
 
-        updateTheme()
-    }
 
-
-    func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        view.backgroundColor = darkMode ? .black : .white
-        guessLabel.textColor = darkMode ? .white : .black
-        trophyLabel.textColor = darkMode ? .white : .black
-    }
+//    func updateTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//
+//    }
 
 
     @objc func start() {
