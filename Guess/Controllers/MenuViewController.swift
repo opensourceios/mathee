@@ -47,7 +47,7 @@ class MenuViewController: UIViewController,
             myTableView.deselectRow(at: selectedRow, animated: true)
         }
 
-        updateTheme()
+        //updateTheme()
 
 
         for state: UIControl.State in [.disabled, .focused, .highlighted, .normal] {
@@ -91,8 +91,6 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
 
         cell.textLabel?.text = myDataSource[(indexPath as NSIndexPath).row][0]
@@ -100,7 +98,6 @@ class MenuViewController: UIViewController,
 
         cell.selectionStyle = .none
 
-        cell.backgroundColor = darkMode ? .black : .white
 
         return cell
     }
@@ -204,22 +201,16 @@ class MenuViewController: UIViewController,
     }
 
 
-    func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-        view.backgroundColor = darkMode ? .black : .white
-        myTableView.backgroundColor = darkMode ? .black : .white
-        myTableView.tintColor = .red
-        myTableView.separatorColor = darkMode ? .darkGray : .lightGray
-        myTableView.reloadData()
-
-    }
+//    func updateTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        updateTheme()
-    }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        updateTheme()
+//    }
 
 
     func changeIconPressed() {

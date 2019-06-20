@@ -123,31 +123,23 @@ class PagesViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        updateTheme()
+        //updateTheme()
 
     }
 
 
     // Helpers
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        updateTheme()
+//    }
 
-        updateTheme()
-    }
 
-
-    func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        let textColor: UIColor = darkMode ? .white : .black
-        let backgroundColor: UIColor = darkMode ? .black : .white
-        view.backgroundColor = backgroundColor
-
-        for label in [pageNumberLabel, pageContentLabel, resultLabel] {
-            label?.textColor = textColor
-        }
-    }
+//    func updateTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
     @objc func start() {

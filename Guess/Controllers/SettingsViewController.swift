@@ -25,7 +25,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         mySwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
-        updateTheme()
+
+        //updateTheme()
 
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
@@ -43,22 +44,16 @@ class SettingsViewController: UIViewController {
 
     // MARK: Helpers
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        updateTheme()
+//    }
 
-        updateTheme()
-    }
 
-
-    func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        let textColor: UIColor = darkMode ? .white : .black
-        let backgroundColor: UIColor = darkMode ? .black : .white
-        view.backgroundColor = backgroundColor
-        myToolbar.barTintColor = backgroundColor
-        myLabel.textColor = textColor
-    }
+//    func updateTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
     @IBAction func mySwitchToggled(_ sender: UISwitch) {

@@ -54,7 +54,7 @@ class QueensViewController: UIViewController {
         Tap the plus button to generate a new solution.
         """
 
-    var textColor: UIColor! = UIColor.black
+    var textColor: UIColor! = UIColor.label
 
 
     // MARK: Life Cycle
@@ -62,21 +62,12 @@ class QueensViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
-                ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
-                ], for: .highlighted)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: UIColor.gray
-                ], for: .disabled)
+        for state: UIControl.State in [.normal, .highlighted, .disabled] {
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                ], for: state)
+        }
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -96,7 +87,7 @@ class QueensViewController: UIViewController {
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([doneButton, spaceFlexible, newSolutionButton], animated: true)
 
-        updateTheme()
+        //updateTheme()
 
         let myAttributes = [
             NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
@@ -139,24 +130,16 @@ class QueensViewController: UIViewController {
 
     // MARK: Helpers
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//
+//        updateTheme()
+//    }
 
-        updateTheme()
-    }
 
-
-    func updateTheme() {
-        let darkMode = traitCollection.userInterfaceStyle == .dark
-
-        textColor = darkMode ? .white : .black
-        let backgroundColor: UIColor = darkMode ? .black : .white
-        view.backgroundColor = backgroundColor
-        solutionLabel.textColor = textColor
-        myTextView.textColor = textColor
-        myTextView.backgroundColor = backgroundColor
-        myTextView.indicatorStyle = darkMode ? .white : .black
-    }
+//    func updateTheme() {
+//        let darkMode = traitCollection.userInterfaceStyle == .dark
+//    }
 
 
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
