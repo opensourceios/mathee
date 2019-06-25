@@ -35,14 +35,12 @@ class HigherLowerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                ], for: .highlighted)
+        for state: UIControl.State in [.normal, .highlighted] {
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                ], for: state)
+        }
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,

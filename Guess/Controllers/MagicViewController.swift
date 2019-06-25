@@ -23,16 +23,12 @@ class MagicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
-                ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
-                ], for: .highlighted)
+        for state: UIControl.State in [.normal, .highlighted] {
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                ], for: state)
+        }
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -184,6 +180,5 @@ class MagicViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
         SKStoreReviewController.requestReview()
     }
-
 
 }
