@@ -87,8 +87,6 @@ class QueensViewController: UIViewController {
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([doneButton, spaceFlexible, newSolutionButton], animated: true)
 
-        //updateTheme()
-
         let myAttributes = [
             NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
             NSAttributedString.Key.foregroundColor: textColor
@@ -129,18 +127,6 @@ class QueensViewController: UIViewController {
 
 
     // MARK: Helpers
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        updateTheme()
-//    }
-
-
-//    func updateTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
 
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
 

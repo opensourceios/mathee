@@ -123,24 +123,10 @@ class PagesViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        //updateTheme()
-
     }
 
 
     // Helpers
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        updateTheme()
-//    }
-
-
-//    func updateTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
 
     @objc func start() {
         showNextPage()
