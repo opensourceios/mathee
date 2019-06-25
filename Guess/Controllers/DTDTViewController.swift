@@ -33,16 +33,12 @@ class DTDTViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
-                ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any
-                ], for: .highlighted)
+        for state: UIControl.State in [.normal, .highlighted] {
+            UIBarButtonItem.appearance().setTitleTextAttributes(
+                [
+                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                ], for: state)
+        }
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
@@ -103,22 +99,15 @@ class DTDTViewController: UIViewController {
             target: self,
             action: #selector(divideByTwo))
 
-        oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-            NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                         for: .normal)
-        oddButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-            NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                         for: .highlighted)
-        evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-            NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                          for: .normal)
-        evenButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-            NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                          for: .highlighted)
+        for state: UIControl.State in [.normal, .highlighted] {
+            for button in [oddButton, evenButton] {
+                button.setTitleTextAttributes(
+                    [
+                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                    ],
+                    for: state)
+            }
+        }
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([oddButton, space, evenButton], animated: true)
@@ -202,14 +191,15 @@ class DTDTViewController: UIViewController {
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
-            retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                               for: .normal)
-            retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                               for: .highlighted)
+            // TODO: also optimize results for NSAttributedString.Key
+
+            for state: UIControl.State in [.normal, .highlighted] {
+                retryButton.setTitleTextAttributes(
+                    [
+                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                    ],
+                    for: state)
+            }
 
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -224,14 +214,14 @@ class DTDTViewController: UIViewController {
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
-            retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                               for: .normal)
-            retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                               for: .highlighted)
+
+            for state: UIControl.State in [.normal, .highlighted] {
+                retryButton.setTitleTextAttributes(
+                    [
+                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                    ],
+                    for: state)
+            }
 
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -246,15 +236,14 @@ class DTDTViewController: UIViewController {
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
-            retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                               for: .normal)
-            retryButton.setTitleTextAttributes([
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: view.tintColor as Any],
-                                               for: .highlighted)
 
+            for state: UIControl.State in [.normal, .highlighted] {
+                retryButton.setTitleTextAttributes(
+                    [
+                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
+                    ],
+                    for: state)
+            }
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
             return
