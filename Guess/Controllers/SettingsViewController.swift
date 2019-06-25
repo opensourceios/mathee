@@ -15,46 +15,18 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var mySwitch: UISwitch!
-    @IBOutlet weak var myToolbar: UIToolbar!
-    @IBOutlet weak var myBarButtonItem: UIBarButtonItem!
 
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         mySwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
-
-        //updateTheme()
-
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-            ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes(
-            [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-            ], for: .highlighted)
-
-        myBarButtonItem.title = Constants.Misc.doneMessage
 
     }
 
 
     // MARK: Helpers
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        updateTheme()
-//    }
-
-
-//    func updateTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
 
     @IBAction func mySwitchToggled(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.iconIsDark)
@@ -79,8 +51,6 @@ class SettingsViewController: UIViewController {
         UIApplication.shared.setAlternateIconName(newIcon) { error in
             if let error = error {
                 print("App icon failed to change due to \(error.localizedDescription)")
-            } else {
-                print("app icon should now be updated")
             }
         }
     }
