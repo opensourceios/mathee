@@ -66,28 +66,10 @@ class DTDTViewController: UIViewController {
 
         helpersShould(hide: true)
 
-        updateTheme()
-
     }
 
 
     // Helpers
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        updateTheme()
-    }
-
-
-    func updateTheme() {
-
-        myTextField.textColor = UIColor.label
-
-        myTextField.attributedPlaceholder = NSAttributedString(
-            string: "Type here",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeholderText])
-    }
 
     func helpersShould(hide: Bool) {
         myTextField.isHidden = hide
