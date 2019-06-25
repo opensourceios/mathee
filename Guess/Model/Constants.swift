@@ -28,13 +28,13 @@ struct Constants {
         static let version = "Version"
         static let appName = "Guess"
         static let cancel = "Cancel"
-        static let sendFeedback = "Contact us"
-        static let leaveReview = "Leave a review"
+        static let sendFeedback = "Contact Us"
+        static let leaveReview = "Leave a Review"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "***REMOVED***"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
         static let showAppsButtonTitle = "More by Daniel Springer"
-        static let customAppIconTitle = "Change app icon"
+        static let customAppIconTitle = "Change App Icon"
         static let devID = "1402417666"
         static let didScrollOnceDown = "didScrollOnceDown"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
@@ -51,7 +51,7 @@ struct Constants {
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
-        static let shareTitleMessage = "Share App"
+        static let shareTitleMessage = "Tell a Friend"
     }
 
 
