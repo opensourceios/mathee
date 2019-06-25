@@ -47,24 +47,10 @@ class MagicViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
-        //updateTheme()
-
     }
 
 
     // MARK: Helpers
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        updateTheme()
-//    }
-
-
-//    func updateTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
 
     @objc func play() {
         headerLabel.text = "Let's call the number you thought \"A\".\nAdd 10 to A."

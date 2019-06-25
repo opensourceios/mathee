@@ -47,9 +47,6 @@ class MenuViewController: UIViewController,
             myTableView.deselectRow(at: selectedRow, animated: true)
         }
 
-        //updateTheme()
-
-
         for state: UIControl.State in [.disabled, .focused, .highlighted, .normal] {
             for button: UIBarButtonItem in [aboutButton] {
                 button.setTitleTextAttributes(
@@ -199,18 +196,6 @@ class MenuViewController: UIViewController,
         present(infoAlert, animated: true)
 
     }
-
-
-//    func updateTheme() {
-//        let darkMode = traitCollection.userInterfaceStyle == .dark
-//    }
-
-
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        super.traitCollectionDidChange(previousTraitCollection)
-//
-//        updateTheme()
-//    }
 
 
     func changeIconPressed() {
