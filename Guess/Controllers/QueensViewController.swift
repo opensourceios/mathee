@@ -25,34 +25,6 @@ class QueensViewController: UIViewController {
     var hasSolutionToShare = false
     var boardString = ""
     var shareButton = UIBarButtonItem()
-    let initialString = """
-        Have you heard of the 8 Queens Puzzle?
-
-        The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
-        no two queens threaten each other. Thus, a solution requires that no two queens share the \
-        same row, column, or diagonal.
-
-        Go ahead, get a chessboard, and try solving this puzzle yourself!
-
-        When you choose to, you can come here for a solution.
-
-        Tap the plus button to generate a solution.
-        """
-    let updatedString = """
-        Have you heard of the 8 Queens Puzzle?
-
-        The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
-        no two queens threaten each other. Thus, a solution requires that no two queens share the \
-        same row, column, or diagonal.
-
-        Go ahead, get a chessboard, and try solving this puzzle yourself!
-
-        When you choose to, you can come here for a solution.
-
-        Tap the share button to share your favorite solutions with friends and family.
-
-        Tap the plus button to generate a new solution.
-        """
 
     var textColor: UIColor! = UIColor.label
 
@@ -86,14 +58,6 @@ class QueensViewController: UIViewController {
             action: #selector(donePressed))
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([doneButton, spaceFlexible, newSolutionButton], animated: true)
-
-        let myAttributes = [
-            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-            NSAttributedString.Key.foregroundColor: textColor
-        ]
-        myTextView.attributedText = NSAttributedString(
-            string: initialString,
-            attributes: myAttributes as [NSAttributedString.Key: Any])
 
         shareButton = UIBarButtonItem(
             image: UIImage(systemName: "square.and.arrow.up"),
@@ -401,12 +365,6 @@ class QueensViewController: UIViewController {
         self.solutionLabel.text = boardString
 
         if !hasSolutionToShare {
-            let myAttributes = [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body),
-                NSAttributedString.Key.foregroundColor: textColor
-            ]
-            myTextView.attributedText = NSAttributedString(
-                string: updatedString, attributes: myAttributes as [NSAttributedString.Key: Any])
             hasSolutionToShare = true
         }
 
