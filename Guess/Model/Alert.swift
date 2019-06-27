@@ -42,11 +42,11 @@ extension UIViewController {
             alertTitle = "Success!"
             alertMessage = "Your message has been sent. You should hear from us within 24 hours."
         case .hasNoSolution:
-            alertTitle = "Oops"
+            alertTitle = "Tap, Tap"
             alertMessage = """
-            You have no solution to share yet.
-            Tap the plus button to create a solution now!
-            Then tap me again to share your solution with your friends!
+            Great job, you have found the Share button!
+            Tap the Plus button on the bottom right of the screen to create your first solution, \
+            then tap the Share button again to share your solution with friends and family!
             """
         default:
             alertTitle = "Unknown error"
