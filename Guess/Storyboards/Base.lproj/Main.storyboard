@@ -430,9 +430,14 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-gb-5ic">
-                                <rect key="frame" x="353" y="58" width="41" height="33"/>
+                                <rect key="frame" x="364" y="61.833333333333329" width="30" height="26.333333333333329"/>
+                                <accessibility key="accessibilityConfiguration" label="Close"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y5C-gb-5ic" secondAttribute="height" multiplier="1:1" id="Bho-mn-Q2r"/>
+                                    <constraint firstAttribute="width" constant="30" id="kBM-50-sjp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" backgroundImage="checkmark" catalog="system"/>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="eTf-QF-CPb" eventType="touchUpInside" id="qe6-zx-wkx"/>
                                 </connections>
@@ -464,6 +469,7 @@ Let me ask you a few questions...</string>
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" catalog="system" width="64" height="56"/>
         <image name="ellipsis.circle" catalog="system" width="64" height="62"/>
     </resources>
 </document>
