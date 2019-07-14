@@ -17,7 +17,6 @@ class QueensViewController: UIViewController {
 
     @IBOutlet weak var solutionLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
-    @IBOutlet weak var myTextView: UITextView!
 
 
     // MARK: Properties
@@ -25,8 +24,25 @@ class QueensViewController: UIViewController {
     var hasSolutionToShare = false
     var boardString = ""
     var shareButton = UIBarButtonItem()
+    var infoButton = UIBarButtonItem()
 
     var textColor: UIColor! = UIColor.label
+
+    let puzzleDescription = """
+    Have you heard of the 8 Queens Puzzle?
+
+    The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
+    no two queens threaten each other. Thus, a solution requires that no two queens share the same \
+    row, column, or diagonal.
+
+    Go ahead, get a chessboard, and try solving this puzzle yourself!
+
+    When you choose to, you can come here for a solution.
+
+    Tap the Plus button to generate a new solution.
+
+    Tap the Share button to share your favorite solutions with friends and family.
+    """
 
 
     // MARK: Life Cycle
@@ -51,6 +67,7 @@ class QueensViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(makeBoard))
+
         let doneButton = UIBarButtonItem(
             title: Constants.Misc.doneMessage,
             style: .plain,
@@ -64,28 +81,16 @@ class QueensViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(shareSolution))
-        navigationItem.rightBarButtonItem = shareButton
 
-    }
+        infoButton = UIBarButtonItem(
+            image: UIImage(systemName: "questionmark.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(infoPressed))
 
+        infoButton.accessibilityLabel = "Info"
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        if !UserDefaults.standard.bool(forKey: Constants.Misc.didScrollOnceDown) {
-            myTextView.scrollRangeToVisible(NSRange(location: myTextView.text.count - 1, length: 1))
-            myTextView.flashScrollIndicators()
-            UserDefaults.standard.set(true, forKey: Constants.Misc.didScrollOnceDown)
-        }
-
-    }
-
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        myTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
-        myTextView.flashScrollIndicators()
+        navigationItem.rightBarButtonItems = [shareButton, infoButton]
 
     }
 
@@ -406,6 +411,19 @@ class QueensViewController: UIViewController {
 
     }
 
+
+    @objc func infoPressed() {
+        let alert = UIAlertController(
+            title: "About This Puzzle",
+            message: puzzleDescription,
+            preferredStyle: .actionSheet)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
+
+        alert.popoverPresentationController?.barButtonItem = infoButton
+
+        present(alert, animated: true)
+    }
 
     @objc func donePressed() {
         navigationController?.popToRootViewController(animated: true)
