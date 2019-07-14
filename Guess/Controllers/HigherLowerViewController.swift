@@ -85,16 +85,22 @@ class HigherLowerViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(lower))
+        lowerButton.accessibilityLabel = "Go lower"
+
         let higherButton = UIBarButtonItem(
             image: UIImage(systemName: "arrow.up.circle"),
             style: .plain,
             target: self,
             action: #selector(higher))
+        higherButton.accessibilityLabel = "Go higher"
+
         let yesButton = UIBarButtonItem(
             image: UIImage(systemName: "checkmark.circle"),
             style: .plain,
             target: self,
             action: #selector(correct))
+        yesButton.accessibilityLabel = "Correct"
+
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
         if halfDiff == 1 {
