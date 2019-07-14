@@ -191,7 +191,6 @@ class DTDTViewController: UIViewController {
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
-            // TODO: also optimize results for NSAttributedString.Key
 
             for state: UIControl.State in [.normal, .highlighted] {
                 retryButton.setTitleTextAttributes(
@@ -228,7 +227,9 @@ class DTDTViewController: UIViewController {
             return
         }
 
-        guard let number = Int(text) else {
+        let trimmedText = text.trimmingCharacters(in: .whitespaces)
+
+        guard let number = Int(trimmedText) else {
             helpersShould(hide: true)
             messageLabel.text = "Please enter numbers only.\nNo text.\nMax number: 2^63 - 1."
             let retryButton = UIBarButtonItem(
