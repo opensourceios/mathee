@@ -25,11 +25,10 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = [["Do This, Do That", "Just a few... questions"],
-                    ["The Magic Numbers Book", "Just a few... pages"],
-                    ["The 8 Queens Puzzle", "Just a few... queens"],
-                    ["Higher Lower", "Just a few... ups and downs"],
-                    ["MatheMagic", "Just a few... magical questions"]]
+    let myDataSource = ["Do This, Do That", "The Magic Numbers Book",
+                        "The 8 Queens Puzzle", "Higher Lower", "MatheMagic"]
+    let myImageSource = ["plus.slash.minus", "book", "8.square",
+                         "arrow.up.arrow.down", "wand.and.stars"]
 
     let menuCell = "MenuCell"
 
@@ -54,6 +53,8 @@ class MenuViewController: UIViewController,
                                               for: state)
             }
         }
+
+        myTableView.rowHeight = UITableView.automaticDimension
 
     }
 
@@ -88,15 +89,13 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as? MainMenuTableViewCell
 
-        cell.textLabel?.text = myDataSource[(indexPath as NSIndexPath).row][0]
-        cell.detailTextLabel?.text = myDataSource[(indexPath as NSIndexPath).row][1]
+        cell?.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
+        cell?.myImage.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
+        cell?.selectionStyle = .none
 
-        cell.selectionStyle = .none
-
-
-        return cell
+        return cell ?? UITableViewCell()
     }
 
 
@@ -104,34 +103,34 @@ class MenuViewController: UIViewController,
 
         let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
 
-        let cell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
-        switch cell?.textLabel?.text {
-        case myDataSource[0][0]:
+        switch cell?.myLabel?.text {
+        case myDataSource[0]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.dtdtVC) as? DTDTViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-        case myDataSource[1][0]:
+        case myDataSource[1]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.pagesVC) as? PagesViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-        case myDataSource[2][0]:
+        case myDataSource[2]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-        case myDataSource[3][0]:
+        case myDataSource[3]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
-        case myDataSource[4][0]:
+        case myDataSource[4]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
             if let toPresent = controller {
