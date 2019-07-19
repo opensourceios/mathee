@@ -1,5 +1,5 @@
 //
-//  PagesViewController.swift
+//  BookViewController.swift
 //  Guess
 //
 //  Created by Daniel Springer on 04/07/2018.
@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 
 
-class PagesViewController: UIViewController {
+class BookViewController: UIViewController {
 
 
     // MARK: Outlets

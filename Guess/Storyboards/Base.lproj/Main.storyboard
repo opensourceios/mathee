@@ -156,10 +156,10 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="1369.5652173913045" y="2822.5446428571427"/>
         </scene>
-        <!--The Magic Numbers Book-->
+        <!--Book-->
         <scene sceneID="N7b-KI-OfH">
             <objects>
-                <viewController storyboardIdentifier="PagesViewController" id="dmH-4p-fuU" customClass="PagesViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookViewController" id="dmH-4p-fuU" customClass="BookViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="orM-1u-bwu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +205,7 @@ Prepare to be amazed.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
                     </view>
-                    <navigationItem key="navigationItem" title="The Magic Numbers Book" id="4hU-hj-MvD"/>
+                    <navigationItem key="navigationItem" title="Book" id="4hU-hj-MvD"/>
                     <connections>
                         <outlet property="myToolbar" destination="7y7-oO-AVP" id="Ycw-6s-VF8"/>
                         <outlet property="pageContentLabel" destination="7lz-1e-Sfr" id="clv-nt-ydx"/>
@@ -233,7 +233,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1089" y="680"/>
         </scene>
-        <!--Guess-->
+        <!--Guess: Amaze Your Friends-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -296,7 +296,7 @@ Prepare to be amazed.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Guess" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Guess: Amaze Your Friends" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
