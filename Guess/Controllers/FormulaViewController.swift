@@ -1,5 +1,5 @@
 //
-//  DTDTViewController.swift
+//  FormulaViewController.swift
 //  Guess
 //
 //  Created by Daniel Springer on 01/07/2018.
@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 
 
-class DTDTViewController: UIViewController {
+class FormulaViewController: UIViewController {
 
 
     // MARK: Outlets

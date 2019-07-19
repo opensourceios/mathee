@@ -12,10 +12,10 @@
 		3319089820E87731007C679C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3319089620E87731007C679C /* LaunchScreen.storyboard */; };
 		3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3319088D20E8772E007C679C /* AppDelegate.swift */; };
 		33350E5221ADB9A500CBC64C /* QueensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33350E5121ADB9A500CBC64C /* QueensViewController.swift */; };
-		3340755A20E8CA2500EFDAA9 /* DTDTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */; };
 		33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */; };
 		3350E55D20F1DDF70093FC96 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3350E55C20F1DDF70093FC96 /* Alert.swift */; };
 		33568B7720EC96B300690825 /* PagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33568B7620EC96B300690825 /* PagesViewController.swift */; };
+		3388BFDD22E17644005B148B /* FormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3388BFDC22E17644005B148B /* FormulaViewController.swift */; };
 		339EE48022A703CD00BC73E2 /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339EE47C22A703CD00BC73E2 /* light@2x.png */; };
 		339EE48122A703CD00BC73E2 /* dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339EE47D22A703CD00BC73E2 /* dark@2x.png */; };
 		339EE48222A703CD00BC73E2 /* dark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339EE47E22A703CD00BC73E2 /* dark@3x.png */; };
@@ -35,10 +35,10 @@
 		3319089720E87731007C679C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3319089920E87731007C679C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33350E5121ADB9A500CBC64C /* QueensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueensViewController.swift; sourceTree = "<group>"; };
-		3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTDTViewController.swift; sourceTree = "<group>"; };
 		33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 		3350E55C20F1DDF70093FC96 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		33568B7620EC96B300690825 /* PagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewController.swift; sourceTree = "<group>"; };
+		3388BFDC22E17644005B148B /* FormulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaViewController.swift; sourceTree = "<group>"; };
 		339EE47C22A703CD00BC73E2 /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
 		339EE47D22A703CD00BC73E2 /* dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@2x.png"; sourceTree = "<group>"; };
 		339EE47E22A703CD00BC73E2 /* dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark@3x.png"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				33B9FDC620EDDA8200131038 /* MenuViewController.swift */,
-				3340755920E8CA2500EFDAA9 /* DTDTViewController.swift */,
+				3388BFDC22E17644005B148B /* FormulaViewController.swift */,
 				33568B7620EC96B300690825 /* PagesViewController.swift */,
 				33350E5121ADB9A500CBC64C /* QueensViewController.swift */,
 				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
@@ -250,12 +250,12 @@
 			files = (
 				3350E55D20F1DDF70093FC96 /* Alert.swift in Sources */,
 				33568B7720EC96B300690825 /* PagesViewController.swift in Sources */,
+				3388BFDD22E17644005B148B /* FormulaViewController.swift in Sources */,
 				339EE48522A7041300BC73E2 /* SettingsViewController.swift in Sources */,
 				33B9FDC720EDDA8200131038 /* MenuViewController.swift in Sources */,
 				33B9FDC920EDFC1500131038 /* MagicViewController.swift in Sources */,
 				33350E5221ADB9A500CBC64C /* QueensViewController.swift in Sources */,
 				33B727FB20EDC68800AF338A /* HigherLowerViewController.swift in Sources */,
-				3340755A20E8CA2500EFDAA9 /* DTDTViewController.swift in Sources */,
 				33ECBA0621AC1BAA003199CB /* Constants.swift in Sources */,
 				3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */,
 				33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */,

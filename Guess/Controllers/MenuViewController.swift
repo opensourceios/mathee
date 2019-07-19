@@ -25,7 +25,7 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["Do This, Do That", "The Magic Numbers Book",
+    let myDataSource = ["Formula", "The Magic Numbers Book",
                         "The 8 Queens Puzzle", "Higher Lower", "MatheMagic"]
     let myImageSource = ["plus.slash.minus", "book", "8.square",
                          "arrow.up.arrow.down", "wand.and.stars"]
@@ -108,7 +108,7 @@ class MenuViewController: UIViewController,
         switch cell?.myLabel?.text {
         case myDataSource[0]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.dtdtVC) as? DTDTViewController
+                withIdentifier: Constants.StoryboardID.formulaVC) as? FormulaViewController
             if let toPresent = controller {
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }

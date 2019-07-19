@@ -15,7 +15,7 @@ struct Constants {
     struct StoryboardID {
         static let main = "Main"
         static let pagesVC = "PagesViewController"
-        static let dtdtVC = "DTDTViewController"
+        static let formulaVC = "FormulaViewController"
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
         static let queensVC = "QueensViewController"
