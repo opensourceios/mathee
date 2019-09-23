@@ -36,7 +36,6 @@ struct Constants {
         static let showAppsButtonTitle = "More by Daniel Springer"
         static let customAppIconTitle = "Change App Icon"
         static let devID = "1402417666"
-        static let didScrollOnceDown = "didScrollOnceDown"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let shareBodyMessage = """
         Amaze your friends when you guess any number they think of, by secretly using this app! \
@@ -59,6 +58,7 @@ struct Constants {
         static let iconIsDark = "iconIsDark"
         static let light = "light"
         static let dark = "dark"
+        static let didShowInfo = "didShowInfo"
     }
 
 
