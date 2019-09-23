@@ -42,6 +42,8 @@ class QueensViewController: UIViewController {
     Tap the Plus button to generate a new solution.
 
     Tap the Share button to share your favorite solutions with friends and family.
+
+    Tap the Question mark button to view these instructions again later.
     """
 
 
@@ -94,6 +96,14 @@ class QueensViewController: UIViewController {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if !UserDefaults.standard.bool(forKey: Constants.UserDef.didShowInfo) {
+            infoPressed()
+            UserDefaults.standard.set(true, forKey: Constants.UserDef.didShowInfo)
+        }
+    }
 
     // MARK: Helpers
 
@@ -424,6 +434,7 @@ class QueensViewController: UIViewController {
 
         present(alert, animated: true)
     }
+
 
     @objc func donePressed() {
         navigationController?.popToRootViewController(animated: true)

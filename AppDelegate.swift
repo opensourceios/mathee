@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
         UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UserDefaults.standard.register(defaults:
-            [Constants.Misc.didScrollOnceDown: false,
+            [Constants.UserDef.didShowInfo: false,
              Constants.UserDef.iconIsDark: false])
 
         return true
