@@ -10,7 +10,7 @@ import UIKit
 import StoreKit
 
 
-class FormulaViewController: UIViewController {
+class FormulaViewController: UIViewController, UITextFieldDelegate {
 
 
     // MARK: Outlets
@@ -47,6 +47,7 @@ class FormulaViewController: UIViewController {
 
         myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
+        myTextField.delegate = self
 
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
@@ -283,5 +284,12 @@ class FormulaViewController: UIViewController {
         SKStoreReviewController.requestReview()
     }
 
+
+    // MARK: TableView
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        okButtonKeyboardPressed()
+        return true
+    }
 
 }
