@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzF-Up-j1l" userLabel="Trophy Label">
-                                <rect key="frame" x="20" y="190.5" width="374" height="36"/>
+                                <rect key="frame" x="20" y="190.5" width="374" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -329,7 +329,7 @@ Prepare to be amazed.</string>
                                 <rect key="frame" x="20" y="124.5" width="374" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fLV-Ej-2PZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="fLV-Ej-2PZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -418,7 +418,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-gb-5ic">
-                                <rect key="frame" x="364" y="61.5" width="30" height="27"/>
+                                <rect key="frame" x="364" y="61.5" width="30" height="26.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Close"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y5C-gb-5ic" secondAttribute="height" multiplier="1:1" id="Bho-mn-Q2r"/>
@@ -458,6 +458,6 @@ Let me ask you a few questions...</string>
     </scenes>
     <resources>
         <image name="checkmark" catalog="system" width="64" height="56"/>
-        <image name="ellipsis.circle" catalog="system" width="64" height="62"/>
+        <image name="ellipsis.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
