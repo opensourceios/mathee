@@ -262,7 +262,7 @@ Prepare to be amazed.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1P3-Xh-gtA">
-                                                    <rect key="frame" x="20" y="20" width="20" height="20"/>
+                                                    <rect key="frame" x="20" y="20.5" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1P3-Xh-gtA" secondAttribute="height" multiplier="1:1" id="PD3-eO-1Mp"/>
                                                         <constraint firstAttribute="height" constant="20" id="i11-gr-lfO"/>
@@ -272,7 +272,8 @@ Prepare to be amazed.</string>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1P3-Xh-gtA" secondAttribute="bottom" constant="20" id="8DA-uN-Urz"/>
                                                 <constraint firstItem="A0R-T6-DGz" firstAttribute="top" secondItem="bFT-I5-sFd" secondAttribute="top" constant="20" id="NOK-Xq-803"/>
-                                                <constraint firstItem="1P3-Xh-gtA" firstAttribute="top" secondItem="bFT-I5-sFd" secondAttribute="top" constant="20" id="Qa2-x9-TRo"/>
+                                                <constraint firstItem="1P3-Xh-gtA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bFT-I5-sFd" secondAttribute="top" constant="20" id="Qa2-x9-TRo"/>
+                                                <constraint firstItem="1P3-Xh-gtA" firstAttribute="centerY" secondItem="bFT-I5-sFd" secondAttribute="centerY" id="Uh7-J4-3UU"/>
                                                 <constraint firstItem="1P3-Xh-gtA" firstAttribute="leading" secondItem="bFT-I5-sFd" secondAttribute="leading" constant="20" id="cW2-Th-37G"/>
                                                 <constraint firstAttribute="trailing" secondItem="A0R-T6-DGz" secondAttribute="trailing" constant="20" id="clb-Fp-nfQ"/>
                                                 <constraint firstItem="A0R-T6-DGz" firstAttribute="leading" secondItem="1P3-Xh-gtA" secondAttribute="trailing" constant="20" id="eH3-Tj-6qP"/>
