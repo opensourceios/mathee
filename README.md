@@ -17,4 +17,4 @@ Want to help? You can:
 - Contact: https://github.com/DaniSpringer/docs/blob/master/README.md
 
 # License
-Copyright © 2019 Daniel Springer. All rights reserved.
+Copyright © 2020 Daniel Springer. All rights reserved.
