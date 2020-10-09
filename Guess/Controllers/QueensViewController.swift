@@ -438,7 +438,6 @@ class QueensViewController: UIViewController {
 
     @objc func donePressed() {
         navigationController?.popToRootViewController(animated: true)
-        SKStoreReviewController.requestReview()
     }
 
 

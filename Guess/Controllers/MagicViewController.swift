@@ -178,7 +178,6 @@ class MagicViewController: UIViewController {
 
     @objc func done() {
         navigationController?.popToRootViewController(animated: true)
-        SKStoreReviewController.requestReview()
     }
 
 }
