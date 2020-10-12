@@ -46,7 +46,7 @@ struct Constants {
         static let okMessage = "OK"
         static let doneMessage = "Done"
         static let retryMessage = "Retry"
-        static let endMessage = "End"
+        static let endMessage = "Return home"
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
