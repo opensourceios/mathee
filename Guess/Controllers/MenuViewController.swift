@@ -25,8 +25,8 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["Formula", "Book",
-                        "The 8 Queens Puzzle", "Higher Lower", "MatheMagic"]
+    let myDataSource = ["The Magic Formula", "Book",
+                        "The Chess Puzzle", "Higher Lower", "MatheMagic"]
     let myImageSource = ["plus.slash.minus", "book", "8.square",
                          "arrow.up.arrow.down", "wand.and.stars"]
 
