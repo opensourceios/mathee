@@ -36,13 +36,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         self.title = self.myTitle
 
-        for state: UIControl.State in [.normal, .highlighted] {
-            UIBarButtonItem.appearance().setTitleTextAttributes(
-                [
-                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                ], for: state)
-        }
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -103,15 +96,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             target: self,
             action: #selector(divideByTwo))
 
-        for state: UIControl.State in [.normal, .highlighted] {
-            for button in [oddButton, evenButton] {
-                button.setTitleTextAttributes(
-                    [
-                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                    ],
-                    for: state)
-            }
-        }
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([oddButton, space, evenButton], animated: true)
@@ -196,14 +180,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                 target: self,
                 action: #selector(askResult))
 
-            for state: UIControl.State in [.normal, .highlighted] {
-                retryButton.setTitleTextAttributes(
-                    [
-                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                    ],
-                    for: state)
-            }
-
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
             return
@@ -217,14 +193,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
-
-            for state: UIControl.State in [.normal, .highlighted] {
-                retryButton.setTitleTextAttributes(
-                    [
-                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                    ],
-                    for: state)
-            }
 
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -242,13 +210,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                 target: self,
                 action: #selector(askResult))
 
-            for state: UIControl.State in [.normal, .highlighted] {
-                retryButton.setTitleTextAttributes(
-                    [
-                        NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                    ],
-                    for: state)
-            }
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
             return

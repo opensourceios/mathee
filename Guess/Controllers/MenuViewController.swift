@@ -46,14 +46,6 @@ class MenuViewController: UIViewController,
             myTableView.deselectRow(at: selectedRow, animated: true)
         }
 
-        for state: UIControl.State in [.disabled, .focused, .highlighted, .normal] {
-            for button: UIBarButtonItem in [aboutButton] {
-                button.setTitleTextAttributes(
-                    [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)],
-                                              for: state)
-            }
-        }
-
         myTableView.rowHeight = UITableView.automaticDimension
     }
 

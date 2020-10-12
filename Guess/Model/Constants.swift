@@ -58,7 +58,6 @@ struct Constants {
         static let iconIsDark = "iconIsDark"
         static let light = "light"
         static let dark = "dark"
-        static let didShowInfo = "didShowInfo"
     }
 
 
