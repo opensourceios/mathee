@@ -55,13 +55,6 @@ class QueensViewController: UIViewController {
 
         self.title = self.myTitle
 
-        for state: UIControl.State in [.normal, .highlighted, .disabled] {
-            UIBarButtonItem.appearance().setTitleTextAttributes(
-                [
-                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                ], for: state)
-        }
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -94,14 +87,6 @@ class QueensViewController: UIViewController {
 
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        if !UserDefaults.standard.bool(forKey: Constants.UserDef.didShowInfo) {
-            infoPressed()
-            UserDefaults.standard.set(true, forKey: Constants.UserDef.didShowInfo)
-        }
-    }
 
     // MARK: Helpers
 

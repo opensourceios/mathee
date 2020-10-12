@@ -84,14 +84,6 @@ class BookViewController: UIViewController {
         self.title = self.myTitle
         resultLabel.isHidden = true
 
-        for state: UIControl.State in [.normal, .highlighted] {
-            UIBarButtonItem.appearance().setTitleTextAttributes(
-                [
-                    NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)
-                ],
-                for: state)
-        }
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
