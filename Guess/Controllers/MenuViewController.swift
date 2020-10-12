@@ -35,8 +35,8 @@ class MenuViewController: UIViewController,
 
     // MARK: Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -55,11 +55,11 @@ class MenuViewController: UIViewController,
         }
 
         myTableView.rowHeight = UITableView.automaticDimension
-
     }
 
 
     // MARK: Show Apps
+
     func showApps() {
 
         let myURL = URL(string: Constants.Misc.appsLink)
@@ -81,6 +81,14 @@ class MenuViewController: UIViewController,
 
 
     // MARK: TableView Delegate
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Amaze Your Friends"
+        } else {
+            fatalError()
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myDataSource.count

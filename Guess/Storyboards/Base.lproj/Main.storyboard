@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-JF-uXf">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
                                 <rect key="frame" x="20" y="64" width="374" height="86.5"/>
@@ -36,7 +37,8 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yzF-Up-j1l" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="20" id="2E0-Zh-2uW"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="yzF-Up-j1l" secondAttribute="trailing" constant="20" id="6Zd-Vj-F15"/>
@@ -48,7 +50,6 @@ I will guess it in 10 tries or less.</string>
                             <constraint firstItem="yzF-Up-j1l" firstAttribute="top" secondItem="nAW-HL-3cW" secondAttribute="bottom" constant="40" id="qbI-by-GUq"/>
                             <constraint firstItem="e8i-JF-uXf" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="rCz-sT-nKu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Higher Lower" id="oXZ-fp-eKa"/>
                     <connections>
@@ -75,7 +76,7 @@ I will guess it in 10 tries or less.</string>
                                     <constraint firstAttribute="height" constant="60" id="Eqw-ch-WJV"/>
                                 </constraints>
                                 <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXi-RC-tpW" userLabel="Solution Label">
                                 <rect key="frame" x="20" y="84" width="374" height="363"/>
@@ -92,7 +93,8 @@ I will guess it in 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MZd-eA-oly"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="trailing" secondItem="jXi-RC-tpW" secondAttribute="trailing" constant="20" id="2Lz-33-cZe"/>
                             <constraint firstItem="lvW-pj-5lr" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" id="DB2-Pp-t58"/>
@@ -101,7 +103,6 @@ I will guess it in 10 tries or less.</string>
                             <constraint firstItem="jXi-RC-tpW" firstAttribute="leading" secondItem="MZd-eA-oly" secondAttribute="leading" constant="20" id="Mh6-Bv-66S"/>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="bottom" secondItem="lvW-pj-5lr" secondAttribute="bottom" id="jiy-QN-oai"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MZd-eA-oly"/>
                     </view>
                     <navigationItem key="navigationItem" title="The 8 Queens Puzzle" id="z9E-Bf-ZXq"/>
                     <connections>
@@ -124,7 +125,7 @@ I will guess it in 10 tries or less.</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-WR-wMI">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
                                 <rect key="frame" x="20" y="432" width="374" height="42.5"/>
@@ -135,7 +136,8 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="pVQ-WR-wMI" secondAttribute="bottom" id="Kgd-5W-rRy"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="U8K-8M-K0A" secondAttribute="trailing" constant="20" id="RN1-Qb-iSJ"/>
@@ -144,7 +146,6 @@ Prepare to be amazed.</string>
                             <constraint firstItem="pVQ-WR-wMI" firstAttribute="width" secondItem="e8v-i1-Ly5" secondAttribute="width" id="pnO-IW-yNB"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="t24-MT-1Ai"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="MatheMagic" id="Ot7-WL-NJJ"/>
                     <connections>
@@ -167,7 +168,7 @@ Prepare to be amazed.</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-oO-AVP">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
                                 <rect key="frame" x="20" y="124.5" width="374" height="668.5"/>
@@ -176,7 +177,7 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="183" y="443" width="48" height="20.5"/>
+                                <rect key="frame" x="183.5" y="443" width="47.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -188,7 +189,8 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="7lz-1e-Sfr" secondAttribute="trailing" constant="20" id="1u9-LD-GQs"/>
                             <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="4pA-Ch-WpV"/>
@@ -203,7 +205,6 @@ Prepare to be amazed.</string>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="GrR-lf-ak1" secondAttribute="trailing" constant="20" id="kPx-j8-uAB"/>
                             <constraint firstItem="7y7-oO-AVP" firstAttribute="top" secondItem="7lz-1e-Sfr" secondAttribute="bottom" constant="20" id="zsR-Ir-PMa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book" id="4hU-hj-MvD"/>
                     <connections>
@@ -221,8 +222,8 @@ Prepare to be amazed.</string>
         <scene sceneID="zER-nb-Vkj">
             <objects>
                 <navigationController id="8u8-uX-CMh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gg4-Me-5w3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gg4-Me-5w3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -233,7 +234,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1089" y="680"/>
         </scene>
-        <!--Guess: Amaze Your Friends-->
+        <!--Guess-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,12 +242,12 @@ Prepare to be amazed.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
-                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="9Tx-0d-iVw" customClass="MainMenuTableViewCell" customModule="Guess" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="61"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
@@ -292,16 +293,16 @@ Prepare to be amazed.</string>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bSL-S2-mJ9" firstAttribute="leading" secondItem="27d-DW-fze" secondAttribute="leading" id="4xo-Re-BU1"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="trailing" secondItem="bSL-S2-mJ9" secondAttribute="trailing" id="HZu-cS-BU5"/>
-                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" constant="40" id="ZKl-Bd-ZkH"/>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" id="ZKl-Bd-ZkH"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="27d-DW-fze"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Guess: Amaze Your Friends" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Guess" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
@@ -328,11 +329,11 @@ Prepare to be amazed.</string>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-50-WSp">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
                                 <rect key="frame" x="20" y="124.5" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="fLV-Ej-2PZ"/>
                                 </constraints>
@@ -354,7 +355,7 @@ Let me ask you a few questions...</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
                                 <rect key="frame" x="192" y="204.5" width="30" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="OK"/>
@@ -363,7 +364,8 @@ Let me ask you a few questions...</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="20" id="K80-LJ-w1Y"/>
@@ -380,7 +382,6 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="hv4-TZ-19w" secondAttribute="bottom" constant="40" id="yF0-SS-11h"/>
                             <constraint firstItem="hv4-TZ-19w" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="20" id="yvd-vp-3DB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                     </view>
                     <navigationItem key="navigationItem" title="Formula" id="xXz-XO-Cxl"/>
                     <connections>
@@ -411,32 +412,32 @@ Let me ask you a few questions...</string>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Light/Dark" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
-                                <rect key="frame" x="20" y="124.5" width="80" height="20.5"/>
+                                <rect key="frame" x="20" y="124.5" width="79" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-NF-1dW">
-                                <rect key="frame" x="20" y="64" width="71" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-NF-1dW">
+                                <rect key="frame" x="20" y="64" width="135" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-gb-5ic">
-                                <rect key="frame" x="364" y="61.5" width="30" height="26.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-gb-5ic">
+                                <rect key="frame" x="353" y="54" width="41" height="41"/>
                                 <accessibility key="accessibilityConfiguration" label="Close"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y5C-gb-5ic" secondAttribute="height" multiplier="1:1" id="Bho-mn-Q2r"/>
-                                    <constraint firstAttribute="width" constant="30" id="kBM-50-sjp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" backgroundImage="checkmark" catalog="system"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="eTf-QF-CPb" eventType="touchUpInside" id="qe6-zx-wkx"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xVi-Mc-85E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FxH-2I-aZK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AUa-te-ju6" secondAttribute="trailing" constant="20" id="6zs-WP-Arz"/>
                             <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="FxH-2I-aZK" secondAttribute="trailing" constant="20" id="ACr-pU-Crr"/>
@@ -449,7 +450,6 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="FxH-2I-aZK" firstAttribute="centerY" secondItem="AUa-te-ju6" secondAttribute="centerY" id="tlp-LD-21w"/>
                             <constraint firstItem="AUa-te-ju6" firstAttribute="top" secondItem="zlZ-NF-1dW" secondAttribute="bottom" constant="40" id="vEf-li-9Yt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xVi-Mc-85E"/>
                     </view>
                     <connections>
                         <outlet property="myLabel" destination="AUa-te-ju6" id="aWo-Uv-CZg"/>
@@ -462,7 +462,9 @@ Let me ask you a few questions...</string>
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark" catalog="system" width="64" height="56"/>
-        <image name="ellipsis.circle" catalog="system" width="64" height="60"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
