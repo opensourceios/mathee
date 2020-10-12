@@ -23,6 +23,8 @@ class BookViewController: UIViewController {
 
     // MARK: Properties
 
+    var myTitle: String!
+
     struct Page {
         let key: Int
         let value: [Int]
@@ -79,6 +81,7 @@ class BookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = self.myTitle
         resultLabel.isHidden = true
 
         for state: UIControl.State in [.normal, .highlighted] {

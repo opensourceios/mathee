@@ -118,30 +118,35 @@ class MenuViewController: UIViewController,
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.formulaVC) as? FormulaViewController
             if let toPresent = controller {
+                controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[1]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.bookVC) as? BookViewController
             if let toPresent = controller {
+                controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[2]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
+                controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[3]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
+                controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[4]:
             let controller = storyboard.instantiateViewController(
                 withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
             if let toPresent = controller {
+                controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         default:

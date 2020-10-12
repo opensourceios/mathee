@@ -17,10 +17,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var mySwitch: UISwitch!
 
 
+    // MARK: Properties
+
+    var myTitle: String!
+
+
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = self.myTitle
+
         mySwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
 
     }
