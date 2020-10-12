@@ -15,6 +15,7 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Outlets
 
+    var myTitle: String!
     @IBOutlet weak var guessLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var trophyLabel: UILabel!
@@ -34,6 +35,8 @@ class HigherLowerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = self.myTitle
 
         for state: UIControl.State in [.normal, .highlighted] {
             UIBarButtonItem.appearance().setTitleTextAttributes(

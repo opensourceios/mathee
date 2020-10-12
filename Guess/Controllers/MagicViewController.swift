@@ -18,10 +18,17 @@ class MagicViewController: UIViewController {
     @IBOutlet weak var myToolbar: UIToolbar!
 
 
+    // MARK: Properties
+
+    var myTitle: String!
+
+
     // MARK: Life Cicle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = self.myTitle
 
         for state: UIControl.State in [.normal, .highlighted] {
             UIBarButtonItem.appearance().setTitleTextAttributes(

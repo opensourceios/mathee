@@ -21,6 +21,7 @@ class QueensViewController: UIViewController {
 
     // MARK: Properties
 
+    var myTitle: String!
     var hasSolutionToShare = false
     var boardString = ""
     var shareButton = UIBarButtonItem()
@@ -52,6 +53,8 @@ class QueensViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = self.myTitle
+
         for state: UIControl.State in [.normal, .highlighted, .disabled] {
             UIBarButtonItem.appearance().setTitleTextAttributes(
                 [
@@ -70,13 +73,8 @@ class QueensViewController: UIViewController {
             target: self,
             action: #selector(makeBoard))
 
-        let doneButton = UIBarButtonItem(
-            title: Constants.Misc.doneMessage,
-            style: .plain,
-            target: self,
-            action: #selector(donePressed))
         let spaceFlexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([doneButton, spaceFlexible, newSolutionButton], animated: true)
+        myToolbar.setItems([spaceFlexible, newSolutionButton], animated: true)
 
         shareButton = UIBarButtonItem(
             image: UIImage(systemName: "square.and.arrow.up"),
@@ -433,11 +431,6 @@ class QueensViewController: UIViewController {
         alert.popoverPresentationController?.barButtonItem = infoButton
 
         present(alert, animated: true)
-    }
-
-
-    @objc func donePressed() {
-        navigationController?.popToRootViewController(animated: true)
     }
 
 

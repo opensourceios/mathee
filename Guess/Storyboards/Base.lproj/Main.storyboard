@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Higher Lower-->
+        <!--Higher Lower View Controller-->
         <scene sceneID="dsc-iX-nMI">
             <objects>
                 <viewController storyboardIdentifier="HigherLowerViewController" id="ZqM-0Y-De7" customClass="HigherLowerViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@ I will guess it in 10 tries or less.</string>
                             <constraint firstItem="e8i-JF-uXf" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="rCz-sT-nKu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Higher Lower" id="oXZ-fp-eKa"/>
+                    <navigationItem key="navigationItem" id="oXZ-fp-eKa"/>
                     <connections>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
                         <outlet property="myToolbar" destination="e8i-JF-uXf" id="J7w-vb-6kZ"/>
@@ -62,7 +62,7 @@ I will guess it in 10 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="1371" y="2045"/>
         </scene>
-        <!--The 8 Queens Puzzle-->
+        <!--Queens View Controller-->
         <scene sceneID="6yn-6N-03r">
             <objects>
                 <viewController storyboardIdentifier="QueensViewController" id="CGs-A7-iCg" customClass="QueensViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +104,7 @@ I will guess it in 10 tries or less.</string>
                             <constraint firstItem="MZd-eA-oly" firstAttribute="bottom" secondItem="lvW-pj-5lr" secondAttribute="bottom" id="jiy-QN-oai"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="The 8 Queens Puzzle" id="z9E-Bf-ZXq"/>
+                    <navigationItem key="navigationItem" id="z9E-Bf-ZXq"/>
                     <connections>
                         <outlet property="myToolbar" destination="lvW-pj-5lr" id="FVB-jA-2Kf"/>
                         <outlet property="solutionLabel" destination="jXi-RC-tpW" id="ksV-wW-s3f"/>
@@ -114,7 +114,7 @@ I will guess it in 10 tries or less.</string>
             </objects>
             <point key="canvasLocation" x="1368.1159420289855" y="527.00892857142856"/>
         </scene>
-        <!--MatheMagic-->
+        <!--Magic View Controller-->
         <scene sceneID="fe5-31-sHI">
             <objects>
                 <viewController storyboardIdentifier="MagicViewController" id="zfM-fA-7ak" customClass="MagicViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,7 +147,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="t24-MT-1Ai"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MatheMagic" id="Ot7-WL-NJJ"/>
+                    <navigationItem key="navigationItem" id="Ot7-WL-NJJ"/>
                     <connections>
                         <outlet property="headerLabel" destination="U8K-8M-K0A" id="zBS-1o-0b3"/>
                         <outlet property="myToolbar" destination="pVQ-WR-wMI" id="tqF-Cg-WHF"/>
@@ -157,7 +157,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="1369.5652173913045" y="2822.5446428571427"/>
         </scene>
-        <!--Book-->
+        <!--Book View Controller-->
         <scene sceneID="N7b-KI-OfH">
             <objects>
                 <viewController storyboardIdentifier="BookViewController" id="dmH-4p-fuU" customClass="BookViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,7 +206,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="7y7-oO-AVP" firstAttribute="top" secondItem="7lz-1e-Sfr" secondAttribute="bottom" constant="20" id="zsR-Ir-PMa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Book" id="4hU-hj-MvD"/>
+                    <navigationItem key="navigationItem" id="4hU-hj-MvD"/>
                     <connections>
                         <outlet property="myToolbar" destination="7y7-oO-AVP" id="Ycw-6s-VF8"/>
                         <outlet property="pageContentLabel" destination="7lz-1e-Sfr" id="clv-nt-ydx"/>
@@ -234,7 +234,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1089" y="680"/>
         </scene>
-        <!--Guess-->
+        <!--Guess: Amaze Your Friends-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -302,7 +302,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Guess" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Guess: Amaze Your Friends" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5">
                             <connections>
                                 <action selector="aboutButtonPressed" destination="OWD-6W-keU" id="ki0-Ya-TsU"/>
@@ -318,7 +318,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-176.81159420289856" y="677.67857142857144"/>
         </scene>
-        <!--Formula-->
+        <!--Formula View Controller-->
         <scene sceneID="6hM-0P-CsD">
             <objects>
                 <viewController storyboardIdentifier="FormulaViewController" id="eiL-1S-xct" customClass="FormulaViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
@@ -383,7 +383,7 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="hv4-TZ-19w" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="20" id="yvd-vp-3DB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Formula" id="xXz-XO-Cxl"/>
+                    <navigationItem key="navigationItem" id="xXz-XO-Cxl"/>
                     <connections>
                         <outlet property="helperButton" destination="eb2-Y7-egc" id="7TR-4o-XbN"/>
                         <outlet property="helperLabel" destination="hv4-TZ-19w" id="rRd-9G-LDl"/>

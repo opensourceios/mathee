@@ -26,12 +26,15 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     var total = 0
     var isFirstEvenQuestion = true
+    var myTitle: String!
 
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.title = self.myTitle
 
         for state: UIControl.State in [.normal, .highlighted] {
             UIBarButtonItem.appearance().setTitleTextAttributes(
