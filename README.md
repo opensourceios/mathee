@@ -2,8 +2,6 @@
 - Amaze your friends when you guess any number they think of, by secretly using this app!
 - Guess supports iOS 13's new Dark Mode
 - Is there a feature you'd like to see? A bug you'd like to go away? Let us know by opening the app, tapping on the top right circle icon, then tapping on 'Contact us'
-- Love the app? Please consider leaving a 5-star review!
-- Get it here: https://apple.co/2TdZqiM
 
 # Screenshots
 
