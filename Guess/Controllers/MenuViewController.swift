@@ -213,8 +213,7 @@ class MenuViewController: UIViewController,
         let message = Constants.Misc.shareBodyMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
-        activityController.completionWithItemsHandler = {
-            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: AlertReason.unknown)
                 alert.view.layoutIfNeeded()
