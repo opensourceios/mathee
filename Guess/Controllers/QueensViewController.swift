@@ -386,8 +386,7 @@ class QueensViewController: UIViewController {
         """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButton
-        activityController.completionWithItemsHandler = {
-            (activityType, completed: Bool, returnedItems: [Any]?, error: Error?) in
+        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: AlertReason.unknown)
                 alert.view.layoutIfNeeded()
