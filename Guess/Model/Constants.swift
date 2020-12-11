@@ -31,7 +31,7 @@ struct Constants {
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
         static let emailSample = "Hi. I have a question..."
-        static let emailAddress = "musicbyds@icloud.com"
+        static let emailAddress = "dani.springer@icloud.com"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
         static let showAppsButtonTitle = "More by Daniel Springer"
         static let customAppIconTitle = "Change App Icon"
