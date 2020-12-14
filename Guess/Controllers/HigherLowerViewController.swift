@@ -60,6 +60,7 @@ class HigherLowerViewController: UIViewController {
         showNextGuess()
     }
 
+
     @objc func showNextGuess() {
         tries += 1
 
@@ -131,13 +132,23 @@ class HigherLowerViewController: UIViewController {
 
         switch tries {
         case 1:
-            guessLabel.text = "You thought: \(guess)\nThat took me 1 try."
+            guessLabel.text = """
+            You thought:
+            \(guess)
+            That took me 1 try.
+            """
             trophyLabel.text = trophies[tries - 1]
         case 2...10:
-            guessLabel.text = "You thought: \(guess)\nThat took me \(tries) tries!"
+            guessLabel.text = """
+            You thought:
+            \(guess)
+            That took me \(tries) tries!
+            """
             trophyLabel.text = trophies[tries - 1]
         default:
-            guessLabel.text = "Oops! It took me more than 10 tries. Please let the developer know this happened."
+            guessLabel.text = """
+            Oops! It took me more than 10 tries. Please let me know this happened: dani.springer@icloud.com
+            """
             trophyLabel.text = "🏆"
         }
 

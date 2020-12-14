@@ -102,8 +102,9 @@ class BookViewController: UIViewController {
 
 
         pageNumberLabel.text = """
-        Think of a number 1-63.\nGreat. Storytime! My book has 6 pages. But all of them have \
-        just... numbers!
+        Think of a number 1-63.
+        I will now show you 6 pages.
+        Your number will be on one ore more of them.
         """
         pageContentLabel.text = ""
 
