@@ -342,7 +342,7 @@ class QueensViewController: UIViewController {
 
                 for (indexOfRow, row) in board.enumerated() {
                     for (indexOfCol, col) in row.enumerated() where col == 1 {
-                        boardOfStrings[indexOfRow][indexOfCol] = "👸"
+                        boardOfStrings[indexOfRow][indexOfCol] = "👸" // TODO: allow black queen, more?
                     }
                 }
 
@@ -378,7 +378,12 @@ class QueensViewController: UIViewController {
         }
 
         let message = """
-        Here's my solution to the '8 Queens Puzzle':\n\n\(solutionLabel.text!)\n\n(What's this?)\n\n \
+        Here's my solution to the '8 Queens Puzzle':
+
+        \(solutionLabel.text!)
+
+        (What's this?)
+
         The '8 Queens Puzzle' is the problem of placing eight chess queens on an 8×8 chessboard so \
         that no two queens threaten each other. Thus, a solution requires that no two queens share \
         the same row, column, or diagonal. See more solutions to this puzzle - and more games - \

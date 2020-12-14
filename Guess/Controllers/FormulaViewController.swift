@@ -47,7 +47,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
-        messageLabel.text = "Think of a number.\nI will find it.\nLet me ask you a few questions..."
+        messageLabel.text = """
+        Think of a number.
+        """
 
         let okButton = UIBarButtonItem(
             title: Constants.Misc.okMessage,
@@ -147,7 +149,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func divideByNine() {
         // tell user to divide by nine
-        messageLabel.text = "Divide the result by 9, leaving out any remainder"
+        messageLabel.text = "Divide the result by 9, throwing away any remainder"
         let okButton = UIBarButtonItem(
             title: Constants.Misc.okMessage,
             style: .plain,
@@ -203,7 +205,11 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         guard let number = Int(trimmedText) else {
             helpersShould(hide: true)
-            messageLabel.text = "Please enter numbers only.\nNo text.\nMax number: 2^63 - 1."
+            messageLabel.text = """
+            Please enter numbers only.
+            No text.
+            Max number: 2^63 - 1.
+            """
             let retryButton = UIBarButtonItem(
                 title: Constants.Misc.retryMessage,
                 style: .plain,
@@ -225,7 +231,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func showResult() {
         myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
-        messageLabel.text = "You thought:\n\(total)"
+        messageLabel.text = """
+        You thought:
+        \(total)
+        """
 
         let doneButton = UIBarButtonItem(
             title: Constants.Misc.endMessage,
