@@ -48,7 +48,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
         messageLabel.text = """
-        Think of a number.
+        Think of a number
         """
 
         let okButton = UIBarButtonItem(
@@ -189,7 +189,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         guard !text.isEmpty else {
             helpersShould(hide: true)
-            messageLabel.text = "TextField emtpy. Please enter your current result and try again."
+            messageLabel.text = "TextField emtpy. Please enter your current result and try again"
             let retryButton = UIBarButtonItem(
                 title: Constants.Misc.retryMessage,
                 style: .plain,
@@ -206,9 +206,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         guard let number = Int(trimmedText) else {
             helpersShould(hide: true)
             messageLabel.text = """
-            Please enter numbers only.
-            No text.
-            Max number: 2^63 - 1.
+            Please enter numbers only
+            No text
+            Max number: 2^63 - 1
             """
             let retryButton = UIBarButtonItem(
                 title: Constants.Misc.retryMessage,

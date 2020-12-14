@@ -24,8 +24,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
                                 <rect key="frame" x="16" y="60" width="382" height="86.5"/>
                                 <string key="text">Think of a number 1-1000.
-After each try, tell me whether to go higher or lower, or if I won!
-I will guess it in 10 tries or less.</string>
+After each try, tell me whether to go higher or lower, or if I guessed your number.
+It will take me 10 tries or less.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
