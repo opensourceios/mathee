@@ -342,7 +342,7 @@ class QueensViewController: UIViewController {
 
                 for (indexOfRow, row) in board.enumerated() {
                     for (indexOfCol, col) in row.enumerated() where col == 1 {
-                        boardOfStrings[indexOfRow][indexOfCol] = "👸" // TODO: allow black queen, more?
+                        boardOfStrings[indexOfRow][indexOfCol] = randomQueen()
                     }
                 }
 
@@ -366,6 +366,12 @@ class QueensViewController: UIViewController {
             hasSolutionToShare = true
         }
 
+    }
+
+
+    func randomQueen() -> String {
+        let queens = ["👸", "👸🏻", "👸🏼", "👸🏽", "👸🏾", "👸🏿"]
+        return queens.randomElement()!
     }
 
 

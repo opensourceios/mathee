@@ -135,14 +135,14 @@ class HigherLowerViewController: UIViewController {
             guessLabel.text = """
             You thought:
             \(guess)
-            That took me 1 try.
+            That took me 1 try
             """
             trophyLabel.text = trophies[tries - 1]
         case 2...10:
             guessLabel.text = """
             You thought:
             \(guess)
-            That took me \(tries) tries!
+            That took me \(tries) tries
             """
             trophyLabel.text = trophies[tries - 1]
         default:
