@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController {
 
         self.title = self.myTitle
 
-        mySwitch.isOn = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark)
+        mySwitch.isOn = UserDefaults.standard.bool(forKey: Const.UserDef.iconIsDark)
 
     }
 
@@ -37,7 +37,7 @@ class SettingsViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func mySwitchToggled(_ sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: Constants.UserDef.iconIsDark)
+        UserDefaults.standard.set(sender.isOn, forKey: Const.UserDef.iconIsDark)
         setIcon()
     }
 
@@ -48,8 +48,8 @@ class SettingsViewController: UIViewController {
 
 
     func setIcon() {
-        let newIcon = UserDefaults.standard.bool(forKey: Constants.UserDef.iconIsDark) ?
-            Constants.UserDef.dark : Constants.UserDef.light
+        let newIcon = UserDefaults.standard.bool(forKey: Const.UserDef.iconIsDark) ?
+            Const.UserDef.dark : Const.UserDef.light
 
         guard UIApplication.shared.supportsAlternateIcons else {
             print("NOTE: alternate icons not supported")

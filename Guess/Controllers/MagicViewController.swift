@@ -36,7 +36,7 @@ class MagicViewController: UIViewController {
         myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(play))
@@ -52,7 +52,7 @@ class MagicViewController: UIViewController {
         headerLabel.text = "Let's call the number you thought \"A\".\nAdd 10 to A"
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(combineFirst))
@@ -68,7 +68,7 @@ class MagicViewController: UIViewController {
         """
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(subtract))
@@ -84,7 +84,7 @@ class MagicViewController: UIViewController {
         """
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(checkFirst))
@@ -96,12 +96,12 @@ class MagicViewController: UIViewController {
     @objc func checkFirst() {
         headerLabel.text = "Let's call the result of B - C, \"D\".\nIs D a single digit?"
         let yesButton = UIBarButtonItem(
-            title: Constants.Misc.yesMessage,
+            title: Const.Misc.yesMessage,
             style: .plain,
             target: self,
             action: #selector(showResultFirst))
         let noButton = UIBarButtonItem(
-            title: Constants.Misc.noMessage,
+            title: Const.Misc.noMessage,
             style: .plain,
             target: self,
             action: #selector(combineSecond))
@@ -113,7 +113,7 @@ class MagicViewController: UIViewController {
     @objc func combineSecond() {
         headerLabel.text = "Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(checkForever))
@@ -125,12 +125,12 @@ class MagicViewController: UIViewController {
     @objc func checkForever() {
         headerLabel.text = "Is the new result a single digit?"
         let yesButton = UIBarButtonItem(
-            title: Constants.Misc.yesMessage,
+            title: Const.Misc.yesMessage,
             style: .plain,
             target: self,
             action: #selector(showResultFinally))
         let noButton = UIBarButtonItem(
-            title: Constants.Misc.noMessage,
+            title: Const.Misc.noMessage,
             style: .plain,
             target: self,
             action: #selector(combineForever))
@@ -143,7 +143,7 @@ class MagicViewController: UIViewController {
     @objc func combineForever() {
         headerLabel.text = "Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(checkForever))
@@ -155,7 +155,7 @@ class MagicViewController: UIViewController {
     @objc func showResultFirst() {
         headerLabel.text = "D is 9"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.endMessage,
+            title: Const.Misc.endMessage,
             style: .plain,
             target: self,
             action: #selector(done))
@@ -167,7 +167,7 @@ class MagicViewController: UIViewController {
     @objc func showResultFinally() {
         headerLabel.text = "It's 9"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.endMessage,
+            title: Const.Misc.endMessage,
             style: .plain,
             target: self,
             action: #selector(done))
