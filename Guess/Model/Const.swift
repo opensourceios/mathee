@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct Constants {
+struct Const {
 
 
     struct StoryboardID {
@@ -25,7 +25,7 @@ struct Constants {
 
     struct Misc {
         static let appVersion = "CFBundleShortVersionString"
-        static let version = "Version"
+        static let version = "v."
         static let appName = "Guess"
         static let cancel = "Cancel"
         static let sendFeedback = "Contact Us"
