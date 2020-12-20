@@ -1,4 +1,6 @@
-Amaze your friends when you guess any number they think of, by secretly using this app!
+• Ask your friends to think of a number, then guess it by secretly using this app
+• App includes various minigames along the theme of "Think of a number"
+• Plus a solution generator for the "8 queens puzzle"
 
 • Ask us anything: dani.springer@icloud.com
 • Enjoying Guess? Please consider leaving a 5-star review. It would mean the world to us!
