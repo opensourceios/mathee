@@ -57,10 +57,6 @@ class MenuViewController: UIViewController,
     // MARK: Create menu
 
     func infoMenu() -> UIMenu {
-//        let cancel = UIAction(title: Const.Misc.cancel, image: UIImage(systemName: "multiply"),
-//                              state: .off) { _ in
-//            self.dismiss(animated: true, completion: nil)
-//        }
         let shareApp = UIAction(title: Const.Misc.shareTitleMessage, image: UIImage(systemName: "heart"),
                                 state: .off) { _ in
             self.shareApp()
@@ -70,7 +66,7 @@ class MenuViewController: UIViewController,
             self.launchEmail()
         }
         let review = UIAction(title: Const.Misc.leaveReview,
-                                     image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
+                              image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
             self.requestReview()
         }
         let moreApps = UIAction(title: Const.Misc.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
@@ -278,8 +274,8 @@ extension MenuViewController {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
         guard let writeReviewURL = URL(string: Const.Misc.reviewLink)
-            else {
-                fatalError("expected valid URL")
+        else {
+            fatalError("expected valid URL")
 
         }
         UIApplication.shared.open(writeReviewURL,
@@ -294,5 +290,5 @@ extension MenuViewController {
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in
-        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
