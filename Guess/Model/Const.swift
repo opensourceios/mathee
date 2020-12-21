@@ -33,7 +33,7 @@ struct Const {
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "dani.springer@icloud.com"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
-        static let showAppsButtonTitle = "More by Daniel Springer"
+        static let showAppsButtonTitle = "More Apps"
         static let customAppIconTitle = "Change App Icon"
         static let devID = "1402417666"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
