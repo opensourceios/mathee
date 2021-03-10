@@ -52,7 +52,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         """
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(timesThree))
@@ -76,7 +76,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func timesThree() {
         messageLabel.text = "Multiply it by 3"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(oddOrEven))
@@ -88,12 +88,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func oddOrEven() {
         messageLabel.text = "Is the result odd or even?"
         let oddButton = UIBarButtonItem(
-            title: Constants.Misc.oddMessage,
+            title: Const.Misc.oddMessage,
             style: .plain,
             target: self,
             action: #selector(addOne))
         let evenButton = UIBarButtonItem(
-            title: Constants.Misc.evenMessage,
+            title: Const.Misc.evenMessage,
             style: .plain,
             target: self,
             action: #selector(divideByTwo))
@@ -108,7 +108,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(divideByTwo))
@@ -130,14 +130,14 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         if isFirstEvenQuestion {
             okButton = UIBarButtonItem(
-                title: Constants.Misc.okMessage,
+                title: Const.Misc.okMessage,
                 style: .plain,
                 target: self,
                 action: #selector(timesThree))
             isFirstEvenQuestion = false
         } else {
             okButton = UIBarButtonItem(
-                title: Constants.Misc.okMessage,
+                title: Const.Misc.okMessage,
                 style: .plain,
                 target: self,
                 action: #selector(divideByNine))
@@ -151,7 +151,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         // tell user to divide by nine
         messageLabel.text = "Divide the result by 9, throwing away any remainder"
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(askResult))
@@ -177,7 +177,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
             messageLabel.text = "Something went wrong. Please let the developers know. Error #001"
             let retryButton = UIBarButtonItem(
-                title: Constants.Misc.retryMessage,
+                title: Const.Misc.retryMessage,
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
@@ -191,7 +191,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             helpersShould(hide: true)
             messageLabel.text = "TextField emtpy. Please enter your current result and try again"
             let retryButton = UIBarButtonItem(
-                title: Constants.Misc.retryMessage,
+                title: Const.Misc.retryMessage,
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
@@ -211,7 +211,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             Max number: 2^63 - 1
             """
             let retryButton = UIBarButtonItem(
-                title: Constants.Misc.retryMessage,
+                title: Const.Misc.retryMessage,
                 style: .plain,
                 target: self,
                 action: #selector(askResult))
@@ -237,7 +237,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         """
 
         let doneButton = UIBarButtonItem(
-            title: Constants.Misc.endMessage,
+            title: Const.Misc.endMessage,
             style: .plain,
             target: self,
             action: #selector(doneButtonPressed))
