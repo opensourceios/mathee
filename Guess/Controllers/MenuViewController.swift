@@ -48,6 +48,44 @@ class MenuViewController: UIViewController,
         }
 
         myTableView.rowHeight = UITableView.automaticDimension
+
+        aboutButton.menu = infoMenu()
+        aboutButton.image = UIImage(systemName: "ellipsis.circle")
+    }
+
+
+    // MARK: Create menu
+
+    func infoMenu() -> UIMenu {
+        let shareApp = UIAction(title: Const.Misc.shareTitleMessage, image: UIImage(systemName: "heart"),
+                                state: .off) { _ in
+            self.shareApp()
+        }
+        let contact = UIAction(title: Const.Misc.sendFeedback, image: UIImage(systemName: "envelope"),
+                               state: .off) { _ in
+            self.launchEmail()
+        }
+        let review = UIAction(title: Const.Misc.leaveReview,
+                              image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
+            self.requestReview()
+        }
+        let moreApps = UIAction(title: Const.Misc.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
+                                state: .off) { _ in
+            self.showApps()
+        }
+        let changeIcon = UIAction(title: Const.Misc.customAppIconTitle,
+                                  image: UIImage(systemName: "gearshape"), state: .off) { _ in
+            self.changeIconPressed()
+        }
+        let version: String? = Bundle.main.infoDictionary![Const.Misc.appVersion] as? String
+        var myTitle = Const.Misc.appName
+        if let safeVersion = version {
+            myTitle += " \(Const.Misc.version) \(safeVersion)"
+        }
+
+        let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
+                              children: [contact, review, shareApp, changeIcon, moreApps/*, cancel*/])
+        return infoMenu
     }
 
 
@@ -55,7 +93,7 @@ class MenuViewController: UIViewController,
 
     func showApps() {
 
-        let myURL = URL(string: Constants.Misc.appsLink)
+        let myURL = URL(string: Const.Misc.appsLink)
 
         guard let safeURL = myURL else {
             let alert = createAlert(alertReasonParam: .unknown)
@@ -102,42 +140,42 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
 
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
         case myDataSource[0]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.formulaVC) as? FormulaViewController
+                withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[1]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.bookVC) as? BookViewController
+                withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[2]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.queensVC) as? QueensViewController
+                withIdentifier: Const.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[3]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.higherVC) as? HigherLowerViewController
+                withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[4]:
             let controller = storyboard.instantiateViewController(
-                withIdentifier: Constants.StoryboardID.magicVC) as? MagicViewController
+                withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
@@ -152,66 +190,16 @@ class MenuViewController: UIViewController,
 
     // MARK: Actions
 
-    @IBAction func aboutButtonPressed() {
-
-        let version: String? = Bundle.main.infoDictionary![Constants.Misc.appVersion] as? String
-        let infoAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        if let version = version {
-            infoAlert.message = "\(Constants.Misc.version) \(version)"
-            infoAlert.title = Constants.Misc.appName
-        }
-
-        infoAlert.modalPresentationStyle = .popover
-
-        let cancelAction = UIAlertAction(title: Constants.Misc.cancel, style: .cancel) { _ in
-            self.dismiss(animated: true, completion: {
-            })
-        }
-
-        let shareAppAction = UIAlertAction(title: Constants.Misc.shareTitleMessage, style: .default) { _ in
-            self.shareApp()
-        }
-
-        let mailAction = UIAlertAction(title: Constants.Misc.sendFeedback, style: .default) { _ in
-            self.launchEmail()
-        }
-
-        let reviewAction = UIAlertAction(title: Constants.Misc.leaveReview, style: .default) { _ in
-            self.requestReviewManually()
-        }
-
-        let showAppsAction = UIAlertAction(title: Constants.Misc.showAppsButtonTitle, style: .default) { _ in
-            self.showApps()
-        }
-
-
-        let changeAppIconAction = UIAlertAction(title: Constants.Misc.customAppIconTitle, style: .default) { _ in
-            self.changeIconPressed()
-        }
-
-        for action in [mailAction, reviewAction, shareAppAction, changeAppIconAction,
-                       showAppsAction, cancelAction] {
-            infoAlert.addAction(action)
-        }
-
-        if let presenter = infoAlert.popoverPresentationController {
-            presenter.barButtonItem = aboutButton
-        }
-
-        present(infoAlert, animated: true)
-
-    }
-
 
     func changeIconPressed() {
-        let storyboard = UIStoryboard(name: Constants.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardID.settingsVC)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.settingsVC)
         self.present(controller, animated: true)
     }
 
 
     func shareApp() {
-        let message = Constants.Misc.shareBodyMessage
+        let message = Const.Misc.shareBodyMessage
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
@@ -236,12 +224,12 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
 
     func launchEmail() {
 
-        var emailTitle = Constants.Misc.appName
-        if let version = Bundle.main.infoDictionary![Constants.Misc.appVersion] {
+        var emailTitle = Const.Misc.appName
+        if let version = Bundle.main.infoDictionary![Const.Misc.appVersion] {
             emailTitle += " \(version)"
         }
-        let messageBody = Constants.Misc.emailSample
-        let toRecipents = [Constants.Misc.emailAddress]
+        let messageBody = Const.Misc.emailSample
+        let toRecipents = [Const.Misc.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         mailComposer.setSubject(emailTitle)
@@ -282,12 +270,12 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
 extension MenuViewController {
 
 
-    func requestReviewManually() {
+    func requestReview() {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
-        guard let writeReviewURL = URL(string: Constants.Misc.reviewLink)
-            else {
-                fatalError("expected valid URL")
+        guard let writeReviewURL = URL(string: Const.Misc.reviewLink)
+        else {
+            fatalError("expected valid URL")
 
         }
         UIApplication.shared.open(writeReviewURL,
@@ -302,5 +290,5 @@ extension MenuViewController {
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
     return Dictionary(uniqueKeysWithValues: input.map { key, value in
-        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

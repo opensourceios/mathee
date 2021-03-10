@@ -109,7 +109,7 @@ class BookViewController: UIViewController {
         pageContentLabel.text = ""
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain,
             target: self,
             action: #selector(start))
@@ -136,12 +136,12 @@ class BookViewController: UIViewController {
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
         let yesButton = UIBarButtonItem(
-            title: Constants.Misc.yesMessage,
+            title: Const.Misc.yesMessage,
             style: .plain,
             target: self,
             action: #selector(addValue))
         let noButton = UIBarButtonItem(
-            title: Constants.Misc.noMessage,
+            title: Const.Misc.noMessage,
             style: .plain,
             target: self,
             action: #selector(dontAddValue))
@@ -174,7 +174,7 @@ class BookViewController: UIViewController {
         resultLabel.isHidden = false
 
         let doneButton = UIBarButtonItem(
-            title: Constants.Misc.endMessage,
+            title: Const.Misc.endMessage,
             style: .plain,
             target: self,
             action: #selector(doneButtonPressed))

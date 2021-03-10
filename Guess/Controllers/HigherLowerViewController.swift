@@ -45,7 +45,7 @@ class HigherLowerViewController: UIViewController {
         trophyLabel.isHidden = true
 
         let okButton = UIBarButtonItem(
-            title: Constants.Misc.okMessage,
+            title: Const.Misc.okMessage,
             style: .plain, target: self,
             action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
@@ -153,7 +153,7 @@ class HigherLowerViewController: UIViewController {
         }
 
         let doneButton = UIBarButtonItem(
-            title: Constants.Misc.endMessage,
+            title: Const.Misc.endMessage,
             style: .plain,
             target: self,
             action: #selector(doneButtonPressed))
