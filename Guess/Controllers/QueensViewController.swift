@@ -22,7 +22,6 @@ class QueensViewController: UIViewController {
     // MARK: Properties
 
     var myTitle: String!
-    var hasSolutionToShare = false
     var boardString = ""
     var shareButton = UIBarButtonItem()
     var infoButton = UIBarButtonItem()
@@ -84,7 +83,12 @@ class QueensViewController: UIViewController {
         infoButton.accessibilityLabel = "Info"
 
         navigationItem.rightBarButtonItems = [shareButton, infoButton]
+    }
 
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        makeBoard()
     }
 
 
@@ -362,10 +366,6 @@ class QueensViewController: UIViewController {
 
         self.solutionLabel.text = boardString
 
-        if !hasSolutionToShare {
-            hasSolutionToShare = true
-        }
-
     }
 
 
@@ -376,12 +376,6 @@ class QueensViewController: UIViewController {
 
 
     @objc func shareSolution() {
-
-        guard hasSolutionToShare else {
-            let alert = createAlert(alertReasonParam: .hasNoSolution)
-            present(alert, animated: true)
-            return
-        }
 
         let message = """
         Here's my solution to the '8 Queens Puzzle':
