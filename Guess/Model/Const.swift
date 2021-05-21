@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  Const.swift
 //  Guess
 //
 //  Created by Daniel Springer on 11/26/18.
