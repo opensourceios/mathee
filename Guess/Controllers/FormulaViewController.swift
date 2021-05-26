@@ -208,7 +208,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             helpersShould(hide: true)
             messageLabel.text = """
             Please enter numbers only
-            No textInt.max / 4
+            No text
             Max number: \(Int.max / 4)
             """
             let retryButton = UIBarButtonItem(
