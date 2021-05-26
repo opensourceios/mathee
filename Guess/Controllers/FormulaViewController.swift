@@ -203,12 +203,13 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         let trimmedText = text.trimmingCharacters(in: .whitespaces)
 
-        guard let number = Int(trimmedText) else {
+        guard let number = Int(trimmedText),
+              !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
             helpersShould(hide: true)
             messageLabel.text = """
             Please enter numbers only
-            No text
-            Max number: 2^63 - 1
+            No textInt.max / 4
+            Max number: \(Int.max / 4)
             """
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
@@ -221,10 +222,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             return
         }
 
+
         total += number * 4
-
         showResult()
-
     }
 
 
