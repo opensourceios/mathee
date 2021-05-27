@@ -8,13 +8,11 @@
 
 import UIKit
 import MessageUI
-import StoreKit
 
 
 class MenuViewController: UIViewController,
                           UITableViewDataSource,
-                          UITableViewDelegate,
-                          SKStoreProductViewControllerDelegate {
+                          UITableViewDelegate {
 
 
     // MARK: Outlets
@@ -103,11 +101,6 @@ class MenuViewController: UIViewController,
 
         UIApplication.shared.open(safeURL, options: [:], completionHandler: nil)
 
-    }
-
-
-    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
-        dismiss(animated: true, completion: nil)
     }
 
 

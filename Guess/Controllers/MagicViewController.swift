@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StoreKit
+
 
 class MagicViewController: UIViewController {
 
