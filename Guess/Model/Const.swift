@@ -19,7 +19,6 @@ struct Const {
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
         static let queensVC = "QueensViewController"
-        static let settingsVC = "SettingsViewController"
     }
 
 
@@ -34,7 +33,6 @@ struct Const {
         static let emailAddress = "dani.springer@icloud.com"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
         static let showAppsButtonTitle = "More Apps"
-        static let customAppIconTitle = "Change App Icon"
         static let devID = "1402417666"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let shareBodyMessage = """
@@ -51,13 +49,6 @@ struct Const {
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a Friend"
-    }
-
-
-    struct UserDef {
-        static let iconIsDark = "iconIsDark"
-        static let light = "light"
-        static let dark = "dark"
     }
 
 
