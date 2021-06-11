@@ -71,10 +71,7 @@ class MenuViewController: UIViewController,
                                 state: .off) { _ in
             self.showApps()
         }
-        let changeIcon = UIAction(title: Const.Misc.customAppIconTitle,
-                                  image: UIImage(systemName: "gearshape"), state: .off) { _ in
-            self.changeIconPressed()
-        }
+
         let version: String? = Bundle.main.infoDictionary![Const.Misc.appVersion] as? String
         var myTitle = Const.Misc.appName
         if let safeVersion = version {
@@ -82,7 +79,7 @@ class MenuViewController: UIViewController,
         }
 
         let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
-                              children: [contact, review, shareApp, changeIcon, moreApps/*, cancel*/])
+                              children: [contact, review, shareApp, moreApps])
         return infoMenu
     }
 
@@ -182,14 +179,6 @@ class MenuViewController: UIViewController,
 
 
     // MARK: Actions
-
-
-    func changeIconPressed() {
-        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.settingsVC)
-        self.present(controller, animated: true)
-    }
-
 
     func shareApp() {
         let message = Const.Misc.shareBodyMessage

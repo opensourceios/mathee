@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-JF-uXf">
-                                <rect key="frame" x="0.0" y="848" width="428" height="44"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <items/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="59.999999999999993" width="396" height="86.333333333333314"/>
+                                <rect key="frame" x="16" y="60" width="396" height="74"/>
                                 <string key="text">Think of a number 1-1000.
 After each try, tell me whether to go higher or lower, or if I guessed your number.
 It will take me 10 tries or less.</string>
@@ -31,7 +31,7 @@ It will take me 10 tries or less.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzF-Up-j1l" userLabel="Trophy Label">
-                                <rect key="frame" x="16" y="186.33333333333334" width="396" height="40.666666666666657"/>
+                                <rect key="frame" x="16" y="174" width="396" height="37"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@ It will take me 10 tries or less.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvW-pj-5lr">
-                                <rect key="frame" x="0.0" y="848" width="428" height="44"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <items/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
@@ -120,12 +120,12 @@ It will take me 10 tries or less.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-WR-wMI">
-                                <rect key="frame" x="0.0" y="848" width="428" height="44"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <items/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="447" width="396" height="42.333333333333314"/>
+                                <rect key="frame" x="16" y="450" width="396" height="36"/>
                                 <string key="text">Think of a number.
 Prepare to be amazed.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -163,24 +163,24 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7y7-oO-AVP">
-                                <rect key="frame" x="0.0" y="848" width="428" height="44"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <items/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="16" y="120.33333333333331" width="396" height="711.66666666666674"/>
+                                <rect key="frame" x="16" y="117" width="396" height="710"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="190.33333333333334" y="458" width="47.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="194" y="459.66666666666669" width="40.333333333333343" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="60.000000000000007" width="396" height="20.333333333333336"/>
+                                <rect key="frame" x="16" y="60" width="396" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -244,7 +244,7 @@ Prepare to be amazed.</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="9Tx-0d-iVw" customClass="MainMenuTableViewCell" customModule="Guess" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="428" height="56.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="49" width="428" height="56.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="56.333332061767578"/>
@@ -320,12 +320,12 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-50-WSp">
-                                <rect key="frame" x="0.0" y="848" width="428" height="44"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <items/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor"/>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="16" y="120.33333333333331" width="396" height="40"/>
+                                <rect key="frame" x="16" y="117" width="396" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="fLV-Ej-2PZ"/>
@@ -334,7 +334,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="436" width="396" height="64.333333333333314"/>
+                                <rect key="frame" x="16" y="440.66666666666669" width="396" height="55"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -343,13 +343,13 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your current result" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-TZ-19w">
-                                <rect key="frame" x="16" y="60.000000000000007" width="396" height="20.333333333333336"/>
+                                <rect key="frame" x="16" y="60" width="396" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="199" y="200.33333333333334" width="30" height="33"/>
+                                <rect key="frame" x="199" y="197" width="30" height="29"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="OK"/>
                                 <connections>
@@ -388,70 +388,6 @@ Let me ask you a few questions...</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1370.625" y="1263.3802816901409"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="s0E-F8-uGP">
-            <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="eTf-QF-CPb" customClass="SettingsViewController" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vtn-0w-TdA">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-2I-aZK">
-                                <rect key="frame" x="363" y="115" width="51" height="31"/>
-                                <accessibility key="accessibilityConfiguration" label="Light / Dark"/>
-                                <connections>
-                                    <action selector="mySwitchToggled:" destination="eTf-QF-CPb" eventType="valueChanged" id="Jci-wj-UMe"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Light/Dark" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUa-te-ju6">
-                                <rect key="frame" x="16" y="120.33333333333333" width="79" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change App Icon" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-NF-1dW">
-                                <rect key="frame" x="16" y="60.000000000000007" width="136" height="20.333333333333336"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5C-gb-5ic">
-                                <rect key="frame" x="371" y="49.666666666666657" width="41" height="41"/>
-                                <accessibility key="accessibilityConfiguration" label="Close"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Y5C-gb-5ic" secondAttribute="height" multiplier="1:1" id="Bho-mn-Q2r"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="doneButtonPressed:" destination="eTf-QF-CPb" eventType="touchUpInside" id="qe6-zx-wkx"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xVi-Mc-85E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="FxH-2I-aZK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AUa-te-ju6" secondAttribute="trailing" constant="16" id="6zs-WP-Arz"/>
-                            <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="FxH-2I-aZK" secondAttribute="trailing" constant="16" id="ACr-pU-Crr"/>
-                            <constraint firstItem="AUa-te-ju6" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" constant="16" id="Dnj-CQ-RdD"/>
-                            <constraint firstItem="Y5C-gb-5ic" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zlZ-NF-1dW" secondAttribute="trailing" constant="16" id="El0-cJ-GJB"/>
-                            <constraint firstItem="Y5C-gb-5ic" firstAttribute="centerY" secondItem="zlZ-NF-1dW" secondAttribute="centerY" id="H5l-wj-Bn0"/>
-                            <constraint firstItem="xVi-Mc-85E" firstAttribute="trailing" secondItem="Y5C-gb-5ic" secondAttribute="trailing" constant="16" id="SO5-5V-gU0"/>
-                            <constraint firstItem="zlZ-NF-1dW" firstAttribute="leading" secondItem="xVi-Mc-85E" secondAttribute="leading" constant="16" id="apN-Ya-x9e"/>
-                            <constraint firstItem="zlZ-NF-1dW" firstAttribute="top" secondItem="xVi-Mc-85E" secondAttribute="top" constant="16" id="jDw-Tr-dWC"/>
-                            <constraint firstItem="FxH-2I-aZK" firstAttribute="centerY" secondItem="AUa-te-ju6" secondAttribute="centerY" id="tlp-LD-21w"/>
-                            <constraint firstItem="AUa-te-ju6" firstAttribute="top" secondItem="zlZ-NF-1dW" secondAttribute="bottom" constant="40" id="vEf-li-9Yt"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="myLabel" destination="AUa-te-ju6" id="aWo-Uv-CZg"/>
-                        <outlet property="mySwitch" destination="FxH-2I-aZK" id="Q3d-QF-EHf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ySr-9t-qV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-177" y="-220"/>
         </scene>
     </scenes>
     <resources>
