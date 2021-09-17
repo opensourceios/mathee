@@ -29,6 +29,8 @@ class HigherLowerViewController: UIViewController {
     var halfDiff = 0
     var tries = 0
 
+    var myThemeColor: UIColor!
+
 
     // MARK: Life Cycle
 
@@ -36,7 +38,7 @@ class HigherLowerViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.myTitle
-
+        setThemeColorTo(myThemeColor: myThemeColor)
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)

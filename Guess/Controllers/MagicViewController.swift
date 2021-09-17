@@ -21,7 +21,7 @@ class MagicViewController: UIViewController {
     // MARK: Properties
 
     var myTitle: String!
-
+    var myThemeColor: UIColor!
 
     // MARK: Life Cicle
 
@@ -29,7 +29,7 @@ class MagicViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.myTitle
-
+        setThemeColorTo(myThemeColor: myThemeColor)
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)

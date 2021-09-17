@@ -73,6 +73,7 @@ class BookViewController: UIViewController {
     var userNumber = 0
     var currentPageFake = 1
     var currentPageReal = 0
+    var myThemeColor: UIColor!
 
 
     // MARK: Life Cycle
@@ -81,6 +82,7 @@ class BookViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.myTitle
+        setThemeColorTo(myThemeColor: myThemeColor)
         resultLabel.isHidden = true
 
         myToolbar.setBackgroundImage(UIImage(),

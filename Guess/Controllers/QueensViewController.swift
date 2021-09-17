@@ -45,6 +45,8 @@ class QueensViewController: UIViewController {
     Tap the Question mark button to view these instructions again later.
     """
 
+    var myThemeColor: UIColor!
+
 
     // MARK: Life Cycle
 
@@ -52,7 +54,7 @@ class QueensViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = self.myTitle
-
+        setThemeColorTo(myThemeColor: myThemeColor)
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
