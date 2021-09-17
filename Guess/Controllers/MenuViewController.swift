@@ -28,7 +28,17 @@ class MenuViewController: UIViewController,
     let myImageSource = ["plus.slash.minus", "book", "8.square",
                          "arrow.up.arrow.down", "wand.and.stars"]
 
+    let tintColorsArray: [UIColor] = [
+        .systemPurple,
+        .systemOrange,
+        .systemBlue,
+        .systemYellow,
+        .systemRed
+    ]
+
     let menuCell = "MenuCell"
+
+    let myThemeColor = UIColor.systemBlue
 
 
     // MARK: Life Cycle
@@ -40,6 +50,7 @@ class MenuViewController: UIViewController,
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.prefersLargeTitles = true
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         if let selectedRow = myTableView.indexPathForSelectedRow {
             myTableView.deselectRow(at: selectedRow, animated: true)
@@ -118,13 +129,14 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as? MainMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
 
-        cell?.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
-        cell?.myImage.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-        cell?.selectionStyle = .none
+        cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
+        cell.myImageView.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
+        cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.selectionStyle = .none
 
-        return cell ?? UITableViewCell()
+        return cell
     }
 
 
@@ -140,6 +152,7 @@ class MenuViewController: UIViewController,
                 withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
+                controller?.myThemeColor = tintColorsArray[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[1]:
@@ -147,6 +160,7 @@ class MenuViewController: UIViewController,
                 withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
+                controller?.myThemeColor = tintColorsArray[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[2]:
@@ -154,6 +168,7 @@ class MenuViewController: UIViewController,
                 withIdentifier: Const.StoryboardID.queensVC) as? QueensViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
+                controller?.myThemeColor = tintColorsArray[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[3]:
@@ -161,6 +176,7 @@ class MenuViewController: UIViewController,
                 withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
+                controller?.myThemeColor = tintColorsArray[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         case myDataSource[4]:
@@ -168,6 +184,7 @@ class MenuViewController: UIViewController,
                 withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
             if let toPresent = controller {
                 controller?.myTitle = myDataSource[indexPath.row]
+                controller?.myThemeColor = tintColorsArray[indexPath.row]
                 self.navigationController?.pushViewController(toPresent, animated: true)
             }
         default:

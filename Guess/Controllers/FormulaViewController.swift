@@ -26,6 +26,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     var total = 0
     var isFirstEvenQuestion = true
     var myTitle: String!
+    var myThemeColor: UIColor!
 
 
     // MARK: Life Cycle
@@ -34,6 +35,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         self.title = self.myTitle
+        setThemeColorTo(myThemeColor: myThemeColor)
 
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
