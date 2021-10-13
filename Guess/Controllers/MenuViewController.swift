@@ -147,50 +147,50 @@ class MenuViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
         switch cell?.myLabel?.text {
-        case myDataSource[0]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
-            if let toPresent = controller {
-                controller?.myTitle = myDataSource[indexPath.row]
-                controller?.myThemeColor = tintColorsArray[indexPath.row]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[1]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
-            if let toPresent = controller {
-                controller?.myTitle = myDataSource[indexPath.row]
-                controller?.myThemeColor = tintColorsArray[indexPath.row]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[2]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.queensVC) as? QueensViewController
-            if let toPresent = controller {
-                controller?.myTitle = myDataSource[indexPath.row]
-                controller?.myThemeColor = tintColorsArray[indexPath.row]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[3]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
-            if let toPresent = controller {
-                controller?.myTitle = myDataSource[indexPath.row]
-                controller?.myThemeColor = tintColorsArray[indexPath.row]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        case myDataSource[4]:
-            let controller = storyboard.instantiateViewController(
-                withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
-            if let toPresent = controller {
-                controller?.myTitle = myDataSource[indexPath.row]
-                controller?.myThemeColor = tintColorsArray[indexPath.row]
-                self.navigationController?.pushViewController(toPresent, animated: true)
-            }
-        default:
-            let alert = createAlert(alertReasonParam: AlertReason.unknown)
-            alert.view.layoutIfNeeded()
-            present(alert, animated: true)
+            case myDataSource[0]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
+                if let toPresent = controller {
+                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myThemeColor = tintColorsArray[indexPath.row]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[1]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
+                if let toPresent = controller {
+                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myThemeColor = tintColorsArray[indexPath.row]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[2]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.queensVC) as? QueensViewController
+                if let toPresent = controller {
+                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myThemeColor = tintColorsArray[indexPath.row]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[3]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
+                if let toPresent = controller {
+                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myThemeColor = tintColorsArray[indexPath.row]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            case myDataSource[4]:
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
+                if let toPresent = controller {
+                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myThemeColor = tintColorsArray[indexPath.row]
+                    self.navigationController?.pushViewController(toPresent, animated: true)
+                }
+            default:
+                let alert = createAlert(alertReasonParam: AlertReason.unknown)
+                alert.view.layoutIfNeeded()
+                present(alert, animated: true)
         }
     }
 
@@ -241,25 +241,7 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
 
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
-        var alert = UIAlertController()
-
-        dismiss(animated: true, completion: {
-            switch result {
-            case MFMailComposeResult.failed:
-                alert = self.createAlert(alertReasonParam: AlertReason.messageFailed)
-            case MFMailComposeResult.saved:
-                alert = self.createAlert(alertReasonParam: AlertReason.messageSaved)
-            case MFMailComposeResult.sent:
-                alert = self.createAlert(alertReasonParam: AlertReason.messageSent)
-            default:
-                break
-            }
-
-            if alert.title != nil {
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-            }
-        })
+        dismiss(animated: true)
     }
 
 
@@ -288,6 +270,6 @@ extension MenuViewController {
 
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-    return Dictionary(uniqueKeysWithValues: input.map { key, value in
-                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-}
+        return Dictionary(uniqueKeysWithValues: input.map { key, value in
+            (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    }
