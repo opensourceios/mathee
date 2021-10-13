@@ -7,3 +7,4 @@ disabled_rules:
   - function_body_length
   - cyclomatic_complexity
   - force_cast
+  - switch_case_alignmen
