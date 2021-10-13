@@ -135,6 +135,7 @@ class MenuViewController: UIViewController,
         cell.myImageView.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
         cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
         cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
