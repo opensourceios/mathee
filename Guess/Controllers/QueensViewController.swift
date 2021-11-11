@@ -27,7 +27,7 @@ class QueensViewController: UIViewController {
 
     var textColor: UIColor! = UIColor.label
 
-    let puzzleDescription = """
+    let puzzleDescription = NSLocalizedString("""
     Have you heard of the 8 Queens Puzzle?
 
     The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
@@ -43,7 +43,7 @@ class QueensViewController: UIViewController {
     Tap the Share button to share your favorite solutions with friends and family.
 
     Tap the Question mark button to view these instructions again later.
-    """
+    """, comment: "")
 
     var myThemeColor: UIColor!
 
@@ -81,7 +81,7 @@ class QueensViewController: UIViewController {
             target: self,
             action: #selector(infoPressed))
 
-        infoButton.accessibilityLabel = "Info"
+        infoButton.accessibilityLabel = NSLocalizedString("Info", comment: "accessibility label")
 
         navigationItem.rightBarButtonItems = [shareButton, infoButton]
     }
@@ -378,18 +378,22 @@ class QueensViewController: UIViewController {
 
     @objc func shareSolution() {
 
-        let message = """
+        let message = NSLocalizedString(
+        """
         Here's my solution to the '8 Queens Puzzle':
-
-        \(solutionLabel.text!)
-
+        """, comment: "")
+        +
+        "\(solutionLabel.text!)"
+        +
+        NSLocalizedString(
+        """
         (What's this?)
 
-        The '8 Queens Puzzle' is the problem of placing eight chess queens on an 8×8 chessboard so \
-        that no two queens threaten each other. Thus, a solution requires that no two queens share \
-        the same row, column, or diagonal. See more solutions to this puzzle - and more games - \
-        here: https://itunes.apple.com/app/id1406084758
-        """
+         The '8 Queens Puzzle' is the problem of placing eight chess queens on an 8×8 chessboard so \
+         that no two queens threaten each other. Thus, a solution requires that no two queens share \
+         the same row, column, or diagonal. See more solutions to this puzzle - and more games - \
+         here: https://itunes.apple.com/app/id1406084758
+        """, comment: "")
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
@@ -412,10 +416,10 @@ class QueensViewController: UIViewController {
 
     @objc func infoPressed() {
         let alert = UIAlertController(
-            title: "About This Puzzle",
+            title: NSLocalizedString("About This Puzzle", comment: ""),
             message: puzzleDescription,
             preferredStyle: .actionSheet)
-        let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel, handler: nil)
         alert.addAction(alertAction)
 
         alert.popoverPresentationController?.barButtonItem = infoButton

@@ -24,31 +24,31 @@ struct Const {
 
     struct Misc {
         static let appVersion = "CFBundleShortVersionString"
-        static let version = "v."
-        static let appName = "Guess"
-        static let cancel = "Cancel"
-        static let sendFeedback = "Contact Us"
-        static let leaveReview = "Leave a Review"
-        static let emailSample = "Hi. I have a question..."
+        static let version = NSLocalizedString("v.", comment: "")
+        static let appName = NSLocalizedString("Guess", comment: "")
+        static let cancel = NSLocalizedString("Cancel", comment: "")
+        static let sendFeedback = NSLocalizedString("Contact Us", comment: "")
+        static let leaveReview = NSLocalizedString("Leave a Review", comment: "")
+        static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
         static let emailAddress = "dani.springer@icloud.com"
         static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
-        static let showAppsButtonTitle = "More Apps"
+        static let showAppsButtonTitle = NSLocalizedString("More Apps", comment: "")
         static let devID = "1402417666"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
-        static let shareBodyMessage = """
+        static let shareBodyMessage = NSLocalizedString("""
         Amaze your friends when you guess any number they think of, by secretly using this app! \
         Check it out: https://itunes.apple.com/app/id1406084758
-        """
-        static let yesMessage = "Yes"
-        static let noMessage = "No"
-        static let okMessage = "OK"
-        static let doneMessage = "Done"
-        static let retryMessage = "Retry"
-        static let endMessage = "Return home"
-        static let oddMessage = "Odd"
-        static let evenMessage = "Even"
-        static let aboutMessage = "About"
-        static let shareTitleMessage = "Tell a Friend"
+        """, comment: "")
+        static let yesMessage = NSLocalizedString("Yes", comment: "")
+        static let noMessage = NSLocalizedString("No", comment: "")
+        static let okMessage = NSLocalizedString("OK", comment: "")
+        static let doneMessage = NSLocalizedString("Done", comment: "")
+        static let retryMessage = NSLocalizedString("Retry", comment: "")
+        static let endMessage = NSLocalizedString("Return home", comment: "")
+        static let oddMessage = NSLocalizedString("Odd", comment: "number")
+        static let evenMessage = NSLocalizedString("Even", comment: "number")
+        static let aboutMessage = NSLocalizedString("About", comment: "")
+        static let shareTitleMessage = NSLocalizedString("Tell a Friend", comment: "")
     }
 
 

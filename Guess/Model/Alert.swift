@@ -13,10 +13,6 @@ extension UIViewController {
 
 
     enum AlertReason {
-        case messageSaved
-        case messageCanceled
-        case messageFailed
-        case messageSent
         case unknown
     }
 
@@ -26,29 +22,15 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-        case .messageSaved:
-            alertTitle = "Message saved"
-            alertMessage = "Your message has been saved to drafts."
-        case .messageCanceled:
-            alertTitle = "Action cancelled"
-            alertMessage = "Your message has not been sent."
-        case .messageFailed:
-            alertTitle = "Action failed"
-            alertMessage = """
-            Your message has not been sent. Please try again later, or contact us by leaving a review.
-            """
-        case .messageSent:
-            alertTitle = "Success!"
-            alertMessage = "Your message has been sent. You should hear from us within 24 hours."
         default:
-            alertTitle = "Unknown error"
-            alertMessage = """
+            alertTitle = NSLocalizedString("Unknown error", comment: "")
+            alertMessage = NSLocalizedString("""
             An unknown error occurred. Please try again later, or contact us at dani.springer@icloud.com
-            """
+            """, comment: "")
         }
 
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
         alert.addAction(alertAction)
 
         return alert
