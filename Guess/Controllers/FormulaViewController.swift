@@ -176,7 +176,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         guard let text = myTextField.text else {
             helpersShould(hide: true)
 
-            messageLabel.text = NSLocalizedString("Something went wrong. Please let the developers know. Error #001", comment: "")
+            messageLabel.text = NSLocalizedString(
+            """
+Something went wrong. Please let the developers know. Error #001
+""", comment: "")
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
                 style: .plain,
@@ -190,7 +193,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         guard !text.isEmpty else {
             helpersShould(hide: true)
-            messageLabel.text = NSLocalizedString("TextField emtpy. Please enter your current result and try again", comment: "")
+            messageLabel.text = NSLocalizedString(
+            """
+                  TextField emtpy. Please enter your current result and try again
+""", comment: "")
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
                 style: .plain,

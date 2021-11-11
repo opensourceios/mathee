@@ -126,7 +126,10 @@ class HigherLowerViewController: UIViewController {
             case 1...10:
                 guessLabel.text = NSLocalizedString("You thought:", comment: "") + "\n" + "\(guess)"
             default:
-                guessLabel.text = NSLocalizedString("Oops! It took me more than 10 tries. Please let me know this happened: dani.springer@icloud.com", comment: "")
+                guessLabel.text = NSLocalizedString(
+                """
+Oops! It took me more than 10 tries. Please let me know this happened: dani.springer@icloud.com
+""", comment: "")
         }
 
         let doneButton = UIBarButtonItem(
