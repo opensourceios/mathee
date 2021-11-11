@@ -102,11 +102,11 @@ class BookViewController: UIViewController {
         shuffledPagesByOrder = shuffledPagesByContent.shuffled()
 
 
-        pageNumberLabel.text = """
+        pageNumberLabel.text = NSLocalizedString("""
         Think of a number 1-63
         I will now show you 6 pages
         Your number will be in one or more of them
-        """
+        """, comment: "")
         pageContentLabel.text = ""
 
         let okButton = UIBarButtonItem(
@@ -133,7 +133,7 @@ class BookViewController: UIViewController {
             return
         }
 
-        pageNumberLabel.text = "Is your number in page #\(currentPageFake)?"
+        pageNumberLabel.text = NSLocalizedString("Is your number in page #", comment: "") + "\(currentPageFake)" + "?"
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
         let yesButton = UIBarButtonItem(
@@ -171,7 +171,7 @@ class BookViewController: UIViewController {
     @objc func showResult() {
         pageContentLabel.text = ""
         pageNumberLabel.text = ""
-        resultLabel.text = "You thought: \(userNumber)"
+        resultLabel.text = NSLocalizedString("You thought: ", comment: "") + "\(userNumber)"
         resultLabel.isHidden = false
 
         let doneButton = UIBarButtonItem(

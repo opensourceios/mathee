@@ -23,8 +23,11 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["The Magic Formula", "Book",
-                        "The Chess Puzzle", "Higher Lower", "MatheMagic"]
+    let myDataSource = [NSLocalizedString("The Magic Formula", comment: ""),
+                        NSLocalizedString("Book", comment: ""),
+                        NSLocalizedString("The Chess Puzzle", comment: ""),
+                        NSLocalizedString("Higher Lower", comment: ""),
+                        NSLocalizedString("MatheMagic", comment: "")]
     let myImageSource = ["plus.slash.minus", "book", "8.square",
                          "arrow.up.arrow.down", "wand.and.stars"]
 
@@ -116,7 +119,7 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Amaze Your Friends"
+            return NSLocalizedString("Amaze Your Friends", comment: "header")
         } else {
             fatalError()
         }
