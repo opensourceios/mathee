@@ -94,7 +94,9 @@ class MagicViewController: UIViewController {
 
 
     @objc func checkFirst() {
-        headerLabel.text = NSLocalizedString("Let's call the result of B - C, \"D\".\nIs D a single digit?", comment: "")
+        headerLabel.text = NSLocalizedString("""
+Let's call the result of B - C, \"D\".\nIs D a single digit?
+""", comment: "")
         let yesButton = UIBarButtonItem(
             title: Const.Misc.yesMessage,
             style: .plain,
@@ -111,7 +113,10 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineSecond() {
-        headerLabel.text = NSLocalizedString("Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6", comment: "")
+        headerLabel.text = NSLocalizedString(
+"""
+Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
+""", comment: "")
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
@@ -141,7 +146,10 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineForever() {
-        headerLabel.text = NSLocalizedString("Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6", comment: "")
+        headerLabel.text = NSLocalizedString(
+            """
+Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6
+""", comment: "")
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
