@@ -33,7 +33,7 @@
 "jXi-RC-tpW.text" = "⬜️⬛️⬜️⬛️⬜️⬛️⬜️⬛️\n⬛️⬜️⬛️⬜️⬛️⬜️⬛️⬜️\n⬜️⬛️⬜️⬛️⬜️⬛️⬜️⬛️\n⬛️⬜️⬛️⬜️⬛️⬜️⬛️⬜️\n⬜️⬛️⬜️⬛️⬜️⬛️⬜️⬛️\n⬛️⬜️⬛️⬜️⬛️⬜️⬛️⬜️\n⬜️⬛️⬜️⬛️⬜️⬛️⬜️⬛️\n⬛️⬜️⬛️⬜️⬛️⬜️⬛️⬜️";
 
 /* Class = "UILabel"; text = "Think of a number 1-1000.\nAfter each try, tell me whether to go higher or lower, or if I guessed your number.\nIt will take me 10 tries or less."; ObjectID = "nAW-HL-3cW"; */
-"nAW-HL-3cW.text" = "Pensa ad un numero 1-1000.\nDopo ogni tentativo, dimmi se salire o scendere, o se ho indivinato il numero.\nCi metterò 10 tentativi o meno.";
+"nAW-HL-3cW.text" = "Pensa ad un numero da 1 a 1000.\nDopo ogni tentativo, dimmi se salire o scendere, o se ho indivinato il numero.\nCi metterò 10 tentativi o meno.";
 
 /* Class = "UILabel"; text = "Result"; ObjectID = "vPg-bR-HVJ"; */
 "vPg-bR-HVJ.text" = "Risultato";
