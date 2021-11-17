@@ -238,8 +238,9 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
         mailComposer.setSubject(emailTitle)
         mailComposer.setMessageBody(messageBody, isHTML: false)
         mailComposer.setToRecipients(toRecipents)
-
-        self.present(mailComposer, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(mailComposer, animated: true, completion: nil)
+        }
     }
 
 
