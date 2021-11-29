@@ -383,7 +383,7 @@ class QueensViewController: UIViewController {
         Here's my solution to the '8 Queens Puzzle':
         """, comment: "")
         +
-        "\n\(solutionLabel.text!)"
+        "\n\n\(solutionLabel.text!)"
         +
         NSLocalizedString(
         """

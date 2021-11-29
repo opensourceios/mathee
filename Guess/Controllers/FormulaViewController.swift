@@ -253,7 +253,7 @@ TextField emtpy. Please enter your current result and try again
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
-            style: .plain,
+            style: .done,
             target: self,
             action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
