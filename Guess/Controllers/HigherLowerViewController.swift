@@ -132,7 +132,7 @@ class HigherLowerViewController: UIViewController {
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
-            style: .plain,
+            style: .done,
             target: self,
             action: #selector(doneButtonPressed))
         let playAgainButton = UIBarButtonItem(
