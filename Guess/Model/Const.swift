@@ -45,6 +45,7 @@ struct Const {
         static let doneMessage = NSLocalizedString("Done", comment: "")
         static let retryMessage = NSLocalizedString("Retry", comment: "")
         static let endMessage = NSLocalizedString("Return home", comment: "")
+        static let playAgainMessage = NSLocalizedString("Play again", comment: "")
         static let oddMessage = NSLocalizedString("Odd", comment: "number")
         static let evenMessage = NSLocalizedString("Even", comment: "number")
         static let aboutMessage = NSLocalizedString("About", comment: "")

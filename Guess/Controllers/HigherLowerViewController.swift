@@ -56,6 +56,12 @@ class HigherLowerViewController: UIViewController {
     // MARK: Helpers
 
     @objc func start() {
+        high = 1001
+        low = 0
+        guess = 0
+        diff = 0
+        halfDiff = 0
+        tries = 0
         showNextGuess()
     }
 
@@ -122,23 +128,20 @@ class HigherLowerViewController: UIViewController {
 
     @objc func correct() {
 
-        switch tries {
-            case 1...10:
-                guessLabel.text = NSLocalizedString("You thought:", comment: "") + "\n" + "\(guess)"
-            default:
-                guessLabel.text = NSLocalizedString(
-                """
-Oops! It took me more than 10 tries. Please let me know this happened: dani.springer@icloud.com
-""", comment: "")
-        }
+        guessLabel.text = NSLocalizedString("Want to play again?", comment: "")
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
             style: .plain,
             target: self,
             action: #selector(doneButtonPressed))
+        let playAgainButton = UIBarButtonItem(
+            title: Const.Misc.playAgainMessage,
+            style: .plain,
+            target: self,
+            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, doneButton, space], animated: true)
+        myToolbar.setItems([playAgainButton, space, doneButton], animated: true)
     }
 
 
