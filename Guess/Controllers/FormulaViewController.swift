@@ -11,7 +11,6 @@ import UIKit
 
 class FormulaViewController: UIViewController, UITextFieldDelegate {
 
-
     // MARK: Outlets
 
     @IBOutlet weak var messageLabel: UILabel!
@@ -36,7 +35,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-
         myToolbar.setBackgroundImage(UIImage(),
                                      forToolbarPosition: .any,
                                      barMetrics: .default)
@@ -45,9 +43,25 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
         myTextField.delegate = self
-
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
+
+        start()
+    }
+
+
+    // Helpers
+
+    func helpersShould(hide: Bool) {
+        myTextField.isHidden = hide
+        helperLabel.isHidden = hide
+        helperButton.isHidden = hide
+    }
+
+    @objc func start() {
+        total = 0
+        isFirstEvenQuestion = true
+        myTextField.text = ""
         messageLabel.text = NSLocalizedString("""
         Think of a number
         """, comment: "")
@@ -61,16 +75,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myToolbar.setItems([space, okButton], animated: true)
 
         helpersShould(hide: true)
-
-    }
-
-
-    // Helpers
-
-    func helpersShould(hide: Bool) {
-        myTextField.isHidden = hide
-        helperLabel.isHidden = hide
-        helperButton.isHidden = hide
     }
 
 
@@ -195,7 +199,7 @@ Something went wrong. Please let the developers know. Error #001
             helpersShould(hide: true)
             messageLabel.text = NSLocalizedString(
             """
-                  TextField emtpy. Please enter your current result and try again
+TextField emtpy. Please enter your current result and try again
 """, comment: "")
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
@@ -238,7 +242,14 @@ Something went wrong. Please let the developers know. Error #001
     @objc func showResult() {
         myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
-        messageLabel.text = NSLocalizedString("You thought:", comment: "") + "\n" + "\(total)"
+        messageLabel.text = NSLocalizedString("You thought:", comment: "") + "\n" + "\(total)" +
+        "\n\n" + NSLocalizedString("Want to play again?", comment: "")
+
+        let playAgainButton = UIBarButtonItem(
+            title: Const.Misc.playAgainMessage,
+            style: .plain,
+            target: self,
+            action: #selector(start))
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
@@ -246,7 +257,7 @@ Something went wrong. Please let the developers know. Error #001
             target: self,
             action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, doneButton, space], animated: true)
+        myToolbar.setItems([playAgainButton, space, doneButton], animated: true)
     }
 
 
