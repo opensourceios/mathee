@@ -77,9 +77,12 @@ class QueensViewController: UIViewController {
 
         myTextView2.text = puzzleDescription
 
-        myTextView2.layer.cornerRadius = 4
+        myTextView2.layer.cornerRadius = 8
 
-        myTextView2.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        let myPadding: CGFloat = 16
+
+        myTextView2.contentInset = UIEdgeInsets(top: myPadding, left: myPadding,
+                                                bottom: myPadding, right: myPadding)
 
         let image = UIImage(systemName: "square.and.arrow.up")?.withTintColor(myThemeColor)
         let attachment = NSTextAttachment()
@@ -93,6 +96,8 @@ class QueensViewController: UIViewController {
         let attString2 = NSAttributedString(attachment: attachment2)
         myTextView2.textStorage.insert(attString2, at: 382)
         makeBoard()
+        myTextView2.setContentOffset(CGPoint(x: 0, y: -myPadding), animated: false)
+
     }
 
 
