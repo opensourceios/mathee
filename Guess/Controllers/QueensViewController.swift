@@ -16,6 +16,7 @@ class QueensViewController: UIViewController {
 
     @IBOutlet weak var solutionLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
+    @IBOutlet weak var myTextView2: UITextView!
 
 
     // MARK: Properties
@@ -23,14 +24,13 @@ class QueensViewController: UIViewController {
     var myTitle: String!
     var boardString = ""
     var shareButton = UIBarButtonItem()
-    var infoButton = UIBarButtonItem()
 
     var textColor: UIColor! = UIColor.label
 
     let puzzleDescription = NSLocalizedString("""
     Have you heard of the 8 Queens Puzzle?
 
-    The 8 Queens Puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that \
+    The 8 Queens Puzzle is the problem of placing eight chess queens on an 8x8 chessboard so that \
     no two queens threaten each other. Thus, a solution requires that no two queens share the same \
     row, column, or diagonal.
 
@@ -38,11 +38,9 @@ class QueensViewController: UIViewController {
 
     When you choose to, you can come here for a solution.
 
-    Tap the Plus button to generate a new solution.
+    Tap + to generate a new solution.
 
-    Tap the Share button to share your favorite solutions with friends and family.
-
-    Tap the Question mark button to view these instructions again later.
+    Tap Share to share your favorite solutions with friends and family.
     """, comment: "")
 
     var myThemeColor: UIColor!
@@ -75,15 +73,13 @@ class QueensViewController: UIViewController {
             target: self,
             action: #selector(shareSolution))
 
-        infoButton = UIBarButtonItem(
-            image: UIImage(systemName: "questionmark.circle"),
-            style: .plain,
-            target: self,
-            action: #selector(infoPressed))
+        navigationItem.rightBarButtonItems = [shareButton]
 
-        infoButton.accessibilityLabel = NSLocalizedString("Info", comment: "accessibility label")
+        myTextView2.text = puzzleDescription
 
-        navigationItem.rightBarButtonItems = [shareButton, infoButton]
+        myTextView2.layer.cornerRadius = 4
+
+        myTextView2.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
 
 
@@ -412,20 +408,6 @@ class QueensViewController: UIViewController {
             self.present(activityController, animated: true)
         }
 
-    }
-
-
-    @objc func infoPressed() {
-        let alert = UIAlertController(
-            title: NSLocalizedString("About This Puzzle", comment: ""),
-            message: puzzleDescription,
-            preferredStyle: .actionSheet)
-        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel, handler: nil)
-        alert.addAction(alertAction)
-
-        alert.popoverPresentationController?.barButtonItem = infoButton
-
-        present(alert, animated: true)
     }
 
 
