@@ -71,7 +71,6 @@ class BookViewController: UIViewController {
     var shuffledPagesByContent = [Page]()
     var shuffledPagesByOrder = [Page]()
     var userNumber = 0
-    var currentPageFake = 1
     var currentPageReal = 0
     var myThemeColor: UIColor!
 
@@ -128,12 +127,12 @@ class BookViewController: UIViewController {
 
 
     func showNextPage() {
-        if currentPageFake > shuffledPagesByOrder.count {
+        if currentPageReal+1 > shuffledPagesByOrder.count {
             showResult()
             return
         }
 
-        pageNumberLabel.text = NSLocalizedString("Is your number in page #", comment: "") + "\(currentPageFake)" + "?"
+        pageNumberLabel.text = NSLocalizedString("Is your number in page #", comment: "") + "\(currentPageReal+1)" + "?"
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
         let yesButton = UIBarButtonItem(
@@ -153,16 +152,13 @@ class BookViewController: UIViewController {
 
 
     @objc func addValue() {
-
         userNumber += shuffledPagesByOrder[currentPageReal].key
-        currentPageFake += 1
         currentPageReal += 1
         showNextPage()
     }
 
 
     @objc func dontAddValue() {
-        currentPageFake += 1
         currentPageReal += 1
         showNextPage()
     }
