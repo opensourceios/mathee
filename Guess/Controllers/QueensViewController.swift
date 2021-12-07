@@ -319,9 +319,8 @@ class QueensViewController: UIViewController {
 
     @objc func makeBoard() {
 
-        var current = 0
-        let limit = 1
-        while current < limit {
+        var hasWorkToDo = true
+        while hasWorkToDo {
             let positions = (0...7).shuffled()
             var index = 0
             var board = [[0, 0, 0, 0, 0, 0, 0, 0],
@@ -375,7 +374,7 @@ class QueensViewController: UIViewController {
                     }
                 }
 
-                current += 1
+                hasWorkToDo = false
             }
         }
 
