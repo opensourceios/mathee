@@ -21,7 +21,7 @@ class MagicViewController: UIViewController {
     // MARK: Properties
 
     var myTitle: String!
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemRed
 
     // MARK: Life Cicle
 

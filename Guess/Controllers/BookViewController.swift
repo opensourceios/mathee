@@ -72,7 +72,7 @@ class BookViewController: UIViewController {
     var shuffledPagesByOrder = [Page]()
     var userNumber = 0
     var currentPageReal = 0
-    var myThemeColor: UIColor!
+    let myThemeColor = UIColor.systemOrange
 
 
     // MARK: Life Cycle
@@ -176,7 +176,12 @@ class BookViewController: UIViewController {
             target: self,
             action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, doneButton, space], animated: true)
+        let playAgain = UIBarButtonItem(
+            title: Const.Misc.playAgainMessage,
+            style: .plain,
+            target: self,
+            action: #selector(playAgain))
+        myToolbar.setItems([playAgain, space, doneButton], animated: true)
     }
 
 
@@ -196,6 +201,15 @@ class BookViewController: UIViewController {
 
 
     // MARK: Actions
+
+    @objc func playAgain() {
+        self.navigationController?.popToRootViewController(animated: true)
+        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let bookVC = storyboard.instantiateViewController(
+            withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
+        self.navigationController?.pushViewController(bookVC!, animated: true)
+    }
+
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)

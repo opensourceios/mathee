@@ -41,7 +41,7 @@ class MenuViewController: UIViewController,
 
     let menuCell = "MenuCell"
 
-    let myThemeColor = UIColor.systemBlue
+    let myThemeColor: UIColor = .systemBlue
 
 
     // MARK: Life Cycle
@@ -156,7 +156,6 @@ class MenuViewController: UIViewController,
                     withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
                 if let toPresent = controller {
                     controller?.myTitle = myDataSource[indexPath.row]
-                    controller?.myThemeColor = tintColorsArray[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[1]:
@@ -164,7 +163,6 @@ class MenuViewController: UIViewController,
                     withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
                 if let toPresent = controller {
                     controller?.myTitle = myDataSource[indexPath.row]
-                    controller?.myThemeColor = tintColorsArray[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[2]:
@@ -172,7 +170,6 @@ class MenuViewController: UIViewController,
                     withIdentifier: Const.StoryboardID.queensVC) as? QueensViewController
                 if let toPresent = controller {
                     controller?.myTitle = myDataSource[indexPath.row]
-                    controller?.myThemeColor = tintColorsArray[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[3]:
@@ -180,7 +177,6 @@ class MenuViewController: UIViewController,
                     withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
                 if let toPresent = controller {
                     controller?.myTitle = myDataSource[indexPath.row]
-                    controller?.myThemeColor = tintColorsArray[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case myDataSource[4]:
@@ -188,7 +184,6 @@ class MenuViewController: UIViewController,
                     withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
                 if let toPresent = controller {
                     controller?.myTitle = myDataSource[indexPath.row]
-                    controller?.myThemeColor = tintColorsArray[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             default:
