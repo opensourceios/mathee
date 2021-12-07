@@ -43,7 +43,7 @@ class QueensViewController: UIViewController {
     Tap  to share your favorite solutions with friends and family.
     """, comment: "")
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemBlue
 
 
     // MARK: Life Cycle

@@ -25,7 +25,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     var total = 0
     var isFirstEvenQuestion = true
     var myTitle: String!
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemPurple
 
 
     // MARK: Life Cycle

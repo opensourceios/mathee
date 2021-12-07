@@ -28,7 +28,7 @@ class HigherLowerViewController: UIViewController {
     var halfDiff = 0
     var tries = 0
 
-    var myThemeColor: UIColor!
+    let myThemeColor: UIColor = .systemYellow
 
 
     // MARK: Life Cycle
