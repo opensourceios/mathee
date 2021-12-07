@@ -38,9 +38,9 @@ class QueensViewController: UIViewController {
 
     When you choose to, you can come here for a solution.
 
-    Tap + to generate a new solution.
+    Tap  to generate a new solution.
 
-    Tap Share to share your favorite solutions with friends and family.
+    Tap  to share your favorite solutions with friends and family.
     """, comment: "")
 
     var myThemeColor: UIColor!
@@ -80,6 +80,18 @@ class QueensViewController: UIViewController {
         myTextView2.layer.cornerRadius = 4
 
         myTextView2.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+
+        let image = UIImage(systemName: "square.and.arrow.up")
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        let attString = NSAttributedString(attachment: attachment)
+        myTextView2.textStorage.insert(attString, at: 416)
+
+        let image2 = UIImage(systemName: "plus")
+        let attachment2 = NSTextAttachment()
+        attachment2.image = image2
+        let attString2 = NSAttributedString(attachment: attachment2)
+        myTextView2.textStorage.insert(attString2, at: 382)
     }
 
 
