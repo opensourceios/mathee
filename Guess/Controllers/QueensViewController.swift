@@ -92,12 +92,13 @@ class QueensViewController: UIViewController {
         attachment2.image = image2
         let attString2 = NSAttributedString(attachment: attachment2)
         myTextView2.textStorage.insert(attString2, at: 382)
+        makeBoard()
     }
 
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        makeBoard()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myTextView2.flashScrollIndicators()
     }
 
 
