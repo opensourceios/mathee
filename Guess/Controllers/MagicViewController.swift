@@ -43,10 +43,25 @@ class MagicViewController: UIViewController {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         myToolbar.setItems([space, okButton], animated: true)
 
+        start()
+
     }
 
 
     // MARK: Helpers
+
+
+    @objc func start() {
+        headerLabel.text = "Think of a number.\nPrepare to be amazed."
+        let okButton = UIBarButtonItem(
+            title: Const.Misc.okMessage,
+            style: .plain,
+            target: self,
+            action: #selector(play))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        myToolbar.setItems([space, okButton], animated: true)
+    }
+
 
     @objc func play() {
         headerLabel.text = NSLocalizedString("Let's call the number you thought \"A\".\nAdd 10 to A", comment: "")
@@ -167,8 +182,13 @@ Combine the result's digits. For example, if your result is 24, do 2 + 4, and ge
             style: .plain,
             target: self,
             action: #selector(done))
+        let playAgain = UIBarButtonItem(
+            title: Const.Misc.playAgainMessage,
+            style: .plain,
+            target: self,
+            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton, space], animated: true)
+        myToolbar.setItems([playAgain, space, okButton], animated: true)
     }
 
 
@@ -179,8 +199,13 @@ Combine the result's digits. For example, if your result is 24, do 2 + 4, and ge
             style: .plain,
             target: self,
             action: #selector(done))
+        let playAgain = UIBarButtonItem(
+            title: Const.Misc.playAgainMessage,
+            style: .plain,
+            target: self,
+            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton, space], animated: true)
+        myToolbar.setItems([playAgain, space, okButton], animated: true)
     }
 
 
