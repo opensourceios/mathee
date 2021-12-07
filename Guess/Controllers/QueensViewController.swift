@@ -81,13 +81,13 @@ class QueensViewController: UIViewController {
 
         myTextView2.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
 
-        let image = UIImage(systemName: "square.and.arrow.up")
+        let image = UIImage(systemName: "square.and.arrow.up")?.withTintColor(myThemeColor)
         let attachment = NSTextAttachment()
         attachment.image = image
         let attString = NSAttributedString(attachment: attachment)
         myTextView2.textStorage.insert(attString, at: 416)
 
-        let image2 = UIImage(systemName: "plus")
+        let image2 = UIImage(systemName: "plus")?.withTintColor(myThemeColor)
         let attachment2 = NSTextAttachment()
         attachment2.image = image2
         let attString2 = NSAttributedString(attachment: attachment2)
