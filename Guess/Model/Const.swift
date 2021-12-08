@@ -11,9 +11,14 @@ import UIKit
 
 struct Const {
 
+    struct UDef {
+        static let didShowSplashScreen = "didShowSplashScreen"
+    }
+
 
     struct StoryboardID {
         static let main = "Main"
+        static let splash = "Splash"
         static let bookVC = "BookViewController"
         static let formulaVC = "FormulaViewController"
         static let higherVC = "HigherLowerViewController"
@@ -27,6 +32,7 @@ struct Const {
         static let version = NSLocalizedString("v.", comment: "")
         static let appName = NSLocalizedString("Guess", comment: "")
         static let cancel = NSLocalizedString("Cancel", comment: "")
+        static let tutorial = "Tutorial"
         static let sendFeedback = NSLocalizedString("Contact Us", comment: "")
         static let leaveReview = NSLocalizedString("Leave a Review", comment: "")
         static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
