@@ -392,6 +392,61 @@ Let me ask you a few questions...</string>
             </objects>
             <point key="canvasLocation" x="1370.625" y="1263.3802816901409"/>
         </scene>
+        <!--SplashVC-->
+        <scene sceneID="vyg-1v-PLj">
+            <objects>
+                <viewController storyboardIdentifier="Splash" id="1My-VA-KMu" customClass="SplashVC" customModule="Guess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uND-US-hrd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳 Guess What?" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goW-7U-3AC">
+                                <rect key="frame" x="16" y="60" width="343" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yO-zb-kIF">
+                                <rect key="frame" x="327" y="60" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2yO-zb-kIF" secondAttribute="height" id="hTO-d6-sI7"/>
+                                    <constraint firstAttribute="width" constant="32" id="oEi-ZR-uQw"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="1My-VA-KMu" eventType="touchUpInside" id="yqQ-FO-x9F"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="welcome welcome" translatesAutoresizingMaskIntoConstraints="NO" id="YSo-IO-yGV">
+                                <rect key="frame" x="16" y="129" width="343" height="649"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qDX-J2-bnn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YSo-IO-yGV" firstAttribute="top" secondItem="goW-7U-3AC" secondAttribute="bottom" constant="32" id="39e-gC-ygA"/>
+                            <constraint firstItem="2yO-zb-kIF" firstAttribute="top" secondItem="qDX-J2-bnn" secondAttribute="top" constant="16" id="98N-9k-Plg"/>
+                            <constraint firstItem="goW-7U-3AC" firstAttribute="top" secondItem="qDX-J2-bnn" secondAttribute="top" constant="16" id="EKD-IE-oRn"/>
+                            <constraint firstItem="goW-7U-3AC" firstAttribute="leading" secondItem="qDX-J2-bnn" secondAttribute="leading" constant="16" id="EbW-fT-92e"/>
+                            <constraint firstItem="qDX-J2-bnn" firstAttribute="trailing" secondItem="YSo-IO-yGV" secondAttribute="trailing" constant="16" id="M0c-id-Jje"/>
+                            <constraint firstItem="qDX-J2-bnn" firstAttribute="trailing" secondItem="goW-7U-3AC" secondAttribute="trailing" constant="16" id="VQH-iy-DpS"/>
+                            <constraint firstItem="qDX-J2-bnn" firstAttribute="leading" secondItem="YSo-IO-yGV" secondAttribute="leading" constant="-16" id="XSy-4g-Nrf"/>
+                            <constraint firstItem="qDX-J2-bnn" firstAttribute="bottom" secondItem="YSo-IO-yGV" secondAttribute="bottom" id="a3z-Tb-gid"/>
+                            <constraint firstItem="qDX-J2-bnn" firstAttribute="trailing" secondItem="2yO-zb-kIF" secondAttribute="trailing" constant="16" id="smW-wI-50N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="YSo-IO-yGV" id="wLE-a1-RPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agG-P3-1Kz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2724" y="678"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
