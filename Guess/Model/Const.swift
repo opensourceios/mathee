@@ -42,8 +42,9 @@ struct Const {
         static let devID = "1402417666"
         static let appsLink = "https://itunes.apple.com/developer/id1402417666"
         static let shareBodyMessage = NSLocalizedString("""
-        Amaze your friends when you guess any number they think of, by secretly using this app! \
-        Check it out: https://itunes.apple.com/app/id1406084758
+        Amaze your friends when you guess any number they think of
+
+        https://itunes.apple.com/app/id1406084758
         """, comment: "")
         static let yesMessage = NSLocalizedString("Yes", comment: "")
         static let noMessage = NSLocalizedString("No", comment: "")
