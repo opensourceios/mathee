@@ -142,7 +142,7 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return NSLocalizedString("Amaze Your Friends", comment: "header")
+            return NSLocalizedString("Think of a Number", comment: "header")
         } else {
             fatalError()
         }
