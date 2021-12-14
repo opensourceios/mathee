@@ -11,14 +11,9 @@ import UIKit
 
 struct Const {
 
-    struct UDef {
-        static let didShowSplashScreen = "didShowSplashScreen"
-    }
-
 
     struct StoryboardID {
         static let main = "Main"
-        static let splash = "Splash"
         static let bookVC = "BookViewController"
         static let formulaVC = "FormulaViewController"
         static let higherVC = "HigherLowerViewController"
