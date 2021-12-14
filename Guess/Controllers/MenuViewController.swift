@@ -66,17 +66,6 @@ class MenuViewController: UIViewController,
     }
 
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        if !UserDefaults.standard.bool(forKey: Const.UDef.didShowSplashScreen) {
-            #warning("uncomment below line")
-            //UserDefaults.standard.set(true, forKey: Const.UDef.didShowSplashScreen)
-            showTutorial()
-        }
-    }
-
-
     // MARK: Create menu
 
     func infoMenu() -> UIMenu {
@@ -97,10 +86,6 @@ class MenuViewController: UIViewController,
             self.showApps()
         }
 
-        let tutorial = UIAction(title: Const.Misc.tutorial, image: UIImage(systemName: "info.circle"),
-                                state: .off) { _ in
-            self.showTutorial()
-        }
 
         let version: String? = Bundle.main.infoDictionary![Const.Misc.appVersion] as? String
         var myTitle = Const.Misc.appName
@@ -109,7 +94,7 @@ class MenuViewController: UIViewController,
         }
 
         let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
-                              children: [tutorial, contact, review, shareApp, moreApps])
+                              children: [contact, review, shareApp, moreApps])
         return infoMenu
     }
 
@@ -128,13 +113,6 @@ class MenuViewController: UIViewController,
 
         UIApplication.shared.open(safeURL, options: [:], completionHandler: nil)
 
-    }
-
-
-    func showTutorial() {
-        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-        let tutorialVC = storyboard.instantiateViewController(withIdentifier: Const.StoryboardID.splash)
-        present(tutorialVC, animated: true)
     }
 
 
