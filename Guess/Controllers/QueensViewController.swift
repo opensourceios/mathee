@@ -406,7 +406,7 @@ class QueensViewController: UIViewController {
          The '8 Queens Puzzle' is the problem of placing eight chess queens on an 8×8 chessboard so \
          that no two queens threaten each other. Thus, a solution requires that no two queens share \
          the same row, column, or diagonal. See more solutions to this puzzle - and more games - \
-         here: https://itunes.apple.com/app/id1406084758
+         here: https://apps.apple.com/app/id1406084758
         """, comment: "")
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButton
