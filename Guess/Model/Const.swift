@@ -32,14 +32,14 @@ struct Const {
         static let leaveReview = NSLocalizedString("Leave a Review", comment: "")
         static let emailSample = NSLocalizedString("Hi. I have a question...", comment: "")
         static let emailAddress = "dani.springer@icloud.com"
-        static let reviewLink = "https://itunes.apple.com/app/id1406084758?action=write-review"
+        static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
         static let showAppsButtonTitle = NSLocalizedString("More Apps", comment: "")
         static let devID = "1402417666"
-        static let appsLink = "https://itunes.apple.com/developer/id1402417666"
+        static let appsLink = "https://apps.apple.com/developer/id1402417666"
         static let shareBodyMessage = NSLocalizedString("""
         Amaze your friends when you guess any number they think of
 
-        https://itunes.apple.com/app/id1406084758
+        https://apps.apple.com/app/id1406084758
         """, comment: "")
         static let yesMessage = NSLocalizedString("Yes", comment: "")
         static let noMessage = NSLocalizedString("No", comment: "")
