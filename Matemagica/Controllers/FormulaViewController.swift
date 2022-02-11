@@ -1,6 +1,6 @@
 //
 //  FormulaViewController.swift
-//  Guess
+//  Matemagica
 //
 //  Created by Daniel Springer on 01/07/2018.
 //  Copyright © 2021 Daniel Springer. All rights reserved.

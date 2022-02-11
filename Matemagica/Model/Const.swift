@@ -1,6 +1,6 @@
 //
 //  Const.swift
-//  Guess
+//  Matemagica
 //
 //  Created by Daniel Springer on 11/26/18.
 //  Copyright © 2021 Daniel Springer. All rights reserved.
@@ -25,7 +25,7 @@ struct Const {
     struct Misc {
         static let appVersion = "CFBundleShortVersionString"
         static let version = NSLocalizedString("v.", comment: "")
-        static let appName = NSLocalizedString("Guess", comment: "")
+        static let appName = NSLocalizedString("Matemagica", comment: "")
         static let cancel = NSLocalizedString("Cancel", comment: "")
         static let tutorial = "Tutorial"
         static let sendFeedback = NSLocalizedString("Contact Us", comment: "")

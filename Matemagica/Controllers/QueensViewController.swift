@@ -1,6 +1,6 @@
 //
 //  QueensViewController.swift
-//  Guess
+//  Matemagica
 //
 //  Created by Daniel Springer on 11/27/18.
 //  Copyright © 2021 Daniel Springer. All rights reserved.

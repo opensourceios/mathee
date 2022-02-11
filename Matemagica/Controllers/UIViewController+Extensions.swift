@@ -1,6 +1,6 @@
 //
 //  UIViewController+Extensions.swift
-//  Guess
+//  Matemagica
 //
 //  Created by Dani on 9/16/21.
 //  Copyright © 2021 Dani Springer. All rights reserved.
