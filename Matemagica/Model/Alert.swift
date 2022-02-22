@@ -23,14 +23,14 @@ extension UIViewController {
         var alertMessage = ""
         switch alertReasonParam {
         default:
-            alertTitle = NSLocalizedString("Unknown error", comment: "")
-            alertMessage = NSLocalizedString("""
+            alertTitle = "Unknown error"
+            alertMessage = """
             An unknown error occurred. Please try again later, or contact us at dani.springer@icloud.com
-            """, comment: "")
+            """
         }
 
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(alertAction)
 
         return alert

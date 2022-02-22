@@ -62,9 +62,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         total = 0
         isFirstEvenQuestion = true
         myTextField.text = ""
-        messageLabel.text = NSLocalizedString("""
+        messageLabel.text = """
         Think of a number
-        """, comment: "")
+        """
 
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
@@ -79,7 +79,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
 
     @objc func timesThree() {
-        messageLabel.text = NSLocalizedString("Multiply it by 3", comment: "")
+        messageLabel.text = "Multiply it by 3"
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
@@ -91,7 +91,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
 
     @objc func oddOrEven() {
-        messageLabel.text = NSLocalizedString("Is the result odd or even?", comment: "")
+        messageLabel.text = "Is the result odd or even?"
         let oddButton = UIBarButtonItem(
             title: Const.Misc.oddMessage,
             style: .plain,
@@ -111,7 +111,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func addOne() {
         // tell user to add one
-        messageLabel.text = NSLocalizedString("Add 1 to the result", comment: "")
+        messageLabel.text = "Add 1 to the result"
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
@@ -129,7 +129,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
 
     @objc func divideByTwo() {
-        messageLabel.text = NSLocalizedString("Divide the result by 2", comment: "")
+        messageLabel.text = "Divide the result by 2"
         var okButton = UIBarButtonItem()
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
@@ -154,7 +154,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func divideByNine() {
         // tell user to divide by nine
-        messageLabel.text = NSLocalizedString("Divide the result by 9, throwing away any remainder", comment: "")
+        messageLabel.text = "Divide the result by 9, throwing away any remainder"
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
@@ -180,10 +180,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         guard let text = myTextField.text else {
             helpersShould(hide: true)
 
-            messageLabel.text = NSLocalizedString(
+            messageLabel.text =
             """
 Something went wrong. Please let the developers know. Error #001
-""", comment: "")
+"""
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
                 style: .plain,
@@ -197,10 +197,10 @@ Something went wrong. Please let the developers know. Error #001
 
         guard !text.isEmpty else {
             helpersShould(hide: true)
-            messageLabel.text = NSLocalizedString(
+            messageLabel.text =
             """
 TextField emtpy. Please enter your current result and try again
-""", comment: "")
+"""
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
                 style: .plain,
@@ -217,11 +217,11 @@ TextField emtpy. Please enter your current result and try again
         guard let number = Int(trimmedText),
               !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
                   helpersShould(hide: true)
-                  messageLabel.text = NSLocalizedString("""
+                  messageLabel.text = """
             Please enter numbers only
             No text
             Max number: 2305843009213693951
-            """, comment: "")
+            """
                   let retryButton = UIBarButtonItem(
                     title: Const.Misc.retryMessage,
                     style: .plain,
@@ -242,8 +242,8 @@ TextField emtpy. Please enter your current result and try again
     @objc func showResult() {
         myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
-        messageLabel.text = NSLocalizedString("You thought:", comment: "") + "\n" + "\(total)" +
-        "\n\n" + NSLocalizedString("Want to play again?", comment: "")
+        messageLabel.text = "You thought:" + "\n" + "\(total)" +
+        "\n\n" + "Want to play again?"
 
         let playAgainButton = UIBarButtonItem(
             title: Const.Misc.playAgainMessage,

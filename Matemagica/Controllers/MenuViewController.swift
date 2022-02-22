@@ -23,11 +23,11 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = [NSLocalizedString("The Magic Formula", comment: ""),
-                        NSLocalizedString("Book", comment: ""),
-                        NSLocalizedString("The Chess Puzzle", comment: ""),
-                        NSLocalizedString("Higher Lower", comment: ""),
-                        NSLocalizedString("MatheMagic", comment: "")]
+    let myDataSource = ["The Magic Formula",
+                        "Book",
+                        "The Chess Puzzle",
+                        "Higher Lower",
+                        "MatheMagic"]
     let myImageSource = ["plus.slash.minus", "book", "8.square",
                          "arrow.up.arrow.down", "wand.and.stars"]
 
@@ -63,6 +63,8 @@ class MenuViewController: UIViewController,
 
         aboutButton.menu = infoMenu()
         aboutButton.image = UIImage(systemName: "ellipsis.circle")
+
+        myTableView.reloadData()
     }
 
 
@@ -86,6 +88,11 @@ class MenuViewController: UIViewController,
             self.showApps()
         }
 
+        let donate = UIAction(title: Const.Misc.donate, image: UIImage(systemName: "checkmark.seal"),
+                                state: .off) { _ in
+            self.donate()
+        }
+
 
         let version: String? = Bundle.main.infoDictionary![Const.Misc.appVersion] as? String
         var myTitle = Const.Misc.appName
@@ -94,8 +101,15 @@ class MenuViewController: UIViewController,
         }
 
         let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
-                              children: [contact, review, shareApp, moreApps])
+                              children: [donate, contact, review, shareApp, moreApps])
         return infoMenu
+    }
+
+
+    func donate() {
+        let controller = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+            .instantiateViewController(withIdentifier: Const.StoryboardID.storeVC) as! StoreViewController
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 
@@ -120,11 +134,20 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return NSLocalizedString("Think of a Number", comment: "header")
+            let isSupporter = UserDefaults.standard.bool(forKey: Const.Misc.isSupporter)
+
+            let myEmojis = ["🤩", "🥳", "😎", "🤝", "🥲", "💪", "🙌", "🎉"]
+
+            let randomEmoji = myEmojis.randomElement()!
+
+            let myString = isSupporter ? "Your Status: Supporter \(randomEmoji)" :
+            "Status: none (become a supporter!) 🙏"
+            return myString
         } else {
             fatalError()
         }
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myDataSource.count
