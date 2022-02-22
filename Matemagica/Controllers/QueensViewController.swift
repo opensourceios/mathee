@@ -429,4 +429,3 @@ class QueensViewController: UIViewController {
 
 
 }
-
