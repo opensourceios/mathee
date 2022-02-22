@@ -80,33 +80,33 @@ class HigherLowerViewController: UIViewController {
         guess = low + halfDiff
 
         guessLabel.isHidden = false
-        guessLabel.text = NSLocalizedString("Is it ", comment: "") + "\(guess)?"
+        guessLabel.text = "Is it " + "\(guess)?"
 
         let lowerButton = UIBarButtonItem(
             image: UIImage(systemName: "arrow.down.circle"),
             style: .plain,
             target: self,
             action: #selector(lower))
-        lowerButton.accessibilityLabel = NSLocalizedString("Go lower", comment: "accessibility")
+        lowerButton.accessibilityLabel = "Go lower"
 
         let higherButton = UIBarButtonItem(
             image: UIImage(systemName: "arrow.up.circle"),
             style: .plain,
             target: self,
             action: #selector(higher))
-        higherButton.accessibilityLabel = NSLocalizedString("Go higher", comment: "accessibility")
+        higherButton.accessibilityLabel = "Go higher"
 
         let yesButton = UIBarButtonItem(
             image: UIImage(systemName: "checkmark.circle"),
             style: .plain,
             target: self,
             action: #selector(correct))
-        yesButton.accessibilityLabel = NSLocalizedString("Correct", comment: "accessibility")
+        yesButton.accessibilityLabel = "Correct"
 
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
         if halfDiff == 1 {
-            guessLabel.text = NSLocalizedString("You thought: ", comment: "") + "\(guess)"
+            guessLabel.text = "You thought: " + "\(guess)"
             myToolbar.setItems([space, yesButton, space], animated: true)
         } else {
             myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
@@ -128,7 +128,7 @@ class HigherLowerViewController: UIViewController {
 
     @objc func correct() {
 
-        guessLabel.text = NSLocalizedString("Want to play again?", comment: "")
+        guessLabel.text = "Want to play again?"
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,

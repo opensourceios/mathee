@@ -27,7 +27,7 @@ class QueensViewController: UIViewController {
 
     var textColor: UIColor! = UIColor.label
 
-    let puzzleDescription = NSLocalizedString("""
+    let puzzleDescription = """
     Have you heard of the 8 Queens Puzzle?
 
     The 8 Queens Puzzle is the problem of placing eight chess queens on an 8x8 chessboard so that \
@@ -41,7 +41,7 @@ class QueensViewController: UIViewController {
     Tap  to generate a new solution.
 
     Tap  to share your favorite solutions with friends and family.
-    """, comment: "")
+    """
 
     let myThemeColor: UIColor = .systemBlue
 
@@ -391,14 +391,14 @@ class QueensViewController: UIViewController {
 
     @objc func shareSolution() {
 
-        let message = NSLocalizedString(
+        let message =
         """
         Here's my solution to the '8 Queens Puzzle':
-        """, comment: "")
+        """
         +
         "\n\n\(solutionLabel.text!)"
         +
-        NSLocalizedString(
+
         """
 
         (What's this?)
@@ -407,7 +407,7 @@ class QueensViewController: UIViewController {
          that no two queens threaten each other. Thus, a solution requires that no two queens share \
          the same row, column, or diagonal. See more solutions to this puzzle - and more games - \
          here: https://apps.apple.com/app/id1406084758
-        """, comment: "")
+        """
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = shareButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
@@ -429,3 +429,4 @@ class QueensViewController: UIViewController {
 
 
 }
+

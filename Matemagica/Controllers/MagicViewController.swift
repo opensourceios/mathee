@@ -64,7 +64,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func play() {
-        headerLabel.text = NSLocalizedString("Let's call the number you thought \"A\".\nAdd 10 to A", comment: "")
+        headerLabel.text = "Let's call the number you thought \"A\".\nAdd 10 to A"
 
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
@@ -77,10 +77,10 @@ class MagicViewController: UIViewController {
 
 
     @objc func combineFirst() {
-        headerLabel.text = NSLocalizedString("""
+        headerLabel.text = """
         Let's call the result of A + 10, "B".\nCombine the digits of B.\nFor example, \
         if B is 24, do 2 + 4, and you get 6
-        """, comment: "")
+        """
 
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
@@ -93,10 +93,10 @@ class MagicViewController: UIViewController {
 
 
     @objc func subtract() {
-        headerLabel.text = NSLocalizedString("""
+        headerLabel.text = """
         Let's call the result of B's combined digits "C".\nDo B - C.\nFor example, \
         if you had 24 and got 6, do 24 - 6, and you get 18
-        """, comment: "")
+        """
 
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
@@ -109,9 +109,9 @@ class MagicViewController: UIViewController {
 
 
     @objc func checkFirst() {
-        headerLabel.text = NSLocalizedString("""
+        headerLabel.text = """
 Let's call the result of B - C, \"D\".\nIs D a single digit?
-""", comment: "")
+"""
         let yesButton = UIBarButtonItem(
             title: Const.Misc.yesMessage,
             style: .plain,
@@ -128,10 +128,10 @@ Let's call the result of B - C, \"D\".\nIs D a single digit?
 
 
     @objc func combineSecond() {
-        headerLabel.text = NSLocalizedString(
+        headerLabel.text =
 """
 Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
-""", comment: "")
+"""
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
@@ -143,7 +143,7 @@ Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
 
 
     @objc func checkForever() {
-        headerLabel.text = NSLocalizedString("Is the new result a single digit?", comment: "")
+        headerLabel.text = "Is the new result a single digit?"
         let yesButton = UIBarButtonItem(
             title: Const.Misc.yesMessage,
             style: .plain,
@@ -161,10 +161,10 @@ Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
 
 
     @objc func combineForever() {
-        headerLabel.text = NSLocalizedString(
+        headerLabel.text =
             """
 Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6
-""", comment: "")
+"""
         let okButton = UIBarButtonItem(
             title: Const.Misc.okMessage,
             style: .plain,
@@ -176,7 +176,7 @@ Combine the result's digits. For example, if your result is 24, do 2 + 4, and ge
 
 
     @objc func showResultFirst() {
-        headerLabel.text = NSLocalizedString("D is 9", comment: "")
+        headerLabel.text = "D is 9"
         let okButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
             style: .plain,
@@ -193,7 +193,7 @@ Combine the result's digits. For example, if your result is 24, do 2 + 4, and ge
 
 
     @objc func showResultFinally() {
-        headerLabel.text = NSLocalizedString("It's 9", comment: "")
+        headerLabel.text = "It's 9"
         let okButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
             style: .plain,
