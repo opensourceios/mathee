@@ -73,10 +73,6 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
             }
         }
 
-        // TODO: remove me!
-        UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
-        updateUI()
-
     }
 
 }
