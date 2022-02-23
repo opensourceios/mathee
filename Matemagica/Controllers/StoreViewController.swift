@@ -62,7 +62,6 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
 
 
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-
         for transaction in transactions {
             if transaction.transactionState == .purchased {
                 UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
@@ -72,6 +71,10 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
                 // TODO: alert user?
             }
         }
+//
+//        // TODO: remove me
+//        UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
+//        updateUI()
 
     }
 
