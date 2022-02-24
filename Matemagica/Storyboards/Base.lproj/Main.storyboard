@@ -180,12 +180,21 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hTg-oh-uar">
-                                <rect key="frame" x="16" y="232" width="343" height="29"/>
+                                <rect key="frame" x="172.66666666666666" y="232" width="30" height="29"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Buy"/>
                                 <connections>
                                     <action selector="buyPressed:" destination="0Sa-uN-Dno" eventType="touchUpInside" id="Q54-zr-iVV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Mhv-r9-KD3">
+                                <rect key="frame" x="127" y="293" width="121" height="29"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Restore Purchases"/>
+                                <connections>
+                                    <action selector="restorePressed:" destination="0Sa-uN-Dno" eventType="touchUpInside" id="bPd-2Z-qQS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,11 +206,16 @@ Prepare to be amazed.</string>
                             <constraint firstItem="gO3-dw-euF" firstAttribute="top" secondItem="pj6-SK-52n" secondAttribute="top" id="D3j-1Y-p9A"/>
                             <constraint firstItem="gO3-dw-euF" firstAttribute="leading" secondItem="pj6-SK-52n" secondAttribute="leading" constant="16" id="JiI-eb-UpX"/>
                             <constraint firstItem="hTg-oh-uar" firstAttribute="top" secondItem="hGK-P9-HpW" secondAttribute="bottom" constant="32" id="M2v-xW-KTK"/>
+                            <constraint firstItem="Mhv-r9-KD3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pj6-SK-52n" secondAttribute="leading" constant="16" id="QJr-2R-6MY"/>
                             <constraint firstItem="hGK-P9-HpW" firstAttribute="top" secondItem="gO3-dw-euF" secondAttribute="bottom" constant="64" id="Rgk-r8-69M"/>
-                            <constraint firstItem="pj6-SK-52n" firstAttribute="trailing" secondItem="hTg-oh-uar" secondAttribute="trailing" constant="16" id="cex-E5-NcK"/>
-                            <constraint firstItem="hTg-oh-uar" firstAttribute="leading" secondItem="pj6-SK-52n" secondAttribute="leading" constant="16" id="mFE-m0-NPg"/>
+                            <constraint firstItem="pj6-SK-52n" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Mhv-r9-KD3" secondAttribute="bottom" constant="16" id="XFG-QL-MT4"/>
+                            <constraint firstItem="Mhv-r9-KD3" firstAttribute="centerX" secondItem="pj6-SK-52n" secondAttribute="centerX" id="Yyq-QF-Iq3"/>
+                            <constraint firstItem="pj6-SK-52n" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hTg-oh-uar" secondAttribute="trailing" constant="16" id="cex-E5-NcK"/>
+                            <constraint firstItem="Mhv-r9-KD3" firstAttribute="top" secondItem="hTg-oh-uar" secondAttribute="bottom" constant="32" id="i0Q-qh-TzA"/>
+                            <constraint firstItem="hTg-oh-uar" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pj6-SK-52n" secondAttribute="leading" constant="16" id="mFE-m0-NPg"/>
                             <constraint firstItem="pj6-SK-52n" firstAttribute="trailing" secondItem="hGK-P9-HpW" secondAttribute="trailing" constant="16" id="qaz-8U-Won"/>
-                            <constraint firstItem="pj6-SK-52n" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hTg-oh-uar" secondAttribute="bottom" constant="16" id="sVi-S7-n9W"/>
+                            <constraint firstItem="pj6-SK-52n" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mhv-r9-KD3" secondAttribute="trailing" constant="16" id="sai-gA-aIu"/>
+                            <constraint firstItem="hTg-oh-uar" firstAttribute="centerX" secondItem="pj6-SK-52n" secondAttribute="centerX" id="tIA-bx-fhv"/>
                         </constraints>
                     </view>
                     <connections>
@@ -211,7 +225,7 @@ Prepare to be amazed.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsu-hc-bHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="-220"/>
+            <point key="canvasLocation" x="-178.40000000000001" y="-220.19704433497537"/>
         </scene>
         <!--Book View Controller-->
         <scene sceneID="N7b-KI-OfH">

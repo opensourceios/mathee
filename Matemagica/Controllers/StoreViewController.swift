@@ -2,8 +2,8 @@
 //  StoreViewController.swift
 //  Matemagica
 //
-//  Created by dani on 2/21/22.
-//  Copyright © 2022 Dani Springer. All rights reserved.
+//  Created by Daniel Springer on 2/21/22.
+//  Copyright © 2022 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -56,7 +56,10 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
             transactionRequest.productIdentifier = Const.Misc.iAPID
             SKPaymentQueue.default().add(transactionRequest)
         } else {
-            print("User cannot make purchase") // TODO: alert?
+            print("User cannot make purchase")
+            let alert = createAlert(alertReasonParam: .iap)
+            alert.message?.append("Line: \(#line)")
+            present(alert, animated: true)
         }
     }
 
@@ -64,18 +67,26 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             if transaction.transactionState == .purchased {
+                print("purchased")
                 UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
                 updateUI()
             } else if transaction.transactionState == .failed {
                 print("failed")
-                // TODO: alert user?
+                let alert = createAlert(alertReasonParam: .iap)
+                alert.message?.append("Line: \(#line)")
+                present(alert, animated: true)
+            } else if transaction.transactionState == .restored {
+                print("restored")
+                UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
+                updateUI()
             }
         }
-//
-//        // TODO: remove me
-//        UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
-//        updateUI()
-
     }
+
+
+    @IBAction func restorePressed(_ sender: Any) {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+
 
 }

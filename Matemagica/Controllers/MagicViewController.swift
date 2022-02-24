@@ -3,7 +3,7 @@
 //  Matemagica
 //
 //  Created by Daniel Springer on 05/07/2018.
-//  Copyright © 2021 Daniel Springer. All rights reserved.
+//  Copyright © 2022 Daniel Springer. All rights reserved.
 //
 
 import UIKit
