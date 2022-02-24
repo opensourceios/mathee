@@ -36,6 +36,7 @@
 		33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 		3350E55C20F1DDF70093FC96 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		33568B7620EC96B300690825 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		335ABAD027C5C826009F1DB2 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		3388BFDC22E17644005B148B /* FormulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaViewController.swift; sourceTree = "<group>"; };
 		33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HigherLowerViewController.swift; sourceTree = "<group>"; };
 		33B9FDC620EDDA8200131038 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		3319088120E8772E007C679C = {
 			isa = PBXGroup;
 			children = (
+				335ABAD027C5C826009F1DB2 /* Configuration.storekit */,
 				3319088D20E8772E007C679C /* AppDelegate.swift */,
 				3319088C20E8772E007C679C /* Matemagica */,
 				3319088B20E8772E007C679C /* Products */,
@@ -407,7 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.3;
+				MARKETING_VERSION = 7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -428,7 +430,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.3;
+				MARKETING_VERSION = 7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
