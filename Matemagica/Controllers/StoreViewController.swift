@@ -71,10 +71,10 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
                 UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
                 updateUI()
             } else if transaction.transactionState == .failed {
-                print("\(transaction.error!)")
+                print("\(transaction.error.debugDescription)")
                 let alert = createAlert(alertReasonParam: .iap)
                 alert.message?.append("\nLine: \(#line)")
-                alert.message?.append("\n\(transaction.error!)")
+                alert.message?.append("\n\(transaction.error?.localizedDescription ?? "no value")")
                 present(alert, animated: true)
             } else if transaction.transactionState == .restored {
                 print("restored")
