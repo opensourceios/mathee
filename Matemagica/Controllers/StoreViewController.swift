@@ -58,7 +58,7 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
         } else {
             print("User cannot make purchase")
             let alert = createAlert(alertReasonParam: .iap)
-            alert.message?.append("Line: \(#line)")
+            alert.message?.append("\nLine: \(#line)")
             present(alert, animated: true)
         }
     }
@@ -71,9 +71,10 @@ class StoreViewController: UIViewController, SKPaymentTransactionObserver {
                 UserDefaults.standard.set(true, forKey: Const.Misc.isSupporter)
                 updateUI()
             } else if transaction.transactionState == .failed {
-                print("failed")
+                print("\(transaction.error!)")
                 let alert = createAlert(alertReasonParam: .iap)
-                alert.message?.append("Line: \(#line)")
+                alert.message?.append("\nLine: \(#line)")
+                alert.message?.append("\n\(transaction.error!)")
                 present(alert, animated: true)
             } else if transaction.transactionState == .restored {
                 print("restored")
