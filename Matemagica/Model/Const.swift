@@ -19,19 +19,14 @@ struct Const {
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
         static let queensVC = "QueensViewController"
-        static let storeVC = "StoreViewController"
     }
 
 
     struct Misc {
-        static let iAPID = "supporter.matemagica"
-        static let donate = "Become a Supporter"
-        static let isSupporter = "isSupporter"
         static let appVersion = "CFBundleShortVersionString"
         static let version = "v."
         static let appName = "Matemagica"
         static let cancel = "Cancel"
-        static let tutorial = "Tutorial"
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
         static let emailSample = "Hi. I have a question..."

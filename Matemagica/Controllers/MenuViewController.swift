@@ -88,11 +88,6 @@ class MenuViewController: UIViewController,
             self.showApps()
         }
 
-        let donate = UIAction(title: Const.Misc.donate, image: UIImage(systemName: "checkmark.seal"),
-                                state: .off) { _ in
-            self.donate()
-        }
-
 
         let version: String? = Bundle.main.infoDictionary![Const.Misc.appVersion] as? String
         var myTitle = Const.Misc.appName
@@ -101,15 +96,8 @@ class MenuViewController: UIViewController,
         }
 
         let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
-                              children: [donate, contact, review, shareApp, moreApps])
+                              children: [contact, review, shareApp, moreApps])
         return infoMenu
-    }
-
-
-    func donate() {
-        let controller = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
-            .instantiateViewController(withIdentifier: Const.StoryboardID.storeVC) as! StoreViewController
-        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 
@@ -131,23 +119,6 @@ class MenuViewController: UIViewController,
 
 
     // MARK: TableView Delegate
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            let isSupporter = UserDefaults.standard.bool(forKey: Const.Misc.isSupporter)
-
-            let myEmojis = ["🤩", "🥳", "😎", "🤝", "🥲", "💪", "🙌", "🎉"]
-
-            let randomEmoji = myEmojis.randomElement()!
-
-            let myString = isSupporter ? "Your Status: Supporter \(randomEmoji)" :
-            "Status: none (become a supporter!) 🙏"
-            return myString
-        } else {
-            fatalError()
-        }
-    }
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myDataSource.count
