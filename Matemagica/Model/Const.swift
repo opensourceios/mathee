@@ -30,7 +30,7 @@ struct Const {
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
         static let emailSample = "Hi. I have a question..."
-        static let emailAddress = "dani.springer@icloud.com"
+        static let emailAddress = "00.segue_affix@icloud.com"
         static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
         static let showAppsButtonTitle = "More Apps"
         static let devID = "1402417666"

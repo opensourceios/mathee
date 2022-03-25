@@ -14,7 +14,6 @@ extension UIViewController {
 
     enum AlertReason {
         case unknown
-        case iap
     }
 
 
@@ -23,15 +22,10 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-            case .iap:
-                alertTitle = "Purchase Or Restore failed"
-                alertMessage = """
-                Please send me a screenshot of this error at dani.springer@icloud.com and contact Apple for support
-                """
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """
-            An unknown error occurred. Please try again later, or contact us at dani.springer@icloud.com
+            An unknown error occurred. Please try again later, or contact us at \(Const.Misc.emailAddress)
             """
         }
 
