@@ -216,22 +216,22 @@ TextField emtpy. Please enter your current result and try again
 
         guard let number = Int(trimmedText),
               !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
-                  helpersShould(hide: true)
-                  messageLabel.text = """
+            helpersShould(hide: true)
+            messageLabel.text = """
             Please enter numbers only
             No text
             Max number: 2305843009213693951
             """
-                  let retryButton = UIBarButtonItem(
-                    title: Const.Misc.retryMessage,
-                    style: .plain,
-                    target: self,
-                    action: #selector(askResult))
+            let retryButton = UIBarButtonItem(
+                title: Const.Misc.retryMessage,
+                style: .plain,
+                target: self,
+                action: #selector(askResult))
 
-                  let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-                  myToolbar.setItems([space, retryButton], animated: true)
-                  return
-              }
+            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            myToolbar.setItems([space, retryButton], animated: true)
+            return
+        }
 
 
         total += number * 4
