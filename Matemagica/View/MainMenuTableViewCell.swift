@@ -13,6 +13,6 @@ class MainMenuTableViewCell: UITableViewCell {
     // MARK: Outlets
 
     @IBOutlet weak var myLabel: UILabel!
-    @IBOutlet weak var myImageView: UIImageView!
-
+    @IBOutlet weak var newImageView: UIImageView!
+    @IBOutlet weak var imageViewContainer: UIView!
 }
