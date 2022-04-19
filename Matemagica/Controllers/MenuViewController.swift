@@ -125,19 +125,6 @@ class MenuViewController: UIViewController,
     }
 
 
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-//
-//        cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
-//        cell.myImageView.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-//        cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
-//        cell.selectionStyle = .none
-//        cell.accessoryType = .disclosureIndicator
-//
-//        return cell
-//    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
