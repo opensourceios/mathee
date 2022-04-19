@@ -125,14 +125,29 @@ class MenuViewController: UIViewController,
     }
 
 
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
+//
+//        cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
+//        cell.myImageView.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
+//        cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
+//        cell.selectionStyle = .none
+//        cell.accessoryType = .disclosureIndicator
+//
+//        return cell
+//    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-
         cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
-        cell.myImageView.image = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row])
-        cell.myImageView.tintColor = tintColorsArray[(indexPath as NSIndexPath).row]
-        cell.selectionStyle = .none
+        let aConfig = UIImage.SymbolConfiguration(weight: .bold)
+        let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row], withConfiguration: aConfig)
+        cell.newImageView.image = aImage
+        cell.newImageView.tintColor = .white
+        cell.imageViewContainer.backgroundColor = tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
         return cell
