@@ -16,7 +16,7 @@ class QueensViewController: UIViewController {
 
     @IBOutlet weak var solutionLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
-    @IBOutlet weak var myTextView2: UITextView!
+    @IBOutlet weak var myTextView: UITextView!
 
 
     // MARK: Properties
@@ -75,40 +75,41 @@ class QueensViewController: UIViewController {
 
         navigationItem.rightBarButtonItems = [shareButton]
 
-        myTextView2.text = puzzleDescription
+        myTextView.text = puzzleDescription
 
-        myTextView2.layer.cornerRadius = 8
+        myTextView.layer.cornerRadius = 8
 
         let myPadding: CGFloat = 16
 
-        myTextView2.contentInset = UIEdgeInsets(top: myPadding, left: myPadding,
+        myTextView.contentInset = UIEdgeInsets(top: myPadding, left: myPadding,
                                                 bottom: myPadding, right: myPadding)
 
         let image = UIImage(systemName: "square.and.arrow.up")?.withTintColor(myThemeColor)
         let attachment = NSTextAttachment()
         attachment.image = image
         let attString = NSAttributedString(attachment: attachment)
-        myTextView2.textStorage.insert(attString, at: 416)
+        myTextView.textStorage.insert(attString, at: 416)
 
         let image2 = UIImage(systemName: "plus")?.withTintColor(myThemeColor)
         let attachment2 = NSTextAttachment()
         attachment2.image = image2
         let attString2 = NSAttributedString(attachment: attachment2)
-        myTextView2.textStorage.insert(attString2, at: 382)
+        myTextView.textStorage.insert(attString2, at: 382)
         makeBoard()
-        myTextView2.setContentOffset(CGPoint(x: 0, y: -myPadding), animated: false)
+        myTextView.setContentOffset(CGPoint(x: 0, y: -myPadding), animated: false)
 
     }
 
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        myTextView2.flashScrollIndicators()
+        myTextView.flashScrollIndicators()
     }
 
 
     // MARK: Helpers
 
+    // One day: https://stackoverflow.com/a/35842870/5306470
     func hasAllValidDiagonals(board: [[Int]]) -> Bool {
 
         guard (board[0][6] +
