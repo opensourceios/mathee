@@ -182,13 +182,8 @@ Combine the result's digits. For example, if your result is 24, do 2 + 4, and ge
             style: .plain,
             target: self,
             action: #selector(done))
-        let playAgain = UIBarButtonItem(
-            title: Const.Misc.playAgainMessage,
-            style: .plain,
-            target: self,
-            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([playAgain, space, okButton], animated: true)
+        myToolbar.setItems([space, okButton], animated: true)
     }
 
 
@@ -199,13 +194,8 @@ Combine the result's digits. For example, if your result is 24, do 2 + 4, and ge
             style: .plain,
             target: self,
             action: #selector(done))
-        let playAgain = UIBarButtonItem(
-            title: Const.Misc.playAgainMessage,
-            style: .plain,
-            target: self,
-            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([playAgain, space, okButton], animated: true)
+        myToolbar.setItems([space, okButton], animated: true)
     }
 
 

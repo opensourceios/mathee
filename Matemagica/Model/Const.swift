@@ -18,14 +18,13 @@ struct Const {
         static let formulaVC = "FormulaViewController"
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
-        static let queensVC = "QueensViewController"
     }
 
 
     struct Misc {
         static let appVersion = "CFBundleShortVersionString"
         static let version = "v."
-        static let appName = "Matemagica"
+        static let appName = "Math Magic"
         static let cancel = "Cancel"
         static let sendFeedback = "Contact Us"
         static let leaveReview = "Leave a Review"
@@ -46,11 +45,16 @@ struct Const {
         static let doneMessage = "Done"
         static let retryMessage = "Retry"
         static let endMessage = "Return home"
-        static let playAgainMessage = "Play again"
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a Friend"
+        static let myDataSourceHomeMenu = ["Cycle Formula",
+                                           "Binary Pages",
+                                           /*"The Chess Puzzle",*/
+                                           "Higher Lower",
+                                           "Mystical 9"]
+        static let trick = "Trick"
     }
 
 

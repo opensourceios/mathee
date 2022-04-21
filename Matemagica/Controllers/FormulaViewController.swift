@@ -242,14 +242,7 @@ TextField emtpy. Please enter your current result and try again
     @objc func showResult() {
         myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
-        messageLabel.text = "You thought:" + "\n" + "\(total)" +
-        "\n\n" + "Want to play again?"
-
-        let playAgainButton = UIBarButtonItem(
-            title: Const.Misc.playAgainMessage,
-            style: .plain,
-            target: self,
-            action: #selector(start))
+        messageLabel.text = "You thought:" + "\n" + "\(total)"
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
@@ -257,7 +250,7 @@ TextField emtpy. Please enter your current result and try again
             target: self,
             action: #selector(doneButtonPressed))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([playAgainButton, space, doneButton], animated: true)
+        myToolbar.setItems([space, doneButton], animated: true)
     }
 
 

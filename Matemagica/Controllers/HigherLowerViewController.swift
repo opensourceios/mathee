@@ -128,20 +128,15 @@ class HigherLowerViewController: UIViewController {
 
     @objc func correct() {
 
-        guessLabel.text = "Want to play again?"
+        guessLabel.text = ""
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,
             style: .done,
             target: self,
             action: #selector(doneButtonPressed))
-        let playAgainButton = UIBarButtonItem(
-            title: Const.Misc.playAgainMessage,
-            style: .plain,
-            target: self,
-            action: #selector(start))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([playAgainButton, space, doneButton], animated: true)
+        myToolbar.setItems([space, doneButton], animated: true)
     }
 
 
