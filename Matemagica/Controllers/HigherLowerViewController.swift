@@ -16,8 +16,9 @@ class HigherLowerViewController: UIViewController {
 
     var myTitle: String!
     @IBOutlet weak var guessLabel: UILabel!
-    @IBOutlet weak var myToolbar: UIToolbar!
-
+    @IBOutlet weak var lowerButton: UIButton!
+    @IBOutlet weak var higherButton: UIButton!
+    @IBOutlet weak var correctButton: UIButton!
 
     // MARK: Properties
 
@@ -38,17 +39,25 @@ class HigherLowerViewController: UIViewController {
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain, target: self,
-            action: #selector(start))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        lowerButton.isHidden = true
+        higherButton.isHidden = true
+
+        correctButton.removeTarget(nil, action: nil, for: .allEvents)
+        lowerButton.removeTarget(nil, action: nil, for: .allEvents)
+        higherButton.removeTarget(nil, action: nil, for: .allEvents)
+
+        correctButton.addTarget(self, action: #selector(start), for: .touchUpInside)
+        higherButton.addTarget(self, action: #selector(higher), for: .touchUpInside)
+        lowerButton.addTarget(self, action: #selector(lower), for: .touchUpInside)
+
+        correctButton.setTitle(Const.Misc.okMessage, for: .normal)
+        higherButton.setTitle(Const.Misc.higherMessage, for: .normal)
+        lowerButton.setTitle(Const.Misc.lowerMessage, for: .normal)
+
+        higherButton.sizeToFit()
+        lowerButton.sizeToFit()
+        correctButton.sizeToFit()
 
     }
 
@@ -68,48 +77,32 @@ class HigherLowerViewController: UIViewController {
 
     @objc func showNextGuess() {
         tries += 1
-
         diff = high - low
-
         if diff == 3 {
             halfDiff = 2
         } else {
             halfDiff = diff / 2
         }
-
         guess = low + halfDiff
-
         guessLabel.isHidden = false
-        guessLabel.text = "Is it " + "\(guess)?"
+        // TODO: make guess LARGE
+        guessLabel.text = """
+        Is your number \(guess)?
 
-        let lowerButton = UIBarButtonItem(
-            image: UIImage(systemName: "arrow.down.circle"),
-            style: .plain,
-            target: self,
-            action: #selector(lower))
-        lowerButton.accessibilityLabel = "Go lower"
-
-        let higherButton = UIBarButtonItem(
-            image: UIImage(systemName: "arrow.up.circle"),
-            style: .plain,
-            target: self,
-            action: #selector(higher))
-        higherButton.accessibilityLabel = "Go higher"
-
-        let yesButton = UIBarButtonItem(
-            image: UIImage(systemName: "checkmark.circle"),
-            style: .plain,
-            target: self,
-            action: #selector(correct))
-        yesButton.accessibilityLabel = "Correct"
-
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        If it is not: is it Higher or Lower?
+        """
 
         if halfDiff == 1 {
-            guessLabel.text = "You thought: " + "\(guess)"
-            myToolbar.setItems([space, yesButton, space], animated: true)
+            guessLabel.text = "Your number is: " + "\(guess)"
+            // correct button
+            lowerButton.isHidden = true
+            higherButton.isHidden = true
+            correctButton.removeTarget(nil, action: nil, for: .allEvents)
+            correctButton.addTarget(self, action: #selector(correct), for: .touchUpInside)
         } else {
-            myToolbar.setItems([lowerButton, space, yesButton, space, higherButton], animated: true)
+            // all buttons
+            lowerButton.isHidden = false
+            higherButton.isHidden = false
         }
     }
 
@@ -127,16 +120,13 @@ class HigherLowerViewController: UIViewController {
 
 
     @objc func correct() {
-
         guessLabel.text = "You're done"
-
-        let doneButton = UIBarButtonItem(
-            title: Const.Misc.endMessage,
-            style: .done,
-            target: self,
-            action: #selector(doneButtonPressed))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, doneButton], animated: true)
+        lowerButton.isHidden = true
+        higherButton.isHidden = true
+        correctButton.isHidden = false
+        correctButton.removeTarget(nil, action: nil, for: .allEvents)
+        correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        correctButton.setTitle(Const.Misc.doneMessage, for: .normal)
     }
 
 
