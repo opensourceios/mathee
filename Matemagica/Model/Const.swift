@@ -11,6 +11,10 @@ import UIKit
 
 struct Const {
 
+    struct UserDef {
+        static let sawTutorial = "sawTutorial"
+    }
+
 
     struct StoryboardID {
         static let main = "Main"
@@ -18,6 +22,7 @@ struct Const {
         static let formulaVC = "FormulaViewController"
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
+        static let tutorialVC = "TutorialVC"
     }
 
 
@@ -49,10 +54,9 @@ struct Const {
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a Friend"
-        static let myDataSourceHomeMenu = ["Cycle Formula",
-                                           "Binary Pages",
-                                           /*"The Chess Puzzle",*/
-                                           "Higher Lower",
+        static let myDataSourceHomeMenu = ["Guess My Number",
+                                           "Spot Your Number",
+                                           "Higher Or Lower",
                                            "Mystical 9"]
         static let trick = "Trick"
     }

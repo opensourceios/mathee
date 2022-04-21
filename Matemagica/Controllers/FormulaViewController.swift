@@ -16,7 +16,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
-    @IBOutlet weak var helperLabel: UILabel!
     @IBOutlet weak var helperButton: UIButton!
 
 
@@ -54,7 +53,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     func helpersShould(hide: Bool) {
         myTextField.isHidden = hide
-        helperLabel.isHidden = hide
         helperButton.isHidden = hide
     }
 
@@ -154,22 +152,14 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func divideByNine() {
         // tell user to divide by nine
-        messageLabel.text = "Divide the result by 9, throwing away any remainder"
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(askResult))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
-    }
+        messageLabel.text = """
+        Divide your result by 9, and type how many times 9 fits in it.
+        Ignore leftover numbers. For example: if your result is 12, type 1 (ignoring the leftover 3)
+        If your result is less than 9, type 0.
+        """
 
-
-    @objc func askResult() {
         // ask current result to user
         myToolbar.setItems([], animated: true)
-
-        messageLabel.text = "" // empty so user doesn't see disappearing text
         helpersShould(hide: false)
         myTextField.becomeFirstResponder()
     }
@@ -188,7 +178,7 @@ Something went wrong. Please let the developers know. Error #001
                 title: Const.Misc.retryMessage,
                 style: .plain,
                 target: self,
-                action: #selector(askResult))
+                action: #selector(divideByNine))
 
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -205,7 +195,7 @@ TextField emtpy. Please enter your current result and try again
                 title: Const.Misc.retryMessage,
                 style: .plain,
                 target: self,
-                action: #selector(askResult))
+                action: #selector(divideByNine))
 
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
@@ -218,15 +208,16 @@ TextField emtpy. Please enter your current result and try again
               !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
             helpersShould(hide: true)
             messageLabel.text = """
-            Please enter numbers only
-            No text
-            Max number: 2305843009213693951
+            Oops!
+            That number is too big. Please think of a smaller number and try again
+            (Please don't enter text. Only enter numbers)
             """
+            // The highest number you can think of is: 2305843009213693951
             let retryButton = UIBarButtonItem(
                 title: Const.Misc.retryMessage,
                 style: .plain,
                 target: self,
-                action: #selector(askResult))
+                action: #selector(divideByNine))
 
             let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
             myToolbar.setItems([space, retryButton], animated: true)
