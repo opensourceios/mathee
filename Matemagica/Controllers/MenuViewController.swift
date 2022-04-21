@@ -23,19 +23,17 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myDataSource = ["The Magic Formula",
-                        "Book",
-                        "The Chess Puzzle",
-                        "Higher Lower",
-                        "MatheMagic"]
-    let myImageSource = ["plus.slash.minus", "book", "8.square",
-                         "arrow.up.arrow.down", "wand.and.stars"]
+    let myImageSource = ["plus.slash.minus",
+                         "book",
+                         /*"8.square",*/
+                         "arrow.up.arrow.down",
+                         "wand.and.stars"]
 
     let tintColorsArray: [UIColor] = [
         .systemPurple,
         .systemOrange,
+        /*.systemYellow,*/
         .systemBlue,
-        .systemYellow,
         .systemRed
     ]
 
@@ -48,7 +46,7 @@ class MenuViewController: UIViewController,
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -121,14 +119,39 @@ class MenuViewController: UIViewController,
     // MARK: TableView Delegate
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myDataSource.count
+        return Const.Misc.myDataSourceHomeMenu.count
+    }
+
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let sectionText = UILabel()
+        sectionText.frame = CGRect.init(x: 16, y: 16,
+                                        width: tableView.frame.width - 16,
+                                        height: 0)
+        sectionText.text = """
+        Select a Trick To Get Started
+        """.uppercased()
+        sectionText.font = UIFont(name: "Rockwell-Bold", size: 24)
+        sectionText.textColor = UIColor.label
+        sectionText.lineBreakMode = .byWordWrapping
+        sectionText.numberOfLines = 0
+        sectionText.sizeToFit()
+
+        return sectionText
+    }
+
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60 // my custom height
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-        cell.myLabel.text = myDataSource[(indexPath as NSIndexPath).row]
+        cell.myLabel.text = "TRICK #\(indexPath.row + 1)"
+        cell.mySecondaryLabel.text = Const.Misc.myDataSourceHomeMenu[(indexPath as NSIndexPath).row]
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
         let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row], withConfiguration: aConfig)
         cell.newImageView.image = aImage
@@ -147,40 +170,37 @@ class MenuViewController: UIViewController,
 
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
-        switch cell?.myLabel?.text {
-            case myDataSource[0]:
+        switch cell?.mySecondaryLabel?.text {
+            case Const.Misc.myDataSourceHomeMenu[0]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
                 if let toPresent = controller {
-                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
+                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[1]:
+            case Const.Misc.myDataSourceHomeMenu[1]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
                 if let toPresent = controller {
-                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
+                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[2]:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.queensVC) as? QueensViewController
-                if let toPresent = controller {
-                    controller?.myTitle = myDataSource[indexPath.row]
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
-            case myDataSource[3]:
+            case Const.Misc.myDataSourceHomeMenu[2]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
                 if let toPresent = controller {
-                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
+                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
-            case myDataSource[4]:
+            case Const.Misc.myDataSourceHomeMenu[3]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
                 if let toPresent = controller {
-                    controller?.myTitle = myDataSource[indexPath.row]
+                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
+                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             default:
