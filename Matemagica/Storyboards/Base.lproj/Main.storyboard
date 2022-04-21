@@ -16,11 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-JF-uXf">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
-                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
                                 <rect key="frame" x="16" y="410" width="382" height="86.5"/>
                                 <string key="text">Think of a number 1-1000.
@@ -30,22 +25,59 @@ It will take me 10 tries or less.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnx-Go-ZtD">
+                                <rect key="frame" x="16" y="831" width="63" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="uBb-cv-B99"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Lower">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omi-Fz-8x3">
+                                <rect key="frame" x="170.5" y="831" width="73" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="4ds-7e-dxf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Correct">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQH-Y3-Xaz">
+                                <rect key="frame" x="330.5" y="831" width="67.5" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Irh-av-0Mn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Higher">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hnx-Go-ZtD" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="1Kg-Ls-g1a"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="8pq-Eb-w1b"/>
-                            <constraint firstItem="e8i-JF-uXf" firstAttribute="width" secondItem="i4p-Zt-AVs" secondAttribute="width" id="AYY-1Q-nFF"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="LQH-Y3-Xaz" secondAttribute="trailing" constant="16" id="Dxc-X0-4De"/>
+                            <constraint firstItem="Omi-Fz-8x3" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="G6P-Rt-eny"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="Ib5-vE-Wkj"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="hnx-Go-ZtD" secondAttribute="bottom" id="KbY-7m-xAt"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="nAW-HL-3cW" secondAttribute="trailing" constant="16" id="exC-tg-SVV"/>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="e8i-JF-uXf" secondAttribute="bottom" id="q6d-4J-nf2"/>
-                            <constraint firstItem="e8i-JF-uXf" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="rCz-sT-nKu"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="LQH-Y3-Xaz" secondAttribute="bottom" id="m7I-dG-p3F"/>
+                            <constraint firstItem="LQH-Y3-Xaz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Omi-Fz-8x3" secondAttribute="trailing" constant="4" id="n57-te-UCb"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="Omi-Fz-8x3" secondAttribute="bottom" id="nR2-Ih-kt2"/>
+                            <constraint firstItem="Omi-Fz-8x3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hnx-Go-ZtD" secondAttribute="trailing" constant="4" id="sS9-CA-koR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oXZ-fp-eKa"/>
                     <connections>
+                        <outlet property="correctButton" destination="Omi-Fz-8x3" id="amI-zg-R9q"/>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
-                        <outlet property="myToolbar" destination="e8i-JF-uXf" id="J7w-vb-6kZ"/>
+                        <outlet property="higherButton" destination="LQH-Y3-Xaz" id="dLE-1q-Fwb"/>
+                        <outlet property="lowerButton" destination="hnx-Go-ZtD" id="kZL-KL-wIt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuR-w4-yWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,11 +362,6 @@ Prepare to be amazed.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-50-WSp">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
-                            </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type how many times 9 fits here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
                                 <rect key="frame" x="16" y="60" width="382" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -364,17 +391,39 @@ Let me ask you a few questions...</string>
                                     <action selector="okButtonKeyboardPressed" destination="eiL-1S-xct" eventType="touchUpInside" id="MwA-k2-ML0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv8-aF-RC8">
+                                <rect key="frame" x="340" y="815" width="58" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="7be-Sd-wUl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nph-Lq-4xz">
+                                <rect key="frame" x="16" y="815" width="49.5" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="GS2-VW-r0O"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FgR-50-WSp" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="8b1-Yb-LRQ"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Cv8-aF-RC8" secondAttribute="trailing" constant="16" id="8Sy-BN-hMQ"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="16" id="K80-LJ-w1Y"/>
                             <constraint firstItem="eb2-Y7-egc" firstAttribute="top" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="40" id="KzR-xE-pn8"/>
+                            <constraint firstItem="Cv8-aF-RC8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nph-Lq-4xz" secondAttribute="trailing" constant="4" id="VRz-EW-Fk5"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="eb2-Y7-egc" secondAttribute="bottom" constant="32" id="XrP-WT-cME"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="FgR-50-WSp" secondAttribute="bottom" id="axd-cp-BJT"/>
-                            <constraint firstItem="FgR-50-WSp" firstAttribute="width" secondItem="R3d-PE-QWE" secondAttribute="width" id="g0c-at-MDx"/>
+                            <constraint firstItem="Nph-Lq-4xz" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Zhe-BP-UU4"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Cv8-aF-RC8" secondAttribute="bottom" constant="16" id="eKR-g4-vg8"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="hxB-o5-iRi"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Nph-Lq-4xz" secondAttribute="bottom" constant="16" id="jcD-Ng-Pcc"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="mfs-1w-9kd"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="vRd-ea-okq"/>
@@ -383,10 +432,11 @@ Let me ask you a few questions...</string>
                     </view>
                     <navigationItem key="navigationItem" id="xXz-XO-Cxl"/>
                     <connections>
-                        <outlet property="helperButton" destination="eb2-Y7-egc" id="7TR-4o-XbN"/>
+                        <outlet property="helperButton" destination="eb2-Y7-egc" id="CIC-jz-wbk"/>
+                        <outlet property="leftButton" destination="Nph-Lq-4xz" id="M6B-Yo-Euh"/>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
-                        <outlet property="myToolbar" destination="FgR-50-WSp" id="ept-bZ-lKX"/>
+                        <outlet property="rightButton" destination="Cv8-aF-RC8" id="qgR-Cd-bJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>

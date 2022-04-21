@@ -14,10 +14,11 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     // MARK: Outlets
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var myToolbar: UIToolbar!
     @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var helperButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
 
+    @IBOutlet weak var leftButton: UIButton!
 
     // MARK: Properties
 
@@ -34,10 +35,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
         myTextField.borderStyle = .roundedRect
         myTextField.keyboardType = .numberPad
@@ -64,13 +61,11 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         Think of a number
         """
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(timesThree))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
+        rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+        leftButton.isHidden = true
+        rightButton.sizeToFit()
 
         helpersShould(hide: true)
     }
@@ -78,45 +73,36 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func timesThree() {
         messageLabel.text = "Multiply it by 3"
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(oddOrEven))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.addTarget(self, action: #selector(oddOrEven), for: .touchUpInside)
+        rightButton.sizeToFit()
     }
 
 
     @objc func oddOrEven() {
         messageLabel.text = "Is the result odd or even?"
-        let oddButton = UIBarButtonItem(
-            title: Const.Misc.oddMessage,
-            style: .plain,
-            target: self,
-            action: #selector(addOne))
-        let evenButton = UIBarButtonItem(
-            title: Const.Misc.evenMessage,
-            style: .plain,
-            target: self,
-            action: #selector(divideByTwo))
+        leftButton.isHidden = false
+        leftButton.setTitle(Const.Misc.oddMessage, for: .normal)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        leftButton.addTarget(self, action: #selector(addOne), for: .touchUpInside)
+        rightButton.setTitle(Const.Misc.evenMessage, for: .normal)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
+        rightButton.sizeToFit()
+        leftButton.sizeToFit()
 
-
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([oddButton, space, evenButton], animated: true)
     }
 
 
     @objc func addOne() {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(divideByTwo))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        leftButton.isHidden = true
+        rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
+        rightButton.sizeToFit()
 
         if isFirstEvenQuestion {
             total += 1
@@ -128,25 +114,19 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func divideByTwo() {
         messageLabel.text = "Divide the result by 2"
-        var okButton = UIBarButtonItem()
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-
+        leftButton.isHidden = true
         if isFirstEvenQuestion {
-            okButton = UIBarButtonItem(
-                title: Const.Misc.okMessage,
-                style: .plain,
-                target: self,
-                action: #selector(timesThree))
+            rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
             isFirstEvenQuestion = false
         } else {
-            okButton = UIBarButtonItem(
-                title: Const.Misc.okMessage,
-                style: .plain,
-                target: self,
-                action: #selector(divideByNine))
+            rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
         }
+        rightButton.sizeToFit()
 
-        myToolbar.setItems([space, okButton], animated: true)
     }
 
 
@@ -159,29 +139,24 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         """
 
         // ask current result to user
-        myToolbar.setItems([], animated: true)
         helpersShould(hide: false)
         myTextField.becomeFirstResponder()
     }
 
 
     @objc func checkResult() {
-
+        leftButton.isHidden = true
         guard let text = myTextField.text else {
             helpersShould(hide: true)
 
             messageLabel.text =
             """
-Something went wrong. Please let the developers know. Error #001
-"""
-            let retryButton = UIBarButtonItem(
-                title: Const.Misc.retryMessage,
-                style: .plain,
-                target: self,
-                action: #selector(divideByNine))
-
-            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            myToolbar.setItems([space, retryButton], animated: true)
+            Something went wrong. Please let the developers know. Error #001
+            """
+            rightButton.setTitle(Const.Misc.retryMessage, for: .normal)
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
+            rightButton.sizeToFit()
             return
         }
 
@@ -189,16 +164,12 @@ Something went wrong. Please let the developers know. Error #001
             helpersShould(hide: true)
             messageLabel.text =
             """
-TextField emtpy. Please enter your current result and try again
-"""
-            let retryButton = UIBarButtonItem(
-                title: Const.Misc.retryMessage,
-                style: .plain,
-                target: self,
-                action: #selector(divideByNine))
-
-            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            myToolbar.setItems([space, retryButton], animated: true)
+            TextField emtpy. Please enter your current result and try again
+            """
+            rightButton.setTitle(Const.Misc.retryMessage, for: .normal)
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
+            rightButton.sizeToFit()
             return
         }
 
@@ -213,14 +184,10 @@ TextField emtpy. Please enter your current result and try again
             (Please don't enter text. Only enter numbers)
             """
             // The highest number you can think of is: 2305843009213693951
-            let retryButton = UIBarButtonItem(
-                title: Const.Misc.retryMessage,
-                style: .plain,
-                target: self,
-                action: #selector(divideByNine))
-
-            let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            myToolbar.setItems([space, retryButton], animated: true)
+            rightButton.setTitle(Const.Misc.retryMessage, for: .normal)
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
+            rightButton.sizeToFit()
             return
         }
 
@@ -231,17 +198,14 @@ TextField emtpy. Please enter your current result and try again
 
 
     @objc func showResult() {
-        myToolbar.setItems([], animated: true)
         helpersShould(hide: true)
         messageLabel.text = "You thought:" + "\n" + "\(total)"
+        leftButton.isHidden = true
+        rightButton.setTitle(Const.Misc.endMessage, for: .normal)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        rightButton.sizeToFit()
 
-        let doneButton = UIBarButtonItem(
-            title: Const.Misc.endMessage,
-            style: .done,
-            target: self,
-            action: #selector(doneButtonPressed))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, doneButton], animated: true)
     }
 
 
@@ -255,8 +219,6 @@ TextField emtpy. Please enter your current result and try again
         navigationController?.popToRootViewController(animated: true)
     }
 
-
-    // MARK: TableView
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         okButtonKeyboardPressed()
