@@ -105,6 +105,7 @@ class BookViewController: UIViewController {
         Think of a number 1-63
         I will now show you 6 pages
         Your number will be in one or more of them
+        Spot the number!
         """
         pageContentLabel.text = ""
 
@@ -132,7 +133,7 @@ class BookViewController: UIViewController {
             return
         }
 
-        pageNumberLabel.text = "Is your number in page #" + "\(currentPageReal+1)" + "?"
+        pageNumberLabel.text = "Can you spot your number in page #" + "\(currentPageReal+1)" + "?"
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
         let yesButton = UIBarButtonItem(
@@ -167,7 +168,7 @@ class BookViewController: UIViewController {
     @objc func showResult() {
         pageContentLabel.text = ""
         pageNumberLabel.text = ""
-        resultLabel.text = "You thought: " + "\(userNumber)"
+        resultLabel.text = "Your number was: " + "\(userNumber)"
         resultLabel.isHidden = false
 
         let doneButton = UIBarButtonItem(

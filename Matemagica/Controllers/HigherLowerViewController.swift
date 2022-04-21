@@ -128,7 +128,7 @@ class HigherLowerViewController: UIViewController {
 
     @objc func correct() {
 
-        guessLabel.text = ""
+        guessLabel.text = "You're done"
 
         let doneButton = UIBarButtonItem(
             title: Const.Misc.endMessage,

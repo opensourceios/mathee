@@ -66,6 +66,20 @@ class MenuViewController: UIViewController,
     }
 
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if !UserDefaults.standard.bool(forKey: Const.UserDef.sawTutorial) {
+            UserDefaults.standard.set(true, forKey: Const.UserDef.sawTutorial)
+
+            let tutorialVC = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+                .instantiateViewController(withIdentifier: Const.StoryboardID.tutorialVC)
+            present(tutorialVC, animated: true)
+        }
+
+    }
+
+
     // MARK: Create menu
 
     func infoMenu() -> UIMenu {
