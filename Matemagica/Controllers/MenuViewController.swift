@@ -25,14 +25,12 @@ class MenuViewController: UIViewController,
 
     let myImageSource = ["plus.slash.minus",
                          "book",
-                         /*"8.square",*/
                          "arrow.up.arrow.down",
                          "wand.and.stars"]
 
     let tintColorsArray: [UIColor] = [
         .systemPurple,
         .systemOrange,
-        /*.systemYellow,*/
         .systemBlue,
         .systemRed
     ]
@@ -50,7 +48,7 @@ class MenuViewController: UIViewController,
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
         setThemeColorTo(myThemeColor: myThemeColor)
 
         if let selectedRow = myTableView.indexPathForSelectedRow {
@@ -137,28 +135,28 @@ class MenuViewController: UIViewController,
     }
 
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
-        let sectionText = UILabel()
-        sectionText.frame = CGRect.init(x: 16, y: 16,
-                                        width: tableView.frame.width - 16,
-                                        height: 0)
-        sectionText.text = """
-        Select a Trick To Get Started
-        """.uppercased()
-        sectionText.font = UIFont(name: "Rockwell-Bold", size: 24)
-        sectionText.textColor = UIColor.label
-        sectionText.lineBreakMode = .byWordWrapping
-        sectionText.numberOfLines = 0
-        sectionText.sizeToFit()
-
-        return sectionText
-    }
-
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60 // my custom height
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        let sectionText = UILabel()
+//        sectionText.frame = CGRect.init(x: 16, y: 16,
+//                                        width: tableView.frame.width - 16,
+//                                        height: 0)
+//        sectionText.text = """
+//        Select a Trick To Get Started
+//        """.uppercased()
+//        sectionText.font = UIFont(name: "Rockwell-Bold", size: 24)
+//        sectionText.textColor = UIColor.label
+//        sectionText.lineBreakMode = .byWordWrapping
+//        sectionText.numberOfLines = 0
+//        sectionText.sizeToFit()
+//
+//        return sectionText
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 60 // my custom height
+//    }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

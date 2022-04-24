@@ -29,7 +29,7 @@ class HigherLowerViewController: UIViewController {
     var halfDiff = 0
     var tries = 0
 
-    let myThemeColor: UIColor = .systemYellow
+    let myThemeColor: UIColor = .systemBlue
 
 
     // MARK: Life Cycle
@@ -89,7 +89,7 @@ class HigherLowerViewController: UIViewController {
         guessLabel.text = """
         Is your number \(guess)?
 
-        If it is not: is it Higher or Lower?
+        Otherwise: is it Lower or Higher?
         """
 
         if halfDiff == 1 {
@@ -97,10 +97,13 @@ class HigherLowerViewController: UIViewController {
             // correct button
             lowerButton.isHidden = true
             higherButton.isHidden = true
-            correctButton.removeTarget(nil, action: nil, for: .allEvents)
-            correctButton.addTarget(self, action: #selector(correct), for: .touchUpInside)
+            correctButton.isHidden = false
         } else {
             // all buttons
+            correctButton.removeTarget(nil, action: nil, for: .allEvents)
+            correctButton.addTarget(self, action: #selector(correct), for: .touchUpInside)
+            correctButton.setTitle(Const.Misc.correctMessage, for: .normal)
+            correctButton.isHidden = false
             lowerButton.isHidden = false
             higherButton.isHidden = false
         }
