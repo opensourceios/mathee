@@ -209,9 +209,9 @@ Prepare to be amazed.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Card Content Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
-                                <rect key="frame" x="16" y="120.33333333333331" width="343" height="641.66666666666674"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Card Content Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lz-1e-Sfr" userLabel="Card Content Label">
+                                <rect key="frame" x="32" y="144.33333333333331" width="311" height="617.66666666666674"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -252,10 +252,10 @@ Prepare to be amazed.</string>
                         <viewLayoutGuide key="safeArea" id="iIp-2I-Ojt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="7lz-1e-Sfr" secondAttribute="trailing" constant="16" id="1u9-LD-GQs"/>
+                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="7lz-1e-Sfr" secondAttribute="trailing" constant="32" id="1u9-LD-GQs"/>
                             <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="4pA-Ch-WpV"/>
                             <constraint firstItem="Eo3-rL-Byj" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="4r1-tP-2KT"/>
-                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="8Jc-3i-DAu"/>
+                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="32" id="8Jc-3i-DAu"/>
                             <constraint firstItem="cZe-dL-xl3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Eo3-rL-Byj" secondAttribute="trailing" constant="4" id="CUg-nh-LV4"/>
                             <constraint firstItem="GrR-lf-ak1" firstAttribute="top" secondItem="iIp-2I-Ojt" secondAttribute="top" constant="16" id="CgM-CG-0Sw"/>
                             <constraint firstItem="GrR-lf-ak1" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="DPy-gr-1Ro"/>
@@ -263,7 +263,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="LAR-Wd-nYZ"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="Eo3-rL-Byj" secondAttribute="bottom" constant="16" id="Q58-Gi-Fc0"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="sju-T6-m4T" secondAttribute="bottom" constant="16" id="YLq-1d-O01"/>
-                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="bottom" constant="40" id="jvG-Hd-n6p"/>
+                            <constraint firstItem="7lz-1e-Sfr" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="bottom" constant="64" id="jvG-Hd-n6p"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="GrR-lf-ak1" secondAttribute="trailing" constant="16" id="kPx-j8-uAB"/>
                             <constraint firstItem="cZe-dL-xl3" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="mD5-4H-v70"/>
                             <constraint firstItem="sju-T6-m4T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cZe-dL-xl3" secondAttribute="trailing" constant="4" id="muQ-yT-mv5"/>
