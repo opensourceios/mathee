@@ -1,6 +1,6 @@
 //
 //  Const.swift
-//  Matemagica
+//  Math Magic
 //
 //  Created by Daniel Springer on 11/26/18.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
@@ -40,7 +40,7 @@ struct Const {
         static let devID = "1402417666"
         static let appsLink = "https://apps.apple.com/developer/id1402417666"
         static let shareBodyMessage = """
-        Amaze your friends when you guess any number they think of
+        Discover math magic
 
         https://apps.apple.com/app/id1406084758
         """
@@ -51,18 +51,15 @@ struct Const {
         static let higherMessage = "Higher"
         static let lowerMessage = "Lower"
         static let doneMessage = "Done"
-        static let retryMessage = "Retry"
         static let endMessage = "Return home"
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a friend"
-        static let myDataSourceHomeMenu = ["Guess it BLAH BLAH BLAH",
-                                           "Spot it BLAH BLAH BLAH",
-                                           "Lower Or Higher BLAH",
-                                           "Mystical 9 BLAH BLAH"]
-        static let trick = "Trick"
+        static let myDataSourceHomeMenu = ["Guess it",
+                                           "Spot it",
+                                           "Lower Or Higher",
+                                           "Mystical 9"]
     }
-
 
 }

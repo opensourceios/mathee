@@ -1,6 +1,6 @@
 //
 //  MenuViewController.swift
-//  Matemagica
+//  Math Magic
 //
 //  Created by Daniel Springer on 05/07/2018.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
@@ -142,7 +142,7 @@ class MenuViewController: UIViewController,
 //                                        width: tableView.frame.width - 16,
 //                                        height: 0)
 //        sectionText.text = """
-//        Select a Trick To Get Started
+//        Select a Game To Get Started
 //        """.uppercased()
 //        sectionText.font = UIFont(name: "Rockwell-Bold", size: 24)
 //        sectionText.textColor = UIColor.label
@@ -162,8 +162,7 @@ class MenuViewController: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-        cell.myLabel.text = "TRICK #\(indexPath.row + 1)"
-        cell.mySecondaryLabel.text = Const.Misc.myDataSourceHomeMenu[(indexPath as NSIndexPath).row]
+        cell.myLabel.text = Const.Misc.myDataSourceHomeMenu[(indexPath as NSIndexPath).row]
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
         let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row], withConfiguration: aConfig)
         cell.newImageView.image = aImage
@@ -182,37 +181,33 @@ class MenuViewController: UIViewController,
 
         let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
 
-        switch cell?.mySecondaryLabel?.text {
+        switch cell?.myLabel?.text {
             case Const.Misc.myDataSourceHomeMenu[0]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
                 if let toPresent = controller {
-                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
-                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case Const.Misc.myDataSourceHomeMenu[1]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
                 if let toPresent = controller {
-                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
-                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case Const.Misc.myDataSourceHomeMenu[2]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
                 if let toPresent = controller {
-                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
-                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             case Const.Misc.myDataSourceHomeMenu[3]:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
                 if let toPresent = controller {
-                    controller?.myTitle = "\(Const.Misc.trick) #\(indexPath.row + 1): " +
-                    Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
                     self.navigationController?.pushViewController(toPresent, animated: true)
                 }
             default:

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Matemagica
+//  Math Magic
 //
 //  Created by Daniel Springer on 01/07/2018.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
