@@ -70,7 +70,7 @@ class MenuViewController: UIViewController,
         super.viewDidAppear(animated)
 
         if !UserDefaults.standard.bool(forKey: Const.UserDef.sawTutorial) {
-            UserDefaults.standard.set(true, forKey: Const.UserDef.sawTutorial)
+            UserDefaults.standard.set(true, forKey: Const.UserDef.sawTutorial) // TODO: uncomment
 
             let tutorialVC = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
                 .instantiateViewController(withIdentifier: Const.StoryboardID.tutorialVC)

@@ -57,10 +57,10 @@ struct Const {
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a Friend"
-        static let myDataSourceHomeMenu = ["Guess My Number",
-                                           "Spot Your Number",
-                                           "Higher Or Lower",
-                                           "Mystical 9"]
+        static let myDataSourceHomeMenu = ["Guess it BLAH BLAH BLAH",
+                                           "Spot it BLAH BLAH BLAH",
+                                           "Higher Or Lower BLAH",
+                                           "Mystical 9 BLAH BLAH"]
         static let trick = "Trick"
     }
 
