@@ -109,8 +109,8 @@
 			children = (
 				33B9FDC620EDDA8200131038 /* MenuViewController.swift */,
 				3388BFDC22E17644005B148B /* FormulaViewController.swift */,
-				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
 				33568B7620EC96B300690825 /* BookViewController.swift */,
+				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
 				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
 				33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */,
 				338423AE2811C4B600810B4B /* TutorialVC.swift */,

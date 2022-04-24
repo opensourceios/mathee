@@ -17,8 +17,9 @@ class BookViewController: UIViewController {
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageContentLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var myToolbar: UIToolbar!
-
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var middleButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
 
     // MARK: Properties
 
@@ -84,11 +85,6 @@ class BookViewController: UIViewController {
         setThemeColorTo(myThemeColor: myThemeColor)
         resultLabel.isHidden = true
 
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
-
         for page in pagesArrayOfDicts {
             arrayOfPages.append(Page(key: page.key, value: page.value))
         }
@@ -109,14 +105,21 @@ class BookViewController: UIViewController {
         """
         pageContentLabel.text = ""
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(start))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+    }
 
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        leftButton.isHidden = true
+        middleButton.isHidden = false
+        rightButton.isHidden = true
+
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
@@ -136,19 +139,20 @@ class BookViewController: UIViewController {
         pageNumberLabel.text = "Can you spot your number in page #" + "\(currentPageReal+1)" + "?"
         pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
 
-        let yesButton = UIBarButtonItem(
-            title: Const.Misc.yesMessage,
-            style: .plain,
-            target: self,
-            action: #selector(addValue))
-        let noButton = UIBarButtonItem(
-            title: Const.Misc.noMessage,
-            style: .plain,
-            target: self,
-            action: #selector(dontAddValue))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([noButton, space, yesButton], animated: true)
+        leftButton.isHidden = false
+        middleButton.isHidden = true
+        rightButton.isHidden = false
 
+        leftButton.setTitle(Const.Misc.noMessage, for: .normal)
+        rightButton.setTitle(Const.Misc.yesMessage, for: .normal)
+
+        leftButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+
+        leftButton.addTarget(self, action: #selector(dontAddValue), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
+        leftButton.sizeToFit()
+        rightButton.sizeToFit()
     }
 
 
@@ -171,19 +175,19 @@ class BookViewController: UIViewController {
         resultLabel.text = "Your number was: " + "\(userNumber)"
         resultLabel.isHidden = false
 
-        let doneButton = UIBarButtonItem(
-            title: Const.Misc.endMessage,
-            style: .plain,
-            target: self,
-            action: #selector(doneButtonPressed))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, doneButton], animated: true)
+        leftButton.isHidden = true
+        middleButton.isHidden = false
+        rightButton.isHidden = true
+
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.endMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     func prettifyPage(page: [Int]) -> String {
         var newPage = ""
-
         for number in page {
             var tempNumber = "\(number)"
             if tempNumber.count == 1 {
