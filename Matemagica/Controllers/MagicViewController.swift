@@ -15,7 +15,10 @@ class MagicViewController: UIViewController {
     // MARK: Outlets
 
     @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var myToolbar: UIToolbar!
+
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var middleButton: UIButton!
 
 
     // MARK: Properties
@@ -23,95 +26,78 @@ class MagicViewController: UIViewController {
     var myTitle: String!
     let myThemeColor: UIColor = .systemRed
 
+
     // MARK: Life Cicle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        leftButton.isHidden = true
+        rightButton.isHidden = true
+
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(play), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
+
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-        myToolbar.setBackgroundImage(UIImage(),
-                                     forToolbarPosition: .any,
-                                     barMetrics: .default)
-        myToolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(play))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
-
-        start()
-
+        headerLabel.text = """
+        Think of a number.
+        Prepare to be amazed.
+        """
     }
 
 
     // MARK: Helpers
 
-
-    @objc func start() {
-        headerLabel.text = "Think of a number.\nPrepare to be amazed."
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(play))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
-    }
-
-
     @objc func play() {
-        headerLabel.text = "Let's call the number you thought \"A\".\nAdd 10 to A"
+        headerLabel.text = """
+        Let's call the number you thought \"A\".
+        Add 10 to A
+        """
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(combineFirst))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(combineFirst), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     @objc func combineFirst() {
         headerLabel.text = """
-        Let's call the result of A + 10, "B".\nCombine the digits of B.\nFor example, \
-        if B is 24, do 2 + 4, and you get 6
+        Let's call the result of A + 10, "B".
+        Combine the digits of B.
+        For example, if B is 24, do 2 + 4, and you get 6
         """
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(subtract))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(subtract), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     @objc func subtract() {
         headerLabel.text = """
-        Let's call the result of B's combined digits "C".\nDo B - C.\nFor example, \
-        if you had 24 and got 6, do 24 - 6, and you get 18
+        Let's call the result of B's combined digits "C".
+        Do B - C.
+        For example, if you had 24 and got 6, do 24 - 6, and you get 18
         """
 
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(checkFirst))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(checkFirst), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     @objc func checkFirst() {
         headerLabel.text = """
-Let's call the result of B - C, \"D\".\nIs D a single digit?
-"""
+        Let's call the result of B - C, \"D\".
+        Is D a single digit?
+        """
         let yesButton = UIBarButtonItem(
             title: Const.Misc.yesMessage,
             style: .plain,
@@ -122,80 +108,100 @@ Let's call the result of B - C, \"D\".\nIs D a single digit?
             style: .plain,
             target: self,
             action: #selector(combineSecond))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([noButton, space, yesButton], animated: true)
+
+        leftButton.isHidden = false
+        middleButton.isHidden = true
+        rightButton.isHidden = false
+
+        leftButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        leftButton.addTarget(self, action: #selector(combineSecond), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(showResultFirst), for: .touchUpInside)
+        rightButton.setTitle(Const.Misc.yesMessage, for: .normal)
+        leftButton.setTitle(Const.Misc.noMessage, for: .normal)
+        leftButton.sizeToFit()
+        rightButton.sizeToFit()
+
     }
 
 
     @objc func combineSecond() {
         headerLabel.text =
-"""
-Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
-"""
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(checkForever))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        """
+        Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
+        """
+
+        leftButton.isHidden = true
+        middleButton.isHidden = false
+        rightButton.isHidden = true
+
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(checkForever), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     @objc func checkForever() {
         headerLabel.text = "Is the new result a single digit?"
-        let yesButton = UIBarButtonItem(
-            title: Const.Misc.yesMessage,
-            style: .plain,
-            target: self,
-            action: #selector(showResultFinally))
-        let noButton = UIBarButtonItem(
-            title: Const.Misc.noMessage,
-            style: .plain,
-            target: self,
-            action: #selector(combineForever))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([noButton, space, yesButton], animated: true)
 
+        leftButton.isHidden = false
+        middleButton.isHidden = true
+        rightButton.isHidden = false
+
+        leftButton.removeTarget(nil, action: nil, for: .allEvents)
+        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        leftButton.addTarget(self, action: #selector(combineForever), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(showResultFinally), for: .touchUpInside)
+        rightButton.setTitle(Const.Misc.yesMessage, for: .normal)
+        leftButton.setTitle(Const.Misc.noMessage, for: .normal)
+        leftButton.sizeToFit()
+        rightButton.sizeToFit()
     }
 
 
     @objc func combineForever() {
         headerLabel.text =
-            """
-Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6
-"""
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.okMessage,
-            style: .plain,
-            target: self,
-            action: #selector(checkForever))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+        """
+        Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6
+        """
+
+        leftButton.isHidden = true
+        middleButton.isHidden = false
+        rightButton.isHidden = true
+
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(checkForever), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     @objc func showResultFirst() {
         headerLabel.text = "D is 9"
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.endMessage,
-            style: .plain,
-            target: self,
-            action: #selector(done))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+
+        leftButton.isHidden = true
+        middleButton.isHidden = false
+        rightButton.isHidden = true
+
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(done), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.endMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
     @objc func showResultFinally() {
         headerLabel.text = "It's 9"
-        let okButton = UIBarButtonItem(
-            title: Const.Misc.endMessage,
-            style: .plain,
-            target: self,
-            action: #selector(done))
-        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        myToolbar.setItems([space, okButton], animated: true)
+
+        leftButton.isHidden = true
+        middleButton.isHidden = false
+        rightButton.isHidden = true
+
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(done), for: .touchUpInside)
+        middleButton.setTitle(Const.Misc.endMessage, for: .normal)
+        middleButton.sizeToFit()
     }
 
 
