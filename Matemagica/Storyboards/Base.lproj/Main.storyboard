@@ -92,11 +92,6 @@ It will take me 10 tries or less.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-WR-wMI">
-                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
-                                <items/>
-                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
-                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
                                 <rect key="frame" x="16" y="390" width="343" height="42.333333333333314"/>
                                 <string key="text">Think of a number.
@@ -105,22 +100,50 @@ Prepare to be amazed.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-uM-wZf">
+                                <rect key="frame" x="16" y="763" width="50" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Left">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-nS-8zw">
+                                <rect key="frame" x="301" y="763" width="58" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Right">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTm-Q3-fwn">
+                                <rect key="frame" x="154" y="763" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="pVQ-WR-wMI" secondAttribute="bottom" id="Kgd-5W-rRy"/>
-                            <constraint firstItem="pVQ-WR-wMI" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" id="OCX-ki-WjX"/>
+                            <constraint firstItem="Yck-uM-wZf" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="6C4-EX-Uew"/>
+                            <constraint firstItem="zg1-nS-8zw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UTm-Q3-fwn" secondAttribute="trailing" constant="4" id="H2f-J1-jQY"/>
+                            <constraint firstItem="zg1-nS-8zw" firstAttribute="bottom" secondItem="zMY-pK-AUQ" secondAttribute="bottom" constant="16" id="IHH-1V-ufY"/>
+                            <constraint firstItem="UTm-Q3-fwn" firstAttribute="bottom" secondItem="zMY-pK-AUQ" secondAttribute="bottom" constant="16" id="M05-ld-M7j"/>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="zg1-nS-8zw" secondAttribute="trailing" constant="16" id="MBs-03-D1S"/>
+                            <constraint firstItem="Yck-uM-wZf" firstAttribute="bottom" secondItem="zMY-pK-AUQ" secondAttribute="bottom" constant="16" id="Q52-Aj-SQD"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="U8K-8M-K0A" secondAttribute="trailing" constant="16" id="RN1-Qb-iSJ"/>
-                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="pVQ-WR-wMI" secondAttribute="trailing" id="Sdf-Hm-ZBI"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="aTb-n5-oiu"/>
+                            <constraint firstItem="UTm-Q3-fwn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yck-uM-wZf" secondAttribute="trailing" constant="4" id="dxy-mu-JDi"/>
+                            <constraint firstItem="UTm-Q3-fwn" firstAttribute="centerX" secondItem="zMY-pK-AUQ" secondAttribute="centerX" id="gna-hO-SN5"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="t24-MT-1Ai"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ot7-WL-NJJ"/>
                     <connections>
                         <outlet property="headerLabel" destination="U8K-8M-K0A" id="zBS-1o-0b3"/>
-                        <outlet property="myToolbar" destination="pVQ-WR-wMI" id="tqF-Cg-WHF"/>
+                        <outlet property="leftButton" destination="Yck-uM-wZf" id="b10-xq-csH"/>
+                        <outlet property="middleButton" destination="UTm-Q3-fwn" id="gK5-eD-gJe"/>
+                        <outlet property="rightButton" destination="zg1-nS-8zw" id="JbW-OU-Ngs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zbk-Jx-1AA" userLabel="First Responder" sceneMemberID="firstResponder"/>
