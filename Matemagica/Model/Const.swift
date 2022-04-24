@@ -31,12 +31,12 @@ struct Const {
         static let version = "v."
         static let appName = "Math Magic"
         static let cancel = "Cancel"
-        static let sendFeedback = "Contact Us"
-        static let leaveReview = "Leave a Review"
+        static let sendFeedback = "Contact us"
+        static let leaveReview = "Leave a review"
         static let emailSample = "Hi. I have a question..."
         static let emailAddress = "00.segue_affix@icloud.com"
         static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
-        static let showAppsButtonTitle = "More Apps"
+        static let showAppsButtonTitle = "More apps"
         static let devID = "1402417666"
         static let appsLink = "https://apps.apple.com/developer/id1402417666"
         static let shareBodyMessage = """
@@ -56,10 +56,10 @@ struct Const {
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
         static let aboutMessage = "About"
-        static let shareTitleMessage = "Tell a Friend"
+        static let shareTitleMessage = "Tell a friend"
         static let myDataSourceHomeMenu = ["Guess it BLAH BLAH BLAH",
                                            "Spot it BLAH BLAH BLAH",
-                                           "Higher Or Lower BLAH",
+                                           "Lower Or Higher BLAH",
                                            "Mystical 9 BLAH BLAH"]
         static let trick = "Trick"
     }

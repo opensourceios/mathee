@@ -19,7 +19,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
                                 <rect key="frame" x="16" y="368" width="343" height="86.333333333333314"/>
                                 <string key="text">Think of a number 1-1000.
-After each try, tell me whether to go higher or lower, or if I guessed your number.
+After each try, tell me whether to go lower or higher, or if I guessed your number correctly.
 It will take me 10 tries or less.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
@@ -255,7 +255,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1049" y="1657"/>
         </scene>
-        <!--Learn Math Magic Tricks-->
+        <!--Select a Trick To Get Started-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
@@ -264,7 +264,7 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
-                                <rect key="frame" x="0.0" y="120" width="375" height="658"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="9Tx-0d-iVw" customClass="MainMenuTableViewCell" customModule="Matemagica" customModuleProvider="target">
@@ -274,9 +274,9 @@ Prepare to be amazed.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="96.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0R-T6-DGz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0R-T6-DGz">
                                                     <rect key="frame" x="96" y="15.999999999999998" width="231" height="30.333333333333329"/>
-                                                    <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -338,11 +338,11 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="bSL-S2-mJ9" firstAttribute="leading" secondItem="27d-DW-fze" secondAttribute="leading" id="4xo-Re-BU1"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="trailing" secondItem="bSL-S2-mJ9" secondAttribute="trailing" id="HZu-cS-BU5"/>
-                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" constant="32" id="ZKl-Bd-ZkH"/>
+                            <constraint firstItem="bSL-S2-mJ9" firstAttribute="top" secondItem="27d-DW-fze" secondAttribute="top" id="ZKl-Bd-ZkH"/>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Learn Math Magic Tricks" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Select a Trick To Get Started" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5"/>
                     </navigationItem>
                     <connections>
