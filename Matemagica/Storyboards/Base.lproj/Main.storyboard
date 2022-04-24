@@ -101,21 +101,21 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-uM-wZf">
-                                <rect key="frame" x="16" y="763" width="50" height="31"/>
+                                <rect key="frame" x="16" y="731" width="50" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-nS-8zw">
-                                <rect key="frame" x="301" y="763" width="58" height="31"/>
+                                <rect key="frame" x="301" y="731" width="58" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTm-Q3-fwn">
-                                <rect key="frame" x="154" y="763" width="67" height="31"/>
+                                <rect key="frame" x="154" y="731" width="67" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
@@ -127,10 +127,10 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="Yck-uM-wZf" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="6C4-EX-Uew"/>
                             <constraint firstItem="zg1-nS-8zw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UTm-Q3-fwn" secondAttribute="trailing" constant="4" id="H2f-J1-jQY"/>
-                            <constraint firstItem="zg1-nS-8zw" firstAttribute="bottom" secondItem="zMY-pK-AUQ" secondAttribute="bottom" constant="16" id="IHH-1V-ufY"/>
-                            <constraint firstItem="UTm-Q3-fwn" firstAttribute="bottom" secondItem="zMY-pK-AUQ" secondAttribute="bottom" constant="16" id="M05-ld-M7j"/>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="zg1-nS-8zw" secondAttribute="bottom" constant="16" id="IHH-1V-ufY"/>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="UTm-Q3-fwn" secondAttribute="bottom" constant="16" id="M05-ld-M7j"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="zg1-nS-8zw" secondAttribute="trailing" constant="16" id="MBs-03-D1S"/>
-                            <constraint firstItem="Yck-uM-wZf" firstAttribute="bottom" secondItem="zMY-pK-AUQ" secondAttribute="bottom" constant="16" id="Q52-Aj-SQD"/>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="Yck-uM-wZf" secondAttribute="bottom" constant="16" id="Q52-Aj-SQD"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="U8K-8M-K0A" secondAttribute="trailing" constant="16" id="RN1-Qb-iSJ"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="aTb-n5-oiu"/>
                             <constraint firstItem="UTm-Q3-fwn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yck-uM-wZf" secondAttribute="trailing" constant="4" id="dxy-mu-JDi"/>
