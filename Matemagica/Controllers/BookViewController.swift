@@ -75,6 +75,20 @@ class BookViewController: UIViewController {
     var currentPageReal = 0
     let myThemeColor = UIColor.systemOrange
 
+    let possibleDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    let colorsArray: [UIColor] = [
+        .systemCyan,
+        .systemBlue,
+        .systemMint,
+        .systemBrown,
+        .systemGreen,
+        .magenta,
+        .systemOrange,
+        .systemPurple,
+        .systemRed,
+        .systemPink
+    ]
+
 
     // MARK: Life Cycle
 
@@ -137,7 +151,11 @@ class BookViewController: UIViewController {
         }
 
         pageNumberLabel.text = "Can you spot your number in page #" + "\(currentPageReal+1)" + "?"
-        pageContentLabel.text = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
+
+        let noColorText = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
+        let coloredText = colorfy(label: noColorText)
+
+        pageContentLabel.attributedText = coloredText
 
         leftButton.isHidden = false
         middleButton.isHidden = true
@@ -189,14 +207,31 @@ class BookViewController: UIViewController {
     func prettifyPage(page: [Int]) -> String {
         var newPage = ""
         for number in page {
-            var tempNumber = "\(number)"
-            if tempNumber.count == 1 {
-                tempNumber = "0\(tempNumber)"
-            }
+            let tempNumber = "\(number)"
+//            if tempNumber.count == 1 {
+//                tempNumber = "0\(tempNumber)"
+//            }
             newPage.append("\(tempNumber) ")
         }
-
         return newPage
+    }
+
+
+    func colorfy(label: String) -> NSMutableAttributedString {
+        let aNSAttrString = NSMutableAttributedString(string: "")
+        for letter in label.unicodeScalars {
+            let myLetter: NSAttributedString
+            if CharacterSet.decimalDigits.contains(letter) {
+                myLetter = NSAttributedString(
+                    string: "\(letter)",
+                    attributes: [NSAttributedString.Key.foregroundColor: colorsArray[ Int("\(letter)")!]])
+            } else {
+                myLetter = NSAttributedString(string: "\(letter)")
+            }
+
+            aNSAttrString.append(myLetter)
+        }
+        return aNSAttrString
     }
 
 
