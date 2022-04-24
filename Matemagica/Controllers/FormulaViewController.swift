@@ -1,6 +1,6 @@
 //
 //  FormulaViewController.swift
-//  Matemagica
+//  Math Magic
 //
 //  Created by Daniel Springer on 01/07/2018.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
@@ -48,11 +48,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     // Helpers
 
-    func helpersShould(hide: Bool) {
-        myTextField.isHidden = hide
-        helperButton.isHidden = hide
-    }
-
     @objc func start() {
         total = 0
         isFirstEvenQuestion = true
@@ -67,7 +62,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         leftButton.isHidden = true
         rightButton.sizeToFit()
 
-        helpersShould(hide: true)
+        myTextField.isHidden = true
+        helperButton.isHidden = true
     }
 
 
@@ -138,8 +134,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         If your result is less than 9, type 0.
         """
 
+        rightButton.isHidden = true
         // ask current result to user
-        helpersShould(hide: false)
+        myTextField.isHidden = false
+        helperButton.isHidden = false
         myTextField.becomeFirstResponder()
     }
 
@@ -147,29 +145,14 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func checkResult() {
         leftButton.isHidden = true
         guard let text = myTextField.text else {
-            helpersShould(hide: true)
-
-            messageLabel.text =
-            """
-            Something went wrong. Please let the developers know. Error #001
-            """
-            rightButton.setTitle(Const.Misc.retryMessage, for: .normal)
-            rightButton.removeTarget(nil, action: nil, for: .allEvents)
-            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
-            rightButton.sizeToFit()
+            let alert = createAlert(alertReasonParam: .unknown)
+            present(alert, animated: true)
             return
         }
 
         guard !text.isEmpty else {
-            helpersShould(hide: true)
-            messageLabel.text =
-            """
-            TextField emtpy. Please enter your current result and try again
-            """
-            rightButton.setTitle(Const.Misc.retryMessage, for: .normal)
-            rightButton.removeTarget(nil, action: nil, for: .allEvents)
-            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
-            rightButton.sizeToFit()
+            let alert = createAlert(alertReasonParam: .textfieldEmpty)
+            present(alert, animated: true)
             return
         }
 
@@ -177,20 +160,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         guard let number = Int(trimmedText),
               !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
-            helpersShould(hide: true)
-            messageLabel.text = """
-            Oops!
-            That number is too big. Please think of a smaller number and try again
-            (Please don't enter text. Only enter numbers)
-            """
-            // The highest number you can think of is: 2305843009213693951
-            rightButton.setTitle(Const.Misc.retryMessage, for: .normal)
-            rightButton.removeTarget(nil, action: nil, for: .allEvents)
-            rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
-            rightButton.sizeToFit()
+            let alert = createAlert(alertReasonParam: .nan)
+            present(alert, animated: true)
             return
         }
-
 
         total += number * 4
         showResult()
@@ -198,14 +171,15 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
 
     @objc func showResult() {
-        helpersShould(hide: true)
+        myTextField.isHidden = true
+        helperButton.isHidden = true
         messageLabel.text = "You thought:" + "\n" + "\(total)"
         leftButton.isHidden = true
         rightButton.setTitle(Const.Misc.endMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         rightButton.sizeToFit()
-
+        rightButton.isHidden = false
     }
 
 

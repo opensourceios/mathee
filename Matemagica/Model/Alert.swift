@@ -1,6 +1,6 @@
 //
 //  Alert.swift
-//  Matemagica
+//  Math Magic
 //
 //  Created by Daniel Springer on 8/07/2018.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
@@ -14,6 +14,8 @@ extension UIViewController {
 
     enum AlertReason {
         case unknown
+        case textfieldEmpty
+        case nan
     }
 
 
@@ -22,6 +24,16 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
+            case .textfieldEmpty:
+                alertTitle = "Textfield empty"
+                alertMessage = "Please try again"
+            case .nan:
+                alertTitle = "An error occurred"
+                alertMessage = """
+                Oops!
+                That number is too big. Please think of a smaller number and try again
+                (Please don't enter text. Only enter numbers)
+                """
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """

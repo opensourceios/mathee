@@ -159,19 +159,19 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPY-tq-Gae">
-                                <rect key="frame" x="16" y="311.66666666666669" width="343" height="37"/>
+                                <rect key="frame" x="16" y="327" width="343" height="37"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to learn a few math magic tricks." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNr-AV-UKP">
-                                <rect key="frame" x="16" y="380.66666666666669" width="343" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover. Math. Magic." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNr-AV-UKP">
+                                <rect key="frame" x="16" y="396" width="343" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuc-xe-ZxN">
-                                <rect key="frame" x="149.66666666666666" y="473.66666666666669" width="76" height="31"/>
+                                <rect key="frame" x="149.66666666666666" y="458" width="76" height="31"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Let's go" titleAlignment="center">
@@ -301,7 +301,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1049" y="1657"/>
         </scene>
-        <!--Select a Trick To Get Started-->
+        <!--Select a Game To Get Started-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
@@ -321,7 +321,7 @@ Prepare to be amazed.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0R-T6-DGz">
-                                                    <rect key="frame" x="96" y="15.999999999999998" width="231" height="30.333333333333329"/>
+                                                    <rect key="frame" x="96" y="16" width="231" height="64.333333333333329"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -343,32 +343,21 @@ Prepare to be amazed.</string>
                                                         <constraint firstAttribute="height" constant="64" id="x8I-N2-Xlu"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl7-2Q-YzA">
-                                                    <rect key="frame" x="96" y="50.333333333333343" width="231" height="30"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Sl7-2Q-YzA" secondAttribute="bottom" constant="16" id="9Ud-fx-HX1"/>
-                                                <constraint firstItem="Sl7-2Q-YzA" firstAttribute="leading" secondItem="6Ob-qK-g2a" secondAttribute="trailing" constant="16" id="BmF-yU-gYa"/>
                                                 <constraint firstItem="6Ob-qK-g2a" firstAttribute="centerY" secondItem="bFT-I5-sFd" secondAttribute="centerY" id="H3b-KX-cZh"/>
                                                 <constraint firstItem="6Ob-qK-g2a" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bFT-I5-sFd" secondAttribute="top" constant="16" id="K5J-GC-Cq5"/>
                                                 <constraint firstItem="A0R-T6-DGz" firstAttribute="top" secondItem="bFT-I5-sFd" secondAttribute="top" constant="16" id="NOK-Xq-803"/>
                                                 <constraint firstItem="6Ob-qK-g2a" firstAttribute="leading" secondItem="bFT-I5-sFd" secondAttribute="leading" constant="16" id="Ppv-mb-MYe"/>
-                                                <constraint firstItem="Sl7-2Q-YzA" firstAttribute="top" secondItem="bFT-I5-sFd" secondAttribute="centerY" constant="2" id="Pxm-q3-RQ8"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6Ob-qK-g2a" secondAttribute="bottom" constant="16" id="Saf-G6-lXa"/>
                                                 <constraint firstItem="A0R-T6-DGz" firstAttribute="leading" secondItem="6Ob-qK-g2a" secondAttribute="trailing" constant="16" id="ZJR-mT-ocu"/>
                                                 <constraint firstAttribute="trailing" secondItem="A0R-T6-DGz" secondAttribute="trailing" constant="16" id="clb-Fp-nfQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="Sl7-2Q-YzA" secondAttribute="trailing" constant="16" id="gNv-op-roF"/>
-                                                <constraint firstAttribute="centerY" secondItem="A0R-T6-DGz" secondAttribute="bottom" constant="2" id="u2Y-1u-cUJ"/>
+                                                <constraint firstAttribute="centerY" secondItem="A0R-T6-DGz" secondAttribute="centerY" id="u2Y-1u-cUJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageViewContainer" destination="6Ob-qK-g2a" id="AVU-aF-rWh"/>
                                             <outlet property="myLabel" destination="A0R-T6-DGz" id="7gt-dk-FbB"/>
-                                            <outlet property="mySecondaryLabel" destination="Sl7-2Q-YzA" id="AzX-dU-z04"/>
                                             <outlet property="newImageView" destination="1P3-Xh-gtA" id="LaM-Ku-7GG"/>
                                         </connections>
                                     </tableViewCell>
@@ -388,7 +377,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select a Trick To Get Started" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Select a Game To Get Started" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5"/>
                     </navigationItem>
                     <connections>
@@ -408,7 +397,7 @@ Prepare to be amazed.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type how many times 9 fits here" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type how many times 9 fits" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
                                 <rect key="frame" x="16" y="60" width="343" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

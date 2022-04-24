@@ -1,6 +1,6 @@
 //
 //  MagicViewController.swift
-//  Matemagica
+//  Math Magic
 //
 //  Created by Daniel Springer on 05/07/2018.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
@@ -98,16 +98,6 @@ class MagicViewController: UIViewController {
         Let's call the result of B - C, \"D\".
         Is D a single digit?
         """
-        let yesButton = UIBarButtonItem(
-            title: Const.Misc.yesMessage,
-            style: .plain,
-            target: self,
-            action: #selector(showResultFirst))
-        let noButton = UIBarButtonItem(
-            title: Const.Misc.noMessage,
-            style: .plain,
-            target: self,
-            action: #selector(combineSecond))
 
         leftButton.isHidden = false
         middleButton.isHidden = true
