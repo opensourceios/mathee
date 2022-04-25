@@ -15,16 +15,18 @@ class MagicViewController: UIViewController {
     // MARK: Outlets
 
     @IBOutlet weak var headerLabel: UILabel!
-
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
 
 
     // MARK: Properties
 
     var myTitle: String!
     let myThemeColor: UIColor = .systemRed
+
+    let progressFractions: Float = 9
 
 
     // MARK: Life Cicle
@@ -48,6 +50,14 @@ class MagicViewController: UIViewController {
 
         Let us call your number: A
         """
+        progressBar.setProgress(0, animated: false)
+    }
+
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        progressBar.setProgress(1/progressFractions, animated: true)
     }
 
 
@@ -64,6 +74,7 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(combineFirst), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(2/progressFractions, animated: true)
     }
 
 
@@ -80,6 +91,7 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(subtract), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(3/progressFractions, animated: true)
     }
 
 
@@ -94,6 +106,7 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(checkFirst), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(4/progressFractions, animated: true)
     }
 
 
@@ -114,6 +127,7 @@ class MagicViewController: UIViewController {
         leftButton.setTitle(Const.Misc.noMessage, for: .normal)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
+        progressBar.setProgress(5/progressFractions, animated: true)
 
     }
 
@@ -134,6 +148,7 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(checkForever), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(6/progressFractions, animated: true)
     }
 
 
@@ -152,6 +167,10 @@ class MagicViewController: UIViewController {
         leftButton.setTitle(Const.Misc.noMessage, for: .normal)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
+        // TODO: add half of left progress
+        let remaining: Float = 1 - progressBar.progress
+        let halfRemaining: Float = remaining / 2
+        progressBar.setProgress(progressBar.progress+halfRemaining, animated: true)
     }
 
 
@@ -169,6 +188,10 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(checkForever), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
+        // TODO: add half of left progress
+        let remaining: Float = 1 - progressBar.progress
+        let halfRemaining: Float = remaining / 2
+        progressBar.setProgress(progressBar.progress+halfRemaining, animated: true)
     }
 
 
@@ -183,6 +206,7 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(done), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.endMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(1, animated: true)
     }
 
 
@@ -197,6 +221,7 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(done), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.endMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(1, animated: true)
     }
 
 
