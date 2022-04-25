@@ -207,11 +207,11 @@ class BookViewController: UIViewController {
     func prettifyPage(page: [Int]) -> String {
         var newPage = ""
         for number in page {
-            let tempNumber = "\(number)"
-//            if tempNumber.count == 1 {
-//                tempNumber = "0\(tempNumber)"
-//            }
-            newPage.append("\(tempNumber) ")
+            var tempNumber = "\(number)"
+            if tempNumber.count == 1 {
+                tempNumber = "  \(tempNumber)"
+            }
+            newPage.append("  \(tempNumber)  |")
         }
         return newPage
     }
