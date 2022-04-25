@@ -128,6 +128,9 @@ Prepare to be amazed.</string>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-ES-GER">
+                                <rect key="frame" x="16" y="46" width="343" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -137,12 +140,15 @@ Prepare to be amazed.</string>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="zg1-nS-8zw" secondAttribute="bottom" constant="16" id="IHH-1V-ufY"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="UTm-Q3-fwn" secondAttribute="bottom" constant="16" id="M05-ld-M7j"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="zg1-nS-8zw" secondAttribute="trailing" constant="16" id="MBs-03-D1S"/>
+                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="ln0-ES-GER" secondAttribute="trailing" constant="16" id="OIk-tE-nGf"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="Yck-uM-wZf" secondAttribute="bottom" constant="16" id="Q52-Aj-SQD"/>
+                            <constraint firstItem="ln0-ES-GER" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="QTX-I8-1LK"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="U8K-8M-K0A" secondAttribute="trailing" constant="16" id="RN1-Qb-iSJ"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="aTb-n5-oiu"/>
                             <constraint firstItem="UTm-Q3-fwn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yck-uM-wZf" secondAttribute="trailing" constant="4" id="dxy-mu-JDi"/>
                             <constraint firstItem="UTm-Q3-fwn" firstAttribute="centerX" secondItem="zMY-pK-AUQ" secondAttribute="centerX" id="gna-hO-SN5"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="t24-MT-1Ai"/>
+                            <constraint firstItem="ln0-ES-GER" firstAttribute="top" secondItem="zMY-pK-AUQ" secondAttribute="top" constant="2" id="ugR-mR-M1I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ot7-WL-NJJ"/>
@@ -150,6 +156,7 @@ Prepare to be amazed.</string>
                         <outlet property="headerLabel" destination="U8K-8M-K0A" id="zBS-1o-0b3"/>
                         <outlet property="leftButton" destination="Yck-uM-wZf" id="b10-xq-csH"/>
                         <outlet property="middleButton" destination="UTm-Q3-fwn" id="gK5-eD-gJe"/>
+                        <outlet property="progressBar" destination="ln0-ES-GER" id="wFF-Nd-Ye2"/>
                         <outlet property="rightButton" destination="zg1-nS-8zw" id="JbW-OU-Ngs"/>
                     </connections>
                 </viewController>
