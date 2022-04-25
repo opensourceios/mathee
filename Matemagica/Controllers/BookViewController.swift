@@ -86,7 +86,7 @@ class BookViewController: UIViewController {
         .systemOrange,
         .systemPurple,
         .systemRed,
-        .systemPink
+        .systemTeal
     ]
 
 
