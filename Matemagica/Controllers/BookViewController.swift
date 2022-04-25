@@ -20,6 +20,8 @@ class BookViewController: UIViewController {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
+
 
     // MARK: Properties
 
@@ -118,6 +120,8 @@ class BookViewController: UIViewController {
         """
         pageContentLabel.text = ""
 
+        progressBar.setProgress(0, animated: false)
+
     }
 
 
@@ -133,6 +137,13 @@ class BookViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
+    }
+
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        progressBar.setProgress(1/8, animated: true)
     }
 
 
@@ -170,6 +181,7 @@ class BookViewController: UIViewController {
         rightButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
+        progressBar.setProgress(progressBar.progress+1/8, animated: true)
     }
 
 
@@ -200,6 +212,7 @@ class BookViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.endMessage, for: .normal)
         middleButton.sizeToFit()
+        progressBar.setProgress(1, animated: true)
     }
 
 

@@ -51,6 +51,7 @@ struct Const {
         static let higherMessage = "Higher"
         static let lowerMessage = "Lower"
         static let doneMessage = "Done"
+        static let lolDoneMessage = "LOL, bye"
         static let endMessage = "Return home"
         static let oddMessage = "Odd"
         static let evenMessage = "Even"
