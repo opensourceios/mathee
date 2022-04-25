@@ -20,6 +20,8 @@ class HigherLowerViewController: UIViewController {
     @IBOutlet weak var higherButton: UIButton!
     @IBOutlet weak var correctButton: UIButton!
 
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     // MARK: Properties
 
     var high = 1001
@@ -27,7 +29,7 @@ class HigherLowerViewController: UIViewController {
     var guess = 0
     var diff = 0
     var halfDiff = 0
-    var tries = 0
+    var tries: Float = 0
 
     let myThemeColor: UIColor = .systemBlue
 
@@ -59,6 +61,15 @@ class HigherLowerViewController: UIViewController {
         lowerButton.sizeToFit()
         correctButton.sizeToFit()
 
+        progressBar.setProgress(0, animated: false)
+
+    }
+
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        progressBar.setProgress(1/11, animated: true)
     }
 
 
@@ -107,6 +118,8 @@ class HigherLowerViewController: UIViewController {
             lowerButton.isHidden = false
             higherButton.isHidden = false
         }
+        let myProgress: Float = (tries + 1.0) / 11.0
+        progressBar.setProgress(myProgress, animated: true)
     }
 
 
@@ -123,13 +136,14 @@ class HigherLowerViewController: UIViewController {
 
 
     @objc func correct() {
-        guessLabel.text = "You're done"
+        guessLabel.text = "Told ya I'd get it!"
         lowerButton.isHidden = true
         higherButton.isHidden = true
         correctButton.isHidden = false
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        correctButton.setTitle(Const.Misc.doneMessage, for: .normal)
+        correctButton.setTitle(Const.Misc.lolDoneMessage, for: .normal)
+        progressBar.isHidden = true
     }
 
 
