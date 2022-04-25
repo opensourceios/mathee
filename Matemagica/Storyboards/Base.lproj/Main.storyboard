@@ -416,10 +416,10 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="104.66666666666667" y="140" width="165.66666666666663" height="34.666666666666657"/>
+                                <rect key="frame" x="106.66666666666669" y="140" width="162" height="34.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="OK"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Guess My Number">
+                                <buttonConfiguration key="configuration" style="filled" title="Guess my number" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -446,6 +446,16 @@ Let me ask you a few questions...</string>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Ch-xgj">
+                                <rect key="frame" x="295.33333333333331" y="129.33333333333334" width="63.666666666666686" height="56.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Help me" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="helpPressed:" destination="eiL-1S-xct" eventType="touchUpInside" id="JwZ-yo-lQZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -458,20 +468,24 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="Nph-Lq-4xz" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Zhe-BP-UU4"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Cv8-aF-RC8" secondAttribute="bottom" constant="16" id="eKR-g4-vg8"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="hxB-o5-iRi"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="aeV-Ch-xgj" secondAttribute="trailing" constant="16" id="iXe-UI-5yN"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Nph-Lq-4xz" secondAttribute="bottom" constant="16" id="jcD-Ng-Pcc"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="mfs-1w-9kd"/>
+                            <constraint firstItem="aeV-Ch-xgj" firstAttribute="centerY" secondItem="eb2-Y7-egc" secondAttribute="centerY" id="nU3-6k-H0E"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="vRd-ea-okq"/>
+                            <constraint firstItem="aeV-Ch-xgj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eb2-Y7-egc" secondAttribute="trailing" constant="4" id="vzn-UD-FOv"/>
                             <constraint firstItem="eb2-Y7-egc" firstAttribute="centerX" secondItem="cqg-Uf-L5S" secondAttribute="centerX" id="xyZ-x7-u7O"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xXz-XO-Cxl"/>
                     <connections>
-                        <outlet property="helperButton" destination="eb2-Y7-egc" id="CIC-jz-wbk"/>
+                        <outlet property="infoButton" destination="aeV-Ch-xgj" id="NsJ-dg-WLF"/>
                         <outlet property="leftButton" destination="Nph-Lq-4xz" id="M6B-Yo-Euh"/>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
                         <outlet property="rightButton" destination="Cv8-aF-RC8" id="qgR-Cd-bJS"/>
+                        <outlet property="showAnswerButton" destination="eb2-Y7-egc" id="CIC-jz-wbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRm-7C-E5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
