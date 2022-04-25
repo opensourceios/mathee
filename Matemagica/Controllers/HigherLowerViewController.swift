@@ -21,7 +21,8 @@ class HigherLowerViewController: UIViewController {
     @IBOutlet weak var correctButton: UIButton!
 
     @IBOutlet weak var progressBar: UIProgressView!
-    
+
+
     // MARK: Properties
 
     var high = 1001
