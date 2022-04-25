@@ -167,7 +167,6 @@ class MagicViewController: UIViewController {
         leftButton.setTitle(Const.Misc.noMessage, for: .normal)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
-        // TODO: add half of left progress
         let remaining: Float = 1 - progressBar.progress
         let halfRemaining: Float = remaining / 2
         progressBar.setProgress(progressBar.progress+halfRemaining, animated: true)
@@ -188,7 +187,6 @@ class MagicViewController: UIViewController {
         middleButton.addTarget(self, action: #selector(checkForever), for: .touchUpInside)
         middleButton.setTitle(Const.Misc.okMessage, for: .normal)
         middleButton.sizeToFit()
-        // TODO: add half of left progress
         let remaining: Float = 1 - progressBar.progress
         let halfRemaining: Float = remaining / 2
         progressBar.setProgress(progressBar.progress+halfRemaining, animated: true)
