@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -398,7 +398,7 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Type how many times 9 fits" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ClG-HF-1oA">
-                                <rect key="frame" x="16" y="60" width="343" height="40"/>
+                                <rect key="frame" x="16" y="66" width="343" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="fLV-Ej-2PZ"/>
@@ -407,7 +407,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="206.66666666666666" width="343" height="64.333333333333343"/>
+                                <rect key="frame" x="16" y="212.66666666666666" width="343" height="64.333333333333343"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -416,7 +416,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="106.66666666666669" y="140" width="162" height="34.666666666666657"/>
+                                <rect key="frame" x="106.66666666666669" y="146" width="162" height="34.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="OK"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guess my number" titleAlignment="center">
@@ -447,7 +447,7 @@ Let me ask you a few questions...</string>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Ch-xgj">
-                                <rect key="frame" x="295.33333333333331" y="129.33333333333334" width="63.666666666666686" height="56.333333333333343"/>
+                                <rect key="frame" x="295.33333333333331" y="135.33333333333334" width="63.666666666666686" height="56.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Help me" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
@@ -456,6 +456,9 @@ Let me ask you a few questions...</string>
                                     <action selector="helpPressed:" destination="eiL-1S-xct" eventType="touchUpInside" id="JwZ-yo-lQZ"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-9r-YZZ">
+                                <rect key="frame" x="16" y="46" width="343" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -466,10 +469,13 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="Cv8-aF-RC8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nph-Lq-4xz" secondAttribute="trailing" constant="4" id="VRz-EW-Fk5"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="eb2-Y7-egc" secondAttribute="bottom" constant="32" id="XrP-WT-cME"/>
                             <constraint firstItem="Nph-Lq-4xz" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Zhe-BP-UU4"/>
+                            <constraint firstItem="o2w-9r-YZZ" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="2" id="arX-x5-44K"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="o2w-9r-YZZ" secondAttribute="trailing" constant="16" id="bpO-dC-wf1"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Cv8-aF-RC8" secondAttribute="bottom" constant="16" id="eKR-g4-vg8"/>
-                            <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="hxB-o5-iRi"/>
+                            <constraint firstItem="ClG-HF-1oA" firstAttribute="top" secondItem="o2w-9r-YZZ" secondAttribute="bottom" constant="16" id="hxB-o5-iRi"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="aeV-Ch-xgj" secondAttribute="trailing" constant="16" id="iXe-UI-5yN"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Nph-Lq-4xz" secondAttribute="bottom" constant="16" id="jcD-Ng-Pcc"/>
+                            <constraint firstItem="o2w-9r-YZZ" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="lxX-DS-DDJ"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="mfs-1w-9kd"/>
                             <constraint firstItem="aeV-Ch-xgj" firstAttribute="centerY" secondItem="eb2-Y7-egc" secondAttribute="centerY" id="nU3-6k-H0E"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
@@ -484,6 +490,7 @@ Let me ask you a few questions...</string>
                         <outlet property="leftButton" destination="Nph-Lq-4xz" id="M6B-Yo-Euh"/>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
+                        <outlet property="progressBar" destination="o2w-9r-YZZ" id="OTR-3u-smo"/>
                         <outlet property="rightButton" destination="Cv8-aF-RC8" id="qgR-Cd-bJS"/>
                         <outlet property="showAnswerButton" destination="eb2-Y7-egc" id="CIC-jz-wbk"/>
                     </connections>

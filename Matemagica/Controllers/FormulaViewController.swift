@@ -17,14 +17,15 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var showAnswerButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-
     @IBOutlet weak var leftButton: UIButton!
-
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
+
+
     // MARK: Properties
 
     var total = 0
-    var isFirstEvenQuestion = true
+    var isBeforeFirstEvenQuestion = true
     var myTitle: String!
     let myThemeColor: UIColor = .systemPurple
 
@@ -42,8 +43,15 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myTextField.delegate = self
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
-
+        progressBar.setProgress(0.0, animated: false)
         start()
+    }
+
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        progressBar.setProgress(0.1, animated: true)
     }
 
 
@@ -51,7 +59,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func start() {
         total = 0
-        isFirstEvenQuestion = true
+        isBeforeFirstEvenQuestion = true
         myTextField.text = ""
         messageLabel.text = """
         Think of a number (remember it!)
@@ -75,6 +83,11 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(oddOrEven), for: .touchUpInside)
         rightButton.sizeToFit()
+        if isBeforeFirstEvenQuestion {
+            progressBar.setProgress(0.2, animated: true)
+        } else {
+            progressBar.setProgress(0.6, animated: true)
+        }
     }
 
 
@@ -89,6 +102,11 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
         rightButton.sizeToFit()
         leftButton.sizeToFit()
+        if isBeforeFirstEvenQuestion {
+            progressBar.setProgress(0.3, animated: true)
+        } else {
+            progressBar.setProgress(0.7, animated: true)
+        }
 
     }
 
@@ -102,10 +120,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
         rightButton.sizeToFit()
 
-        if isFirstEvenQuestion {
+        if isBeforeFirstEvenQuestion {
             total += 1
+            progressBar.setProgress(0.4, animated: true)
         } else {
             total += 2
+            progressBar.setProgress(0.8, animated: true)
         }
     }
 
@@ -113,15 +133,17 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func divideByTwo() {
         messageLabel.text = "Divide the result by 2"
         leftButton.isHidden = true
-        if isFirstEvenQuestion {
+        if isBeforeFirstEvenQuestion {
             rightButton.setTitle(Const.Misc.okMessage, for: .normal)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
-            isFirstEvenQuestion = false
+            isBeforeFirstEvenQuestion = false
+            progressBar.setProgress(0.5, animated: true)
         } else {
             rightButton.setTitle(Const.Misc.okMessage, for: .normal)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
+            progressBar.setProgress(0.9, animated: true)
         }
         rightButton.sizeToFit()
 
@@ -182,6 +204,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         rightButton.sizeToFit()
         rightButton.isHidden = false
+        progressBar.setProgress(1, animated: true)
     }
 
 
