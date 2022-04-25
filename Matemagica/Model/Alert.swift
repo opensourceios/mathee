@@ -42,7 +42,11 @@ extension UIViewController {
         }
 
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+            if let safeSelf = self as? FormulaViewController {
+                safeSelf.myTextField.becomeFirstResponder()
+            }
+        }
         alert.addAction(alertAction)
 
         return alert

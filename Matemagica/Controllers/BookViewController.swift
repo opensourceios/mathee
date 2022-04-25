@@ -69,7 +69,7 @@ class BookViewController: UIViewController {
              62, 63]]
 
     var arrayOfPages = [Page]()
-    var shuffledPagesByContent = [Page]()
+//    var shuffledPagesByContent = [Page]()
     var shuffledPagesByOrder = [Page]()
     var userNumber = 0
     var currentPageReal = 0
@@ -103,13 +103,15 @@ class BookViewController: UIViewController {
             arrayOfPages.append(Page(key: page.key, value: page.value))
         }
 
-        for page in arrayOfPages {
-            let shuffledPageContent = page.value.shuffled()
-            shuffledPagesByContent.append(Page(key: page.key, value: shuffledPageContent))
-        }
 
-        shuffledPagesByOrder = shuffledPagesByContent.shuffled()
+//        for page in arrayOfPages {
+//            let shuffledPageContent = page.value.shuffled()
+//            shuffledPagesByContent.append(Page(key: page.key, value: shuffledPageContent))
+//        }
+//
+//        shuffledPagesByOrder = shuffledPagesByContent.shuffled()
 
+        shuffledPagesByOrder = arrayOfPages.shuffled()
 
         pageNumberLabel.text = """
         Think of a number 1-63

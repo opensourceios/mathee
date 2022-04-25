@@ -15,11 +15,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var myTextField: UITextField!
-    @IBOutlet weak var helperButton: UIButton!
+    @IBOutlet weak var showAnswerButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
 
     @IBOutlet weak var leftButton: UIButton!
 
+    @IBOutlet weak var infoButton: UIButton!
     // MARK: Properties
 
     var total = 0
@@ -63,7 +64,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.sizeToFit()
 
         myTextField.isHidden = true
-        helperButton.isHidden = true
+        showAnswerButton.isHidden = true
+        infoButton.isHidden = true
     }
 
 
@@ -129,15 +131,14 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func divideByNine() {
         // tell user to divide by nine
         messageLabel.text = """
-        Divide your result by 9, and type how many times 9 fits in it.
-        Ignore leftover numbers. For example: if your result is 12, type 1 (ignoring the leftover 3)
-        If your result is less than 9, type 0.
+        How many times does 9 fit in your result?
         """
 
         rightButton.isHidden = true
         // ask current result to user
         myTextField.isHidden = false
-        helperButton.isHidden = false
+        showAnswerButton.isHidden = false
+        infoButton.isHidden = false
         myTextField.becomeFirstResponder()
     }
 
@@ -172,7 +173,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func showResult() {
         myTextField.isHidden = true
-        helperButton.isHidden = true
+        showAnswerButton.isHidden = true
+        infoButton.isHidden = true
         messageLabel.text = "You thought:" + "\n" + "\(total)"
         leftButton.isHidden = true
         rightButton.setTitle(Const.Misc.endMessage, for: .normal)
@@ -188,6 +190,23 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         checkResult()
     }
 
+
+    @IBAction func helpPressed(_ sender: Any) {
+        let alert = UIAlertController(
+            title: "More Info",
+            message:
+            """
+           Divide your result by 9, and type how many times 9 fits in it.
+           Ignore leftover numbers. For example: if your result is 12, type 1 (ignoring the leftover 3)
+           If your result is less than 9, type 0.
+           """,
+            preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: Const.Misc.okMessage, style: .cancel) { _ in
+            self.myTextField.becomeFirstResponder()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
