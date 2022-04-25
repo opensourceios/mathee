@@ -112,10 +112,9 @@ class BookViewController: UIViewController {
         shuffledPagesByOrder = shuffledPagesByContent.shuffled()
 
         pageNumberLabel.text = """
-        Think of a number 1-63
+        Think of a number 1-63 (remember it!)
+
         I will now show you 6 pages
-        Your number will be in one or more of them
-        Spot the number!
         """
         pageContentLabel.text = ""
 
