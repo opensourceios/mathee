@@ -54,7 +54,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         isFirstEvenQuestion = true
         myTextField.text = ""
         messageLabel.text = """
-        Think of a number
+        Think of a number (remember it!)
         """
 
         rightButton.removeTarget(nil, action: nil, for: .allEvents)

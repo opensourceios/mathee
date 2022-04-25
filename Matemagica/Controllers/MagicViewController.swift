@@ -44,8 +44,9 @@ class MagicViewController: UIViewController {
         setThemeColorTo(myThemeColor: myThemeColor)
 
         headerLabel.text = """
-        Think of a number.
-        Prepare to be amazed.
+        Think of a number (you might want pen and paper)
+
+        Let us call your number: A
         """
     }
 
@@ -54,8 +55,9 @@ class MagicViewController: UIViewController {
 
     @objc func play() {
         headerLabel.text = """
-        Let's call the number you thought \"A\".
-        Add 10 to A
+        Now do: A + 10
+
+        Let us call the result: B
         """
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -67,9 +69,11 @@ class MagicViewController: UIViewController {
 
     @objc func combineFirst() {
         headerLabel.text = """
-        Let's call the result of A + 10, "B".
-        Combine the digits of B.
-        For example, if B is 24, do 2 + 4, and you get 6
+        Combine the digits of B
+
+        For example, if B was 24, you would get 2 + 4 = 6
+
+        Let us call the result of combining B's digits: C
         """
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -81,9 +85,9 @@ class MagicViewController: UIViewController {
 
     @objc func subtract() {
         headerLabel.text = """
-        Let's call the result of B's combined digits "C".
-        Do B - C.
-        For example, if you had 24 and got 6, do 24 - 6, and you get 18
+        Now do: B - C
+
+        Let us call the result: D
         """
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -95,7 +99,6 @@ class MagicViewController: UIViewController {
 
     @objc func checkFirst() {
         headerLabel.text = """
-        Let's call the result of B - C, \"D\".
         Is D a single digit?
         """
 
@@ -118,7 +121,9 @@ class MagicViewController: UIViewController {
     @objc func combineSecond() {
         headerLabel.text =
         """
-        Combine the digits of D. For example, if D is 24, do 2 + 4, and you get 6
+        Combine the digits of D
+
+        For example, if D was 24, you would get 2 + 4 = 6
         """
 
         leftButton.isHidden = true
@@ -168,7 +173,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFirst() {
-        headerLabel.text = "D is 9"
+        headerLabel.text = "D is: 9"
 
         leftButton.isHidden = true
         middleButton.isHidden = false
@@ -182,7 +187,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFinally() {
-        headerLabel.text = "It's 9"
+        headerLabel.text = "You now have: 9"
 
         leftButton.isHidden = true
         middleButton.isHidden = false
