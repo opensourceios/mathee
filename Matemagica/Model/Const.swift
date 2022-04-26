@@ -11,18 +11,12 @@ import UIKit
 
 struct Const {
 
-    struct UserDef {
-        static let sawTutorial = "sawTutorial"
-    }
-
-
     struct StoryboardID {
         static let main = "Main"
         static let bookVC = "BookViewController"
         static let formulaVC = "FormulaViewController"
         static let higherVC = "HigherLowerViewController"
         static let magicVC = "MagicViewController"
-        static let tutorialVC = "TutorialVC"
     }
 
 
