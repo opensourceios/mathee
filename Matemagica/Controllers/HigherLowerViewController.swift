@@ -97,7 +97,6 @@ class HigherLowerViewController: UIViewController {
         }
         guess = low + halfDiff
         guessLabel.isHidden = false
-        // TODO: make guess LARGE
         guessLabel.text = """
         Is your number \(guess)?
 
