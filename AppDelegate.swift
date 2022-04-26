@@ -26,10 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-                UserDefaults.standard.register(defaults: [
-                    Const.UserDef.sawTutorial: false
-                ])
-
                 return true
             }
 
