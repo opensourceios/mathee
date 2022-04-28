@@ -33,11 +33,6 @@ struct Const {
         static let showAppsButtonTitle = "More apps"
         static let devID = "1402417666"
         static let appsLink = "https://apps.apple.com/developer/id1402417666"
-        static let shareBodyMessage = """
-        Discover math magic
-
-        https://apps.apple.com/app/id1406084758
-        """
         static let yesMessage = "Yes"
         static let noMessage = "No"
         static let okMessage = "OK"
@@ -53,7 +48,7 @@ struct Const {
         static let shareTitleMessage = "Tell a friend"
         static let myDataSourceHomeMenu = ["Guess it",
                                            "Spot it",
-                                           "Lower Or Higher",
+                                           "Lower or higher",
                                            "Mystical 9"]
     }
 

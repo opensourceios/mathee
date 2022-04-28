@@ -20,7 +20,7 @@
                                 <rect key="frame" x="16" y="379" width="343" height="64.333333333333314"/>
                                 <string key="text">Think of a number 1-1000
 
-I will guess It in 10 tries or less</string>
+I will guess it in 10 tries or less</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -271,7 +271,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1049" y="1657"/>
         </scene>
-        <!--Select a Game To Get Started-->
+        <!--Math Magic-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
@@ -347,7 +347,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select a Game To Get Started" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Math Magic" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5"/>
                     </navigationItem>
                     <connections>

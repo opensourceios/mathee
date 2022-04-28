@@ -100,7 +100,7 @@ class HigherLowerViewController: UIViewController {
         guessLabel.text = """
         Is your number \(guess)?
 
-        Otherwise: is it Lower or Higher?
+        Otherwise: is it lower or higher?
         """
 
         if halfDiff == 1 {
