@@ -201,7 +201,10 @@ class BookViewController: UIViewController {
     @objc func showResult() {
         pageContentLabel.text = ""
         pageNumberLabel.text = ""
-        resultLabel.text = "Your number was: " + "\(userNumber)"
+        resultLabel.text = """
+        You thought:
+        \(userNumber)
+        """ // TODO: make guess big and colored
         resultLabel.isHidden = false
 
         leftButton.isHidden = true
@@ -210,7 +213,7 @@ class BookViewController: UIViewController {
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        middleButton.setTitle(Const.Misc.endMessage, for: .normal)
+        middleButton.setTitle(Const.Misc.correctMessage, for: .normal)
         middleButton.sizeToFit()
         progressBar.setProgress(1, animated: true)
     }
