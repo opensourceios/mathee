@@ -30,4 +30,25 @@ extension UIViewController {
             ], for: state)
         }
     }
+
+    func addAttrToLabel(preString: String, toAttrify: String, color: UIColor) -> NSMutableAttributedString {
+        let regularAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.preferredFont(forTextStyle: .body)]
+        let jumboAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
+            .foregroundColor: color]
+        let attributedMessagePre = NSAttributedString(
+            string: preString,
+            attributes: regularAttributes)
+
+        let attributedMessageJumbo = NSAttributedString(string: toAttrify, attributes: jumboAttributes)
+
+        let myAttributedText = NSMutableAttributedString()
+
+        myAttributedText.append(attributedMessagePre)
+        myAttributedText.append(attributedMessageJumbo)
+
+        return myAttributedText
+    }
+
 }

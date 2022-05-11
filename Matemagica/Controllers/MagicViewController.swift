@@ -194,10 +194,8 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFirst() {
-        headerLabel.text = """
-        D is:
-        9
-        """ // TODO: make guess big and colored
+        headerLabel.attributedText = addAttrToLabel(
+            preString: "D is:\n\n", toAttrify: "9", color: myThemeColor)
 
         leftButton.isHidden = true
         middleButton.isHidden = false
@@ -212,10 +210,8 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFinally() {
-        headerLabel.text = """
-        You now have:
-        9
-        """ // TODO: make guess big and colored
+        headerLabel.attributedText = addAttrToLabel(
+            preString: "You now have:\n\n", toAttrify: "9", color: myThemeColor)
 
         leftButton.isHidden = true
         middleButton.isHidden = false

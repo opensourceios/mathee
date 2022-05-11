@@ -197,44 +197,26 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myTextField.isHidden = true
         showAnswerButton.isHidden = true
         infoButton.isHidden = true
-        //
-        //        let regularAttributes: [NSAttributedString.Key: Any] = [
-        //            .font: UIFont.systemFont(ofSize: 16),
-        //            .foregroundColor: UIColor.white]
-        //        let jumboAttributes: [NSAttributedString.Key: Any] = [
-        //            .font: UIFont.systemFont(ofSize: 40),
-        //            .foregroundColor: UIColor.white]
-        //        let attributedMessagePreHex = NSAttributedString(
-        //            string: "\nHEX\n",
-        //            attributes: regularAttributes)
-        //        let hexString = getSafeHexFromUD()
-        //        let attributedMessageJumboHex = NSAttributedString(string: hexString, attributes: jumboAttributes)
-        //        let attributedMessagePreRGB = NSAttributedString(
-        //            string: "\n\nRGB\n",
-        //            attributes: regularAttributes)
-        //
-        //        let rgbString = rgbFrom(hex: hexString)
-        //        let myUIColor = uiColorFrom(hex: hexString)
-        //
-        //        let attributedMessageJumboRGB = NSAttributedString(string: rgbString, attributes: jumboAttributes)
-        //
-        //        let attributedMessagePost = NSAttributedString(
-        //            string: Const.AppInfo.creditMessage,
-        //            attributes: regularAttributes)
-        //
-        //        let myAttributedText = NSMutableAttributedString()
-        //
-        //        myAttributedText.append(attributedMessagePreHex)
-        //        myAttributedText.append(attributedMessageJumboHex)
-        //        myAttributedText.append(attributedMessagePreRGB)
-        //        myAttributedText.append(attributedMessageJumboRGB)
-        //        myAttributedText.append(attributedMessagePost)
-        //
-        //        messageLabel.attributedText = myAttributedText
-        messageLabel.text = """
-        You thought:
-        \(total)
-        """ // TODO: make guess big and colored
+
+//        let regularAttributes: [NSAttributedString.Key: Any] = [
+//            .font: UIFont.preferredFont(forTextStyle: .body)]
+//        let jumboAttributes: [NSAttributedString.Key: Any] = [
+//            .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
+//            .foregroundColor: myThemeColor]
+//        let attributedMessagePre = NSAttributedString(
+//            string: "You thought:\n\n",
+//            attributes: regularAttributes)
+//
+//        let attributedMessageJumbo = NSAttributedString(string: "\(total)", attributes: jumboAttributes)
+//
+//        let myAttributedText = NSMutableAttributedString()
+//
+//        myAttributedText.append(attributedMessagePre)
+//        myAttributedText.append(attributedMessageJumbo)
+
+        messageLabel.attributedText = addAttrToLabel(
+            preString: "You thought:\n\n", toAttrify: "\(total)", color: myThemeColor)
+
         leftButton.isHidden = true
         rightButton.setTitle(Const.Misc.correctMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
