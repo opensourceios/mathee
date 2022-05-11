@@ -213,7 +213,8 @@ class MagicViewController: UIViewController {
 
     @objc func showResultFinally() {
         headerLabel.text = """
-        You now have: 9
+        You now have:
+        9
         """ // TODO: make guess big and colored
 
         leftButton.isHidden = true
