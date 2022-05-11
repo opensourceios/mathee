@@ -16,7 +16,6 @@ class BookViewController: UIViewController {
 
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageContentLabel: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -99,7 +98,6 @@ class BookViewController: UIViewController {
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-        resultLabel.isHidden = true
 
         for page in pagesArrayOfDicts {
             arrayOfPages.append(Page(key: page.key, value: page.value))
@@ -198,12 +196,10 @@ class BookViewController: UIViewController {
 
     @objc func showResult() {
         pageContentLabel.text = ""
-        pageNumberLabel.text = ""
-        resultLabel.text = """
+        pageNumberLabel.text = """
         You thought:
         \(userNumber)
         """ // TODO: make guess big and colored
-        resultLabel.isHidden = false
 
         leftButton.isHidden = true
         middleButton.isHidden = false

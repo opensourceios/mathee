@@ -178,12 +178,6 @@ Prepare to be amazed.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-bR-HVJ" userLabel="Result Label">
-                                <rect key="frame" x="164" y="401" width="47.333333333333343" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
                                 <rect key="frame" x="16" y="66" width="343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -219,7 +213,6 @@ Prepare to be amazed.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="7lz-1e-Sfr" secondAttribute="trailing" constant="32" id="1u9-LD-GQs"/>
-                            <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerY" secondItem="iIp-2I-Ojt" secondAttribute="centerY" id="4pA-Ch-WpV"/>
                             <constraint firstItem="Eo3-rL-Byj" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="4r1-tP-2KT"/>
                             <constraint firstItem="7lz-1e-Sfr" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="32" id="8Jc-3i-DAu"/>
                             <constraint firstItem="cZe-dL-xl3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Eo3-rL-Byj" secondAttribute="trailing" constant="4" id="CUg-nh-LV4"/>
@@ -228,7 +221,6 @@ Prepare to be amazed.</string>
                             <constraint firstItem="GrR-lf-ak1" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="DPy-gr-1Ro"/>
                             <constraint firstItem="EkJ-TL-eJa" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="ERs-n5-vmO"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="cZe-dL-xl3" secondAttribute="bottom" constant="16" id="Jqh-q3-BWo"/>
-                            <constraint firstItem="vPg-bR-HVJ" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="LAR-Wd-nYZ"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="Eo3-rL-Byj" secondAttribute="bottom" constant="16" id="Q58-Gi-Fc0"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="sju-T6-m4T" secondAttribute="bottom" constant="16" id="YLq-1d-O01"/>
                             <constraint firstItem="7lz-1e-Sfr" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="bottom" constant="64" id="jvG-Hd-n6p"/>
@@ -247,7 +239,6 @@ Prepare to be amazed.</string>
                         <outlet property="pageContentLabel" destination="7lz-1e-Sfr" id="clv-nt-ydx"/>
                         <outlet property="pageNumberLabel" destination="GrR-lf-ak1" id="bX6-c4-ciD"/>
                         <outlet property="progressBar" destination="EkJ-TL-eJa" id="4T9-vF-RDq"/>
-                        <outlet property="resultLabel" destination="vPg-bR-HVJ" id="2Ub-IO-bhJ"/>
                         <outlet property="rightButton" destination="sju-T6-m4T" id="tPv-NH-vEK"/>
                     </connections>
                 </viewController>
