@@ -30,7 +30,7 @@ extension UIViewController {
             case .nan:
                 alertTitle = "An error occurred"
                 alertMessage = """
-                Oops!
+                Oops
                 That number is too big. Please think of a smaller number and try again
                 (Please don't enter text. Only enter numbers)
                 """
