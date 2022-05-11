@@ -196,10 +196,9 @@ class BookViewController: UIViewController {
 
     @objc func showResult() {
         pageContentLabel.text = ""
-        pageNumberLabel.text = """
-        You thought:
-        \(userNumber)
-        """ // TODO: make guess big and colored
+
+        pageNumberLabel.attributedText = addAttrToLabel(
+            preString: "You thought:\n\n", toAttrify: "\(userNumber)", color: myThemeColor)
 
         leftButton.isHidden = true
         middleButton.isHidden = false
