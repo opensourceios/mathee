@@ -30,7 +30,7 @@ class HigherLowerViewController: UIViewController {
     var guess = 0
     var diff = 0
     var halfDiff = 0
-    var tries: Float = 0
+    var tries = 0
 
     let myThemeColor: UIColor = .systemBlue
 
@@ -98,27 +98,39 @@ class HigherLowerViewController: UIViewController {
         guess = low + halfDiff
         guessLabel.isHidden = false
         guessLabel.text = """
-        Is your number \(guess)?
+        Is your number
+        \(guess)
+        ?
+
+        Tries: \(tries)
 
         Otherwise: is it lower or higher?
-        """
+        """ // TODO: make guess big and colored
 
         if halfDiff == 1 {
-            guessLabel.text = "Your number is: " + "\(guess)"
+            guessLabel.text = """
+            You thought:
+            \(guess)
+
+            Tries: \(tries)
+            """ // TODO: make guess big and colored
             // correct button
+            correctButton.removeTarget(nil, action: nil, for: .allEvents)
+            correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+            correctButton.setTitle(Const.Misc.correctMessage, for: .normal)
             lowerButton.isHidden = true
             higherButton.isHidden = true
             correctButton.isHidden = false
         } else {
             // all buttons
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
-            correctButton.addTarget(self, action: #selector(correct), for: .touchUpInside)
+            correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
             correctButton.setTitle(Const.Misc.correctMessage, for: .normal)
             correctButton.isHidden = false
             lowerButton.isHidden = false
             higherButton.isHidden = false
         }
-        let myProgress: Float = (tries + 1.0) / 11.0
+        let myProgress: Float = (Float(tries) + 1.0) / 11.0
         progressBar.setProgress(myProgress, animated: true)
     }
 
@@ -132,18 +144,6 @@ class HigherLowerViewController: UIViewController {
     @objc func higher() {
         low = guess
         showNextGuess()
-    }
-
-
-    @objc func correct() {
-        guessLabel.text = "Told ya I'd get it!"
-        lowerButton.isHidden = true
-        higherButton.isHidden = true
-        correctButton.isHidden = false
-        correctButton.removeTarget(nil, action: nil, for: .allEvents)
-        correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        correctButton.setTitle(Const.Misc.lolDoneMessage, for: .normal)
-        progressBar.isHidden = true
     }
 
 

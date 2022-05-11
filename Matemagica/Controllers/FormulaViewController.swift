@@ -197,9 +197,46 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myTextField.isHidden = true
         showAnswerButton.isHidden = true
         infoButton.isHidden = true
-        messageLabel.text = "You thought:" + "\n" + "\(total)"
+//
+//        let regularAttributes: [NSAttributedString.Key: Any] = [
+//            .font: UIFont.systemFont(ofSize: 16),
+//            .foregroundColor: UIColor.white]
+//        let jumboAttributes: [NSAttributedString.Key: Any] = [
+//            .font: UIFont.systemFont(ofSize: 40),
+//            .foregroundColor: UIColor.white]
+//        let attributedMessagePreHex = NSAttributedString(
+//            string: "\nHEX\n",
+//            attributes: regularAttributes)
+//        let hexString = getSafeHexFromUD()
+//        let attributedMessageJumboHex = NSAttributedString(string: hexString, attributes: jumboAttributes)
+//        let attributedMessagePreRGB = NSAttributedString(
+//            string: "\n\nRGB\n",
+//            attributes: regularAttributes)
+//
+//        let rgbString = rgbFrom(hex: hexString)
+//        let myUIColor = uiColorFrom(hex: hexString)
+//
+//        let attributedMessageJumboRGB = NSAttributedString(string: rgbString, attributes: jumboAttributes)
+//
+//        let attributedMessagePost = NSAttributedString(
+//            string: Const.AppInfo.creditMessage,
+//            attributes: regularAttributes)
+//
+//        let myAttributedText = NSMutableAttributedString()
+//
+//        myAttributedText.append(attributedMessagePreHex)
+//        myAttributedText.append(attributedMessageJumboHex)
+//        myAttributedText.append(attributedMessagePreRGB)
+//        myAttributedText.append(attributedMessageJumboRGB)
+//        myAttributedText.append(attributedMessagePost)
+//
+//        messageLabel.attributedText = myAttributedText
+        messageLabel.text = """
+        You thought:
+        \(total)
+        """ // TODO: make guess big and colored
         leftButton.isHidden = true
-        rightButton.setTitle(Const.Misc.endMessage, for: .normal)
+        rightButton.setTitle(Const.Misc.correctMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         rightButton.sizeToFit()

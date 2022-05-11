@@ -10,7 +10,6 @@ import UIKit
 
 extension UIViewController {
     func setThemeColorTo(myThemeColor: UIColor) {
-//        UIProgressView.appearance().trackTintColor = .red
         UIProgressView.appearance().progressTintColor = myThemeColor
         self.navigationController!.navigationBar.tintColor = myThemeColor
         UINavigationBar.appearance().tintColor = myThemeColor
