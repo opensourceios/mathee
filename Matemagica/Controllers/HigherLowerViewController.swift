@@ -97,23 +97,28 @@ class HigherLowerViewController: UIViewController {
         }
         guess = low + halfDiff
         guessLabel.isHidden = false
-        guessLabel.text = """
-        Is your number
-        \(guess)
-        ?
+        let myAttrString = addAttrToLabel(
+            preString: "Is your number\n", toAttrify: "\(guess)", color: myThemeColor)
 
-        Tries: \(tries)
+        myAttrString.append(addAttrToLabel(
+            preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
+        myAttrString.append(NSAttributedString(string: "\n\nOtherwise: is it lower or higher?"))
 
-        Otherwise: is it lower or higher?
-        """ // TODO: make guess big and colored
+        guessLabel.attributedText = myAttrString
+
 
         if halfDiff == 1 {
-            guessLabel.text = """
-            You thought:
-            \(guess)
+            let myAttrString = addAttrToLabel(
+                preString: "You thought:\n", toAttrify: "\(guess)", color: myThemeColor)
 
-            Tries: \(tries)
-            """ // TODO: make guess big and colored
+            myAttrString.append(addAttrToLabel(
+                preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
+
+            myAttrString.append(NSAttributedString(string: "\n\n"))
+
+            guessLabel.attributedText = myAttrString
+
+
             // correct button
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
