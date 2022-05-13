@@ -97,10 +97,10 @@ class HigherLowerViewController: UIViewController {
         }
         guess = low + halfDiff
         guessLabel.isHidden = false
-        let myAttrString = addAttrToLabel(
-            preString: "Is your number\n", toAttrify: "\(guess)", color: myThemeColor)
+        let myAttrString = attrifyString(
+            preString: "Is your number...\n", toAttrify: "\(guess)", color: myThemeColor)
 
-        myAttrString.append(addAttrToLabel(
+        myAttrString.append(attrifyString(
             preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
         myAttrString.append(NSAttributedString(string: "\n\nOtherwise: is it lower or higher?"))
 
@@ -108,10 +108,10 @@ class HigherLowerViewController: UIViewController {
 
 
         if halfDiff == 1 {
-            let myAttrString = addAttrToLabel(
+            let myAttrString = attrifyString(
                 preString: "You thought:\n", toAttrify: "\(guess)", color: myThemeColor)
 
-            myAttrString.append(addAttrToLabel(
+            myAttrString.append(attrifyString(
                 preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
 
             myAttrString.append(NSAttributedString(string: "\n\n"))

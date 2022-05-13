@@ -31,7 +31,7 @@ extension UIViewController {
         }
     }
 
-    func addAttrToLabel(preString: String, toAttrify: String, color: UIColor) -> NSMutableAttributedString {
+    func attrifyString(preString: String, toAttrify: String, color: UIColor) -> NSMutableAttributedString {
         let regularAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.preferredFont(forTextStyle: .body)]
         let jumboAttributes: [NSAttributedString.Key: Any] = [

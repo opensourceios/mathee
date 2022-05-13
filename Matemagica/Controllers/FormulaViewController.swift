@@ -214,7 +214,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 //        myAttributedText.append(attributedMessagePre)
 //        myAttributedText.append(attributedMessageJumbo)
 
-        messageLabel.attributedText = addAttrToLabel(
+        messageLabel.attributedText = attrifyString(
             preString: "You thought:\n\n", toAttrify: "\(total)", color: myThemeColor)
 
         leftButton.isHidden = true
