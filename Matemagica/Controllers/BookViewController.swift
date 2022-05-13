@@ -197,7 +197,7 @@ class BookViewController: UIViewController {
     @objc func showResult() {
         pageContentLabel.text = ""
 
-        pageNumberLabel.attributedText = addAttrToLabel(
+        pageNumberLabel.attributedText = attrifyString(
             preString: "You thought:\n\n", toAttrify: "\(userNumber)", color: myThemeColor)
 
         leftButton.isHidden = true

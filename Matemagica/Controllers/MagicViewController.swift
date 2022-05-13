@@ -194,7 +194,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFirst() {
-        headerLabel.attributedText = addAttrToLabel(
+        headerLabel.attributedText = attrifyString(
             preString: "D is:\n\n", toAttrify: "9", color: myThemeColor)
 
         leftButton.isHidden = true
@@ -210,7 +210,7 @@ class MagicViewController: UIViewController {
 
 
     @objc func showResultFinally() {
-        headerLabel.attributedText = addAttrToLabel(
+        headerLabel.attributedText = attrifyString(
             preString: "You now have:\n\n", toAttrify: "9", color: myThemeColor)
 
         leftButton.isHidden = true
