@@ -96,6 +96,11 @@ class BookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if CommandLine.arguments.contains("--matemagicaScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            UIView.setAnimationsEnabled(false)
+        }
+
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
 
