@@ -23,18 +23,6 @@ class MenuViewController: UIViewController,
 
     // MARK: Properties
 
-    let myImageSource = ["plus.slash.minus",
-                         "book",
-                         "arrow.up.arrow.down",
-                         "wand.and.stars"]
-
-    let tintColorsArray: [UIColor] = [
-        .systemPurple,
-        .systemOrange,
-        .systemBlue,
-        .systemRed
-    ]
-
     let menuCell = "MenuCell"
 
     let myThemeColor: UIColor = .systemBlue
@@ -113,15 +101,12 @@ class MenuViewController: UIViewController,
     func showApps() {
 
         let myURL = URL(string: Const.Misc.appsLink)
-
         guard let safeURL = myURL else {
             let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
             return
         }
-
         UIApplication.shared.open(safeURL, options: [:], completionHandler: nil)
-
     }
 
 
@@ -162,10 +147,11 @@ class MenuViewController: UIViewController,
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
         cell.myLabel.text = Const.Misc.myDataSourceHomeMenu[(indexPath as NSIndexPath).row]
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
-        let aImage = UIImage(systemName: myImageSource[(indexPath as NSIndexPath).row], withConfiguration: aConfig)
+        let aImage = UIImage(systemName: Const.Misc.myImageSource[(indexPath as NSIndexPath).row],
+                             withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
-        cell.imageViewContainer.backgroundColor = tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.imageViewContainer.backgroundColor = Const.Misc.tintColorsArray[(indexPath as NSIndexPath).row]
         cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
@@ -177,37 +163,29 @@ class MenuViewController: UIViewController,
 
         let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
 
-        let cell = tableView.cellForRow(at: indexPath) as? MainMenuTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! MainMenuTableViewCell
 
-        switch cell?.myLabel?.text {
+        switch cell.myLabel!.text {
             case Const.Misc.myDataSourceHomeMenu[0]:
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.formulaVC) as? FormulaViewController
-                if let toPresent = controller {
-                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
+                    withIdentifier: Const.StoryboardID.bookVC) as! BookViewController
+                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                self.navigationController!.pushViewController(controller, animated: true)
             case Const.Misc.myDataSourceHomeMenu[1]:
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.bookVC) as? BookViewController
-                if let toPresent = controller {
-                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
+                    withIdentifier: Const.StoryboardID.formulaVC) as! FormulaViewController
+                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                self.navigationController!.pushViewController(controller, animated: true)
             case Const.Misc.myDataSourceHomeMenu[2]:
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.higherVC) as? HigherLowerViewController
-                if let toPresent = controller {
-                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
+                    withIdentifier: Const.StoryboardID.magicVC) as! MagicViewController
+                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                self.navigationController!.pushViewController(controller, animated: true)
             case Const.Misc.myDataSourceHomeMenu[3]:
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.magicVC) as? MagicViewController
-                if let toPresent = controller {
-                    controller?.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
-                    self.navigationController?.pushViewController(toPresent, animated: true)
-                }
+                    withIdentifier: Const.StoryboardID.higherVC) as! HigherLowerViewController
+                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                self.navigationController!.pushViewController(controller, animated: true)
             default:
                 let alert = createAlert(alertReasonParam: AlertReason.unknown)
                 alert.view.layoutIfNeeded()
