@@ -42,6 +42,17 @@ class MenuViewController: UIViewController,
 
     // MARK: Life Cycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if CommandLine.arguments.contains("--matemagicaScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            UIView.setAnimationsEnabled(false)
+        }
+
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.largeTitleDisplayMode = .never
