@@ -45,10 +45,22 @@ struct Const {
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a friend"
-        static let myDataSourceHomeMenu = ["Guess it",
-                                           "Spot it",
-                                           "Lower or higher",
-                                           "Mystical 9"]
+        static let myDataSourceHomeMenu = ["Spot it",
+                                           "Guess it",
+                                           "Mystical 9",
+                                           "Lower or higher"]
+
+        static let myImageSource = ["book",
+                                    "plus.slash.minus",
+                                    "wand.and.stars",
+                                    "arrow.up.arrow.down"]
+
+        static let tintColorsArray: [UIColor] = [
+            .systemOrange,
+            .systemPurple,
+            .systemRed,
+            .systemBlue
+        ]
     }
 
 }

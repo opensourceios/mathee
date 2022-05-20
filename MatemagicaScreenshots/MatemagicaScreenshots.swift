@@ -16,7 +16,7 @@ class MatemagicaScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Guess it", "Spot it"]
+    let aList = ["Spot it", "Guess it"]
 
 
     override func setUpWithError() throws {
@@ -36,6 +36,7 @@ class MatemagicaScreenshots: XCTestCase {
         aThing.tap()
         switch word {
             case "Guess it":
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "Guess-it-think")
                 app.buttons["OK"].firstMatch.tap()
                 takeScreenshot(named: "Guess-it-multiply")
@@ -52,11 +53,13 @@ class MatemagicaScreenshots: XCTestCase {
                 takeScreenshot(named: "Guess-it-result")
                 app.buttons["Correct"].firstMatch.tap()
             case "Spot it":
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 app.buttons["OK"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 takeScreenshot(named: "Spot-it")
+                app.buttons["Math Magic"].firstMatch.tap()
             default:
                 fatalError()
         }
