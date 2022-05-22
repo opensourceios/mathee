@@ -37,7 +37,7 @@ extension UIViewController {
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """
-            An unknown error occurred. Please try again later, or contact us at \(Const.Misc.emailAddress)
+            An unknown error occurred. Please try again later, or contact us at \(Const.emailAddress)
             """
         }
 

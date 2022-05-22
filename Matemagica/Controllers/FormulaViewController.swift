@@ -72,7 +72,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
-        rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+        rightButton.setTitle(Const.okMessage, for: .normal)
         leftButton.isHidden = true
         rightButton.sizeToFit()
 
@@ -84,7 +84,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func timesThree() {
         messageLabel.text = "Multiply it by 3"
-        rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+        rightButton.setTitle(Const.okMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(oddOrEven), for: .touchUpInside)
         rightButton.sizeToFit()
@@ -99,10 +99,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func oddOrEven() {
         messageLabel.text = "Is the result odd or even?"
         leftButton.isHidden = false
-        leftButton.setTitle(Const.Misc.oddMessage, for: .normal)
+        leftButton.setTitle(Const.oddMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         leftButton.addTarget(self, action: #selector(addOne), for: .touchUpInside)
-        rightButton.setTitle(Const.Misc.evenMessage, for: .normal)
+        rightButton.setTitle(Const.evenMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
         rightButton.sizeToFit()
@@ -120,7 +120,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
         leftButton.isHidden = true
-        rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+        rightButton.setTitle(Const.okMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
         rightButton.sizeToFit()
@@ -139,13 +139,13 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.text = "Divide the result by 2"
         leftButton.isHidden = true
         if isBeforeFirstEvenQuestion {
-            rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+            rightButton.setTitle(Const.okMessage, for: .normal)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
             isBeforeFirstEvenQuestion = false
             progressBar.setProgress(0.5, animated: true)
         } else {
-            rightButton.setTitle(Const.Misc.okMessage, for: .normal)
+            rightButton.setTitle(Const.okMessage, for: .normal)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
             progressBar.setProgress(0.9, animated: true)
@@ -223,7 +223,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             preString: "You thought:\n\n", toAttrify: "\(total)", color: myThemeColor)
 
         leftButton.isHidden = true
-        rightButton.setTitle(Const.Misc.correctMessage, for: .normal)
+        rightButton.setTitle(Const.correctMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         rightButton.sizeToFit()
@@ -248,7 +248,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
            If your result is less than 9, type 0.
            """,
             preferredStyle: .actionSheet)
-        let okAction = UIAlertAction(title: Const.Misc.okMessage, style: .cancel) { _ in
+        let okAction = UIAlertAction(title: Const.okMessage, style: .cancel) { _ in
             self.myTextField.becomeFirstResponder()
         }
         alert.addAction(okAction)
