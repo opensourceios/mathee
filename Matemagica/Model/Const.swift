@@ -19,6 +19,11 @@ struct Const {
         static let magicVC = "MagicViewController"
     }
 
+    enum TitleEnum: String, CaseIterable {
+        // swiftlint:disable:next identifier_name
+        case spotIt = "Spot it", guessIt = "Guess it", mystical_9 = "Mystical 9",
+             lowerOrHigher = "Lower or higher"
+    }
 
     struct Misc {
         static let appVersion = "CFBundleShortVersionString"
@@ -45,15 +50,6 @@ struct Const {
         static let evenMessage = "Even"
         static let aboutMessage = "About"
         static let shareTitleMessage = "Tell a friend"
-        static let myDataSourceHomeMenu = ["Spot it",
-                                           "Guess it",
-                                           "Mystical 9",
-                                           "Lower or higher"]
-
-        static let myImageSource = ["book",
-                                    "plus.slash.minus",
-                                    "wand.and.stars",
-                                    "arrow.up.arrow.down"]
 
         static let tintColorsArray: [UIColor] = [
             .systemOrange,
@@ -61,6 +57,21 @@ struct Const {
             .systemRed,
             .systemBlue
         ]
+
+        static let myImageSource = ["book",
+                                    "plus.slash.minus",
+                                    "wand.and.stars",
+                                    "arrow.up.arrow.down"]
+
+
+        static var titleArrFromEnum: [String] {
+            var mySampleArray: [String] = []
+            for item in Const.TitleEnum.allCases {
+                mySampleArray.append(item.rawValue)
+            }
+            return mySampleArray
+        }
+
     }
 
 }
