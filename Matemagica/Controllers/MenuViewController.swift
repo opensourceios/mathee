@@ -113,7 +113,7 @@ class MenuViewController: UIViewController,
     // MARK: TableView Delegate
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Const.Misc.myDataSourceHomeMenu.count
+        return Const.TitleEnum.allCases.count
     }
 
 
@@ -145,7 +145,8 @@ class MenuViewController: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-        cell.myLabel.text = Const.Misc.myDataSourceHomeMenu[(indexPath as NSIndexPath).row]
+        let myIndexRow: Int = (indexPath as NSIndexPath).row
+        cell.myLabel.text = Const.Misc.titleArrFromEnum[myIndexRow]
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
         let aImage = UIImage(systemName: Const.Misc.myImageSource[(indexPath as NSIndexPath).row],
                              withConfiguration: aConfig)
@@ -166,25 +167,25 @@ class MenuViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as! MainMenuTableViewCell
 
         switch cell.myLabel!.text {
-            case Const.Misc.myDataSourceHomeMenu[0]:
+            case Const.TitleEnum.spotIt.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.bookVC) as! BookViewController
-                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                controller.myTitle = Const.TitleEnum.spotIt.rawValue
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.Misc.myDataSourceHomeMenu[1]:
+            case Const.TitleEnum.guessIt.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.formulaVC) as! FormulaViewController
-                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                controller.myTitle = Const.TitleEnum.guessIt.rawValue
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.Misc.myDataSourceHomeMenu[2]:
+            case Const.TitleEnum.mystical_9.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.magicVC) as! MagicViewController
-                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                controller.myTitle = Const.TitleEnum.mystical_9.rawValue
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.Misc.myDataSourceHomeMenu[3]:
+            case Const.TitleEnum.lowerOrHigher.rawValue:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.StoryboardID.higherVC) as! HigherLowerViewController
-                controller.myTitle = Const.Misc.myDataSourceHomeMenu[indexPath.row]
+                controller.myTitle = Const.TitleEnum.lowerOrHigher.rawValue
                 self.navigationController!.pushViewController(controller, animated: true)
             default:
                 let alert = createAlert(alertReasonParam: AlertReason.unknown)
