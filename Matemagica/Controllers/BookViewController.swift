@@ -133,10 +133,10 @@ class BookViewController: UIViewController {
         middleButton.isHidden = false
         rightButton.isHidden = true
 
-        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.setTitle(Const.okMessage, for: .normal)
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
-        middleButton.setTitle(Const.Misc.okMessage, for: .normal)
+        middleButton.setTitle(Const.okMessage, for: .normal)
         middleButton.sizeToFit()
     }
 
@@ -172,8 +172,8 @@ class BookViewController: UIViewController {
         middleButton.isHidden = true
         rightButton.isHidden = false
 
-        leftButton.setTitle(Const.Misc.noMessage, for: .normal)
-        rightButton.setTitle(Const.Misc.yesMessage, for: .normal)
+        leftButton.setTitle(Const.noMessage, for: .normal)
+        rightButton.setTitle(Const.yesMessage, for: .normal)
 
         leftButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -211,7 +211,7 @@ class BookViewController: UIViewController {
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        middleButton.setTitle(Const.Misc.correctMessage, for: .normal)
+        middleButton.setTitle(Const.correctMessage, for: .normal)
         middleButton.sizeToFit()
         progressBar.setProgress(1, animated: true)
     }

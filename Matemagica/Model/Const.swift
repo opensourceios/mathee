@@ -10,68 +10,66 @@ import UIKit
 
 
 struct Const {
+    static let appVersion = "CFBundleShortVersionString"
+    static let version = "v."
+    static let appName = "Math Magic"
+    static let cancel = "Cancel"
+    static let sendFeedback = "Contact us"
+    static let leaveReview = "Leave a review"
+    static let emailSample = "Hi. I have a question..."
+    static let emailAddress = "00.segue_affix@icloud.com"
+    static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
+    static let showAppsButtonTitle = "More apps"
+    static let devID = "1402417666"
+    static let appsLink = "https://apps.apple.com/developer/id1402417666"
+    static let yesMessage = "Yes"
+    static let noMessage = "No"
+    static let okMessage = "OK"
+    static let correctMessage = "Correct"
+    static let higherMessage = "Higher"
+    static let lowerMessage = "Lower"
+    static let doneMessage = "Done"
+    static let endMessage = "Return home"
+    static let oddMessage = "Odd"
+    static let evenMessage = "Even"
+    static let aboutMessage = "About"
+    static let shareTitleMessage = "Tell a friend"
 
-    struct StoryboardID {
-        static let main = "Main"
-        static let bookVC = "BookViewController"
-        static let formulaVC = "FormulaViewController"
-        static let higherVC = "HigherLowerViewController"
-        static let magicVC = "MagicViewController"
-    }
 
-    enum TitleEnum: String, CaseIterable {
-        // swiftlint:disable:next identifier_name
-        case spotIt = "Spot it", guessIt = "Guess it", mystical_9 = "Mystical 9",
-             lowerOrHigher = "Lower or higher"
-    }
-
-    struct Misc {
-        static let appVersion = "CFBundleShortVersionString"
-        static let version = "v."
-        static let appName = "Math Magic"
-        static let cancel = "Cancel"
-        static let sendFeedback = "Contact us"
-        static let leaveReview = "Leave a review"
-        static let emailSample = "Hi. I have a question..."
-        static let emailAddress = "00.segue_affix@icloud.com"
-        static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
-        static let showAppsButtonTitle = "More apps"
-        static let devID = "1402417666"
-        static let appsLink = "https://apps.apple.com/developer/id1402417666"
-        static let yesMessage = "Yes"
-        static let noMessage = "No"
-        static let okMessage = "OK"
-        static let correctMessage = "Correct"
-        static let higherMessage = "Higher"
-        static let lowerMessage = "Lower"
-        static let doneMessage = "Done"
-        static let endMessage = "Return home"
-        static let oddMessage = "Odd"
-        static let evenMessage = "Even"
-        static let aboutMessage = "About"
-        static let shareTitleMessage = "Tell a friend"
-
-        static let tintColorsArray: [UIColor] = [
-            .systemOrange,
-            .systemPurple,
-            .systemRed,
-            .systemBlue
+    static let dataSourceHome = [
+        ["sectionTitle": "Difficulty: Easy",
+         "sections": [
+            [
+                "icon": "plus.slash.minus",
+                "color": UIColor.systemPurple,
+                "title": "Guess it",
+                "id": "FormulaViewController"
+            ],
+            [
+                "icon": "arrow.up.arrow.down",
+                "color": UIColor.systemBlue,
+                "title": "Lower or higher",
+                "id": "HigherLowerViewController"]
+         ]
+        ],
+        ["sectionTitle": "Difficulty: Medium",
+         "sections": [
+            [
+                "icon": "book",
+                "color": UIColor.systemOrange,
+                "title": "Spot it",
+                "id": "BookViewController"]
+         ]
+        ],
+        ["sectionTitle": "Difficulty: Hard",
+         "sections": [
+            [
+                "icon": "wand.and.stars",
+                "color": UIColor.systemRed,
+                "title": "Mystical 9",
+                "id": "MagicViewController"]
+         ]
         ]
-
-        static let myImageSource = ["book",
-                                    "plus.slash.minus",
-                                    "wand.and.stars",
-                                    "arrow.up.arrow.down"]
-
-
-        static var titleArrFromEnum: [String] {
-            var mySampleArray: [String] = []
-            for item in Const.TitleEnum.allCases {
-                mySampleArray.append(item.rawValue)
-            }
-            return mySampleArray
-        }
-
-    }
+    ]
 
 }

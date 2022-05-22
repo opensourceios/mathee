@@ -59,9 +59,9 @@ class HigherLowerViewController: UIViewController {
         higherButton.addTarget(self, action: #selector(higher), for: .touchUpInside)
         lowerButton.addTarget(self, action: #selector(lower), for: .touchUpInside)
 
-        correctButton.setTitle(Const.Misc.okMessage, for: .normal)
-        higherButton.setTitle(Const.Misc.higherMessage, for: .normal)
-        lowerButton.setTitle(Const.Misc.lowerMessage, for: .normal)
+        correctButton.setTitle(Const.okMessage, for: .normal)
+        higherButton.setTitle(Const.higherMessage, for: .normal)
+        lowerButton.setTitle(Const.lowerMessage, for: .normal)
 
         higherButton.sizeToFit()
         lowerButton.sizeToFit()
@@ -127,7 +127,7 @@ class HigherLowerViewController: UIViewController {
             // correct button
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-            correctButton.setTitle(Const.Misc.correctMessage, for: .normal)
+            correctButton.setTitle(Const.correctMessage, for: .normal)
             lowerButton.isHidden = true
             higherButton.isHidden = true
             correctButton.isHidden = false
@@ -135,7 +135,7 @@ class HigherLowerViewController: UIViewController {
             // all buttons
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-            correctButton.setTitle(Const.Misc.correctMessage, for: .normal)
+            correctButton.setTitle(Const.correctMessage, for: .normal)
             correctButton.isHidden = false
             lowerButton.isHidden = false
             higherButton.isHidden = false

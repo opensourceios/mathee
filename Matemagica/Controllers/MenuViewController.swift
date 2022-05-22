@@ -66,28 +66,28 @@ class MenuViewController: UIViewController,
     // MARK: Create menu
 
     func infoMenu() -> UIMenu {
-        let shareApp = UIAction(title: Const.Misc.shareTitleMessage, image: UIImage(systemName: "heart"),
+        let shareApp = UIAction(title: Const.shareTitleMessage, image: UIImage(systemName: "heart"),
                                 state: .off) { _ in
             self.shareApp()
         }
-        let contact = UIAction(title: Const.Misc.sendFeedback, image: UIImage(systemName: "envelope"),
+        let contact = UIAction(title: Const.sendFeedback, image: UIImage(systemName: "envelope"),
                                state: .off) { _ in
             self.launchEmail()
         }
-        let review = UIAction(title: Const.Misc.leaveReview,
+        let review = UIAction(title: Const.leaveReview,
                               image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
             self.requestReview()
         }
-        let moreApps = UIAction(title: Const.Misc.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
+        let moreApps = UIAction(title: Const.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
                                 state: .off) { _ in
             self.showApps()
         }
 
 
-        let version: String? = Bundle.main.infoDictionary![Const.Misc.appVersion] as? String
-        var myTitle = Const.Misc.appName
+        let version: String? = Bundle.main.infoDictionary![Const.appVersion] as? String
+        var myTitle = Const.appName
         if let safeVersion = version {
-            myTitle += " \(Const.Misc.version) \(safeVersion)"
+            myTitle += " \(Const.version) \(safeVersion)"
         }
 
         let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
@@ -100,7 +100,7 @@ class MenuViewController: UIViewController,
 
     func showApps() {
 
-        let myURL = URL(string: Const.Misc.appsLink)
+        let myURL = URL(string: Const.appsLink)
         guard let safeURL = myURL else {
             let alert = createAlert(alertReasonParam: .unknown)
             present(alert, animated: true)
@@ -113,7 +113,16 @@ class MenuViewController: UIViewController,
     // MARK: TableView Delegate
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Const.TitleEnum.allCases.count
+        switch section {
+            case 0: // easy
+                return 2
+            case 1: // medium
+                return 1
+            case 2: // hard
+                return 1
+            default:
+                fatalError()
+        }
     }
 
 
@@ -123,9 +132,7 @@ class MenuViewController: UIViewController,
         sectionText.frame = CGRect.init(x: 16, y: 16,
                                         width: tableView.frame.width - 16,
                                         height: 0)
-        sectionText.text = """
-        Select a Game To Get Started
-        """//.uppercased()
+        sectionText.text = Const.dataSourceHome[section]["sectionTitle"] as? String
         sectionText.font = UIFont.preferredFont(for: .title2, weight: .bold)
         sectionText.adjustsFontForContentSizeCategory = true
         sectionText.textColor = UIColor.label
@@ -134,6 +141,10 @@ class MenuViewController: UIViewController,
         sectionText.sizeToFit()
 
         return sectionText
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Const.dataSourceHome.count
     }
 
 
@@ -145,14 +156,14 @@ class MenuViewController: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-        let myIndexRow: Int = (indexPath as NSIndexPath).row
-        cell.myLabel.text = Const.Misc.titleArrFromEnum[myIndexRow]
+        let sections: [[String: Any]] = Const.dataSourceHome[indexPath.section]["sections"] as! [[String: Any]]
+        cell.myLabel.text = sections[indexPath.row]["title"] as? String
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
-        let aImage = UIImage(systemName: Const.Misc.myImageSource[(indexPath as NSIndexPath).row],
+        let aImage = UIImage(systemName: sections[indexPath.row]["icon"] as! String,
                              withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
-        cell.imageViewContainer.backgroundColor = Const.Misc.tintColorsArray[(indexPath as NSIndexPath).row]
+        cell.imageViewContainer.backgroundColor = sections[indexPath.row]["color"] as? UIColor
         cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
@@ -162,35 +173,33 @@ class MenuViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let storyboard = UIStoryboard(name: Const.StoryboardID.main, bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         let cell = tableView.cellForRow(at: indexPath) as! MainMenuTableViewCell
 
         switch cell.myLabel!.text {
-            case Const.TitleEnum.spotIt.rawValue:
+            case "Spot it":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.bookVC) as! BookViewController
-                controller.myTitle = Const.TitleEnum.spotIt.rawValue
+                    withIdentifier: "BookViewController") as! BookViewController
+                controller.myTitle = cell.myLabel!.text
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.TitleEnum.guessIt.rawValue:
+            case "Guess it":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.formulaVC) as! FormulaViewController
-                controller.myTitle = Const.TitleEnum.guessIt.rawValue
+                    withIdentifier: "FormulaViewController") as! FormulaViewController
+                controller.myTitle = cell.myLabel!.text
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.TitleEnum.mystical_9.rawValue:
+            case "Mystical 9":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.magicVC) as! MagicViewController
-                controller.myTitle = Const.TitleEnum.mystical_9.rawValue
+                    withIdentifier: "MagicViewController") as! MagicViewController
+                controller.myTitle = cell.myLabel!.text
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.TitleEnum.lowerOrHigher.rawValue:
+            case "Lower or higher":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.StoryboardID.higherVC) as! HigherLowerViewController
-                controller.myTitle = Const.TitleEnum.lowerOrHigher.rawValue
+                    withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
+                controller.myTitle = cell.myLabel!.text
                 self.navigationController!.pushViewController(controller, animated: true)
             default:
-                let alert = createAlert(alertReasonParam: AlertReason.unknown)
-                alert.view.layoutIfNeeded()
-                present(alert, animated: true)
+                fatalError()
         }
     }
 
@@ -198,7 +207,7 @@ class MenuViewController: UIViewController,
     // MARK: Actions
 
     func shareApp() {
-        let message = Const.Misc.appsLink
+        let message = Const.appsLink
         let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
@@ -230,12 +239,12 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
 
             return
         }
-        var emailTitle = Const.Misc.appName
-        if let version = Bundle.main.infoDictionary![Const.Misc.appVersion] {
+        var emailTitle = Const.appName
+        if let version = Bundle.main.infoDictionary![Const.appVersion] {
             emailTitle += " \(version)"
         }
-        let messageBody = Const.Misc.emailSample
-        let toRecipents = [Const.Misc.emailAddress]
+        let messageBody = Const.emailSample
+        let toRecipents = [Const.emailAddress]
         let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         mailComposer.setSubject(emailTitle)
@@ -262,7 +271,7 @@ extension MenuViewController {
     func requestReview() {
         // Note: Replace the XXXXXXXXXX below with the App Store ID for your app
         //       You can find the App Store ID in your app's product URL
-        guard let writeReviewURL = URL(string: Const.Misc.reviewLink)
+        guard let writeReviewURL = URL(string: Const.reviewLink)
         else {
             fatalError("expected valid URL")
 
