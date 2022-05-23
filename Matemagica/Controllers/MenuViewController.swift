@@ -143,6 +143,7 @@ class MenuViewController: UIViewController,
         return sectionText
     }
 
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return Const.dataSourceHome.count
     }
