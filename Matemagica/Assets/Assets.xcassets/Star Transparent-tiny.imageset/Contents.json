@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Star True Transparent squared - transparent background.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Star Transparent-tiny.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
