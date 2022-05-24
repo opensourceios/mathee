@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Star True Transparent squared - transparent background.png",
+      "filename" : "launch-light.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Star Transparent-tiny.png",
+      "filename" : "launch-dark.png",
       "idiom" : "universal"
     }
   ],
