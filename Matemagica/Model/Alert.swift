@@ -28,11 +28,10 @@ extension UIViewController {
                 alertTitle = "Textfield empty"
                 alertMessage = "Please try again"
             case .nan:
-                alertTitle = "An error occurred"
+                alertTitle = "Please enter numbers only"
                 alertMessage = """
-                Oops
-                That number is too big. Please think of a smaller number and try again
-                (Please don't enter text. Only enter numbers)
+                Highest number allowed: 2305843009213693951
+                Need more help? Email: \(Const.emailAddress)
                 """
             default:
                 alertTitle = "Unknown error"

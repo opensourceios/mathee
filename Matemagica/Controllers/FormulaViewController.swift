@@ -21,6 +21,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
 
+    @IBOutlet weak var textfieldBottomConstraint: NSLayoutConstraint!
+
 
     // MARK: Properties
 
@@ -29,6 +31,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     var myTitle: String!
     let myThemeColor: UIColor = .systemPurple
 
+    var dispatchQueue: DispatchQueue?
+    var dispatchWorkItem: DispatchWorkItem?
+
+    var hasShownHelpButton = false
 
     // MARK: Life Cycle
 
@@ -39,6 +45,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             // We are in testing mode, make arrangements if needed
             UIView.setAnimationsEnabled(false)
         }
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardNotification(notification:)),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil)
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
@@ -55,12 +67,43 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         progressBar.setProgress(0.1, animated: true)
     }
 
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+
     // Helpers
+
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrameY = endFrame?.origin.y ?? 0
+        let duration: TimeInterval = (userInfo[
+            UIResponder.keyboardAnimationDurationUserInfoKey
+        ] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.textfieldBottomConstraint.constant = 0.0
+        } else {
+            self.textfieldBottomConstraint.constant = endFrame?.size.height ?? 0.0
+        }
+
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.view.layoutIfNeeded() },
+            completion: nil)
+    }
+
 
     @objc func start() {
         total = 0
@@ -165,12 +208,44 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         // ask current result to user
         myTextField.isHidden = false
         showAnswerButton.isHidden = false
-        infoButton.isHidden = false
+        someOnClickButtonStart()
+
         myTextField.becomeFirstResponder()
     }
 
 
+    func someOnClickButtonStart() {
+        self.dispatchQueue = DispatchQueue.global(qos: .background) // create queue
+        self.dispatchWorkItem = DispatchWorkItem { // create work item
+            // async code goes here
+            DispatchQueue.main.async {
+                UIView.transition(with: self.infoButton, duration: 0.4,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                    self.infoButton.isHidden = false
+                    self.hasShownHelpButton = true
+                })
+            }
+        }
+        let seconds = hasShownHelpButton ? 0 : 6
+        if self.dispatchWorkItem != nil {
+            self.dispatchQueue?.asyncAfter(
+                deadline: .now() + .seconds(seconds),
+                execute: self.dispatchWorkItem!
+            ) // schedule work item
+        }
+    }
+
+
+    func someOnClickButtonCancel() {
+        if let dispatchWorkItem = self.dispatchWorkItem {
+            dispatchWorkItem.cancel() // cancel work item
+        }
+    }
+
+
     @objc func checkResult() {
+        someOnClickButtonCancel()
         leftButton.isHidden = true
         guard let text = myTextField.text else {
             let alert = createAlert(alertReasonParam: .unknown)
@@ -203,21 +278,21 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         showAnswerButton.isHidden = true
         infoButton.isHidden = true
 
-//        let regularAttributes: [NSAttributedString.Key: Any] = [
-//            .font: UIFont.preferredFont(forTextStyle: .body)]
-//        let jumboAttributes: [NSAttributedString.Key: Any] = [
-//            .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
-//            .foregroundColor: myThemeColor]
-//        let attributedMessagePre = NSAttributedString(
-//            string: "You thought:\n\n",
-//            attributes: regularAttributes)
-//
-//        let attributedMessageJumbo = NSAttributedString(string: "\(total)", attributes: jumboAttributes)
-//
-//        let myAttributedText = NSMutableAttributedString()
-//
-//        myAttributedText.append(attributedMessagePre)
-//        myAttributedText.append(attributedMessageJumbo)
+        //        let regularAttributes: [NSAttributedString.Key: Any] = [
+        //            .font: UIFont.preferredFont(forTextStyle: .body)]
+        //        let jumboAttributes: [NSAttributedString.Key: Any] = [
+        //            .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
+        //            .foregroundColor: myThemeColor]
+        //        let attributedMessagePre = NSAttributedString(
+        //            string: "You thought:\n\n",
+        //            attributes: regularAttributes)
+        //
+        //        let attributedMessageJumbo = NSAttributedString(string: "\(total)", attributes: jumboAttributes)
+        //
+        //        let myAttributedText = NSMutableAttributedString()
+        //
+        //        myAttributedText.append(attributedMessagePre)
+        //        myAttributedText.append(attributedMessageJumbo)
 
         messageLabel.attributedText = attrifyString(
             preString: "You thought:\n\n", toAttrify: "\(total)", color: myThemeColor)
