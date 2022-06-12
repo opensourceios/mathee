@@ -118,6 +118,10 @@ class BookViewController: UIViewController {
 
         pageNumberLabel.text = """
         Think of a number 1-63
+
+        Look for your number in the next 6 lists, and tell the app if you spot it.
+
+        Can *you* figure out how the app guesses your number?
         """
         pageContentLabel.text = ""
 
@@ -161,7 +165,9 @@ class BookViewController: UIViewController {
             return
         }
 
-        pageNumberLabel.text = "Can you spot your number in page #" + "\(currentPageReal+1)" + "?"
+        pageNumberLabel.text = """
+        Is your number in list #\(currentPageReal+1)?
+        """
 
         let noColorText = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
         let coloredText = colorfy(label: noColorText)
