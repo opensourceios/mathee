@@ -297,6 +297,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.attributedText = attrifyString(
             preString: "You thought:\n\n", toAttrify: "\(total)", color: myThemeColor)
         messageLabel.numberOfLines = 0
+        messageLabel.lineBreakMode = .byCharWrapping
 
         leftButton.isHidden = true
         rightButton.setTitle(Const.correctMessage, for: .normal)
