@@ -104,6 +104,10 @@ class HigherLowerViewController: UIViewController {
         """))
 
         guessLabel.attributedText = myAttrString
+        guessLabel.accessibilityLabel = """
+        Try number \(tries): Is your number \(guess)?
+        Swipe up or down so I try higher or lower
+        """
 
 
         if halfDiff == 1 {
