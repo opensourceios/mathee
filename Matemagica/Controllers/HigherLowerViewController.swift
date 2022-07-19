@@ -16,8 +16,6 @@ class HigherLowerViewController: UIViewController {
 
     var myTitle: String!
     @IBOutlet weak var guessLabel: UILabel!
-    @IBOutlet weak var lowerButton: UIButton!
-    @IBOutlet weak var higherButton: UIButton!
     @IBOutlet weak var correctButton: UIButton!
 
     @IBOutlet weak var progressBar: UIProgressView!
@@ -34,6 +32,9 @@ class HigherLowerViewController: UIViewController {
 
     let myThemeColor: UIColor = .systemBlue
 
+    var swipeUp: UISwipeGestureRecognizer!
+    var swipeDown: UISwipeGestureRecognizer!
+
 
     // MARK: Life Cycle
 
@@ -48,23 +49,9 @@ class HigherLowerViewController: UIViewController {
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
 
-        lowerButton.isHidden = true
-        higherButton.isHidden = true
-
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
-        lowerButton.removeTarget(nil, action: nil, for: .allEvents)
-        higherButton.removeTarget(nil, action: nil, for: .allEvents)
-
         correctButton.addTarget(self, action: #selector(start), for: .touchUpInside)
-        higherButton.addTarget(self, action: #selector(higher), for: .touchUpInside)
-        lowerButton.addTarget(self, action: #selector(lower), for: .touchUpInside)
-
         correctButton.setTitle(Const.okMessage, for: .normal)
-        higherButton.setTitle(Const.higherMessage, for: .normal)
-        lowerButton.setTitle(Const.lowerMessage, for: .normal)
-
-        higherButton.sizeToFit()
-        lowerButton.sizeToFit()
         correctButton.sizeToFit()
 
         progressBar.setProgress(0, animated: false)
@@ -89,6 +76,14 @@ class HigherLowerViewController: UIViewController {
         halfDiff = 0
         tries = 0
         showNextGuess()
+
+        swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+
+        swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
 
 
@@ -103,16 +98,18 @@ class HigherLowerViewController: UIViewController {
         guess = low + halfDiff
         guessLabel.isHidden = false
         let myAttrString = attrifyString(
-            preString: "Is your number...\n", toAttrify: "\(guess)", color: myThemeColor)
-
-        myAttrString.append(attrifyString(
-            preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
-        myAttrString.append(NSAttributedString(string: "\n\nOtherwise: is it lower or higher?"))
+            preString: "\n\nTry #\(tries):\n\nIs your number...\n", toAttrify: "\(guess)\n", color: myThemeColor)
+        myAttrString.append(NSAttributedString(string: """
+        Swipe ⬆️ or ⬇️ so I try higher or lower
+        """))
 
         guessLabel.attributedText = myAttrString
 
 
         if halfDiff == 1 {
+            self.view.removeGestureRecognizer(swipeUp)
+            self.view.removeGestureRecognizer(swipeDown)
+
             let myAttrString = attrifyString(
                 preString: "You thought:\n", toAttrify: "\(guess)", color: myThemeColor)
 
@@ -128,8 +125,6 @@ class HigherLowerViewController: UIViewController {
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
             correctButton.setTitle(Const.correctMessage, for: .normal)
-            lowerButton.isHidden = true
-            higherButton.isHidden = true
             correctButton.isHidden = false
         } else {
             // all buttons
@@ -137,23 +132,28 @@ class HigherLowerViewController: UIViewController {
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
             correctButton.setTitle(Const.correctMessage, for: .normal)
             correctButton.isHidden = false
-            lowerButton.isHidden = false
-            higherButton.isHidden = false
         }
         let myProgress: Float = (Float(tries) + 1.0) / 11.0
         progressBar.setProgress(myProgress, animated: true)
     }
 
 
-    @objc func lower() {
-        high = guess
-        showNextGuess()
-    }
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
 
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
 
-    @objc func higher() {
-        low = guess
-        showNextGuess()
+            switch swipeGesture.direction {
+                case .down:
+                    print("Swiped down")
+                    high = guess
+                case .up:
+                    print("Swiped up")
+                    low = guess
+                default:
+                    break
+            }
+            showNextGuess()
+        }
     }
 
 
