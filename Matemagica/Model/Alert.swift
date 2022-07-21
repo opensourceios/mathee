@@ -31,12 +31,11 @@ extension UIViewController {
                 alertTitle = "Please enter numbers only"
                 alertMessage = """
                 Highest number allowed: 2305843009213693951
-                Need more help? Email: \(Const.emailAddress)
                 """
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """
-            An unknown error occurred. Please try again later, or contact us at \(Const.emailAddress)
+            An unknown error occurred. Please try again
             """
         }
 

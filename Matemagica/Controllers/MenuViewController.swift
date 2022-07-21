@@ -70,10 +70,6 @@ class MenuViewController: UIViewController,
                                 state: .off) { _ in
             self.shareApp()
         }
-        let contact = UIAction(title: Const.sendFeedback, image: UIImage(systemName: "envelope"),
-                               state: .off) { _ in
-            self.launchEmail()
-        }
         let review = UIAction(title: Const.leaveReview,
                               image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
             self.requestReview()
@@ -91,7 +87,7 @@ class MenuViewController: UIViewController,
         }
 
         let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
-                              children: [contact, review, shareApp, moreApps])
+                              children: [review, shareApp, moreApps])
         return infoMenu
     }
 
@@ -220,46 +216,6 @@ class MenuViewController: UIViewController,
             }
         }
         present(activityController, animated: true)
-    }
-
-
-}
-
-
-extension MenuViewController: MFMailComposeViewControllerDelegate {
-
-
-    // MARK: Helpers
-
-    func launchEmail() {
-        guard MFMailComposeViewController.canSendMail() else {
-            let alert = createAlert(alertReasonParam: .unknown)
-            DispatchQueue.main.async {
-                self.present(alert, animated: true)
-            }
-
-            return
-        }
-        var emailTitle = Const.appName
-        if let version = Bundle.main.infoDictionary![Const.appVersion] {
-            emailTitle += " \(version)"
-        }
-        let messageBody = Const.emailSample
-        let toRecipents = [Const.emailAddress]
-        let mailComposer: MFMailComposeViewController = MFMailComposeViewController()
-        mailComposer.mailComposeDelegate = self
-        mailComposer.setSubject(emailTitle)
-        mailComposer.setMessageBody(messageBody, isHTML: false)
-        mailComposer.setToRecipients(toRecipents)
-        DispatchQueue.main.async {
-            self.present(mailComposer, animated: true, completion: nil)
-        }
-    }
-
-
-    func mailComposeController(_ controller: MFMailComposeViewController,
-                               didFinishWith result: MFMailComposeResult, error: Error?) {
-        dismiss(animated: true)
     }
 
 
