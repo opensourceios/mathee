@@ -23,7 +23,7 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Properties
 
-    var high = 1001
+    var high = 1000
     var low = 0
     var guess = 0
     var diff = 0
@@ -69,12 +69,12 @@ class HigherLowerViewController: UIViewController {
     // MARK: Helpers
 
     @objc func start() {
-        high = 1001
-        low = 0
-        guess = 0
-        diff = 0
-        halfDiff = 0
-        tries = 0
+//        high = 1000
+//        low = 1
+//        guess = 0
+//        diff = 0
+//        halfDiff = 0
+//        tries = 0
         showNextGuess()
 
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
@@ -90,11 +90,7 @@ class HigherLowerViewController: UIViewController {
     @objc func showNextGuess() {
         tries += 1
         diff = high - low
-        if diff == 3 {
-            halfDiff = 2
-        } else {
-            halfDiff = diff / 2
-        }
+        halfDiff = Int( (Double(diff) / 2.0).rounded(.up) )
         guess = low + halfDiff
         guessLabel.isHidden = false
         let myAttrString = attrifyString(
@@ -131,6 +127,7 @@ class HigherLowerViewController: UIViewController {
             correctButton.setTitle(Const.correctMessage, for: .normal)
             correctButton.isHidden = false
         } else {
+            print("halfDiff is not 1. It is: \(halfDiff)")
             // all buttons
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
