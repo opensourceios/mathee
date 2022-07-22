@@ -38,6 +38,7 @@ class HigherLowerViewController: UIViewController {
 
     var thinkKnow = ""
     var swipeUpOrDown = ""
+    var swipeUpOrDownAcc = ""
 
     var triedUpperboundOfTwoItemArr = false
 
@@ -115,6 +116,7 @@ class HigherLowerViewController: UIViewController {
 
         thinkKnow = "\(thinkEmojis.randomElement()!) I think your number is:"
         swipeUpOrDown = "Swipe ⬆️ or ⬇️ so I try higher or lower"
+        swipeUpOrDownAcc = "Swipe up or down so I try higher or lower"
 
         if myArray.count == 1 { // WE KNOW
             weKnow(localGuess: myArray.first!)
@@ -149,7 +151,7 @@ class HigherLowerViewController: UIViewController {
         guessLabel.attributedText = myAttrString // animate this change
 
         guessLabel.accessibilityLabel = """
-        Tries left: \(triesLeft). \(thinkKnow): \(guess). \(swipeUpOrDown)
+        Tries left: \(triesLeft). \(thinkKnow): \(guess). \(swipeUpOrDownAcc)
         """
 
         let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne // improve?
@@ -168,13 +170,14 @@ class HigherLowerViewController: UIViewController {
         guess = localGuess
         thinkKnow = "\(knowEmojis.randomElement()!) I know your number. It is:"
         swipeUpOrDown = " "
+        swipeUpOrDownAcc = ""
     }
 
 
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
 
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            print("guess was: \(guess)")
+//            print("guess was: \(guess)")
             switch swipeGesture.direction {
                 case .down:
                     // high = guess
@@ -197,10 +200,10 @@ class HigherLowerViewController: UIViewController {
             }
 
             if myArray.count == 2 {
-                print("myArray: \(myArray)")
+//                print("myArray: \(myArray)")
             }
-            print("arrayFirst now is: \(myArray.first!)")
-            print("arrayLast now is: \(myArray.last!)")
+//            print("arrayFirst now is: \(myArray.first!)")
+//            print("arrayLast now is: \(myArray.last!)")
             showNextGuess()
         }
     }
