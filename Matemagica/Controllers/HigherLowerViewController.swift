@@ -23,17 +23,18 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Properties
 
-    // TODO: let user pick how high the range is, and adjust tries needed accordingly, perhaps a picker showing options
+    // later: let user pick how high the range is, and adjust tries needed accordingly, perhaps a picker showing options
     // for ranges and corresponding needed tries
-    var high = 1023
-    var low = 0
-    var guess = 0
-    var diff = 0
-    var halfDiff = 0
-    var tries = 0
+
+
+    // TODO: maybe use binary: if < 512, than it doesn't need '512' KEY to reach total, if > 512, than '512' KEY
+    // is definitely needed to reach total
+    var myArray = Array(1...1000)
+
+    var triesLeft = 10
 
     let myThemeColor: UIColor = .systemBlue
-
+    let emojis = ["🤔", "🤨", "🧐", "😎", "🤓", "🫣", "😅", "🤗"]
     var swipeUp: UISwipeGestureRecognizer!
     var swipeDown: UISwipeGestureRecognizer!
 
@@ -90,58 +91,57 @@ class HigherLowerViewController: UIViewController {
 
 
     @objc func showNextGuess() {
-        tries += 1
-        diff = high - low
-        halfDiff = Int( (Double(diff) / 2.0).rounded(.up) )
-        guess = low + halfDiff
+        triesLeft -= 1
+        guard triesLeft >= 0 else {
+            let alert = createAlert(alertReasonParam: .unknown)
+            present(alert, animated: true)
+            return
+        }
         guessLabel.isHidden = false
         let myAttrString = attrifyString(
-            preString: "\n\nTry #\(tries):\n\nIs your number...\n", toAttrify: "\(guess)\n", color: myThemeColor)
+            preString: """
+
+
+            Tries left: \(triesLeft)
+
+            \(emojis.randomElement()!) I think your number is:
+
+
+            """, toAttrify: "myArray.middle!\n", color: myThemeColor)
         myAttrString.append(NSAttributedString(string: """
+
+
         Swipe ⬆️ or ⬇️ so I try higher or lower
         """))
 
         guessLabel.attributedText = myAttrString
         guessLabel.accessibilityLabel = """
-        Try number \(tries): Is your number \(guess)?
+        Tries left: \(triesLeft). Is your number GUESS?
         Swipe up or down so I try higher or lower
         """
 
 
-        if halfDiff == 1 {
-            print("HALFDIFF IS 1")
-            print("high is: \(high)")
-            print("low is: \(low)")
-            self.view.removeGestureRecognizer(swipeUp)
-            self.view.removeGestureRecognizer(swipeDown)
-
-            let myAttrString = attrifyString(
-                preString: "You thought:\n", toAttrify: "\(guess)", color: myThemeColor)
-
-            myAttrString.append(attrifyString(
-                preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
-
-            myAttrString.append(NSAttributedString(string: "\n\n"))
-
-            guessLabel.attributedText = myAttrString
-
-
-            // correct button
+//        if app knows the answer {
+//            self.view.removeGestureRecognizer(swipeUp)
+//            self.view.removeGestureRecognizer(swipeDown)
+//            let myAttrString = attrifyString(
+//                preString: "You thought:\n", toAttrify: "\(guess)", color: myThemeColor)
+//            myAttrString.append(attrifyString(
+//                preString: "\n\nTries used:\n", toAttrify: "\(tries)", color: myThemeColor))
+//            myAttrString.append(NSAttributedString(string: "\n\n"))
+//
+//            guessLabel.attributedText = myAttrString
+//            correctButton.removeTarget(nil, action: nil, for: .allEvents)
+//            correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+//            correctButton.setTitle(Const.correctMessage, for: .normal)
+//            correctButton.isHidden = false
+//        } else if app does not know the answer {
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
             correctButton.setTitle(Const.correctMessage, for: .normal)
             correctButton.isHidden = false
-        } else {
-            print("halfDiff is not 1. It is: \(halfDiff)")
-            print("high is: \(high)")
-            print("guess is: \(guess)")
-            // all buttons
-            correctButton.removeTarget(nil, action: nil, for: .allEvents)
-            correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-            correctButton.setTitle(Const.correctMessage, for: .normal)
-            correctButton.isHidden = false
-        }
-        let myProgress: Float = (Float(tries) + 1.0) / 11.0
+//        }
+        let myProgress: Float = (Float(11 - triesLeft) + 1.0) / 11.0
         progressBar.setProgress(myProgress, animated: true)
     }
 
@@ -152,11 +152,11 @@ class HigherLowerViewController: UIViewController {
 
             switch swipeGesture.direction {
                 case .down:
-                    print("Swiped down")
-                    high = guess-1
+                    // high = guess
+                    break
                 case .up:
-                    print("Swiped up")
-                    low = guess
+                    // low = guess
+                    break
                 default:
                     break
             }
