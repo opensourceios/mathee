@@ -32,8 +32,12 @@ class HigherLowerViewController: UIViewController {
     var myArray = Array(1...1000)
 
     var triesLeft = 10
+    let initialTriesPlusOne: Float = 11.0
 
     var guess = 0
+
+    var thinkKnow = ""
+    var swipeUpOrDown = ""
 
     var triedUpperboundOfTwoItemArr = false
 
@@ -76,7 +80,7 @@ class HigherLowerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        progressBar.setProgress(1/11, animated: true)
+        progressBar.setProgress(1.0/initialTriesPlusOne, animated: true)
     }
 
 
@@ -109,24 +113,14 @@ class HigherLowerViewController: UIViewController {
             return
         }
 
-        var thinkKnow = "\(thinkEmojis.randomElement()!) I think your number is:"
-        var swipeUpOrDown = "Swipe ⬆️ or ⬇️ so I try higher or lower"
+        thinkKnow = "\(thinkEmojis.randomElement()!) I think your number is:"
+        swipeUpOrDown = "Swipe ⬆️ or ⬇️ so I try higher or lower"
 
         if myArray.count == 1 { // WE KNOW
-            self.view.removeGestureRecognizer(swipeUp)
-            self.view.removeGestureRecognizer(swipeDown)
-            correctButton.removeTarget(nil, action: nil, for: .allEvents)
-            correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-            correctButton.setTitle(Const.correctMessage, for: .normal)
-            correctButton.isHidden = false
-
-            guess = myArray.first!
-            thinkKnow = "\(knowEmojis.randomElement()!) I know your number. It is:"
-            swipeUpOrDown = " "
+            weKnow(localGuess: myArray.first!)
         } else if myArray.count == 2 {
             if triedUpperboundOfTwoItemArr {
-                _ = myArray.popLast()
-                guess = myArray.last!
+                weKnow(localGuess: myArray.last!)
             } else {
                 guess = myArray.first!
                 triedUpperboundOfTwoItemArr = true
@@ -153,41 +147,60 @@ class HigherLowerViewController: UIViewController {
         """))
 
         guessLabel.attributedText = myAttrString // animate this change
+
         guessLabel.accessibilityLabel = """
-        Tries left: \(triesLeft). Is your number GUESS?
-        Swipe up or down so I try higher or lower
+        Tries left: \(triesLeft). \(thinkKnow): \(guess). \(swipeUpOrDown)
         """
 
+        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne // improve?
+        progressBar.setProgress(myProgress, animated: true)
+    }
+
+
+    func weKnow(localGuess: Int) {
+        self.view.removeGestureRecognizer(swipeUp)
+        self.view.removeGestureRecognizer(swipeDown)
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         correctButton.setTitle(Const.correctMessage, for: .normal)
         correctButton.isHidden = false
-        let myProgress: Float = (Float(11 - triesLeft) + 1.0) / 11.0
-        progressBar.setProgress(myProgress, animated: true)
+
+        guess = localGuess
+        thinkKnow = "\(knowEmojis.randomElement()!) I know your number. It is:"
+        swipeUpOrDown = " "
     }
 
 
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
 
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-
+            print("guess was: \(guess)")
             switch swipeGesture.direction {
                 case .down:
                     // high = guess
-                    print("guess was: \(guess)")
-                    myArray = Array(myArray.first!...myArray.middle().first!)
-                    print("highest of array now is: \(myArray.last!)")
+                    if guess == myArray.first! {
+                        // user swiped the wrong way
+                        return
+                    }
+                    myArray = Array(myArray.first!...myArray.middle().first!-1)
                 case .up:
                     // low = guess
-                    myArray = Array(myArray.middle().first!...myArray.last!)
+                    if guess == myArray.last! {
+                        // user swiped the wrong way
+                        myArray = Array(myArray.first!...myArray.middle().first!-1)
+                        return
+                    }
+                    myArray = Array(myArray.middle().first!+1...myArray.last!)
+
                 default:
                     break
             }
 
-            if myArray.count <= 3 {
+            if myArray.count == 2 {
                 print("myArray: \(myArray)")
-                print("myArrayCount: \(myArray.count)")
             }
+            print("arrayFirst now is: \(myArray.first!)")
+            print("arrayLast now is: \(myArray.last!)")
             showNextGuess()
         }
     }
