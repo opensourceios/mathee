@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+
     func setThemeColorTo(myThemeColor: UIColor) {
         UIProgressView.appearance().progressTintColor = myThemeColor
         self.navigationController!.navigationBar.tintColor = myThemeColor
@@ -31,6 +32,7 @@ extension UIViewController {
         }
     }
 
+
     func attrifyString(preString: String, toAttrify: String, color: UIColor) -> NSMutableAttributedString {
         let regularAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.preferredFont(forTextStyle: .body)]
@@ -49,6 +51,45 @@ extension UIViewController {
         myAttributedText.append(attributedMessageJumbo)
 
         return myAttributedText
+    }
+
+
+    enum AlertReason {
+        case unknown
+        case textfieldEmpty
+        case nan
+    }
+
+
+    func createAlert(alertReasonParam: AlertReason) -> UIAlertController {
+
+        var alertTitle = ""
+        var alertMessage = ""
+        switch alertReasonParam {
+            case .textfieldEmpty:
+                alertTitle = "Textfield empty"
+                alertMessage = "Please try again"
+            case .nan:
+                alertTitle = "Please enter numbers only"
+                alertMessage = """
+                Highest number allowed: 2305843009213693951
+                """
+            default:
+                alertTitle = "Unknown error"
+                alertMessage = """
+            An unknown error occurred. Please try again
+            """
+        }
+
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+            if let safeSelf = self as? FormulaViewController {
+                safeSelf.myTextField.becomeFirstResponder()
+            }
+        }
+        alert.addAction(alertAction)
+
+        return alert
     }
 
 }
