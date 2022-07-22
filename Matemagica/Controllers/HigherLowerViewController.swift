@@ -23,7 +23,9 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Properties
 
-    var high = 1000
+    // TODO: let user pick how high the range is, and adjust tries needed accordingly, perhaps a picker showing options
+    // for ranges and corresponding needed tries
+    var high = 1023
     var low = 0
     var guess = 0
     var diff = 0
@@ -69,12 +71,12 @@ class HigherLowerViewController: UIViewController {
     // MARK: Helpers
 
     @objc func start() {
-//        high = 1000
-//        low = 1
-//        guess = 0
-//        diff = 0
-//        halfDiff = 0
-//        tries = 0
+//        high =
+//        low =
+//        guess =
+//        diff =
+//        halfDiff =
+//        tries =
         showNextGuess()
 
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
@@ -107,6 +109,9 @@ class HigherLowerViewController: UIViewController {
 
 
         if halfDiff == 1 {
+            print("HALFDIFF IS 1")
+            print("high is: \(high)")
+            print("low is: \(low)")
             self.view.removeGestureRecognizer(swipeUp)
             self.view.removeGestureRecognizer(swipeDown)
 
@@ -128,6 +133,8 @@ class HigherLowerViewController: UIViewController {
             correctButton.isHidden = false
         } else {
             print("halfDiff is not 1. It is: \(halfDiff)")
+            print("high is: \(high)")
+            print("guess is: \(guess)")
             // all buttons
             correctButton.removeTarget(nil, action: nil, for: .allEvents)
             correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
@@ -146,7 +153,7 @@ class HigherLowerViewController: UIViewController {
             switch swipeGesture.direction {
                 case .down:
                     print("Swiped down")
-                    high = guess
+                    high = guess-1
                 case .up:
                     print("Swiped up")
                     low = guess
