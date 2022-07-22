@@ -1,5 +1,5 @@
 //
-//  Alert.swift
+//  UIViewController+Extensions.swift
 //  Math Magic
 //
 //  Created by Daniel Springer on 8/07/2018.
