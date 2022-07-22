@@ -29,6 +29,8 @@ class HigherLowerViewController: UIViewController {
 
     // maybe use binary: if < 512, than it doesn't need '512' KEY to reach total, if > 512, than '512' KEY
     // is definitely needed to reach total
+
+    // replace swipes with buttons, swipes are not accessible
     var myArray = Array(1...1000)
 
     var triesLeft = 10
@@ -95,6 +97,10 @@ class HigherLowerViewController: UIViewController {
         //        halfDiff =
         //        tries =
         showNextGuess()
+        correctButton.removeTarget(nil, action: nil, for: .allEvents)
+        correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        correctButton.setTitle(Const.correctMessage, for: .normal)
+        correctButton.isHidden = false
 
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeUp.direction = .up
@@ -109,9 +115,7 @@ class HigherLowerViewController: UIViewController {
     @objc func showNextGuess() {
         triesLeft -= 1
         guard triesLeft >= 0 else {
-            let alert = createAlert(alertReasonParam: .unknown)
-            present(alert, animated: true)
-            return
+            fatalError()
         }
 
         thinkKnow = "\(thinkEmojis.randomElement()!) I think your number is:"
@@ -162,10 +166,6 @@ class HigherLowerViewController: UIViewController {
     func weKnow(localGuess: Int) {
         self.view.removeGestureRecognizer(swipeUp)
         self.view.removeGestureRecognizer(swipeDown)
-        correctButton.removeTarget(nil, action: nil, for: .allEvents)
-        correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        correctButton.setTitle(Const.correctMessage, for: .normal)
-        correctButton.isHidden = false
 
         guess = localGuess
         thinkKnow = "\(knowEmojis.randomElement()!) I know your number. It is:"
