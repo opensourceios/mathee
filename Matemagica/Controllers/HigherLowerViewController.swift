@@ -10,7 +10,7 @@ import UIKit
 
 
 class HigherLowerViewController: UIViewController {
-    // TOOD: see all comments in this file
+    // TODO: see all comments in this file, then LATER
 
     // MARK: Outlets
 
@@ -23,14 +23,13 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Properties
 
-    // later: let user pick how high the range is, and adjust tries needed accordingly, perhaps a picker showing options
+    // LATER:
+    // let user pick how high the range is, and adjust tries needed accordingly, perhaps a picker showing options
     // for ranges and corresponding needed tries
 
 
-    // maybe use binary: if < 512, than it doesn't need '512' KEY to reach total, if > 512, than '512' KEY
-    // is definitely needed to reach total
+    // TODO: replace swipes with buttons, swipes are not accessible
 
-    // replace swipes with buttons, swipes are not accessible
     var myArray = Array(1...1000)
 
     var triesLeft = 10
@@ -90,12 +89,6 @@ class HigherLowerViewController: UIViewController {
     // MARK: Helpers
 
     @objc func start() {
-        //        high =
-        //        low =
-        //        guess =
-        //        diff =
-        //        halfDiff =
-        //        tries =
         showNextGuess()
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
@@ -125,7 +118,7 @@ class HigherLowerViewController: UIViewController {
         if myArray.count == 1 { // WE KNOW
             weKnow(localGuess: myArray.first!)
         } else if myArray.count == 2 {
-            if triedUpperboundOfTwoItemArr {
+            if triedUpperboundOfTwoItemArr { // WE KNOW
                 weKnow(localGuess: myArray.last!)
             } else {
                 guess = myArray.first!
@@ -158,7 +151,7 @@ class HigherLowerViewController: UIViewController {
         Tries left: \(triesLeft). \(thinkKnow): \(guess). \(swipeUpOrDownAcc)
         """
 
-        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne // improve?
+        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne
         progressBar.setProgress(myProgress, animated: true)
     }
 
@@ -177,17 +170,14 @@ class HigherLowerViewController: UIViewController {
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
 
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-//            print("guess was: \(guess)")
             switch swipeGesture.direction {
                 case .down:
-                    // high = guess
                     if guess == myArray.first! {
                         // user swiped the wrong way
                         return
                     }
                     myArray = Array(myArray.first!...myArray.middle().first!-1)
                 case .up:
-                    // low = guess
                     if guess == myArray.last! {
                         // user swiped the wrong way
                         myArray = Array(myArray.first!...myArray.middle().first!-1)
@@ -199,11 +189,6 @@ class HigherLowerViewController: UIViewController {
                     break
             }
 
-            if myArray.count == 2 {
-//                print("myArray: \(myArray)")
-            }
-//            print("arrayFirst now is: \(myArray.first!)")
-//            print("arrayLast now is: \(myArray.last!)")
             showNextGuess()
         }
     }
