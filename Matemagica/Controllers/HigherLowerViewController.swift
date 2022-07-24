@@ -23,11 +23,6 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Properties
 
-    // TODO:
-    // let user pick how high the range is, and adjust tries needed accordingly, perhaps a picker showing options
-    // for ranges and corresponding needed tries
-
-
     var myArray = Array(1...1000)
 
     var triesLeft = 10
