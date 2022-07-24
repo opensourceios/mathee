@@ -32,6 +32,7 @@ struct Const {
     static let evenMessage = "Even"
     static let aboutMessage = "About"
     static let shareTitleMessage = "Tell a friend"
+    static let spotItCell = "mycell"
 
 
     static let dataSourceHome = [
