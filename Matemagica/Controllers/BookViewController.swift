@@ -223,37 +223,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
 
-//    func prettifyPage(page: [Int]) -> String {
-//        var newPage = ""
-//        for number in page {
-//            var tempNumber = "\(number)"
-//            if tempNumber.count == 1 {
-//                tempNumber = "  \(tempNumber)"
-//            }
-//            newPage.append("  \(tempNumber)  |")
-//        }
-//        return newPage
-//    }
-
-
-//    func colorfy(label: String) -> NSMutableAttributedString {
-//        let aNSAttrString = NSMutableAttributedString(string: "")
-//        for letter in label.unicodeScalars {
-//            let myLetter: NSAttributedString
-//            if CharacterSet.decimalDigits.contains(letter) {
-//                myLetter = NSAttributedString(
-//                    string: "\(letter)",
-//                    attributes: [NSAttributedString.Key.foregroundColor: colorsArray[ Int("\(letter)")!]])
-//            } else {
-//                myLetter = NSAttributedString(string: "\(letter)")
-//            }
-//
-//            aNSAttrString.append(myLetter)
-//        }
-//        return aNSAttrString
-//    }
-
-
     // MARK: Actions
 
     @objc func doneButtonPressed() {
