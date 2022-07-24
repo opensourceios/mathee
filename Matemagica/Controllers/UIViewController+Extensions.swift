@@ -35,7 +35,7 @@ extension UIViewController {
 
     func attrifyString(preString: String, toAttrify: String, color: UIColor) -> NSMutableAttributedString {
         let regularAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.preferredFont(forTextStyle: .body)]
+            .font: UIFont.preferredFont(forTextStyle: .title3)]
         let jumboAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
             .foregroundColor: color]

@@ -32,27 +32,61 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-G0-lf0" userLabel="l">
+                                <rect key="frame" x="16" y="747" width="63" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="KzT-qm-Rm9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Lower">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="lowerOrHigherTappedWithSender:" destination="ZqM-0Y-De7" eventType="touchUpInside" id="Cdh-Y1-cC0"/>
+                                </connections>
+                            </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-1m-iEl">
                                 <rect key="frame" x="16" y="46" width="343" height="4"/>
                             </progressView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-h2-CTT">
+                                <rect key="frame" x="291.66666666666669" y="747" width="67.333333333333314" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ovV-wm-Jtm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Higher">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="lowerOrHigherTappedWithSender:" destination="ZqM-0Y-De7" eventType="touchUpInside" id="rpw-HS-Qp2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="0WM-1m-iEl" secondAttribute="trailing" constant="16" id="1fW-c1-x60"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="8pq-Eb-w1b"/>
+                            <constraint firstItem="Omi-Fz-8x3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w4O-G0-lf0" secondAttribute="trailing" constant="16" id="BME-Ze-XDZ"/>
                             <constraint firstItem="Omi-Fz-8x3" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="G6P-Rt-eny"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="Ib5-vE-Wkj"/>
                             <constraint firstItem="0WM-1m-iEl" firstAttribute="top" secondItem="kO9-Xj-yVp" secondAttribute="top" constant="2" id="ceN-qG-Yeo"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="NTc-h2-CTT" secondAttribute="trailing" constant="16" id="d6N-9w-hzj"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="w4O-G0-lf0" secondAttribute="bottom" id="ead-VK-XAX"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="nAW-HL-3cW" secondAttribute="trailing" constant="16" id="exC-tg-SVV"/>
+                            <constraint firstItem="w4O-G0-lf0" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="hdh-tD-pUB"/>
                             <constraint firstItem="0WM-1m-iEl" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="iVN-pd-3ns"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="Omi-Fz-8x3" secondAttribute="bottom" id="nR2-Ih-kt2"/>
+                            <constraint firstItem="NTc-h2-CTT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Omi-Fz-8x3" secondAttribute="trailing" constant="16" id="pIS-T2-AnL"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="NTc-h2-CTT" secondAttribute="bottom" id="yGu-o9-afp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oXZ-fp-eKa"/>
                     <connections>
                         <outlet property="correctButton" destination="Omi-Fz-8x3" id="amI-zg-R9q"/>
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
+                        <outlet property="higherButton" destination="NTc-h2-CTT" id="e2Q-4e-iJ3"/>
+                        <outlet property="lowerButton" destination="w4O-G0-lf0" id="hKg-X0-HQR"/>
                         <outlet property="progressBar" destination="0WM-1m-iEl" id="6bD-eZ-TPE"/>
                     </connections>
                 </viewController>
