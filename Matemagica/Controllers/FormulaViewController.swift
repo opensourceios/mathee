@@ -68,6 +68,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         progressBar.setProgress(0.1, animated: true)
+        rightButton.doGlowAnimation(withColor: myThemeColor)
+
     }
 
 
@@ -142,6 +144,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func oddOrEven() {
         messageLabel.text = "Is the result odd or even?"
         leftButton.isHidden = false
+        leftButton.doGlowAnimation(withColor: myThemeColor)
         leftButton.setTitle(Const.oddMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         leftButton.addTarget(self, action: #selector(addOne), for: .touchUpInside)
@@ -208,6 +211,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         // ask current result to user
         myTextField.isHidden = false
         showAnswerButton.isHidden = false
+        showAnswerButton.doGlowAnimation(withColor: myThemeColor)
         someOnClickButtonStart()
 
         myTextField.becomeFirstResponder()
@@ -223,6 +227,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                                   options: .transitionCrossDissolve,
                                   animations: {
                     self.infoButton.isHidden = false
+                    self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
                     self.hasShownHelpButton = true
                 })
             }
@@ -300,11 +305,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.lineBreakMode = .byCharWrapping
 
         leftButton.isHidden = true
-        rightButton.setTitle(Const.correctMessage, for: .normal)
+        rightButton.setTitle(Const.doneMessage, for: .normal)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         rightButton.sizeToFit()
         rightButton.isHidden = false
+        rightButton.doGlowAnimation(withColor: myThemeColor)
         progressBar.setProgress(1, animated: true)
     }
 
