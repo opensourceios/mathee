@@ -65,9 +65,9 @@ class HigherLowerViewController: UIViewController {
         progressBar.setProgress(0, animated: false)
 
         guessLabel.text = """
-        Think of a number from \(myArray.first!) to \(myArray.last!)
+        Think of a number, anywhere from \(myArray.first!), alllll the way to \(myArray.last!)
 
-        I will guess it in \(triesLeft) tries or less
+        I *will* guess it, and in \(triesLeft) tries - or less
         """
         toggleButtons(enable: false)
     }
