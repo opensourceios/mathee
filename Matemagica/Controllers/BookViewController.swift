@@ -9,17 +9,17 @@
 import UIKit
 
 
-class BookViewController: UIViewController {
+class BookViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
 
     // MARK: Outlets
 
     @IBOutlet weak var pageNumberLabel: UILabel!
-    @IBOutlet weak var pageContentLabel: UILabel!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var myCollectionView: UICollectionView!
 
 
     // MARK: Properties
@@ -74,20 +74,19 @@ class BookViewController: UIViewController {
     var shuffledPagesByOrder = [Page]()
     var userNumber = 0
     var currentPageReal = 0
+
+    var currentPageDataSource: [Int] = []
+
     let myThemeColor = UIColor.systemOrange
 
     let possibleDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     let colorsArray: [UIColor] = [
-        .systemCyan,
-        .systemBlue,
-        .systemMint,
-        .systemBrown,
-        .systemGreen,
-        .magenta,
         .systemOrange,
-        .systemPurple,
-        .systemRed,
-        .systemTeal
+        .systemTeal,
+        .systemGreen,
+        .systemBlue,
+        .systemIndigo,
+        .systemPurple
     ]
 
 
@@ -121,7 +120,7 @@ class BookViewController: UIViewController {
 
         Tell me whether you spot your number in the following 6 lists
         """
-        pageContentLabel.text = ""
+        myCollectionView.isHidden = true
 
         progressBar.setProgress(0, animated: false)
 
@@ -154,6 +153,7 @@ class BookViewController: UIViewController {
     // Helpers
 
     @objc func start() {
+        myCollectionView.isHidden = false
         showNextPage()
     }
 
@@ -168,10 +168,8 @@ class BookViewController: UIViewController {
         Is your number in list #\(currentPageReal+1)?
         """
 
-        let noColorText = "\(prettifyPage(page: shuffledPagesByOrder[currentPageReal].value))"
-        let coloredText = colorfy(label: noColorText)
-
-        pageContentLabel.attributedText = coloredText
+        currentPageDataSource = shuffledPagesByOrder[currentPageReal].value
+        myCollectionView.reloadData()
 
         leftButton.isHidden = false
         leftButton.doGlowAnimation(withColor: myThemeColor)
@@ -207,7 +205,7 @@ class BookViewController: UIViewController {
 
 
     @objc func showResult() {
-        pageContentLabel.text = ""
+        myCollectionView.isHidden = true
 
         pageNumberLabel.attributedText = attrifyString(
             preString: "You thought:\n\n", toAttrify: "\(userNumber)", color: myThemeColor)
@@ -225,35 +223,35 @@ class BookViewController: UIViewController {
     }
 
 
-    func prettifyPage(page: [Int]) -> String {
-        var newPage = ""
-        for number in page {
-            var tempNumber = "\(number)"
-            if tempNumber.count == 1 {
-                tempNumber = "  \(tempNumber)"
-            }
-            newPage.append("  \(tempNumber)  |")
-        }
-        return newPage
-    }
+//    func prettifyPage(page: [Int]) -> String {
+//        var newPage = ""
+//        for number in page {
+//            var tempNumber = "\(number)"
+//            if tempNumber.count == 1 {
+//                tempNumber = "  \(tempNumber)"
+//            }
+//            newPage.append("  \(tempNumber)  |")
+//        }
+//        return newPage
+//    }
 
 
-    func colorfy(label: String) -> NSMutableAttributedString {
-        let aNSAttrString = NSMutableAttributedString(string: "")
-        for letter in label.unicodeScalars {
-            let myLetter: NSAttributedString
-            if CharacterSet.decimalDigits.contains(letter) {
-                myLetter = NSAttributedString(
-                    string: "\(letter)",
-                    attributes: [NSAttributedString.Key.foregroundColor: colorsArray[ Int("\(letter)")!]])
-            } else {
-                myLetter = NSAttributedString(string: "\(letter)")
-            }
-
-            aNSAttrString.append(myLetter)
-        }
-        return aNSAttrString
-    }
+//    func colorfy(label: String) -> NSMutableAttributedString {
+//        let aNSAttrString = NSMutableAttributedString(string: "")
+//        for letter in label.unicodeScalars {
+//            let myLetter: NSAttributedString
+//            if CharacterSet.decimalDigits.contains(letter) {
+//                myLetter = NSAttributedString(
+//                    string: "\(letter)",
+//                    attributes: [NSAttributedString.Key.foregroundColor: colorsArray[ Int("\(letter)")!]])
+//            } else {
+//                myLetter = NSAttributedString(string: "\(letter)")
+//            }
+//
+//            aNSAttrString.append(myLetter)
+//        }
+//        return aNSAttrString
+//    }
 
 
     // MARK: Actions
@@ -262,5 +260,25 @@ class BookViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
 
+
+    // MARK: Collection Delegate
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return currentPageDataSource.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.spotItCell,
+                                                      for: indexPath) as! SpotItCell
+
+        cell.myLabel.text = "\(currentPageDataSource[indexPath.row])"
+        cell.backgroundColor = colorsArray[currentPageReal]
+        cell.myLabel.textColor = UIColor.systemBackground
+        cell.layer.cornerRadius = cell.frame.size.width / 2
+
+        return cell
+    }
 
 }
