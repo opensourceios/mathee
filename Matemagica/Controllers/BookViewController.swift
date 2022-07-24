@@ -135,6 +135,7 @@ class BookViewController: UIViewController {
 
         leftButton.isHidden = true
         middleButton.isHidden = false
+        middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
         middleButton.setTitle(Const.okMessage, for: .normal)
@@ -175,8 +176,10 @@ class BookViewController: UIViewController {
         pageContentLabel.attributedText = coloredText
 
         leftButton.isHidden = false
+        leftButton.doGlowAnimation(withColor: myThemeColor)
         middleButton.isHidden = true
         rightButton.isHidden = false
+        rightButton.doGlowAnimation(withColor: myThemeColor)
 
         leftButton.setTitle(Const.noMessage, for: .normal)
         rightButton.setTitle(Const.yesMessage, for: .normal)
@@ -213,6 +216,7 @@ class BookViewController: UIViewController {
 
         leftButton.isHidden = true
         middleButton.isHidden = false
+        middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)

@@ -63,6 +63,7 @@ class MagicViewController: UIViewController {
         super.viewDidAppear(animated)
 
         progressBar.setProgress(1/progressFractions, animated: true)
+        middleButton.doGlowAnimation(withColor: myThemeColor)
     }
 
 
@@ -121,8 +122,10 @@ class MagicViewController: UIViewController {
         """
 
         leftButton.isHidden = false
+        leftButton.doGlowAnimation(withColor: myThemeColor)
         middleButton.isHidden = true
         rightButton.isHidden = false
+        rightButton.doGlowAnimation(withColor: myThemeColor)
 
         leftButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -147,6 +150,7 @@ class MagicViewController: UIViewController {
 
         leftButton.isHidden = true
         middleButton.isHidden = false
+        middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -161,8 +165,10 @@ class MagicViewController: UIViewController {
         headerLabel.text = "Is the new result a single digit?"
 
         leftButton.isHidden = false
+        leftButton.doGlowAnimation(withColor: myThemeColor)
         middleButton.isHidden = true
         rightButton.isHidden = false
+        rightButton.doGlowAnimation(withColor: myThemeColor)
 
         leftButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -186,6 +192,7 @@ class MagicViewController: UIViewController {
 
         leftButton.isHidden = true
         middleButton.isHidden = false
+        middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -204,6 +211,7 @@ class MagicViewController: UIViewController {
 
         leftButton.isHidden = true
         middleButton.isHidden = false
+        middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -220,6 +228,7 @@ class MagicViewController: UIViewController {
 
         leftButton.isHidden = true
         middleButton.isHidden = false
+        middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
