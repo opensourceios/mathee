@@ -72,7 +72,7 @@ extension UIViewController {
             case .nan:
                 alertTitle = "Please enter numbers only"
                 alertMessage = """
-                Highest number allowed: 2305843009213693951
+                Highest number allowed: \(UInt64.max/4)
                 """
             default:
                 alertTitle = "Unknown error"
