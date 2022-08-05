@@ -26,7 +26,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
 
-    var total = 0
+    var total: UInt64 = 0
     var isBeforeFirstEvenQuestion = true
     var myTitle: String!
     let myThemeColor: UIColor = .systemPurple
@@ -266,7 +266,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         let trimmedText = text.trimmingCharacters(in: .whitespaces)
 
-        guard let number = Int(trimmedText),
+        guard let number = UInt64(trimmedText),
               !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
             let alert = createAlert(alertReasonParam: .nan)
             present(alert, animated: true)
