@@ -51,7 +51,7 @@ class MatemagicaScreenshots: XCTestCase {
                 app.textFields.firstMatch.typeText("6")
                 app.buttons["Guess my number"].firstMatch.tap()
                 takeScreenshot(named: "Guess-it-result")
-                app.buttons["Correct"].firstMatch.tap()
+                app.buttons["Done"].firstMatch.tap()
             case "Spot it":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 app.buttons["OK"].firstMatch.tap()
