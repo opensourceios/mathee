@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -286,6 +286,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		3328F70521B647FE003A8534 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -496,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.32;
+				MARKETING_VERSION = 7.33;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
@@ -523,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.32;
+				MARKETING_VERSION = 7.33;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
