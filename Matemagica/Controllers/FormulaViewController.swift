@@ -29,7 +29,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     var total: UInt64 = 0
     var isBeforeFirstEvenQuestion = true
     var myTitle: String!
-    let myThemeColor: UIColor = .systemPurple
+    var myThemeColor: UIColor!
 
     var dispatchQueue: DispatchQueue?
     var dispatchWorkItem: DispatchWorkItem?

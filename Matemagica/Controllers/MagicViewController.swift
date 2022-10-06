@@ -24,7 +24,7 @@ class MagicViewController: UIViewController {
     // MARK: Properties
 
     var myTitle: String!
-    let myThemeColor: UIColor = .systemRed
+    var myThemeColor: UIColor!
 
     let progressFractions: Float = 9
 

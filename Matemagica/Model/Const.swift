@@ -36,39 +36,30 @@ struct Const {
 
 
     static let dataSourceHome = [
-        ["sectionTitle": "Difficulty: Easy",
-         "sections": [
-            [
-                "icon": "plus.slash.minus",
-                "color": UIColor.systemPurple,
-                "title": "Guess it",
-                "id": "FormulaViewController"
-            ],
-            [
-                "icon": "arrow.up.arrow.down",
-                "color": UIColor.systemBlue,
-                "title": "Lower or higher",
-                "id": "HigherLowerViewController"]
-         ]
-        ],
-        ["sectionTitle": "Difficulty: Medium",
-         "sections": [
-            [
-                "icon": "book",
-                "color": UIColor.systemOrange,
-                "title": "Spot it",
-                "id": "BookViewController"]
-         ]
-        ],
-        ["sectionTitle": "Difficulty: Hard",
-         "sections": [
-            [
-                "icon": "wand.and.stars",
-                "color": UIColor.systemRed,
-                "title": "Mystical 9",
-                "id": "MagicViewController"]
-         ]
-        ]
+        ["icon": "7.circle",
+         "color": UIColor.systemPurple,
+         "title": "Shabbos",
+         "id": "ShabbosViewController"],
+
+        ["icon": "plus.slash.minus",
+         "color": UIColor.systemOrange,
+         "title": "Guess it",
+         "id": "FormulaViewController"],
+
+        ["icon": "arrow.up.arrow.down",
+         "color": UIColor.systemRed,
+         "title": "Lower or higher",
+         "id": "HigherLowerViewController"],
+
+        ["icon": "book",
+         "color": UIColor.systemMint,
+         "title": "Spot it",
+         "id": "BookViewController"],
+
+        ["icon": "wand.and.stars",
+         "color": UIColor.systemGreen,
+         "title": "Mystical 9",
+         "id": "MagicViewController"]
     ]
 
 }

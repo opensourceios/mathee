@@ -34,7 +34,7 @@ class HigherLowerViewController: UIViewController {
 
     var triedUpperboundOfTwoItemArr = false
 
-    let myThemeColor: UIColor = .systemBlue
+    var myThemeColor: UIColor!
     let thinkEmojis = ["🤔", "🤨", "🧐"]
     let knowEmojis = ["😎", "🥳", "😏"]
 

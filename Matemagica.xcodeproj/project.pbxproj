@@ -22,6 +22,7 @@
 		33B9FDC920EDFC1500131038 /* MagicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9FDC820EDFC1500131038 /* MagicViewController.swift */; };
 		33C6167227C4985400EC8575 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C6167127C4985400EC8575 /* StoreKit.framework */; };
 		33CF6B8D26F4434A002E5CA9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */; };
+		33DB100D28EEB051001083A4 /* ShabbosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB100C28EEB051001083A4 /* ShabbosViewController.swift */; };
 		33E32B9E288B4DA200CED09C /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E32B9D288B4DA200CED09C /* Array+Extensions.swift */; };
 		33ECBA0621AC1BAA003199CB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ECBA0521AC1BAA003199CB /* Const.swift */; };
 		33F3218B28384B2100385BBD /* MatemagicaScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3218A28384B2100385BBD /* MatemagicaScreenshots.swift */; };
@@ -57,6 +58,7 @@
 		33B9FDC820EDFC1500131038 /* MagicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicViewController.swift; sourceTree = "<group>"; };
 		33C6167127C4985400EC8575 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		33DB100C28EEB051001083A4 /* ShabbosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShabbosViewController.swift; sourceTree = "<group>"; };
 		33E32B9D288B4DA200CED09C /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		33ECBA0521AC1BAA003199CB /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		33F3218828384B2100385BBD /* MatemagicaScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatemagicaScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
 				33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */,
 				3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */,
+				33DB100C28EEB051001083A4 /* ShabbosViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				33E32B9E288B4DA200CED09C /* Array+Extensions.swift in Sources */,
 				33B727FB20EDC68800AF338A /* HigherLowerViewController.swift in Sources */,
 				33ECBA0621AC1BAA003199CB /* Const.swift in Sources */,
+				33DB100D28EEB051001083A4 /* ShabbosViewController.swift in Sources */,
 				3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */,
 				33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */,
 			);

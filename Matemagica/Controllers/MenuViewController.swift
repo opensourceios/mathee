@@ -43,11 +43,12 @@ class MenuViewController: UIViewController,
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.largeTitleDisplayMode = .never
+
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        //navigationController?.navigationBar.prefersLargeTitles = true
         setThemeColorTo(myThemeColor: myThemeColor)
 
         if let selectedRow = myTableView.indexPathForSelectedRow {
@@ -109,58 +110,25 @@ class MenuViewController: UIViewController,
     // MARK: TableView Delegate
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-            case 0: // easy
-                return 2
-            case 1: // medium
-                return 1
-            case 2: // hard
-                return 1
-            default:
-                fatalError()
-        }
+        Const.dataSourceHome.count
     }
 
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
-        let sectionText = UILabel()
-        sectionText.frame = CGRect.init(x: 16, y: 16,
-                                        width: tableView.frame.width - 16,
-                                        height: 0)
-        sectionText.text = Const.dataSourceHome[section]["sectionTitle"] as? String
-        sectionText.font = UIFont.preferredFont(for: .title2, weight: .bold)
-        sectionText.adjustsFontForContentSizeCategory = true
-        sectionText.textColor = UIColor.label
-        sectionText.lineBreakMode = .byWordWrapping
-        sectionText.numberOfLines = 0
-        sectionText.sizeToFit()
-
-        return sectionText
-    }
-
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return Const.dataSourceHome.count
-    }
-
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60 // my custom height
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 0
+//    }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
-        let sections: [[String: Any]] = Const.dataSourceHome[indexPath.section]["sections"] as! [[String: Any]]
-        cell.myLabel.text = sections[indexPath.row]["title"] as? String
+        cell.myLabel.text = Const.dataSourceHome[indexPath.row]["title"] as? String
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
-        let aImage = UIImage(systemName: sections[indexPath.row]["icon"] as! String,
+        let aImage = UIImage(systemName: Const.dataSourceHome[indexPath.row]["icon"] as! String,
                              withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
-        cell.imageViewContainer.backgroundColor = sections[indexPath.row]["color"] as? UIColor
+        cell.imageViewContainer.backgroundColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
         cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
@@ -179,21 +147,31 @@ class MenuViewController: UIViewController,
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "BookViewController") as! BookViewController
                 controller.myTitle = cell.myLabel!.text
+                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Guess it":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "FormulaViewController") as! FormulaViewController
                 controller.myTitle = cell.myLabel!.text
+                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Mystical 9":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "MagicViewController") as! MagicViewController
                 controller.myTitle = cell.myLabel!.text
+                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Lower or higher":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
                 controller.myTitle = cell.myLabel!.text
+                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                self.navigationController!.pushViewController(controller, animated: true)
+            case "Shabbos":
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: "ShabbosViewController") as! ShabbosViewController
+                controller.myTitle = cell.myLabel!.text
+                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             default:
                 fatalError()

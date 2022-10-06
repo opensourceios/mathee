@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Think Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-HL-3cW">
-                                <rect key="frame" x="16" y="401" width="343" height="20.333333333333314"/>
+                                <rect key="frame" x="16" y="400.66666666666669" width="343" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omi-Fz-8x3">
-                                <rect key="frame" x="151" y="747" width="73" height="31"/>
+                                <rect key="frame" x="146.66666666666666" y="743.66666666666663" width="81.666666666666657" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="4ds-7e-dxf"/>
                                 </constraints>
@@ -34,7 +35,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-G0-lf0" userLabel="l">
-                                <rect key="frame" x="16" y="747" width="63" height="31"/>
+                                <rect key="frame" x="16" y="743.66666666666663" width="70" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="KzT-qm-Rm9"/>
                                 </constraints>
@@ -47,10 +48,10 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-1m-iEl">
-                                <rect key="frame" x="16" y="46" width="343" height="4"/>
+                                <rect key="frame" x="16" y="49" width="343" height="4"/>
                             </progressView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-h2-CTT">
-                                <rect key="frame" x="291.66666666666669" y="747" width="67.333333333333314" height="31"/>
+                                <rect key="frame" x="284" y="743.66666666666663" width="75" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ovV-wm-Jtm"/>
                                 </constraints>
@@ -104,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-8M-K0A">
-                                <rect key="frame" x="16" y="390" width="343" height="42.333333333333314"/>
+                                <rect key="frame" x="16" y="388" width="343" height="49"/>
                                 <string key="text">Think of a number.
 Prepare to be amazed.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -112,28 +113,28 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yck-uM-wZf">
-                                <rect key="frame" x="16.000000000000004" y="731" width="49.333333333333343" height="31"/>
+                                <rect key="frame" x="15.999999999999996" y="727.66666666666663" width="53.666666666666657" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-nS-8zw">
-                                <rect key="frame" x="301" y="731" width="58" height="31"/>
+                                <rect key="frame" x="295" y="727.66666666666663" width="64" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTm-Q3-fwn">
-                                <rect key="frame" x="154" y="731" width="67" height="31"/>
+                                <rect key="frame" x="150" y="727.66666666666663" width="75" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-ES-GER">
-                                <rect key="frame" x="16" y="46" width="343" height="4"/>
+                                <rect key="frame" x="16" y="49" width="343" height="4"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
@@ -168,6 +169,85 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="1369.5652173913045" y="2822.5446428571427"/>
         </scene>
+        <!--Shabbos View Controller-->
+        <scene sceneID="zSd-R4-gSN">
+            <objects>
+                <viewController storyboardIdentifier="ShabbosViewController" id="li8-1e-9hm" customClass="ShabbosViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x7L-Fa-FDr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzK-za-kQe">
+                                <rect key="frame" x="204" y="63" width="155" height="34.333333333333343"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="How To Play?" image="info.circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="gray" image="info.circle" catalog="system" imagePlacement="trailing" title="How To Play?" imagePadding="4"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL4-r5-LVc">
+                                <rect key="frame" x="16" y="392.33333333333331" width="343" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYf-xy-pkD">
+                                <rect key="frame" x="0.0" y="723.33333333333337" width="187.66666666666666" height="54.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Shabbos!">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="f4a-JV-XPJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-Op-qas">
+                                <rect key="frame" x="187.66666666666663" y="723.33333333333337" width="187.33333333333337" height="54.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Drop It">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="Ek1-YO-cqV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-Nb-nhh">
+                                <rect key="frame" x="16" y="129.33333333333334" width="343" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yn4-JG-mVF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" id="GWu-V4-nkv"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="pzK-za-kQe" secondAttribute="trailing" constant="16" id="NGa-lP-Wt8"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="Pfg-Nb-nhh" secondAttribute="trailing" constant="16" id="Qkz-GS-cXq"/>
+                            <constraint firstItem="pzK-za-kQe" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="Xbh-yK-M37"/>
+                            <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
+                            <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" id="dDX-K5-gUX"/>
+                            <constraint firstItem="mL4-r5-LVc" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="f1R-Jq-I0P"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" id="fLz-lP-CXe"/>
+                            <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" id="jvZ-Zd-PNe"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" id="oOA-EL-TWa"/>
+                            <constraint firstItem="Pfg-Nb-nhh" firstAttribute="top" secondItem="pzK-za-kQe" secondAttribute="bottom" constant="32" id="obw-hm-2Xs"/>
+                            <constraint firstItem="pzK-za-kQe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="rMz-8s-QOi"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" id="tot-hY-cHp"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="mL4-r5-LVc" secondAttribute="trailing" constant="16" id="yIb-bA-zaf"/>
+                            <constraint firstItem="Pfg-Nb-nhh" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="zVu-Be-jrh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="livesLeftLabel" destination="Pfg-Nb-nhh" id="whF-2C-Lgh"/>
+                        <outlet property="notShabbosButton" destination="yDN-Op-qas" id="LfF-0b-aTJ"/>
+                        <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
+                        <outlet property="shabbosButton" destination="BYf-xy-pkD" id="F8P-1E-SK4"/>
+                        <outlet property="tutorialButton" destination="pzK-za-kQe" id="vMC-qv-aNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Px8-ES-dU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368.8" y="3579.3103448275865"/>
+        </scene>
         <!--Book View Controller-->
         <scene sceneID="N7b-KI-OfH">
             <objects>
@@ -177,37 +257,37 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="66" width="343" height="20.333333333333329"/>
+                                <rect key="frame" x="16" y="69" width="343" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-rL-Byj">
-                                <rect key="frame" x="16.000000000000004" y="731" width="49.333333333333343" height="31"/>
+                                <rect key="frame" x="15.999999999999996" y="727.66666666666663" width="53.666666666666657" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZe-dL-xl3">
-                                <rect key="frame" x="153.66666666666666" y="731" width="67.666666666666657" height="31"/>
+                                <rect key="frame" x="149.66666666666666" y="727.66666666666663" width="75.666666666666657" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Middle">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sju-T6-m4T">
-                                <rect key="frame" x="301" y="731" width="58" height="31"/>
+                                <rect key="frame" x="295" y="727.66666666666663" width="64" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EkJ-TL-eJa">
-                                <rect key="frame" x="16" y="46" width="343" height="4"/>
+                                <rect key="frame" x="16" y="49" width="343" height="4"/>
                             </progressView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Udx-we-m7o">
-                                <rect key="frame" x="16" y="150.33333333333331" width="343" height="516.66666666666674"/>
+                                <rect key="frame" x="16" y="157.00000000000003" width="343" height="506.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pzn-fq-FaZ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -224,7 +304,7 @@ Prepare to be amazed.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-At-lBj">
-                                                    <rect key="frame" x="46" y="55.666666666666657" width="36" height="17"/>
+                                                    <rect key="frame" x="43.333333333333329" y="54.000000000000007" width="41.333333333333329" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -288,7 +368,7 @@ Prepare to be amazed.</string>
             <objects>
                 <navigationController id="8u8-uX-CMh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gg4-Me-5w3">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -308,18 +388,18 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-S2-mJ9">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="687"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="9Tx-0d-iVw" customClass="MainMenuTableViewCell" customModule="Matemagica" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="49" width="343" height="96.333335876464844"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="96.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Tx-0d-iVw" id="bFT-I5-sFd">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="96.333335876464844"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="96.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0R-T6-DGz">
-                                                    <rect key="frame" x="96" y="16" width="231" height="64.333333333333329"/>
+                                                    <rect key="frame" x="96" y="16" width="223" height="64.333333333333329"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -405,7 +485,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="158.33333333333334" width="343" height="64.333333333333343"/>
+                                <rect key="frame" x="16" y="165" width="343" height="74"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -414,7 +494,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="106.66666666666669" y="238.66666666666666" width="162" height="34.333333333333343"/>
+                                <rect key="frame" x="96.000000000000014" y="255" width="183.33333333333337" height="38"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="OK"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guess my number" titleAlignment="center">
@@ -425,7 +505,7 @@ Let me ask you a few questions...</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv8-aF-RC8">
-                                <rect key="frame" x="301" y="731" width="58" height="31"/>
+                                <rect key="frame" x="295" y="727.66666666666663" width="64" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="7be-Sd-wUl"/>
                                 </constraints>
@@ -435,7 +515,7 @@ Let me ask you a few questions...</string>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nph-Lq-4xz">
-                                <rect key="frame" x="16.000000000000004" y="731" width="49.333333333333343" height="31"/>
+                                <rect key="frame" x="15.999999999999996" y="727.66666666666663" width="53.666666666666657" height="34.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="GS2-VW-r0O"/>
                                 </constraints>
@@ -445,7 +525,7 @@ Let me ask you a few questions...</string>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Ch-xgj">
-                                <rect key="frame" x="248.66666666666666" y="60" width="110.33333333333334" height="34.333333333333343"/>
+                                <rect key="frame" x="235.66666666666666" y="63" width="123.33333333333334" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Need help?" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
@@ -455,7 +535,7 @@ Let me ask you a few questions...</string>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-9r-YZZ">
-                                <rect key="frame" x="16" y="46" width="343" height="4"/>
+                                <rect key="frame" x="16" y="49" width="343" height="4"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
@@ -500,7 +580,8 @@ Let me ask you a few questions...</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
