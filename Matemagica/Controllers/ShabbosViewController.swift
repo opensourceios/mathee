@@ -47,6 +47,7 @@ class ShabbosViewController: UIViewController {
 
     }
 
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -58,7 +59,6 @@ class ShabbosViewController: UIViewController {
 
     // MARK: Helpers
 
-
     @objc func timerTapped() {
 
         toggleUI(enable: true)
@@ -67,7 +67,7 @@ class ShabbosViewController: UIViewController {
 
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             runsLeft -= 1
-            self.timerLabel.text = "\(runsLeft) seconds left"
+            self.timerLabel.text = "\(runsLeft) seconds left" // TODO: main thread?
             if runsLeft == 0 {
                 self.toggleUI(enable: false)
                 timer.invalidate()
@@ -80,6 +80,7 @@ class ShabbosViewController: UIViewController {
     @objc func fireTimer() {
         print("Timer fired!")
     }
+
 
     @IBAction func selectionTapped(_ sender: UIButton) {
         let isShabbos = currentNumber % 7 == 0
@@ -98,8 +99,6 @@ class ShabbosViewController: UIViewController {
         } else if !isShabbos && sender.tag == 0 {
             print("OOPS!! it's NOT shabbos")
         }
-
-
     }
 
 
@@ -115,14 +114,14 @@ class ShabbosViewController: UIViewController {
     func showNextNumber() {
         toggleUI(enable: false)
         currentNumber += 1
-        numberLabel.text = "\(currentNumber)"
+        numberLabel.text = "\(currentNumber)" // TODO: main thread?
         toggleUI(enable: true)
     }
 
 
     func addPoint() {
         points+=1
-        pointsLabel.text = "\(points) points"
+        pointsLabel.text = "\(points) points" // TODO: main thread?
     }
 
 
