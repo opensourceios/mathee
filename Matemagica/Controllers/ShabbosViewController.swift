@@ -127,8 +127,10 @@ class ShabbosViewController: UIViewController {
 
 
     func toggleUI(enable: Bool) {
-        for button: UIButton in [shabbosButton, notShabbosButton, tutorialButton] {
-            button.isEnabled = enable
+        DispatchQueue.main.async {
+            for button: UIButton in [self.shabbosButton, self.notShabbosButton, self.tutorialButton] {
+                button.isEnabled = enable
+            }
         }
     }
 
