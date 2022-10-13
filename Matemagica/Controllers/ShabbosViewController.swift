@@ -18,7 +18,7 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var notShabbosButton: UIButton!
     @IBOutlet weak var tutorialButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var timerProgress: UIProgressView!
 
 
     // MARK: Properties
@@ -26,7 +26,7 @@ class ShabbosViewController: UIViewController {
     var currentNumber = 0
     var myTitle: String!
     var myThemeColor: UIColor!
-    var points = 0
+    var myGR: UIGestureRecognizer!
 
 
     // MARK: Life Cycle
@@ -41,8 +41,9 @@ class ShabbosViewController: UIViewController {
         setThemeColorTo(myThemeColor: myThemeColor)
         showNextNumber()
         timerLabel.isUserInteractionEnabled = true
-        let myGR = UITapGestureRecognizer(target: self, action: #selector(timerTapped))
+        myGR = UITapGestureRecognizer(target: self, action: #selector(timerTapped))
         timerLabel.addGestureRecognizer(myGR)
+        timerProgress.progress = 0
         toggleUI(enable: false)
 
     }
@@ -60,14 +61,20 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     @objc func timerTapped() {
-
+        timerLabel.isUserInteractionEnabled = false
+        timerLabel.removeGestureRecognizer(myGR)
+        self.timerProgress.setProgress(1, animated: true)
         toggleUI(enable: true)
 
-        var runsLeft = 30
+        let totalRuns: Float = 30
+        var runsLeft: Float = 30
+        timerLabel.text = "00:\(Int(runsLeft))"
 
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             runsLeft -= 1
-            self.timerLabel.text = "\(runsLeft) seconds left" // TODO: main thread?
+            self.timerProgress.setProgress(runsLeft/totalRuns, animated: true)
+            let preStr = Int(runsLeft) < 10 ? "00:0" : "00:"
+            self.timerLabel.text = "\(preStr)\(Int(runsLeft))"
             if runsLeft == 0 {
                 self.toggleUI(enable: false)
                 timer.invalidate()
@@ -78,7 +85,7 @@ class ShabbosViewController: UIViewController {
 
 
     @objc func fireTimer() {
-        print("Timer fired!")
+        print("Timer fired")
     }
 
 
@@ -86,13 +93,11 @@ class ShabbosViewController: UIViewController {
         let isShabbos = currentNumber % 7 == 0
 
         // shabbos tag is 0
-        if isShabbos && sender.tag == 0 {
-            print("correct! it's shabbos")
-            addPoint()
+        if isShabbos && sender.tag == 0 { // TODO: show popup/sound/animation with "reason"
+            print("correct! it's shabbos") // TODO: add random option for lvl2
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             print("Correct! it's NOT shabbos")
-            addPoint()
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
             print("OOPS!! it IS shabbos")
@@ -103,10 +108,11 @@ class ShabbosViewController: UIViewController {
 
 
     func gameOver() {
-        timerLabel.text = " "
+        timerLabel.text = "Time is up ⏰"
+        let points = currentNumber-1
+        let pointPoints = points == 1 ? "point" : "points"
         numberLabel.text = """
-        Time is up! ⏰
-        You scored \(points) points!
+        Your score: \(points) \(pointPoints)
         """
     }
 
@@ -114,14 +120,8 @@ class ShabbosViewController: UIViewController {
     func showNextNumber() {
         toggleUI(enable: false)
         currentNumber += 1
-        numberLabel.text = "\(currentNumber)" // TODO: main thread?
+        numberLabel.text = "\(currentNumber)"
         toggleUI(enable: true)
-    }
-
-
-    func addPoint() {
-        points+=1
-        pointsLabel.text = "\(points) points" // TODO: main thread?
     }
 
 
