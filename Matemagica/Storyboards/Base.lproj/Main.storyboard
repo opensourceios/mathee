@@ -190,9 +190,9 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYf-xy-pkD">
-                                <rect key="frame" x="0.0" y="723.33333333333337" width="187.66666666666666" height="54.666666666666629"/>
+                                <rect key="frame" x="16" y="707.33333333333337" width="163.66666666666666" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Shabbos!">
+                                <buttonConfiguration key="configuration" style="filled" title="Shabbos">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -200,7 +200,7 @@ Prepare to be amazed.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-Op-qas">
-                                <rect key="frame" x="187.66666666666663" y="723.33333333333337" width="187.33333333333337" height="54.666666666666629"/>
+                                <rect key="frame" x="195.66666666666663" y="707.33333333333337" width="163.33333333333337" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Pass">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
@@ -224,20 +224,20 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="pzK-za-kQe" secondAttribute="bottom" constant="32" id="2xG-n3-sQP"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="35b-8Z-nVB"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" id="GWu-V4-nkv"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="pzK-za-kQe" secondAttribute="trailing" constant="16" id="NGa-lP-Wt8"/>
                             <constraint firstItem="pzK-za-kQe" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="Xbh-yK-M37"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
-                            <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" id="dDX-K5-gUX"/>
+                            <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" constant="8" id="dDX-K5-gUX"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="NVP-EG-pZV" secondAttribute="trailing" constant="16" id="dN6-VD-mgs"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="f1R-Jq-I0P"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" id="fLz-lP-CXe"/>
-                            <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" id="jvZ-Zd-PNe"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" id="oOA-EL-TWa"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" constant="8" id="fLz-lP-CXe"/>
+                            <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="jvZ-Zd-PNe"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" constant="16" id="oOA-EL-TWa"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="qf0-wu-Dtk"/>
                             <constraint firstItem="pzK-za-kQe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="rMz-8s-QOi"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" id="tot-hY-cHp"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" constant="16" id="tot-hY-cHp"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="mL4-r5-LVc" secondAttribute="trailing" constant="16" id="yIb-bA-zaf"/>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="yaG-n3-ZMf"/>
                         </constraints>

@@ -36,10 +36,9 @@ class ShabbosViewController: UIViewController {
 
         self.title = myTitle
 
-        numberLabel.text = "\(currentNumber)"
+        numberLabel.text = " "
 
         setThemeColorTo(myThemeColor: myThemeColor)
-        showNextNumber()
         timerLabel.isUserInteractionEnabled = true
         myGR = UITapGestureRecognizer(target: self, action: #selector(timerTapped))
         timerLabel.addGestureRecognizer(myGR)
@@ -49,12 +48,11 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-        for button: UIButton in [shabbosButton, notShabbosButton] {
-            button.configuration!.background.cornerRadius = 0
-        }
+        shabbosButton.doGlowAnimation(withColor: myThemeColor)
+        //        notShabbosButton.doGlowAnimation(withColor: myThemeColor)
     }
 
 
@@ -69,6 +67,7 @@ class ShabbosViewController: UIViewController {
         let totalRuns: Float = 30
         var runsLeft: Float = 30
         timerLabel.text = "00:\(Int(runsLeft))"
+        showNextNumber()
 
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             runsLeft -= 1
@@ -120,15 +119,19 @@ class ShabbosViewController: UIViewController {
     func showNextNumber() {
         toggleUI(enable: false)
         currentNumber += 1
-        numberLabel.text = "\(currentNumber)"
+        numberLabel.text = """
+        Is day number
+        \(currentNumber)
+        Shabbos?
+        """
         toggleUI(enable: true)
     }
 
 
     func toggleUI(enable: Bool) {
         DispatchQueue.main.async {
-            for button: UIButton in [self.shabbosButton, self.notShabbosButton, self.tutorialButton] {
-                button.isEnabled = enable
+            for button: UIButton in [self.shabbosButton, self.notShabbosButton] {
+                button.isHidden = !enable
             }
         }
     }
