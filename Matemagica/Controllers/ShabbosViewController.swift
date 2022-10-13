@@ -13,11 +13,12 @@ class ShabbosViewController: UIViewController {
     // MARK: Outlets
 
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var livesLeftLabel: UILabel!
 
     @IBOutlet weak var shabbosButton: UIButton!
     @IBOutlet weak var notShabbosButton: UIButton!
     @IBOutlet weak var tutorialButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var pointsLabel: UILabel!
 
 
     // MARK: Properties
@@ -25,7 +26,7 @@ class ShabbosViewController: UIViewController {
     var currentNumber = 0
     var myTitle: String!
     var myThemeColor: UIColor!
-    var livesLeft = 5
+    var points = 0
 
 
     // MARK: Life Cycle
@@ -36,11 +37,14 @@ class ShabbosViewController: UIViewController {
         self.title = myTitle
 
         numberLabel.text = "\(currentNumber)"
-        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
 
         setThemeColorTo(myThemeColor: myThemeColor)
-
         showNextNumber()
+        timerLabel.isUserInteractionEnabled = true
+        let myGR = UITapGestureRecognizer(target: self, action: #selector(timerTapped))
+        timerLabel.addGestureRecognizer(myGR)
+        toggleUI(enable: false)
+
     }
 
     override func viewDidLayoutSubviews() {
@@ -54,25 +58,57 @@ class ShabbosViewController: UIViewController {
 
     // MARK: Helpers
 
+
+    @objc func timerTapped() {
+
+        toggleUI(enable: true)
+
+        var runsLeft = 30
+
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            runsLeft -= 1
+            self.timerLabel.text = "\(runsLeft) seconds left"
+            if runsLeft == 0 {
+                timer.invalidate()
+                self.toggleUI(enable: false)
+                self.gameOver()
+            }
+        }
+    }
+
+
+    @objc func fireTimer() {
+        print("Timer fired!")
+    }
+
     @IBAction func selectionTapped(_ sender: UIButton) {
         let isShabbos = currentNumber % 7 == 0
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
             print("correct! it's shabbos")
+            addPoint()
         } else if !isShabbos && sender.tag == 1 {
             print("Correct! it's NOT shabbos")
+            addPoint()
         } else if isShabbos && sender.tag == 1 {
             print("OOPS!! it IS shabbos")
-            loseALife()
-
         } else if !isShabbos && sender.tag == 0 {
             print("OOPS!! it's NOT shabbos")
-            loseALife()
         }
 
         showNextNumber()
 
+    }
+
+
+    func gameOver() {
+        timerLabel.text = ""
+        numberLabel.text = """
+        Game Over
+        You reached \(currentNumber)
+        You scored \(points) points!
+        """
     }
 
 
@@ -84,15 +120,9 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    func loseALife() {
-        if livesLeft == 1 {
-            print("YOU LOST")
-            livesLeftLabel.text = "Game Over. You got \(currentNumber) points"
-            toggleUI(enable: false)
-            return
-        }
-        livesLeft -= 1
-        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
+    func addPoint() {
+        points+=1
+        pointsLabel.text = "\(points) points"
     }
 
 

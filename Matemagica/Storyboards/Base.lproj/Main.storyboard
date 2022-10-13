@@ -209,9 +209,15 @@ Prepare to be amazed.</string>
                                     <action selector="selectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="Ek1-YO-cqV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-Nb-nhh">
-                                <rect key="frame" x="16" y="129.33333333333334" width="343" height="33.666666666666657"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here to start" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
+                                <rect key="frame" x="16" y="129.33333333333334" width="154" height="26.333333333333343"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 points" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSN-MZ-KYb">
+                                <rect key="frame" x="16.000000000000007" y="187.66666666666666" width="118.66666666666669" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -219,9 +225,12 @@ Prepare to be amazed.</string>
                         <viewLayoutGuide key="safeArea" id="yn4-JG-mVF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="pzK-za-kQe" secondAttribute="bottom" constant="32" id="2xG-n3-sQP"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="35b-8Z-nVB"/>
+                            <constraint firstItem="zSN-MZ-KYb" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="CYr-MW-m22"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" id="GWu-V4-nkv"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zSN-MZ-KYb" secondAttribute="trailing" constant="16" id="Ic3-Rv-NmP"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="pzK-za-kQe" secondAttribute="trailing" constant="16" id="NGa-lP-Wt8"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="Pfg-Nb-nhh" secondAttribute="trailing" constant="16" id="Qkz-GS-cXq"/>
                             <constraint firstItem="pzK-za-kQe" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="Xbh-yK-M37"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
                             <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" id="dDX-K5-gUX"/>
@@ -229,18 +238,19 @@ Prepare to be amazed.</string>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" id="fLz-lP-CXe"/>
                             <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" id="jvZ-Zd-PNe"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" id="oOA-EL-TWa"/>
-                            <constraint firstItem="Pfg-Nb-nhh" firstAttribute="top" secondItem="pzK-za-kQe" secondAttribute="bottom" constant="32" id="obw-hm-2Xs"/>
                             <constraint firstItem="pzK-za-kQe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="rMz-8s-QOi"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" id="tot-hY-cHp"/>
+                            <constraint firstItem="zSN-MZ-KYb" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="32" id="uKg-zf-o55"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="mL4-r5-LVc" secondAttribute="trailing" constant="16" id="yIb-bA-zaf"/>
-                            <constraint firstItem="Pfg-Nb-nhh" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="zVu-Be-jrh"/>
+                            <constraint firstItem="JLD-aB-T4c" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="yaG-n3-ZMf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="livesLeftLabel" destination="Pfg-Nb-nhh" id="whF-2C-Lgh"/>
                         <outlet property="notShabbosButton" destination="yDN-Op-qas" id="LfF-0b-aTJ"/>
                         <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
+                        <outlet property="pointsLabel" destination="zSN-MZ-KYb" id="65e-Fh-2YU"/>
                         <outlet property="shabbosButton" destination="BYf-xy-pkD" id="F8P-1E-SK4"/>
+                        <outlet property="timerLabel" destination="JLD-aB-T4c" id="jHv-Fu-aQU"/>
                         <outlet property="tutorialButton" destination="pzK-za-kQe" id="vMC-qv-aNd"/>
                     </connections>
                 </viewController>
