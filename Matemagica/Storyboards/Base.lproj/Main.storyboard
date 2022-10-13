@@ -202,7 +202,7 @@ Prepare to be amazed.</string>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-Op-qas">
                                 <rect key="frame" x="187.66666666666663" y="723.33333333333337" width="187.33333333333337" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Drop It">
+                                <buttonConfiguration key="configuration" style="tinted" title="Pass">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>

@@ -55,6 +55,23 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func selectionTapped(_ sender: UIButton) {
+        let isShabbos = currentNumber % 7 == 0
+
+        // shabbos tag is 0
+        if isShabbos && sender.tag == 0 {
+            print("correct! it's shabbos")
+        } else if !isShabbos && sender.tag == 1 {
+            print("Correct! it's NOT shabbos")
+        } else if isShabbos && sender.tag == 1 {
+            print("OOPS!! it IS shabbos")
+            loseALife()
+
+        } else if !isShabbos && sender.tag == 0 {
+            print("OOPS!! it's NOT shabbos")
+            loseALife()
+        }
+
+        showNextNumber()
 
     }
 
@@ -64,6 +81,18 @@ class ShabbosViewController: UIViewController {
         currentNumber += 1
         numberLabel.text = "\(currentNumber)"
         toggleUI(enable: true)
+    }
+
+
+    func loseALife() {
+        if livesLeft == 1 {
+            print("YOU LOST")
+            livesLeftLabel.text = "Game Over. You got \(currentNumber) points"
+            toggleUI(enable: false)
+            return
+        }
+        livesLeft -= 1
+        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
     }
 
 
