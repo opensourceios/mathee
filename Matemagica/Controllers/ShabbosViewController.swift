@@ -92,16 +92,19 @@ class ShabbosViewController: UIViewController {
         let isShabbos = currentNumber % 7 == 0
 
         // shabbos tag is 0
-        if isShabbos && sender.tag == 0 { // TODO: show popup/sound/animation with "reason"
-            print("correct! it's shabbos") // TODO: add random option for lvl2
+        if isShabbos && sender.tag == 0 {
+            // TODO: show popup/sound/animation with "reason"
+            // TODO: add random option for lvl2
+            // TODO: animate label changes?
+            //print("correct! it's shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            print("Correct! it's NOT shabbos")
+            //print("Correct! it's NOT shabbos")
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
-            print("OOPS!! it IS shabbos")
+            //print("OOPS!! it IS shabbos")
         } else if !isShabbos && sender.tag == 0 {
-            print("OOPS!! it's NOT shabbos")
+            //print("OOPS!! it's NOT shabbos")
         }
     }
 
