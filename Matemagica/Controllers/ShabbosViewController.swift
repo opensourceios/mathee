@@ -69,8 +69,8 @@ class ShabbosViewController: UIViewController {
             runsLeft -= 1
             self.timerLabel.text = "\(runsLeft) seconds left"
             if runsLeft == 0 {
-                timer.invalidate()
                 self.toggleUI(enable: false)
+                timer.invalidate()
                 self.gameOver()
             }
         }
@@ -88,25 +88,25 @@ class ShabbosViewController: UIViewController {
         if isShabbos && sender.tag == 0 {
             print("correct! it's shabbos")
             addPoint()
+            showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             print("Correct! it's NOT shabbos")
             addPoint()
+            showNextNumber()
         } else if isShabbos && sender.tag == 1 {
             print("OOPS!! it IS shabbos")
         } else if !isShabbos && sender.tag == 0 {
             print("OOPS!! it's NOT shabbos")
         }
 
-        showNextNumber()
 
     }
 
 
     func gameOver() {
-        timerLabel.text = ""
+        timerLabel.text = " "
         numberLabel.text = """
-        Game Over
-        You reached \(currentNumber)
+        Time is up! ⏰
         You scored \(points) points!
         """
     }
