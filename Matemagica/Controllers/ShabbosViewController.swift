@@ -35,16 +35,13 @@ class ShabbosViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = myTitle
-
         numberLabel.text = " "
-
         setThemeColorTo(myThemeColor: myThemeColor)
         timerLabel.isUserInteractionEnabled = true
         myGR = UITapGestureRecognizer(target: self, action: #selector(timerTapped))
         timerLabel.addGestureRecognizer(myGR)
-        timerProgress.progress = 0
+        timerProgress.progress = 1
         toggleUI(enable: false)
-
     }
 
 
@@ -61,7 +58,6 @@ class ShabbosViewController: UIViewController {
     @objc func timerTapped() {
         timerLabel.isUserInteractionEnabled = false
         timerLabel.removeGestureRecognizer(myGR)
-        self.timerProgress.setProgress(1, animated: true)
         toggleUI(enable: true)
 
         let totalRuns: Float = 30
