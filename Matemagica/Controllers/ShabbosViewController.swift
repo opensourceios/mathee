@@ -96,6 +96,7 @@ class ShabbosViewController: UIViewController {
             // TODO: show popup/sound/animation with "reason"
             // TODO: add random option for lvl2
             // TODO: animate label changes?
+            // TODO: colorful, larger fonts where sensible
             //print("correct! it's shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
