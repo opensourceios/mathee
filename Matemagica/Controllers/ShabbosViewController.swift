@@ -93,8 +93,9 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            // TODO: show popup/sound/animation with "reason"
-            // TODO: add random option for lvl2
+            // TODO: whether right or wrong, show popup/sound/animation with "reason"
+            // TODO: add random option for lvl2, 3, etc
+            // TODO: "how to play?" button
             //print("correct! it's shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
@@ -112,9 +113,11 @@ class ShabbosViewController: UIViewController {
         timerLabel.text = "Time is up ⏰"
         let points = currentNumber-1
         let pointPoints = points == 1 ? "point" : "points"
-        numberLabel.text = """
-        Your score: \(points) \(pointPoints)
-        """
+        numberLabel.attributedText = attrifyString(
+            preString: "Your score:\n\n",
+            toAttrify: "\(points)",
+            postString: pointPoints,
+            color: myThemeColor)
     }
 
 
@@ -123,15 +126,8 @@ class ShabbosViewController: UIViewController {
         currentNumber += 1
         let myAttrText = attrifyString(
             preString: "Is day number\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
-
-        UIView.transition(with: numberLabel,
-                          duration: 0.25,
-                          options: .transitionFlipFromRight,
-                          animations: { [weak self] in
-            self?.numberLabel.attributedText = myAttrText
-        }, completion: { _ in
-            self.toggleUI(enable: true)
-        })
+        numberLabel.attributedText = myAttrText
+        self.toggleUI(enable: true)
     }
 
 
