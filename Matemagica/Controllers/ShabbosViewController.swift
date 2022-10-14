@@ -93,18 +93,21 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            // TODO: whether right or wrong, show popup/sound/animation with "reason"
             // TODO: add random option for lvl2, 3, etc
             // TODO: "how to play?" button
             //print("correct! it's shabbos")
+            // self.showToast(message: "Correct! \(currentNumber) is Shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             //print("Correct! it's NOT shabbos")
+//            self.showToast(message: "Correct! \(currentNumber) is not Shabbos")
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
             //print("OOPS!! it IS shabbos")
+            self.showToast(message: "Try again")
         } else if !isShabbos && sender.tag == 0 {
             //print("OOPS!! it's NOT shabbos")
+            self.showToast(message: "Try again")
         }
     }
 
@@ -125,7 +128,7 @@ class ShabbosViewController: UIViewController {
         toggleUI(enable: false)
         currentNumber += 1
         let myAttrText = attrifyString(
-            preString: "Is day number\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
+            preString: "Is day\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
         numberLabel.attributedText = myAttrText
         self.toggleUI(enable: true)
     }
