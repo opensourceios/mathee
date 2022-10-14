@@ -27,6 +27,7 @@ class ShabbosViewController: UIViewController {
     var myTitle: String!
     var myThemeColor: UIColor!
     var myGR: UIGestureRecognizer!
+    var myTimer: Timer!
 
 
     // MARK: Life Cycle
@@ -65,7 +66,7 @@ class ShabbosViewController: UIViewController {
         timerLabel.text = "00:\(Int(runsLeft))"
         showNextNumber()
 
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        myTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             runsLeft -= 1
             self.timerProgress.setProgress(runsLeft/totalRuns, animated: true)
             let preStr = Int(runsLeft) < 10 ? "00:0" : "00:"
@@ -73,18 +74,20 @@ class ShabbosViewController: UIViewController {
             if runsLeft == 0 {
                 self.toggleUI(enable: false)
                 timer.invalidate()
+                self.myTimer.invalidate()
+                self.myTimer = nil
                 self.gameOver()
             }
         }
     }
 
 
-    @objc func fireTimer() {
-        print("Timer fired")
-    }
-
-
     @IBAction func selectionTapped(_ sender: UIButton) {
+
+        guard myTimer != nil else {
+            return
+        }
+
         let isShabbos = currentNumber % 7 == 0
 
         // shabbos tag is 0
@@ -92,7 +95,6 @@ class ShabbosViewController: UIViewController {
             // TODO: show popup/sound/animation with "reason"
             // TODO: add random option for lvl2
             // TODO: animate label changes?
-            // TODO: colorful, larger fonts where sensible
             //print("correct! it's shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
@@ -119,11 +121,14 @@ class ShabbosViewController: UIViewController {
     func showNextNumber() {
         toggleUI(enable: false)
         currentNumber += 1
-        numberLabel.text = """
-        Is day number
-        \(currentNumber)
-        Shabbos?
-        """
+        let myAttrText = attrifyString(
+            preString: "Is day number\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
+        numberLabel.attributedText = myAttrText
+//        numberLabel.text = """
+//        Is day number
+//        \(currentNumber)
+//        Shabbos?
+//        """
         toggleUI(enable: true)
     }
 

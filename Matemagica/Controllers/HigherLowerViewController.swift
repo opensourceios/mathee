@@ -128,7 +128,7 @@ class HigherLowerViewController: UIViewController {
             \(thinkKnow)
 
 
-            """, toAttrify: "\(guess)\n", color: myThemeColor)
+            """, toAttrify: "\(guess)\n", postString: nil, color: myThemeColor)
         myAttrString.append(NSAttributedString(string: """
         """))
 
@@ -199,7 +199,7 @@ class HigherLowerViewController: UIViewController {
             \(thinkKnow)
 
 
-            """, toAttrify: "\(guess)\n", color: myThemeColor)
+            """, toAttrify: "\(guess)\n", postString: nil, color: myThemeColor)
         myAttrString.append(NSAttributedString(string: """
         """))
 

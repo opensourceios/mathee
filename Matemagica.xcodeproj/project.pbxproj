@@ -144,8 +144,6 @@
 				33568B7620EC96B300690825 /* BookViewController.swift */,
 				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
 				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
-				33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */,
-				3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */,
 				33DB100C28EEB051001083A4 /* ShabbosViewController.swift */,
 			);
 			path = Controllers;
@@ -166,6 +164,8 @@
 				33ECBA0521AC1BAA003199CB /* Const.swift */,
 				33E32B9D288B4DA200CED09C /* Array+Extensions.swift */,
 				3392B0DB288D114500EE9525 /* UIView+Extensions.swift */,
+				33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */,
+				3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

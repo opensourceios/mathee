@@ -208,7 +208,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         myCollectionView.isHidden = true
 
         pageNumberLabel.attributedText = attrifyString(
-            preString: "You thought:\n\n", toAttrify: "\(userNumber)", color: myThemeColor)
+            preString: "You thought:\n\n", toAttrify: "\(userNumber)", postString: nil, color: myThemeColor)
 
         leftButton.isHidden = true
         middleButton.isHidden = false

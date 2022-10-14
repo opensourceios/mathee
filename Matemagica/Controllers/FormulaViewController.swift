@@ -300,7 +300,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         //        myAttributedText.append(attributedMessageJumbo)
 
         messageLabel.attributedText = attrifyString(
-            preString: "You thought:\n\n", toAttrify: "\(total)", color: myThemeColor)
+            preString: "You thought:\n\n", toAttrify: "\(total)", postString: nil, color: myThemeColor)
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byCharWrapping
 
