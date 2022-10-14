@@ -121,6 +121,7 @@ class ShabbosViewController: UIViewController {
             toAttrify: "\(points)",
             postString: pointPoints,
             color: myThemeColor)
+        timerProgress.isHidden = true
     }
 
 
