@@ -85,6 +85,7 @@ class ShabbosViewController: UIViewController {
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {
+            toggleUI(enable: false)
             return
         }
 
@@ -94,7 +95,6 @@ class ShabbosViewController: UIViewController {
         if isShabbos && sender.tag == 0 {
             // TODO: show popup/sound/animation with "reason"
             // TODO: add random option for lvl2
-            // TODO: animate label changes?
             //print("correct! it's shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
@@ -123,13 +123,15 @@ class ShabbosViewController: UIViewController {
         currentNumber += 1
         let myAttrText = attrifyString(
             preString: "Is day number\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
-        numberLabel.attributedText = myAttrText
-//        numberLabel.text = """
-//        Is day number
-//        \(currentNumber)
-//        Shabbos?
-//        """
-        toggleUI(enable: true)
+
+        UIView.transition(with: numberLabel,
+                          duration: 0.25,
+                          options: .transitionFlipFromRight,
+                          animations: { [weak self] in
+            self?.numberLabel.attributedText = myAttrText
+        }, completion: { _ in
+            self.toggleUI(enable: true)
+        })
     }
 
 
