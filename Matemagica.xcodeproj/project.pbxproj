@@ -20,7 +20,6 @@
 		33B727FB20EDC68800AF338A /* HigherLowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */; };
 		33B9FDC720EDDA8200131038 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9FDC620EDDA8200131038 /* MenuViewController.swift */; };
 		33B9FDC920EDFC1500131038 /* MagicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9FDC820EDFC1500131038 /* MagicViewController.swift */; };
-		33C6167227C4985400EC8575 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C6167127C4985400EC8575 /* StoreKit.framework */; };
 		33CF6B8D26F4434A002E5CA9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */; };
 		33DB100D28EEB051001083A4 /* ShabbosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DB100C28EEB051001083A4 /* ShabbosViewController.swift */; };
 		33E32B9E288B4DA200CED09C /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E32B9D288B4DA200CED09C /* Array+Extensions.swift */; };
@@ -71,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C6167227C4985400EC8575 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
