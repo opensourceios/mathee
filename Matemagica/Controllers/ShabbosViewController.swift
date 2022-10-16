@@ -138,12 +138,12 @@ class ShabbosViewController: UIViewController {
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
             self.showToast(message: "CORRECT!")
-            // TODO: show score bump, sound
+            // TODO: sound
             score += currentNumber
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             self.showToast(message: "CORRECT!")
-            // TODO: show score bump, sound
+            // TODO: sound
             score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {

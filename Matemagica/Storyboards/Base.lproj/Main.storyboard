@@ -220,7 +220,7 @@ Prepare to be amazed.</string>
                                 </connections>
                             </button>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
-                                <rect key="frame" x="16" y="172" width="343" height="4"/>
+                                <rect key="frame" x="0.0" y="172" width="187.66666666666666" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thv-BM-jfY">
                                 <rect key="frame" x="16" y="63" width="343" height="40.666666666666657"/>
@@ -250,14 +250,14 @@ Prepare to be amazed.</string>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
                             <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" constant="8" id="dDX-K5-gUX"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="NVP-EG-pZV" secondAttribute="trailing" constant="16" id="dN6-VD-mgs"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="NVP-EG-pZV" secondAttribute="trailing" id="dN6-VD-mgs"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="f1R-Jq-I0P"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" constant="8" id="fLz-lP-CXe"/>
                             <constraint firstItem="Thv-BM-jfY" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="faA-Bo-kHu"/>
                             <constraint firstItem="xK0-y4-QYe" firstAttribute="bottom" secondItem="JLD-aB-T4c" secondAttribute="bottom" id="gxd-w3-bM0"/>
                             <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="jvZ-Zd-PNe"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" constant="16" id="oOA-EL-TWa"/>
-                            <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="qf0-wu-Dtk"/>
+                            <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" id="qf0-wu-Dtk"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" constant="16" id="tot-hY-cHp"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="mL4-r5-LVc" secondAttribute="trailing" constant="16" id="yIb-bA-zaf"/>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="yaG-n3-ZMf"/>
@@ -304,7 +304,7 @@ Prepare to be amazed.</string>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-5n-1mh">
                                             <rect key="frame" x="16" y="16" width="303" height="136"/>
-                                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                            <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ3-KF-GQr" userLabel="Level Number Label">
                                             <rect key="frame" x="31.999999999999993" y="31.999999999999996" width="86.333333333333314" height="33.666666666666657"/>
@@ -701,8 +701,8 @@ Let me ask you a few questions...</string>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
