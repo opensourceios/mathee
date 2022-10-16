@@ -119,8 +119,7 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    // TODO:
-    // button: how to play: add instructions
+    // TODO: button: how to play: add instructions
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {

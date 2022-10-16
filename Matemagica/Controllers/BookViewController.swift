@@ -88,7 +88,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         .systemIndigo,
         .systemPurple
     ]
-// TODO: make 5 pages? user choice?
+
 
     // MARK: Life Cycle
 
