@@ -20,6 +20,7 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet var levelsButton: UIButton!
+    @IBOutlet weak var startTimerButton: UIButton!
 
 
     // MARK: Properties
@@ -27,7 +28,6 @@ class ShabbosViewController: UIViewController {
     var currentNumber = 0
     var myTitle: String!
     var myThemeColor: UIColor!
-    var myGR: UIGestureRecognizer!
     var myTimer: Timer!
 
 
@@ -39,9 +39,6 @@ class ShabbosViewController: UIViewController {
         self.title = myTitle
         numberLabel.text = " "
         setThemeColorTo(myThemeColor: myThemeColor)
-        timerLabel.isUserInteractionEnabled = true
-        myGR = UITapGestureRecognizer(target: self, action: #selector(timerTapped))
-        timerLabel.addGestureRecognizer(myGR)
         timerProgress.progress = 1
         toggleUI(enable: false)
 
@@ -66,9 +63,11 @@ class ShabbosViewController: UIViewController {
 
     // MARK: Helpers
 
-    @objc func timerTapped() {
-        timerLabel.isUserInteractionEnabled = false
-        timerLabel.removeGestureRecognizer(myGR)
+    @IBAction func timerTapped() {
+
+        timerLabel.isHidden = false
+        timerProgress.isHidden = false
+        startTimerButton.isHidden = true
         toggleUI(enable: true)
 
         let totalRuns: Float = 30

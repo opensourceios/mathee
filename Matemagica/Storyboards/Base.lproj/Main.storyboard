@@ -203,13 +203,23 @@ Prepare to be amazed.</string>
                                     <action selector="selectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="Ek1-YO-cqV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here to start timer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
-                                <rect key="frame" x="16" y="63" width="315.33333333333331" height="40.666666666666657"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:17" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
+                                <rect key="frame" x="16" y="63" width="84.333333333333329" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pe1-Oy-bxn">
+                                <rect key="frame" x="15.999999999999993" y="63" width="109.33333333333331" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Timer">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="timerTapped" destination="li8-1e-9hm" eventType="touchUpInside" id="jYT-u7-sq1"/>
+                                </connections>
+                            </button>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
                                 <rect key="frame" x="16" y="119.66666666666667" width="343" height="4"/>
                             </progressView>
                         </subviews>
@@ -218,7 +228,10 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="35b-8Z-nVB"/>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="3Ua-Nt-Wpk"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pe1-Oy-bxn" secondAttribute="trailing" constant="16" id="73F-H1-8CS"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
+                            <constraint firstItem="pe1-Oy-bxn" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="HJn-6o-JGZ"/>
+                            <constraint firstItem="pe1-Oy-bxn" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="Oef-L0-8PL"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
                             <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" constant="8" id="dDX-K5-gUX"/>
@@ -239,6 +252,7 @@ Prepare to be amazed.</string>
                         <outlet property="notShabbosButton" destination="yDN-Op-qas" id="LfF-0b-aTJ"/>
                         <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
                         <outlet property="shabbosButton" destination="BYf-xy-pkD" id="F8P-1E-SK4"/>
+                        <outlet property="startTimerButton" destination="pe1-Oy-bxn" id="Mc7-6B-RAf"/>
                         <outlet property="timerLabel" destination="JLD-aB-T4c" id="jHv-Fu-aQU"/>
                         <outlet property="timerProgress" destination="NVP-EG-pZV" id="9RA-mJ-fEH"/>
                     </connections>
