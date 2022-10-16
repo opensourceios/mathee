@@ -48,11 +48,6 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
         🧮 Numbers from \(myLevel.numberRange.first!) to \(myLevel.numberRange.last!)
         """
 
-        for label: UILabel in [cell.levelNumberLabel, cell.timerDurationLabel,
-                      cell.numbersRangeLabel] {
-            label.textColor = .white
-        }
-
         cell.fakeBackgroundView.backgroundColor = myThemeColor
         cell.fakeBackgroundView.layer.cornerRadius = 8
 

@@ -287,32 +287,33 @@ Prepare to be amazed.</string>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="te3-Pg-7So">
                                 <rect key="frame" x="0.0" y="47" width="375" height="731"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="levelCell" id="LgV-3u-Rli" customClass="LevelTableViewCell" customModule="Matemagica" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="155"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="168.33332824707031"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LgV-3u-Rli" id="O4w-Qt-cFA">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="168.33332824707031"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-5n-1mh">
-                                                    <rect key="frame" x="16" y="16" width="303" height="123"/>
+                                                    <rect key="frame" x="16" y="16" width="303" height="136.33333333333334"/>
                                                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ3-KF-GQr" userLabel="Level Number Label">
-                                                    <rect key="frame" x="32" y="32" width="271" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <rect key="frame" x="32" y="31.999999999999996" width="271" height="33.666666666666657"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to complete: 35 seconds" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-u2-HoF" userLabel="Timer Duration Label">
-                                                    <rect key="frame" x="32" y="68.333333333333329" width="271" height="20.666666666666671"/>
+                                                    <rect key="frame" x="32" y="81.666666666666671" width="271" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Numbers: 1 to 35" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-aP-rxe" userLabel="Numbers Range Label">
-                                                    <rect key="frame" x="32" y="105" width="271" height="18"/>
+                                                    <rect key="frame" x="32" y="118.33333333333333" width="271" height="17.999999999999986"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -335,7 +336,7 @@ Prepare to be amazed.</string>
                                                 <constraint firstAttribute="trailing" secondItem="ybQ-5n-1mh" secondAttribute="trailing" constant="16" id="xo5-pF-hrQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="fakeBackgroundView" destination="ybQ-5n-1mh" id="ckL-ts-BiJ"/>
                                             <outlet property="levelNumberLabel" destination="YQ3-KF-GQr" id="eMW-c2-cxR"/>

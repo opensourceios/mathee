@@ -150,7 +150,7 @@ class ShabbosViewController: UIViewController {
 
     func showNextNumber() {
         toggleUI(enable: false)
-        currentNumber += 1
+        currentNumber = numbersRange.randomElement()!
         let myAttrText = attrifyString(
             preString: "Is day\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
         numberLabel.attributedText = myAttrText
