@@ -126,6 +126,7 @@ class ShabbosViewController: UIViewController {
 
 
     // TODO: button: how to play: add instructions
+    // disable buttons while wrong animation plays (or and if correct, until next number is shown, maybe enable ui in showNextNumber), make animation a bit longer
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {
