@@ -146,8 +146,8 @@
 				33568B7620EC96B300690825 /* BookViewController.swift */,
 				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
 				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
-				33DB100C28EEB051001083A4 /* ShabbosViewController.swift */,
 				334453EA28FC0A6200CC00E2 /* ShabbosLevelsViewController.swift */,
+				33DB100C28EEB051001083A4 /* ShabbosViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

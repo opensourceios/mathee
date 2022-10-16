@@ -14,10 +14,21 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
     var myThemeColor: UIColor!
 
 
+    // MARK: Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setThemeColorTo(myThemeColor: myThemeColor)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        self.title = "Choose a level"
     }
 
 
@@ -29,41 +40,39 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
+        cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level #\(indexPath.row + 1)"
         let myLevel = Const.shabbosLevels[indexPath.row]
-        cell.timerDurationLabel.text = "⏱️ Time to complete: \(myLevel.timerSeconds) seconds"
-        cell.numbersRangeLabel.text = "🧮 Numbers from \(myLevel.numberRange.startIndex) to \(myLevel.numberRange.endIndex)"
+        cell.timerDurationLabel.text = "⏱️ Time to complete: \(Int(myLevel.timerSeconds)) seconds"
+        cell.numbersRangeLabel.text = """
+        🧮 Numbers from \(myLevel.numberRange.first!) to \(myLevel.numberRange.last!)
+        """
 
         for label: UILabel in [cell.levelNumberLabel, cell.timerDurationLabel,
                       cell.numbersRangeLabel] {
             label.textColor = .white
         }
 
-        let highestAllowed = UserDefaults.standard.integer(
-            forKey: Const.UserDef.highestCompletedLevelShabbos) + 1
-        // +1 so user can try next level
-
-        if indexPath.row > highestAllowed {
-            cell.isUserInteractionEnabled = false
-            cell.backgroundColor = .systemGray
-        } else {
-            cell.backgroundColor = myThemeColor
-        }
+        cell.fakeBackgroundView.backgroundColor = myThemeColor
+        cell.fakeBackgroundView.layer.cornerRadius = 8
 
 //        cell.accessoryType = checkmark for done levels? maybe use emojis instead
-        
+
         return cell
     }
 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shabbosVC = (presentingViewController as! ShabbosViewController)
+
+
+        let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
+            withIdentifier: Const.shabbosViewController) as! ShabbosViewController
         shabbosVC.levelNumberReal = indexPath.row
         let myLevel = Const.shabbosLevels[indexPath.row]
         shabbosVC.timeInSeconds = myLevel.timerSeconds
         shabbosVC.numbersRange = myLevel.numberRange
-        _ = shabbosVC.view // so viewdidload is called
-        dismiss(animated: true)
+        shabbosVC.myThemeColor = myThemeColor
+        self.navigationController!.pushViewController(shabbosVC, animated: true)
     }
-    
+
 }

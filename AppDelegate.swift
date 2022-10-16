@@ -30,9 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // We are in testing mode, make arrangements
                 }
 
-                UserDefaults.standard.register(defaults: [
-                    Const.UserDef.highestCompletedLevelShabbos: 0
-                ])
                 return true
             }
 

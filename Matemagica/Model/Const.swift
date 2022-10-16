@@ -34,6 +34,7 @@ struct Const {
     static let shareTitleMessage = "Tell a friend"
     static let spotItCell = "mycell"
     static let shabbosLevelsViewController = "ShabbosLevelsViewController"
+    static let shabbosViewController = "ShabbosViewController"
     static let shabbosLevelCell = "levelCell"
 
 
@@ -64,9 +65,6 @@ struct Const {
          "id": "MagicViewController"]
     ]
 
-    struct UserDef {
-        static let highestCompletedLevelShabbos = "highestCompletedLevelShabbos"
-    }
 
     struct Level {
         var numberRange: ClosedRange<Int>

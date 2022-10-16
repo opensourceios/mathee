@@ -19,7 +19,6 @@ class ShabbosViewController: UIViewController {
     @IBOutlet var helpButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
-    @IBOutlet var levelsButton: UIButton!
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var levelLabel: UILabel!
 
@@ -47,16 +46,13 @@ class ShabbosViewController: UIViewController {
         timerProgress.progress = 1
         toggleUI(enable: false)
 
-        levelsButton.addTarget(self, action: #selector(showLevels),
-                                 for: .touchUpInside)
         helpButton.addTarget(self, action: #selector(showHelp),
                                  for: .touchUpInside)
-        let settingsItem = UIBarButtonItem(customView: levelsButton)
         let helpItem = UIBarButtonItem(customView: helpButton)
 
-        navigationItem.rightBarButtonItems = [settingsItem, helpItem]
+        navigationItem.rightBarButtonItem = helpItem
 
-        levelLabel.text = "Level #\(levelNumberReal!)"
+        levelLabel.text = "Level #\(levelNumberReal+1)"
     }
 
 
@@ -102,11 +98,6 @@ class ShabbosViewController: UIViewController {
 
 
     @objc func showHelp() {
-        print("\(#function) called")
-    }
-
-
-    @objc func showLevels() {
         print("\(#function) called")
     }
 
