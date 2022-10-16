@@ -114,7 +114,7 @@ class ShabbosViewController: UIViewController {
         if isShabbos && sender.tag == 0 {
 
             // TODO:
-            // button: how to play
+            // button: how to play: add instructions
             // button: choose level (only finished ones and 1 more)
             // what determines level completion: X points by time up?
 

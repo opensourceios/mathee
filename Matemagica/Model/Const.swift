@@ -62,4 +62,26 @@ struct Const {
          "id": "MagicViewController"]
     ]
 
+    struct UserDef {
+        static let highestCompletedLevelShabbos = "highestCompletedLevelShabbos"
+    }
+
+    struct Level {
+        var numberRange: ClosedRange<Int>
+        var timerSeconds: Int
+    }
+
+    static let shabbosLevels: [Level] = [
+        Level(numberRange: 1...030, timerSeconds: 60),
+        Level(numberRange: 1...035, timerSeconds: 60),
+        Level(numberRange: 1...050, timerSeconds: 50),
+        Level(numberRange: 1...060, timerSeconds: 45),
+        Level(numberRange: 1...060, timerSeconds: 30),
+        Level(numberRange: 1...080, timerSeconds: 30),
+        Level(numberRange: 1...080, timerSeconds: 25),
+        Level(numberRange: 1...090, timerSeconds: 25),
+        Level(numberRange: 1...090, timerSeconds: 20),
+        Level(numberRange: 1...100, timerSeconds: 20)
+    ]
+
 }
