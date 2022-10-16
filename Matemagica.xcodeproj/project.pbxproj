@@ -12,6 +12,8 @@
 		3319089820E87731007C679C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3319089620E87731007C679C /* LaunchScreen.storyboard */; };
 		3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3319088D20E8772E007C679C /* AppDelegate.swift */; };
 		33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */; };
+		334453EB28FC0A6200CC00E2 /* ShabbosLevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334453EA28FC0A6200CC00E2 /* ShabbosLevelsViewController.swift */; };
+		334453ED28FC0EFB00CC00E2 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334453EC28FC0EFB00CC00E2 /* LevelTableViewCell.swift */; };
 		334FEBD9288DDB9800CCC883 /* SpotItCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FEBD8288DDB9800CCC883 /* SpotItCell.swift */; };
 		33568B7720EC96B300690825 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33568B7620EC96B300690825 /* BookViewController.swift */; };
 		3386A10A281A27B5009FCB7F /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */; };
@@ -47,6 +49,8 @@
 		3319089920E87731007C679C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		332FCFE3289B8DE000D3C733 /* Matemagica.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Matemagica.entitlements; sourceTree = "<group>"; };
 		33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
+		334453EA28FC0A6200CC00E2 /* ShabbosLevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShabbosLevelsViewController.swift; sourceTree = "<group>"; };
+		334453EC28FC0EFB00CC00E2 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		334FEBD8288DDB9800CCC883 /* SpotItCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotItCell.swift; sourceTree = "<group>"; };
 		33568B7620EC96B300690825 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */,
 				33B9FDC820EDFC1500131038 /* MagicViewController.swift */,
 				33DB100C28EEB051001083A4 /* ShabbosViewController.swift */,
+				334453EA28FC0A6200CC00E2 /* ShabbosLevelsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			children = (
 				33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */,
 				334FEBD8288DDB9800CCC883 /* SpotItCell.swift */,
+				334453EC28FC0EFB00CC00E2 /* LevelTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +329,8 @@
 				33ECBA0621AC1BAA003199CB /* Const.swift in Sources */,
 				33DB100D28EEB051001083A4 /* ShabbosViewController.swift in Sources */,
 				3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */,
+				334453EB28FC0A6200CC00E2 /* ShabbosLevelsViewController.swift in Sources */,
+				334453ED28FC0EFB00CC00E2 /* LevelTableViewCell.swift in Sources */,
 				33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,7 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet var levelsButton: UIButton!
     @IBOutlet weak var startTimerButton: UIButton!
+    @IBOutlet weak var levelLabel: UILabel!
 
 
     // MARK: Properties
@@ -29,6 +30,10 @@ class ShabbosViewController: UIViewController {
     var myTitle: String!
     var myThemeColor: UIColor!
     var myTimer: Timer!
+
+    var timeInSeconds: Float!
+    var numbersRange: ClosedRange<Int>!
+    var levelNumberReal: Int!
 
 
     // MARK: Life Cycle
@@ -50,6 +55,8 @@ class ShabbosViewController: UIViewController {
         let helpItem = UIBarButtonItem(customView: helpButton)
 
         navigationItem.rightBarButtonItems = [settingsItem, helpItem]
+
+        levelLabel.text = "Level #\(levelNumberReal!)"
     }
 
 
@@ -70,8 +77,8 @@ class ShabbosViewController: UIViewController {
         startTimerButton.isHidden = true
         toggleUI(enable: true)
 
-        let totalRuns: Float = 30
-        var runsLeft: Float = 30
+        let totalRuns: Float = timeInSeconds
+        var runsLeft: Float = timeInSeconds
         timerLabel.text = "00:\(Int(runsLeft))"
         showNextNumber()
 
@@ -80,6 +87,9 @@ class ShabbosViewController: UIViewController {
             self.timerProgress.setProgress(runsLeft/totalRuns, animated: true)
             let preStr = Int(runsLeft) < 10 ? "00:0" : "00:"
             self.timerLabel.text = "\(preStr)\(Int(runsLeft))"
+            if runsLeft <= 10 {
+                self.timerLabel.textColor = .red
+            }
             if runsLeft == 0 {
                 self.toggleUI(enable: false)
                 timer.invalidate()

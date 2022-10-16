@@ -33,6 +33,8 @@ struct Const {
     static let aboutMessage = "About"
     static let shareTitleMessage = "Tell a friend"
     static let spotItCell = "mycell"
+    static let shabbosLevelsViewController = "ShabbosLevelsViewController"
+    static let shabbosLevelCell = "levelCell"
 
 
     static let dataSourceHome = [
@@ -68,7 +70,7 @@ struct Const {
 
     struct Level {
         var numberRange: ClosedRange<Int>
-        var timerSeconds: Int
+        var timerSeconds: Float
     }
 
     static let shabbosLevels: [Level] = [
