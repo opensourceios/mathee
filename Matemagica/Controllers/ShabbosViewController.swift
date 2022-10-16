@@ -33,6 +33,7 @@ class ShabbosViewController: UIViewController {
     var timeInSeconds: Float!
     var numbersRange: ClosedRange<Int>!
     var levelNumberReal: Int!
+    var score = 0
 
 
     // MARK: Life Cycle
@@ -102,6 +103,10 @@ class ShabbosViewController: UIViewController {
     }
 
 
+    // TODO:
+    // button: how to play: add instructions
+    // save highscores per level? with name?
+    // fix title large lag bug on levels page
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {
@@ -113,17 +118,12 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-
-            // TODO:
-            // button: how to play: add instructions
-            // button: choose level (only finished ones and 1 more)
-            // what determines level completion: X points by time up?
-
-            //print("correct! it's shabbos")
             // self.showToast(message: "Correct! \(currentNumber) is Shabbos")
+            score += currentNumber
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             // self.showToast(message: "Correct! \(currentNumber) is not Shabbos")
+            score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
             // print("OOPS!! it IS shabbos")
@@ -136,11 +136,12 @@ class ShabbosViewController: UIViewController {
 
 
     func gameOver() {
+        timerLabel.textColor = .label
         timerLabel.text = "Time is up ⏰"
-        let points = currentNumber-1
+        let points = score
         let pointPoints = points == 1 ? "point" : "points"
         numberLabel.attributedText = attrifyString(
-            preString: "Your score:\n\n",
+            preString: "Your score:\n",
             toAttrify: "\(points)",
             postString: pointPoints,
             color: myThemeColor)

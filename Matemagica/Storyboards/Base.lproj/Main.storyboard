@@ -285,35 +285,35 @@ Prepare to be amazed.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="te3-Pg-7So">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="te3-Pg-7So">
                                 <rect key="frame" x="0.0" y="47" width="375" height="731"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="levelCell" id="LgV-3u-Rli" customClass="LevelTableViewCell" customModule="Matemagica" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="168.33332824707031"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LgV-3u-Rli" id="O4w-Qt-cFA">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="168.33332824707031"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="168"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-5n-1mh">
-                                                    <rect key="frame" x="16" y="16" width="303" height="136.33333333333334"/>
+                                                    <rect key="frame" x="16" y="16" width="303" height="136"/>
                                                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ3-KF-GQr" userLabel="Level Number Label">
-                                                    <rect key="frame" x="32" y="31.999999999999996" width="271" height="33.666666666666657"/>
+                                                    <rect key="frame" x="31.999999999999993" y="31.999999999999996" width="86.333333333333314" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to complete: 35 seconds" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-u2-HoF" userLabel="Timer Duration Label">
-                                                    <rect key="frame" x="32" y="81.666666666666671" width="271" height="20.666666666666671"/>
+                                                    <rect key="frame" x="31.999999999999986" y="81.666666666666671" width="230.66666666666663" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Numbers: 1 to 35" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-aP-rxe" userLabel="Numbers Range Label">
-                                                    <rect key="frame" x="32" y="118.33333333333333" width="271" height="17.999999999999986"/>
+                                                    <rect key="frame" x="32.000000000000007" y="118" width="117.66666666666669" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -323,13 +323,13 @@ Prepare to be amazed.</string>
                                                 <constraint firstItem="1XH-aP-rxe" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="32" id="8Sz-Uo-QAs"/>
                                                 <constraint firstItem="ybQ-5n-1mh" firstAttribute="top" secondItem="O4w-Qt-cFA" secondAttribute="top" constant="16" id="AwT-rh-rGZ"/>
                                                 <constraint firstItem="YQ3-KF-GQr" firstAttribute="top" secondItem="O4w-Qt-cFA" secondAttribute="top" constant="32" id="B45-am-4di"/>
-                                                <constraint firstAttribute="trailing" secondItem="e1x-u2-HoF" secondAttribute="trailing" constant="32" id="Oap-hi-aOi"/>
                                                 <constraint firstItem="e1x-u2-HoF" firstAttribute="top" secondItem="YQ3-KF-GQr" secondAttribute="bottom" constant="16" id="PlU-DU-KOS"/>
                                                 <constraint firstAttribute="bottom" secondItem="1XH-aP-rxe" secondAttribute="bottom" constant="32" id="RtY-mx-v5a"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1XH-aP-rxe" secondAttribute="trailing" constant="32" id="YQX-z7-JTz"/>
                                                 <constraint firstItem="YQ3-KF-GQr" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="32" id="edP-BL-lMN"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YQ3-KF-GQr" secondAttribute="trailing" constant="32" id="fIF-we-kRd"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e1x-u2-HoF" secondAttribute="trailing" constant="32" id="kF8-vq-iwl"/>
                                                 <constraint firstItem="e1x-u2-HoF" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="32" id="nIo-8U-DgD"/>
-                                                <constraint firstAttribute="trailing" secondItem="1XH-aP-rxe" secondAttribute="trailing" constant="32" id="oXc-ZA-gRF"/>
-                                                <constraint firstAttribute="trailing" secondItem="YQ3-KF-GQr" secondAttribute="trailing" constant="32" id="v1l-2S-92D"/>
                                                 <constraint firstItem="1XH-aP-rxe" firstAttribute="top" secondItem="e1x-u2-HoF" secondAttribute="bottom" constant="16" id="vmb-rN-DbT"/>
                                                 <constraint firstItem="ybQ-5n-1mh" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="16" id="vpT-Dg-oj6"/>
                                                 <constraint firstAttribute="bottom" secondItem="ybQ-5n-1mh" secondAttribute="bottom" constant="16" id="xFs-LI-Qq2"/>

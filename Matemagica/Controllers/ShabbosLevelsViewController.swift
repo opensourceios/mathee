@@ -12,6 +12,7 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
                                    UITableViewDataSource {
 
     var myThemeColor: UIColor!
+    var myTitle: String!
 
 
     // MARK: Life Cycle
@@ -19,16 +20,8 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        navigationItem.largeTitleDisplayMode = .automatic
-        navigationController?.navigationBar.prefersLargeTitles = true
-
-        self.title = "Choose a level"
     }
 
 
@@ -43,9 +36,9 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level #\(indexPath.row + 1)"
         let myLevel = Const.shabbosLevels[indexPath.row]
-        cell.timerDurationLabel.text = "⏱️ Time to complete: \(Int(myLevel.timerSeconds)) seconds"
+        cell.timerDurationLabel.text = "⏱️ Timer: \(Int(myLevel.timerSeconds)) seconds"
         cell.numbersRangeLabel.text = """
-        🧮 Numbers from \(myLevel.numberRange.first!) to \(myLevel.numberRange.last!)
+        🧮 Numbers between \(myLevel.numberRange.first!) and \(myLevel.numberRange.last!)
         """
 
         cell.fakeBackgroundView.backgroundColor = myThemeColor
@@ -58,7 +51,6 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
 
         let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
             withIdentifier: Const.shabbosViewController) as! ShabbosViewController
