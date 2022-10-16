@@ -46,9 +46,6 @@ class MenuViewController: UIViewController,
 
         navigationItem.largeTitleDisplayMode = .always
         navigationController!.navigationBar.prefersLargeTitles = true
-        navigationController!.navigationBar.isTranslucent = true
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController!.navigationBar.shadowImage = UIImage()
         setThemeColorTo(myThemeColor: myThemeColor)
 
         if let selectedRow = myTableView.indexPathForSelectedRow {
@@ -169,7 +166,7 @@ class MenuViewController: UIViewController,
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Shabbos":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.shabbosLevelsViewController) as! ShabbosLevelsViewController
+                    withIdentifier: Const.ShabbosLevelsViewController) as! ShabbosLevelsViewController
                 controller.myTitle = "Choose a Level"
                 controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)

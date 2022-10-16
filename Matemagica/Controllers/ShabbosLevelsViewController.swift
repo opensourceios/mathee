@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
-                                   UITableViewDataSource {
+class ShabbosLevelsViewController: UITableViewController {
 
     var myThemeColor: UIColor!
     var myTitle: String!
@@ -25,12 +24,12 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
     }
 
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Const.shabbosLevels.count
     }
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
         cell.selectionStyle = .none
@@ -50,7 +49,7 @@ class ShabbosLevelsViewController: UIViewController, UITableViewDelegate,
     }
 
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
             withIdentifier: Const.shabbosViewController) as! ShabbosViewController

@@ -33,7 +33,7 @@ struct Const {
     static let aboutMessage = "About"
     static let shareTitleMessage = "Tell a friend"
     static let spotItCell = "mycell"
-    static let shabbosLevelsViewController = "ShabbosLevelsViewController"
+    static let ShabbosLevelsViewController = "ShabbosLevelsViewController"
     static let shabbosViewController = "ShabbosViewController"
     static let shabbosLevelCell = "levelCell"
 

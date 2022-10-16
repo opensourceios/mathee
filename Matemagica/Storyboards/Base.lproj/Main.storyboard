@@ -278,92 +278,78 @@ Prepare to be amazed.</string>
             <point key="canvasLocation" x="1368.8" y="3579.3103448275865"/>
         </scene>
         <!--Shabbos Levels View Controller-->
-        <scene sceneID="D2m-kY-Dr0">
+        <scene sceneID="Sbo-VO-xJl">
             <objects>
-                <viewController storyboardIdentifier="ShabbosLevelsViewController" id="x9j-pL-fRx" customClass="ShabbosLevelsViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="baJ-Nv-Tg8">
+                <tableViewController storyboardIdentifier="ShabbosLevelsViewController" id="TNP-sy-QeK" customClass="ShabbosLevelsViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="5dZ-VR-elh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="te3-Pg-7So">
-                                <rect key="frame" x="0.0" y="47" width="375" height="731"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="levelCell" id="LgV-3u-Rli" customClass="LevelTableViewCell" customModule="Matemagica" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="335" height="168"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LgV-3u-Rli" id="O4w-Qt-cFA">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="168"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-5n-1mh">
-                                                    <rect key="frame" x="16" y="16" width="303" height="136"/>
-                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ3-KF-GQr" userLabel="Level Number Label">
-                                                    <rect key="frame" x="31.999999999999993" y="31.999999999999996" width="86.333333333333314" height="33.666666666666657"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to complete: 35 seconds" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-u2-HoF" userLabel="Timer Duration Label">
-                                                    <rect key="frame" x="31.999999999999986" y="81.666666666666671" width="230.66666666666663" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Numbers: 1 to 35" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-aP-rxe" userLabel="Numbers Range Label">
-                                                    <rect key="frame" x="32.000000000000007" y="118" width="117.66666666666669" height="18"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="1XH-aP-rxe" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="32" id="8Sz-Uo-QAs"/>
-                                                <constraint firstItem="ybQ-5n-1mh" firstAttribute="top" secondItem="O4w-Qt-cFA" secondAttribute="top" constant="16" id="AwT-rh-rGZ"/>
-                                                <constraint firstItem="YQ3-KF-GQr" firstAttribute="top" secondItem="O4w-Qt-cFA" secondAttribute="top" constant="32" id="B45-am-4di"/>
-                                                <constraint firstItem="e1x-u2-HoF" firstAttribute="top" secondItem="YQ3-KF-GQr" secondAttribute="bottom" constant="16" id="PlU-DU-KOS"/>
-                                                <constraint firstAttribute="bottom" secondItem="1XH-aP-rxe" secondAttribute="bottom" constant="32" id="RtY-mx-v5a"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1XH-aP-rxe" secondAttribute="trailing" constant="32" id="YQX-z7-JTz"/>
-                                                <constraint firstItem="YQ3-KF-GQr" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="32" id="edP-BL-lMN"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YQ3-KF-GQr" secondAttribute="trailing" constant="32" id="fIF-we-kRd"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e1x-u2-HoF" secondAttribute="trailing" constant="32" id="kF8-vq-iwl"/>
-                                                <constraint firstItem="e1x-u2-HoF" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="32" id="nIo-8U-DgD"/>
-                                                <constraint firstItem="1XH-aP-rxe" firstAttribute="top" secondItem="e1x-u2-HoF" secondAttribute="bottom" constant="16" id="vmb-rN-DbT"/>
-                                                <constraint firstItem="ybQ-5n-1mh" firstAttribute="leading" secondItem="O4w-Qt-cFA" secondAttribute="leading" constant="16" id="vpT-Dg-oj6"/>
-                                                <constraint firstAttribute="bottom" secondItem="ybQ-5n-1mh" secondAttribute="bottom" constant="16" id="xFs-LI-Qq2"/>
-                                                <constraint firstAttribute="trailing" secondItem="ybQ-5n-1mh" secondAttribute="trailing" constant="16" id="xo5-pF-hrQ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="fakeBackgroundView" destination="ybQ-5n-1mh" id="ckL-ts-BiJ"/>
-                                            <outlet property="levelNumberLabel" destination="YQ3-KF-GQr" id="eMW-c2-cxR"/>
-                                            <outlet property="numbersRangeLabel" destination="1XH-aP-rxe" id="mTc-0j-v1X"/>
-                                            <outlet property="timerDurationLabel" destination="e1x-u2-HoF" id="m8d-Nc-sBi"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="x9j-pL-fRx" id="1OV-lV-78s"/>
-                                    <outlet property="delegate" destination="x9j-pL-fRx" id="WqD-rM-Zay"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Eho-7H-ym2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="te3-Pg-7So" firstAttribute="top" secondItem="Eho-7H-ym2" secondAttribute="top" id="7Dh-Tz-uCF"/>
-                            <constraint firstItem="te3-Pg-7So" firstAttribute="leading" secondItem="Eho-7H-ym2" secondAttribute="leading" id="htb-EE-dXh"/>
-                            <constraint firstItem="Eho-7H-ym2" firstAttribute="bottom" secondItem="te3-Pg-7So" secondAttribute="bottom" id="og4-61-qOb"/>
-                            <constraint firstItem="Eho-7H-ym2" firstAttribute="trailing" secondItem="te3-Pg-7So" secondAttribute="trailing" id="pvK-0A-cDr"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="26q-Sy-eeu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="levelCell" id="Mhx-rY-OBh" customClass="LevelTableViewCell" customModule="Matemagica" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="335" height="168"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mhx-rY-OBh" id="eXa-wo-amh">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-5n-1mh">
+                                            <rect key="frame" x="16" y="16" width="303" height="136"/>
+                                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ3-KF-GQr" userLabel="Level Number Label">
+                                            <rect key="frame" x="31.999999999999993" y="31.999999999999996" width="86.333333333333314" height="33.666666666666657"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to complete: 35 seconds" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-u2-HoF" userLabel="Timer Duration Label">
+                                            <rect key="frame" x="31.999999999999986" y="81.666666666666671" width="230.66666666666663" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Numbers: 1 to 35" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-aP-rxe" userLabel="Numbers Range Label">
+                                            <rect key="frame" x="32.000000000000007" y="118" width="117.66666666666669" height="18"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YQ3-KF-GQr" firstAttribute="top" secondItem="eXa-wo-amh" secondAttribute="top" constant="32" id="1hM-VG-18V"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1XH-aP-rxe" secondAttribute="trailing" constant="32" id="2Hz-SS-S9O"/>
+                                        <constraint firstItem="ybQ-5n-1mh" firstAttribute="top" secondItem="eXa-wo-amh" secondAttribute="top" constant="16" id="2bI-Qt-uAT"/>
+                                        <constraint firstItem="1XH-aP-rxe" firstAttribute="top" secondItem="e1x-u2-HoF" secondAttribute="bottom" constant="16" id="7Rx-Jk-u4U"/>
+                                        <constraint firstItem="e1x-u2-HoF" firstAttribute="top" secondItem="YQ3-KF-GQr" secondAttribute="bottom" constant="16" id="99x-O3-ofp"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YQ3-KF-GQr" secondAttribute="trailing" constant="32" id="A5S-T3-hrj"/>
+                                        <constraint firstItem="ybQ-5n-1mh" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="16" id="FAH-Kz-jTY"/>
+                                        <constraint firstAttribute="bottom" secondItem="ybQ-5n-1mh" secondAttribute="bottom" constant="16" id="I1E-Zs-oxD"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e1x-u2-HoF" secondAttribute="trailing" constant="32" id="Lem-Fl-42X"/>
+                                        <constraint firstItem="e1x-u2-HoF" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="32" id="Mr4-Dg-uoc"/>
+                                        <constraint firstAttribute="bottom" secondItem="1XH-aP-rxe" secondAttribute="bottom" constant="32" id="bBK-CJ-e3d"/>
+                                        <constraint firstItem="1XH-aP-rxe" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="32" id="efb-a0-522"/>
+                                        <constraint firstItem="YQ3-KF-GQr" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="32" id="g99-SM-GsD"/>
+                                        <constraint firstAttribute="trailing" secondItem="ybQ-5n-1mh" secondAttribute="trailing" constant="16" id="mFY-fP-j3p"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fakeBackgroundView" destination="ybQ-5n-1mh" id="EV0-2G-P4C"/>
+                                    <outlet property="levelNumberLabel" destination="YQ3-KF-GQr" id="HF2-mC-mNG"/>
+                                    <outlet property="numbersRangeLabel" destination="1XH-aP-rxe" id="6pk-rc-1hW"/>
+                                    <outlet property="timerDurationLabel" destination="e1x-u2-HoF" id="bb6-bi-3cL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TNP-sy-QeK" id="4Jv-9Z-Zwu"/>
+                            <outlet property="delegate" destination="TNP-sy-QeK" id="CkQ-xO-1Tb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwG-Dh-xm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="3579"/>
+            <point key="canvasLocation" x="2308" y="3579"/>
         </scene>
         <!--Book View Controller-->
         <scene sceneID="N7b-KI-OfH">
