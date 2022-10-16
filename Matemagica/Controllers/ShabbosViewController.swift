@@ -103,10 +103,24 @@ class ShabbosViewController: UIViewController {
     }
 
 
+    func shakeAndShow() {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.showNextNumber()
+        })
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.06
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x - 10, y: numberLabel.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x + 10, y: numberLabel.center.y))
+        numberLabel.layer.add(animation, forKey: "position")
+        CATransaction.commit()
+    }
+
+
     // TODO:
     // button: how to play: add instructions
-    // save highscores per level? with name?
-    // fix title large lag bug on levels page
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {
@@ -118,19 +132,21 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            // self.showToast(message: "Correct! \(currentNumber) is Shabbos")
+            self.showToast(message: "CORRECT!")
+            // TODO: show score bump, sound
             score += currentNumber
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            // self.showToast(message: "Correct! \(currentNumber) is not Shabbos")
+            self.showToast(message: "CORRECT!")
+            // TODO: show score bump, sound
             score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
-            // print("OOPS!! it IS shabbos")
-            self.showToast(message: "Try again")
+            shakeAndShow()
+            //self.showToast(message: "Oops, \(currentNumber) is Shabbos")
         } else if !isShabbos && sender.tag == 0 {
-            // print("OOPS!! it's NOT shabbos")
-            self.showToast(message: "Try again")
+            shakeAndShow()
+            //self.showToast(message: "Oops, \(currentNumber) is not Shabbos")
         }
     }
 
