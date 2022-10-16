@@ -204,8 +204,8 @@ Prepare to be amazed.</string>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:17" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
-                                <rect key="frame" x="16" y="135.66666666666666" width="84.333333333333329" height="40.666666666666657"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <rect key="frame" x="16" y="135.66666666666666" width="42" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -220,7 +220,7 @@ Prepare to be amazed.</string>
                                 </connections>
                             </button>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
-                                <rect key="frame" x="16" y="192.33333333333334" width="343" height="4"/>
+                                <rect key="frame" x="16" y="172" width="343" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thv-BM-jfY">
                                 <rect key="frame" x="16" y="63" width="343" height="40.666666666666657"/>
@@ -228,18 +228,25 @@ Prepare to be amazed.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Score: 11223344" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK0-y4-QYe">
+                                <rect key="frame" x="229.66666666666663" y="135.66666666666666" width="129.33333333333337" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yn4-JG-mVF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="35b-8Z-nVB"/>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="Thv-BM-jfY" secondAttribute="bottom" constant="32" id="3Ua-Nt-Wpk"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pe1-Oy-bxn" secondAttribute="trailing" constant="16" id="73F-H1-8CS"/>
                             <constraint firstItem="Thv-BM-jfY" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="BjS-W4-1nj"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
                             <constraint firstItem="pe1-Oy-bxn" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="HJn-6o-JGZ"/>
+                            <constraint firstItem="xK0-y4-QYe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="K5K-H7-ay3"/>
                             <constraint firstItem="pe1-Oy-bxn" firstAttribute="top" secondItem="Thv-BM-jfY" secondAttribute="bottom" constant="32" id="Oef-L0-8PL"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="Thv-BM-jfY" secondAttribute="trailing" constant="16" id="Olm-Tc-SaD"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="xK0-y4-QYe" secondAttribute="trailing" constant="16" id="V6q-88-qa1"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
                             <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" constant="8" id="dDX-K5-gUX"/>
@@ -247,6 +254,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="f1R-Jq-I0P"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" constant="8" id="fLz-lP-CXe"/>
                             <constraint firstItem="Thv-BM-jfY" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="faA-Bo-kHu"/>
+                            <constraint firstItem="xK0-y4-QYe" firstAttribute="bottom" secondItem="JLD-aB-T4c" secondAttribute="bottom" id="gxd-w3-bM0"/>
                             <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="jvZ-Zd-PNe"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" constant="16" id="oOA-EL-TWa"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="qf0-wu-Dtk"/>
@@ -260,6 +268,7 @@ Prepare to be amazed.</string>
                         <outlet property="levelLabel" destination="Thv-BM-jfY" id="EXq-wF-irk"/>
                         <outlet property="notShabbosButton" destination="yDN-Op-qas" id="LfF-0b-aTJ"/>
                         <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
+                        <outlet property="scoreLabel" destination="xK0-y4-QYe" id="t0H-Xe-PeV"/>
                         <outlet property="shabbosButton" destination="BYf-xy-pkD" id="F8P-1E-SK4"/>
                         <outlet property="startTimerButton" destination="pe1-Oy-bxn" id="Mc7-6B-RAf"/>
                         <outlet property="timerLabel" destination="JLD-aB-T4c" id="jHv-Fu-aQU"/>

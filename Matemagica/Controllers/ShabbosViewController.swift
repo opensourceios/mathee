@@ -21,6 +21,7 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
 
 
     // MARK: Properties
@@ -33,7 +34,11 @@ class ShabbosViewController: UIViewController {
     var timeInSeconds: Float!
     var numbersRange: ClosedRange<Int>!
     var levelNumberReal: Int!
-    var score = 0
+    var score = 0 {
+        didSet {
+            scoreLabel.countAnimation(upto: Double(score))
+        }
+    }
 
 
     // MARK: Life Cycle
@@ -43,6 +48,7 @@ class ShabbosViewController: UIViewController {
 
         self.title = myTitle
         numberLabel.text = " "
+        scoreLabel.text = "Your score: 0"
         setThemeColorTo(myThemeColor: myThemeColor)
         timerProgress.progress = 1
         toggleUI(enable: false)
@@ -68,9 +74,9 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func timerTapped() {
-
         timerLabel.isHidden = false
         timerProgress.isHidden = false
+        scoreLabel.isHidden = false
         startTimerButton.isHidden = true
         toggleUI(enable: true)
 
