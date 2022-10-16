@@ -16,9 +16,10 @@ class ShabbosViewController: UIViewController {
 
     @IBOutlet weak var shabbosButton: UIButton!
     @IBOutlet weak var notShabbosButton: UIButton!
-    @IBOutlet weak var tutorialButton: UIButton!
+    @IBOutlet var helpButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
+    @IBOutlet var levelsButton: UIButton!
 
 
     // MARK: Properties
@@ -43,6 +44,15 @@ class ShabbosViewController: UIViewController {
         timerLabel.addGestureRecognizer(myGR)
         timerProgress.progress = 1
         toggleUI(enable: false)
+
+        levelsButton.addTarget(self, action: #selector(showLevels),
+                                 for: .touchUpInside)
+        helpButton.addTarget(self, action: #selector(showHelp),
+                                 for: .touchUpInside)
+        let settingsItem = UIBarButtonItem(customView: levelsButton)
+        let helpItem = UIBarButtonItem(customView: helpButton)
+
+        navigationItem.rightBarButtonItems = [settingsItem, helpItem]
     }
 
 
@@ -82,6 +92,16 @@ class ShabbosViewController: UIViewController {
     }
 
 
+    @objc func showHelp() {
+        print("\(#function) called")
+    }
+
+
+    @objc func showLevels() {
+        print("\(#function) called")
+    }
+
+
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {
@@ -93,20 +113,23 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            // TODO: add random option for lvl2, 3, etc
-            // TODO: "how to play?" button
+
+            // TODO:
+            // button: how to play
+            // button: choose level (only finished ones and 1 more)
+            // what determines level completion: X points by time up?
+
             //print("correct! it's shabbos")
             // self.showToast(message: "Correct! \(currentNumber) is Shabbos")
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            //print("Correct! it's NOT shabbos")
-//            self.showToast(message: "Correct! \(currentNumber) is not Shabbos")
+            // self.showToast(message: "Correct! \(currentNumber) is not Shabbos")
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
-            //print("OOPS!! it IS shabbos")
+            // print("OOPS!! it IS shabbos")
             self.showToast(message: "Try again")
         } else if !isShabbos && sender.tag == 0 {
-            //print("OOPS!! it's NOT shabbos")
+            // print("OOPS!! it's NOT shabbos")
             self.showToast(message: "Try again")
         }
     }

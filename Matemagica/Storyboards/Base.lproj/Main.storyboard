@@ -177,12 +177,6 @@ Prepare to be amazed.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzK-za-kQe">
-                                <rect key="frame" x="204" y="63" width="155" height="34.333333333333343"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                                <state key="normal" title="How To Play?" image="info.circle" catalog="system"/>
-                                <buttonConfiguration key="configuration" style="gray" image="info.circle" catalog="system" imagePlacement="trailing" title="How To Play?" imagePadding="4"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL4-r5-LVc">
                                 <rect key="frame" x="16" y="392.33333333333331" width="343" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -210,23 +204,21 @@ Prepare to be amazed.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap here to start timer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
-                                <rect key="frame" x="16" y="129.33333333333334" width="315.33333333333331" height="40.666666666666657"/>
+                                <rect key="frame" x="16" y="63" width="315.33333333333331" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
-                                <rect key="frame" x="16" y="186" width="343" height="4"/>
+                                <rect key="frame" x="16" y="119.66666666666667" width="343" height="4"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yn4-JG-mVF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="pzK-za-kQe" secondAttribute="bottom" constant="32" id="2xG-n3-sQP"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="35b-8Z-nVB"/>
+                            <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="3Ua-Nt-Wpk"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="pzK-za-kQe" secondAttribute="trailing" constant="16" id="NGa-lP-Wt8"/>
-                            <constraint firstItem="pzK-za-kQe" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="Xbh-yK-M37"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
                             <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" constant="8" id="dDX-K5-gUX"/>
@@ -236,22 +228,35 @@ Prepare to be amazed.</string>
                             <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="jvZ-Zd-PNe"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" constant="16" id="oOA-EL-TWa"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="qf0-wu-Dtk"/>
-                            <constraint firstItem="pzK-za-kQe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="rMz-8s-QOi"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" constant="16" id="tot-hY-cHp"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="mL4-r5-LVc" secondAttribute="trailing" constant="16" id="yIb-bA-zaf"/>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="yaG-n3-ZMf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="helpButton" destination="pzK-za-kQe" id="vMC-qv-aNd"/>
+                        <outlet property="levelsButton" destination="jZI-S3-cBA" id="4YZ-P5-vpW"/>
                         <outlet property="notShabbosButton" destination="yDN-Op-qas" id="LfF-0b-aTJ"/>
                         <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
                         <outlet property="shabbosButton" destination="BYf-xy-pkD" id="F8P-1E-SK4"/>
                         <outlet property="timerLabel" destination="JLD-aB-T4c" id="jHv-Fu-aQU"/>
                         <outlet property="timerProgress" destination="NVP-EG-pZV" id="9RA-mJ-fEH"/>
-                        <outlet property="tutorialButton" destination="pzK-za-kQe" id="vMC-qv-aNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Px8-ES-dU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pzK-za-kQe">
+                    <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                    <state key="normal" title="How To Play?" image="info.circle" catalog="system"/>
+                    <buttonConfiguration key="configuration" style="gray" image="questionmark.circle" catalog="system" imagePlacement="trailing" title="Help" imagePadding="4"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jZI-S3-cBA">
+                    <rect key="frame" x="0.0" y="0.0" width="128" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="gray" image="star.circle" catalog="system" imagePlacement="trailing" title="Levels" imagePadding="4"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="1368.8" y="3579.3103448275865"/>
         </scene>
@@ -589,6 +594,8 @@ Let me ask you a few questions...</string>
     <resources>
         <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="123"/>
+        <image name="star.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
