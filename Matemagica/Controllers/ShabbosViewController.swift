@@ -105,18 +105,21 @@ class ShabbosViewController: UIViewController {
 
 
     @objc func showHelp() {
-        print("\(#function) called")
+        let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
+        alert.popoverPresentationController!.sourceView = helpButton
+        present(alert, animated: true)
     }
 
 
     func shakeAndShow() {
+        toggleUI(enable: false)
         CATransaction.begin()
         CATransaction.setCompletionBlock({
             self.showNextNumber()
         })
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.06
-        animation.repeatCount = 2
+        animation.repeatCount = 3
         animation.autoreverses = true
         animation.fromValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x - 10, y: numberLabel.center.y))
         animation.toValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x + 10, y: numberLabel.center.y))
@@ -125,8 +128,9 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    // TODO: button: how to play: add instructions
-    // disable buttons while wrong animation plays (or and if correct, until next number is shown, maybe enable ui in showNextNumber), make animation a bit longer
+    // TODO: todos
+    // play sound on correct tap?
+    // lose some points if Nope incorrectly tapped?
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myTimer != nil else {
@@ -139,12 +143,10 @@ class ShabbosViewController: UIViewController {
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
             self.showToast(message: "CORRECT!")
-            // TODO: sound
             score += currentNumber
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             self.showToast(message: "CORRECT!")
-            // TODO: sound
             score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {

@@ -90,7 +90,7 @@ class HigherLowerViewController: UIViewController {
     @objc func showNextGuess() {
         triesLeft -= 1
         guard triesLeft >= 0 else {
-            let alert = createAlert(alertReasonParam: .unknown)
+            let alert = createAlert(alertReasonParam: .unknown, style: .alert)
             present(alert, animated: true)
             return
         }
@@ -171,7 +171,7 @@ class HigherLowerViewController: UIViewController {
             case 1: // higher
                 myArray = Array(myArray.middle().first!+1...myArray.last!)
             default:
-                let alert = createAlert(alertReasonParam: .unknown)
+                let alert = createAlert(alertReasonParam: .unknown, style: .alert)
                 present(alert, animated: true)
         }
         showNextGuess()

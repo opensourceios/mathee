@@ -253,13 +253,13 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         someOnClickButtonCancel()
         leftButton.isHidden = true
         guard let text = myTextField.text else {
-            let alert = createAlert(alertReasonParam: .unknown)
+            let alert = createAlert(alertReasonParam: .unknown, style: .alert)
             present(alert, animated: true)
             return
         }
 
         guard !text.isEmpty else {
-            let alert = createAlert(alertReasonParam: .textfieldEmpty)
+            let alert = createAlert(alertReasonParam: .textfieldEmpty, style: .alert)
             present(alert, animated: true)
             return
         }
@@ -268,7 +268,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         guard let number = UInt64(trimmedText),
               !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
-            let alert = createAlert(alertReasonParam: .nan)
+            let alert = createAlert(alertReasonParam: .nan, style: .alert)
             present(alert, animated: true)
             return
         }

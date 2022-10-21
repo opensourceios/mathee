@@ -96,7 +96,7 @@ class MenuViewController: UIViewController,
 
         let myURL = URL(string: Const.appsLink)
         guard let safeURL = myURL else {
-            let alert = createAlert(alertReasonParam: .unknown)
+            let alert = createAlert(alertReasonParam: .unknown, style: .alert)
             present(alert, animated: true)
             return
         }
@@ -184,7 +184,7 @@ class MenuViewController: UIViewController,
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: AlertReason.unknown)
+                let alert = self.createAlert(alertReasonParam: AlertReason.unknown, style: .alert)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 return

@@ -65,10 +65,11 @@ extension UIViewController {
         case unknown
         case textfieldEmpty
         case nan
+        case shabbosInstructions
     }
 
 
-    func createAlert(alertReasonParam: AlertReason) -> UIAlertController {
+    func createAlert(alertReasonParam: AlertReason, style: UIAlertController.Style) -> UIAlertController {
 
         var alertTitle = ""
         var alertMessage = ""
@@ -81,6 +82,11 @@ extension UIViewController {
                 alertMessage = """
                 Highest number allowed: \(UInt64.max/4)
                 """
+            case .shabbosInstructions:
+                alertTitle = "How To Play"
+                alertMessage = """
+                Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope"
+                """
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """
@@ -88,7 +94,7 @@ extension UIViewController {
             """
         }
 
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: style)
         let alertAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             if let safeSelf = self as? FormulaViewController {
                 safeSelf.myTextField.becomeFirstResponder()
