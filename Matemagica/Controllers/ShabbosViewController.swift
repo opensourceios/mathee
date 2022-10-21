@@ -142,8 +142,7 @@ class ShabbosViewController: UIViewController {
 
     // TODO: todos
     // play sound on correct tap?
-    // lose some points if Nope incorrectly tapped?
-    // How to make points total less in higher levels which have higher numbers?
+    // Prevent spamming Nope from being useful
 
     @IBAction func selectionTapped(_ sender: UIButton) {
 
