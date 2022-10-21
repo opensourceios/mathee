@@ -48,6 +48,11 @@ class ShabbosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if CommandLine.arguments.contains("--matemagicaScreenshots") {
+            // We are in testing mode, make arrangements if needed
+            UIView.setAnimationsEnabled(false)
+        }
+
         self.title = myTitle
         numberLabel.text = " "
         scoreLabel.text = "Your score: 0"
