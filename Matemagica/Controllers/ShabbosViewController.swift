@@ -72,7 +72,7 @@ class ShabbosViewController: UIViewController {
 
         self.title = "Level \(levelNumberReal+1)"
         numberLabel.text = " "
-        scoreLabel.text = "Your score: 0"
+        scoreLabel.text = "Score: 0"
         setThemeColorTo(myThemeColor: myThemeColor)
         timerProgress.progress = 0
         toggleUI(enable: false)
@@ -162,7 +162,6 @@ class ShabbosViewController: UIViewController {
 
     /*
      TODO: todos
-     add random positive messages instead of just "correct"
      play again or go home buttons after timer ends
      */
 
@@ -177,8 +176,8 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "\(correctMessages.randomElement()!)! x2 points!".uppercased(), color: .systemGreen)
-            score += currentNumber*2
+            self.showToast(message: "Shabbos! x10 points bonus!".uppercased(), color: .systemGreen)
+            score += currentNumber*10
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(), color: .systemGreen)
