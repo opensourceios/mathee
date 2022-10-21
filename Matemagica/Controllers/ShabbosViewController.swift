@@ -19,13 +19,31 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var notShabbosButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
-    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
 
 
     // MARK: Properties
 
     let timeLeftPre = "Time left: "
+    let correctMessages = [
+        "amazing",
+        "astonishing",
+        "awesome",
+        "excellent",
+        "fabulous",
+        "fantastic",
+        "great",
+        "impressive",
+        "incredible",
+        "magnificent",
+        "marvelous",
+        "outstanding",
+        "perfect",
+        "splendid",
+        "superb",
+        "terrific",
+        "wonderful"
+    ]
 
     var currentNumber = 0
     var myTitle: String!
@@ -34,7 +52,7 @@ class ShabbosViewController: UIViewController {
     var myPreTimer: Timer!
     var timeInSeconds: Float!
     var numbersRange: ClosedRange<Int>!
-    var distribution: GKShuffledDistribution!
+    var numbersDistribution: GKShuffledDistribution!
     var levelNumberReal: Int!
     var score = 0 {
         didSet {
@@ -53,17 +71,14 @@ class ShabbosViewController: UIViewController {
             UIView.setAnimationsEnabled(false)
         }
 
-        self.title = myTitle
+        self.title = "Level \(levelNumberReal+1)"
         numberLabel.text = " "
         scoreLabel.text = "Your score: 0"
         setThemeColorTo(myThemeColor: myThemeColor)
         timerProgress.progress = 0
         toggleUI(enable: false)
 
-
-        levelLabel.text = "Level \(levelNumberReal+1)".uppercased()
-
-        distribution = GKShuffledDistribution(lowestValue: numbersRange.first!, highestValue: numbersRange.last!)
+        numbersDistribution = GKShuffledDistribution(lowestValue: numbersRange.first!, highestValue: numbersRange.last!)
 
         timerLabel.text = "\(timeLeftPre)00:\(Int(timeInSeconds))"
     }
@@ -81,6 +96,7 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     func startPreTimer() {
+
         var runsLeft: Float = 2
         let messages = ["Ready", "Set", "Go!"]
         var messageIndex = 0
@@ -147,10 +163,8 @@ class ShabbosViewController: UIViewController {
 
     /*
      TODO: todos
-     play sound on correct tap?
-     Prevent spamming Nope from being useful
      add random positive messages instead of just "correct"
-     increase percentage of generated shabbos ints
+     play again or go home buttons after timer ends
      */
 
     @IBAction func selectionTapped(_ sender: UIButton) {
@@ -164,11 +178,11 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "Correct! x2 points!".uppercased(), color: .systemGreen)
+            self.showToast(message: "\(correctMessages.randomElement()!)! x2 points!".uppercased(), color: .systemGreen)
             score += currentNumber*2
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            self.showToast(message: "Correct!".uppercased(), color: .systemGreen)
+            self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(), color: .systemGreen)
             score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
@@ -185,7 +199,7 @@ class ShabbosViewController: UIViewController {
         timerLabel.textColor = .label
         showToast(message: "Time is up ⏰", color: .systemBlue)
         let points = score
-        var pointPoints = points == 1 ? "point" : "points"
+        let pointPoints = points == 1 ? "point" : "points"
         numberLabel.attributedText = attrifyString(
             preString: "Your score:\n",
             toAttrify: "\(points)",
@@ -199,7 +213,7 @@ class ShabbosViewController: UIViewController {
 
     func showNextNumber() {
         toggleUI(enable: false)
-        currentNumber = distribution.nextInt()
+        currentNumber = numbersDistribution.nextInt()
         let myAttrText = attrifyString(
             preString: "Will day number\n", toAttrify: "\(currentNumber)",
             postString: "be Shabbos?", color: myThemeColor)
