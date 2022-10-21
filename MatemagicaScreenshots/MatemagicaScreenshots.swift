@@ -48,7 +48,7 @@ class MatemagicaScreenshots: XCTestCase {
                     app.buttons["Nope"].firstMatch.tap()
                 }
                 takeScreenshot(named: "Shabbos-game-middle")
-                XCTAssertTrue(app.staticTexts["Time is up ⏰"].firstMatch.waitForExistence(timeout: 20))
+                XCTAssertTrue(app.buttons["Play Again"].firstMatch.waitForExistence(timeout: 20))
                 takeScreenshot(named: "Shabbos-game-over")
                 app.buttons["Choose a Level"].firstMatch.tap()
                 app.buttons["Math Magic"].firstMatch.tap()
