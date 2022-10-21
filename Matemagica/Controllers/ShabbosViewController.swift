@@ -176,7 +176,7 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "Shabbos! x10 points bonus!".uppercased(), color: .systemGreen)
+            self.showToast(message: "Shabbos! x10 points!".uppercased(), color: .systemGreen)
             score += currentNumber*10
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
