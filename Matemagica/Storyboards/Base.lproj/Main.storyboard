@@ -204,13 +204,13 @@ Prepare to be amazed.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:17" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
-                                <rect key="frame" x="16" y="115.33333333333333" width="42" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <rect key="frame" x="16" y="115.33333333333333" width="54" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
-                                <rect key="frame" x="0.0" y="151.66666666666666" width="187.66666666666666" height="4"/>
+                                <rect key="frame" x="0.0" y="157.66666666666666" width="375" height="4"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thv-BM-jfY">
                                 <rect key="frame" x="16" y="63.000000000000007" width="343" height="20.333333333333336"/>
@@ -219,8 +219,8 @@ Prepare to be amazed.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Score: 11223344" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK0-y4-QYe">
-                                <rect key="frame" x="229.66666666666663" y="115.33333333333333" width="129.33333333333337" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <rect key="frame" x="16" y="193.66666666666666" width="343" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -231,27 +231,27 @@ Prepare to be amazed.</string>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="Thv-BM-jfY" secondAttribute="bottom" constant="32" id="3Ua-Nt-Wpk"/>
                             <constraint firstItem="Thv-BM-jfY" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="BjS-W4-1nj"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
-                            <constraint firstItem="xK0-y4-QYe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="K5K-H7-ay3"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="K5K-H7-ay3"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="Thv-BM-jfY" secondAttribute="trailing" constant="16" id="Olm-Tc-SaD"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="xK0-y4-QYe" secondAttribute="trailing" constant="16" id="V6q-88-qa1"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="xK0-y4-QYe" secondAttribute="trailing" constant="16" id="Ufx-8d-lxf"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
+                            <constraint firstItem="xK0-y4-QYe" firstAttribute="top" secondItem="NVP-EG-pZV" secondAttribute="bottom" constant="32" id="b94-jG-yuL"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
                             <constraint firstItem="yDN-Op-qas" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="centerX" constant="8" id="dDX-K5-gUX"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="NVP-EG-pZV" secondAttribute="trailing" id="dN6-VD-mgs"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="NVP-EG-pZV" secondAttribute="trailing" id="dN6-VD-mgs"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="f1R-Jq-I0P"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="BYf-xy-pkD" secondAttribute="trailing" constant="8" id="fLz-lP-CXe"/>
                             <constraint firstItem="Thv-BM-jfY" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="faA-Bo-kHu"/>
-                            <constraint firstItem="xK0-y4-QYe" firstAttribute="bottom" secondItem="JLD-aB-T4c" secondAttribute="bottom" id="gxd-w3-bM0"/>
                             <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="jvZ-Zd-PNe"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" constant="16" id="oOA-EL-TWa"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" id="qf0-wu-Dtk"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" constant="16" id="tot-hY-cHp"/>
+                            <constraint firstItem="xK0-y4-QYe" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="y2I-dF-6Ta"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="mL4-r5-LVc" secondAttribute="trailing" constant="16" id="yIb-bA-zaf"/>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="yaG-n3-ZMf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="helpButton" destination="pzK-za-kQe" id="vMC-qv-aNd"/>
                         <outlet property="levelLabel" destination="Thv-BM-jfY" id="EXq-wF-irk"/>
                         <outlet property="notShabbosButton" destination="yDN-Op-qas" id="LfF-0b-aTJ"/>
                         <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
@@ -262,13 +262,6 @@ Prepare to be amazed.</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Px8-ES-dU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pzK-za-kQe">
-                    <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
-                    <state key="normal" title="How To Play?" image="info.circle" catalog="system"/>
-                    <buttonConfiguration key="configuration" style="gray" image="questionmark.circle" catalog="system" imagePlacement="trailing" title="Help" imagePadding="4"/>
-                </button>
             </objects>
             <point key="canvasLocation" x="1368.8" y="3579.3103448275865"/>
         </scene>
@@ -341,8 +334,18 @@ Prepare to be amazed.</string>
                             <outlet property="delegate" destination="TNP-sy-QeK" id="CkQ-xO-1Tb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="helpButton" destination="pzK-za-kQe" id="Wuv-DI-4Ug"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwG-Dh-xm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pzK-za-kQe">
+                    <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
+                    <state key="normal" title="How To Play?" image="info.circle" catalog="system"/>
+                    <buttonConfiguration key="configuration" style="gray" image="questionmark.circle" catalog="system" imagePlacement="trailing" title="Help" imagePadding="4"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="2308" y="3579"/>
         </scene>

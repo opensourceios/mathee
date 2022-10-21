@@ -10,6 +10,13 @@ import UIKit
 
 class ShabbosLevelsViewController: UITableViewController {
 
+    // MARK: Outlets
+
+    @IBOutlet var helpButton: UIButton!
+
+
+    // MARK: Properties
+
     var myThemeColor: UIColor!
     var myTitle: String!
 
@@ -21,8 +28,35 @@ class ShabbosLevelsViewController: UITableViewController {
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
+
+        helpButton.addTarget(self, action: #selector(showHelp),
+                             for: .touchUpInside)
+        let helpItem = UIBarButtonItem(customView: helpButton)
+
+        navigationItem.rightBarButtonItem = helpItem
     }
 
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if UserDefaults.standard.bool(forKey: Const.firstTimePlayingShabbos) {
+            showHelp()
+        }
+    }
+
+
+    // MARK: Helpers
+
+    @objc func showHelp() {
+        let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
+        alert.popoverPresentationController?.sourceView = helpButton
+        present(alert, animated: true)
+        UserDefaults.standard.set(false, forKey: Const.firstTimePlayingShabbos)
+    }
+
+
+    // MARK: Delegates
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Const.shabbosLevels.count
@@ -42,8 +76,6 @@ class ShabbosLevelsViewController: UITableViewController {
 
         cell.fakeBackgroundView.backgroundColor = myThemeColor
         cell.fakeBackgroundView.layer.cornerRadius = 8
-
-//        cell.accessoryType = checkmark for done levels? maybe use emojis instead
 
         return cell
     }

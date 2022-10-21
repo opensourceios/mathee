@@ -17,7 +17,6 @@ class ShabbosViewController: UIViewController {
 
     @IBOutlet weak var shabbosButton: UIButton!
     @IBOutlet weak var notShabbosButton: UIButton!
-    @IBOutlet var helpButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var levelLabel: UILabel!
@@ -56,11 +55,6 @@ class ShabbosViewController: UIViewController {
         timerProgress.progress = 0
         toggleUI(enable: false)
 
-        helpButton.addTarget(self, action: #selector(showHelp),
-                             for: .touchUpInside)
-        let helpItem = UIBarButtonItem(customView: helpButton)
-
-        navigationItem.rightBarButtonItem = helpItem
 
         levelLabel.text = "Level \(levelNumberReal+1)".uppercased()
 
@@ -82,18 +76,21 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     func startPreTimer() {
-        var runsLeft: Float = 5
-        showToast(message: "\(Int(runsLeft))", color: .systemBlue)
+        var runsLeft: Float = 2
+        let messages = ["Ready", "Set", "Go!"]
+        var messageIndex = 0
+        showToast(message: messages[messageIndex], color: .systemBlue)
+        messageIndex += 1
 
         myPreTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             runsLeft -= 1
+            self.showToast(message: messages[messageIndex], color: .systemBlue)
+            messageIndex += 1
             if runsLeft == 0 {
                 timer.invalidate()
                 self.myPreTimer.invalidate()
                 self.myPreTimer = nil
                 self.startGameTimer()
-            } else {
-                self.showToast(message: "\(Int(runsLeft))", color: .systemBlue)
             }
         }
     }
@@ -123,13 +120,6 @@ class ShabbosViewController: UIViewController {
                 self.gameOver()
             }
         }
-    }
-
-
-    @objc func showHelp() {
-        let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
-        alert.popoverPresentationController!.sourceView = helpButton
-        present(alert, animated: true)
     }
 
 
@@ -166,11 +156,11 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "CORRECT!", color: .systemGreen)
-            score += currentNumber
+            self.showToast(message: "Correct! x2 points!".uppercased(), color: .systemGreen)
+            score += currentNumber*2
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            self.showToast(message: "CORRECT!", color: .systemGreen)
+            self.showToast(message: "Correct!".uppercased(), color: .systemGreen)
             score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {

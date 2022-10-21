@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // We are in testing mode, make arrangements
                 }
 
+                UserDefaults.standard.register(defaults: [
+                    Const.firstTimePlayingShabbos: true
+                ])
+
                 return true
             }
 
