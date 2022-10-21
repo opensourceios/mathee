@@ -183,16 +183,17 @@ class ShabbosViewController: UIViewController {
 
     func gameOver() {
         timerLabel.textColor = .label
-        timerLabel.text = "Time is up ⏰"
+        showToast(message: "Time is up ⏰", color: .systemBlue)
         let points = score
         var pointPoints = points == 1 ? "point" : "points"
-        pointPoints.append("\n\n\n\nChoose a level to play again")
         numberLabel.attributedText = attrifyString(
             preString: "Your score:\n",
             toAttrify: "\(points)",
             postString: pointPoints,
             color: myThemeColor)
         timerProgress.isHidden = true
+        scoreLabel.isHidden = true
+        timerLabel.isHidden = true
     }
 
 

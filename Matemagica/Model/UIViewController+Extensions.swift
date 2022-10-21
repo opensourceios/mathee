@@ -113,7 +113,7 @@ extension UIViewController {
                                                y: self.view.frame.size.height-200,
                                                width: myWidth, height: 48))
         toastLabel.backgroundColor = color
-        toastLabel.textColor = .label
+        toastLabel.textColor = .white
         toastLabel.font = .preferredFont(forTextStyle: .body)
         toastLabel.textAlignment = .center
         toastLabel.text = message
@@ -121,7 +121,7 @@ extension UIViewController {
         toastLabel.layer.cornerRadius = 8
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 2, delay: 0.1, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 1.5, delay: 0.5, options: .curveLinear, animations: {
             toastLabel.alpha = 0.0
         }, completion: { _ in // completed in
             toastLabel.removeFromSuperview()
