@@ -140,9 +140,13 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    // TODO: todos
-    // play sound on correct tap?
-    // Prevent spamming Nope from being useful
+    /*
+     TODO: todos
+     play sound on correct tap?
+     Prevent spamming Nope from being useful
+     add random positive messages instead of just "correct"
+     increase percentage of generated shabbos ints
+     */
 
     @IBAction func selectionTapped(_ sender: UIButton) {
 
