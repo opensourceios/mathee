@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8u8-uX-CMh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -203,33 +203,23 @@ Prepare to be amazed.</string>
                                     <action selector="selectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="Ek1-YO-cqV"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:17" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
-                                <rect key="frame" x="16" y="135.66666666666666" width="42" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:17" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-aB-T4c">
+                                <rect key="frame" x="16" y="115.33333333333333" width="42" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pe1-Oy-bxn">
-                                <rect key="frame" x="15.999999999999993" y="135.66666666666666" width="109.33333333333331" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start Timer">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="timerTapped" destination="li8-1e-9hm" eventType="touchUpInside" id="jYT-u7-sq1"/>
-                                </connections>
-                            </button>
-                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
-                                <rect key="frame" x="0.0" y="172" width="187.66666666666666" height="4"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-EG-pZV">
+                                <rect key="frame" x="0.0" y="151.66666666666666" width="187.66666666666666" height="4"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thv-BM-jfY">
-                                <rect key="frame" x="16" y="63" width="343" height="40.666666666666657"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thv-BM-jfY">
+                                <rect key="frame" x="16" y="63.000000000000007" width="343" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Score: 11223344" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK0-y4-QYe">
-                                <rect key="frame" x="229.66666666666663" y="135.66666666666666" width="129.33333333333337" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Score: 11223344" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK0-y4-QYe">
+                                <rect key="frame" x="229.66666666666663" y="115.33333333333333" width="129.33333333333337" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -239,12 +229,9 @@ Prepare to be amazed.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JLD-aB-T4c" firstAttribute="top" secondItem="Thv-BM-jfY" secondAttribute="bottom" constant="32" id="3Ua-Nt-Wpk"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pe1-Oy-bxn" secondAttribute="trailing" constant="16" id="73F-H1-8CS"/>
                             <constraint firstItem="Thv-BM-jfY" firstAttribute="top" secondItem="yn4-JG-mVF" secondAttribute="top" constant="16" id="BjS-W4-1nj"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
-                            <constraint firstItem="pe1-Oy-bxn" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="HJn-6o-JGZ"/>
                             <constraint firstItem="xK0-y4-QYe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="K5K-H7-ay3"/>
-                            <constraint firstItem="pe1-Oy-bxn" firstAttribute="top" secondItem="Thv-BM-jfY" secondAttribute="bottom" constant="32" id="Oef-L0-8PL"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="Thv-BM-jfY" secondAttribute="trailing" constant="16" id="Olm-Tc-SaD"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="xK0-y4-QYe" secondAttribute="trailing" constant="16" id="V6q-88-qa1"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
@@ -270,7 +257,6 @@ Prepare to be amazed.</string>
                         <outlet property="numberLabel" destination="mL4-r5-LVc" id="grd-CW-qQ5"/>
                         <outlet property="scoreLabel" destination="xK0-y4-QYe" id="t0H-Xe-PeV"/>
                         <outlet property="shabbosButton" destination="BYf-xy-pkD" id="F8P-1E-SK4"/>
-                        <outlet property="startTimerButton" destination="pe1-Oy-bxn" id="Mc7-6B-RAf"/>
                         <outlet property="timerLabel" destination="JLD-aB-T4c" id="jHv-Fu-aQU"/>
                         <outlet property="timerProgress" destination="NVP-EG-pZV" id="9RA-mJ-fEH"/>
                     </connections>

@@ -33,7 +33,7 @@ class ShabbosLevelsViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
         cell.selectionStyle = .none
-        cell.levelNumberLabel.text = "⭐️ Level #\(indexPath.row + 1)"
+        cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
         let myLevel = Const.shabbosLevels[indexPath.row]
         cell.timerDurationLabel.text = "⏱️ Timer: \(Int(myLevel.timerSeconds)) seconds"
         cell.numbersRangeLabel.text = """

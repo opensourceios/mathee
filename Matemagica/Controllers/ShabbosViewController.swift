@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class ShabbosViewController: UIViewController {
 
@@ -19,20 +20,22 @@ class ShabbosViewController: UIViewController {
     @IBOutlet var helpButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
-    @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
 
 
     // MARK: Properties
 
+    let timeLeftPre = "Time left: "
+
     var currentNumber = 0
     var myTitle: String!
     var myThemeColor: UIColor!
-    var myTimer: Timer!
-
+    var myGameTimer: Timer!
+    var myPreTimer: Timer!
     var timeInSeconds: Float!
     var numbersRange: ClosedRange<Int>!
+    var distribution: GKShuffledDistribution!
     var levelNumberReal: Int!
     var score = 0 {
         didSet {
@@ -50,16 +53,20 @@ class ShabbosViewController: UIViewController {
         numberLabel.text = " "
         scoreLabel.text = "Your score: 0"
         setThemeColorTo(myThemeColor: myThemeColor)
-        timerProgress.progress = 1
+        timerProgress.progress = 0
         toggleUI(enable: false)
 
         helpButton.addTarget(self, action: #selector(showHelp),
-                                 for: .touchUpInside)
+                             for: .touchUpInside)
         let helpItem = UIBarButtonItem(customView: helpButton)
 
         navigationItem.rightBarButtonItem = helpItem
 
-        levelLabel.text = "Level #\(levelNumberReal+1)"
+        levelLabel.text = "Level \(levelNumberReal+1)".uppercased()
+
+        distribution = GKShuffledDistribution(lowestValue: numbersRange.first!, highestValue: numbersRange.last!)
+
+        timerLabel.text = "\(timeLeftPre)00:\(Int(timeInSeconds))"
     }
 
 
@@ -68,36 +75,51 @@ class ShabbosViewController: UIViewController {
 
         shabbosButton.doGlowAnimation(withColor: myThemeColor)
         //        notShabbosButton.doGlowAnimation(withColor: myThemeColor)
+        startPreTimer()
     }
 
 
     // MARK: Helpers
 
-    @IBAction func timerTapped() {
-        timerLabel.isHidden = false
-        timerProgress.isHidden = false
-        scoreLabel.isHidden = false
-        startTimerButton.isHidden = true
+    func startPreTimer() {
+        var runsLeft: Float = 5
+        showToast(message: "\(Int(runsLeft))", color: .systemBlue)
+
+        myPreTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            runsLeft -= 1
+            if runsLeft == 0 {
+                timer.invalidate()
+                self.myPreTimer.invalidate()
+                self.myPreTimer = nil
+                self.startGameTimer()
+            } else {
+                self.showToast(message: "\(Int(runsLeft))", color: .systemBlue)
+            }
+        }
+    }
+
+
+    func startGameTimer() {
         toggleUI(enable: true)
+        timerProgress.setProgress(1, animated: true)
 
         let totalRuns: Float = timeInSeconds
         var runsLeft: Float = timeInSeconds
-        timerLabel.text = "00:\(Int(runsLeft))"
         showNextNumber()
 
-        myTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        myGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             runsLeft -= 1
             self.timerProgress.setProgress(runsLeft/totalRuns, animated: true)
             let preStr = Int(runsLeft) < 10 ? "00:0" : "00:"
-            self.timerLabel.text = "\(preStr)\(Int(runsLeft))"
+            self.timerLabel.text = "\(self.timeLeftPre)\(preStr)\(Int(runsLeft))"
             if runsLeft <= 10 {
                 self.timerLabel.textColor = .red
             }
             if runsLeft == 0 {
                 self.toggleUI(enable: false)
                 timer.invalidate()
-                self.myTimer.invalidate()
-                self.myTimer = nil
+                self.myGameTimer.invalidate()
+                self.myGameTimer = nil
                 self.gameOver()
             }
         }
@@ -131,9 +153,11 @@ class ShabbosViewController: UIViewController {
     // TODO: todos
     // play sound on correct tap?
     // lose some points if Nope incorrectly tapped?
+    // How to make points total less in higher levels which have higher numbers?
+
     @IBAction func selectionTapped(_ sender: UIButton) {
 
-        guard myTimer != nil else {
+        guard myGameTimer != nil else {
             toggleUI(enable: false)
             return
         }
@@ -142,11 +166,11 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "CORRECT!")
+            self.showToast(message: "CORRECT!", color: .systemGreen)
             score += currentNumber
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            self.showToast(message: "CORRECT!")
+            self.showToast(message: "CORRECT!", color: .systemGreen)
             score += currentNumber
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
@@ -163,7 +187,8 @@ class ShabbosViewController: UIViewController {
         timerLabel.textColor = .label
         timerLabel.text = "Time is up ⏰"
         let points = score
-        let pointPoints = points == 1 ? "point" : "points"
+        var pointPoints = points == 1 ? "point" : "points"
+        pointPoints.append("\n\n\n\nChoose a level to play again")
         numberLabel.attributedText = attrifyString(
             preString: "Your score:\n",
             toAttrify: "\(points)",
@@ -175,9 +200,10 @@ class ShabbosViewController: UIViewController {
 
     func showNextNumber() {
         toggleUI(enable: false)
-        currentNumber = numbersRange.randomElement()!
+        currentNumber = distribution.nextInt()
         let myAttrText = attrifyString(
-            preString: "Is day\n\n", toAttrify: "\(currentNumber)", postString: "Shabbos?", color: myThemeColor)
+            preString: "Will day number\n", toAttrify: "\(currentNumber)",
+            postString: "be Shabbos?", color: myThemeColor)
         numberLabel.attributedText = myAttrText
         self.toggleUI(enable: true)
     }

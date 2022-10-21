@@ -184,7 +184,7 @@ class MenuViewController: UIViewController,
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: AlertReason.unknown, style: .alert)
+                let alert = self.createAlert(alertReasonParam: .unknown, style: .alert)
                 alert.view.layoutIfNeeded()
                 self.present(alert, animated: true)
                 return
