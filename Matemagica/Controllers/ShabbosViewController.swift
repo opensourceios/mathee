@@ -46,7 +46,6 @@ class ShabbosViewController: UIViewController {
     ]
 
     var currentNumber = 0
-    var myTitle: String!
     var myThemeColor: UIColor!
     var myGameTimer: Timer!
     var myPreTimer: Timer!
