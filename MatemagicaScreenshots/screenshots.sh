@@ -15,9 +15,10 @@ schemeName="Matemagica"
 #    "iPhone 13 Pro Max"
 #)
 simulators=(
-    "iPhone 8 Plus"
+    "iPhone SE (3rd generation)"
     "iPad Pro (12.9-inch) (6th generation)"
     "iPhone 14 Pro Max"
+    "iPhone 13 Pro Max"
 )
 
 # All the languages we want to screenshot (ISO 3166-1 codes)

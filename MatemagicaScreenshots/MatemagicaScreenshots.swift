@@ -16,7 +16,7 @@ class MatemagicaScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Shabbos", "Spot it", "Guess it"]
+    let aList = ["Shabbos", "Guess it", "Spot it"]
 
 
     override func setUpWithError() throws {
@@ -48,7 +48,6 @@ class MatemagicaScreenshots: XCTestCase {
                 }
                 takeScreenshot(named: "Shabbos-game-middle")
                 XCTAssertTrue(app.buttons["Play Again"].firstMatch.waitForExistence(timeout: 20))
-                takeScreenshot(named: "Shabbos-game-over")
                 app.buttons["Choose a Level"].firstMatch.tap()
                 app.buttons["Math Magic"].firstMatch.tap()
             case "Guess it":
