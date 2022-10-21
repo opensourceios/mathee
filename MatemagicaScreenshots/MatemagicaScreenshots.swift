@@ -16,7 +16,7 @@ class MatemagicaScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Spot it", "Guess it"]
+    let aList = ["Shabbos", "Spot it", "Guess it"]
 
 
     override func setUpWithError() throws {
@@ -35,13 +35,29 @@ class MatemagicaScreenshots: XCTestCase {
         XCTAssertTrue(aThing.waitForExistence(timeout: 5))
         aThing.tap()
         switch word {
+            case "Shabbos":
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["OK"].firstMatch.tap()
+                takeScreenshot(named: "Shabbos-levels")
+                app.swipeUp()
+                app.swipeUp()
+                XCTAssertTrue(app.staticTexts["⭐️ Level 10"].firstMatch.waitForExistence(timeout: 5))
+                app.staticTexts["⭐️ Level 10"].firstMatch.tap()
+                for _ in 0...4 {
+                    XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
+                    app.buttons["Nope"].firstMatch.tap()
+                }
+                takeScreenshot(named: "Shabbos-game-middle")
+                XCTAssertTrue(app.staticTexts["Time is up ⏰"].firstMatch.waitForExistence(timeout: 20))
+                takeScreenshot(named: "Shabbos-game-over")
+                app.buttons["Choose a Level"].firstMatch.tap()
+                app.buttons["Math Magic"].firstMatch.tap()
             case "Guess it":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "Guess-it-think")
                 app.buttons["OK"].firstMatch.tap()
                 takeScreenshot(named: "Guess-it-multiply")
                 app.buttons["OK"].firstMatch.tap()
-                takeScreenshot(named: "Guess-it-odd-even")
                 app.buttons["Even"].firstMatch.tap()
                 app.buttons["OK"].firstMatch.tap() // /2 1
                 app.buttons["OK"].firstMatch.tap() // x3 2
