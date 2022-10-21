@@ -159,11 +159,6 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    /*
-     TODO: todos
-     play again or go home buttons after timer ends
-     */
-
     @IBAction func selectionTapped(_ sender: UIButton) {
 
         guard myGameTimer != nil else {
