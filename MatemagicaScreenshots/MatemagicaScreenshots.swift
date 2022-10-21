@@ -36,8 +36,7 @@ class MatemagicaScreenshots: XCTestCase {
         aThing.tap()
         switch word {
             case "Shabbos":
-                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
-                app.buttons["OK"].firstMatch.tap()
+                XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "Shabbos-levels")
                 app.swipeUp()
                 app.swipeUp()

@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 if CommandLine.arguments.contains("--matemagicaScreenshots") {
                     // We are in testing mode, make arrangements
-                    UserDefaults.standard.set(true, forKey: Const.firstTimePlayingShabbos)
+                    UserDefaults.standard.set(false, forKey: Const.firstTimePlayingShabbos)
                 }
 
                 UserDefaults.standard.register(defaults: [
