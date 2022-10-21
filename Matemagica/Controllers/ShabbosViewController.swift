@@ -95,7 +95,7 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     func startPreTimer() {
-
+        timerProgress.setProgress(1, animated: true)
         var runsLeft: Float = 2
         let messages = ["Ready", "Set", "Go!"]
         var messageIndex = 0
@@ -118,13 +118,12 @@ class ShabbosViewController: UIViewController {
 
     func startGameTimer() {
         toggleUI(enable: true)
-        timerProgress.setProgress(1, animated: true)
 
         let totalRuns: Float = timeInSeconds
         var runsLeft: Float = timeInSeconds
-        showNextNumber()
 
         myGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+
             runsLeft -= 1
             self.timerProgress.setProgress(runsLeft/totalRuns, animated: true)
             let preStr = Int(runsLeft) < 10 ? "00:0" : "00:"
@@ -140,6 +139,8 @@ class ShabbosViewController: UIViewController {
                 self.gameOver()
             }
         }
+
+        showNextNumber()
     }
 
 
@@ -210,6 +211,10 @@ class ShabbosViewController: UIViewController {
 
 
     func showNextNumber() {
+        guard myGameTimer != nil else {
+            toggleUI(enable: false)
+            return
+        }
         toggleUI(enable: false)
         currentNumber = numbersDistribution.nextInt()
         let myAttrText = attrifyString(
