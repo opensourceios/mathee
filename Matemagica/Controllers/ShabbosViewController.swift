@@ -34,12 +34,10 @@ class ShabbosViewController: UIViewController {
         "fantastic",
         "great",
         "impressive",
-        "incredible",
         "magnificent",
         "marvelous",
         "outstanding",
         "perfect",
-        "splendid",
         "superb",
         "terrific",
         "wonderful"
@@ -177,8 +175,8 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "Shabbos! x10 points!".uppercased(), color: .systemGreen)
-            score += currentNumber*10
+            self.showToast(message: "SHABBOS! 10x BONUS!", color: myThemeColor)
+            score += currentNumber * 10
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(), color: .systemGreen)
@@ -195,18 +193,43 @@ class ShabbosViewController: UIViewController {
 
 
     func gameOver() {
-        timerLabel.textColor = .label
-        showToast(message: "Time is up ⏰", color: .systemBlue)
-        let points = score
-        let pointPoints = points == 1 ? "point" : "points"
-        numberLabel.attributedText = attrifyString(
-            preString: "Your score:\n",
-            toAttrify: "\(points)",
-            postString: pointPoints,
-            color: myThemeColor)
-        timerProgress.isHidden = true
-        scoreLabel.isHidden = true
-        timerLabel.isHidden = true
+        DispatchQueue.main.async { [self] in
+            showToast(message: "Time is up ⏰", color: .systemBlue)
+            timerLabel.isHidden = true
+            timerLabel.textColor = .label
+            let points = score
+            let pointPoints = points == 1 ? "point" : "points"
+            numberLabel.attributedText = attrifyString(
+                preString: "Your score:\n",
+                toAttrify: "\(points)",
+                postString: pointPoints,
+                color: myThemeColor)
+            timerProgress.isHidden = true
+            scoreLabel.isHidden = true
+
+            shabbosButton.setTitle("Play Again", for: .normal)
+            shabbosButton.removeTarget(nil, action: nil, for: .allEvents)
+            shabbosButton.addTarget(self, action: #selector(playAgainTapped), for: .touchUpInside)
+            shabbosButton.sizeToFit()
+            shabbosButton.isHidden = false
+            shabbosButton.doGlowAnimation(withColor: myThemeColor)
+
+            notShabbosButton.setTitle(Const.endMessage, for: .normal)
+            notShabbosButton.removeTarget(nil, action: nil, for: .allEvents)
+            notShabbosButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+            notShabbosButton.sizeToFit()
+            notShabbosButton.isHidden = false
+        }
+    }
+
+
+    @objc func playAgainTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+
+    @objc func doneButtonPressed() {
+        navigationController?.popToRootViewController(animated: true)
     }
 
 
