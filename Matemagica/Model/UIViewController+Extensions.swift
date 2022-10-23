@@ -86,6 +86,7 @@ extension UIViewController {
                 alertTitle = "How To Play"
                 alertMessage = """
                 Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope"
+                Tap "Help" on the top right of this page to see this message again later
                 """
             default:
                 alertTitle = "Unknown error"
