@@ -99,10 +99,11 @@ class ShabbosViewController: UIViewController {
         // TODO: fixme
     }
 
+    // TODO: add share score button?
 
     @IBAction func playAgainTapped(_ sender: Any) {
         // TODO: fixme
-        let currentLevel = levelNumberIndex
+        //let currentLevel = levelNumberIndex
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -202,9 +203,6 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    // TODO: todos
-    // don't use shabbos and notshabbos buttons for other buttons
-    // add other buttons: next level, same level, previous level, back home, share score
     func gameOver() {
         DispatchQueue.main.async { [self] in
             showToast(message: "Time is up ⏰", color: .systemBlue)
