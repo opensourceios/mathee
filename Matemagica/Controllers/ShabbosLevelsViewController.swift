@@ -90,7 +90,7 @@ class ShabbosLevelsViewController: UITableViewController {
 
         let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
             withIdentifier: Const.shabbosViewController) as! ShabbosViewController
-        shabbosVC.levelNumberReal = indexPath.row
+        shabbosVC.levelNumberIndex = indexPath.row
         let myLevel = Const.shabbosLevels[indexPath.row]
         shabbosVC.timeInSeconds = myLevel.timerSeconds
         shabbosVC.numbersRange = myLevel.numberRange

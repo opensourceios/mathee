@@ -21,6 +21,9 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
 
+    @IBOutlet weak var gameOverNextLevelButton: UIButton!
+    @IBOutlet weak var gameOverPlayAgainButton: UIButton!
+
 
     // MARK: Properties
 
@@ -50,7 +53,7 @@ class ShabbosViewController: UIViewController {
     var timeInSeconds: Float!
     var numbersRange: ClosedRange<Int>!
     var numbersDistribution: GKShuffledDistribution!
-    var levelNumberReal: Int!
+    var levelNumberIndex: Int!
     var score = 0 {
         didSet {
             scoreLabel.countAnimation(upto: Double(score))
@@ -68,7 +71,7 @@ class ShabbosViewController: UIViewController {
             UIView.setAnimationsEnabled(false)
         }
 
-        self.title = "Level \(levelNumberReal+1)"
+        self.title = "Level \(levelNumberIndex+1)"
         numberLabel.text = " "
         scoreLabel.text = "Score: 0"
         setThemeColorTo(myThemeColor: myThemeColor)
@@ -91,6 +94,18 @@ class ShabbosViewController: UIViewController {
 
 
     // MARK: Helpers
+
+    @IBAction func nextLevelTapped(_ sender: Any) {
+        // TODO: fixme
+    }
+
+
+    @IBAction func playAgainTapped(_ sender: Any) {
+        // TODO: fixme
+        let currentLevel = levelNumberIndex
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     func startPreTimer() {
         timerProgress.setProgress(1, animated: true)
@@ -204,30 +219,9 @@ class ShabbosViewController: UIViewController {
                 color: myThemeColor)
             timerProgress.isHidden = true
             scoreLabel.isHidden = true
-
-            shabbosButton.setTitle("Play Again", for: .normal)
-            shabbosButton.removeTarget(nil, action: nil, for: .allEvents)
-            shabbosButton.addTarget(self, action: #selector(playAgainTapped), for: .touchUpInside)
-            shabbosButton.sizeToFit()
-            shabbosButton.isHidden = false
-            shabbosButton.doGlowAnimation(withColor: myThemeColor)
-
-            notShabbosButton.setTitle(Const.endMessage, for: .normal)
-            notShabbosButton.removeTarget(nil, action: nil, for: .allEvents)
-            notShabbosButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-            notShabbosButton.sizeToFit()
-            notShabbosButton.isHidden = false
+            gameOverPlayAgainButton.isHidden = false
+            gameOverNextLevelButton.isHidden = false
         }
-    }
-
-
-    @objc func playAgainTapped() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
-
-    @objc func doneButtonPressed() {
-        navigationController?.popToRootViewController(animated: true)
     }
 
 
