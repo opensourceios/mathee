@@ -96,13 +96,13 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func nextLevelTapped(_ sender: Any) {
-        // TODO: fixme
+        // TODO
     }
 
     // TODO: add share score button?
 
     @IBAction func playAgainTapped(_ sender: Any) {
-        // TODO: fixme
+        // TODO
         //let currentLevel = levelNumberIndex
         self.navigationController?.popViewController(animated: true)
     }
