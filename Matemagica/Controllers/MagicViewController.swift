@@ -136,7 +136,7 @@ class MagicViewController: UIViewController {
 
     @objc func combineSecond() {
         headerLabel.text =
-        """
+            """
         Combine the digits of D
 
         For example, if D was 24, you would get 2 + 4 = 6
@@ -177,7 +177,7 @@ class MagicViewController: UIViewController {
 
     @objc func combineForever() {
         headerLabel.text =
-        """
+            """
         Combine the result's digits. For example, if your result is 24, do 2 + 4, and get 6
         """
 

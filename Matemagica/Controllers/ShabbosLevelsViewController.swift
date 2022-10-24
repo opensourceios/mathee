@@ -59,7 +59,7 @@ class ShabbosLevelsViewController: UITableViewController {
 
     func restoreIfAny() {
         guard let restoredLevelIndex: Int = ud.value(
-            forKey: Const.levelIndexKey) as? Int else {
+                forKey: Const.levelIndexKey) as? Int else {
             return
         }
         ud.removeObject(forKey: Const.levelIndexKey)

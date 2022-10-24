@@ -111,9 +111,9 @@ class MenuViewController: UIViewController,
     }
 
 
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 0
-//    }
+    //    func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 0
+    //    }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -140,38 +140,38 @@ class MenuViewController: UIViewController,
         let cell = tableView.cellForRow(at: indexPath) as! MainMenuTableViewCell
 
         switch cell.myLabel!.text {
-            case "Spot it":
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: "BookViewController") as! BookViewController
-                controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-                self.navigationController!.pushViewController(controller, animated: true)
-            case "Guess it":
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: "FormulaViewController") as! FormulaViewController
-                controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-                self.navigationController!.pushViewController(controller, animated: true)
-            case "Mystical 9":
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: "MagicViewController") as! MagicViewController
-                controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-                self.navigationController!.pushViewController(controller, animated: true)
-            case "Lower or higher":
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
-                controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-                self.navigationController!.pushViewController(controller, animated: true)
-            case "Shabbos":
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.ShabbosLevelsViewController) as! ShabbosLevelsViewController
-                controller.myTitle = "Choose a Level"
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-                self.navigationController!.pushViewController(controller, animated: true)
-            default:
-                fatalError()
+        case "Spot it":
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: "BookViewController") as! BookViewController
+            controller.myTitle = cell.myLabel!.text
+            controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+            self.navigationController!.pushViewController(controller, animated: true)
+        case "Guess it":
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: "FormulaViewController") as! FormulaViewController
+            controller.myTitle = cell.myLabel!.text
+            controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+            self.navigationController!.pushViewController(controller, animated: true)
+        case "Mystical 9":
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: "MagicViewController") as! MagicViewController
+            controller.myTitle = cell.myLabel!.text
+            controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+            self.navigationController!.pushViewController(controller, animated: true)
+        case "Lower or higher":
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
+            controller.myTitle = cell.myLabel!.text
+            controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+            self.navigationController!.pushViewController(controller, animated: true)
+        case "Shabbos":
+            let controller = storyboard.instantiateViewController(
+                withIdentifier: Const.ShabbosLevelsViewController) as! ShabbosLevelsViewController
+            controller.myTitle = "Choose a Level"
+            controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+            self.navigationController!.pushViewController(controller, animated: true)
+        default:
+            fatalError()
         }
     }
 
@@ -219,6 +219,6 @@ extension MenuViewController {
 
 private func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(
     _ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-        return Dictionary(uniqueKeysWithValues: input.map { key, value in
-            (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
-    }
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in
+                        (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}

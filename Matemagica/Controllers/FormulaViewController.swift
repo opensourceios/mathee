@@ -220,10 +220,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                 UIView.transition(with: self.infoButton, duration: 0.4,
                                   options: .transitionCrossDissolve,
                                   animations: {
-                    self.infoButton.isHidden = false
-                    self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
-                    self.hasShownHelpButton = true
-                })
+                                    self.infoButton.isHidden = false
+                                    self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
+                                    self.hasShownHelpButton = true
+                                  })
             }
         }
         let seconds = hasShownHelpButton ? 0 : 6
@@ -318,7 +318,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(
             title: "More Info",
             message:
-            """
+                """
            Divide your result by 9, and type how many times 9 fits in it.
            Ignore leftover numbers. For example: if your result is 12, type 1 (ignoring the leftover 3)
            If your result is less than 9, type 0.

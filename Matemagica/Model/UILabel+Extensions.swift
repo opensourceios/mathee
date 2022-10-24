@@ -14,7 +14,7 @@ extension UILabel {
         let from: Double = fromString?.replacingOccurrences(of: ",", with: ".")
             .components(separatedBy: CharacterSet.init(charactersIn: "-0123456789.").inverted)
             .first.flatMap { Double($0) } ?? 0.0
-//      let steps: Int = 50
+        //      let steps: Int = 50
         let duration = 0.4
         let diff = upto - from
         let rate = duration / diff

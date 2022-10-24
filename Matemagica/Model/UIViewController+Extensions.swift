@@ -75,28 +75,28 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-            case .textfieldEmpty:
-                alertTitle = "Textfield empty"
-                alertMessage = "Please try again"
-            case .nan:
-                alertTitle = "Please enter numbers only"
-                alertMessage = """
+        case .textfieldEmpty:
+            alertTitle = "Textfield empty"
+            alertMessage = "Please try again"
+        case .nan:
+            alertTitle = "Please enter numbers only"
+            alertMessage = """
                 Highest number allowed: \(UInt64.max/4)
                 """
-            case .shabbosInstructions:
-                alertTitle = "How To Play"
-                alertMessage = """
+        case .shabbosInstructions:
+            alertTitle = "How To Play"
+            alertMessage = """
                 Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope"
                 Tap "Help" on the top right of this page to see this message again later
                 """
-            case .lastLevelCompleted:
-                alertTitle = "👑 Wow! You did it!"
-                alertMessage = """
+        case .lastLevelCompleted:
+            alertTitle = "👑 Wow! You did it!"
+            alertMessage = """
                 You have completed all \(Const.shabbosLevels.count) levels!
                 """
-            default:
-                alertTitle = "Unknown error"
-                alertMessage = """
+        default:
+            alertTitle = "Unknown error"
+            alertMessage = """
             An unknown error occurred. Please try again
             """
         }

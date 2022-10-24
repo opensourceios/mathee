@@ -165,13 +165,13 @@ class HigherLowerViewController: UIViewController {
 
     @IBAction func lowerOrHigherTapped(sender: UIButton) {
         switch sender.tag {
-            case -1: // lower
-                myArray = Array(myArray.first!...myArray.middle().first!-1)
-            case 1: // higher
-                myArray = Array(myArray.middle().first!+1...myArray.last!)
-            default:
-                let alert = createAlert(alertReasonParam: .unknown, style: .alert)
-                present(alert, animated: true)
+        case -1: // lower
+            myArray = Array(myArray.first!...myArray.middle().first!-1)
+        case 1: // higher
+            myArray = Array(myArray.middle().first!+1...myArray.last!)
+        default:
+            let alert = createAlert(alertReasonParam: .unknown, style: .alert)
+            present(alert, animated: true)
         }
         showNextGuess()
     }
