@@ -36,6 +36,8 @@ class ShabbosLevelsViewController: UITableViewController {
 
         helpButton.addTarget(self, action: #selector(showHelp),
                              for: .touchUpInside)
+
+        helpButton.setTitleNew("Help")
         let helpItem = UIBarButtonItem(customView: helpButton)
 
         navigationItem.rightBarButtonItem = helpItem
@@ -58,20 +60,16 @@ class ShabbosLevelsViewController: UITableViewController {
     func restoreIfAny() {
         guard let restoredLevelIndex: Int = ud.value(
             forKey: Const.levelIndexKey) as? Int else {
-            print("no stored level")
             return
         }
         ud.removeObject(forKey: Const.levelIndexKey)
-        print("level removed")
 
         if restoredLevelIndex >= Const.shabbosLevels.count {
-            print("too high")
             let alert = createAlert(alertReasonParam: .lastLevelCompleted, style: .alert)
             present(alert, animated: true)
             return
         }
         showLevelFor(IndexPath(row: restoredLevelIndex, section: 0))
-        print("showLevelFor called from restoreIfAny with: \(restoredLevelIndex)")
     }
 
 

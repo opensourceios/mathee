@@ -135,10 +135,10 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
 
-        middleButton.setTitle(Const.okMessage, for: .normal)
+        middleButton.setTitleNew(Const.okMessage)
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
-        middleButton.setTitle(Const.okMessage, for: .normal)
+        middleButton.setTitleNew(Const.okMessage)
         middleButton.sizeToFit()
     }
 
@@ -177,8 +177,8 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         rightButton.isHidden = false
         rightButton.doGlowAnimation(withColor: myThemeColor)
 
-        leftButton.setTitle(Const.noMessage, for: .normal)
-        rightButton.setTitle(Const.yesMessage, for: .normal)
+        leftButton.setTitleNew(Const.noMessage)
+        rightButton.setTitleNew(Const.yesMessage)
 
         leftButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
@@ -217,7 +217,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        middleButton.setTitle(Const.correctMessage, for: .normal)
+        middleButton.setTitleNew(Const.correctMessage)
         middleButton.sizeToFit()
         progressBar.setProgress(1, animated: true)
     }

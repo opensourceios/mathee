@@ -117,9 +117,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
-        rightButton.setTitle(Const.okMessage, for: .normal)
+        rightButton.setTitleNew(Const.okMessage)
         leftButton.isHidden = true
-        rightButton.sizeToFit()
 
         myTextField.isHidden = true
         showAnswerButton.isHidden = true
@@ -129,10 +128,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     @objc func timesThree() {
         messageLabel.text = "Multiply it by 3"
-        rightButton.setTitle(Const.okMessage, for: .normal)
+        rightButton.setTitleNew(Const.okMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(oddOrEven), for: .touchUpInside)
-        rightButton.sizeToFit()
         if isBeforeFirstEvenQuestion {
             progressBar.setProgress(0.2, animated: true)
         } else {
@@ -145,14 +143,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.text = "Is the result odd or even?"
         leftButton.isHidden = false
         leftButton.doGlowAnimation(withColor: myThemeColor)
-        leftButton.setTitle(Const.oddMessage, for: .normal)
+        leftButton.setTitleNew(Const.oddMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         leftButton.addTarget(self, action: #selector(addOne), for: .touchUpInside)
-        rightButton.setTitle(Const.evenMessage, for: .normal)
+        rightButton.setTitleNew(Const.evenMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
-        rightButton.sizeToFit()
-        leftButton.sizeToFit()
         if isBeforeFirstEvenQuestion {
             progressBar.setProgress(0.3, animated: true)
         } else {
@@ -166,10 +162,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         // tell user to add one
         messageLabel.text = "Add 1 to the result"
         leftButton.isHidden = true
-        rightButton.setTitle(Const.okMessage, for: .normal)
+        rightButton.setTitleNew(Const.okMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
-        rightButton.sizeToFit()
 
         if isBeforeFirstEvenQuestion {
             total += 1
@@ -185,18 +180,17 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.text = "Divide the result by 2"
         leftButton.isHidden = true
         if isBeforeFirstEvenQuestion {
-            rightButton.setTitle(Const.okMessage, for: .normal)
+            rightButton.setTitleNew(Const.okMessage)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
             isBeforeFirstEvenQuestion = false
             progressBar.setProgress(0.5, animated: true)
         } else {
-            rightButton.setTitle(Const.okMessage, for: .normal)
+            rightButton.setTitleNew(Const.okMessage)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
             progressBar.setProgress(0.9, animated: true)
         }
-        rightButton.sizeToFit()
 
     }
 
@@ -305,10 +299,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         messageLabel.lineBreakMode = .byCharWrapping
 
         leftButton.isHidden = true
-        rightButton.setTitle(Const.doneMessage, for: .normal)
+        rightButton.setTitleNew(Const.doneMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        rightButton.sizeToFit()
         rightButton.isHidden = false
         rightButton.doGlowAnimation(withColor: myThemeColor)
         progressBar.setProgress(1, animated: true)

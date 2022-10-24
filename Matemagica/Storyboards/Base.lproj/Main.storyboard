@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -25,20 +26,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omi-Fz-8x3">
-                                <rect key="frame" x="154" y="723.33333333333337" width="67" height="54.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="4ds-7e-dxf"/>
-                                </constraints>
+                                <rect key="frame" x="121" y="620.66666666666663" width="133" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Correct">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-G0-lf0" userLabel="l">
-                                <rect key="frame" x="16.000000000000007" y="723.33333333333337" width="113.66666666666669" height="54.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="KzT-qm-Rm9"/>
-                                </constraints>
+                                <rect key="frame" x="130.66666666666666" y="707.33333333333337" width="113.66666666666666" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lower">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
@@ -51,10 +46,7 @@
                                 <rect key="frame" x="16" y="49" width="343" height="4"/>
                             </progressView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-h2-CTT">
-                                <rect key="frame" x="237" y="723.33333333333337" width="122" height="54.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ovV-wm-Jtm"/>
-                                </constraints>
+                                <rect key="frame" x="126.66666666666669" y="534" width="122" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Higher">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
@@ -69,18 +61,16 @@
                         <constraints>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="0WM-1m-iEl" secondAttribute="trailing" constant="16" id="1fW-c1-x60"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="8pq-Eb-w1b"/>
-                            <constraint firstItem="Omi-Fz-8x3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w4O-G0-lf0" secondAttribute="trailing" constant="16" id="BME-Ze-XDZ"/>
                             <constraint firstItem="Omi-Fz-8x3" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="G6P-Rt-eny"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="Ib5-vE-Wkj"/>
+                            <constraint firstItem="Omi-Fz-8x3" firstAttribute="top" secondItem="NTc-h2-CTT" secondAttribute="bottom" constant="32" id="XTD-dg-RhL"/>
+                            <constraint firstItem="NTc-h2-CTT" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="ZxN-lY-kil"/>
                             <constraint firstItem="0WM-1m-iEl" firstAttribute="top" secondItem="kO9-Xj-yVp" secondAttribute="top" constant="2" id="ceN-qG-Yeo"/>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="NTc-h2-CTT" secondAttribute="trailing" constant="16" id="d6N-9w-hzj"/>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="w4O-G0-lf0" secondAttribute="bottom" id="ead-VK-XAX"/>
+                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="w4O-G0-lf0" secondAttribute="bottom" constant="16" id="ead-VK-XAX"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="nAW-HL-3cW" secondAttribute="trailing" constant="16" id="exC-tg-SVV"/>
-                            <constraint firstItem="w4O-G0-lf0" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="hdh-tD-pUB"/>
+                            <constraint firstItem="w4O-G0-lf0" firstAttribute="top" secondItem="Omi-Fz-8x3" secondAttribute="bottom" constant="32" id="fCH-sg-m97"/>
                             <constraint firstItem="0WM-1m-iEl" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="iVN-pd-3ns"/>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="Omi-Fz-8x3" secondAttribute="bottom" id="nR2-Ih-kt2"/>
-                            <constraint firstItem="NTc-h2-CTT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Omi-Fz-8x3" secondAttribute="trailing" constant="16" id="pIS-T2-AnL"/>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="NTc-h2-CTT" secondAttribute="bottom" id="yGu-o9-afp"/>
+                            <constraint firstItem="w4O-G0-lf0" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="ibq-tQ-9lO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oXZ-fp-eKa"/>
@@ -356,11 +346,17 @@ Prepare to be amazed.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwG-Dh-xm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pzK-za-kQe">
-                    <rect key="frame" x="0.0" y="0.0" width="128" height="34"/>
+                    <rect key="frame" x="0.0" y="0.0" width="128" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="4" maxY="0.0"/>
                     <state key="normal" title="How To Play?" image="info.circle" catalog="system"/>
-                    <buttonConfiguration key="configuration" style="gray" image="questionmark.circle" catalog="system" imagePlacement="trailing" title="Help" imagePadding="4"/>
+                    <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="Help" imagePadding="4">
+                        <imageReference key="image" image="questionmark.circle" catalog="system" symbolScale="default"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font" scale="large">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        </preferredSymbolConfiguration>
+                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                    </buttonConfiguration>
                 </button>
             </objects>
             <point key="canvasLocation" x="2308" y="3579"/>
@@ -573,7 +569,9 @@ Prepare to be amazed.</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Math Magic" id="bIQ-V8-dG6">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" image="ellipsis.circle" catalog="system" id="iSG-Wt-4L5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="iSG-Wt-4L5">
+                            <imageReference key="image" image="ellipsis.circle" catalog="system" symbolScale="large"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="aboutButton" destination="iSG-Wt-4L5" id="PIY-Lc-BEr"/>
@@ -602,7 +600,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="165" width="343" height="74"/>
+                                <rect key="frame" x="16" y="181.66666666666666" width="343" height="74"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -611,7 +609,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="43.333333333333343" y="254.99999999999997" width="288.66666666666663" height="54.666666666666657"/>
+                                <rect key="frame" x="43.333333333333343" y="287.66666666666669" width="288.66666666666663" height="54.666666666666686"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="OK"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guess my number" titleAlignment="center">
@@ -622,30 +620,24 @@ Let me ask you a few questions...</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cv8-aF-RC8">
-                                <rect key="frame" x="258.33333333333331" y="707.33333333333337" width="100.66666666666669" height="54.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="7be-Sd-wUl"/>
-                                </constraints>
+                                <rect key="frame" x="195.66666666666663" y="707.33333333333337" width="163.33333333333337" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Right" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nph-Lq-4xz">
-                                <rect key="frame" x="16" y="707.33333333333337" width="81" height="54.666666666666629"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="GS2-VW-r0O"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="707.33333333333337" width="163.66666666666666" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Left" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Ch-xgj">
-                                <rect key="frame" x="235.66666666666666" y="63" width="123.33333333333334" height="38"/>
+                                <rect key="frame" x="168.66666666666663" y="63" width="190.33333333333337" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Need help?" titleAlignment="center">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="helpPressed:" destination="eiL-1S-xct" eventType="touchUpInside" id="JwZ-yo-lQZ"/>
@@ -659,10 +651,11 @@ Let me ask you a few questions...</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Cv8-aF-RC8" secondAttribute="trailing" constant="16" id="8Sy-BN-hMQ"/>
+                            <constraint firstItem="Cv8-aF-RC8" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="centerX" constant="8" id="BmS-2R-9vy"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="16" id="K80-LJ-w1Y"/>
-                            <constraint firstItem="eb2-Y7-egc" firstAttribute="top" secondItem="Bjj-IK-Hsa" secondAttribute="bottom" constant="16" id="MTK-cO-SEZ"/>
+                            <constraint firstItem="eb2-Y7-egc" firstAttribute="top" secondItem="Bjj-IK-Hsa" secondAttribute="bottom" constant="32" id="MTK-cO-SEZ"/>
                             <constraint firstItem="aeV-Ch-xgj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Uih-EM-gSP"/>
-                            <constraint firstItem="Cv8-aF-RC8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nph-Lq-4xz" secondAttribute="trailing" constant="4" id="VRz-EW-Fk5"/>
+                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="centerX" secondItem="Nph-Lq-4xz" secondAttribute="trailing" constant="8" id="VRz-EW-Fk5"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="aeV-Ch-xgj" secondAttribute="bottom" constant="64" id="XrP-WT-cME"/>
                             <constraint firstItem="Nph-Lq-4xz" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Zhe-BP-UU4"/>
                             <constraint firstItem="o2w-9r-YZZ" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="2" id="arX-x5-44K"/>

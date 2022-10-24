@@ -54,8 +54,7 @@ class HigherLowerViewController: UIViewController {
 
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(start), for: .touchUpInside)
-        correctButton.setTitle(Const.okMessage, for: .normal)
-        correctButton.sizeToFit()
+        correctButton.setTitleNew(Const.okMessage)
 
         progressBar.setProgress(0, animated: false)
 
@@ -82,7 +81,7 @@ class HigherLowerViewController: UIViewController {
         showNextGuess()
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(correctPressed), for: .touchUpInside)
-        correctButton.setTitle(Const.correctMessage, for: .normal)
+        correctButton.setTitleNew(Const.correctMessage)
         toggleButtons(enable: true)
     }
 
@@ -183,7 +182,7 @@ class HigherLowerViewController: UIViewController {
     @objc func correctPressed() {
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        correctButton.setTitle(Const.doneMessage, for: .normal)
+        correctButton.setTitleNew(Const.doneMessage)
         toggleButtons(enable: false)
         thinkKnow = """
         \(knowEmojis.randomElement()!)

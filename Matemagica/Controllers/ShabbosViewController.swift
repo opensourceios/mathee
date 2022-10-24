@@ -96,12 +96,9 @@ class ShabbosViewController: UIViewController {
     // MARK: Helpers
 
     @IBAction func preLevelSelectionTapped(_ sender: UIButton) {
-        // TODO
-        print("preLevelTapped with tag: \(sender.tag)") // 0=again, 1=next
+        // 0=again, 1=next
         ud.set(levelNumberIndex+sender.tag, forKey: Const.levelIndexKey)
-        print("stored level index with value: \(levelNumberIndex+sender.tag)")
         navigationController!.popViewController(animated: true)
-        print("popped")
     }
 
 
