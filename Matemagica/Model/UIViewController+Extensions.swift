@@ -66,6 +66,7 @@ extension UIViewController {
         case textfieldEmpty
         case nan
         case shabbosInstructions
+        case lastLevelCompleted
     }
 
 
@@ -87,6 +88,11 @@ extension UIViewController {
                 alertMessage = """
                 Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope"
                 Tap "Help" on the top right of this page to see this message again later
+                """
+            case .lastLevelCompleted:
+                alertTitle = "Wow! You did it!"
+                alertMessage = """
+                You have completed all \(Const.shabbosLevels.count) levels!
                 """
             default:
                 alertTitle = "Unknown error"

@@ -60,7 +60,7 @@ class ShabbosViewController: UIViewController {
         }
     }
 
-
+    // TODO: add share score button?
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -95,16 +95,13 @@ class ShabbosViewController: UIViewController {
 
     // MARK: Helpers
 
-    @IBAction func nextLevelTapped(_ sender: Any) {
+    @IBAction func preLevelSelectionTapped(_ sender: UIButton) {
         // TODO
-    }
-
-    // TODO: add share score button?
-
-    @IBAction func playAgainTapped(_ sender: Any) {
-        // TODO
-        //let currentLevel = levelNumberIndex
-        self.navigationController?.popViewController(animated: true)
+        print("preLevelTapped with tag: \(sender.tag)") // 0=again, 1=next
+        ud.set(levelNumberIndex+sender.tag, forKey: Const.levelIndexKey)
+        print("stored level index with value: \(levelNumberIndex+sender.tag)")
+        navigationController!.popViewController(animated: true)
+        print("popped")
     }
 
 

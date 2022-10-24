@@ -45,19 +45,41 @@ class ShabbosLevelsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if UserDefaults.standard.bool(forKey: Const.firstTimePlayingShabbos) {
+        if ud.bool(forKey: Const.firstTimePlayingShabbos) {
             showHelp()
         }
+
+        restoreIfAny()
     }
 
 
     // MARK: Helpers
 
+    func restoreIfAny() {
+        guard let restoredLevelIndex: Int = ud.value(
+            forKey: Const.levelIndexKey) as? Int else {
+            print("no stored level")
+            return
+        }
+        ud.removeObject(forKey: Const.levelIndexKey)
+        print("level removed")
+
+        if restoredLevelIndex >= Const.shabbosLevels.count {
+            print("too high")
+            let alert = createAlert(alertReasonParam: .lastLevelCompleted, style: .alert)
+            present(alert, animated: true)
+            return
+        }
+        showLevelFor(IndexPath(row: restoredLevelIndex, section: 0))
+        print("showLevelFor called from restoreIfAny with: \(restoredLevelIndex)")
+    }
+
+
     @objc func showHelp() {
         let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
         alert.popoverPresentationController?.sourceView = helpButton
         present(alert, animated: true)
-        UserDefaults.standard.set(false, forKey: Const.firstTimePlayingShabbos)
+        ud.set(false, forKey: Const.firstTimePlayingShabbos)
     }
 
 
@@ -86,8 +108,7 @@ class ShabbosLevelsViewController: UITableViewController {
     }
 
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    func showLevelFor(_ indexPath: IndexPath) {
         let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
             withIdentifier: Const.shabbosViewController) as! ShabbosViewController
         shabbosVC.levelNumberIndex = indexPath.row
@@ -96,6 +117,10 @@ class ShabbosLevelsViewController: UITableViewController {
         shabbosVC.numbersRange = myLevel.numberRange
         shabbosVC.myThemeColor = myThemeColor
         self.navigationController!.pushViewController(shabbosVC, animated: true)
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showLevelFor(indexPath)
     }
 
 }

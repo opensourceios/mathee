@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omi-Fz-8x3">
-                                <rect key="frame" x="121" y="723.33333333333337" width="133" height="54.666666666666629"/>
+                                <rect key="frame" x="154" y="723.33333333333337" width="67" height="54.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="4ds-7e-dxf"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-G0-lf0" userLabel="l">
-                                <rect key="frame" x="16" y="682.33333333333337" width="85" height="95.666666666666629"/>
+                                <rect key="frame" x="16.000000000000007" y="723.33333333333337" width="113.66666666666669" height="54.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="KzT-qm-Rm9"/>
                                 </constraints>
@@ -50,8 +50,8 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-1m-iEl">
                                 <rect key="frame" x="16" y="49" width="343" height="4"/>
                             </progressView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-h2-CTT">
-                                <rect key="frame" x="284.33333333333331" y="682.33333333333337" width="74.666666666666686" height="95.666666666666629"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-h2-CTT">
+                                <rect key="frame" x="237" y="723.33333333333337" width="122" height="54.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ovV-wm-Jtm"/>
                                 </constraints>
@@ -225,17 +225,17 @@ Prepare to be amazed.</string>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="playAgainPressed:" destination="li8-1e-9hm" eventType="touchUpInside" id="3U8-sO-mR9"/>
+                                    <action selector="preLevelSelectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="uaX-hk-HdQ"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhm-Zs-v73">
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhm-Zs-v73">
                                 <rect key="frame" x="99.333333333333329" y="707.33333333333337" width="176.33333333333337" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next Level">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="nextLevelPressed:" destination="li8-1e-9hm" eventType="touchUpInside" id="0ul-tT-MjX"/>
+                                    <action selector="preLevelSelectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="in0-7O-F72"/>
                                 </connections>
                             </button>
                         </subviews>

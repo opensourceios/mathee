@@ -8,6 +8,8 @@
 
 import UIKit
 
+// swiftlint:disable:next identifier_name
+let ud = UserDefaults.standard
 
 struct Const {
     static let appVersion = "CFBundleShortVersionString"
@@ -37,6 +39,7 @@ struct Const {
     static let shabbosViewController = "ShabbosViewController"
     static let shabbosLevelCell = "levelCell"
     static let firstTimePlayingShabbos = "firstTimePlayingShabbos"
+    static let levelIndexKey = "levelIndexKey"
 
 
     static let dataSourceHome = [
