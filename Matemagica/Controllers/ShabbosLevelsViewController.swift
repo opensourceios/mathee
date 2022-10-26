@@ -47,7 +47,7 @@ class ShabbosLevelsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if ud.bool(forKey: Const.optedOutOfShabbosHelp) {
+        if !ud.bool(forKey: Const.optedOutOfShabbosHelp) {
             showHelp()
         }
 
