@@ -26,16 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-        if CommandLine.arguments.contains("--matemagicaScreenshots") {
-            // We are in testing mode, make arrangements
-            ud.set(false, forKey: Const.firstTimePlayingShabbos)
-        }
+                if CommandLine.arguments.contains("--matemagicaScreenshots") {
+                    // We are in testing mode, make arrangements
+                    ud.set(true, forKey: Const.optedOutOfShabbosHelp)
+                }
 
-        ud.register(defaults: [
-            Const.firstTimePlayingShabbos: true
-        ])
+                ud.register(defaults: [
+                    Const.optedOutOfShabbosHelp: false
+                ])
 
-        return true
-    }
+                return true
+            }
 
 }

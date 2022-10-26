@@ -220,10 +220,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                 UIView.transition(with: self.infoButton, duration: 0.4,
                                   options: .transitionCrossDissolve,
                                   animations: {
-                                    self.infoButton.isHidden = false
-                                    self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
-                                    self.hasShownHelpButton = true
-                                  })
+                    self.infoButton.isHidden = false
+                    self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
+                    self.hasShownHelpButton = true
+                })
             }
         }
         let seconds = hasShownHelpButton ? 0 : 6

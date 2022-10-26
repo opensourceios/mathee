@@ -47,7 +47,7 @@ class ShabbosLevelsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if ud.bool(forKey: Const.firstTimePlayingShabbos) {
+        if ud.bool(forKey: Const.optedOutOfShabbosHelp) {
             showHelp()
         }
 
@@ -59,7 +59,7 @@ class ShabbosLevelsViewController: UITableViewController {
 
     func restoreIfAny() {
         guard let restoredLevelIndex: Int = ud.value(
-                forKey: Const.levelIndexKey) as? Int else {
+            forKey: Const.levelIndexKey) as? Int else {
             return
         }
         ud.removeObject(forKey: Const.levelIndexKey)
@@ -75,9 +75,12 @@ class ShabbosLevelsViewController: UITableViewController {
 
     @objc func showHelp() {
         let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
+        let optOutAction = UIAlertAction(title: "Don't show this again", style: .default) { _ in
+            ud.set(true, forKey: Const.optedOutOfShabbosHelp)
+        }
+        alert.addAction(optOutAction)
         alert.popoverPresentationController?.sourceView = helpButton
         present(alert, animated: true)
-        ud.set(false, forKey: Const.firstTimePlayingShabbos)
     }
 
 

@@ -35,47 +35,54 @@ class MatemagicaScreenshots: XCTestCase {
         XCTAssertTrue(aThing.waitForExistence(timeout: 5))
         aThing.tap()
         switch word {
-        case "Shabbos":
-            XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch.waitForExistence(timeout: 5))
-            takeScreenshot(named: "Shabbos-levels")
-            app.swipeUp()
-            app.swipeUp()
-            XCTAssertTrue(app.staticTexts["⭐️ Level 10"].firstMatch.waitForExistence(timeout: 5))
-            app.staticTexts["⭐️ Level 10"].firstMatch.tap()
-            for _ in 0...4 {
-                XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
-                app.buttons["Nope"].firstMatch.tap()
-            }
-            takeScreenshot(named: "Shabbos-game-middle")
-            XCTAssertTrue(app.buttons["Play Again"].firstMatch.waitForExistence(timeout: 20))
-            app.buttons["Choose a Level"].firstMatch.tap()
-            app.buttons["Math Magic"].firstMatch.tap()
-        case "Guess it":
-            XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
-            takeScreenshot(named: "Guess-it-think")
-            app.buttons["OK"].firstMatch.tap()
-            takeScreenshot(named: "Guess-it-multiply")
-            app.buttons["OK"].firstMatch.tap()
-            app.buttons["Even"].firstMatch.tap()
-            app.buttons["OK"].firstMatch.tap() // /2 1
-            app.buttons["OK"].firstMatch.tap() // x3 2
-            app.buttons["Odd"].firstMatch.tap()
-            app.buttons["OK"].firstMatch.tap() // add 1
-            app.buttons["OK"].firstMatch.tap() // /2 2
-            app.textFields.firstMatch.typeText("6")
-            app.buttons["Guess my number"].firstMatch.tap()
-            takeScreenshot(named: "Guess-it-result")
-            app.buttons["Done"].firstMatch.tap()
-        case "Spot it":
-            XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
-            app.buttons["OK"].firstMatch.tap()
-            app.buttons["Yes"].firstMatch.tap()
-            app.buttons["Yes"].firstMatch.tap()
-            app.buttons["Yes"].firstMatch.tap()
-            takeScreenshot(named: "Spot-it")
-            app.buttons["Math Magic"].firstMatch.tap()
-        default:
-            fatalError()
+            case "Shabbos":
+                XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch.waitForExistence(timeout: 5))
+                takeScreenshot(named: "Shabbos-levels")
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["OK"].firstMatch.tap()
+                app.swipeUp()
+                app.swipeUp()
+                XCTAssertTrue(app.staticTexts["⭐️ Level 10"].firstMatch.waitForExistence(timeout: 5))
+                app.staticTexts["⭐️ Level 10"].firstMatch.tap()
+                for _ in 0...4 {
+                    XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
+                    app.buttons["Nope"].firstMatch.tap()
+                }
+                takeScreenshot(named: "Shabbos-game-middle")
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 20))
+                app.buttons["OK"].firstMatch.tap()
+
+                XCTAssertTrue(app.buttons["Shabbos Levels"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["Shabbos Levels"].firstMatch.tap()
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["OK"].firstMatch.tap()
+                app.buttons["Math Magic"].firstMatch.tap()
+            case "Guess it":
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
+                takeScreenshot(named: "Guess-it-think")
+                app.buttons["OK"].firstMatch.tap()
+                takeScreenshot(named: "Guess-it-multiply")
+                app.buttons["OK"].firstMatch.tap()
+                app.buttons["Even"].firstMatch.tap()
+                app.buttons["OK"].firstMatch.tap() // /2 1
+                app.buttons["OK"].firstMatch.tap() // x3 2
+                app.buttons["Odd"].firstMatch.tap()
+                app.buttons["OK"].firstMatch.tap() // add 1
+                app.buttons["OK"].firstMatch.tap() // /2 2
+                app.textFields.firstMatch.typeText("6")
+                app.buttons["Guess my number"].firstMatch.tap()
+                takeScreenshot(named: "Guess-it-result")
+                app.buttons["Done"].firstMatch.tap()
+            case "Spot it":
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["OK"].firstMatch.tap()
+                app.buttons["Yes"].firstMatch.tap()
+                app.buttons["Yes"].firstMatch.tap()
+                app.buttons["Yes"].firstMatch.tap()
+                takeScreenshot(named: "Spot-it")
+                app.buttons["Math Magic"].firstMatch.tap()
+            default:
+                fatalError()
         }
     }
 

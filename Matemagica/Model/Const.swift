@@ -38,7 +38,7 @@ struct Const {
     static let ShabbosLevelsViewController = "ShabbosLevelsViewController"
     static let shabbosViewController = "ShabbosViewController"
     static let shabbosLevelCell = "levelCell"
-    static let firstTimePlayingShabbos = "firstTimePlayingShabbos"
+    static let optedOutOfShabbosHelp = "optedOutOfShabbosHelp"
     static let levelIndexKey = "levelIndexKey"
 
 

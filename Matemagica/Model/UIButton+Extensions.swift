@@ -13,7 +13,7 @@ extension UIButton {
     func setTitleNew(_ title: String) {
 
         let oldFont: UIFont = self.configuration!.attributedTitle!.font ??
-            UIFont.preferredFont(forTextStyle: .largeTitle)
+        UIFont.preferredFont(forTextStyle: .largeTitle)
 
         self.configurationUpdateHandler = { button in
             button.configuration!.attributedTitle = AttributedString(

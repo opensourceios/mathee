@@ -67,6 +67,7 @@ extension UIViewController {
         case nan
         case shabbosInstructions
         case lastLevelCompleted
+        case timeIsUp
     }
 
 
@@ -75,28 +76,35 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
-        case .textfieldEmpty:
-            alertTitle = "Textfield empty"
-            alertMessage = "Please try again"
-        case .nan:
-            alertTitle = "Please enter numbers only"
-            alertMessage = """
+            case .textfieldEmpty:
+                alertTitle = "Textfield empty"
+                alertMessage = "Please try again"
+            case .nan:
+                alertTitle = "Please enter numbers only"
+                alertMessage = """
                 Highest number allowed: \(UInt64.max/4)
                 """
-        case .shabbosInstructions:
-            alertTitle = "How To Play"
-            alertMessage = """
-                Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope"
+            case .shabbosInstructions:
+                alertTitle = "How To Play"
+                alertMessage = """
+                Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope".
+
+                Every level has a certain range of randomly picked numbers - and a limited \
+                amount of time given! Watch your clock, and pick wisely.
+
                 Tap "Help" on the top right of this page to see this message again later
                 """
-        case .lastLevelCompleted:
-            alertTitle = "👑 Wow! You did it!"
-            alertMessage = """
+            case .lastLevelCompleted:
+                alertTitle = "👑 Wow! You did it!"
+                alertMessage = """
                 You have completed all \(Const.shabbosLevels.count) levels!
                 """
-        default:
-            alertTitle = "Unknown error"
-            alertMessage = """
+            case .timeIsUp:
+                alertTitle = "Time is up ⏰"
+                alertMessage = ""
+            default:
+                alertTitle = "Unknown error"
+                alertMessage = """
             An unknown error occurred. Please try again
             """
         }

@@ -60,7 +60,10 @@ class ShabbosViewController: UIViewController {
         }
     }
 
-    // TODO: add share score button?
+    // TODO: todos
+    // - add share score button?
+    // - ask for name and save to highscores chart with stats
+
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -71,7 +74,7 @@ class ShabbosViewController: UIViewController {
             UIView.setAnimationsEnabled(false)
         }
 
-        self.title = "Level \(levelNumberIndex+1)"
+        self.title = "Shabbos: Level \(levelNumberIndex+1)"
         numberLabel.text = " "
         scoreLabel.text = "Score: 0"
         setThemeColorTo(myThemeColor: myThemeColor)
@@ -199,7 +202,8 @@ class ShabbosViewController: UIViewController {
 
     func gameOver() {
         DispatchQueue.main.async { [self] in
-            showToast(message: "Time is up ⏰", color: .systemBlue)
+            let alert = createAlert(alertReasonParam: .timeIsUp, style: .alert)
+            present(alert, animated: true)
             timerLabel.isHidden = true
             timerLabel.textColor = .label
             let points = score
