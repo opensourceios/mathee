@@ -63,6 +63,7 @@ class ShabbosViewController: UIViewController {
     // TODO: todos
     // - add share score button?
     // - ask for name and save to highscores chart with stats
+    // - allow choosing different multiples? maybe separate game for that?
 
     // MARK: Life Cycle
 
@@ -96,6 +97,16 @@ class ShabbosViewController: UIViewController {
     }
 
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        myPreTimer?.invalidate()
+        myPreTimer = nil
+        myGameTimer?.invalidate()
+        myGameTimer = nil
+    }
+
+
     // MARK: Helpers
 
     @IBAction func preLevelSelectionTapped(_ sender: UIButton) {
@@ -108,7 +119,7 @@ class ShabbosViewController: UIViewController {
     func startPreTimer() {
         timerProgress.setProgress(1, animated: true)
         var runsLeft: Float = 2
-        let messages = ["Ready", "Set", "Go!"]
+        let messages = ["🔴🔴 Ready 🔴🔴", "🟡🟡 Set 🟡🟡", "🟢🟢 Go! 🟢🟢"]
         var messageIndex = 0
         showToast(message: messages[messageIndex], color: .systemBlue)
         messageIndex += 1

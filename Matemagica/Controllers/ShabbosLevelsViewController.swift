@@ -47,29 +47,34 @@ class ShabbosLevelsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        let shouldShowHelp = restoreAndShouldShowHelp()
+        guard shouldShowHelp else {
+            return
+        }
+
         if !ud.bool(forKey: Const.optedOutOfShabbosHelp) {
             showHelp()
         }
 
-        restoreIfAny()
     }
 
 
     // MARK: Helpers
 
-    func restoreIfAny() {
+    func restoreAndShouldShowHelp() -> Bool {
         guard let restoredLevelIndex: Int = ud.value(
             forKey: Const.levelIndexKey) as? Int else {
-            return
+            return true
         }
         ud.removeObject(forKey: Const.levelIndexKey)
 
         if restoredLevelIndex >= Const.shabbosLevels.count {
             let alert = createAlert(alertReasonParam: .lastLevelCompleted, style: .alert)
             present(alert, animated: true)
-            return
+            return false
         }
         showLevelFor(IndexPath(row: restoredLevelIndex, section: 0))
+        return false
     }
 
 

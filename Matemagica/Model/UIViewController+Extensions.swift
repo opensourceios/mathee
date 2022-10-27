@@ -95,12 +95,12 @@ extension UIViewController {
                 Tap "Help" on the top right of this page to see this message again later
                 """
             case .lastLevelCompleted:
-                alertTitle = "👑 Wow! You did it!"
+                alertTitle = "👑 Wow! You did it! 🎉"
                 alertMessage = """
                 You have completed all \(Const.shabbosLevels.count) levels!
                 """
             case .timeIsUp:
-                alertTitle = "Time is up ⏰"
+                alertTitle = "🏁🏁 Time is up 🏁🏁"
                 alertMessage = ""
             default:
                 alertTitle = "Unknown error"
