@@ -11,7 +11,6 @@ import UIKit
 class LevelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var levelNumberLabel: UILabel!
-    @IBOutlet weak var timerDurationLabel: UILabel!
     @IBOutlet weak var numbersRangeLabel: UILabel!
     @IBOutlet weak var fakeBackgroundView: UIView!
 

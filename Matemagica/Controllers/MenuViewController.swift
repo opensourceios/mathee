@@ -167,7 +167,7 @@ class MenuViewController: UIViewController,
             case "Shabbos":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.ShabbosLevelsViewController) as! ShabbosLevelsViewController
-                controller.myTitle = "Shabbos Levels"
+                controller.myTitle = "Shabbos"
                 controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             default:

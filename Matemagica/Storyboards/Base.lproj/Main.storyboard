@@ -281,14 +281,14 @@ Prepare to be amazed.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="levelCell" id="Mhx-rY-OBh" customClass="LevelTableViewCell" customModule="Matemagica" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.333332061767578" width="335" height="168"/>
+                                <rect key="frame" x="20" y="55.333332061767578" width="335" height="139.33332824707031"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mhx-rY-OBh" id="eXa-wo-amh">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="168"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="139.33332824707031"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-5n-1mh">
-                                            <rect key="frame" x="16" y="16" width="303" height="136"/>
+                                            <rect key="frame" x="16" y="15.999999999999993" width="303" height="107.33333333333331"/>
                                             <color key="backgroundColor" systemColor="tintColor"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 3" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQ3-KF-GQr" userLabel="Level Number Label">
@@ -297,15 +297,9 @@ Prepare to be amazed.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to complete: 35 seconds" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1x-u2-HoF" userLabel="Timer Duration Label">
-                                            <rect key="frame" x="31.999999999999986" y="81.666666666666671" width="230.66666666666663" height="20.333333333333329"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Numbers: 1 to 35" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-aP-rxe" userLabel="Numbers Range Label">
-                                            <rect key="frame" x="32.000000000000007" y="118" width="117.66666666666669" height="18"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <rect key="frame" x="32" y="73.666666666666671" width="162.66666666666666" height="33.666666666666671"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -314,13 +308,11 @@ Prepare to be amazed.</string>
                                         <constraint firstItem="YQ3-KF-GQr" firstAttribute="top" secondItem="eXa-wo-amh" secondAttribute="top" constant="32" id="1hM-VG-18V"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1XH-aP-rxe" secondAttribute="trailing" constant="32" id="2Hz-SS-S9O"/>
                                         <constraint firstItem="ybQ-5n-1mh" firstAttribute="top" secondItem="eXa-wo-amh" secondAttribute="top" constant="16" id="2bI-Qt-uAT"/>
-                                        <constraint firstItem="1XH-aP-rxe" firstAttribute="top" secondItem="e1x-u2-HoF" secondAttribute="bottom" constant="16" id="7Rx-Jk-u4U"/>
-                                        <constraint firstItem="e1x-u2-HoF" firstAttribute="top" secondItem="YQ3-KF-GQr" secondAttribute="bottom" constant="16" id="99x-O3-ofp"/>
+                                        <constraint firstItem="1XH-aP-rxe" firstAttribute="top" secondItem="eXa-wo-amh" secondAttribute="centerY" constant="4" id="7Rx-Jk-u4U"/>
+                                        <constraint firstAttribute="centerY" secondItem="YQ3-KF-GQr" secondAttribute="bottom" constant="4" id="99x-O3-ofp"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YQ3-KF-GQr" secondAttribute="trailing" constant="32" id="A5S-T3-hrj"/>
                                         <constraint firstItem="ybQ-5n-1mh" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="16" id="FAH-Kz-jTY"/>
                                         <constraint firstAttribute="bottom" secondItem="ybQ-5n-1mh" secondAttribute="bottom" constant="16" id="I1E-Zs-oxD"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e1x-u2-HoF" secondAttribute="trailing" constant="32" id="Lem-Fl-42X"/>
-                                        <constraint firstItem="e1x-u2-HoF" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="32" id="Mr4-Dg-uoc"/>
                                         <constraint firstAttribute="bottom" secondItem="1XH-aP-rxe" secondAttribute="bottom" constant="32" id="bBK-CJ-e3d"/>
                                         <constraint firstItem="1XH-aP-rxe" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="32" id="efb-a0-522"/>
                                         <constraint firstItem="YQ3-KF-GQr" firstAttribute="leading" secondItem="eXa-wo-amh" secondAttribute="leading" constant="32" id="g99-SM-GsD"/>
@@ -331,7 +323,6 @@ Prepare to be amazed.</string>
                                     <outlet property="fakeBackgroundView" destination="ybQ-5n-1mh" id="EV0-2G-P4C"/>
                                     <outlet property="levelNumberLabel" destination="YQ3-KF-GQr" id="HF2-mC-mNG"/>
                                     <outlet property="numbersRangeLabel" destination="1XH-aP-rxe" id="6pk-rc-1hW"/>
-                                    <outlet property="timerDurationLabel" destination="e1x-u2-HoF" id="bb6-bi-3cL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

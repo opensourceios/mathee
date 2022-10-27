@@ -102,7 +102,6 @@ class ShabbosLevelsViewController: UITableViewController {
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
-        cell.timerDurationLabel.text = "⏱️ Timer: \(Int(Const.timerSeconds)) seconds"
         cell.numbersRangeLabel.text = """
         🧮 Numbers between 1 and \(levelMaxNumber)
         """
