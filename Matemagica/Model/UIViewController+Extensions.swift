@@ -87,17 +87,22 @@ extension UIViewController {
             case .shabbosInstructions:
                 alertTitle = "How To Play"
                 alertMessage = """
-                Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope".
 
-                Every level has a certain range of randomly picked numbers - and a limited \
-                amount of time given! Watch your clock, and pick wisely.
+                Hello! Is it Shabbos yet?
 
-                Tap "Help" on the top right of this page to see this message again later
+                - Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope".
+
+                - The goal is to reach \(Const.goal) points in \(Int(Const.timerSeconds)) \
+                seconds.
+
+                - How many levels can you complete?
+
+                (Tap "Help" on the top right of this page to see this message again later)
                 """
             case .lastLevelCompleted:
-                alertTitle = "👑 Wow! You did it! 🎉"
+                alertTitle = "👑 WOW! You did it! 🎉"
                 alertMessage = """
-                You have completed all \(Const.shabbosLevels.count) levels!
+                You have completed all \(Const.shabbosLevelsCount) levels!
                 """
             case .timeIsUp:
                 alertTitle = "🏁🏁 Time is up 🏁🏁"

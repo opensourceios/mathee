@@ -50,7 +50,6 @@ class ShabbosViewController: UIViewController {
     var myThemeColor: UIColor!
     var myGameTimer: Timer!
     var myPreTimer: Timer!
-    var timeInSeconds: Float!
     var numbersRange: ClosedRange<Int>!
     var numbersDistribution: GKShuffledDistribution!
     var levelNumberIndex: Int!
@@ -60,10 +59,12 @@ class ShabbosViewController: UIViewController {
         }
     }
 
-    // TODO: todos
-    // - add share score button?
-    // - ask for name and save to highscores chart with stats
-    // - allow choosing different multiples? maybe separate game for that?
+    /* TODO: todos
+     - make tutorial an actual view with easy to read text..
+     - ask for name and save "NAME completed LEVEL" to leaderboard
+     - allow choosing different multiples? maybe separate game for that?
+     */
+
 
     // MARK: Life Cycle
 
@@ -84,7 +85,7 @@ class ShabbosViewController: UIViewController {
 
         numbersDistribution = GKShuffledDistribution(lowestValue: numbersRange.first!, highestValue: numbersRange.last!)
 
-        timerLabel.text = "\(timeLeftPre)00:\(Int(timeInSeconds))"
+        timerLabel.text = "\(timeLeftPre)00:\(Int(Const.timerSeconds))"
     }
 
 
@@ -141,8 +142,8 @@ class ShabbosViewController: UIViewController {
     func startGameTimer() {
         toggleUI(enable: true)
 
-        let totalRuns: Float = timeInSeconds
-        var runsLeft: Float = timeInSeconds
+        let totalRuns: Float = Const.timerSeconds
+        var runsLeft: Float = Const.timerSeconds
 
         myGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
 
@@ -170,15 +171,18 @@ class ShabbosViewController: UIViewController {
         toggleUI(enable: false)
         CATransaction.begin()
         CATransaction.setCompletionBlock({
-            self.showNextNumber()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                self.showNextNumber()
+            }
         })
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.06
         animation.repeatCount = 3
         animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x - 10, y: numberLabel.center.y))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x + 10, y: numberLabel.center.y))
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x - 8, y: numberLabel.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x + 8, y: numberLabel.center.y))
         numberLabel.layer.add(animation, forKey: "position")
+
         CATransaction.commit()
     }
 
@@ -194,19 +198,19 @@ class ShabbosViewController: UIViewController {
 
         // shabbos tag is 0
         if isShabbos && sender.tag == 0 {
-            self.showToast(message: "SHABBOS! 10x BONUS!", color: myThemeColor)
-            score += currentNumber * 10
+            self.showToast(message: "SHABBOS! 2x BONUS!", color: myThemeColor)
+            score += Const.pointsPerTap * 2
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
             self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(), color: .systemGreen)
-            score += currentNumber
+            score += Const.pointsPerTap
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
             shakeAndShow()
-            //self.showToast(message: "Oops, \(currentNumber) is Shabbos")
+            self.showToast(message: "Oops", color: .systemGray)
         } else if !isShabbos && sender.tag == 0 {
             shakeAndShow()
-            //self.showToast(message: "Oops, \(currentNumber) is not Shabbos")
+            self.showToast(message: "Oops", color: .systemGray)
         }
     }
 

@@ -72,20 +72,23 @@ struct Const {
 
     struct Level {
         var numberRange: ClosedRange<Int>
-        var timerSeconds: Float
     }
 
-    static let shabbosLevels: [Level] = [
-        Level(numberRange: 1...030, timerSeconds: 60),
-        Level(numberRange: 1...035, timerSeconds: 60),
-        Level(numberRange: 1...050, timerSeconds: 50),
-        Level(numberRange: 1...060, timerSeconds: 45),
-        Level(numberRange: 1...060, timerSeconds: 30),
-        Level(numberRange: 1...080, timerSeconds: 30),
-        Level(numberRange: 1...080, timerSeconds: 25),
-        Level(numberRange: 1...090, timerSeconds: 25),
-        Level(numberRange: 1...090, timerSeconds: 20),
-        Level(numberRange: 1...100, timerSeconds: 20)
-    ]
+    static let pointsPerTap = 70
+    static let goal = 1000
+    static let timerSeconds: Float = 30
+
+    // WHAT IS X?
+    // X = seconds needed to reach goal
+    // goal = 1000 points               //1000
+    // seconds-a-tap = 3
+    // average pts a correct tap = 80
+    // avg accuracy a tap = 80%
+    // avg pts a tap = average per correct * accuracy
+    // X = goal / avg-pts-a-tap * seconds-a-tap
+    // X = 1000 / 64 * 3
+
+    static let shabbosLevelsCount = 100
+    static let rangeAddedPerLevel = 20
 
 }

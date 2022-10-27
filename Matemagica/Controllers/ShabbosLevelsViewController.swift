@@ -68,7 +68,7 @@ class ShabbosLevelsViewController: UITableViewController {
         }
         ud.removeObject(forKey: Const.levelIndexKey)
 
-        if restoredLevelIndex >= Const.shabbosLevels.count {
+        if restoredLevelIndex >= Const.shabbosLevelsCount {
             let alert = createAlert(alertReasonParam: .lastLevelCompleted, style: .alert)
             present(alert, animated: true)
             return false
@@ -92,7 +92,7 @@ class ShabbosLevelsViewController: UITableViewController {
     // MARK: Delegates
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Const.shabbosLevels.count
+        return Const.shabbosLevelsCount
     }
 
 
@@ -101,10 +101,10 @@ class ShabbosLevelsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
-        let myLevel = Const.shabbosLevels[indexPath.row]
-        cell.timerDurationLabel.text = "⏱️ Timer: \(Int(myLevel.timerSeconds)) seconds"
+        let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
+        cell.timerDurationLabel.text = "⏱️ Timer: \(Int(Const.timerSeconds)) seconds"
         cell.numbersRangeLabel.text = """
-        🧮 Numbers between \(myLevel.numberRange.first!) and \(myLevel.numberRange.last!)
+        🧮 Numbers between 1 and \(levelMaxNumber)
         """
 
         cell.fakeBackgroundView.backgroundColor = myThemeColor
@@ -118,9 +118,8 @@ class ShabbosLevelsViewController: UITableViewController {
         let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
             withIdentifier: Const.shabbosViewController) as! ShabbosViewController
         shabbosVC.levelNumberIndex = indexPath.row
-        let myLevel = Const.shabbosLevels[indexPath.row]
-        shabbosVC.timeInSeconds = myLevel.timerSeconds
-        shabbosVC.numbersRange = myLevel.numberRange
+        let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
+        shabbosVC.numbersRange = 1...levelMaxNumber
         shabbosVC.myThemeColor = myThemeColor
         self.navigationController!.pushViewController(shabbosVC, animated: true)
     }
