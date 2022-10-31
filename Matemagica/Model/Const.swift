@@ -48,22 +48,23 @@ struct Const {
          "title": "Shabbos",
          "id": "ShabbosViewController"],
 
-        ["icon": "plus.slash.minus",
+        ["icon": "dot.circle.viewfinder", // plus.slash.minus
          "color": UIColor.systemOrange,
          "title": "Guess it",
          "id": "FormulaViewController"],
 
-        ["icon": "arrow.up.arrow.down",
+        // arrow.up.arrow.down // arrow.triangle.swap // chart.line.uptrend.xyaxis
+        ["icon": "chart.line.uptrend.xyaxis",
          "color": UIColor.systemRed,
          "title": "Lower or higher",
          "id": "HigherLowerViewController"],
 
-        ["icon": "book",
+        ["icon": "magnifyingglass",
          "color": UIColor.systemMint,
          "title": "Spot it",
          "id": "BookViewController"],
 
-        ["icon": "wand.and.stars",
+        ["icon": "sparkles", // wand.and.stars
          "color": UIColor.systemGreen,
          "title": "Mystical 9",
          "id": "MagicViewController"]
