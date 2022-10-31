@@ -144,7 +144,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
 
         pageNumberLabel.text = """
-        Is your number in list #\(currentPageReal+1)?
+        Is your number in list \(currentPageReal+1) of \(pagesArrayOfDicts.count)?
         """
 
         currentPageDataSource = shuffledPagesByOrder[currentPageReal].value
