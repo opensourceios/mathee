@@ -118,15 +118,8 @@ class HigherLowerViewController: UIViewController {
             higherButton.isEnabled = false
         }
 
-        let tryTries = triesLeft == 1 ? "try" : "tries"
-
-        let triesLeftNumOrNone = triesLeft > 0 ? "\(triesLeft)" : "no"
-
         let myAttrString = attrifyString(
             preString: """
-
-
-            I have \(triesLeftNumOrNone) \(tryTries) left
 
             \(thinkKnow)
 
@@ -144,6 +137,7 @@ class HigherLowerViewController: UIViewController {
         let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne
         progressBar.setProgress(myProgress, animated: true)
     }
+
 
     func toggleButtons(enable: Bool) {
         for button in [lowerButton, higherButton] {
@@ -193,11 +187,12 @@ class HigherLowerViewController: UIViewController {
         Knew it all along
         """
 
+        let tryTries = Int(initialTriesPlusOne)-1-triesLeft == 1 ? "try" : "tries"
         let myAttrString = attrifyString(
             preString: """
 
 
-            Tries used: \(Int(initialTriesPlusOne)-1-triesLeft)
+            That took me \(Int(initialTriesPlusOne)-1-triesLeft) \(tryTries)
 
             \(thinkKnow)
 
