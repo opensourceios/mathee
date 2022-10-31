@@ -43,31 +43,33 @@ struct Const {
 
 
     static let dataSourceHome = [
-        ["icon": "7.circle",
-         "color": UIColor.systemPurple,
-         "title": "Shabbos",
-         "id": "ShabbosViewController"],
-
-        ["icon": "dot.circle.viewfinder", // plus.slash.minus
-         "color": UIColor.systemOrange,
-         "title": "Guess it",
-         "id": "FormulaViewController"],
-
-        // arrow.up.arrow.down // arrow.triangle.swap // chart.line.uptrend.xyaxis
-        ["icon": "chart.line.uptrend.xyaxis",
-         "color": UIColor.systemRed,
-         "title": "Lower or higher",
-         "id": "HigherLowerViewController"],
 
         ["icon": "magnifyingglass",
          "color": UIColor.systemMint,
          "title": "Spot it",
          "id": "BookViewController"],
 
+        ["icon": "dot.circle.viewfinder", // plus.slash.minus
+         "color": UIColor.systemOrange,
+         "title": "Guess it",
+         "id": "FormulaViewController"],
+
+        ["icon": "7.circle",
+         "color": UIColor.systemPurple,
+         "title": "Shabbos",
+         "id": "ShabbosViewController"],
+
         ["icon": "sparkles", // wand.and.stars
          "color": UIColor.systemGreen,
          "title": "Mystical 9",
-         "id": "MagicViewController"]
+         "id": "MagicViewController"],
+
+        // arrow.up.arrow.down // arrow.triangle.swap // chart.line.uptrend.xyaxis
+        ["icon": "chart.line.uptrend.xyaxis",
+         "color": UIColor.systemRed,
+         "title": "Lower or higher",
+         "id": "HigherLowerViewController"]
+
     ]
 
 
