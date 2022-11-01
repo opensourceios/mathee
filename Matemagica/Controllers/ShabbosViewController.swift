@@ -59,14 +59,6 @@ class ShabbosViewController: UIViewController {
         }
     }
 
-    /* TODO: todos
-     - Make tutorial an actual view with easy to read text..
-     - Ask for name and save "NAME completed LEVEL" to leaderboard
-     - Allow choosing different multiples? maybe separate game for that?
-     - Make spamming "no" not useful
-     - Lives that take time to regenerate, and if out of lives you have to wait
-     */
-
 
     // MARK: Life Cycle
 

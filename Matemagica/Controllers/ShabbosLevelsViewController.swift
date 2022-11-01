@@ -52,7 +52,7 @@ class ShabbosLevelsViewController: UITableViewController {
             return
         }
 
-        if !ud.bool(forKey: Const.optedOutOfShabbosHelp) {
+        if !ud.bool(forKey: Const.userSawShabbosTutorial) {
             showHelp()
         }
 
@@ -79,13 +79,13 @@ class ShabbosLevelsViewController: UITableViewController {
 
 
     @objc func showHelp() {
-        let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
-        let optOutAction = UIAlertAction(title: "Don't show again automatically", style: .default) { _ in
-            ud.set(true, forKey: Const.optedOutOfShabbosHelp)
-        }
-        alert.addAction(optOutAction)
-        alert.popoverPresentationController?.sourceView = helpButton
-        present(alert, animated: true)
+        // TODO: present tutorial vc
+
+        let tutorialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
+                withIdentifier: Const.shabbosTutorialViewController)
+        as! ShabbosTutorialViewController
+
+        present(tutorialVC, animated: true)
     }
 
 

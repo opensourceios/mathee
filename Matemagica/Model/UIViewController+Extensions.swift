@@ -65,7 +65,6 @@ extension UIViewController {
         case unknown
         case textfieldEmpty
         case nan
-        case shabbosInstructions
         case lastLevelCompleted
         case timeIsUp
     }
@@ -83,21 +82,6 @@ extension UIViewController {
                 alertTitle = "Please enter numbers only"
                 alertMessage = """
                 Highest number allowed: \(UInt64.max/4)
-                """
-            case .shabbosInstructions:
-                alertTitle = "How To Play"
-                alertMessage = """
-
-                Hello! Is it Shabbos yet?
-
-                - Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope".
-
-                - The goal is to reach \(Const.goal) points in \(Int(Const.timerSeconds)) \
-                seconds.
-
-                - How many levels can you complete?
-
-                (Tap "Help" on the top right of this page to see this message again later)
                 """
             case .lastLevelCompleted:
                 alertTitle = "👑 WOW! You did it! 🎉"

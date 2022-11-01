@@ -28,11 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 if CommandLine.arguments.contains("--matemagicaScreenshots") {
                     // We are in testing mode, make arrangements
-                    ud.set(true, forKey: Const.optedOutOfShabbosHelp)
+                    ud.set(true, forKey: Const.userSawShabbosTutorial)
                 }
 
                 ud.register(defaults: [
-                    Const.optedOutOfShabbosHelp: false
+                    Const.userSawShabbosTutorial: false
                 ])
 
                 return true

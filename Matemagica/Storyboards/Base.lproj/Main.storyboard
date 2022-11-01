@@ -408,7 +408,7 @@ Prepare to be amazed.</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-At-lBj">
-                                                    <rect key="frame" x="-8" y="11.666666666666671" width="80" height="40.666666666666657"/>
+                                                    <rect key="frame" x="-8" y="11.666666666666668" width="80" height="40.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -679,11 +679,74 @@ Let me ask you a few questions...</string>
             </objects>
             <point key="canvasLocation" x="1370.625" y="1263.3802816901409"/>
         </scene>
+        <!--Shabbos Tutorial View Controller-->
+        <scene sceneID="MgJ-vh-lNj">
+            <objects>
+                <viewController storyboardIdentifier="ShabbosTutorialViewController" id="QEw-JE-PA3" customClass="ShabbosTutorialViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6L-SD-wLA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How To Play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cle-pQ-en9">
+                                <rect key="frame" x="16" y="63" width="178" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5o-tg-gC1">
+                                <rect key="frame" x="16" y="136" width="343" height="539.33333333333337"/>
+                                <string key="text">Hello! Is it Shabbos yet?
+
+- Tap "Shabbos" if the shown number is a multiple of 7, otherwise tap "Nope".
+
+- The goal is to reach 1000 points in 30 seconds.
+
+- How many levels can you complete?
+
+(Tap "Help" on the top right of the Shabbos Levels page to see this message again later)</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSa-7w-t96">
+                                <rect key="frame" x="195.66666666666663" y="707.33333333333337" width="163.33333333333337" height="54.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="OK">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="hidePressed:" destination="QEw-JE-PA3" eventType="touchUpInside" id="CPX-l1-Ljz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bMB-xI-l5o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YSa-7w-t96" firstAttribute="leading" secondItem="bMB-xI-l5o" secondAttribute="centerX" constant="8" id="4sW-1W-RU8"/>
+                            <constraint firstItem="L5o-tg-gC1" firstAttribute="leading" secondItem="bMB-xI-l5o" secondAttribute="leading" constant="16" id="5VW-DD-kUx"/>
+                            <constraint firstItem="cle-pQ-en9" firstAttribute="top" secondItem="bMB-xI-l5o" secondAttribute="top" constant="16" id="6mt-xV-Bi1"/>
+                            <constraint firstItem="bMB-xI-l5o" firstAttribute="trailing" secondItem="L5o-tg-gC1" secondAttribute="trailing" constant="16" id="INJ-Vp-hiC"/>
+                            <constraint firstItem="YSa-7w-t96" firstAttribute="top" secondItem="L5o-tg-gC1" secondAttribute="bottom" constant="32" id="Km0-jv-aDn"/>
+                            <constraint firstItem="bMB-xI-l5o" firstAttribute="trailing" secondItem="YSa-7w-t96" secondAttribute="trailing" constant="16" id="MRK-pI-xCf"/>
+                            <constraint firstItem="YSa-7w-t96" firstAttribute="bottom" secondItem="bMB-xI-l5o" secondAttribute="bottom" constant="-16" id="Rq3-VQ-leo"/>
+                            <constraint firstItem="bMB-xI-l5o" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cle-pQ-en9" secondAttribute="trailing" constant="16" id="Z5L-7X-R4F"/>
+                            <constraint firstItem="L5o-tg-gC1" firstAttribute="top" secondItem="cle-pQ-en9" secondAttribute="bottom" constant="32" id="v3M-7I-gkc"/>
+                            <constraint firstItem="cle-pQ-en9" firstAttribute="leading" secondItem="bMB-xI-l5o" secondAttribute="leading" constant="16" id="yKE-gr-pjX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hz0-hk-y5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300" y="3579"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <image name="questionmark.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
