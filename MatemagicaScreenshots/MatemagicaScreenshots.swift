@@ -38,9 +38,8 @@ class MatemagicaScreenshots: XCTestCase {
             case "Shabbos":
                 XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "Shabbos-levels")
-                app.swipeUp()
-                XCTAssertTrue(app.staticTexts["⭐️ Level 10"].firstMatch.waitForExistence(timeout: 5))
-                app.staticTexts["⭐️ Level 10"].firstMatch.tap()
+                XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch.waitForExistence(timeout: 5))
+                app.staticTexts["⭐️ Level 2"].firstMatch.tap()
                 for _ in 0...4 {
                     XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
                     app.buttons["Nope"].firstMatch.tap()

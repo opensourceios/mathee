@@ -15,5 +15,4 @@ class ShabbosTutorialViewController: UIViewController {
         dismiss(animated: true)
     }
 
-
 }
