@@ -80,7 +80,7 @@ class ShabbosLevelsViewController: UITableViewController {
 
     @objc func showHelp() {
         let alert = createAlert(alertReasonParam: .shabbosInstructions, style: .actionSheet)
-        let optOutAction = UIAlertAction(title: "Don't show this again", style: .default) { _ in
+        let optOutAction = UIAlertAction(title: "Don't show again automatically", style: .default) { _ in
             ud.set(true, forKey: Const.optedOutOfShabbosHelp)
         }
         alert.addAction(optOutAction)
