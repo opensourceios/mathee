@@ -79,7 +79,6 @@ class ShabbosLevelsViewController: UITableViewController {
 
 
     @objc func showHelp() {
-        // TODO: present tutorial vc
 
         let tutorialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
                 withIdentifier: Const.shabbosTutorialViewController)
