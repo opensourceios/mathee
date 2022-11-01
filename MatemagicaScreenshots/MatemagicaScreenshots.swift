@@ -37,14 +37,14 @@ class MatemagicaScreenshots: XCTestCase {
         switch word {
             case "Shabbos":
                 XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch.waitForExistence(timeout: 5))
-                takeScreenshot(named: "Shabbos-levels")
+                takeScreenshot(named: "2-Shabbos-levels")
                 XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch.waitForExistence(timeout: 5))
                 app.staticTexts["⭐️ Level 2"].firstMatch.tap()
                 for _ in 0...4 {
                     XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
                     app.buttons["Nope"].firstMatch.tap()
                 }
-                takeScreenshot(named: "Shabbos-game-middle")
+                takeScreenshot(named: "3-Shabbos-game-middle")
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 25))
                 app.buttons["OK"].firstMatch.tap()
 
@@ -53,9 +53,9 @@ class MatemagicaScreenshots: XCTestCase {
                 app.buttons["Math Magic"].firstMatch.tap()
             case "Guess it":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
-                takeScreenshot(named: "Guess-it-think")
+                takeScreenshot(named: "4-Guess-it-think")
                 app.buttons["OK"].firstMatch.tap()
-                takeScreenshot(named: "Guess-it-multiply")
+                takeScreenshot(named: "5-Guess-it-multiply")
                 app.buttons["OK"].firstMatch.tap()
                 app.buttons["Even"].firstMatch.tap()
                 app.buttons["OK"].firstMatch.tap() // /2 1
@@ -65,7 +65,7 @@ class MatemagicaScreenshots: XCTestCase {
                 app.buttons["OK"].firstMatch.tap() // /2 2
                 app.textFields.firstMatch.typeText("6")
                 app.buttons["Guess my number"].firstMatch.tap()
-                takeScreenshot(named: "Guess-it-result")
+                takeScreenshot(named: "6-Guess-it-result")
                 app.buttons["Done"].firstMatch.tap()
             case "Spot it":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
@@ -73,7 +73,7 @@ class MatemagicaScreenshots: XCTestCase {
                 app.buttons["Yes"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
-                takeScreenshot(named: "Spot-it")
+                takeScreenshot(named: "1-Spot-it")
                 app.buttons["Math Magic"].firstMatch.tap()
             default:
                 fatalError()
@@ -85,7 +85,7 @@ class MatemagicaScreenshots: XCTestCase {
         app.launch()
 
         // Home
-        takeScreenshot(named: "Home")
+        takeScreenshot(named: "7-Home")
 
         for aItem in aList {
             anAction(word: aItem)
