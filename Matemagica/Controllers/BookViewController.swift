@@ -223,7 +223,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         cell.myLabel.text = "\(currentPageDataSource[indexPath.row])"
         cell.backgroundColor = colorsArray[currentPageReal]
-        cell.myLabel.textColor = UIColor.systemBackground
+        cell.myLabel.textColor = .white
         cell.layer.cornerRadius = cell.frame.size.width / 2
 
         return cell
