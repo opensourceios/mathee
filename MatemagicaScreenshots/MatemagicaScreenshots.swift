@@ -44,6 +44,8 @@ class MatemagicaScreenshots: XCTestCase {
                     XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
                     app.buttons["Nope"].firstMatch.tap()
                 }
+                XCTAssertTrue(app.buttons["Shabbos"].firstMatch.waitForExistence(timeout: 5))
+                XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "3-Shabbos-game-middle")
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 25))
                 app.buttons["OK"].firstMatch.tap()
