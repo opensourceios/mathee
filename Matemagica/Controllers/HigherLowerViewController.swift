@@ -63,7 +63,7 @@ class HigherLowerViewController: UIViewController {
 
         I *will* guess it, and in \(triesLeft) tries - or less
         """
-        toggleButtons(enable: false)
+        setButtonsUsable(false)
     }
 
 
@@ -82,7 +82,7 @@ class HigherLowerViewController: UIViewController {
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(correctPressed), for: .touchUpInside)
         correctButton.setTitleNew(Const.correctMessage)
-        toggleButtons(enable: true)
+        setButtonsUsable(true)
     }
 
 
@@ -113,9 +113,9 @@ class HigherLowerViewController: UIViewController {
         }
 
         if guess == myArray.first! {
-            lowerButton.isEnabled = false
+            lowerButton.isHidden = true
         } else if guess == myArray.last! {
-            higherButton.isEnabled = false
+            higherButton.isHidden = true
         }
 
         let myAttrString = attrifyString(
@@ -139,9 +139,9 @@ class HigherLowerViewController: UIViewController {
     }
 
 
-    func toggleButtons(enable: Bool) {
+    func setButtonsUsable(_ enable: Bool) {
         for button in [lowerButton, higherButton] {
-            button?.isEnabled = enable
+            button?.isHidden = !enable
             if enable {
                 button?.doGlowAnimation(withColor: myThemeColor)
             } else {
@@ -152,7 +152,7 @@ class HigherLowerViewController: UIViewController {
 
 
     func weKnow(localGuess: Int) {
-        toggleButtons(enable: false)
+        setButtonsUsable(false)
         guess = localGuess
         thinkKnow = """
         \(knowEmojis.randomElement()!)
@@ -181,7 +181,7 @@ class HigherLowerViewController: UIViewController {
         correctButton.removeTarget(nil, action: nil, for: .allEvents)
         correctButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         correctButton.setTitleNew(Const.doneMessage)
-        toggleButtons(enable: false)
+        setButtonsUsable(false)
         thinkKnow = """
         \(knowEmojis.randomElement()!)
         Knew it all along
@@ -209,8 +209,7 @@ class HigherLowerViewController: UIViewController {
         Your number was: \(guess).
         """
 
-        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne
-        progressBar.setProgress(myProgress, animated: true)
+        progressBar.setProgress(1.0, animated: true)
     }
 
 

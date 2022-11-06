@@ -26,7 +26,7 @@ class MagicViewController: UIViewController {
     var myTitle: String!
     var myThemeColor: UIColor!
 
-    let progressFractions: Float = 9
+    let progressFractions: Float = 10
 
 
     // MARK: Life Cicle
@@ -61,7 +61,7 @@ class MagicViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        progressBar.setProgress(1/progressFractions, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/progressFractions), animated: true)
         middleButton.doGlowAnimation(withColor: myThemeColor)
     }
 
@@ -78,7 +78,7 @@ class MagicViewController: UIViewController {
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(combineFirst), for: .touchUpInside)
         middleButton.setTitleNew(Const.okMessage)
-        progressBar.setProgress(2/progressFractions, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/progressFractions), animated: true)
     }
 
 
@@ -94,7 +94,7 @@ class MagicViewController: UIViewController {
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(subtract), for: .touchUpInside)
         middleButton.setTitleNew(Const.okMessage)
-        progressBar.setProgress(3/progressFractions, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/progressFractions), animated: true)
     }
 
 
@@ -108,7 +108,7 @@ class MagicViewController: UIViewController {
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(checkFirst), for: .touchUpInside)
         middleButton.setTitleNew(Const.okMessage)
-        progressBar.setProgress(4/progressFractions, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/progressFractions), animated: true)
     }
 
 
@@ -129,7 +129,7 @@ class MagicViewController: UIViewController {
         rightButton.addTarget(self, action: #selector(showResultFirst), for: .touchUpInside)
         rightButton.setTitleNew(Const.yesMessage)
         leftButton.setTitleNew(Const.noMessage)
-        progressBar.setProgress(5/progressFractions, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/progressFractions), animated: true)
 
     }
 
@@ -150,7 +150,7 @@ class MagicViewController: UIViewController {
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(checkForever), for: .touchUpInside)
         middleButton.setTitleNew(Const.okMessage)
-        progressBar.setProgress(6/progressFractions, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/progressFractions), animated: true)
     }
 
 

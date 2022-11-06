@@ -54,6 +54,8 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var userNumber = 0
     var currentPageReal = 0
 
+    var stepsForProgress: Float = 0
+
     var currentPageDataSource: [Int] = []
 
     var myThemeColor: UIColor!
@@ -101,7 +103,9 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         """
         myCollectionView.isHidden = true
 
-        progressBar.setProgress(0, animated: false)
+        stepsForProgress = Float(pagesArrayOfDicts.count) + 1
+
+        progressBar.setProgress(0.0, animated: false)
 
     }
 
@@ -125,7 +129,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        progressBar.setProgress(1/8, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
     }
 
 
@@ -166,7 +170,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         rightButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
-        progressBar.setProgress(progressBar.progress+1/8, animated: true)
+        progressBar.setProgress(progressBar.progress+1.0/(Float(pagesArrayOfDicts.count)+2), animated: true)
     }
 
 
@@ -198,7 +202,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         middleButton.setTitleNew(Const.correctMessage)
         middleButton.sizeToFit()
-        progressBar.setProgress(1, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
     }
 
 

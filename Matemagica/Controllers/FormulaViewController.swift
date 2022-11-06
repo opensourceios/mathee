@@ -35,6 +35,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     var dispatchWorkItem: DispatchWorkItem?
 
     var hasShownHelpButton = false
+    var stepsForProgress: Float = 0
+
 
     // MARK: Life Cycle
 
@@ -60,6 +62,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myTextField.delegate = self
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
+        stepsForProgress = 11
         progressBar.setProgress(0.0, animated: false)
         start()
     }
@@ -67,7 +70,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        progressBar.setProgress(0.1, animated: true)
+        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         rightButton.doGlowAnimation(withColor: myThemeColor)
 
     }
@@ -132,9 +135,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(oddOrEven), for: .touchUpInside)
         if isBeforeFirstEvenQuestion {
-            progressBar.setProgress(0.2, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         } else {
-            progressBar.setProgress(0.6, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         }
     }
 
@@ -150,9 +153,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
         if isBeforeFirstEvenQuestion {
-            progressBar.setProgress(0.3, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         } else {
-            progressBar.setProgress(0.7, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         }
 
     }
@@ -168,10 +171,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         if isBeforeFirstEvenQuestion {
             total += 1
-            progressBar.setProgress(0.4, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         } else {
             total += 2
-            progressBar.setProgress(0.8, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         }
     }
 
@@ -184,12 +187,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
             isBeforeFirstEvenQuestion = false
-            progressBar.setProgress(0.5, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         } else {
             rightButton.setTitleNew(Const.okMessage)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
-            progressBar.setProgress(0.9, animated: true)
+            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         }
 
     }
@@ -209,6 +212,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         someOnClickButtonStart()
 
         myTextField.becomeFirstResponder()
+        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
     }
 
 
