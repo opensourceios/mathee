@@ -98,7 +98,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         if endFrameY >= UIScreen.main.bounds.size.height {
             self.textfieldBottomConstraint.constant = 0.0
         } else {
-            self.textfieldBottomConstraint.constant = endFrame?.size.height ?? 0.0
+            self.textfieldBottomConstraint.constant = (endFrame?.size.height ?? 0.0) + 16
         }
 
         UIView.animate(
@@ -225,12 +225,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
                                   options: .transitionCrossDissolve,
                                   animations: {
                     self.infoButton.isHidden = false
-                    self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
+                    //self.infoButton.doGlowAnimation(withColor: self.myThemeColor)
                     self.hasShownHelpButton = true
                 })
             }
         }
-        let seconds = hasShownHelpButton ? 0 : 6
+        let seconds = hasShownHelpButton ? 0 : 4
         if self.dispatchWorkItem != nil {
             self.dispatchQueue?.asyncAfter(
                 deadline: .now() + .seconds(seconds),

@@ -591,7 +591,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="181.66666666666666" width="343" height="74"/>
+                                <rect key="frame" x="16" y="187.66666666666666" width="343" height="73.999999999999972"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -600,7 +600,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="43.333333333333343" y="287.66666666666669" width="288.66666666666663" height="54.666666666666686"/>
+                                <rect key="frame" x="43.333333333333343" y="293.66666666666669" width="288.66666666666663" height="54.666666666666686"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="OK"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guess my number" titleAlignment="center">
@@ -625,7 +625,7 @@ Let me ask you a few questions...</string>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Ch-xgj">
-                                <rect key="frame" x="168.66666666666663" y="63" width="190.33333333333337" height="54.666666666666657"/>
+                                <rect key="frame" x="168.66666666666663" y="69" width="190.33333333333337" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Need help?" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
@@ -652,7 +652,7 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="o2w-9r-YZZ" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="2" id="arX-x5-44K"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="o2w-9r-YZZ" secondAttribute="trailing" constant="16" id="bpO-dC-wf1"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Cv8-aF-RC8" secondAttribute="bottom" constant="16" id="eKR-g4-vg8"/>
-                            <constraint firstItem="aeV-Ch-xgj" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="h39-z3-Rsm"/>
+                            <constraint firstItem="aeV-Ch-xgj" firstAttribute="top" secondItem="o2w-9r-YZZ" secondAttribute="bottom" constant="16" id="h39-z3-Rsm"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="aeV-Ch-xgj" secondAttribute="trailing" constant="16" id="jHL-FI-Tmr"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Nph-Lq-4xz" secondAttribute="bottom" constant="16" id="jcD-Ng-Pcc"/>
                             <constraint firstItem="o2w-9r-YZZ" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="lxX-DS-DDJ"/>
@@ -741,9 +741,9 @@ Let me ask you a few questions...</string>
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis.circle" catalog="system" width="32" height="32"/>
-        <image name="info.circle" catalog="system" width="32" height="32"/>
-        <image name="questionmark.circle" catalog="system" width="32" height="32"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
