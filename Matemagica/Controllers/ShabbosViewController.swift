@@ -59,6 +59,11 @@ class ShabbosViewController: UIViewController {
         }
     }
 
+    // TODO: reaching 1000 points ends level right away with win
+    // TODO: making N mistakes ends level right away with loss
+    // TODO: on time up, 1000 or more points wins, less loses
+    // TODO: mark won levels differently on levels home page
+
 
     // MARK: Life Cycle
 
