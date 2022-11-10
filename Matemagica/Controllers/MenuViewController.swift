@@ -190,7 +190,10 @@ class MenuViewController: UIViewController,
                 return
             }
         }
-        present(activityController, animated: true)
+        DispatchQueue.main.async {
+            self.present(activityController, animated: true)
+        }
+
     }
 
 
