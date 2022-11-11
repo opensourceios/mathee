@@ -71,9 +71,7 @@ class ShabbosViewController: UIViewController {
         case pointsReached
     }
 
-    // TODO: reaching 1000 points ends level right away with win
     // TODO: making N mistakes ends level right away with loss
-    // TODO: on time up, 1000 or more points wins, less loses
     // TODO: mark won levels differently on levels home page
 
 
@@ -230,29 +228,22 @@ class ShabbosViewController: UIViewController {
 
 
     func endGameWith(reason: GameEndReason) {
-        // TODO: determine if win, loss, points reached, lives over, and show alert for it
         self.toggleUI(enable: false)
         self.killGameTimer()
 
         var alert: UIAlertController!
 
-        let userDidWin = score >= 1000
-
         switch reason {
             case .timeUp:
-                if userDidWin {
-                    alert = createAlert(alertReasonParam: .timeIsUpWin, style: .alert)
-                } else {
-                    alert = createAlert(alertReasonParam: .timeIsUpLoss, style: .alert, points: score)
-                }
+                alert = createAlert(alertReasonParam: .timeUp, points: score)
             case .livesUp:
-                alert = createAlert(alertReasonParam: .livesUp, style: .alert, points: score)
+                alert = createAlert(alertReasonParam: .livesUp, points: score)
             case .pointsReached:
-                guard userDidWin else {
-                    fatalError()
-                }
-                alert = createAlert(alertReasonParam: .pointsReached, style: .alert,
-                                    levelIndex: levelNumberIndex, secondsLeft: Int(runsLeft))
+                alert = createAlert(alertReasonParam: .pointsReached,
+                                    levelIndex: levelNumberIndex,
+                                    secondsLeft: Int(runsLeft),
+                                    livesLeft: 100) // TODO: use actual lives left
+                // TODO: save to ud if level won, for levels page
         }
 
         DispatchQueue.main.async { [self] in
@@ -270,7 +261,6 @@ class ShabbosViewController: UIViewController {
             scoreLabel.isHidden = true
             gameOverPlayAgainButton.isHidden = false
             gameOverNextLevelButton.isHidden = false
-            // TODO: save to ud if level won, for levels page
         }
     }
 

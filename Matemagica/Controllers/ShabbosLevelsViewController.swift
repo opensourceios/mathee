@@ -71,7 +71,7 @@ class ShabbosLevelsViewController: UITableViewController {
         ud.removeObject(forKey: Const.levelIndexKey)
 
         if restoredLevelIndex >= Const.shabbosLevelsCount {
-            let alert = createAlert(alertReasonParam: .lastLevelCompleted, style: .alert)
+            let alert = createAlert(alertReasonParam: .lastLevelCompleted)
             present(alert, animated: true)
             return false
         }

@@ -66,16 +66,15 @@ extension UIViewController {
         case textfieldEmpty
         case nan
         case lastLevelCompleted
-        case timeIsUpWin
-        case timeIsUpLoss
+        case timeUp
         case livesUp
         case pointsReached
     }
 
 
-    func createAlert(alertReasonParam: AlertReason, style: UIAlertController.Style,
+    func createAlert(alertReasonParam: AlertReason,
                      levelIndex: Int = 0, points: Int = 0,
-                     secondsLeft: Int = 0) -> UIAlertController {
+                     secondsLeft: Int = 0, livesLeft: Int = 0) -> UIAlertController {
 
         var alertTitle = ""
         var alertMessage = ""
@@ -93,16 +92,11 @@ extension UIViewController {
                 alertMessage = """
                 You have completed all \(Const.shabbosLevelsCount) levels!
                 """
-            case .timeIsUpLoss:
+            case .timeUp:
                 alertTitle = "⏰ Game Over ⏰"
                 alertMessage = """
                 You reached \(points) points. Reach 1000 points to complete this level. \
                 Try again!
-                """
-            case .timeIsUpWin:
-                alertTitle = "🎉 You Won! 🎊"
-                alertMessage = """
-                You reached 1000 points and successfully completed level \(levelIndex+1)
                 """
             case .livesUp:
                 alertTitle = "❤️ Game Over ❤️"
@@ -111,9 +105,12 @@ extension UIViewController {
                 """
             case .pointsReached:
                 alertTitle = "🎉 You Won! 🎊"
+                let secondSeconds = secondsLeft == 1 ? "second" : "seconds"
+                let lifeLives = livesLeft == 1 ? "life" : "lives"
                 alertMessage = """
                 You reached 1000 points and successfully completed level \(levelIndex+1) \
-                with \(secondsLeft) seconds to spare!
+                with \(secondsLeft) \(secondSeconds) to spare, and \(livesLeft) \
+                \(lifeLives) left!
                 """
             default:
                 alertTitle = "Unknown error"
@@ -122,7 +119,7 @@ extension UIViewController {
             """
         }
 
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: style)
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             if let safeSelf = self as? FormulaViewController {
                 safeSelf.myTextField.becomeFirstResponder()
