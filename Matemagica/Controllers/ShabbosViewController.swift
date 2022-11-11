@@ -242,7 +242,7 @@ class ShabbosViewController: UIViewController {
                 alert = createAlert(alertReasonParam: .pointsReached,
                                     levelIndex: levelNumberIndex,
                                     secondsLeft: Int(runsLeft),
-                                    livesLeft: 100) // TODO: use actual lives left
+                                    livesLeft: 2345) // TODO: use actual lives left
                 // TODO: save to ud if level won, for levels page
         }
 
