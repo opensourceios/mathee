@@ -66,11 +66,16 @@ extension UIViewController {
         case textfieldEmpty
         case nan
         case lastLevelCompleted
-        case timeIsUp
+        case timeIsUpWin
+        case timeIsUpLoss
+        case livesUp
+        case pointsReached
     }
 
 
-    func createAlert(alertReasonParam: AlertReason, style: UIAlertController.Style) -> UIAlertController {
+    func createAlert(alertReasonParam: AlertReason, style: UIAlertController.Style,
+                     levelIndex: Int = 0, points: Int = 0,
+                     secondsLeft: Int = 0) -> UIAlertController {
 
         var alertTitle = ""
         var alertMessage = ""
@@ -88,9 +93,28 @@ extension UIViewController {
                 alertMessage = """
                 You have completed all \(Const.shabbosLevelsCount) levels!
                 """
-            case .timeIsUp:
-                alertTitle = "🏁🏁 Time is up 🏁🏁"
-                alertMessage = ""
+            case .timeIsUpLoss:
+                alertTitle = "⏰ Game Over ⏰"
+                alertMessage = """
+                You reached \(points) points. Reach 1000 points to complete this level. \
+                Try again!
+                """
+            case .timeIsUpWin:
+                alertTitle = "🎉 You Won! 🎊"
+                alertMessage = """
+                You reached 1000 points and successfully completed level \(levelIndex+1)
+                """
+            case .livesUp:
+                alertTitle = "❤️ Game Over ❤️"
+                alertMessage = """
+                You ran out of lives. You reached \(points) points. Try again!
+                """
+            case .pointsReached:
+                alertTitle = "🎉 You Won! 🎊"
+                alertMessage = """
+                You reached 1000 points and successfully completed level \(levelIndex+1) \
+                with \(secondsLeft) seconds to spare!
+                """
             default:
                 alertTitle = "Unknown error"
                 alertMessage = """

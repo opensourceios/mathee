@@ -44,6 +44,8 @@ class MenuViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+
         navigationItem.largeTitleDisplayMode = .always
         navigationController!.navigationBar.prefersLargeTitles = true
         setThemeColorTo(myThemeColor: myThemeColor)

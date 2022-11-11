@@ -55,8 +55,20 @@ class ShabbosViewController: UIViewController {
     var levelNumberIndex: Int!
     var score = 0 {
         didSet {
+            guard score < 1000 else {
+                endGameWith(reason: .pointsReached)
+                return
+            }
             scoreLabel.countAnimation(upto: Double(score))
         }
+    }
+
+    var runsLeft: Float = Const.timerSeconds
+
+    enum GameEndReason {
+        case timeUp
+        case livesUp
+        case pointsReached
     }
 
     // TODO: reaching 1000 points ends level right away with win
@@ -90,6 +102,8 @@ class ShabbosViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 
         shabbosButton.doGlowAnimation(withColor: myThemeColor)
         //        notShabbosButton.doGlowAnimation(withColor: myThemeColor)
@@ -138,27 +152,28 @@ class ShabbosViewController: UIViewController {
     }
 
 
+    func killGameTimer() {
+        myGameTimer.invalidate()
+        myGameTimer = nil
+    }
+
+
     func startGameTimer() {
         toggleUI(enable: true)
 
         let totalRuns: Float = Const.timerSeconds
-        var runsLeft: Float = Const.timerSeconds
 
-        myGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        myGameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
 
-            runsLeft -= 1
-            self.timerProgress.setProgress(runsLeft/totalRuns, animated: true)
-            let preStr = Int(runsLeft) < 10 ? "00:0" : "00:"
-            self.timerLabel.text = "\(self.timeLeftPre)\(preStr)\(Int(runsLeft))"
-            if runsLeft <= 10 {
+            self.runsLeft -= 1
+            self.timerProgress.setProgress(self.runsLeft/totalRuns, animated: true)
+            let preStr = Int(self.runsLeft) < 10 ? "00:0" : "00:"
+            self.timerLabel.text = "\(self.timeLeftPre)\(preStr)\(Int(self.runsLeft))"
+            if self.runsLeft <= 10 {
                 self.timerLabel.textColor = .red
             }
-            if runsLeft == 0 {
-                self.toggleUI(enable: false)
-                timer.invalidate()
-                self.myGameTimer.invalidate()
-                self.myGameTimer = nil
-                self.gameOver()
+            if self.runsLeft == 0 {
+                self.endGameWith(reason: .timeUp)
             }
         }
 
@@ -214,9 +229,33 @@ class ShabbosViewController: UIViewController {
     }
 
 
-    func gameOver() {
+    func endGameWith(reason: GameEndReason) {
+        // TODO: determine if win, loss, points reached, lives over, and show alert for it
+        self.toggleUI(enable: false)
+        self.killGameTimer()
+
+        var alert: UIAlertController!
+
+        let userDidWin = score >= 1000
+
+        switch reason {
+            case .timeUp:
+                if userDidWin {
+                    alert = createAlert(alertReasonParam: .timeIsUpWin, style: .alert)
+                } else {
+                    alert = createAlert(alertReasonParam: .timeIsUpLoss, style: .alert, points: score)
+                }
+            case .livesUp:
+                alert = createAlert(alertReasonParam: .livesUp, style: .alert, points: score)
+            case .pointsReached:
+                guard userDidWin else {
+                    fatalError()
+                }
+                alert = createAlert(alertReasonParam: .pointsReached, style: .alert,
+                                    levelIndex: levelNumberIndex, secondsLeft: Int(runsLeft))
+        }
+
         DispatchQueue.main.async { [self] in
-            let alert = createAlert(alertReasonParam: .timeIsUp, style: .alert)
             present(alert, animated: true)
             timerLabel.isHidden = true
             timerLabel.textColor = .label
@@ -231,6 +270,7 @@ class ShabbosViewController: UIViewController {
             scoreLabel.isHidden = true
             gameOverPlayAgainButton.isHidden = false
             gameOverNextLevelButton.isHidden = false
+            // TODO: save to ud if level won, for levels page
         }
     }
 

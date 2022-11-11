@@ -47,6 +47,8 @@ class ShabbosLevelsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+
         let shouldShowHelp = restoreAndShouldShowHelp()
         guard shouldShowHelp else {
             return
