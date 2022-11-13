@@ -114,7 +114,7 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
         if completedLevelsArray.contains(indexPath.row) {
-            cell.levelNumberLabel.text?.append(" DONE")
+            cell.levelNumberLabel.text?.append(" ✅")
         }
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
         cell.numbersRangeLabel.text = """

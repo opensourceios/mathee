@@ -65,7 +65,7 @@ class ShabbosViewController: UIViewController {
         }
     }
 
-    var livesLeft = 4
+    var livesLeft = 3
 
     var runsLeft: Float = Const.timerSeconds
 
@@ -74,8 +74,6 @@ class ShabbosViewController: UIViewController {
         case livesUp
         case pointsReached
     }
-
-    // TODO: mark won levels differently on levels home page
 
 
     // MARK: Life Cycle
@@ -266,7 +264,7 @@ class ShabbosViewController: UIViewController {
                     completedLevelsArray.append("\(levelNumberIndex!)")
                     completedLevelsString = completedLevelsArray.joined(separator: ",")
                     ud.set(completedLevelsString, forKey: Const.completedShabbosLevels)
-                    remoteDelegate?.reload()
+                    remoteDelegate!.reload()
                 }
         }
 
