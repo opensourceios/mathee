@@ -233,7 +233,6 @@ class ShabbosViewController: UIViewController {
 
     func removeALife() {
         livesLeft-=1
-        // TODO: animate loss of heart
         livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
         guard livesLeft > 0 else {
             endGameWith(reason: .livesUp)
