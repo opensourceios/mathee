@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
 
                 ud.register(defaults: [
-                    Const.userSawShabbosTutorial: false
+                    Const.userSawShabbosTutorial: false,
+                    Const.completedShabbosLevels: ""
                 ])
 
                 return true

@@ -36,6 +36,7 @@ struct Const {
     static let shabbosLevelCell = "levelCell"
     static let userSawShabbosTutorial = "userSawShabbosTutorial"
     static let levelIndexKey = "levelIndexKey"
+    static let completedShabbosLevels = "completedShabbosLevels"
 
 
     static let dataSourceHome = [

@@ -95,13 +95,16 @@ extension UIViewController {
             case .timeUp:
                 alertTitle = "⏰ Game Over ⏰"
                 alertMessage = """
-                You reached \(points) points. Reach 1000 points to complete this level. \
+                You reached \(points) points.
+                Reach 1000 points to complete this level.
                 Try again!
                 """
             case .livesUp:
-                alertTitle = "❤️ Game Over ❤️"
+                alertTitle = "💔 Game Over 💔"
                 alertMessage = """
-                You ran out of lives. You reached \(points) points. Try again!
+                You ran out of lives.
+                You reached \(points) points.
+                Try again!
                 """
             case .pointsReached:
                 alertTitle = "🎉 You Won! 🎊"

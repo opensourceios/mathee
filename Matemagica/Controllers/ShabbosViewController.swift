@@ -20,12 +20,14 @@ class ShabbosViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
-
+    @IBOutlet weak var livesLeftLabel: UILabel!
     @IBOutlet weak var gameOverNextLevelButton: UIButton!
     @IBOutlet weak var gameOverPlayAgainButton: UIButton!
 
 
     // MARK: Properties
+
+    weak var remoteDelegate: RemoteTableReloadDelegate?
 
     let timeLeftPre = "Time left: "
     let correctMessages = [
@@ -63,6 +65,8 @@ class ShabbosViewController: UIViewController {
         }
     }
 
+    var livesLeft = 4
+
     var runsLeft: Float = Const.timerSeconds
 
     enum GameEndReason {
@@ -71,7 +75,6 @@ class ShabbosViewController: UIViewController {
         case pointsReached
     }
 
-    // TODO: making N mistakes ends level right away with loss
     // TODO: mark won levels differently on levels home page
 
 
@@ -88,6 +91,7 @@ class ShabbosViewController: UIViewController {
         self.title = "Shabbos: Level \(levelNumberIndex+1)"
         numberLabel.text = " "
         scoreLabel.text = "Score: 0"
+        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
         setThemeColorTo(myThemeColor: myThemeColor)
         timerProgress.progress = 0
         toggleUI(enable: false)
@@ -218,11 +222,24 @@ class ShabbosViewController: UIViewController {
             score += Const.pointsPerTap
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
+            removeALife()
             shakeAndShow()
             self.showToast(message: "Oops", color: .systemGray)
         } else if !isShabbos && sender.tag == 0 {
+            removeALife()
             shakeAndShow()
             self.showToast(message: "Oops", color: .systemGray)
+        }
+    }
+
+
+    func removeALife() {
+        livesLeft-=1
+        // TODO: animate loss of heart
+        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
+        guard livesLeft > 0 else {
+            endGameWith(reason: .livesUp)
+            return
         }
     }
 
@@ -242,8 +259,15 @@ class ShabbosViewController: UIViewController {
                 alert = createAlert(alertReasonParam: .pointsReached,
                                     levelIndex: levelNumberIndex,
                                     secondsLeft: Int(runsLeft),
-                                    livesLeft: 2345) // TODO: use actual lives left
-                // TODO: save to ud if level won, for levels page
+                                    livesLeft: livesLeft)
+                var completedLevelsString: String = ud.value(forKey: Const.completedShabbosLevels) as! String
+                var completedLevelsArray = completedLevelsString.split(separator: ",")
+                if !completedLevelsArray.contains("\(levelNumberIndex!)") {
+                    completedLevelsArray.append("\(levelNumberIndex!)")
+                    completedLevelsString = completedLevelsArray.joined(separator: ",")
+                    ud.set(completedLevelsString, forKey: Const.completedShabbosLevels)
+                    remoteDelegate?.reload()
+                }
         }
 
         DispatchQueue.main.async { [self] in
@@ -259,6 +283,7 @@ class ShabbosViewController: UIViewController {
                 color: myThemeColor)
             timerProgress.isHidden = true
             scoreLabel.isHidden = true
+            livesLeftLabel.isHidden = true
             gameOverPlayAgainButton.isHidden = false
             gameOverNextLevelButton.isHidden = false
         }

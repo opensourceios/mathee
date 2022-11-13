@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ShabbosLevelsViewController: UITableViewController {
+class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDelegate {
+
 
     // MARK: Outlets
 
@@ -19,6 +20,7 @@ class ShabbosLevelsViewController: UITableViewController {
 
     var myThemeColor: UIColor!
     var myTitle: String!
+    var completedLevelsArray: [Int]!
 
 
     // MARK: Life Cycle
@@ -41,6 +43,15 @@ class ShabbosLevelsViewController: UITableViewController {
         let helpItem = UIBarButtonItem(customView: helpButton)
 
         navigationItem.rightBarButtonItem = helpItem
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let completedLevelsString: String = ud.string(forKey: Const.completedShabbosLevels) ?? ""
+        let completedLevelsArrayTemp = completedLevelsString.split(separator: ",")
+        completedLevelsArray = completedLevelsArrayTemp.map { Int($0)! }
     }
 
 
@@ -102,6 +113,9 @@ class ShabbosLevelsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
+        if completedLevelsArray.contains(indexPath.row) {
+            cell.levelNumberLabel.text?.append(" DONE")
+        }
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
         cell.numbersRangeLabel.text = """
         🧮 Numbers between 1 and \(levelMaxNumber)
@@ -121,11 +135,25 @@ class ShabbosLevelsViewController: UITableViewController {
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
         shabbosVC.numbersRange = 1...levelMaxNumber
         shabbosVC.myThemeColor = myThemeColor
+        shabbosVC.remoteDelegate = tableView.delegate as? any RemoteTableReloadDelegate
         self.navigationController!.pushViewController(shabbosVC, animated: true)
     }
+
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showLevelFor(indexPath)
     }
 
+
+    // MARK: RemoteTableReloadDelegate
+
+    func reload() {
+        tableView.reloadData()
+    }
+
+}
+
+
+protocol RemoteTableReloadDelegate: AnyObject {
+    func reload()
 }
