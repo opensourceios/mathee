@@ -65,7 +65,7 @@ class ShabbosViewController: UIViewController {
         }
     }
 
-    var livesLeft = 3
+    var livesLeft = Const.livesPerLevel
 
     var runsLeft: Float = Const.timerSeconds
 

@@ -74,5 +74,6 @@ struct Const {
     static let timerSeconds: Float = 30
     static let shabbosLevelsCount = 100
     static let rangeAddedPerLevel = 20
+    static let livesPerLevel = 3
 
 }
