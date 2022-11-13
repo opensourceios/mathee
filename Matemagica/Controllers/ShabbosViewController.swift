@@ -264,7 +264,7 @@ class ShabbosViewController: UIViewController {
                     completedLevelsArray.append("\(levelNumberIndex!)")
                     completedLevelsString = completedLevelsArray.joined(separator: ",")
                     ud.set(completedLevelsString, forKey: Const.completedShabbosLevels)
-                    remoteDelegate!.reload()
+                    remoteDelegate?.reload()
                 }
         }
 

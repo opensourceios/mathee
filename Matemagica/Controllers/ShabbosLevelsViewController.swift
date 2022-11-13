@@ -110,10 +110,12 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        let isLevelCompleted = completedLevelsArray.contains(indexPath.row)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
-        if completedLevelsArray.contains(indexPath.row) {
+        if isLevelCompleted {
             cell.levelNumberLabel.text?.append(" ✅")
         }
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
