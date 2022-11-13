@@ -94,7 +94,7 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
     @objc func showHelp() {
 
         let tutorialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
-                withIdentifier: Const.shabbosTutorialViewController)
+            withIdentifier: Const.shabbosTutorialViewController)
         as! ShabbosTutorialViewController
 
         present(tutorialVC, animated: true)
