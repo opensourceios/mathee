@@ -73,7 +73,7 @@ struct Const {
     static let pointsPerTap = 70
     static let timerSeconds: Float = 30
     static let shabbosLevelsCount = 100
-    static let rangeAddedPerLevel = 20
+    static let rangeAddedPerLevel = 10
     static let livesPerLevel = 3
 
 }
