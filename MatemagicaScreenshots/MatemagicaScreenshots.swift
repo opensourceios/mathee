@@ -10,8 +10,9 @@ import XCTest
 
 class MatemagicaScreenshots: XCTestCase {
 
-    // xcodebuild -testLanguage en -scheme Matemagica -project ./Matemagica.xcodeproj -derivedDataPath
-    // '/tmp/MatemagicaDerivedData/' -destination "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
+    // xcodebuild -testLanguage en -scheme Matemagica -project ./Matemagica.xcodeproj
+    // -derivedDataPath '/tmp/MatemagicaDerivedData/' -destination
+    // "platform=iOS Simulator,name=iPhone 13 Pro Max" build test
     // https://blog.winsmith.de/english/ios/2020/04/14/xcuitest-screenshots.html
 
     var app: XCUIApplication!
@@ -36,9 +37,11 @@ class MatemagicaScreenshots: XCTestCase {
         aThing.tap()
         switch word {
             case "Shabbos":
-                XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch.waitForExistence(timeout: 5))
+                XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch
+                    .waitForExistence(timeout: 5))
                 takeScreenshot(named: "2-Shabbos-levels")
-                XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch.waitForExistence(timeout: 5))
+                XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch
+                    .waitForExistence(timeout: 5))
                 app.staticTexts["⭐️ Level 2"].firstMatch.tap()
                 for _ in 0...4 {
                     XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))

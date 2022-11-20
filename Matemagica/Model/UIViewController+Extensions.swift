@@ -44,7 +44,8 @@ extension UIViewController {
             string: preString,
             attributes: regularAttributes)
 
-        let attributedMessageJumbo = NSAttributedString(string: toAttrify, attributes: jumboAttributes)
+        let attributedMessageJumbo = NSAttributedString(string: toAttrify,
+                                                        attributes: jumboAttributes)
 
         let myAttributedText = NSMutableAttributedString()
 
@@ -122,7 +123,8 @@ extension UIViewController {
             """
         }
 
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let alert = UIAlertController(title: alertTitle, message: alertMessage,
+                                      preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             if let safeSelf = self as? FormulaViewController {
                 safeSelf.myTextField.becomeFirstResponder()

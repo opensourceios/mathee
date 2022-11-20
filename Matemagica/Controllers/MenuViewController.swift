@@ -10,8 +10,7 @@ import UIKit
 import MessageUI
 
 
-class MenuViewController: UIViewController,
-                          UITableViewDataSource,
+class MenuViewController: UIViewController, UITableViewDataSource,
                           UITableViewDelegate {
 
 
@@ -66,7 +65,8 @@ class MenuViewController: UIViewController,
     // MARK: Create menu
 
     func infoMenu() -> UIMenu {
-        let shareApp = UIAction(title: Const.shareTitleMessage, image: UIImage(systemName: "heart"),
+        let shareApp = UIAction(title: Const.shareTitleMessage,
+                                image: UIImage(systemName: "heart"),
                                 state: .off) { _ in
             self.shareApp()
         }
@@ -74,7 +74,8 @@ class MenuViewController: UIViewController,
                               image: UIImage(systemName: "hand.thumbsup"), state: .off) { _ in
             self.requestReview()
         }
-        let moreApps = UIAction(title: Const.showAppsButtonTitle, image: UIImage(systemName: "apps.iphone"),
+        let moreApps = UIAction(title: Const.showAppsButtonTitle,
+                                image: UIImage(systemName: "apps.iphone"),
                                 state: .off) { _ in
             self.showApps()
         }
@@ -86,7 +87,8 @@ class MenuViewController: UIViewController,
             myTitle += " \(Const.version) \(safeVersion)"
         }
 
-        let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none, options: .displayInline,
+        let infoMenu = UIMenu(title: myTitle, image: nil, identifier: .none,
+                              options: .displayInline,
                               children: [review, shareApp, moreApps])
         return infoMenu
     }
@@ -118,16 +120,19 @@ class MenuViewController: UIViewController,
     //    }
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell) as! MainMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)
+        as! MainMenuTableViewCell
         cell.myLabel.text = Const.dataSourceHome[indexPath.row]["title"] as? String
         let aConfig = UIImage.SymbolConfiguration(weight: .bold)
         let aImage = UIImage(systemName: Const.dataSourceHome[indexPath.row]["icon"] as! String,
                              withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
-        cell.imageViewContainer.backgroundColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+        cell.imageViewContainer
+            .backgroundColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
         cell.imageViewContainer.layer.cornerRadius = 6
         cell.accessoryType = .disclosureIndicator
 
@@ -146,31 +151,37 @@ class MenuViewController: UIViewController,
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "BookViewController") as! BookViewController
                 controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                controller
+                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Guess it":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "FormulaViewController") as! FormulaViewController
                 controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                controller
+                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Mystical 9":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "MagicViewController") as! MagicViewController
                 controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                controller
+                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Lower or higher":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
                 controller.myTitle = cell.myLabel!.text
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                controller
+                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             case "Shabbos":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.ShabbosLevelsViewController) as! ShabbosLevelsViewController
+                    withIdentifier: Const.ShabbosLevelsViewController)
+                as! ShabbosLevelsViewController
                 controller.myTitle = "Shabbos"
-                controller.myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                controller
+                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
             default:
                 fatalError()
@@ -182,9 +193,11 @@ class MenuViewController: UIViewController,
 
     func shareApp() {
         let message = Const.appsLink
-        let activityController = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [message],
+                                                          applicationActivities: nil)
         activityController.popoverPresentationController?.barButtonItem = aboutButton
-        activityController.completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
+        activityController
+            .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
             guard error == nil else {
                 let alert = self.createAlert(alertReasonParam: .unknown)
                 alert.view.layoutIfNeeded()
@@ -213,9 +226,10 @@ extension MenuViewController {
             fatalError("expected valid URL")
 
         }
-        UIApplication.shared.open(writeReviewURL,
-                                  options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
-                                  completionHandler: nil)
+        UIApplication.shared.open(
+            writeReviewURL,
+            options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]),
+            completionHandler: nil)
     }
 }
 

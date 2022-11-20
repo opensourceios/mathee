@@ -94,7 +94,8 @@ class ShabbosViewController: UIViewController {
         timerProgress.progress = 0
         toggleUI(enable: false)
 
-        numbersDistribution = GKShuffledDistribution(lowestValue: numbersRange.first!, highestValue: numbersRange.last!)
+        numbersDistribution = GKShuffledDistribution(lowestValue: numbersRange.first!,
+                                                     highestValue: numbersRange.last!)
 
         timerLabel.text = "\(timeLeftPre)00:\(Int(Const.timerSeconds))"
     }
@@ -193,8 +194,10 @@ class ShabbosViewController: UIViewController {
         animation.duration = 0.06
         animation.repeatCount = 3
         animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x - 8, y: numberLabel.center.y))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x + 8, y: numberLabel.center.y))
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x - 8,
+                                                       y: numberLabel.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: numberLabel.center.x + 8,
+                                                     y: numberLabel.center.y))
         numberLabel.layer.add(animation, forKey: "position")
 
         CATransaction.commit()
@@ -216,7 +219,8 @@ class ShabbosViewController: UIViewController {
             score += Const.pointsPerTap * 2
             showNextNumber()
         } else if !isShabbos && sender.tag == 1 {
-            self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(), color: .systemGreen)
+            self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(),
+                           color: .systemGreen)
             score += Const.pointsPerTap
             showNextNumber()
         } else if isShabbos && sender.tag == 1 {
@@ -257,7 +261,8 @@ class ShabbosViewController: UIViewController {
                                     levelIndex: levelNumberIndex,
                                     secondsLeft: Int(runsLeft),
                                     livesLeft: livesLeft)
-                var completedLevelsString: String = ud.value(forKey: Const.completedShabbosLevels) as! String
+                var completedLevelsString: String = ud.value(
+                    forKey: Const.completedShabbosLevels) as! String
                 var completedLevelsArray = completedLevelsString.split(separator: ",")
                 if !completedLevelsArray.contains("\(levelNumberIndex!)") {
                     completedLevelsArray.append("\(levelNumberIndex!)")

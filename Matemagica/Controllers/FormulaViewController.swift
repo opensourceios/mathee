@@ -86,14 +86,18 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardNotification(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
 
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+                        as? NSValue)?.cgRectValue
         let endFrameY = endFrame?.origin.y ?? 0
         let duration: TimeInterval = (userInfo[
             UIResponder.keyboardAnimationDurationUserInfoKey
         ] as? NSNumber)?.doubleValue ?? 0
-        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
-        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
-        let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey]
+        as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ??
+        UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(
+            rawValue: animationCurveRaw)
 
         if endFrameY >= UIScreen.main.bounds.size.height {
             self.textfieldBottomConstraint.constant = 0.0
@@ -265,7 +269,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         let trimmedText = text.trimmingCharacters(in: .whitespaces)
 
         guard let number = UInt64(trimmedText),
-              !number.multipliedReportingOverflow(by: 4).overflow else { // max allowed: 2305843009213693951
+              !number.multipliedReportingOverflow(by: 4)
+            .overflow else { // max allowed: 2305843009213693951
             let alert = createAlert(alertReasonParam: .nan)
             present(alert, animated: true)
             return
@@ -281,24 +286,9 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         showAnswerButton.isHidden = true
         infoButton.isHidden = true
 
-        //        let regularAttributes: [NSAttributedString.Key: Any] = [
-        //            .font: UIFont.preferredFont(forTextStyle: .body)]
-        //        let jumboAttributes: [NSAttributedString.Key: Any] = [
-        //            .font: UIFont.systemFont(ofSize: 100, weight: .semibold),
-        //            .foregroundColor: myThemeColor]
-        //        let attributedMessagePre = NSAttributedString(
-        //            string: "You thought:\n\n",
-        //            attributes: regularAttributes)
-        //
-        //        let attributedMessageJumbo = NSAttributedString(string: "\(total)", attributes: jumboAttributes)
-        //
-        //        let myAttributedText = NSMutableAttributedString()
-        //
-        //        myAttributedText.append(attributedMessagePre)
-        //        myAttributedText.append(attributedMessageJumbo)
-
         messageLabel.attributedText = attrifyString(
-            preString: "You thought:\n\n", toAttrify: "\(total)", postString: nil, color: myThemeColor)
+            preString: "You thought:\n\n", toAttrify: "\(total)", postString: nil,
+            color: myThemeColor)
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byCharWrapping
 
@@ -321,12 +311,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @IBAction func helpPressed(_ sender: Any) {
         let alert = UIAlertController(
             title: "More Info",
-            message:
-                """
-           Divide your result by 9, and type how many times 9 fits in it.
-           Ignore leftover numbers. For example: if your result is 12, type 1 (ignoring the leftover 3)
-           If your result is less than 9, type 0.
-           """,
+            message: """
+            Divide your result by 9, and type how many times 9 fits in it.
+            Ignore leftover numbers. For example: if your result is 12, type 1\
+            (ignoring the leftover 3)
+            If your result is less than 9, type 0.
+            """,
             preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: Const.okMessage, style: .cancel) { _ in
             self.myTextField.becomeFirstResponder()

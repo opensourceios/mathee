@@ -134,7 +134,8 @@ class HigherLowerViewController: UIViewController {
         Tries left: \(triesLeft). \(thinkKnow): \(guess). Tap Higher, Lower, or Correct.
         """
 
-        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0) / initialTriesPlusOne
+        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0)
+        / initialTriesPlusOne
         progressBar.setProgress(myProgress, animated: true)
     }
 

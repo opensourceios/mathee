@@ -9,7 +9,8 @@
 import UIKit
 
 
-class BookViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class BookViewController: UIViewController, UICollectionViewDelegate,
+                          UICollectionViewDataSource {
 
 
     // MARK: Outlets
@@ -169,7 +170,8 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         rightButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
-        progressBar.setProgress(progressBar.progress+1.0/(Float(pagesArrayOfDicts.count)+2), animated: true)
+        progressBar.setProgress(progressBar
+            .progress+1.0/(Float(pagesArrayOfDicts.count)+2), animated: true)
     }
 
 
@@ -190,7 +192,8 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
         myCollectionView.isHidden = true
 
         pageNumberLabel.attributedText = attrifyString(
-            preString: "You thought:\n\n", toAttrify: "\(userNumber)", postString: nil, color: myThemeColor)
+            preString: "You thought:\n\n", toAttrify: "\(userNumber)", postString: nil,
+            color: myThemeColor)
 
         leftButton.isHidden = true
         middleButton.isHidden = false
@@ -214,7 +217,8 @@ class BookViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     // MARK: Collection Delegate
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return currentPageDataSource.count
     }
 

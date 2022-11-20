@@ -49,7 +49,8 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let completedLevelsString: String = ud.string(forKey: Const.completedShabbosLevels) ?? ""
+        let completedLevelsString: String = ud.string(
+            forKey: Const.completedShabbosLevels) ?? ""
         let completedLevelsArrayTemp = completedLevelsString.split(separator: ",")
         completedLevelsArray = completedLevelsArrayTemp.map { Int($0)! }
     }
@@ -103,16 +104,19 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
 
     // MARK: Delegates
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return Const.shabbosLevelsCount
     }
 
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let isLevelCompleted = completedLevelsArray.contains(indexPath.row)
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell) as! LevelTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell)
+        as! LevelTableViewCell
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
         if isLevelCompleted {
