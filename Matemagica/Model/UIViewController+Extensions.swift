@@ -70,6 +70,7 @@ extension UIViewController {
         case timeUp
         case livesUp
         case pointsReached
+        case emailError
     }
 
 
@@ -80,6 +81,12 @@ extension UIViewController {
         var alertTitle = ""
         var alertMessage = ""
         switch alertReasonParam {
+            case .emailError:
+                alertTitle = "Email Not Sent"
+                alertMessage = """
+                Your device could not send e-mail. Please check e-mail configuration and \
+                try again.
+                """
             case .textfieldEmpty:
                 alertTitle = "Textfield empty"
                 alertMessage = "Please try again"

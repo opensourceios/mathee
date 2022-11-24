@@ -15,6 +15,8 @@ struct Const {
     static let appVersion = "CFBundleShortVersionString"
     static let version = "v."
     static let appName = "Math Magic"
+    static let contact = "Email Me"
+    static let emailString = "00.segue_affix@icloud.com"
     static let cancel = "Cancel"
     static let leaveReview = "Leave a review"
     static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
