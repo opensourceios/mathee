@@ -313,7 +313,7 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             title: "More Info",
             message: """
             Divide your result by 9, and type how many times 9 fits in it.
-            Ignore leftover numbers. For example: if your result is 12, type 1\
+            Ignore leftover numbers. For example: if your result is 12, type 1 \
             (ignoring the leftover 3)
             If your result is less than 9, type 0.
             """,
