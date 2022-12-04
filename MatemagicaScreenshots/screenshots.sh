@@ -16,7 +16,7 @@ schemeName="Matemagica"
 simulators=(
     "iPhone 14 Pro Max"
     "iPhone 13 Pro Max"
-    "iPhone 8 plus"
+    "iPhone 8 Plus"
     "iPad Pro (12.9-inch) (6th generation)"
 )
 
