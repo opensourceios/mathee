@@ -68,6 +68,7 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
 
         if !ud.bool(forKey: Const.userSawShabbosTutorial) {
             showHelp()
+            ud.set(true, forKey: Const.userSawShabbosTutorial)
         }
 
     }

@@ -11,7 +11,6 @@ import UIKit
 class ShabbosTutorialViewController: UIViewController {
 
     @IBAction func hidePressed(_ sender: Any) {
-        ud.set(true, forKey: Const.userSawShabbosTutorial)
         dismiss(animated: true)
     }
 
