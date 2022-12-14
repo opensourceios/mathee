@@ -1,6 +1,6 @@
 //
 //  Const.swift
-//  Math Magic
+//  Mathee
 //
 //  Created by Daniel Springer on 11/26/18.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
@@ -14,7 +14,7 @@ let ud = UserDefaults.standard
 struct Const {
     static let appVersion = "CFBundleShortVersionString"
     static let version = "v."
-    static let appName = "Math Magic"
+    static let appName = "Mathee"
     static let contact = "Email Me"
     static let emailString = "00.segue_affix@icloud.com"
     static let cancel = "Cancel"

@@ -493,7 +493,7 @@ Prepare to be amazed.</string>
             </objects>
             <point key="canvasLocation" x="-1049" y="1657"/>
         </scene>
-        <!--Math Magic-->
+        <!--Mathee-->
         <scene sceneID="YHt-e1-nQZ">
             <objects>
                 <viewController id="OWD-6W-keU" customClass="MenuViewController" customModule="Matemagica" customModuleProvider="target" sceneMemberID="viewController">
@@ -569,7 +569,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="27d-DW-fze" firstAttribute="bottom" secondItem="bSL-S2-mJ9" secondAttribute="bottom" id="hoN-6V-ROz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Math Magic" id="bIQ-V8-dG6">
+                    <navigationItem key="navigationItem" title="Mathee" id="bIQ-V8-dG6">
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="iSG-Wt-4L5">
                             <imageReference key="image" image="ellipsis.circle" catalog="system" symbolScale="large"/>
                         </barButtonItem>

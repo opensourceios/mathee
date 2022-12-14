@@ -1,6 +1,6 @@
 //
 //  MainMenuTableViewCell.swift
-//  Math Magic
+//  Mathee
 //
 //  Created by Daniel Springer on 7/16/19.
 //  Copyright © 2022 Daniel Springer. All rights reserved.
