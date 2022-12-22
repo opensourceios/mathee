@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-                if CommandLine.arguments.contains("--matemagicaScreenshots") {
+                if CommandLine.arguments.contains("--matheeScreenshots") {
                     // We are in testing mode, make arrangements
                     ud.set(true, forKey: Const.userSawShabbosTutorial)
                     ud.set("", forKey: Const.completedShabbosLevels)
