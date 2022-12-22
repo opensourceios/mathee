@@ -42,9 +42,6 @@
                                     <action selector="lowerOrHigherTappedWithSender:" destination="ZqM-0Y-De7" eventType="touchUpInside" id="Cdh-Y1-cC0"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-1m-iEl">
-                                <rect key="frame" x="16" y="49" width="343" height="4"/>
-                            </progressView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-h2-CTT">
                                 <rect key="frame" x="126.66666666666669" y="534" width="122" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
@@ -59,17 +56,14 @@
                         <viewLayoutGuide key="safeArea" id="kO9-Xj-yVp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="0WM-1m-iEl" secondAttribute="trailing" constant="16" id="1fW-c1-x60"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="8pq-Eb-w1b"/>
                             <constraint firstItem="Omi-Fz-8x3" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="G6P-Rt-eny"/>
                             <constraint firstItem="nAW-HL-3cW" firstAttribute="centerY" secondItem="kO9-Xj-yVp" secondAttribute="centerY" id="Ib5-vE-Wkj"/>
                             <constraint firstItem="Omi-Fz-8x3" firstAttribute="top" secondItem="NTc-h2-CTT" secondAttribute="bottom" constant="32" id="XTD-dg-RhL"/>
                             <constraint firstItem="NTc-h2-CTT" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="ZxN-lY-kil"/>
-                            <constraint firstItem="0WM-1m-iEl" firstAttribute="top" secondItem="kO9-Xj-yVp" secondAttribute="top" constant="2" id="ceN-qG-Yeo"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="bottom" secondItem="w4O-G0-lf0" secondAttribute="bottom" constant="16" id="ead-VK-XAX"/>
                             <constraint firstItem="kO9-Xj-yVp" firstAttribute="trailing" secondItem="nAW-HL-3cW" secondAttribute="trailing" constant="16" id="exC-tg-SVV"/>
                             <constraint firstItem="w4O-G0-lf0" firstAttribute="top" secondItem="Omi-Fz-8x3" secondAttribute="bottom" constant="32" id="fCH-sg-m97"/>
-                            <constraint firstItem="0WM-1m-iEl" firstAttribute="leading" secondItem="kO9-Xj-yVp" secondAttribute="leading" constant="16" id="iVN-pd-3ns"/>
                             <constraint firstItem="w4O-G0-lf0" firstAttribute="centerX" secondItem="kO9-Xj-yVp" secondAttribute="centerX" id="ibq-tQ-9lO"/>
                         </constraints>
                     </view>
@@ -79,7 +73,6 @@
                         <outlet property="guessLabel" destination="nAW-HL-3cW" id="PeR-Z8-0il"/>
                         <outlet property="higherButton" destination="NTc-h2-CTT" id="e2Q-4e-iJ3"/>
                         <outlet property="lowerButton" destination="w4O-G0-lf0" id="hKg-X0-HQR"/>
-                        <outlet property="progressBar" destination="0WM-1m-iEl" id="6bD-eZ-TPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuR-w4-yWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,9 +116,6 @@ Prepare to be amazed.</string>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ln0-ES-GER">
-                                <rect key="frame" x="16" y="49" width="343" height="4"/>
-                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zMY-pK-AUQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -135,15 +125,12 @@ Prepare to be amazed.</string>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="zg1-nS-8zw" secondAttribute="bottom" constant="16" id="IHH-1V-ufY"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="UTm-Q3-fwn" secondAttribute="bottom" constant="16" id="M05-ld-M7j"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="zg1-nS-8zw" secondAttribute="trailing" constant="16" id="MBs-03-D1S"/>
-                            <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="ln0-ES-GER" secondAttribute="trailing" constant="16" id="OIk-tE-nGf"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="bottom" secondItem="Yck-uM-wZf" secondAttribute="bottom" constant="16" id="Q52-Aj-SQD"/>
-                            <constraint firstItem="ln0-ES-GER" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="QTX-I8-1LK"/>
                             <constraint firstItem="zMY-pK-AUQ" firstAttribute="trailing" secondItem="U8K-8M-K0A" secondAttribute="trailing" constant="16" id="RN1-Qb-iSJ"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="leading" secondItem="zMY-pK-AUQ" secondAttribute="leading" constant="16" id="aTb-n5-oiu"/>
                             <constraint firstItem="UTm-Q3-fwn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yck-uM-wZf" secondAttribute="trailing" constant="4" id="dxy-mu-JDi"/>
                             <constraint firstItem="UTm-Q3-fwn" firstAttribute="centerX" secondItem="zMY-pK-AUQ" secondAttribute="centerX" id="gna-hO-SN5"/>
                             <constraint firstItem="U8K-8M-K0A" firstAttribute="centerY" secondItem="zMY-pK-AUQ" secondAttribute="centerY" id="t24-MT-1Ai"/>
-                            <constraint firstItem="ln0-ES-GER" firstAttribute="top" secondItem="zMY-pK-AUQ" secondAttribute="top" constant="2" id="ugR-mR-M1I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ot7-WL-NJJ"/>
@@ -151,7 +138,6 @@ Prepare to be amazed.</string>
                         <outlet property="headerLabel" destination="U8K-8M-K0A" id="zBS-1o-0b3"/>
                         <outlet property="leftButton" destination="Yck-uM-wZf" id="b10-xq-csH"/>
                         <outlet property="middleButton" destination="UTm-Q3-fwn" id="gK5-eD-gJe"/>
-                        <outlet property="progressBar" destination="ln0-ES-GER" id="wFF-Nd-Ye2"/>
                         <outlet property="rightButton" destination="zg1-nS-8zw" id="JbW-OU-Ngs"/>
                     </connections>
                 </viewController>
@@ -371,7 +357,7 @@ Prepare to be amazed.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your number in page #3?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrR-lf-ak1" userLabel="Card Number Label">
-                                <rect key="frame" x="16" y="69" width="343" height="24"/>
+                                <rect key="frame" x="16" y="63" width="343" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -397,11 +383,8 @@ Prepare to be amazed.</string>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                 </buttonConfiguration>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EkJ-TL-eJa">
-                                <rect key="frame" x="16" y="49" width="343" height="4"/>
-                            </progressView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Udx-we-m7o">
-                                <rect key="frame" x="16" y="156.99999999999997" width="343" height="486.33333333333326"/>
+                                <rect key="frame" x="16" y="150.99999999999997" width="343" height="492.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZZX-ew-bh3">
                                     <size key="itemSize" width="64" height="64"/>
@@ -445,22 +428,19 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="Eo3-rL-Byj" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="4r1-tP-2KT"/>
                             <constraint firstItem="cZe-dL-xl3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Eo3-rL-Byj" secondAttribute="trailing" constant="4" id="CUg-nh-LV4"/>
-                            <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="EkJ-TL-eJa" secondAttribute="trailing" constant="16" id="CXx-Sj-Z3M"/>
-                            <constraint firstItem="GrR-lf-ak1" firstAttribute="top" secondItem="EkJ-TL-eJa" secondAttribute="bottom" constant="16" id="CgM-CG-0Sw"/>
                             <constraint firstItem="GrR-lf-ak1" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="DPy-gr-1Ro"/>
                             <constraint firstItem="Udx-we-m7o" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="DRv-r7-cBe"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="Udx-we-m7o" secondAttribute="trailing" constant="16" id="EJ4-eb-07x"/>
-                            <constraint firstItem="EkJ-TL-eJa" firstAttribute="leading" secondItem="iIp-2I-Ojt" secondAttribute="leading" constant="16" id="ERs-n5-vmO"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="cZe-dL-xl3" secondAttribute="bottom" constant="16" id="Jqh-q3-BWo"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="Eo3-rL-Byj" secondAttribute="bottom" constant="16" id="Q58-Gi-Fc0"/>
                             <constraint firstItem="cZe-dL-xl3" firstAttribute="top" secondItem="Udx-we-m7o" secondAttribute="bottom" constant="64" id="VAa-p9-F8l"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="bottom" secondItem="sju-T6-m4T" secondAttribute="bottom" constant="16" id="YLq-1d-O01"/>
+                            <constraint firstItem="GrR-lf-ak1" firstAttribute="top" secondItem="iIp-2I-Ojt" secondAttribute="top" constant="16" id="fm0-Ys-3ce"/>
                             <constraint firstItem="Udx-we-m7o" firstAttribute="top" secondItem="GrR-lf-ak1" secondAttribute="bottom" constant="64" id="gyT-5z-ozy"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="GrR-lf-ak1" secondAttribute="trailing" constant="16" id="kPx-j8-uAB"/>
                             <constraint firstItem="cZe-dL-xl3" firstAttribute="centerX" secondItem="iIp-2I-Ojt" secondAttribute="centerX" id="mD5-4H-v70"/>
                             <constraint firstItem="sju-T6-m4T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cZe-dL-xl3" secondAttribute="trailing" constant="4" id="muQ-yT-mv5"/>
                             <constraint firstItem="iIp-2I-Ojt" firstAttribute="trailing" secondItem="sju-T6-m4T" secondAttribute="trailing" constant="16" id="rjg-ns-94s"/>
-                            <constraint firstItem="EkJ-TL-eJa" firstAttribute="top" secondItem="iIp-2I-Ojt" secondAttribute="top" constant="2" id="vpq-ib-4ya"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4hU-hj-MvD"/>
@@ -469,7 +449,6 @@ Prepare to be amazed.</string>
                         <outlet property="middleButton" destination="cZe-dL-xl3" id="pCf-u0-pKV"/>
                         <outlet property="myCollectionView" destination="Udx-we-m7o" id="k9M-CI-XZK"/>
                         <outlet property="pageNumberLabel" destination="GrR-lf-ak1" id="bX6-c4-ciD"/>
-                        <outlet property="progressBar" destination="EkJ-TL-eJa" id="4T9-vF-RDq"/>
                         <outlet property="rightButton" destination="sju-T6-m4T" id="tPv-NH-vEK"/>
                     </connections>
                 </viewController>
@@ -601,7 +580,7 @@ Prepare to be amazed.</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-IK-Hsa">
-                                <rect key="frame" x="16" y="187.66666666666666" width="343" height="73.999999999999972"/>
+                                <rect key="frame" x="16" y="181.66666666666666" width="343" height="74"/>
                                 <string key="text">Think of a number.
 I will find it.
 Let me ask you a few questions...</string>
@@ -610,7 +589,7 @@ Let me ask you a few questions...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Y7-egc">
-                                <rect key="frame" x="43.333333333333343" y="293.66666666666669" width="288.66666666666663" height="54.666666666666686"/>
+                                <rect key="frame" x="43.333333333333343" y="287.66666666666669" width="288.66666666666663" height="54.666666666666686"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="OK"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guess my number" titleAlignment="center">
@@ -635,7 +614,7 @@ Let me ask you a few questions...</string>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Ch-xgj">
-                                <rect key="frame" x="168.66666666666663" y="69" width="190.33333333333337" height="54.666666666666657"/>
+                                <rect key="frame" x="168.66666666666663" y="63" width="190.33333333333337" height="54.666666666666657"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Need help?" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
@@ -644,13 +623,11 @@ Let me ask you a few questions...</string>
                                     <action selector="helpPressed:" destination="eiL-1S-xct" eventType="touchUpInside" id="JwZ-yo-lQZ"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-9r-YZZ">
-                                <rect key="frame" x="16" y="49" width="343" height="4"/>
-                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cqg-Uf-L5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aeV-Ch-xgj" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="16" id="0eu-Ol-H2M"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Cv8-aF-RC8" secondAttribute="trailing" constant="16" id="8Sy-BN-hMQ"/>
                             <constraint firstItem="Cv8-aF-RC8" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="centerX" constant="8" id="BmS-2R-9vy"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="ClG-HF-1oA" secondAttribute="trailing" constant="16" id="K80-LJ-w1Y"/>
@@ -659,13 +636,9 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="centerX" secondItem="Nph-Lq-4xz" secondAttribute="trailing" constant="8" id="VRz-EW-Fk5"/>
                             <constraint firstItem="Bjj-IK-Hsa" firstAttribute="top" secondItem="aeV-Ch-xgj" secondAttribute="bottom" constant="64" id="XrP-WT-cME"/>
                             <constraint firstItem="Nph-Lq-4xz" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="Zhe-BP-UU4"/>
-                            <constraint firstItem="o2w-9r-YZZ" firstAttribute="top" secondItem="cqg-Uf-L5S" secondAttribute="top" constant="2" id="arX-x5-44K"/>
-                            <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="o2w-9r-YZZ" secondAttribute="trailing" constant="16" id="bpO-dC-wf1"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Cv8-aF-RC8" secondAttribute="bottom" constant="16" id="eKR-g4-vg8"/>
-                            <constraint firstItem="aeV-Ch-xgj" firstAttribute="top" secondItem="o2w-9r-YZZ" secondAttribute="bottom" constant="16" id="h39-z3-Rsm"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="aeV-Ch-xgj" secondAttribute="trailing" constant="16" id="jHL-FI-Tmr"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="Nph-Lq-4xz" secondAttribute="bottom" constant="16" id="jcD-Ng-Pcc"/>
-                            <constraint firstItem="o2w-9r-YZZ" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="lxX-DS-DDJ"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="trailing" secondItem="Bjj-IK-Hsa" secondAttribute="trailing" constant="16" id="mfs-1w-9kd"/>
                             <constraint firstItem="cqg-Uf-L5S" firstAttribute="bottom" secondItem="ClG-HF-1oA" secondAttribute="bottom" constant="64" id="rJC-JB-0xf"/>
                             <constraint firstItem="ClG-HF-1oA" firstAttribute="leading" secondItem="cqg-Uf-L5S" secondAttribute="leading" constant="16" id="uzU-m3-xRu"/>
@@ -679,7 +652,6 @@ Let me ask you a few questions...</string>
                         <outlet property="leftButton" destination="Nph-Lq-4xz" id="M6B-Yo-Euh"/>
                         <outlet property="messageLabel" destination="Bjj-IK-Hsa" id="uOU-em-uWu"/>
                         <outlet property="myTextField" destination="ClG-HF-1oA" id="WRZ-pB-pZB"/>
-                        <outlet property="progressBar" destination="o2w-9r-YZZ" id="OTR-3u-smo"/>
                         <outlet property="rightButton" destination="Cv8-aF-RC8" id="qgR-Cd-bJS"/>
                         <outlet property="showAnswerButton" destination="eb2-Y7-egc" id="CIC-jz-wbk"/>
                         <outlet property="textfieldBottomConstraint" destination="rJC-JB-0xf" id="eyT-V7-T9W"/>

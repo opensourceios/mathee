@@ -19,7 +19,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var progressBar: UIProgressView!
 
     @IBOutlet weak var textfieldBottomConstraint: NSLayoutConstraint!
 
@@ -35,7 +34,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
     var dispatchWorkItem: DispatchWorkItem?
 
     var hasShownHelpButton = false
-    var stepsForProgress: Float = 0
 
 
     // MARK: Life Cycle
@@ -62,15 +60,12 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         myTextField.delegate = self
         messageLabel.numberOfLines = 0
         messageLabel.lineBreakMode = .byWordWrapping
-        stepsForProgress = 11
-        progressBar.setProgress(0.0, animated: false)
         start()
     }
 
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         rightButton.doGlowAnimation(withColor: myThemeColor)
 
     }
@@ -138,11 +133,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.setTitleNew(Const.okMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(oddOrEven), for: .touchUpInside)
-        if isBeforeFirstEvenQuestion {
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
-        } else {
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
-        }
     }
 
 
@@ -156,11 +146,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.setTitleNew(Const.evenMessage)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.addTarget(self, action: #selector(divideByTwo), for: .touchUpInside)
-        if isBeforeFirstEvenQuestion {
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
-        } else {
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
-        }
 
     }
 
@@ -175,10 +160,8 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
 
         if isBeforeFirstEvenQuestion {
             total += 1
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         } else {
             total += 2
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         }
     }
 
@@ -191,12 +174,10 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(timesThree), for: .touchUpInside)
             isBeforeFirstEvenQuestion = false
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         } else {
             rightButton.setTitleNew(Const.okMessage)
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(divideByNine), for: .touchUpInside)
-            progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
         }
 
     }
@@ -216,7 +197,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         someOnClickButtonStart()
 
         myTextField.becomeFirstResponder()
-        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
     }
 
 
@@ -298,7 +278,6 @@ class FormulaViewController: UIViewController, UITextFieldDelegate {
         rightButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         rightButton.isHidden = false
         rightButton.doGlowAnimation(withColor: myThemeColor)
-        progressBar.setProgress(1, animated: true)
     }
 
 

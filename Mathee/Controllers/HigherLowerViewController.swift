@@ -18,7 +18,6 @@ class HigherLowerViewController: UIViewController {
     @IBOutlet weak var correctButton: UIButton!
     @IBOutlet weak var lowerButton: UIButton!
     @IBOutlet weak var higherButton: UIButton!
-    @IBOutlet weak var progressBar: UIProgressView!
 
 
     // MARK: Properties
@@ -56,8 +55,6 @@ class HigherLowerViewController: UIViewController {
         correctButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         correctButton.setTitleNew(Const.okMessage)
 
-        progressBar.setProgress(0, animated: false)
-
         guessLabel.text = """
         Think of a number, anywhere from \(myArray.first!), alllll the way to \(myArray.last!)
 
@@ -70,7 +67,6 @@ class HigherLowerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        progressBar.setProgress(1.0/initialTriesPlusOne, animated: true)
         correctButton.doGlowAnimation(withColor: myThemeColor)
     }
 
@@ -134,9 +130,6 @@ class HigherLowerViewController: UIViewController {
         Tries left: \(triesLeft). \(thinkKnow): \(guess). Tap Higher, Lower, or Correct.
         """
 
-        let myProgress: Float = (initialTriesPlusOne - Float(triesLeft) + 1.0)
-        / initialTriesPlusOne
-        progressBar.setProgress(myProgress, animated: true)
     }
 
 
@@ -209,8 +202,6 @@ class HigherLowerViewController: UIViewController {
         \(thinkKnow).
         Your number was: \(guess).
         """
-
-        progressBar.setProgress(1.0, animated: true)
     }
 
 

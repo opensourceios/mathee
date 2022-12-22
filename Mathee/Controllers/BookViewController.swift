@@ -19,7 +19,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var myCollectionView: UICollectionView!
 
 
@@ -54,8 +53,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
     var shuffledPagesByOrder = [Page]()
     var userNumber = 0
     var currentPageReal = 0
-
-    var stepsForProgress: Float = 0
 
     var currentPageDataSource: [Int] = []
 
@@ -103,10 +100,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
         """
         myCollectionView.isHidden = true
 
-        stepsForProgress = Float(pagesArrayOfDicts.count) + 1
-
-        progressBar.setProgress(0.0, animated: false)
-
     }
 
 
@@ -123,13 +116,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
         middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         middleButton.setTitleNew(Const.okMessage)
         middleButton.sizeToFit()
-    }
-
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
     }
 
 
@@ -170,8 +156,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
         rightButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
         leftButton.sizeToFit()
         rightButton.sizeToFit()
-        progressBar.setProgress(progressBar
-            .progress+1.0/(Float(pagesArrayOfDicts.count)+2), animated: true)
     }
 
 
@@ -204,7 +188,6 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         middleButton.setTitleNew(Const.correctMessage)
         middleButton.sizeToFit()
-        progressBar.setProgress(progressBar.progress+(1/stepsForProgress), animated: true)
     }
 
 
