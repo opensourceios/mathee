@@ -2,7 +2,7 @@
 //  UIButton+Extensions.swift
 //  Mathee
 //
-//  Created by dani on 10/24/22.
+//  Created by Daniel Springer on 10/24/22.
 //  Copyright © 2023 Daniel Springer. All rights reserved.
 //
 

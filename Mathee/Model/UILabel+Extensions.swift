@@ -2,7 +2,7 @@
 //  UILabel+Extensions.swift
 //  Mathee
 //
-//  Created by dani on 10/16/22.
+//  Created by Daniel Springer on 10/16/22.
 //  Copyright © 2023 Daniel Springer. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  Array+Extensions.swift
 //  Mathee
 //
-//  Created by dani on 7/22/22.
+//  Created by Daniel Springer on 7/22/22.
 //  Copyright © 2023 Daniel Springer. All rights reserved.
 //
 
