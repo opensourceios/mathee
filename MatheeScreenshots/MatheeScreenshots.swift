@@ -3,7 +3,7 @@
 //  MatheeScreenshots
 //
 //  Created by dani on 5/20/22.
-//  Copyright © 2022 Dani Springer. All rights reserved.
+//  Copyright © 2023 Daniel Springer. All rights reserved.
 //
 
 import XCTest
