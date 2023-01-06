@@ -536,12 +536,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JMVGHP3288;
 				INFOPLIST_FILE = Mathee/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mathee - Math Tricks & Games";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.51;
+				MARKETING_VERSION = 7.52;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -565,12 +566,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JMVGHP3288;
 				INFOPLIST_FILE = Mathee/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mathee - Math Tricks & Games";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.51;
+				MARKETING_VERSION = 7.52;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
