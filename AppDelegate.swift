@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // - Allow changing points per guess?
     // - Allow changing...?
     // - Update tutorial to reflect customizable values
-    // - Update single levels UI to reflect customizable values
+    // - Update each level's UI to reflect customizable values
 
     // MARK: Properties
 
