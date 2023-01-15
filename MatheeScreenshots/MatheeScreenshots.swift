@@ -17,7 +17,7 @@ class MatheeScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Shabbos", "Guess it", "Spot it"]
+    let aList = ["Shabbos", "Guess It", "Spot It"]
 
 
     override func setUpWithError() throws {
@@ -56,7 +56,7 @@ class MatheeScreenshots: XCTestCase {
                 XCTAssertTrue(app.buttons["Shabbos"].firstMatch.waitForExistence(timeout: 5))
                 app.buttons["Shabbos"].firstMatch.tap()
                 app.buttons["Mathee"].firstMatch.tap()
-            case "Guess it":
+            case "Guess It":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "4-Guess-it-think")
                 app.buttons["OK"].firstMatch.tap()
@@ -72,7 +72,7 @@ class MatheeScreenshots: XCTestCase {
                 app.buttons["Guess my number"].firstMatch.tap()
                 takeScreenshot(named: "6-Guess-it-result")
                 app.buttons["Done"].firstMatch.tap()
-            case "Spot it":
+            case "Spot It":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 app.buttons["OK"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()

@@ -154,14 +154,14 @@ class MenuViewController: UIViewController, UITableViewDataSource,
         let cell = tableView.cellForRow(at: indexPath) as! MainMenuTableViewCell
 
         switch cell.myLabel!.text {
-            case "Spot it":
+            case "Spot It":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "BookViewController") as! BookViewController
                 controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Guess it":
+            case "Guess It":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "FormulaViewController") as! FormulaViewController
                 controller.myTitle = cell.myLabel!.text
@@ -175,7 +175,7 @@ class MenuViewController: UIViewController, UITableViewDataSource,
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Lower or higher":
+            case "Lower or Higher":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
                 controller.myTitle = cell.myLabel!.text

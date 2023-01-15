@@ -15,7 +15,7 @@ struct Const {
     static let appVersion = "CFBundleShortVersionString"
     static let version = "v."
     static let appName = "Mathee - Math Tricks & Games"
-    static let contact = "Email Me"
+    static let contact = "Email me"
     static let emailString = "00.segue_affix@icloud.com"
     static let cancel = "Cancel"
     static let leaveReview = "Leave a review"
@@ -45,12 +45,12 @@ struct Const {
 
         ["icon": "magnifyingglass",
          "color": UIColor.systemMint,
-         "title": "Spot it",
+         "title": "Spot It",
          "id": "BookViewController"],
 
         ["icon": "key",
          "color": UIColor.systemOrange,
-         "title": "Guess it",
+         "title": "Guess It",
          "id": "FormulaViewController"],
 
         ["icon": "brain.head.profile",
@@ -65,7 +65,7 @@ struct Const {
 
         ["icon": "arrow.up.arrow.down",
          "color": UIColor.systemRed,
-         "title": "Lower or higher",
+         "title": "Lower or Higher",
          "id": "HigherLowerViewController"]
 
     ]
