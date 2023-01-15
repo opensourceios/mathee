@@ -132,14 +132,15 @@ class MenuViewController: UIViewController, UITableViewDataSource,
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)
         as! MainMenuTableViewCell
         cell.myLabel.text = Const.dataSourceHome[indexPath.row]["title"] as? String
-        let aConfig = UIImage.SymbolConfiguration(weight: .bold)
-        let aImage = UIImage(systemName: Const.dataSourceHome[indexPath.row]["icon"] as! String,
-                             withConfiguration: aConfig)
+        let aConfig = UIImage.SymbolConfiguration(weight: .medium)
+        let aImage = UIImage(
+            systemName: Const.dataSourceHome[indexPath.row]["icon"] as! String,
+            withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
         cell.imageViewContainer
             .backgroundColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-        cell.imageViewContainer.layer.cornerRadius = 6
+        cell.imageViewContainer.layer.cornerRadius = 8
         cell.accessoryType = .disclosureIndicator
 
         return cell
@@ -167,7 +168,7 @@ class MenuViewController: UIViewController, UITableViewDataSource,
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Mystical 9":
+            case "Mystical Nine":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "MagicViewController") as! MagicViewController
                 controller.myTitle = cell.myLabel!.text
