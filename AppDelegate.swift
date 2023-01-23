@@ -13,17 +13,6 @@ import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // TODO: Shabbos
-    // - Allow changing base from 7 to 2-9 (if even higher, adjust lvl intervals)
-    // - Allow changing lives per level? (min 1 or infinite option?)
-    // - Allow changing added values to each level?
-    // - Allow changing timer (as of now always 30 seconds)
-    // - Allow changing goal of 1000 points, and/or points given per guess (as of now 70)
-    // - Update tutorial to reflect customizable values
-    // - Update each level's UI to reflect customizable values
-    // - Tell me which I got wrong on level ended?
-    // - Show me next level's range
-
     // MARK: Properties
 
     var window: UIWindow?

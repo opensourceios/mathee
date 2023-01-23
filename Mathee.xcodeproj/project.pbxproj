@@ -542,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.53;
+				MARKETING_VERSION = 7.54;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -572,7 +572,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.53;
+				MARKETING_VERSION = 7.54;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
