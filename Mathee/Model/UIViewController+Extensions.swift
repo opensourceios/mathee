@@ -117,11 +117,12 @@ extension UIViewController {
             case .pointsReached:
                 alertTitle = "🎉 You Won! 🎊"
                 let secondSeconds = secondsUsed == 1 ? "second" : "seconds"
-                let lifeLives = livesLeft == 1 ? "life" : "lives"
                 alertMessage = """
-                You reached 1000 points and successfully completed \
-                Level \(levelIndex+1), using \(secondsUsed) \(secondSeconds), and \
-                with \(livesLeft) \(lifeLives) left!
+                You reached 1000 points and successfully completed Level \(levelIndex+1)
+
+                Time used: \(secondsUsed) \(secondSeconds)
+
+                Lives left: \(String(repeating: "❤️", count: livesLeft))
                 """
             default:
                 alertTitle = "Unknown error"
