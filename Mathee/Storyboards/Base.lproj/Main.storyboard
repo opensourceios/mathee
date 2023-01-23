@@ -194,18 +194,8 @@ Prepare to be amazed.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5e-QA-WGz">
-                                <rect key="frame" x="99" y="620.66666666666663" width="177" height="54.666666666666629"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Play Again">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="preLevelSelectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="uaX-hk-HdQ"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhm-Zs-v73">
-                                <rect key="frame" x="99.333333333333329" y="707.33333333333337" width="176.33333333333337" height="54.666666666666629"/>
+                                <rect key="frame" x="99.333333333333329" y="620.66666666666663" width="176.33333333333337" height="54.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next Level">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
@@ -220,6 +210,16 @@ Prepare to be amazed.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5e-QA-WGz">
+                                <rect key="frame" x="99" y="707.33333333333337" width="177" height="54.666666666666629"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play Again">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="preLevelSelectionTapped:" destination="li8-1e-9hm" eventType="touchUpInside" id="uaX-hk-HdQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yn4-JG-mVF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -230,7 +230,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="yDN-Op-qas" secondAttribute="trailing" constant="16" id="GWu-V4-nkv"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JLD-aB-T4c" secondAttribute="trailing" constant="16" id="K5K-H7-ay3"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="centerX" secondItem="xK0-y4-QYe" secondAttribute="trailing" constant="8" id="Ufx-8d-lxf"/>
-                            <constraint firstItem="bhm-Zs-v73" firstAttribute="top" secondItem="g5e-QA-WGz" secondAttribute="bottom" constant="32" id="ZTB-Zg-BZs"/>
+                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="g5e-QA-WGz" secondAttribute="bottom" constant="16" id="ZTB-Zg-BZs"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="top" secondItem="JLD-aB-T4c" secondAttribute="bottom" constant="16" id="ZqE-DP-6e0"/>
                             <constraint firstItem="xK0-y4-QYe" firstAttribute="top" secondItem="NVP-EG-pZV" secondAttribute="bottom" constant="32" id="b94-jG-yuL"/>
                             <constraint firstItem="mL4-r5-LVc" firstAttribute="centerY" secondItem="yn4-JG-mVF" secondAttribute="centerY" id="d1C-gs-7xO"/>
@@ -242,7 +242,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="BYf-xy-pkD" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" constant="16" id="jvZ-Zd-PNe"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="trailing" secondItem="OxZ-YY-IN6" secondAttribute="trailing" constant="16" id="k4j-Nk-Q22"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="yDN-Op-qas" secondAttribute="bottom" constant="16" id="oOA-EL-TWa"/>
-                            <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="bhm-Zs-v73" secondAttribute="bottom" constant="16" id="pRV-Ky-bXn"/>
+                            <constraint firstItem="g5e-QA-WGz" firstAttribute="top" secondItem="bhm-Zs-v73" secondAttribute="bottom" constant="32" id="pRV-Ky-bXn"/>
                             <constraint firstItem="NVP-EG-pZV" firstAttribute="leading" secondItem="yn4-JG-mVF" secondAttribute="leading" id="qf0-wu-Dtk"/>
                             <constraint firstItem="yn4-JG-mVF" firstAttribute="bottom" secondItem="BYf-xy-pkD" secondAttribute="bottom" constant="16" id="tot-hY-cHp"/>
                             <constraint firstItem="bhm-Zs-v73" firstAttribute="centerX" secondItem="yn4-JG-mVF" secondAttribute="centerX" id="vvK-rW-mQR"/>
