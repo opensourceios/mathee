@@ -68,6 +68,7 @@ class ShabbosViewController: UIViewController {
     var livesLeft = Const.livesPerLevel
 
     var runsLeft: Float = Const.timerSeconds
+    let initialTime = Const.timerSeconds
 
     enum GameEndReason {
         case timeUp
@@ -259,7 +260,7 @@ class ShabbosViewController: UIViewController {
             case .pointsReached:
                 alert = createAlert(alertReasonParam: .pointsReached,
                                     levelIndex: levelNumberIndex,
-                                    secondsLeft: Int(runsLeft),
+                                    secondsUsed: Int(initialTime-runsLeft),
                                     livesLeft: livesLeft)
                 var completedLevelsString: String = ud.value(
                     forKey: Const.completedShabbosLevels) as! String

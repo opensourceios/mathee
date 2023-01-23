@@ -76,7 +76,7 @@ extension UIViewController {
 
     func createAlert(alertReasonParam: AlertReason,
                      levelIndex: Int = 0, points: Int = 0,
-                     secondsLeft: Int = 0, livesLeft: Int = 0) -> UIAlertController {
+                     secondsUsed: Int = 0, livesLeft: Int = 0) -> UIAlertController {
 
         var alertTitle = ""
         var alertMessage = ""
@@ -116,12 +116,12 @@ extension UIViewController {
                 """
             case .pointsReached:
                 alertTitle = "🎉 You Won! 🎊"
-                let secondSeconds = secondsLeft == 1 ? "second" : "seconds"
+                let secondSeconds = secondsUsed == 1 ? "second" : "seconds"
                 let lifeLives = livesLeft == 1 ? "life" : "lives"
                 alertMessage = """
-                You reached 1000 points and successfully completed level \(levelIndex+1) \
-                with \(secondsLeft) \(secondSeconds) to spare, and \(livesLeft) \
-                \(lifeLives) left!
+                You reached 1000 points and successfully completed \
+                Level \(levelIndex+1), using \(secondsUsed) \(secondSeconds), and \
+                with \(livesLeft) \(lifeLives) left!
                 """
             default:
                 alertTitle = "Unknown error"
