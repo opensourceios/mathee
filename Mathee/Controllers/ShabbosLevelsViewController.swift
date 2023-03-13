@@ -121,11 +121,11 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
         if isLevelCompleted {
-            cell.levelNumberLabel.text?.append(" ✅")
+            cell.levelNumberLabel.text?.append(" — ✅ Done")
         }
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
         cell.numbersRangeLabel.text = """
-        🧮 Numbers between 1 and \(levelMaxNumber)
+        🧮 Numbers 1-\(levelMaxNumber)
         """
 
         cell.fakeBackgroundView.backgroundColor = myThemeColor
