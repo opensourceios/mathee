@@ -41,7 +41,7 @@ struct Const {
     static let completedShabbosLevels = "completedShabbosLevels"
 
 
-    static let dataSourceHome = [
+    static let dataSourceHome: [[String: Any]] = [
 
         ["icon": "magnifyingglass",
          "color": UIColor.systemMint,
