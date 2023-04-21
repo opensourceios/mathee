@@ -27,38 +27,37 @@ struct Const {
     static let okMessage = "OK"
     static let correctMessage = "Correct"
     static let doneMessage = "Done"
-    static let endMessage = "Return home"
     static let oddMessage = "Odd"
     static let evenMessage = "Even"
     static let shareTitleMessage = "Tell a friend"
     static let spotItCell = "mycell"
-    static let ShabbosLevelsViewController = "ShabbosLevelsViewController"
-    static let shabbosViewController = "ShabbosViewController"
-    static let shabbosTutorialViewController = "ShabbosTutorialViewController"
-    static let shabbosLevelCell = "levelCell"
-    static let userSawShabbosTutorial = "userSawShabbosTutorial"
+    static let BingoLevelsViewController = "BingoLevelsViewController"
+    static let bingoViewController = "BingoViewController"
+    static let bingoTutorialViewController = "BingoTutorialViewController"
+    static let bingoLevelCell = "levelCell"
+    static let userSawBingoTutorial = "userSawBingoTutorial"
     static let levelIndexKey = "levelIndexKey"
-    static let completedShabbosLevels = "completedShabbosLevels"
+    static let completedBingoLevels = "completedBingoLevels"
 
 
     static let dataSourceHome: [[String: Any]] = [
 
-        ["icon": "magnifyingglass",
+        ["icon": "camera.metering.spot",
          "color": UIColor.systemMint,
          "title": "Spot It",
          "id": "BookViewController"],
 
-        ["icon": "key",
+        ["icon": "puzzlepiece.extension",
          "color": UIColor.systemOrange,
          "title": "Guess It",
          "id": "FormulaViewController"],
 
-        ["icon": "brain.head.profile",
+        ["icon": "checkmark.bubble",
          "color": UIColor.systemPurple,
-         "title": "Shabbos",
-         "id": "ShabbosViewController"],
+         "title": "Bingo",
+         "id": "BingoViewController"],
 
-        ["icon": "sparkles",
+        ["icon": "9.circle",
          "color": UIColor.systemGreen,
          "title": "Mystical Nine",
          "id": "MagicViewController"],
@@ -73,7 +72,7 @@ struct Const {
 
     static let pointsPerTap = 70
     static let timerSeconds: Float = 30
-    static let shabbosLevelsCount = 100
+    static let bingoLevelsCount = 100
     static let rangeAddedPerLevel = 10
     static let livesPerLevel = 3
 

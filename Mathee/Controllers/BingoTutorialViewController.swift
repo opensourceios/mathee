@@ -1,5 +1,5 @@
 //
-//  ShabbosTutorialViewController.swift
+//  BingoTutorialViewController.swift
 //  Mathee
 //
 //  Created by Daniel Springer on 10/31/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShabbosTutorialViewController: UIViewController {
+class BingoTutorialViewController: UIViewController {
 
     @IBAction func hidePressed(_ sender: Any) {
         dismiss(animated: true)

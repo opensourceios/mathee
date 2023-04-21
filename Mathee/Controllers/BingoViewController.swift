@@ -1,5 +1,5 @@
 //
-//  ShabbosViewController.swift
+//  BingoViewController.swift
 //  Mathee
 //
 //  Created by Daniel Springer on 10/6/22.
@@ -9,14 +9,14 @@
 import UIKit
 import GameKit
 
-class ShabbosViewController: UIViewController {
+class BingoViewController: UIViewController {
 
     // MARK: Outlets
 
     @IBOutlet weak var numberLabel: UILabel!
 
-    @IBOutlet weak var shabbosButton: UIButton!
-    @IBOutlet weak var notShabbosButton: UIButton!
+    @IBOutlet weak var bingoButton: UIButton!
+    @IBOutlet weak var notBingoButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgress: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -87,10 +87,10 @@ class ShabbosViewController: UIViewController {
             UIView.setAnimationsEnabled(false)
         }
 
-        self.title = "Shabbos: Level \(levelNumberIndex+1)"
+        self.title = "Bingo: Level \(levelNumberIndex+1)"
         numberLabel.text = " "
         scoreLabel.text = "Score: 0"
-        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
+        livesLeftLabel.text = "Lives left: " + String(repeating: "\n❤️", count: livesLeft)
         setThemeColorTo(myThemeColor: myThemeColor)
         timerProgress.progress = 0
         toggleUI(enable: false)
@@ -107,8 +107,8 @@ class ShabbosViewController: UIViewController {
 
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 
-        shabbosButton.doGlowAnimation(withColor: myThemeColor)
-        //        notShabbosButton.doGlowAnimation(withColor: myThemeColor)
+        bingoButton.doGlowAnimation(withColor: myThemeColor)
+        //        notBingoButton.doGlowAnimation(withColor: myThemeColor)
         startPreTimer()
     }
 
@@ -212,23 +212,23 @@ class ShabbosViewController: UIViewController {
             return
         }
 
-        let isShabbos = currentNumber % 7 == 0
+        let isBingo = currentNumber % 7 == 0
 
-        // shabbos tag is 0
-        if isShabbos && sender.tag == 0 {
-            self.showToast(message: "SHABBOS! 2x BONUS!", color: myThemeColor)
+        // bingo tag is 0
+        if isBingo && sender.tag == 0 {
+            self.showToast(message: "BINGO! 2x BONUS!", color: myThemeColor)
             score += Const.pointsPerTap * 2
             showNextNumber()
-        } else if !isShabbos && sender.tag == 1 {
+        } else if !isBingo && sender.tag == 1 {
             self.showToast(message: "\(correctMessages.randomElement()!)!".uppercased(),
                            color: .systemGreen)
             score += Const.pointsPerTap
             showNextNumber()
-        } else if isShabbos && sender.tag == 1 {
+        } else if isBingo && sender.tag == 1 {
             removeALife()
             shakeAndShow()
             self.showToast(message: "Oops", color: .systemGray)
-        } else if !isShabbos && sender.tag == 0 {
+        } else if !isBingo && sender.tag == 0 {
             removeALife()
             shakeAndShow()
             self.showToast(message: "Oops", color: .systemGray)
@@ -238,7 +238,7 @@ class ShabbosViewController: UIViewController {
 
     func removeALife() {
         livesLeft-=1
-        livesLeftLabel.text = "Lives left: " + String(repeating: "❤️", count: livesLeft)
+        livesLeftLabel.text = "Lives left: " + String(repeating: "\n❤️", count: livesLeft)
         guard livesLeft > 0 else {
             endGameWith(reason: .livesUp)
             return
@@ -263,12 +263,12 @@ class ShabbosViewController: UIViewController {
                                     secondsUsed: Int(initialTime-runsLeft),
                                     livesLeft: livesLeft)
                 var completedLevelsString: String = ud.value(
-                    forKey: Const.completedShabbosLevels) as! String
+                    forKey: Const.completedBingoLevels) as! String
                 var completedLevelsArray = completedLevelsString.split(separator: ",")
                 if !completedLevelsArray.contains("\(levelNumberIndex!)") {
                     completedLevelsArray.append("\(levelNumberIndex!)")
                     completedLevelsString = completedLevelsArray.joined(separator: ",")
-                    ud.set(completedLevelsString, forKey: Const.completedShabbosLevels)
+                    ud.set(completedLevelsString, forKey: Const.completedBingoLevels)
                     remoteDelegate?.reload()
                 }
         }
@@ -301,8 +301,8 @@ class ShabbosViewController: UIViewController {
         toggleUI(enable: false)
         currentNumber = numbersDistribution.nextInt()
         let myAttrText = attrifyString(
-            preString: "Will day number\n", toAttrify: "\(currentNumber)",
-            postString: "be Shabbos?", color: myThemeColor)
+            preString: "Will number\n", toAttrify: "\(currentNumber)",
+            postString: "be Bingo?", color: myThemeColor)
         numberLabel.attributedText = myAttrText
         self.toggleUI(enable: true)
     }
@@ -310,7 +310,7 @@ class ShabbosViewController: UIViewController {
 
     func toggleUI(enable: Bool) {
         DispatchQueue.main.async {
-            for button: UIButton in [self.shabbosButton, self.notShabbosButton] {
+            for button: UIButton in [self.bingoButton, self.notBingoButton] {
                 button.isHidden = !enable
             }
         }

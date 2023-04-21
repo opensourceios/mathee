@@ -17,7 +17,7 @@ class MatheeScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Shabbos", "Guess It", "Spot It"]
+    let aList = ["Bingo", "Guess It", "Spot It"]
 
 
     override func setUpWithError() throws {
@@ -36,10 +36,10 @@ class MatheeScreenshots: XCTestCase {
         XCTAssertTrue(aThing.waitForExistence(timeout: 5))
         aThing.tap()
         switch word {
-            case "Shabbos":
+            case "Bingo":
                 XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch
                     .waitForExistence(timeout: 5))
-                takeScreenshot(named: "2-Shabbos-levels")
+                takeScreenshot(named: "2-Bingo-levels")
                 XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch
                     .waitForExistence(timeout: 5))
                 app.staticTexts["⭐️ Level 2"].firstMatch.tap()
@@ -47,14 +47,14 @@ class MatheeScreenshots: XCTestCase {
                     XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
                     app.buttons["Nope"].firstMatch.tap()
                 }
-                XCTAssertTrue(app.buttons["Shabbos"].firstMatch.waitForExistence(timeout: 5))
+                XCTAssertTrue(app.buttons["Bingo"].firstMatch.waitForExistence(timeout: 5))
                 XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
-                takeScreenshot(named: "3-Shabbos-game-middle")
+                takeScreenshot(named: "3-Bingo-game-middle")
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 25))
                 app.buttons["OK"].firstMatch.tap()
 
-                XCTAssertTrue(app.buttons["Shabbos"].firstMatch.waitForExistence(timeout: 5))
-                app.buttons["Shabbos"].firstMatch.tap()
+                XCTAssertTrue(app.buttons["Bingo"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["Bingo"].firstMatch.tap()
                 app.buttons["Mathee"].firstMatch.tap()
             case "Guess It":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))

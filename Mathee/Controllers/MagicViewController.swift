@@ -47,7 +47,7 @@ class MagicViewController: UIViewController {
         setThemeColorTo(myThemeColor: myThemeColor)
 
         headerLabel.text = """
-        Think of a number (you might want pen and paper)
+        Think of a number
 
         Let us call your number: A
         """
@@ -191,7 +191,7 @@ class MagicViewController: UIViewController {
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(done), for: .touchUpInside)
-        middleButton.setTitleNew(Const.endMessage)
+        middleButton.setTitleNew(Const.doneMessage)
     }
 
 
@@ -207,7 +207,7 @@ class MagicViewController: UIViewController {
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(done), for: .touchUpInside)
-        middleButton.setTitleNew(Const.endMessage)
+        middleButton.setTitleNew(Const.doneMessage)
     }
 
 

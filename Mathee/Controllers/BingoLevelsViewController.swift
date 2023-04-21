@@ -1,5 +1,5 @@
 //
-//  ShabbosLevelsViewController.swift
+//  BingoLevelsViewController.swift
 //  Mathee
 //
 //  Created by Daniel Springer on 10/16/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDelegate {
+class BingoLevelsViewController: UITableViewController, RemoteTableReloadDelegate {
 
 
     // MARK: Outlets
@@ -50,7 +50,7 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
         super.viewWillAppear(animated)
 
         let completedLevelsString: String = ud.string(
-            forKey: Const.completedShabbosLevels) ?? ""
+            forKey: Const.completedBingoLevels) ?? ""
         let completedLevelsArrayTemp = completedLevelsString.split(separator: ",")
         completedLevelsArray = completedLevelsArrayTemp.map { Int($0)! }
     }
@@ -66,9 +66,9 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
             return
         }
 
-        if !ud.bool(forKey: Const.userSawShabbosTutorial) {
+        if !ud.bool(forKey: Const.userSawBingoTutorial) {
             showHelp()
-            ud.set(true, forKey: Const.userSawShabbosTutorial)
+            ud.set(true, forKey: Const.userSawBingoTutorial)
         }
 
     }
@@ -83,7 +83,7 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
         }
         ud.removeObject(forKey: Const.levelIndexKey)
 
-        if restoredLevelIndex >= Const.shabbosLevelsCount {
+        if restoredLevelIndex >= Const.bingoLevelsCount {
             let alert = createAlert(alertReasonParam: .lastLevelCompleted)
             present(alert, animated: true)
             return false
@@ -96,8 +96,8 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
     @objc func showHelp() {
 
         let tutorialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
-            withIdentifier: Const.shabbosTutorialViewController)
-        as! ShabbosTutorialViewController
+            withIdentifier: Const.bingoTutorialViewController)
+        as! BingoTutorialViewController
 
         present(tutorialVC, animated: true)
     }
@@ -107,7 +107,7 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
 
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return Const.shabbosLevelsCount
+        return Const.bingoLevelsCount
     }
 
 
@@ -116,19 +116,20 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
 
         let isLevelCompleted = completedLevelsArray.contains(indexPath.row)
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: Const.shabbosLevelCell)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Const.bingoLevelCell)
         as! LevelTableViewCell
         cell.selectionStyle = .none
         cell.levelNumberLabel.text = "⭐️ Level \(indexPath.row + 1)"
         if isLevelCompleted {
-            cell.levelNumberLabel.text?.append(" — ✅ Done")
+            cell.fakeBackgroundView.backgroundColor = .systemGreen
+        } else {
+            cell.fakeBackgroundView.backgroundColor = myThemeColor
         }
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
         cell.numbersRangeLabel.text = """
-        🧮 Numbers 1-\(levelMaxNumber)
+        Numbers 1-\(levelMaxNumber)
         """
 
-        cell.fakeBackgroundView.backgroundColor = myThemeColor
         cell.fakeBackgroundView.layer.cornerRadius = 8
 
         return cell
@@ -136,14 +137,14 @@ class ShabbosLevelsViewController: UITableViewController, RemoteTableReloadDeleg
 
 
     func showLevelFor(_ indexPath: IndexPath) {
-        let shabbosVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
-            withIdentifier: Const.shabbosViewController) as! ShabbosViewController
-        shabbosVC.levelNumberIndex = indexPath.row
+        let bingoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(
+            withIdentifier: Const.bingoViewController) as! BingoViewController
+        bingoVC.levelNumberIndex = indexPath.row
         let levelMaxNumber = Const.rangeAddedPerLevel * (indexPath.row + 1)
-        shabbosVC.numbersRange = 1...levelMaxNumber
-        shabbosVC.myThemeColor = myThemeColor
-        shabbosVC.remoteDelegate = tableView.delegate as? any RemoteTableReloadDelegate
-        self.navigationController!.pushViewController(shabbosVC, animated: true)
+        bingoVC.numbersRange = 1...levelMaxNumber
+        bingoVC.myThemeColor = myThemeColor
+        bingoVC.remoteDelegate = tableView.delegate as? any RemoteTableReloadDelegate
+        self.navigationController!.pushViewController(bingoVC, animated: true)
     }
 
 

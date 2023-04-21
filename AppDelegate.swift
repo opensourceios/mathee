@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Properties
 
     var window: UIWindow?
-
+    // TODO:
+    // let user choose base for Bingo
+    // lock levels besides current
 
     // MARK: Life Cycle
 
@@ -27,13 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 if CommandLine.arguments.contains("--matheeScreenshots") {
                     // We are in testing mode, make arrangements
-                    ud.set(true, forKey: Const.userSawShabbosTutorial)
-                    ud.set("", forKey: Const.completedShabbosLevels)
+                    ud.set(true, forKey: Const.userSawBingoTutorial)
+                    ud.set("", forKey: Const.completedBingoLevels)
                 }
 
                 ud.register(defaults: [
-                    Const.userSawShabbosTutorial: false,
-                    Const.completedShabbosLevels: ""
+                    Const.userSawBingoTutorial: false,
+                    Const.completedBingoLevels: ""
                 ])
 
                 return true

@@ -186,7 +186,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        middleButton.setTitleNew(Const.correctMessage)
+        middleButton.setTitleNew(Const.doneMessage)
         middleButton.sizeToFit()
     }
 

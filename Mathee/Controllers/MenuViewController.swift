@@ -182,11 +182,11 @@ class MenuViewController: UIViewController, UITableViewDataSource,
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Shabbos":
+            case "Bingo":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.ShabbosLevelsViewController)
-                as! ShabbosLevelsViewController
-                controller.myTitle = "Shabbos"
+                    withIdentifier: Const.BingoLevelsViewController)
+                as! BingoLevelsViewController
+                controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
