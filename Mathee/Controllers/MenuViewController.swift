@@ -182,7 +182,7 @@ class MenuViewController: UIViewController, UITableViewDataSource,
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Bingo":
+            case Const.shabbosGameName:
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: Const.BingoLevelsViewController)
                 as! BingoLevelsViewController
@@ -205,13 +205,13 @@ class MenuViewController: UIViewController, UITableViewDataSource,
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController
             .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
-            guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: .unknown)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                return
+                guard error == nil else {
+                    let alert = self.createAlert(alertReasonParam: .unknown)
+                    alert.view.layoutIfNeeded()
+                    self.present(alert, animated: true)
+                    return
+                }
             }
-        }
         DispatchQueue.main.async {
             self.present(activityController, animated: true)
         }

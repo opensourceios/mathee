@@ -38,6 +38,7 @@ struct Const {
     static let userSawBingoTutorial = "userSawBingoTutorial"
     static let levelIndexKey = "levelIndexKey"
     static let completedBingoLevels = "completedBingoLevels"
+    static let shabbosGameName = "Bingo"
 
 
     static let dataSourceHome: [[String: Any]] = [
@@ -54,7 +55,7 @@ struct Const {
 
         ["icon": "checkmark.bubble",
          "color": UIColor.systemPurple,
-         "title": "Bingo",
+         "title": shabbosGameName,
          "id": "BingoViewController"],
 
         ["icon": "9.circle",

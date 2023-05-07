@@ -87,7 +87,7 @@ class BingoViewController: UIViewController {
             UIView.setAnimationsEnabled(false)
         }
 
-        self.title = "Bingo: Level \(levelNumberIndex+1)"
+        self.title = "\(Const.shabbosGameName): Level \(levelNumberIndex+1)"
         numberLabel.text = " "
         scoreLabel.text = "Score: 0"
         livesLeftLabel.text = "Lives left: " + String(repeating: "\n❤️", count: livesLeft)
@@ -216,7 +216,8 @@ class BingoViewController: UIViewController {
 
         // bingo tag is 0
         if isBingo && sender.tag == 0 {
-            self.showToast(message: "BINGO! 2x BONUS!", color: myThemeColor)
+            self.showToast(message: "\(Const.shabbosGameName.uppercased())! 2x BONUS!",
+                           color: myThemeColor)
             score += Const.pointsPerTap * 2
             showNextNumber()
         } else if !isBingo && sender.tag == 1 {
@@ -302,7 +303,7 @@ class BingoViewController: UIViewController {
         currentNumber = numbersDistribution.nextInt()
         let myAttrText = attrifyString(
             preString: "Will number\n", toAttrify: "\(currentNumber)",
-            postString: "be Bingo?", color: myThemeColor)
+            postString: "be \(Const.shabbosGameName)?", color: myThemeColor)
         numberLabel.attributedText = myAttrText
         self.toggleUI(enable: true)
     }

@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     // TODO:
-    // let user choose base for Bingo
+    // let user choose base for shabbosNameGame
+    // set YES button to shabbosNameGame in code, not IB
+    // set shabbosNameGame tutorial in code, not IB
     // lock levels besides current
 
     // MARK: Life Cycle
