@@ -21,8 +21,8 @@ class BingoTutorialViewController: UIViewController {
         super.viewDidLoad()
 
         tutorialTextView.text = """
-        - Tap "\(Const.shabbosGameName)" if the shown number is a multiple of your chosen \
-        base (currently: \(ud.integer(forKey: Const.shabbosBase))), otherwise, tap "Nope".
+        - Tap "\(Const.shabbosGameName)" if the shown number is a multiple of \
+        \(ud.integer(forKey: Const.shabbosBase)) — otherwise tap "Nope".
 
         - The goal is to reach \(Const.pointsGoal) points in \(Int(Const.timerSeconds)) \
         seconds (1 correct guess = \(Const.pointsPerTap) points, 1 correct \
@@ -33,6 +33,22 @@ class BingoTutorialViewController: UIViewController {
         (Tap "Help" on the top right of "\(Const.shabbosGameName)" to see this message \
         again later)
         """
+
+        /*
+         tutorialTextView.text = """
+         - Tap "\(Const.shabbosGameName)" if the shown number is a multiple of your chosen \
+         base (currently: \(ud.integer(forKey: Const.shabbosBase))), otherwise, tap "Nope".
+
+         - The goal is to reach \(Const.pointsGoal) points in \(Int(Const.timerSeconds)) \
+         seconds (1 correct guess = \(Const.pointsPerTap) points, 1 correct \
+         \(Const.shabbosGameName) guess = double points!)
+
+         - Can you complete all \(Const.bingoLevelsCount) levels?
+
+         (Tap "Help" on the top right of "\(Const.shabbosGameName)" to see this message \
+         again later)
+         """
+         */
     }
 
 

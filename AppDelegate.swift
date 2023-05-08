@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     // TODO:
-    // let user choose base for shabbosNameGame
-    // lock levels besides current
+    // [?] let user choose base for shabbosNameGame? (if so, no point storing completed levels)
 
     // MARK: Life Cycle
 
