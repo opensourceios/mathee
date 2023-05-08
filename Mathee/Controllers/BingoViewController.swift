@@ -99,6 +99,8 @@ class BingoViewController: UIViewController {
                                                      highestValue: numbersRange.last!)
 
         timerLabel.text = "\(timeLeftPre)00:\(Int(Const.timerSeconds))"
+
+        bingoButton.setTitleNew(Const.shabbosGameName)
     }
 
 

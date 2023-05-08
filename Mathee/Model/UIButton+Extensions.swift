@@ -10,6 +10,8 @@ import UIKit
 
 extension UIButton {
 
+    /// - Problem: setting button title using plain string resets font size selected in IB.
+    /// - Solution: set attributedString.
     func setTitleNew(_ title: String) {
 
         let oldFont: UIFont = self.configuration!.attributedTitle!.font ??
