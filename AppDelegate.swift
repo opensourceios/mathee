@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     // TODO:
     // let user choose base for shabbosNameGame
-    // set YES button to shabbosNameGame in code, not IB
-    // set shabbosNameGame tutorial in code, not IB
     // lock levels besides current
 
     // MARK: Life Cycle
@@ -37,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 ud.register(defaults: [
                     Const.userSawBingoTutorial: false,
-                    Const.completedBingoLevels: ""
+                    Const.completedBingoLevels: "",
+                    Const.shabbosBase: 7
                 ])
 
                 return true

@@ -104,7 +104,7 @@ extension UIViewController {
                 alertTitle = "⏰ Game Over ⏰"
                 alertMessage = """
                 You reached \(points) points.
-                Reach 1000 points to complete this level.
+                Reach \(Const.pointsGoal) points to complete this level.
                 Try again!
                 """
             case .livesUp:
@@ -118,7 +118,8 @@ extension UIViewController {
                 alertTitle = "🎉 You Won! 🎊"
                 let secondSeconds = secondsUsed == 1 ? "second" : "seconds"
                 alertMessage = """
-                You reached 1000 points and successfully completed Level \(levelIndex+1)
+                You reached \(Const.pointsGoal) points and successfully completed Level \
+                \(levelIndex+1)
 
                 Time used: \(secondsUsed) \(secondSeconds)
 

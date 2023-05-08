@@ -12,6 +12,7 @@ import UIKit
 let ud = UserDefaults.standard
 
 struct Const {
+
     static let appVersion = "CFBundleShortVersionString"
     static let version = "v."
     static let appName = "Mathee - Math Tricks & Games"
@@ -34,12 +35,14 @@ struct Const {
     static let BingoLevelsViewController = "BingoLevelsViewController"
     static let bingoViewController = "BingoViewController"
     static let bingoTutorialViewController = "BingoTutorialViewController"
+    static let shabbosGameName = "Bingo"
     static let bingoLevelCell = "levelCell"
+
+    // UserDefaults
     static let userSawBingoTutorial = "userSawBingoTutorial"
     static let levelIndexKey = "levelIndexKey"
-    static let completedBingoLevels = "completedBingoLevels"
-    static let shabbosGameName = "Bingo"
-
+    static let completedBingoLevels = "completedBingoLevels2"
+    static let shabbosBase = "shabbosBase"
 
     static let dataSourceHome: [[String: Any]] = [
 
@@ -73,8 +76,10 @@ struct Const {
 
     static let pointsPerTap = 70
     static let timerSeconds: Float = 30
-    static let bingoLevelsCount = 100
-    static let rangeAddedPerLevel = 10
+    static let bingoLevelsCount = 40
+    static let rangeAddedPerLevel = 25
     static let livesPerLevel = 3
+    static let pointsGoal = 1000
+    static let shabbosBaseOptions = Array(1...10)
 
 }

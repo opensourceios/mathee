@@ -22,7 +22,7 @@ class HigherLowerViewController: UIViewController {
 
     // MARK: Properties
 
-    var myArray = Array(1...1000)
+    var myArray = Array(1...Const.pointsGoal)
 
     var triesLeft = 10
     let initialTriesPlusOne: Float = 11.0

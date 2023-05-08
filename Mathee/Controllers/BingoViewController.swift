@@ -57,7 +57,7 @@ class BingoViewController: UIViewController {
     var levelNumberIndex: Int!
     var score = 0 {
         didSet {
-            guard score < 1000 else {
+            guard score < Const.pointsGoal else {
                 endGameWith(reason: .pointsReached)
                 return
             }

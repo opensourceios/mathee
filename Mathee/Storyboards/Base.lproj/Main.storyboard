@@ -675,17 +675,8 @@ Let me ask you a few questions...</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5o-tg-gC1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Here should be the tutorial. If you see this message, please let us know..." adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5o-tg-gC1">
                                 <rect key="frame" x="16" y="139" width="343" height="536.33333333333337"/>
-                                <string key="text">Hello! Bingo?
-
-- Tap "Bingo" if the shown number is a multiple of your selected base number, otherwise tap "Nope" (current base: 7).
-
-- The goal is to reach 1000 points in 30 seconds.
-
-- How many levels can you complete?
-
-(Tap "Help" on the top right of the "Bingo" Levels page to see this message again later)</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -716,6 +707,9 @@ Let me ask you a few questions...</string>
                             <constraint firstItem="cle-pQ-en9" firstAttribute="leading" secondItem="bMB-xI-l5o" secondAttribute="leading" constant="16" id="yKE-gr-pjX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tutorialTextView" destination="L5o-tg-gC1" id="dXm-Ai-hV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz0-hk-y5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
