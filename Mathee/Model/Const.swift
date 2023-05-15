@@ -75,10 +75,10 @@ struct Const {
 
 
     static let pointsPerTap = 70
-    static let timerSeconds: Float = 30
-    static let bingoLevelsCount = 40
-    static let rangeAddedPerLevel = 25
-    static let livesPerLevel = 3
+    static let timerSeconds: Float = 40
+    static let bingoLevelsCount = 20
+    static let rangeAddedPerLevel = 50
+    static let livesPerLevel = 4
     static let pointsGoal = 1000
     static let shabbosBaseOptions = Array(1...10)
 
