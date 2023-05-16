@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Mathee
+//  Multibuddy
 //
 //  Created by Daniel Springer on 01/07/2018.
 //  Copyright © 2023 Daniel Springer. All rights reserved.
@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     // TODO:
-    // [?] let user choose base for shabbosNameGame? (if so, no point storing completed levels)
+    // let user choose base for shabbosNameGame
+    // remove/update storing of completed levels
 
     // MARK: Life Cycle
 
@@ -26,16 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [
             UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 
-                if CommandLine.arguments.contains("--matheeScreenshots") {
+                if CommandLine.arguments.contains("--multibuddyScreenshots") {
                     // We are in testing mode, make arrangements
-                    ud.set(true, forKey: Const.userSawBingoTutorial)
+                    ud.set(true, forKey: Const.userSawSettings)
                     ud.set("", forKey: Const.completedBingoLevels)
                 }
 
                 ud.register(defaults: [
-                    Const.userSawBingoTutorial: false,
+                    Const.userSawSettings: false,
                     Const.completedBingoLevels: "",
-                    Const.shabbosBase: 7
+                    Const.base: 7
                 ])
 
                 return true
