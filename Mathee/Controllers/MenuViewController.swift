@@ -182,14 +182,6 @@ class MenuViewController: UIViewController, UITableViewDataSource,
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case Const.shabbosGameName:
-                let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.BingoLevelsViewController)
-                as! BingoLevelsViewController
-                controller.myTitle = cell.myLabel!.text
-                controller
-                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-                self.navigationController!.pushViewController(controller, animated: true)
             default:
                 fatalError()
         }

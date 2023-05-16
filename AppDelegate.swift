@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Properties
 
     var window: UIWindow?
-    // TODO:
-    // [?] let user choose base for shabbosNameGame? (if so, no point storing completed levels)
+
 
     // MARK: Life Cycle
 
@@ -28,15 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 if CommandLine.arguments.contains("--matheeScreenshots") {
                     // We are in testing mode, make arrangements
-                    ud.set(true, forKey: Const.userSawBingoTutorial)
-                    ud.set("", forKey: Const.completedBingoLevels)
                 }
-
-                ud.register(defaults: [
-                    Const.userSawBingoTutorial: false,
-                    Const.completedBingoLevels: "",
-                    Const.shabbosBase: 7
-                ])
 
                 return true
             }

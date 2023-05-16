@@ -66,10 +66,7 @@ extension UIViewController {
         case unknown
         case textfieldEmpty
         case nan
-        case lastLevelCompleted
-        case timeUp
-        case livesUp
-        case pointsReached
+
         case emailError
     }
 
@@ -94,36 +91,6 @@ extension UIViewController {
                 alertTitle = "Please enter numbers only"
                 alertMessage = """
                 Highest number allowed: \(UInt64.max/4)
-                """
-            case .lastLevelCompleted:
-                alertTitle = "👑 WOW! You did it! 🎉"
-                alertMessage = """
-                You have completed all \(Const.bingoLevelsCount) levels!
-                """
-            case .timeUp:
-                alertTitle = "⏰ Game Over ⏰"
-                alertMessage = """
-                You reached \(points) points.
-                Reach \(Const.pointsGoal) points to complete this level.
-                Try again!
-                """
-            case .livesUp:
-                alertTitle = "💔 Game Over 💔"
-                alertMessage = """
-                You ran out of lives.
-                You reached \(points) points.
-                Try again!
-                """
-            case .pointsReached:
-                alertTitle = "🎉 You Won! 🎊"
-                let secondSeconds = secondsUsed == 1 ? "second" : "seconds"
-                alertMessage = """
-                You reached \(Const.pointsGoal) points and successfully completed Level \
-                \(levelIndex+1)
-
-                Time used: \(secondsUsed) \(secondSeconds)
-
-                Lives left: \(String(repeating: "❤️", count: livesLeft))
                 """
             default:
                 alertTitle = "Unknown error"

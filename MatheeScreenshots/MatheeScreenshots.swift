@@ -17,7 +17,7 @@ class MatheeScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = [Const.shabbosGameName, "Guess It", "Spot It"]
+    let aList = ["Guess It", "Spot It"]
 
 
     override func setUpWithError() throws {
@@ -36,29 +36,6 @@ class MatheeScreenshots: XCTestCase {
         XCTAssertTrue(aThing.waitForExistence(timeout: 5))
         aThing.tap()
         switch word {
-            case Const.shabbosGameName:
-                XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch
-                    .waitForExistence(timeout: 5))
-                takeScreenshot(named: "2-\(Const.shabbosGameName)-levels")
-                XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch
-                    .waitForExistence(timeout: 5))
-                app.staticTexts["⭐️ Level 2"].firstMatch.tap()
-                for _ in 0...4 {
-                    XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
-                    app.buttons["Nope"].firstMatch.tap()
-                }
-                XCTAssertTrue(app.buttons[Const.shabbosGameName].firstMatch
-                    .waitForExistence(timeout: 5))
-                XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
-                takeScreenshot(named: "3-\(Const.shabbosGameName)-game-middle")
-                XCTAssertTrue(app.buttons["OK"].firstMatch
-                    .waitForExistence(timeout: 25))
-                app.buttons["OK"].firstMatch.tap()
-
-                XCTAssertTrue(app.buttons[Const.shabbosGameName].firstMatch
-                    .waitForExistence(timeout: 5))
-                app.buttons[Const.shabbosGameName].firstMatch.tap()
-                app.buttons["Mathee"].firstMatch.tap()
             case "Guess It":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "4-Guess-it-think")
