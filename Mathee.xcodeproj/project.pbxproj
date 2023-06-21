@@ -13,12 +13,10 @@
 		3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3319088D20E8772E007C679C /* AppDelegate.swift */; };
 		33364BED2906696F00427C5C /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33364BEC2906696F00427C5C /* UIButton+Extensions.swift */; };
 		33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */; };
-		334453ED28FC0EFB00CC00E2 /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334453EC28FC0EFB00CC00E2 /* LevelTableViewCell.swift */; };
 		334FEBD9288DDB9800CCC883 /* SpotItCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FEBD8288DDB9800CCC883 /* SpotItCell.swift */; };
 		33568B7720EC96B300690825 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33568B7620EC96B300690825 /* BookViewController.swift */; };
 		3386A10A281A27B5009FCB7F /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */; };
 		3388BFDD22E17644005B148B /* FormulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3388BFDC22E17644005B148B /* FormulaViewController.swift */; };
-		338BC9E528FC5573008FCA90 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338BC9E428FC5573008FCA90 /* UILabel+Extensions.swift */; };
 		3392B0DC288D114500EE9525 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392B0DB288D114500EE9525 /* UIView+Extensions.swift */; };
 		33B727FB20EDC68800AF338A /* HigherLowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */; };
 		33B9FDC720EDDA8200131038 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9FDC620EDDA8200131038 /* MenuViewController.swift */; };
@@ -51,12 +49,10 @@
 		332FCFE3289B8DE000D3C733 /* Mathee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mathee.entitlements; sourceTree = "<group>"; };
 		33364BEC2906696F00427C5C /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
-		334453EC28FC0EFB00CC00E2 /* LevelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
 		334FEBD8288DDB9800CCC883 /* SpotItCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotItCell.swift; sourceTree = "<group>"; };
 		33568B7620EC96B300690825 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		3388BFDC22E17644005B148B /* FormulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormulaViewController.swift; sourceTree = "<group>"; };
-		338BC9E428FC5573008FCA90 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		3392B0DB288D114500EE9525 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		33B727FA20EDC68800AF338A /* HigherLowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HigherLowerViewController.swift; sourceTree = "<group>"; };
 		33B9FDC620EDDA8200131038 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +152,6 @@
 			children = (
 				33423D2022DE50EA00149D40 /* MainMenuTableViewCell.swift */,
 				334FEBD8288DDB9800CCC883 /* SpotItCell.swift */,
-				334453EC28FC0EFB00CC00E2 /* LevelTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,7 +164,6 @@
 				3392B0DB288D114500EE9525 /* UIView+Extensions.swift */,
 				33CF6B8C26F4434A002E5CA9 /* UIViewController+Extensions.swift */,
 				3386A109281A27B5009FCB7F /* UIFont+Extensions.swift */,
-				338BC9E428FC5573008FCA90 /* UILabel+Extensions.swift */,
 				33364BEC2906696F00427C5C /* UIButton+Extensions.swift */,
 			);
 			path = Model;
@@ -341,7 +335,6 @@
 			files = (
 				3386A10A281A27B5009FCB7F /* UIFont+Extensions.swift in Sources */,
 				33568B7720EC96B300690825 /* BookViewController.swift in Sources */,
-				338BC9E528FC5573008FCA90 /* UILabel+Extensions.swift in Sources */,
 				3388BFDD22E17644005B148B /* FormulaViewController.swift in Sources */,
 				33B9FDC720EDDA8200131038 /* MenuViewController.swift in Sources */,
 				33B9FDC920EDFC1500131038 /* MagicViewController.swift in Sources */,
@@ -353,7 +346,6 @@
 				33ECBA0621AC1BAA003199CB /* Const.swift in Sources */,
 				33364BED2906696F00427C5C /* UIButton+Extensions.swift in Sources */,
 				3327AD3621DD97B300A0B604 /* AppDelegate.swift in Sources */,
-				334453ED28FC0EFB00CC00E2 /* LevelTableViewCell.swift in Sources */,
 				33423D2122DE50EA00149D40 /* MainMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.61;
+				MARKETING_VERSION = 7.62;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -563,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 7.61;
+				MARKETING_VERSION = 7.62;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.danispringer.Guess-My-Number-Fun";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

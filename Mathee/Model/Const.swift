@@ -8,9 +8,6 @@
 
 import UIKit
 
-// swiftlint:disable:next identifier_name
-let ud = UserDefaults.standard
-
 struct Const {
 
     static let appVersion = "CFBundleShortVersionString"
