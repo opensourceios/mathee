@@ -18,7 +18,7 @@ struct Const {
     static let cancel = "Cancel"
     static let leaveReview = "Leave a review"
     static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
-    static let showAppsButtonTitle = "More apps"
+    static let showAppsButtonTitle = "More by Daniel Springer"
     static let appsLink = "https://apps.apple.com/developer/id1402417666"
     static let yesMessage = "Yes"
     static let noMessage = "No"

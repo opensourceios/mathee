@@ -116,6 +116,11 @@ class MenuViewController: UIViewController, UITableViewDataSource,
 
     // MARK: TableView Delegate
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "By Daniel Springer"
+    }
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Const.dataSourceHome.count
     }
