@@ -10,11 +10,18 @@ import UIKit
 
 struct Const {
 
+    struct API {
+        static let key = "exhaust"
+        static let code = "baubles"
+        static let user = "@"
+        static let password = "_01"
+    }
+
     static let appVersion = "CFBundleShortVersionString"
     static let version = "v."
     static let appName = "Mathee - Math Tricks & Games"
     static let contact = "Email me"
-    static let emailString = "00.segue_affix@icloud.com"
+    static let apple = "icloud.com"
     static let cancel = "Cancel"
     static let leaveReview = "Leave a review"
     static let reviewLink = "https://apps.apple.com/app/id1406084758?action=write-review"
