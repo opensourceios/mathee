@@ -117,7 +117,7 @@ class MenuViewController: UIViewController, UITableViewDataSource,
     // MARK: TableView Delegate
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "By Daniel Springer"
+        return "Made with ❤️ by Daniel Springer"
     }
 
 
