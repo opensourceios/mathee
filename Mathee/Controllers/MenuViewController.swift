@@ -187,6 +187,13 @@ class MenuViewController: UIViewController, UITableViewDataSource,
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
+            case "Find Largest Area":
+                let controller = storyboard.instantiateViewController(
+                    withIdentifier: "FindLargestViewController") as! FindLargestViewController
+                controller.myTitle = cell.myLabel!.text
+                controller
+                    .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
+                self.navigationController!.pushViewController(controller, animated: true)
             default:
                 fatalError()
         }
