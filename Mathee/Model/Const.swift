@@ -62,7 +62,7 @@ struct Const {
         ["icon": "arrow.up.arrow.down",
          "color": UIColor.systemRed,
          "title": "Find Largest Area",
-         "id": "FindLargestViewController"]
+         "id": "FindLargestAreaViewController"]
 
     ]
 

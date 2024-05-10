@@ -8,14 +8,13 @@
 
 import UIKit
  
-class FindLargestViewController: UIViewController, UICollectionViewDelegate,
+class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
                           UICollectionViewDataSource {
 
 
     // MARK: Outlets
     
     @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var myCollectionView: UICollectionView!
@@ -55,7 +54,10 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
         .systemPurple
     ]
 
-
+    var index = 0
+    var min_coord = [[Int]]()
+    var max_coord = [[Int]]()
+    
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -121,7 +123,6 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
             showResult()
             return
         }
-
         headerLabel.text = """
         Is your number in list \(currentPageReal+1) of \(pagesArrayOfDicts.count)?
         """
@@ -175,18 +176,18 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
             }
         }
         
-        var color: UIColor
-        let (area, min_coord, max_coord) = max_area(matrix: matrix)
-        for coord in Range(0...min_coord.count - 1){
-            color = colorsArray[coord]
-            for i in Range(min_coord[coord][0]...max_coord[coord][0]) {
-                for j in Range(min_coord[coord][1]...max_coord[coord][1]) {
-                    let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
-                    cell_max.backgroundColor = color
-                    cell_max.doGlowAnimation(withColor: color)
-                }
+        let (area, min_coord_returned, max_coord_returned) = max_area(matrix: matrix)
+        min_coord = min_coord_returned
+        max_coord = max_coord_returned
+        
+        for i in Range(min_coord[index][0]...max_coord[index][0]) {
+            for j in Range(min_coord[index][1]...max_coord[index][1]) {
+                let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
+                cell_max.backgroundColor = colorsArray[index]
+                cell_max.doGlowAnimation(withColor: colorsArray[index])
             }
         }
+        
         headerLabel.attributedText = attrifyString(
             preString: "Total Maximum Area:\n\n", toAttrify: "\(area)", postString: nil,
             color: myThemeColor)
@@ -195,7 +196,15 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
         middleButton.isHidden = false
         middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
-
+        
+        if min_coord.count > 1 {
+            rightButton.isHidden = false
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(cycleMaximumAreaOptions), for: .touchUpInside)
+            rightButton.setTitleNew(Const.doneMessage)
+            rightButton.sizeToFit()
+        }
+        
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         middleButton.setTitleNew(Const.doneMessage)
@@ -209,8 +218,21 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
         navigationController?.popToRootViewController(animated: true)
     }
 
-    @objc func toggleRectangle() {
-        navigationController?.popToRootViewController(animated: true)
+    @objc func cycleMaximumAreaOptions() {
+        index = (index + 1) % min_coord.count
+        for cell in myCollectionView.visibleCells {
+            let cell_max = cell as! SpotItCell
+            cell_max.backgroundColor = .white
+            cell_max.layer.removeAllAnimations()
+        }
+        
+        for i in Range(min_coord[index][0]...max_coord[index][0]) {
+            for j in Range(min_coord[index][1]...max_coord[index][1]) {
+                let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
+                cell_max.backgroundColor = colorsArray[index]
+                cell_max.doGlowAnimation(withColor: colorsArray[index])
+            }
+        }
     }
     
     // MARK: Collection Delegate

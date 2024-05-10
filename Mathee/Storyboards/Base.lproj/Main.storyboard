@@ -458,10 +458,10 @@ Let me ask you a few questions...</string>
             </objects>
             <point key="canvasLocation" x="1370.625" y="1263.3802816901409"/>
         </scene>
-        <!--Find Largest View Controller-->
+        <!--Find Largest Area View Controller-->
         <scene sceneID="kUr-h9-35K">
             <objects>
-                <viewController storyboardIdentifier="FindLargestViewController" id="rI1-GV-Hzb" customClass="FindLargestViewController" customModule="Mathee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindLargestAreaViewController" id="rI1-GV-Hzb" customClass="FindLargestAreaViewController" customModule="Mathee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GdR-e2-uC2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
