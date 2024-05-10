@@ -293,7 +293,6 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
             for y1 in Range(0...(cols - 1)) {
                 for x2 in Range(x1...(rows - 1)) {
                     for y2 in Range(y1...(cols - 1)) {
-                        print(x1, y1, x2, y2)
                         let area = is_rectangle(matrix: matrix, x1: x1, y1: y1, x2: x2, y2: y2)
                         if area > maxArea {
                             maxArea = area
@@ -307,10 +306,6 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
         }
-        
-        print(maxArea)
-        print(min_coord)
-        print(max_coord)
         
         return (maxArea, min_coord, max_coord)
     }
