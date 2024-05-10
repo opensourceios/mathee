@@ -90,6 +90,7 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         """
         myCollectionView.isHidden = true
        
+        
 
     }
 
@@ -107,6 +108,9 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         middleButton.setTitleNew(Const.okMessage)
         middleButton.sizeToFit()
+        
+        myCollectionView.isHidden = false
+        showNextPage()
     }
 
 
@@ -124,7 +128,7 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
             return
         }
         headerLabel.text = """
-        Is your number in list \(currentPageReal+1) of \(pagesArrayOfDicts.count)?
+        Find the largest rectangle are of 1's
         """
 
         currentPageDataSource = shuffledPagesByOrder[currentPageReal].value
@@ -250,6 +254,8 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
 
         cell.myLabel.text = "\(currentPageDataSource[indexPath.row])"
         cell.myLabel.textColor = .black
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
         cell.layer.cornerRadius = cell.frame.size.width / 2
 
         return cell
