@@ -62,8 +62,8 @@ struct Const {
          "title": "Lower or Higher",
          "id": "HigherLowerViewController"],
         
-        ["icon": "arrow.up.arrow.down",
-         "color": UIColor.systemRed,
+        ["icon": "square.split.2x2",
+         "color": UIColor.systemCyan,
          "title": "Find Largest Area",
          "id": "FindLargestAreaViewController"]
 

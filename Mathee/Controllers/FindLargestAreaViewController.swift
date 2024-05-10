@@ -278,7 +278,6 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         cell.myLabel.textColor = .black
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = cell.frame.size.width / 2
 
         return cell
     }

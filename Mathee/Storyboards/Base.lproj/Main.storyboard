@@ -496,7 +496,7 @@ Prepare to be amazed.</string>
                                 </buttonConfiguration>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e70-jA-cme" userLabel="My Collection View">
-                                <rect key="frame" x="30" y="149" width="315" height="314"/>
+                                <rect key="frame" x="40" y="149" width="295" height="314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="314" id="Vgg-o8-kCm"/>
@@ -549,7 +549,7 @@ Prepare to be amazed.</string>
                             <constraint firstItem="Ycj-it-D0z" firstAttribute="bottom" secondItem="zxW-RR-Udy" secondAttribute="bottom" constant="16" id="TN0-JM-0cx"/>
                             <constraint firstItem="e70-jA-cme" firstAttribute="top" secondItem="d17-0I-l3q" secondAttribute="bottom" constant="34" id="Vwc-Pn-UpD"/>
                             <constraint firstItem="jhv-e0-JJa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eyG-e0-R0E" secondAttribute="trailing" constant="4" id="WVU-Jp-gwT"/>
-                            <constraint firstItem="e70-jA-cme" firstAttribute="leading" secondItem="Ycj-it-D0z" secondAttribute="leading" constant="30" id="faS-Wl-2Dx"/>
+                            <constraint firstItem="e70-jA-cme" firstAttribute="leading" secondItem="Ycj-it-D0z" secondAttribute="leading" constant="40" id="faS-Wl-2Dx"/>
                             <constraint firstItem="jhv-e0-JJa" firstAttribute="centerX" secondItem="Ycj-it-D0z" secondAttribute="centerX" id="gRX-0R-ewJ"/>
                             <constraint firstItem="d17-0I-l3q" firstAttribute="centerX" secondItem="jhv-e0-JJa" secondAttribute="centerX" id="iRb-Ef-BFZ"/>
                             <constraint firstItem="Ycj-it-D0z" firstAttribute="bottom" secondItem="jhv-e0-JJa" secondAttribute="bottom" constant="16" id="j5v-NT-3Rn"/>
