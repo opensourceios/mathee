@@ -32,21 +32,9 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
     }
 
     let pagesArrayOfDicts = [
-        1: [1, 3, 5, 7, 9, 11,
-            13, 15, 17, 19, 21, 23,
-            25, 27, 29, 31],
-        2: [2, 3, 6, 7, 10, 11,
-            14, 15, 18, 19, 22, 23,
-            26, 27, 30, 31],
-        4: [4, 5, 6, 7, 12, 13,
-            14, 15, 20, 21, 22, 23,
-            28, 29, 30, 31],
-        8: [8, 9, 10, 11, 12, 13,
-            14, 15, 24, 25, 26, 27,
-            28, 29, 30, 31],
-        16: [16, 17, 18, 19, 20, 21,
-             22, 23, 24, 25, 26, 27,
-             28, 29, 30, 31]]
+        1: [1, 0, 1, 0, 1, 0,
+            1, 1, 0, 1, 1, 1,
+            1, 0, 1, 1]]
 
     var arrayOfPages = [Page]()
     var shuffledPagesByContent = [Page]()
@@ -99,6 +87,7 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
         Tell me whether you spot your number in the following \(pagesArrayOfDicts.count) lists
         """
         myCollectionView.isHidden = true
+       
 
     }
 
@@ -139,7 +128,8 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
 
         currentPageDataSource = shuffledPagesByOrder[currentPageReal].value
         myCollectionView.reloadData()
-
+        
+        
         leftButton.isHidden = false
         leftButton.doGlowAnimation(withColor: myThemeColor)
         middleButton.isHidden = true
@@ -173,10 +163,32 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
 
 
     @objc func showResult() {
-        myCollectionView.isHidden = true
-
+        myCollectionView.isHidden = false
+        
+        var matrix = [[1, 0, 1, 0], [1, 0, 0, 1], [0, 1, 0, 1], [1, 0, 1, 0]]
+        for r in Range(0...3) {
+            for c in Range(0...3) {
+                let cell = myCollectionView.cellForItem(at: IndexPath(row: r * 4 + c, section: 0)) as! SpotItCell
+                let text = cell.myLabel.text
+                let value = Int(text!) ?? 0
+                matrix[r][c] = value
+            }
+        }
+        
+        var color: UIColor
+        let (area, min_coord, max_coord) = max_area(matrix: matrix)
+        for coord in Range(0...min_coord.count - 1){
+            color = colorsArray[coord]
+            for i in Range(min_coord[coord][0]...max_coord[coord][0]) {
+                for j in Range(min_coord[coord][1]...max_coord[coord][1]) {
+                    let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
+                    cell_max.backgroundColor = color
+                    cell_max.doGlowAnimation(withColor: color)
+                }
+            }
+        }
         headerLabel.attributedText = attrifyString(
-            preString: "You thought:\n\n", toAttrify: "\(userNumber)", postString: nil,
+            preString: "Total Maximum Area:\n\n", toAttrify: "\(area)", postString: nil,
             color: myThemeColor)
 
         leftButton.isHidden = true
@@ -197,7 +209,10 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
         navigationController?.popToRootViewController(animated: true)
     }
 
-
+    @objc func toggleRectangle() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     // MARK: Collection Delegate
 
     func collectionView(_ collectionView: UICollectionView,
@@ -212,11 +227,57 @@ class FindLargestViewController: UIViewController, UICollectionViewDelegate,
                                                       for: indexPath) as! SpotItCell
 
         cell.myLabel.text = "\(currentPageDataSource[indexPath.row])"
-        cell.backgroundColor = colorsArray[currentPageReal]
         cell.myLabel.textColor = .black
         cell.layer.cornerRadius = cell.frame.size.width / 2
 
         return cell
     }
 
+    func max_area (matrix: [[Int]]) -> (Int, [[Int]], [[Int]]) {
+        let rows = matrix.count
+        let cols = matrix[0].count
+        
+        var maxArea = -1
+        var min_coord = [[Int]]()
+        var max_coord = [[Int]]()
+        for x1 in Range(0...(rows - 1)) {
+            for y1 in Range(0...(cols - 1)) {
+                for x2 in Range(x1...(rows - 1)) {
+                    for y2 in Range(y1...(cols - 1)) {
+                        print(x1, y1, x2, y2)
+                        let area = is_rectangle(matrix: matrix, x1: x1, y1: y1, x2: x2, y2: y2)
+                        if area > maxArea {
+                            maxArea = area
+                            min_coord = [[x1, y1]]
+                            max_coord = [[x2, y2]]
+                        } else if area == maxArea {
+                            min_coord.append([x1, y1])
+                            max_coord.append([x2, y2])
+                        }
+                    }
+                }
+            }
+        }
+        
+        print(maxArea)
+        print(min_coord)
+        print(max_coord)
+        
+        return (maxArea, min_coord, max_coord)
+    }
+    
+    func is_rectangle (matrix: [[Int]], x1:Int, y1:Int, x2:Int, y2:Int) -> Int {
+        var area = 0
+        for i in Range(x1...x2) {
+            for j in Range(y1...y2) {
+                if matrix[i][j] == 0 {
+                    return 0
+                } else {
+                    area = area + 1
+                }
+            }
+        }
+        
+        return area
+    }
 }
