@@ -17,8 +17,9 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
-    @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var myCollectionView: UICollectionView!
+
 
 
     // MARK: Properties
@@ -128,22 +129,26 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
             return
         }
         headerLabel.text = """
-        Find the largest rectangle are of 1's
+        Find the largest area of rectangle formed by 1's
         """
 
         currentPageDataSource = shuffledPagesByOrder[currentPageReal].value
         myCollectionView.reloadData()
         
         
-        leftButton.isHidden = false
+        leftButton.isHidden = true
         leftButton.doGlowAnimation(withColor: myThemeColor)
-        middleButton.isHidden = true
-        rightButton.isHidden = false
+        middleButton.isHidden = false
+        rightButton.isHidden = true
         rightButton.doGlowAnimation(withColor: myThemeColor)
 
         leftButton.setTitleNew(Const.noMessage)
         rightButton.setTitleNew(Const.yesMessage)
 
+        middleButton.setTitleNew("Show Answer")
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
+        
         leftButton.removeTarget(nil, action: nil, for: .allEvents)
         rightButton.removeTarget(nil, action: nil, for: .allEvents)
 
@@ -193,10 +198,16 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         }
         
         headerLabel.attributedText = attrifyString(
-            preString: "Total Maximum Area:\n\n", toAttrify: "\(area)", postString: nil,
+            preString: "Largest Area:\n\n", toAttrify: "\(area)", postString: nil,
             color: myThemeColor)
 
-        leftButton.isHidden = true
+        leftButton.isHidden = false
+        leftButton.removeTarget(nil, action: nil, for: .allEvents)
+        leftButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
+        leftButton.setTitleNew(Const.exitMessage)
+        leftButton.layer.removeAllAnimations()
+        leftButton.sizeToFit()
+        
         middleButton.isHidden = false
         middleButton.doGlowAnimation(withColor: myThemeColor)
         rightButton.isHidden = true
@@ -205,23 +216,34 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
             rightButton.isHidden = false
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(cycleMaximumAreaOptions), for: .touchUpInside)
-            rightButton.setTitleNew(Const.doneMessage)
+            rightButton.setTitleNew(Const.toggleAnswersMessage)
             rightButton.sizeToFit()
         }
         
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
-        middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        middleButton.setTitleNew(Const.doneMessage)
+        middleButton.addTarget(self, action: #selector(playAgainButtonPressed), for: .touchUpInside)
+        middleButton.setTitleNew(Const.playAgainMessage)
         middleButton.sizeToFit()
     }
 
 
     // MARK: Actions
 
+    @objc func playAgainButtonPressed() {
+        navigationController?.popViewController(animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: "FindLargestAreaViewController") as! FindLargestAreaViewController
+        controller.myTitle = "Largest Rectangle"
+        controller
+            .myThemeColor = Const.dataSourceHome[0]["color"] as? UIColor
+        self.navigationController!.pushViewController(controller, animated: true)
+    }
+    
     @objc func doneButtonPressed() {
         navigationController?.popToRootViewController(animated: true)
     }
-
+    
     @objc func cycleMaximumAreaOptions() {
         index = (index + 1) % min_coord.count
         for cell in myCollectionView.visibleCells {

@@ -496,10 +496,10 @@ Prepare to be amazed.</string>
                                 </buttonConfiguration>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e70-jA-cme" userLabel="My Collection View">
-                                <rect key="frame" x="37" y="149" width="301" height="300"/>
+                                <rect key="frame" x="30" y="149" width="315" height="314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="BTI-RE-zXP"/>
+                                    <constraint firstAttribute="height" constant="314" id="Vgg-o8-kCm"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l3m-0S-2oe">
                                     <size key="itemSize" width="64" height="64"/>
@@ -544,14 +544,14 @@ Prepare to be amazed.</string>
                         <constraints>
                             <constraint firstItem="Ycj-it-D0z" firstAttribute="trailing" secondItem="zxW-RR-Udy" secondAttribute="trailing" constant="16" id="2Du-ht-KLi"/>
                             <constraint firstItem="eyG-e0-R0E" firstAttribute="leading" secondItem="Ycj-it-D0z" secondAttribute="leading" constant="16" id="Acu-EX-f6L"/>
-                            <constraint firstItem="e70-jA-cme" firstAttribute="top" secondItem="d17-0I-l3q" secondAttribute="bottom" constant="34" id="AdP-Je-dud"/>
                             <constraint firstItem="Ycj-it-D0z" firstAttribute="bottom" secondItem="eyG-e0-R0E" secondAttribute="bottom" constant="16" id="JSt-BX-Fie"/>
+                            <constraint firstItem="e70-jA-cme" firstAttribute="centerX" secondItem="d17-0I-l3q" secondAttribute="centerX" id="Swy-OV-bx1"/>
                             <constraint firstItem="Ycj-it-D0z" firstAttribute="bottom" secondItem="zxW-RR-Udy" secondAttribute="bottom" constant="16" id="TN0-JM-0cx"/>
+                            <constraint firstItem="e70-jA-cme" firstAttribute="top" secondItem="d17-0I-l3q" secondAttribute="bottom" constant="34" id="Vwc-Pn-UpD"/>
                             <constraint firstItem="jhv-e0-JJa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eyG-e0-R0E" secondAttribute="trailing" constant="4" id="WVU-Jp-gwT"/>
-                            <constraint firstItem="e70-jA-cme" firstAttribute="leading" secondItem="Ycj-it-D0z" secondAttribute="leading" constant="37" id="XjA-bA-Px8"/>
+                            <constraint firstItem="e70-jA-cme" firstAttribute="leading" secondItem="Ycj-it-D0z" secondAttribute="leading" constant="30" id="faS-Wl-2Dx"/>
                             <constraint firstItem="jhv-e0-JJa" firstAttribute="centerX" secondItem="Ycj-it-D0z" secondAttribute="centerX" id="gRX-0R-ewJ"/>
                             <constraint firstItem="d17-0I-l3q" firstAttribute="centerX" secondItem="jhv-e0-JJa" secondAttribute="centerX" id="iRb-Ef-BFZ"/>
-                            <constraint firstItem="e70-jA-cme" firstAttribute="centerX" secondItem="d17-0I-l3q" secondAttribute="centerX" id="iY1-XY-dfX"/>
                             <constraint firstItem="Ycj-it-D0z" firstAttribute="bottom" secondItem="jhv-e0-JJa" secondAttribute="bottom" constant="16" id="j5v-NT-3Rn"/>
                             <constraint firstItem="d17-0I-l3q" firstAttribute="leading" secondItem="Ycj-it-D0z" secondAttribute="leading" constant="16" id="kag-C0-szP"/>
                             <constraint firstItem="zxW-RR-Udy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jhv-e0-JJa" secondAttribute="trailing" constant="4" id="tHL-be-V2D"/>
