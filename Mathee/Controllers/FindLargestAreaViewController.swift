@@ -1,9 +1,8 @@
 //
-//  FindLargestViewController.swift
+//  FindLargestAreaViewController.swift
 //  Mathee
 //
 //  Created by Gaurang Gunde on 4/19/24.
-//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -25,26 +24,14 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
     // MARK: Properties
 
     var myTitle: String!
-
-    struct Page {
-        let key: Int
-        let value: [Int]
-    }
-
-    let pagesArrayOfDicts = [
-        1: [1, 0, 1, 0, 1, 0,
-            1, 1, 0, 1, 1, 1,
-            1, 0, 1, 1]]
-
-    var arrayOfPages = [Page]()
-    var shuffledPagesByContent = [Page]()
-    var shuffledPagesByOrder = [Page]()
-    var userNumber = 0
-    var currentPageReal = 0
-
-    var currentPageDataSource: [Int] = []
-
     var myThemeColor: UIColor!
+    
+    var setOfOnesAndZeros = [
+        1, 0, 1, 0,
+        1, 0, 1, 1,
+        0, 1, 1, 1,
+        1, 0, 1, 1
+    ]
 
     let colorsArray: [UIColor] = [
         .systemOrange,
@@ -55,9 +42,10 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         .systemPurple
     ]
 
+    // Global Variables to store our answers
     var index = 0
-    var min_coord = [[Int]]()
-    var max_coord = [[Int]]()
+    var min_coords = [[Int]]()
+    var max_coords = [[Int]]()
     
     // MARK: Life Cycle
 
@@ -71,45 +59,15 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
 
         self.title = self.myTitle
         setThemeColorTo(myThemeColor: myThemeColor)
-
-        for page in pagesArrayOfDicts {
-            arrayOfPages.append(Page(key: page.key, value: page.value))
-        }
-
-
-        for page in arrayOfPages {
-            let shuffledPageContent = page.value.shuffled()
-            shuffledPagesByContent.append(Page(key: page.key, value: shuffledPageContent))
-        }
-
-        shuffledPagesByOrder = shuffledPagesByContent.shuffled()
-
-        headerLabel.text = """
-        Think of a number from 1 to 31
-
-        Tell me whether you spot your number in the following \(pagesArrayOfDicts.count) lists
-        """
-        myCollectionView.isHidden = true
-       
         
-
+        setOfOnesAndZeros = setOfOnesAndZeros.shuffled()
+        
+        myCollectionView.isHidden = true
     }
 
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        leftButton.isHidden = true
-        middleButton.isHidden = false
-        middleButton.doGlowAnimation(withColor: myThemeColor)
-        rightButton.isHidden = true
-
-        middleButton.setTitleNew(Const.okMessage)
-        middleButton.removeTarget(nil, action: nil, for: .allEvents)
-        middleButton.addTarget(self, action: #selector(start), for: .touchUpInside)
-        middleButton.setTitleNew(Const.okMessage)
-        middleButton.sizeToFit()
-        
         myCollectionView.isHidden = false
         showNextPage()
     }
@@ -117,90 +75,47 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
 
     // Helpers
 
-    @objc func start() {
-        myCollectionView.isHidden = false
-        showNextPage()
-    }
-
-
     func showNextPage() {
-        if currentPageReal+1 > shuffledPagesByOrder.count {
-            showResult()
-            return
-        }
         headerLabel.text = """
         Find the largest area of rectangle formed by 1's
         """
 
-        currentPageDataSource = shuffledPagesByOrder[currentPageReal].value
         myCollectionView.reloadData()
         
-        
         leftButton.isHidden = true
-        leftButton.doGlowAnimation(withColor: myThemeColor)
-        middleButton.isHidden = false
         rightButton.isHidden = true
-        rightButton.doGlowAnimation(withColor: myThemeColor)
-
-        leftButton.setTitleNew(Const.noMessage)
-        rightButton.setTitleNew(Const.yesMessage)
-
-        middleButton.setTitleNew("Show Answer")
-        middleButton.removeTarget(nil, action: nil, for: .allEvents)
-        middleButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
         
-        leftButton.removeTarget(nil, action: nil, for: .allEvents)
-        rightButton.removeTarget(nil, action: nil, for: .allEvents)
+        leftButton.setTitleNew(Const.emptyMessage)
+        rightButton.setTitleNew(Const.emptyMessage)
 
-        leftButton.addTarget(self, action: #selector(dontAddValue), for: .touchUpInside)
-        rightButton.addTarget(self, action: #selector(addValue), for: .touchUpInside)
-        leftButton.sizeToFit()
-        rightButton.sizeToFit()
+        middleButton.isHidden = false
+        middleButton.setTitleNew(Const.showAnswer)
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(showResult), for: .touchUpInside)
+        middleButton.sizeToFit()
     }
 
-
-    @objc func addValue() {
-        userNumber += shuffledPagesByOrder[currentPageReal].key
-        currentPageReal += 1
-        showNextPage()
-    }
-
-
-    @objc func dontAddValue() {
-        currentPageReal += 1
-        showNextPage()
-    }
-
+    // MARK: Actions
 
     @objc func showResult() {
         myCollectionView.isHidden = false
         
-        var matrix = [[1, 0, 1, 0], [1, 0, 0, 1], [0, 1, 0, 1], [1, 0, 1, 0]]
-        for r in Range(0...3) {
-            for c in Range(0...3) {
-                let cell = myCollectionView.cellForItem(at: IndexPath(row: r * 4 + c, section: 0)) as! SpotItCell
-                let text = cell.myLabel.text
-                let value = Int(text!) ?? 0
-                matrix[r][c] = value
-            }
-        }
+        let matrix = convert_cell_views_to_array()
         
-        let (area, min_coord_returned, max_coord_returned) = max_area(matrix: matrix)
-        min_coord = min_coord_returned
-        max_coord = max_coord_returned
+        let (area, min_coords_returned, max_coords_returned) = max_area(matrix: matrix)
         
-        for i in Range(min_coord[index][0]...max_coord[index][0]) {
-            for j in Range(min_coord[index][1]...max_coord[index][1]) {
-                let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
-                cell_max.backgroundColor = colorsArray[index]
-                cell_max.doGlowAnimation(withColor: colorsArray[index])
-            }
-        }
+        // Set global data structures with answers
+        min_coords = min_coords_returned
+        max_coords = max_coords_returned
         
+        // Display answer on the grid and text box
         headerLabel.attributedText = attrifyString(
             preString: "Largest Area:\n\n", toAttrify: "\(area)", postString: nil,
             color: myThemeColor)
 
+        highlight_answer()
+        
+        // Prepare Exit Button
         leftButton.isHidden = false
         leftButton.removeTarget(nil, action: nil, for: .allEvents)
         leftButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
@@ -208,35 +123,37 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         leftButton.layer.removeAllAnimations()
         leftButton.sizeToFit()
         
+        // Prepare Play Again Button
         middleButton.isHidden = false
         middleButton.doGlowAnimation(withColor: myThemeColor)
-        rightButton.isHidden = true
+        middleButton.removeTarget(nil, action: nil, for: .allEvents)
+        middleButton.addTarget(self, action: #selector(playAgainButtonPressed), for: .touchUpInside)
+        middleButton.setTitleNew(Const.playAgainMessage)
+        middleButton.sizeToFit()
         
-        if min_coord.count > 1 {
+        // If more than one answer exists, show the rightmost button
+        rightButton.isHidden = true
+        if min_coords.count > 1 {
             rightButton.isHidden = false
             rightButton.removeTarget(nil, action: nil, for: .allEvents)
             rightButton.addTarget(self, action: #selector(cycleMaximumAreaOptions), for: .touchUpInside)
             rightButton.setTitleNew(Const.toggleAnswersMessage)
             rightButton.sizeToFit()
         }
-        
-        middleButton.removeTarget(nil, action: nil, for: .allEvents)
-        middleButton.addTarget(self, action: #selector(playAgainButtonPressed), for: .touchUpInside)
-        middleButton.setTitleNew(Const.playAgainMessage)
-        middleButton.sizeToFit()
     }
 
 
-    // MARK: Actions
-
     @objc func playAgainButtonPressed() {
         navigationController?.popViewController(animated: true)
+        
+        // Recreate controller for storyboard because we want to play again
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(
             withIdentifier: "FindLargestAreaViewController") as! FindLargestAreaViewController
         controller.myTitle = self.myTitle
         controller
             .myThemeColor = self.myThemeColor
+        
         self.navigationController!.pushViewController(controller, animated: true)
     }
     
@@ -245,27 +162,18 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
     }
     
     @objc func cycleMaximumAreaOptions() {
-        index = (index + 1) % min_coord.count
-        for cell in myCollectionView.visibleCells {
-            let cell_max = cell as! SpotItCell
-            cell_max.backgroundColor = .white
-            cell_max.layer.removeAllAnimations()
-        }
-        
-        for i in Range(min_coord[index][0]...max_coord[index][0]) {
-            for j in Range(min_coord[index][1]...max_coord[index][1]) {
-                let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
-                cell_max.backgroundColor = colorsArray[index]
-                cell_max.doGlowAnimation(withColor: colorsArray[index])
-            }
-        }
+        // Cycle to next answer
+        index = (index + 1) % min_coords.count
+
+        clear_animations_and_color()
+        highlight_answer()
     }
     
     // MARK: Collection Delegate
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return currentPageDataSource.count
+        return setOfOnesAndZeros.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -274,7 +182,7 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.spotItCell,
                                                       for: indexPath) as! SpotItCell
 
-        cell.myLabel.text = "\(currentPageDataSource[indexPath.row])"
+        cell.myLabel.text = "\(setOfOnesAndZeros[indexPath.row])"
         cell.myLabel.textColor = .black
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
@@ -282,13 +190,29 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         return cell
     }
 
+    // MARK: Business Rules
+    
+    func convert_cell_views_to_array () -> [[Int]] {
+        var matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+        for r in Range(0...3) {
+            for c in Range(0...3) {
+                let cell = myCollectionView.cellForItem(at: IndexPath(row: r * matrix.count + c, section: 0)) as! SpotItCell
+                let text = cell.myLabel.text
+                let value = Int(text!) ?? 0
+                matrix[r][c] = value
+            }
+        }
+        
+        return matrix
+    }
+    
     func max_area (matrix: [[Int]]) -> (Int, [[Int]], [[Int]]) {
         let rows = matrix.count
         let cols = matrix[0].count
         
         var maxArea = -1
-        var min_coord = [[Int]]()
-        var max_coord = [[Int]]()
+        var min_coords = [[Int]]()
+        var max_coords = [[Int]]()
         for x1 in Range(0...(rows - 1)) {
             for y1 in Range(0...(cols - 1)) {
                 for x2 in Range(x1...(rows - 1)) {
@@ -296,18 +220,19 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
                         let area = is_rectangle(matrix: matrix, x1: x1, y1: y1, x2: x2, y2: y2)
                         if area > maxArea {
                             maxArea = area
-                            min_coord = [[x1, y1]]
-                            max_coord = [[x2, y2]]
+                            min_coords = [[x1, y1]]
+                            max_coords = [[x2, y2]]
                         } else if area == maxArea {
-                            min_coord.append([x1, y1])
-                            max_coord.append([x2, y2])
+                            // Keep track of alternate maximum area answers
+                            min_coords.append([x1, y1])
+                            max_coords.append([x2, y2])
                         }
                     }
                 }
             }
         }
         
-        return (maxArea, min_coord, max_coord)
+        return (maxArea, min_coords, max_coords)
     }
     
     func is_rectangle (matrix: [[Int]], x1:Int, y1:Int, x2:Int, y2:Int) -> Int {
@@ -323,5 +248,23 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         }
         
         return area
+    }
+    
+    func highlight_answer () {
+        for i in Range(min_coords[index][0]...max_coords[index][0]) {
+            for j in Range(min_coords[index][1]...max_coords[index][1]) {
+                let cell_max = myCollectionView.cellForItem(at: IndexPath(row: (i * 4 + j), section: 0)) as! SpotItCell
+                cell_max.backgroundColor = colorsArray[index]
+                cell_max.doGlowAnimation(withColor: colorsArray[index])
+            }
+        }
+    }
+    
+    func clear_animations_and_color () {
+        for cell in myCollectionView.visibleCells {
+            let cell_max = cell as! SpotItCell
+            cell_max.backgroundColor = .white
+            cell_max.layer.removeAllAnimations()
+        }
     }
 }
