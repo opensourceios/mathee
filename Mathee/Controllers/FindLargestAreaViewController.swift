@@ -234,9 +234,9 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(
             withIdentifier: "FindLargestAreaViewController") as! FindLargestAreaViewController
-        controller.myTitle = "Largest Rectangle"
+        controller.myTitle = self.myTitle
         controller
-            .myThemeColor = Const.dataSourceHome[0]["color"] as? UIColor
+            .myThemeColor = self.myThemeColor
         self.navigationController!.pushViewController(controller, animated: true)
     }
     
