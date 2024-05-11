@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2827FFCD2BD33C0000B335CC /* FindLargestAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827FFCC2BD33C0000B335CC /* FindLargestAreaViewController.swift */; };
+		28D643072BEE1C2B00CE9F02 /* MatheeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D643062BEE1C2B00CE9F02 /* MatheeTests.swift */; };
 		3319089320E8772E007C679C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3319089120E8772E007C679C /* Main.storyboard */; };
 		3319089520E87731007C679C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3319089420E87731007C679C /* Assets.xcassets */; };
 		3319089820E87731007C679C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3319089620E87731007C679C /* LaunchScreen.storyboard */; };
@@ -31,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		28D643082BEE1C2B00CE9F02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3319088220E8772E007C679C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3319088920E8772E007C679C;
+			remoteInfo = Mathee;
+		};
 		33F3218E28384B2100385BBD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3319088220E8772E007C679C /* Project object */;
@@ -42,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		2827FFCC2BD33C0000B335CC /* FindLargestAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLargestAreaViewController.swift; sourceTree = "<group>"; };
+		28D643042BEE1C2B00CE9F02 /* MatheeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatheeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D643062BEE1C2B00CE9F02 /* MatheeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatheeTests.swift; sourceTree = "<group>"; };
 		3319088A20E8772E007C679C /* Mathee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mathee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3319088D20E8772E007C679C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3319089220E8772E007C679C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +79,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28D643012BEE1C2B00CE9F02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3319088720E8772E007C679C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,12 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28D643052BEE1C2B00CE9F02 /* MatheeTests */ = {
+			isa = PBXGroup;
+			children = (
+				28D643062BEE1C2B00CE9F02 /* MatheeTests.swift */,
+			);
+			path = MatheeTests;
+			sourceTree = "<group>";
+		};
 		3319088120E8772E007C679C = {
 			isa = PBXGroup;
 			children = (
 				3319088D20E8772E007C679C /* AppDelegate.swift */,
 				3319088C20E8772E007C679C /* Mathee */,
 				33F3218928384B2100385BBD /* MatheeScreenshots */,
+				28D643052BEE1C2B00CE9F02 /* MatheeTests */,
 				3319088B20E8772E007C679C /* Products */,
 				33C6167027C4985400EC8575 /* Frameworks */,
 			);
@@ -102,6 +128,7 @@
 			children = (
 				3319088A20E8772E007C679C /* Mathee.app */,
 				33F3218828384B2100385BBD /* MatheeScreenshots.xctest */,
+				28D643042BEE1C2B00CE9F02 /* MatheeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +219,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		28D643032BEE1C2B00CE9F02 /* MatheeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D6430A2BEE1C2B00CE9F02 /* Build configuration list for PBXNativeTarget "MatheeTests" */;
+			buildPhases = (
+				28D643002BEE1C2B00CE9F02 /* Sources */,
+				28D643012BEE1C2B00CE9F02 /* Frameworks */,
+				28D643022BEE1C2B00CE9F02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D643092BEE1C2B00CE9F02 /* PBXTargetDependency */,
+			);
+			name = MatheeTests;
+			productName = MatheeTests;
+			productReference = 28D643042BEE1C2B00CE9F02 /* MatheeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3319088920E8772E007C679C /* Mathee */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3319089C20E87731007C679C /* Build configuration list for PBXNativeTarget "Mathee" */;
@@ -236,10 +281,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Daniel Springer";
 				TargetAttributes = {
+					28D643032BEE1C2B00CE9F02 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 3319088920E8772E007C679C;
+					};
 					3319088920E8772E007C679C = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1020;
@@ -265,11 +314,19 @@
 			targets = (
 				3319088920E8772E007C679C /* Mathee */,
 				33F3218728384B2100385BBD /* MatheeScreenshots */,
+				28D643032BEE1C2B00CE9F02 /* MatheeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		28D643022BEE1C2B00CE9F02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3319088820E8772E007C679C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +389,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		28D643002BEE1C2B00CE9F02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D643072BEE1C2B00CE9F02 /* MatheeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3319088620E8772E007C679C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +431,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		28D643092BEE1C2B00CE9F02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3319088920E8772E007C679C /* Mathee */;
+			targetProxy = 28D643082BEE1C2B00CE9F02 /* PBXContainerItemProxy */;
+		};
 		33F3218F28384B2100385BBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3319088920E8772E007C679C /* Mathee */;
@@ -393,6 +463,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		28D6430B2BEE1C2B00CE9F02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ggunde.MatheeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mathee.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mathee";
+			};
+			name = Debug;
+		};
+		28D6430C2BEE1C2B00CE9F02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ggunde.MatheeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mathee.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mathee";
+			};
+			name = Release;
+		};
 		3319089A20E87731007C679C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -625,6 +743,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		28D6430A2BEE1C2B00CE9F02 /* Build configuration list for PBXNativeTarget "MatheeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D6430B2BEE1C2B00CE9F02 /* Debug */,
+				28D6430C2BEE1C2B00CE9F02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3319088520E8772E007C679C /* Build configuration list for PBXProject "Mathee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

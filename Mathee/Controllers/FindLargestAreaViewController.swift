@@ -3,6 +3,7 @@
 //  Mathee
 //
 //  Created by Gaurang Gunde on 4/19/24.
+//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -207,6 +208,10 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func max_area (matrix: [[Int]]) -> (Int, [[Int]], [[Int]]) {
+        if matrix.isEmpty {
+            return (-1, [[]], [[]])
+        }
+        
         let rows = matrix.count
         let cols = matrix[0].count
         
@@ -236,6 +241,10 @@ class FindLargestAreaViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func is_rectangle (matrix: [[Int]], x1:Int, y1:Int, x2:Int, y2:Int) -> Int {
+        if matrix.isEmpty {
+            return -1
+        }
+        
         var area = 0
         for i in Range(x1...x2) {
             for j in Range(y1...y2) {

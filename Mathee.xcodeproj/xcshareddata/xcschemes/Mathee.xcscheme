@@ -38,6 +38,17 @@
                ReferencedContainer = "container:Mathee.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "28D643032BEE1C2B00CE9F02"
+               BuildableName = "MatheeTests.xctest"
+               BlueprintName = "MatheeTests"
+               ReferencedContainer = "container:Mathee.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
