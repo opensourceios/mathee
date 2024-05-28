@@ -3,7 +3,7 @@
 //  MatheeScreenshots
 //
 //  Created by Daniel Springer on 5/20/22.
-//  Copyright © 2023 Daniel Springer. All rights reserved.
+//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import XCTest
@@ -17,7 +17,7 @@ class MatheeScreenshots: XCTestCase {
 
     var app: XCUIApplication!
 
-    let aList = ["Shabbos", "Guess it", "Spot it"]
+    let aList = ["Guess It", "Spot It", "Lower or Higher"]
 
 
     override func setUpWithError() throws {
@@ -36,27 +36,7 @@ class MatheeScreenshots: XCTestCase {
         XCTAssertTrue(aThing.waitForExistence(timeout: 5))
         aThing.tap()
         switch word {
-            case "Shabbos":
-                XCTAssertTrue(app.staticTexts["⭐️ Level 1"].firstMatch
-                    .waitForExistence(timeout: 5))
-                takeScreenshot(named: "2-Shabbos-levels")
-                XCTAssertTrue(app.staticTexts["⭐️ Level 2"].firstMatch
-                    .waitForExistence(timeout: 5))
-                app.staticTexts["⭐️ Level 2"].firstMatch.tap()
-                for _ in 0...4 {
-                    XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
-                    app.buttons["Nope"].firstMatch.tap()
-                }
-                XCTAssertTrue(app.buttons["Shabbos"].firstMatch.waitForExistence(timeout: 5))
-                XCTAssertTrue(app.buttons["Nope"].firstMatch.waitForExistence(timeout: 5))
-                takeScreenshot(named: "3-Shabbos-game-middle")
-                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 25))
-                app.buttons["OK"].firstMatch.tap()
-
-                XCTAssertTrue(app.buttons["Shabbos"].firstMatch.waitForExistence(timeout: 5))
-                app.buttons["Shabbos"].firstMatch.tap()
-                app.buttons["Mathee"].firstMatch.tap()
-            case "Guess it":
+            case "Guess It":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 takeScreenshot(named: "4-Guess-it-think")
                 app.buttons["OK"].firstMatch.tap()
@@ -72,13 +52,23 @@ class MatheeScreenshots: XCTestCase {
                 app.buttons["Guess my number"].firstMatch.tap()
                 takeScreenshot(named: "6-Guess-it-result")
                 app.buttons["Done"].firstMatch.tap()
-            case "Spot it":
+            case "Spot It":
                 XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
                 app.buttons["OK"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 app.buttons["Yes"].firstMatch.tap()
                 takeScreenshot(named: "1-Spot-it")
+                app.buttons["Mathee"].firstMatch.tap()
+            case "Lower or Higher":
+                XCTAssertTrue(app.buttons["OK"].firstMatch.waitForExistence(timeout: 5))
+                app.buttons["OK"].firstMatch.tap()
+                app.buttons["Lower"].firstMatch.tap()
+                app.buttons["Lower"].firstMatch.tap()
+                takeScreenshot(named: "2-higher-lower")
+                app.buttons["Higher"].firstMatch.tap()
+                app.buttons["Correct"].firstMatch.tap()
+                takeScreenshot(named: "2-higher-lower-guessed")
                 app.buttons["Mathee"].firstMatch.tap()
             default:
                 fatalError()

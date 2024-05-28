@@ -3,7 +3,7 @@
 //  Mathee
 //
 //  Created by Daniel Springer on 05/07/2018.
-//  Copyright © 2023 Daniel Springer. All rights reserved.
+//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -116,6 +116,11 @@ class MenuViewController: UIViewController, UITableViewDataSource,
 
     // MARK: TableView Delegate
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Made with ❤️ by Daniel Springer"
+    }
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Const.dataSourceHome.count
     }
@@ -132,14 +137,15 @@ class MenuViewController: UIViewController, UITableViewDataSource,
         let cell = tableView.dequeueReusableCell(withIdentifier: menuCell)
         as! MainMenuTableViewCell
         cell.myLabel.text = Const.dataSourceHome[indexPath.row]["title"] as? String
-        let aConfig = UIImage.SymbolConfiguration(weight: .bold)
-        let aImage = UIImage(systemName: Const.dataSourceHome[indexPath.row]["icon"] as! String,
-                             withConfiguration: aConfig)
+        let aConfig = UIImage.SymbolConfiguration(weight: .medium)
+        let aImage = UIImage(
+            systemName: Const.dataSourceHome[indexPath.row]["icon"] as! String,
+            withConfiguration: aConfig)
         cell.newImageView.image = aImage
         cell.newImageView.tintColor = .white
         cell.imageViewContainer
             .backgroundColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
-        cell.imageViewContainer.layer.cornerRadius = 6
+        cell.imageViewContainer.layer.cornerRadius = 8
         cell.accessoryType = .disclosureIndicator
 
         return cell
@@ -153,39 +159,38 @@ class MenuViewController: UIViewController, UITableViewDataSource,
         let cell = tableView.cellForRow(at: indexPath) as! MainMenuTableViewCell
 
         switch cell.myLabel!.text {
-            case "Spot it":
+            case "Spot It":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "BookViewController") as! BookViewController
                 controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Guess it":
+            case "Guess It":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "FormulaViewController") as! FormulaViewController
                 controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Mystical 9":
+            case "Mystical Nine":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "MagicViewController") as! MagicViewController
                 controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Lower or higher":
+            case "Lower or Higher":
                 let controller = storyboard.instantiateViewController(
                     withIdentifier: "HigherLowerViewController") as! HigherLowerViewController
                 controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
-            case "Shabbos":
+            case "Find Largest Area":
                 let controller = storyboard.instantiateViewController(
-                    withIdentifier: Const.ShabbosLevelsViewController)
-                as! ShabbosLevelsViewController
-                controller.myTitle = "Shabbos"
+                    withIdentifier: "FindLargestAreaViewController") as! FindLargestAreaViewController
+                controller.myTitle = cell.myLabel!.text
                 controller
                     .myThemeColor = Const.dataSourceHome[indexPath.row]["color"] as? UIColor
                 self.navigationController!.pushViewController(controller, animated: true)
@@ -204,13 +209,13 @@ class MenuViewController: UIViewController, UITableViewDataSource,
         activityController.popoverPresentationController?.barButtonItem = aboutButton
         activityController
             .completionWithItemsHandler = { (_, _: Bool, _: [Any]?, error: Error?) in
-            guard error == nil else {
-                let alert = self.createAlert(alertReasonParam: .unknown)
-                alert.view.layoutIfNeeded()
-                self.present(alert, animated: true)
-                return
+                guard error == nil else {
+                    let alert = self.createAlert(alertReasonParam: .unknown)
+                    alert.view.layoutIfNeeded()
+                    self.present(alert, animated: true)
+                    return
+                }
             }
-        }
         DispatchQueue.main.async {
             self.present(activityController, animated: true)
         }
@@ -238,7 +243,13 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the
         // --mailComposeDelegate-- property, NOT the --delegate-- property
 
-        mailComposerVC.setToRecipients([Const.emailString])
+        let recipient = Const.API.key +
+        Const.API.password +
+        Const.API.code +
+        Const.API.user +
+        Const.apple
+
+        mailComposerVC.setToRecipients([recipient])
         let version: String? = Bundle.main.infoDictionary![Const.appVersion] as? String
         var myTitle = Const.appName
         if let safeVersion = version {

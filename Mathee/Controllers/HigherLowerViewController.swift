@@ -3,7 +3,7 @@
 //  Mathee
 //
 //  Created by Daniel Springer on 05/07/2018.
-//  Copyright © 2023 Daniel Springer. All rights reserved.
+//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -58,7 +58,7 @@ class HigherLowerViewController: UIViewController {
         guessLabel.text = """
         Think of a number, anywhere from \(myArray.first!), alllll the way to \(myArray.last!)
 
-        I *will* guess it, and in \(triesLeft) tries - or less
+        I will guess it in \(triesLeft) tries - or less
         """
         setButtonsUsable(false)
     }

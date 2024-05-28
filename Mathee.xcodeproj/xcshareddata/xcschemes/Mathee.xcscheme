@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1410"
+   LastUpgradeVersion = "1510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -35,6 +35,17 @@
                BlueprintIdentifier = "33F3218728384B2100385BBD"
                BuildableName = "MatheeScreenshots.xctest"
                BlueprintName = "MatheeScreenshots"
+               ReferencedContainer = "container:Mathee.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "28D643032BEE1C2B00CE9F02"
+               BuildableName = "MatheeTests.xctest"
+               BlueprintName = "MatheeTests"
                ReferencedContainer = "container:Mathee.xcodeproj">
             </BuildableReference>
          </TestableReference>

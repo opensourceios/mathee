@@ -3,7 +3,7 @@
 //  Mathee
 //
 //  Created by Daniel Springer on 4/27/22.
-//  Copyright © 2023 Daniel Springer. All rights reserved.
+//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import UIKit

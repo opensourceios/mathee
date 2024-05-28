@@ -3,7 +3,7 @@
 //  Mathee
 //
 //  Created by Daniel Springer on 04/07/2018.
-//  Copyright © 2023 Daniel Springer. All rights reserved.
+//  Copyright © 2024 Daniel Springer. All rights reserved.
 //
 
 import UIKit
@@ -186,7 +186,7 @@ class BookViewController: UIViewController, UICollectionViewDelegate,
 
         middleButton.removeTarget(nil, action: nil, for: .allEvents)
         middleButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
-        middleButton.setTitleNew(Const.correctMessage)
+        middleButton.setTitleNew(Const.doneMessage)
         middleButton.sizeToFit()
     }
 
